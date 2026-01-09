@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { useTranslations } from '../i18n/utils';
-import { getLocalizedPath } from '../i18n/config';
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/utils';
+import { getLocalizedPath } from '../../i18n/config';
 
-const locale = 'ko';
+const locale = 'en';
 const { t } = useTranslations(locale);
 
 const sections = [
@@ -129,11 +129,11 @@ const sections = [
       <div class="about-content">
         <h2>About <span class="text-accent">sudoremove</span></h2>
         <p>
-          AI를 모두에게 접근 가능하게 만드는 것이 우리의 미션입니다.<br />
-          모든 프로젝트와 코드를 공개하여 누구나 바로 따라할 수 있습니다.
+          Our mission is to make AI accessible to everyone.<br />
+          We open-source all our projects and code so anyone can follow along.
         </p>
         <a href={getLocalizedPath('/about', locale)} class="about-link">
-          더 알아보기
+          Learn more
           <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>

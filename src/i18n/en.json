@@ -1,0 +1,55 @@
+{
+  "site": {
+    "name": "sudoremove",
+    "tagline": "Building the future of AI and robotics together"
+  },
+  "nav": {
+    "home": "Home",
+    "knowledge": "Knowledge Base",
+    "projects": "Projects",
+    "media": "Media",
+    "events": "Events",
+    "about": "About"
+  },
+  "home": {
+    "hero": {
+      "title": "AI for Everyone",
+      "subtitle": "A community researching Physical AI and robotics, sharing knowledge, and growing together",
+      "cta": {
+        "knowledge": "Explore Knowledge Base",
+        "projects": "View Projects"
+      }
+    },
+    "sections": {
+      "knowledge": {
+        "title": "Knowledge Base",
+        "description": "Comprehensive resources on Physical AI, VLA models, robotics companies and people"
+      },
+      "projects": {
+        "title": "Projects",
+        "description": "Open source projects and tutorials"
+      },
+      "media": {
+        "title": "Media",
+        "description": "YouTube videos, podcasts, and tech content"
+      },
+      "events": {
+        "title": "Events",
+        "description": "Meetups, workshops, and community events"
+      }
+    }
+  },
+  "common": {
+    "readMore": "Read more",
+    "viewAll": "View all",
+    "lastUpdated": "Last updated",
+    "comingSoon": "Coming soon"
+  },
+  "footer": {
+    "copyright": "sudoremove. All rights reserved.",
+    "links": {
+      "github": "GitHub",
+      "youtube": "YouTube"
+    }
+  }
+}

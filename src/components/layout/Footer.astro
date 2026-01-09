@@ -1,0 +1,222 @@
+---
+import type { Locale } from '../../i18n/config';
+import { useTranslations } from '../../i18n/utils';
+import { getLocalizedPath } from '../../i18n/config';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { t } = useTranslations(locale);
+const currentYear = new Date().getFullYear();
+
+const footerLinks = [
+  { href: '/knowledge', label: t('nav.knowledge') },
+  { href: '/projects', label: t('nav.projects') },
+  { href: '/media', label: t('nav.media') },
+  { href: '/events', label: t('nav.events') },
+  { href: '/about', label: t('nav.about') },
+];
+
+const socialLinks = [
+  {
+    href: 'https://youtube.com/@sudoremove',
+    label: 'YouTube',
+    icon: 'youtube',
+  },
+  {
+    href: 'https://github.com/sudormrf-run',
+    label: 'GitHub',
+    icon: 'github',
+  },
+];
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href={getLocalizedPath('/', locale)} class="logo">
+          <img
+            src="/sudormrf.jpg"
+            alt="sudoremove"
+            width="32"
+            height="32"
+            class="logo-image"
+          />
+          <span class="logo-text">sudoremove</span>
+        </a>
+        <p class="tagline">{t('site.tagline')}</p>
+      </div>
+
+      <!-- Links -->
+      <div class="footer-links">
+        <h4 class="footer-title">Links</h4>
+        <ul>
+          {footerLinks.map(({ href, label }) => (
+            <li>
+              <a href={getLocalizedPath(href, locale)}>
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div class="footer-social">
+        <h4 class="footer-title">Connect</h4>
+        <div class="social-icons">
+          {socialLinks.map(({ href, label, icon }) => (
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              class="social-link"
+            >
+              {icon === 'github' && (
+                <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+              )}
+              {icon === 'youtube' && (
+                <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+              )}
+              <span>{label}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} {t('footer.copyright')}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: linear-gradient(to top, var(--color-bg-primary), var(--color-bg-secondary));
+    border-top: 1px solid var(--color-border);
+    padding: 3rem 0 2rem;
+    margin-top: 4rem;
+  }
+
+  .footer-content {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .footer-content {
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+
+  /* Brand */
+  .footer-brand {
+    max-width: 280px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    margin-bottom: 0.75rem;
+  }
+
+  .logo-image {
+    border-radius: 50%;
+    filter: drop-shadow(0 0 8px rgba(253, 115, 24, 0.3));
+  }
+
+  .logo-text {
+    font-family: var(--font-mono);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-green);
+  }
+
+  .tagline {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  /* Links */
+  .footer-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links a {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover {
+    color: var(--color-accent);
+  }
+
+  /* Social */
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    transition: all 0.2s;
+  }
+
+  .social-link:hover {
+    color: var(--color-accent);
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Bottom */
+  .footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+  }
+</style>
