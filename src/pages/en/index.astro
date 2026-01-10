@@ -1,19 +1,15 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import IntroAnimation from '../../components/IntroAnimation.astro';
+import HeroQuote from '../../components/HeroQuote.astro';
 import HomeKnowledgeSection from '../../components/home/HomeKnowledgeSection.astro';
 import HomeMediaSection from '../../components/home/HomeMediaSection.astro';
 import HomeEventsSection from '../../components/home/HomeEventsSection.astro';
-import { useTranslations } from '../../i18n/utils';
 
 const locale = 'en';
-const { t } = useTranslations(locale);
 ---
 
 <Layout title="sudoremove" locale={locale}>
-  <IntroAnimation />
-
-  <!-- Hero Section (placeholder for now) -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-bg">
       <div class="glow-orb orb-1"></div>
@@ -23,15 +19,7 @@ const { t } = useTranslations(locale);
 
     <div class="container">
       <div class="hero-content">
-        <blockquote class="hero-quote">
-          <p class="quote-text">
-            <span class="gradient-text">To create something genuinely new,</span>
-            <br />
-            <span class="gradient-text">you have to start again</span>
-          </p>
-        </blockquote>
-
-        <cite class="quote-author">— {t('home.hero.quoteAuthor')}</cite>
+        <HeroQuote locale={locale} />
       </div>
     </div>
   </section>
@@ -106,31 +94,4 @@ const { t } = useTranslations(locale);
     text-align: center;
   }
 
-  /* Quote Design */
-  .hero-quote {
-    margin-bottom: 1rem;
-  }
-
-  .quote-text {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    font-weight: 700;
-    line-height: 1.4;
-    letter-spacing: -0.02em;
-    text-align: center;
-    white-space: nowrap;
-  }
-
-  @media (max-width: 600px) {
-    .quote-text {
-      white-space: normal;
-    }
-  }
-
-  .quote-author {
-    display: block;
-    font-size: 1rem;
-    font-style: normal;
-    color: var(--color-text-muted);
-    margin-bottom: 1rem;
-  }
 </style>

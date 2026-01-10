@@ -1,0 +1,309 @@
+---
+/**
+ * HeroQuote Component
+ * Shows typing animation -> glitch transition -> Jony Ive quote
+ */
+
+interface Props {
+  locale: 'ko' | 'en';
+}
+
+const { locale } = Astro.props;
+
+const quotes = {
+  ko: {
+    line1: '진정 새로운 것을 창조하려면,',
+    line2: '처음부터 다시 시작하라',
+    author: '조니 아이브',
+  },
+  en: {
+    line1: 'To create something genuinely new,',
+    line2: 'you have to start again',
+    author: 'Jony Ive',
+  },
+};
+
+const t = quotes[locale];
+---
+
+<div class="hero-quote-container" id="hero-quote-container">
+  <!-- Typing Animation Phase -->
+  <div class="typing-phase" id="typing-phase">
+    <div class="terminal-line" id="terminal-line">
+      <span class="prompt">$</span>
+      <span class="typed-text" id="typed-text"></span>
+      <span class="cursor" id="cursor">_</span>
+    </div>
+  </div>
+
+  <!-- Final Quote Phase (hidden initially) -->
+  <div class="quote-phase hidden" id="quote-phase">
+    <blockquote class="hero-quote">
+      <p class="quote-text">
+        <span class="gradient-text">{t.line1}</span>
+        <br />
+        <span class="gradient-text">{t.line2}</span>
+      </p>
+    </blockquote>
+    <cite class="quote-author">— {t.author}</cite>
+  </div>
+</div>
+
+<style>
+  .hero-quote-container {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Typing Phase */
+  .typing-phase {
+    text-align: center;
+  }
+
+  .typing-phase.shake {
+    animation: shake 0.05s ease-in-out;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px) translateY(-1px); }
+    75% { transform: translateX(3px) translateY(1px); }
+  }
+
+  .terminal-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: clamp(1.25rem, 4vw, 2rem);
+  }
+
+  .prompt {
+    color: var(--color-green);
+    font-weight: 700;
+  }
+
+  .typed-text {
+    color: var(--color-text-primary);
+    font-weight: 700;
+  }
+
+  .cursor {
+    color: var(--color-text-primary);
+    animation: blink 1s step-end infinite;
+  }
+
+  .cursor.solid {
+    animation: none;
+  }
+
+  .cursor.hidden {
+    opacity: 0;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  /* Glitch Effect */
+  .typing-phase.glitch {
+    animation: glitch 0.3s ease-in-out;
+  }
+
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+      filter: none;
+    }
+    20% {
+      transform: translate(-5px, 2px);
+      filter: hue-rotate(90deg);
+    }
+    40% {
+      transform: translate(5px, -2px);
+      filter: hue-rotate(180deg);
+    }
+    60% {
+      transform: translate(-3px, 1px);
+      filter: hue-rotate(270deg);
+    }
+    80% {
+      transform: translate(3px, -1px);
+      filter: hue-rotate(360deg);
+    }
+    100% {
+      transform: translate(0);
+      filter: none;
+    }
+  }
+
+  /* CRT Off Effect */
+  .typing-phase.crt-off {
+    animation: crt-off 0.4s ease-in forwards;
+  }
+
+  @keyframes crt-off {
+    0% {
+      transform: scale(1, 1);
+      opacity: 1;
+      filter: brightness(1);
+    }
+    50% {
+      transform: scale(1.02, 0.01);
+      opacity: 1;
+      filter: brightness(2);
+    }
+    100% {
+      transform: scale(0, 0);
+      opacity: 0;
+      filter: brightness(0);
+    }
+  }
+
+  /* Quote Phase */
+  .quote-phase {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .quote-phase.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .quote-phase.hidden {
+    display: none;
+  }
+
+  .hero-quote {
+    margin-bottom: 1rem;
+  }
+
+  .quote-text {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+
+  .quote-author {
+    display: block;
+    font-size: 1rem;
+    font-style: normal;
+    color: var(--color-text-muted);
+  }
+
+  /* Impact Particles */
+  :global(.impact-particle) {
+    position: fixed;
+    pointer-events: none;
+    font-family: var(--font-mono);
+    font-weight: bold;
+    z-index: 100;
+    animation: particle-fly 0.4s ease-out forwards;
+  }
+
+  @keyframes particle-fly {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0) scale(1.2);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(var(--tx), var(--ty)) scale(0.3);
+    }
+  }
+</style>
+
+<script>
+  const container = document.getElementById('hero-quote-container');
+  const typingPhase = document.getElementById('typing-phase');
+  const quotePhase = document.getElementById('quote-phase');
+  const typedText = document.getElementById('typed-text');
+  const cursor = document.getElementById('cursor');
+
+  // Always run animation on page load
+  runAnimation();
+
+  function sleep(ms: number) {
+    return new Promise(r => setTimeout(r, ms));
+  }
+
+  function createImpactParticles() {
+    if (!cursor) return;
+    const rect = cursor.getBoundingClientRect();
+    const colors = ['#fde471', '#fd7318', '#ff6b6b', '#43d6a8', '#5fadfe'];
+    const chars = ['*', '+', '~', '.'];
+
+    for (let i = 0; i < 5; i++) {
+      const particle = document.createElement('span');
+      particle.className = 'impact-particle';
+      particle.textContent = chars[Math.floor(Math.random() * chars.length)];
+      particle.style.left = rect.left + 'px';
+      particle.style.top = rect.top + 'px';
+      particle.style.color = colors[Math.floor(Math.random() * colors.length)];
+      particle.style.fontSize = (8 + Math.random() * 10) + 'px';
+
+      const angle = (Math.random() - 0.5) * Math.PI;
+      const distance = 15 + Math.random() * 25;
+      particle.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+      particle.style.setProperty('--ty', (Math.sin(angle) * distance - 20) + 'px');
+
+      document.body.appendChild(particle);
+      setTimeout(() => particle.remove(), 400);
+    }
+
+    // Shake only the typing phase
+    typingPhase?.classList.remove('shake');
+    void typingPhase?.offsetWidth;
+    typingPhase?.classList.add('shake');
+  }
+
+  async function typeText(text: string, speed = 70) {
+    if (!typedText || !cursor) return;
+
+    for (let i = 0; i < text.length; i++) {
+      cursor.classList.add('solid');
+      typedText.textContent += text[i];
+      createImpactParticles();
+      await sleep(speed);
+    }
+    cursor.classList.remove('solid');
+  }
+
+  async function runAnimation() {
+    await sleep(500);
+
+    // Type the command
+    await typeText('sudo rm -rf barriers_to_ai', 60);
+
+    await sleep(800);
+
+    // Hide cursor
+    cursor?.classList.add('hidden');
+
+    // Glitch effect
+    typingPhase?.classList.add('glitch');
+    await sleep(300);
+
+    // CRT off effect
+    typingPhase?.classList.remove('glitch');
+    typingPhase?.classList.add('crt-off');
+    await sleep(400);
+
+    // Hide typing, show quote
+    typingPhase?.classList.add('hidden');
+    quotePhase?.classList.remove('hidden');
+
+    // Small delay then fade in quote
+    await sleep(100);
+    quotePhase?.classList.add('show');
+  }
+</script>
