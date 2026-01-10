@@ -102,9 +102,9 @@ const totalDocs = contentItems.length;
           category.items.length > 0 && (
             <div class="nav-category" data-category={category.id}>
               <button
-                class={`category-toggle category-toggle-${category.color}`}
-                data-expanded="false"
-                aria-expanded="false"
+                class={`category-toggle category-toggle-${category.color} expanded`}
+                data-expanded="true"
+                aria-expanded="true"
               >
                 <svg class="toggle-icon" width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -113,7 +113,7 @@ const totalDocs = contentItems.length;
                 <span class="category-count">{category.items.length}</span>
               </button>
 
-              <div class="category-content">
+              <div class="category-content expanded">
                 {category.subcategories ? (
                   category.subcategories.map((sub) => (
                     <div class="nav-subcategory" data-subcategory={sub.id}>
@@ -413,7 +413,7 @@ const totalDocs = contentItems.length;
   }
 
   .sidebar-nav {
-    padding: 0.5rem 0;
+    padding: 0;
   }
 
   /* Overview Link */

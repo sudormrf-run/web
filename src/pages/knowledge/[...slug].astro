@@ -157,9 +157,9 @@ const categoryNames: Record<string, string> = {
           category.items.length > 0 && (
             <div class="nav-category" data-category={category.id}>
               <button
-                class={`category-toggle category-toggle-${category.color} ${currentCategory === category.id ? 'active expanded' : ''}`}
-                data-expanded={currentCategory === category.id ? 'true' : 'false'}
-                aria-expanded={currentCategory === category.id ? 'true' : 'false'}
+                class={`category-toggle category-toggle-${category.color} expanded ${currentCategory === category.id ? 'active' : ''}`}
+                data-expanded="true"
+                aria-expanded="true"
               >
                 <svg class="toggle-icon" width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -168,7 +168,7 @@ const categoryNames: Record<string, string> = {
                 <span class="category-count">{category.items.length}</span>
               </button>
 
-              <div class={`category-content ${currentCategory === category.id ? 'expanded' : ''}`}>
+              <div class="category-content expanded">
                 {category.subcategories ? (
                   // Hardware with subcategories
                   category.subcategories.map((sub) => (
@@ -482,7 +482,7 @@ const categoryNames: Record<string, string> = {
   }
 
   .sidebar-nav {
-    padding: 0.5rem 0;
+    padding: 0;
   }
 
   /* Overview Link */
