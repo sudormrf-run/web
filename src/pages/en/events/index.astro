@@ -1,0 +1,274 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import EventCard from '../../../components/events/EventCard.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations } from '../../../i18n/utils';
+
+const locale = 'en';
+const { t } = useTranslations(locale);
+
+// Get all events (using Korean content but displaying in English context)
+const allEvents = await getCollection('events', ({ slug }) => slug.startsWith('ko/'));
+
+// Sort events by date (newest first)
+const sortedEvents = allEvents.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+// Separate upcoming and past events
+const upcomingEvents = sortedEvents.filter(
+  (event) => event.data.status === 'upcoming' || event.data.status === 'ongoing'
+);
+const pastEvents = sortedEvents.filter((event) => event.data.status === 'past');
+---
+
+<Layout title={t('nav.events')} locale={locale}>
+  <div class="events-page">
+    <div class="container">
+      <!-- Header -->
+      <header class="page-header">
+        <h1 class="page-title">
+          <span class="gradient-text">{t('nav.events')}</span>
+        </h1>
+        <p class="page-subtitle">
+          Check out the latest news and events from sudoremove
+        </p>
+      </header>
+
+      <!-- Notice Section -->
+      <section class="notice-section">
+        <div class="notice-card">
+          <span class="notice-badge">Notice</span>
+          <h3>Join the LeRobot Community!</h3>
+          <p>Share news and information about the LeRobot project in our KakaoTalk open chat room.</p>
+          <a
+            href="https://open.kakao.com/o/gS5OQJth"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="kakao-link"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 3c-5.52 0-10 3.59-10 8 0 2.52 1.64 4.74 4.14 6.09-.18.64-.72 2.32-.82 2.68-.13.45.17.44.35.32.14-.09 2.25-1.53 3.16-2.14.68.1 1.39.15 2.17.15 5.52 0 10-3.59 10-8s-4.48-8-10-8z" />
+            </svg>
+            Join KakaoTalk LeRobot Chat
+          </a>
+        </div>
+      </section>
+
+      <!-- Upcoming Events -->
+      {upcomingEvents.length > 0 && (
+        <section class="events-section">
+          <h2 class="section-title">
+            <span class="title-icon upcoming-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </span>
+            Upcoming Events
+          </h2>
+          <div class="events-grid">
+            {upcomingEvents.map((event) => (
+              <EventCard event={event} locale={locale} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Past Events -->
+      {pastEvents.length > 0 && (
+        <section class="events-section">
+          <h2 class="section-title">
+            <span class="title-icon past-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+              </svg>
+            </span>
+            Past Events
+          </h2>
+          <div class="events-grid">
+            {pastEvents.map((event) => (
+              <EventCard event={event} locale={locale} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {allEvents.length === 0 && (
+        <div class="no-events">
+          <p>No events registered yet.</p>
+        </div>
+      )}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .events-page {
+    padding: 2rem 0 4rem;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Notice Section */
+  .notice-section {
+    margin-bottom: 3rem;
+  }
+
+  .notice-card {
+    background: linear-gradient(135deg, rgba(253, 115, 24, 0.1), rgba(67, 214, 168, 0.1));
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .notice-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-yellow), var(--color-green));
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0%,
+    100% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(100%);
+    }
+  }
+
+  .notice-badge {
+    display: inline-block;
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .notice-card h3 {
+    font-size: 1.5rem;
+    color: var(--color-green);
+    margin-bottom: 0.75rem;
+  }
+
+  .notice-card p {
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .kakao-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fee500;
+    color: #3c1e1e;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    transition: all 0.3s;
+  }
+
+  .kakao-link:hover {
+    background: #fdd835;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(254, 229, 0, 0.4);
+  }
+
+  /* Events Sections */
+  .events-section {
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .title-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+  }
+
+  .upcoming-icon {
+    background: rgba(253, 115, 24, 0.15);
+    color: var(--color-accent);
+  }
+
+  .past-icon {
+    background: rgba(67, 214, 168, 0.15);
+    color: var(--color-green);
+  }
+
+  .events-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .events-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .events-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .no-events {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--color-text-muted);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .notice-card {
+      padding: 1.5rem;
+    }
+
+    .notice-card h3 {
+      font-size: 1.25rem;
+    }
+
+    .kakao-link {
+      display: flex;
+      justify-content: center;
+    }
+  }
+</style>

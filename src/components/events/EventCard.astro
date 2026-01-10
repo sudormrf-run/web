@@ -1,0 +1,287 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../../i18n/config';
+import { getLocalizedPath } from '../../i18n/config';
+import { useTranslations } from '../../i18n/utils';
+
+interface Props {
+  event: CollectionEntry<'events'>;
+  locale: Locale;
+}
+
+const { event, locale } = Astro.props;
+const { t } = useTranslations(locale);
+const { data, slug } = event;
+
+const isPast = data.status === 'past';
+const isUpcoming = data.status === 'upcoming';
+const isCancelled = data.status === 'cancelled';
+
+// Format date
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString(locale === 'ko' ? 'ko-KR' : 'en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+};
+
+const dateDisplay = data.endDate
+  ? `${formatDate(data.date)} ~ ${formatDate(data.endDate)}`
+  : formatDate(data.date);
+
+// Extract event slug without locale prefix (e.g., "ko/2025-08-physical-ai-workshop" -> "2025-08-physical-ai-workshop")
+const eventSlug = slug.split('/').slice(1).join('/');
+const eventUrl = getLocalizedPath(`/events/${eventSlug}`, locale);
+---
+
+<a href={eventUrl} class={`event-card ${isPast ? 'past' : ''} ${isUpcoming ? 'upcoming' : ''} ${isCancelled ? 'cancelled' : ''}`}>
+  {data.thumbnail && (
+    <div class="event-image">
+      <img src={data.thumbnail} alt={data.title} loading="lazy" />
+      {isPast && <div class="overlay"></div>}
+    </div>
+  )}
+
+  <div class="event-content">
+    <div class="event-header">
+      {isUpcoming && (
+        <span class="badge upcoming-badge">
+          {locale === 'ko' ? '예정' : 'Upcoming'}
+        </span>
+      )}
+      {isCancelled && (
+        <span class="badge cancelled-badge">
+          {locale === 'ko' ? '취소됨' : 'Cancelled'}
+        </span>
+      )}
+      {data.isFeatured && (
+        <span class="badge featured-badge">
+          {locale === 'ko' ? '추천' : 'Featured'}
+        </span>
+      )}
+    </div>
+
+    <h3 class="event-title">{data.title}</h3>
+
+    <div class="event-meta">
+      <span class="event-date">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        {dateDisplay}
+      </span>
+      {data.time && (
+        <span class="event-time">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          {data.time}
+        </span>
+      )}
+    </div>
+
+    <p class="event-location">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+      {data.location}
+    </p>
+
+    <p class="event-description">{data.description}</p>
+
+    {data.tags && data.tags.length > 0 && (
+      <div class="event-tags">
+        {data.tags.slice(0, 3).map((tag) => (
+          <span class="tag">#{tag}</span>
+        ))}
+      </div>
+    )}
+
+    <span class="view-details">
+      {locale === 'ko' ? '자세히 보기' : 'View Details'}
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </span>
+  </div>
+</a>
+
+<style>
+  .event-card {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg-secondary) 100%);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .event-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-border-hover);
+    box-shadow: 0 10px 40px rgba(253, 115, 24, 0.15);
+  }
+
+  .event-card.upcoming {
+    border-color: var(--color-accent);
+  }
+
+  .event-card.cancelled {
+    opacity: 0.6;
+  }
+
+  /* Image Section */
+  .event-image {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+  }
+
+  .event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  .event-card:hover .event-image img {
+    transform: scale(1.05);
+  }
+
+  .event-image .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(13, 3, 15, 0.8) 100%);
+  }
+
+  /* Content Section */
+  .event-content {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .event-header {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .upcoming-badge {
+    background: rgba(253, 115, 24, 0.2);
+    color: var(--color-accent);
+  }
+
+  .cancelled-badge {
+    background: rgba(194, 24, 41, 0.2);
+    color: var(--color-red);
+  }
+
+  .featured-badge {
+    background: rgba(67, 214, 168, 0.2);
+    color: var(--color-green);
+  }
+
+  .event-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .event-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .event-date,
+  .event-time {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.875rem;
+    color: var(--color-green);
+  }
+
+  .event-location {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.875rem;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .event-description {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    flex: 1;
+  }
+
+  .event-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    padding: 0.125rem 0.5rem;
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-sm);
+  }
+
+  .view-details {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-top: auto;
+    transition: gap 0.2s;
+  }
+
+  .event-card:hover .view-details {
+    gap: 0.5rem;
+  }
+
+  /* Responsive */
+  @media (min-width: 768px) {
+    .event-image {
+      height: 200px;
+    }
+  }
+</style>
