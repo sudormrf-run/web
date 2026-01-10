@@ -12,11 +12,11 @@ const { t } = useTranslations(locale);
 const currentPath = Astro.url.pathname;
 
 const navItems = [
-  { href: '/knowledge', label: t('nav.knowledge') },
-  { href: '/projects', label: t('nav.projects') },
-  { href: '/media', label: t('nav.media') },
-  { href: '/events', label: t('nav.events') },
-  { href: '/about', label: t('nav.about') },
+  { href: '/knowledge', label: t('nav.knowledge'), section: 'knowledge' },
+  { href: '/projects', label: t('nav.projects'), section: 'projects' },
+  { href: '/media', label: t('nav.media'), section: 'media' },
+  { href: '/events', label: t('nav.events'), section: 'events' },
+  { href: '/about', label: t('nav.about'), section: 'about' },
 ];
 ---
 
@@ -39,13 +39,13 @@ const navItems = [
 
       <!-- Desktop Navigation -->
       <div class="nav-desktop">
-        {navItems.map(({ href, label }) => {
+        {navItems.map(({ href, label, section }) => {
           const localizedHref = getLocalizedPath(href, locale);
           const isActive = currentPath.startsWith(localizedHref) && localizedHref !== getLocalizedPath('/', locale);
           return (
             <a
               href={localizedHref}
-              class:list={['nav-link', { active: isActive }]}
+              class:list={['nav-link', `nav-${section}`, { active: isActive }]}
             >
               {label}
             </a>
@@ -79,13 +79,13 @@ const navItems = [
 
     <!-- Mobile Navigation -->
     <div id="mobile-menu" class="nav-mobile">
-      {navItems.map(({ href, label }) => {
+      {navItems.map(({ href, label, section }) => {
         const localizedHref = getLocalizedPath(href, locale);
         const isActive = currentPath.startsWith(localizedHref) && localizedHref !== getLocalizedPath('/', locale);
         return (
           <a
             href={localizedHref}
-            class:list={['nav-link', { active: isActive }]}
+            class:list={['nav-link', `nav-${section}`, { active: isActive }]}
           >
             {label}
           </a>
@@ -193,16 +193,48 @@ const navItems = [
     width: 0;
     height: 2px;
     background: var(--color-accent);
-    transition: all 0.3s;
+    transition: width 0.3s;
     transform: translateX(-50%);
-  }
-
-  .nav-link:hover {
-    color: var(--color-accent);
   }
 
   .nav-link:hover::after {
     width: 60%;
+  }
+
+  /* Section-specific colors - set on base state so animation uses correct color */
+  .nav-knowledge::after {
+    background: #5fadfe;
+  }
+  .nav-knowledge:hover {
+    color: #5fadfe;
+  }
+
+  .nav-projects::after {
+    background: #43d6a8;
+  }
+  .nav-projects:hover {
+    color: #43d6a8;
+  }
+
+  .nav-media::after {
+    background: #ff0000;
+  }
+  .nav-media:hover {
+    color: #ff0000;
+  }
+
+  .nav-events::after {
+    background: var(--color-accent);
+  }
+  .nav-events:hover {
+    color: var(--color-accent);
+  }
+
+  .nav-about::after {
+    background: var(--color-accent);
+  }
+  .nav-about:hover {
+    color: var(--color-accent);
   }
 
   .nav-link.active {

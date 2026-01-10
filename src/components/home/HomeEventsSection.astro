@@ -1,0 +1,403 @@
+---
+/**
+ * HomeEventsSection Component
+ * Events section for the home page with highlight video, upcoming event, and open chat
+ */
+
+import { getCollection } from 'astro:content';
+import { getLocalizedPath } from '../../i18n/config';
+
+export interface Props {
+  locale?: 'ko' | 'en';
+}
+
+const { locale = 'ko' } = Astro.props;
+
+// Latest highlight video
+const latestHighlight = { id: 'ASwwyra1_sc', title: 'CoRL 2025', type: 'participated' };
+
+// Get upcoming events
+const contentPrefix = locale === 'en' ? 'en/' : 'ko/';
+const allEvents = await getCollection('events', ({ slug }) => slug.startsWith(contentPrefix));
+const upcomingEvent = allEvents
+  .filter((event) => event.data.status === 'upcoming' || event.data.status === 'ongoing')
+  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())[0];
+
+const labels = {
+  ko: {
+    title: '행사',
+    subtitle: '커뮤니티 이벤트와 활동',
+    viewAll: '전체 보기',
+    highlight: '하이라이트',
+    hosted: '주최',
+    participated: '참가',
+    upcoming: '예정된 행사',
+    noUpcoming: '예정된 행사가 없습니다',
+    noUpcomingDesc: '새로운 행사가 곧 공개됩니다',
+  },
+  en: {
+    title: 'Events',
+    subtitle: 'Community events and activities',
+    viewAll: 'View All',
+    highlight: 'Highlight',
+    hosted: 'Hosted',
+    participated: 'Participated',
+    upcoming: 'Upcoming Event',
+    noUpcoming: 'No upcoming events',
+    noUpcomingDesc: 'New events coming soon',
+  },
+};
+
+const t = labels[locale];
+---
+
+<section class="events-section">
+  <div class="container">
+    <!-- Section Header -->
+    <header class="section-header">
+      <div class="section-title-wrapper">
+        <span class="section-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </span>
+        <div>
+          <h2 class="section-title">{t.title}</h2>
+          <p class="section-description">{t.subtitle}</p>
+        </div>
+      </div>
+      <a href={getLocalizedPath('/events', locale)} class="section-link">
+        {t.viewAll}
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </header>
+
+    <!-- Events Grid: Highlight | Upcoming -->
+    <div class="events-grid">
+      <!-- Highlight Video Card -->
+      <div class="event-card highlight-card">
+        <div class="card-label">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" />
+            <path fill="var(--color-bg-primary)" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
+          {t.highlight}
+        </div>
+        <div class="video-wrapper">
+          <iframe
+            src={`https://www.youtube.com/embed/${latestHighlight.id}`}
+            title={latestHighlight.title}
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="video-info">
+          <span class="video-badge">{latestHighlight.type === 'hosted' ? t.hosted : t.participated}</span>
+          <h3 class="video-title">{latestHighlight.title}</h3>
+        </div>
+      </div>
+
+      <!-- Upcoming Event Card -->
+      {upcomingEvent ? (
+        <a href={getLocalizedPath(`/events/${upcomingEvent.slug.replace(contentPrefix, '')}`, locale)} class="event-card upcoming-card">
+          <div class="card-label">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            {t.upcoming}
+          </div>
+          <div class="upcoming-image">
+            <img src="/images/events/upcoming-event.png" alt={upcomingEvent.data.title} />
+          </div>
+          <div class="upcoming-content">
+            <h3 class="upcoming-title">{upcomingEvent.data.title}</h3>
+            {upcomingEvent.data.description && (
+              <p class="upcoming-desc">{upcomingEvent.data.description}</p>
+            )}
+            <div class="upcoming-meta">
+              <span class="upcoming-date">
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                {upcomingEvent.data.date.toLocaleDateString(locale === 'ko' ? 'ko-KR' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </span>
+            </div>
+          </div>
+        </a>
+      ) : (
+        <div class="event-card upcoming-card empty">
+          <div class="card-label">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            {t.upcoming}
+          </div>
+          <div class="upcoming-image empty-image">
+            <img src="/images/events/upcoming-event.png" alt="Upcoming event" />
+          </div>
+          <div class="empty-content">
+            <p class="empty-title">{t.noUpcoming}</p>
+            <p class="empty-desc">{t.noUpcomingDesc}</p>
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .events-section {
+    padding: 3rem 0;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .section-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(253, 115, 24, 0.15);
+    color: var(--color-accent);
+    border-radius: var(--radius-lg);
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .section-description {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .section-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .section-link:hover {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .section-link svg {
+    transition: transform 0.2s;
+  }
+
+  .section-link:hover svg {
+    transform: translateX(3px);
+  }
+
+  /* Events Grid: 2 equal columns */
+  .events-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 768px) {
+    .events-grid {
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+    }
+
+    .event-card {
+      height: 320px;
+    }
+  }
+
+  /* Event Cards */
+  .event-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  /* Highlight Card */
+  .highlight-card {
+    border: 1px solid rgba(255, 0, 0, 0.3);
+  }
+
+  .highlight-card:hover {
+    border-color: #ff0000;
+    transform: translateY(-4px);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(255, 0, 0, 0.3);
+  }
+
+  .highlight-card .card-label {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff0000;
+  }
+
+  .video-wrapper {
+    position: relative;
+    flex: 1;
+    min-height: 180px;
+    background: var(--color-bg-secondary);
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .video-info {
+    padding: 1rem;
+  }
+
+  .video-badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background: rgba(255, 0, 0, 0.2);
+    color: #ff0000;
+    border-radius: var(--radius-sm);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .video-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  /* Upcoming Card */
+  .upcoming-card {
+    border: 1px solid rgba(253, 115, 24, 0.3);
+    text-decoration: none;
+  }
+
+  .upcoming-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-4px);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(253, 115, 24, 0.3);
+  }
+
+  .upcoming-card .card-label {
+    background: rgba(253, 115, 24, 0.1);
+    color: var(--color-accent);
+  }
+
+  .upcoming-image {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+  }
+
+  .upcoming-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .upcoming-image.empty-image {
+    opacity: 0.6;
+  }
+
+  .upcoming-content {
+    padding: 1rem;
+  }
+
+  .upcoming-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .upcoming-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .upcoming-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .upcoming-date {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  .upcoming-card.empty .card-label {
+    opacity: 0.6;
+  }
+
+  .empty-content {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .empty-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
+  }
+
+  .empty-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+</style>

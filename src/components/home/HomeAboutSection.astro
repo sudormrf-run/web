@@ -1,0 +1,79 @@
+---
+/**
+ * HomeAboutSection Component
+ * Simple about section with just a centered button
+ */
+
+import { getLocalizedPath } from '../../i18n/config';
+
+export interface Props {
+  locale?: 'ko' | 'en';
+}
+
+const { locale = 'ko' } = Astro.props;
+
+const labels = {
+  ko: {
+    learnMore: 'About Us',
+  },
+  en: {
+    learnMore: 'About Us',
+  },
+};
+
+const t = labels[locale];
+---
+
+<section class="about-section">
+  <div class="container">
+    <div class="about-content">
+      <a href={getLocalizedPath('/about', locale)} class="about-btn">
+        {t.learnMore}
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    padding: 3rem 0 4rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem;
+    background: var(--color-accent);
+    color: white;
+    border-radius: var(--radius-lg);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .about-btn:hover {
+    background: #e56610;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(253, 115, 24, 0.4);
+  }
+
+  .about-btn svg {
+    transition: transform 0.2s;
+  }
+
+  .about-btn:hover svg {
+    transform: translateX(4px);
+  }
+</style>

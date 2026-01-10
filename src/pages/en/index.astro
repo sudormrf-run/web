@@ -1,50 +1,20 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import IntroAnimation from '../../components/IntroAnimation.astro';
+import HomeKnowledgeSection from '../../components/home/HomeKnowledgeSection.astro';
+import HomeMediaSection from '../../components/home/HomeMediaSection.astro';
+import HomeEventsSection from '../../components/home/HomeEventsSection.astro';
 import { useTranslations } from '../../i18n/utils';
-import { getLocalizedPath } from '../../i18n/config';
 
 const locale = 'en';
 const { t } = useTranslations(locale);
-
-const sections = [
-  {
-    title: t('home.sections.knowledge.title'),
-    description: t('home.sections.knowledge.description'),
-    href: '/knowledge',
-    icon: 'book',
-    color: 'blue',
-  },
-  {
-    title: t('home.sections.projects.title'),
-    description: t('home.sections.projects.description'),
-    href: '/projects',
-    icon: 'code',
-    color: 'green',
-  },
-  {
-    title: t('home.sections.media.title'),
-    description: t('home.sections.media.description'),
-    href: '/media',
-    icon: 'play',
-    color: 'red',
-  },
-  {
-    title: t('home.sections.events.title'),
-    description: t('home.sections.events.description'),
-    href: '/events',
-    icon: 'calendar',
-    color: 'yellow',
-  },
-];
 ---
 
 <Layout title="sudoremove" locale={locale}>
   <IntroAnimation />
 
-  <!-- Hero Section -->
+  <!-- Hero Section (placeholder for now) -->
   <section class="hero">
-    <!-- Animated Background -->
     <div class="hero-bg">
       <div class="glow-orb orb-1"></div>
       <div class="glow-orb orb-2"></div>
@@ -53,7 +23,6 @@ const sections = [
 
     <div class="container">
       <div class="hero-content">
-        <!-- Terminal-style intro -->
         <div class="terminal-line">
           <span class="terminal-prompt">$</span>
           <span class="terminal-text">sudo rm -rf barriers_to_ai</span>
@@ -67,90 +36,25 @@ const sections = [
         <p class="hero-subtitle">
           {t('home.hero.subtitle')}
         </p>
-
-        <div class="hero-actions">
-          <a href={getLocalizedPath('/knowledge', locale)} class="btn btn-primary">
-            {t('home.hero.cta.knowledge')}
-            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
-          <a href={getLocalizedPath('/projects', locale)} class="btn btn-secondary">
-            {t('home.hero.cta.projects')}
-          </a>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- Sections Grid -->
-  <section class="sections">
-    <div class="container">
-      <div class="sections-grid">
-        {sections.map(({ title, description, href, icon, color }) => (
-          <a href={getLocalizedPath(href, locale)} class={`section-card card-${color}`}>
-            <div class={`section-icon icon-${color}`}>
-              {icon === 'book' && (
-                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-              )}
-              {icon === 'code' && (
-                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
-              )}
-              {icon === 'play' && (
-                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              )}
-              {icon === 'calendar' && (
-                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-              )}
-            </div>
-            <h3 class="section-title">{title}</h3>
-            <p class="section-desc">{description}</p>
-            <span class="section-link">
-              {t('common.viewAll')}
-              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
+  <!-- Knowledge Section with Graph -->
+  <HomeKnowledgeSection locale={locale} />
 
-  <!-- About Preview -->
-  <section class="about-preview">
-    <div class="container">
-      <div class="about-content">
-        <h2>About <span class="text-accent">sudoremove</span></h2>
-        <p>
-          Our mission is to make AI accessible to everyone.<br />
-          We open-source all our projects and code so anyone can follow along.
-        </p>
-        <a href={getLocalizedPath('/about', locale)} class="about-link">
-          Learn more
-          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- Media Section -->
+  <HomeMediaSection locale={locale} />
+
+  <!-- Events Section -->
+  <HomeEventsSection locale={locale} />
 </Layout>
 
 <style>
   /* Hero Section */
   .hero {
     position: relative;
-    padding: 5rem 0 6rem;
+    padding: 4rem 0 3rem;
     overflow: hidden;
   }
 
@@ -217,7 +121,7 @@ const sections = [
     border-radius: var(--radius-lg);
     font-family: var(--font-mono);
     font-size: 0.875rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .terminal-prompt {
@@ -230,146 +134,18 @@ const sections = [
   }
 
   .hero-title {
-    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-size: clamp(2.25rem, 7vw, 3.5rem);
     font-weight: 800;
     line-height: 1.1;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     letter-spacing: -0.03em;
   }
 
   .hero-subtitle {
-    font-size: 1.125rem;
+    font-size: 1rem;
     color: var(--color-text-muted);
-    max-width: 540px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.7;
-  }
-
-  .hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  /* Sections */
-  .sections {
-    padding: 4rem 0;
-  }
-
-  .sections-grid {
-    display: grid;
-    gap: 1.5rem;
-  }
-
-  @media (min-width: 640px) {
-    .sections-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  .section-card {
-    display: block;
-    padding: 1.75rem;
-    background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg-secondary) 100%);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .section-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--color-border-hover);
-  }
-
-  .card-blue:hover { box-shadow: 0 10px 40px rgba(95, 173, 254, 0.15); }
-  .card-green:hover { box-shadow: 0 10px 40px rgba(67, 214, 168, 0.15); }
-  .card-red:hover { box-shadow: 0 10px 40px rgba(194, 24, 41, 0.15); }
-  .card-yellow:hover { box-shadow: 0 10px 40px rgba(253, 228, 113, 0.15); }
-
-  .section-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-lg);
-    margin-bottom: 1rem;
-  }
-
-  .icon-blue { background: rgba(95, 173, 254, 0.15); color: var(--color-blue); }
-  .icon-green { background: rgba(67, 214, 168, 0.15); color: var(--color-green); }
-  .icon-red { background: rgba(194, 24, 41, 0.2); color: #ff4d5a; }
-  .icon-yellow { background: rgba(253, 228, 113, 0.15); color: var(--color-yellow); }
-
-  .section-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-text-primary);
-    margin-bottom: 0.5rem;
-  }
-
-  .section-desc {
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    margin-bottom: 1rem;
-  }
-
-  .section-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    transition: gap 0.2s;
-  }
-
-  .section-card:hover .section-link {
-    gap: 0.5rem;
-  }
-
-  /* About Preview */
-  .about-preview {
-    padding: 4rem 0;
-    border-top: 1px solid var(--color-border);
-  }
-
-  .about-content {
-    max-width: 640px;
+    max-width: 500px;
     margin: 0 auto;
-    text-align: center;
-  }
-
-  .about-content h2 {
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--color-text-primary);
-  }
-
-  .text-accent {
-    color: var(--color-accent);
-  }
-
-  .about-content p {
-    color: var(--color-text-muted);
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-  }
-
-  .about-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    color: var(--color-accent);
-    font-weight: 600;
-    transition: gap 0.2s;
-  }
-
-  .about-link:hover {
-    gap: 0.5rem;
+    line-height: 1.7;
   }
 </style>

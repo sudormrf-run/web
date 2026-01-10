@@ -1,0 +1,232 @@
+---
+/**
+ * HomeKnowledgeSection Component
+ * Knowledge graph exploration section for the home page
+ * Includes graph visualization and document panel
+ */
+
+import GraphView from '../GraphView.astro';
+import DocumentPanel from '../DocumentPanel.astro';
+import { getCollection } from 'astro:content';
+import { generateGraphData } from '../../utils/graphData';
+import { getLocalizedPath } from '../../i18n/config';
+
+export interface Props {
+  locale?: 'ko' | 'en';
+}
+
+const { locale = 'ko' } = Astro.props;
+
+// Get content for the graph
+const contentPrefix = locale === 'en' ? 'en/' : 'ko/';
+const allContent = await getCollection('knowledge', ({ slug }) => slug.startsWith(contentPrefix));
+
+// Generate graph data
+const graphData = generateGraphData(allContent, locale);
+
+const labels = {
+  ko: {
+    title: '지식 창고',
+    subtitle: 'Physical AI 지식 그래프를 탐험하세요',
+    explore: '전체 보기',
+    nodeCount: `${graphData.nodes.length}개의 문서`,
+    selectPrompt: '노드를 클릭하면 문서 정보가 표시됩니다',
+  },
+  en: {
+    title: 'Knowledge Base',
+    subtitle: 'Explore the Physical AI knowledge graph',
+    explore: 'View All',
+    nodeCount: `${graphData.nodes.length} documents`,
+    selectPrompt: 'Click a node to view document details',
+  },
+};
+
+const t = labels[locale];
+---
+
+<section class="knowledge-section">
+  <div class="container">
+    <!-- Section Header -->
+    <header class="section-header">
+      <div class="section-title-wrapper">
+        <span class="section-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+        </span>
+        <div>
+          <h2 class="section-title">{t.title}</h2>
+          <p class="section-description">{t.subtitle}</p>
+        </div>
+      </div>
+      <a href={getLocalizedPath('/knowledge/physical-ai/browse', locale)} class="section-link">
+        {t.explore}
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </header>
+
+    <!-- Graph + Panel Layout -->
+    <div class="graph-layout">
+      <div class="graph-area">
+        <GraphView
+          graphData={graphData}
+          height="100%"
+          locale={locale}
+          mode="select"
+          showLegend={true}
+          showControls={true}
+          controlsAccent="blue"
+        />
+      </div>
+      <div class="panel-area">
+        <DocumentPanel locale={locale} />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .knowledge-section {
+    padding: 3rem 0;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .section-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(95, 173, 254, 0.15);
+    color: var(--color-blue);
+    border-radius: var(--radius-lg);
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .section-description {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .section-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .section-link:hover {
+    color: var(--color-blue);
+    font-weight: 600;
+  }
+
+  .section-link svg {
+    transition: transform 0.2s;
+  }
+
+  .section-link:hover svg {
+    transform: translateX(3px);
+  }
+
+  /* Graph Layout */
+  .graph-layout {
+    display: grid;
+    gap: 0;
+    height: 500px;
+    border: 1px solid rgba(95, 173, 254, 0.4);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+  }
+
+  @media (min-width: 1024px) {
+    .graph-layout {
+      grid-template-columns: 1fr 320px;
+    }
+  }
+
+  .graph-area {
+    height: 100%;
+    min-height: 400px;
+  }
+
+  /* Override GraphView container border for seamless look */
+  .graph-area :global(.graph-container) {
+    border: none;
+    border-radius: 0;
+  }
+
+  .panel-area {
+    display: none;
+    border-left: 1px solid rgba(95, 173, 254, 0.3);
+    background: var(--color-bg-primary);
+  }
+
+  @media (min-width: 1024px) {
+    .panel-area {
+      display: block;
+    }
+  }
+
+  /* Override DocumentPanel styles for home page - sky blue theme */
+  .panel-area :global(.document-panel) {
+    border-left: none;
+  }
+
+  .panel-area :global(.panel-tags),
+  .panel-area :global(.panel-connections) {
+    border-top-color: rgba(95, 173, 254, 0.3);
+  }
+
+  .panel-area :global(.connection-btn) {
+    border-color: rgba(95, 173, 254, 0.3);
+  }
+
+  .panel-area :global(.connection-btn:hover) {
+    border-color: #5fadfe;
+  }
+
+  .panel-area :global(.tag-btn:hover) {
+    border-color: #5fadfe;
+    color: #5fadfe;
+  }
+
+  .panel-area :global(.tag-btn:active) {
+    background: #5fadfe;
+    border-color: #5fadfe;
+  }
+
+  /* Mobile: Use bottom sheet from DocumentPanel */
+  @media (max-width: 1023px) {
+    .graph-layout {
+      height: 400px;
+    }
+  }
+</style>
