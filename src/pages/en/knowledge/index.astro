@@ -22,10 +22,15 @@ const { t } = useTranslations(locale);
           </a>
         </header>
         <div class="cards-grid">
-          <div class="card card-placeholder">
-            <h3 class="card-title">TBD</h3>
-            <p class="card-description">Content coming soon</p>
-          </div>
+          <a href="/en/knowledge/physical-ai/browse" class="card card-graph">
+            <div class="card-thumbnail">
+              <img src="/images/graph-thumbnail.png" alt="Knowledge Graph" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Graph Index</h3>
+              <p class="card-description">Explore document connections as a graph</p>
+            </div>
+          </a>
           <div class="card card-placeholder">
             <h3 class="card-title">TBD</h3>
             <p class="card-description">Content coming soon</p>
@@ -131,6 +136,43 @@ const { t } = useTranslations(locale);
   .card-placeholder {
     border-style: dashed;
     opacity: 0.5;
+  }
+
+  .card-graph {
+    width: 320px;
+    min-height: auto;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .card-thumbnail {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+  }
+
+  .card-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .card-graph:hover .card-thumbnail img {
+    transform: scale(1.05);
+  }
+
+  .card-body {
+    padding: 1rem 1.25rem 1.25rem;
+  }
+
+  .card-graph .card-title {
+    margin-bottom: 0.25rem;
+  }
+
+  .card-graph .card-description {
+    margin: 0;
   }
 
   .card-link:hover {
