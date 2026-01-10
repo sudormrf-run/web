@@ -80,6 +80,23 @@ src/
 - 브라우저 Accept-Language 기반 자동 감지
 - 영어는 `/en/` prefix 사용
 
+### ⚠️ 중요: 콘텐츠 동기화 규칙
+
+**한국어 콘텐츠 수정 시 반드시 영어 버전도 함께 업데이트해야 합니다.**
+
+콘텐츠 위치:
+- 한국어: `src/content/knowledge/ko/`
+- 영어: `src/content/knowledge/en/`
+
+작업 순서:
+1. 한국어 콘텐츠 작성/수정
+2. 동일한 경로의 영어 파일도 함께 번역/수정
+3. 새 파일 추가 시 양쪽 모두에 파일 생성
+
+예시:
+- `ko/models/new-model.md` 추가 시 → `en/models/new-model.md`도 함께 생성
+- `ko/essays/some-essay.md` 수정 시 → `en/essays/some-essay.md`도 함께 수정
+
 ## Deployment
 
 - **호스팅**: GitHub Pages

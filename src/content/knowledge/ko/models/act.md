@@ -71,7 +71,7 @@ ACT(Action Chunking with Transformers)는 Stanford에서 개발한 imitation lea
 
 ACT는 **Conditional VAE (CVAE)** 의 디코더로 학습됩니다.
 
-![ACT Architecture](../assets/models/act/act_architecture.png)
+<!-- Image pending: ![ACT Architecture](../assets/models/act/act_architecture.png) -->
 <p align="center"><em>ACT 아키텍처: CVAE 기반으로 학습 시 style variable z를 인코딩, 추론 시 z=0 사용</em></p>
 
 **입력:**
