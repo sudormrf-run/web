@@ -23,19 +23,15 @@ const { t } = useTranslations(locale);
 
     <div class="container">
       <div class="hero-content">
-        <div class="terminal-line">
-          <span class="terminal-prompt">$</span>
-          <span class="terminal-text">sudo rm -rf barriers_to_ai</span>
-          <span class="cursor-blink">_</span>
-        </div>
+        <blockquote class="hero-quote">
+          <p class="quote-text">
+            <span class="gradient-text">To create something genuinely new,</span>
+            <br />
+            <span class="gradient-text">you have to start again</span>
+          </p>
+        </blockquote>
 
-        <h1 class="hero-title">
-          <span class="gradient-text">{t('home.hero.title')}</span>
-        </h1>
-
-        <p class="hero-subtitle">
-          {t('home.hero.subtitle')}
-        </p>
+        <cite class="quote-author">— {t('home.hero.quoteAuthor')}</cite>
       </div>
     </div>
   </section>
@@ -110,42 +106,31 @@ const { t } = useTranslations(locale);
     text-align: center;
   }
 
-  /* Terminal Line */
-  .terminal-line {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    font-family: var(--font-mono);
-    font-size: 0.875rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .terminal-prompt {
-    color: var(--color-green);
-    font-weight: 700;
-  }
-
-  .terminal-text {
-    color: var(--color-text-secondary);
-  }
-
-  .hero-title {
-    font-size: clamp(2.25rem, 7vw, 3.5rem);
-    font-weight: 800;
-    line-height: 1.1;
+  /* Quote Design */
+  .hero-quote {
     margin-bottom: 1rem;
-    letter-spacing: -0.03em;
   }
 
-  .hero-subtitle {
+  .quote-text {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 600px) {
+    .quote-text {
+      white-space: normal;
+    }
+  }
+
+  .quote-author {
+    display: block;
     font-size: 1rem;
+    font-style: normal;
     color: var(--color-text-muted);
-    max-width: 500px;
-    margin: 0 auto;
-    line-height: 1.7;
+    margin-bottom: 1rem;
   }
 </style>

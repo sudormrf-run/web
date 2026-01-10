@@ -15,6 +15,8 @@
     "hero": {
       "title": "AI를 모두에게",
       "subtitle": "Physical AI와 로보틱스 기술을 연구하고, 지식을 공유하며, 함께 성장하는 커뮤니티",
+      "quote": "진정 새로운 것을 창조하려면, 처음부터 다시 시작하라",
+      "quoteAuthor": "조니 아이브",
       "cta": {
         "knowledge": "지식 창고 둘러보기",
         "projects": "프로젝트 보기"
