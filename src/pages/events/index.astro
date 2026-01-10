@@ -213,20 +213,15 @@ const pastEvents = sortedEvents.filter((event) => event.data.status === 'past');
     height: 3px;
   }
 
-  .notice-card::before {
-    background: linear-gradient(90deg, #fee500, var(--color-green));
-  }
-
+  /* 공지, 예정된 행사 카드 - 주황색 테마 통일 (카톡 버튼 제외) */
+  .notice-card::before,
   .upcoming-card::before {
-    background: linear-gradient(90deg, var(--color-accent), var(--color-blue));
+    background: linear-gradient(90deg, var(--color-accent), #fee500);
   }
 
-  .notice-card {
-    border-color: var(--color-green);
-  }
-
+  .notice-card,
   .upcoming-card {
-    border-color: var(--color-accent);
+    border-color: rgba(253, 115, 24, 0.4);
     text-decoration: none;
   }
 
@@ -241,11 +236,7 @@ const pastEvents = sortedEvents.filter((event) => event.data.status === 'past');
     width: fit-content;
   }
 
-  .notice-badge {
-    background: rgba(67, 214, 168, 0.2);
-    color: var(--color-green);
-  }
-
+  .notice-badge,
   .upcoming-badge {
     background: rgba(253, 115, 24, 0.2);
     color: var(--color-accent);
@@ -300,7 +291,7 @@ const pastEvents = sortedEvents.filter((event) => event.data.status === 'past');
     align-items: center;
     gap: 0.35rem;
     font-size: 0.8rem;
-    color: var(--color-green);
+    color: var(--color-accent);
     font-weight: 500;
   }
 
@@ -365,13 +356,13 @@ const pastEvents = sortedEvents.filter((event) => event.data.status === 'past');
   }
 
   .highlight-scroll::-webkit-scrollbar-thumb {
-    background: var(--color-border-hover);
+    background: rgba(255, 0, 0, 0.4);
     border-radius: 5px;
     border: 2px solid var(--color-bg-secondary);
   }
 
   .highlight-scroll::-webkit-scrollbar-thumb:hover {
-    background: var(--color-accent);
+    background: #ff0000;
   }
 
   .highlight-track {
@@ -380,23 +371,23 @@ const pastEvents = sortedEvents.filter((event) => event.data.status === 'past');
     padding: 0.5rem 0 1rem;
   }
 
+  /* 하이라이트 영상 카드 - 빨간색 테마 (아이콘과 통일) */
   .video-card {
     flex-shrink: 0;
     width: 320px;
     background: var(--color-surface);
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(255, 0, 0, 0.3);
     border-radius: var(--radius-lg);
     overflow: hidden;
     transition: all 0.3s ease;
   }
 
   .video-card:hover {
-    border-color: var(--color-accent);
+    border-color: #ff0000;
     transform: translateY(-4px);
     box-shadow:
       0 8px 24px rgba(0, 0, 0, 0.3),
-      0 0 20px rgba(253, 115, 24, 0.3),
-      0 0 40px rgba(253, 115, 24, 0.1);
+      0 0 20px rgba(255, 0, 0, 0.4);
   }
 
   .video-wrapper {
@@ -428,14 +419,10 @@ const pastEvents = sortedEvents.filter((event) => event.data.status === 'past');
     margin-bottom: 0.5rem;
   }
 
-  .video-badge.hosted {
-    background: rgba(253, 115, 24, 0.2);
-    color: var(--color-accent);
-  }
-
+  .video-badge.hosted,
   .video-badge.participated {
-    background: rgba(95, 173, 254, 0.2);
-    color: var(--color-blue);
+    background: rgba(255, 0, 0, 0.2);
+    color: #ff0000;
   }
 
   .video-title {
