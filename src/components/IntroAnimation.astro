@@ -1,0 +1,431 @@
+---
+// IntroAnimation.astro
+// Terminal-style intro: ls -> rm -rf with typing effects
+---
+
+<div id="intro-overlay" class="intro-overlay">
+  <div class="terminal-window" id="terminal-window">
+    <div id="terminal-output" class="terminal-output"></div>
+  </div>
+  <div class="skip-hint" id="skip-hint">skip</div>
+</div>
+
+<style is:global>
+  .intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0a0a0f;
+    transition: opacity 0.5s ease-out;
+    overflow: hidden;
+  }
+
+  .intro-overlay.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .intro-overlay.hidden {
+    display: none;
+  }
+
+  .terminal-window {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 550px;
+    padding: 2rem;
+  }
+
+  .terminal-window.shake {
+    animation: shake 0.05s ease-in-out;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px) translateY(-1px); }
+    75% { transform: translateX(3px) translateY(1px); }
+  }
+
+  .terminal-output {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: clamp(0.95rem, 3vw, 1.15rem);
+    line-height: 1.8;
+    color: #e5e5e5;
+  }
+
+  .line {
+    white-space: pre-wrap;
+    min-height: 1.8em;
+    position: relative;
+  }
+
+  .intro-cursor {
+    display: inline-block;
+    width: 0.6em;
+    height: 1.1em;
+    background: #ffffff;
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+  }
+
+  .intro-cursor.solid {
+    animation: none;
+  }
+
+  .intro-cursor.hidden {
+    display: none;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  /* Colors - teal for prompt */
+  .prompt-path {
+    color: #43d6a8 !important;
+  }
+
+  .prompt-symbol {
+    color: #43d6a8 !important;
+    font-weight: 700;
+  }
+
+  .file {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.2s ease-out;
+  }
+
+  .file.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .file-icon {
+    margin-right: 0.4rem;
+  }
+
+  .file-name {
+    color: #e5e5e5;
+  }
+
+  .cmd-danger {
+    color: #fd7318;
+    font-weight: 700;
+  }
+
+  /* Typing impact particles */
+  .impact-particle {
+    position: fixed;
+    pointer-events: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+    z-index: 10000;
+    animation: particle-fly 0.5s ease-out forwards;
+  }
+
+  @keyframes particle-fly {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0) scale(1.2);
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+      transform: translate(var(--tx), var(--ty)) scale(0.3);
+    }
+  }
+
+  .skip-hint {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.2);
+    cursor: pointer;
+    z-index: 100;
+    transition: color 0.2s;
+  }
+
+  .skip-hint:hover {
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* CRT power-off effect */
+  .intro-overlay.crt-off {
+    animation: crt-off 0.5s ease-in forwards;
+  }
+
+  @keyframes crt-off {
+    0% {
+      transform: scale(1, 1);
+      filter: brightness(1);
+    }
+    40% {
+      transform: scale(1.1, 0.01);
+      filter: brightness(2);
+    }
+    70% {
+      transform: scale(0.5, 0.01);
+      filter: brightness(3);
+    }
+    100% {
+      transform: scale(0, 0);
+      filter: brightness(0);
+    }
+  }
+
+  /* CRT flash effect */
+  .crt-flash {
+    position: fixed;
+    inset: 0;
+    z-index: 10002;
+    background: white;
+    pointer-events: none;
+    animation: crt-flash 0.5s ease-out forwards;
+  }
+
+  @keyframes crt-flash {
+    0% { opacity: 0; }
+    30% { opacity: 0.8; }
+    50% { opacity: 0.3; }
+    100% { opacity: 0; }
+  }
+</style>
+
+<script>
+  (function() {
+    const INTRO_KEY = 'sudoremove_intro_seen';
+    const overlay = document.getElementById('intro-overlay');
+    const output = document.getElementById('terminal-output');
+    const terminalWindow = document.getElementById('terminal-window');
+    const skipHint = document.getElementById('skip-hint');
+
+    if (localStorage.getItem(INTRO_KEY)) {
+      if (overlay) overlay.classList.add('hidden');
+      return;
+    }
+
+    let skipped = false;
+    let currentLine = null;
+
+    function skip() {
+      if (skipped) return;
+      skipped = true;
+      finish();
+    }
+
+    if (skipHint) skipHint.onclick = skip;
+    document.addEventListener('keydown', skip, { once: true });
+
+    function sleep(ms) {
+      return new Promise(r => setTimeout(r, ms));
+    }
+
+    function newLine() {
+      currentLine = document.createElement('div');
+      currentLine.className = 'line';
+      output.appendChild(currentLine);
+      return currentLine;
+    }
+
+    function appendToLine(html) {
+      const cursor = currentLine.querySelector('.intro-cursor');
+      if (cursor) cursor.remove();
+      currentLine.innerHTML += html;
+    }
+
+    function showCursor(solid) {
+      const cursor = currentLine.querySelector('.intro-cursor');
+      if (cursor) cursor.remove();
+      const newCursor = document.createElement('span');
+      newCursor.className = 'intro-cursor' + (solid ? ' solid' : '');
+      currentLine.appendChild(newCursor);
+    }
+
+    function hideCursor() {
+      const cursor = currentLine.querySelector('.intro-cursor');
+      if (cursor) cursor.classList.add('hidden');
+    }
+
+    // Atom-style impact effect
+    function createImpactParticles() {
+      const cursor = currentLine.querySelector('.intro-cursor');
+      if (!cursor) return;
+
+      const rect = cursor.getBoundingClientRect();
+      const colors = ['#fde471', '#fd7318', '#ff6b6b', '#43d6a8', '#5fadfe', '#ffffff'];
+      const chars = ['✦', '✧', '★', '·', '•', '+', '×'];
+
+      for (let i = 0; i < 8; i++) {
+        const particle = document.createElement('span');
+        particle.className = 'impact-particle';
+        particle.textContent = chars[Math.floor(Math.random() * chars.length)];
+        particle.style.left = rect.left + 'px';
+        particle.style.top = rect.top + 'px';
+        particle.style.color = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.fontSize = (10 + Math.random() * 14) + 'px';
+        particle.style.textShadow = '0 0 8px currentColor';
+
+        const angle = (Math.random() - 0.5) * Math.PI * 1.2;
+        const distance = 20 + Math.random() * 35;
+        particle.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+        particle.style.setProperty('--ty', (Math.sin(angle) * distance - 25) + 'px');
+
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 500);
+      }
+
+      // Screen shake
+      terminalWindow.classList.remove('shake');
+      void terminalWindow.offsetWidth;
+      terminalWindow.classList.add('shake');
+    }
+
+    async function typeTextWithImpact(text, speed, className) {
+      // Create a container span for styling
+      const container = document.createElement('span');
+      if (className) container.className = className;
+      currentLine.appendChild(container);
+
+      for (let i = 0; i < text.length; i++) {
+        if (skipped) return;
+        // Remove cursor from anywhere
+        const oldCursor = currentLine.querySelector('.intro-cursor');
+        if (oldCursor) oldCursor.remove();
+
+        // Add character to container
+        container.textContent += text[i];
+
+        // Add cursor after container
+        const newCursor = document.createElement('span');
+        newCursor.className = 'intro-cursor solid';
+        currentLine.appendChild(newCursor);
+
+        createImpactParticles();
+        await sleep(speed || 70);
+      }
+
+      // Switch to blinking cursor
+      const cursor = currentLine.querySelector('.intro-cursor');
+      if (cursor) cursor.classList.remove('solid');
+    }
+
+    async function typeText(text, speed) {
+      for (let i = 0; i < text.length; i++) {
+        if (skipped) return;
+        showCursor(true);
+        appendToLine(text[i]);
+        showCursor(true);
+        await sleep(speed || 80);
+      }
+      showCursor(false);
+    }
+
+    const files = [
+      { icon: '📚', name: 'knowledge' },
+      { icon: '🔧', name: 'skills' },
+      { icon: '😰', name: 'fear' }
+    ];
+
+    function createCRTEffect() {
+      // Add flash effect
+      const flash = document.createElement('div');
+      flash.className = 'crt-flash';
+      document.body.appendChild(flash);
+
+      // Trigger CRT off animation
+      overlay.classList.add('crt-off');
+
+      // Clean up after animation
+      setTimeout(() => {
+        flash.remove();
+        overlay.classList.add('hidden');
+      }, 600);
+    }
+
+    function finish() {
+      localStorage.setItem(INTRO_KEY, 'true');
+
+      if (skipped) {
+        // Skip: instant hide
+        overlay.classList.add('hidden');
+      } else {
+        // Normal: CRT power-off effect
+        createCRTEffect();
+      }
+    }
+
+    async function run() {
+      // Line 1: prompt with blinking cursor (teal color)
+      newLine();
+      appendToLine('<span class="prompt-path">barriers_to_ai</span> <span class="prompt-symbol">$</span> ');
+      showCursor(false);
+
+      await sleep(1000);
+      if (skipped) return;
+
+      // Type ls (normal typing)
+      await typeText('ls', 100);
+      await sleep(300);
+
+      // Press Enter - hide cursor, new line
+      hideCursor();
+      await sleep(100);
+
+      // Line 2: file list
+      newLine();
+      for (let i = 0; i < files.length; i++) {
+        if (skipped) return;
+        const f = files[i];
+        const span = document.createElement('span');
+        span.className = 'file';
+        span.id = 'f' + i;
+        span.innerHTML = '<span class="file-icon">' + f.icon + '</span><span class="file-name">' + f.name + '</span>';
+        currentLine.appendChild(span);
+        currentLine.appendChild(document.createTextNode('  '));
+        await sleep(50);
+        document.getElementById('f' + i).classList.add('show');
+        await sleep(400);
+      }
+
+      // Immediately show next prompt after fear appears
+      newLine();
+      appendToLine('<span class="prompt-path">barriers_to_ai</span> <span class="prompt-symbol">$</span> ');
+      showCursor(false);
+
+      // Wait for reading time
+      await sleep(1500);
+      if (skipped) return;
+
+      // Type sudo rm -rf . with impact effect (orange bold)
+      await typeTextWithImpact('sudo rm -rf .', 80, 'cmd-danger');
+
+      // Pause before Enter
+      await sleep(600);
+      if (skipped) return;
+
+      // Press Enter effect
+      showCursor(true);
+      await sleep(150);
+      hideCursor();
+
+      // Pause then finish
+      await sleep(800);
+      if (skipped) return;
+
+      finish();
+    }
+
+    run();
+  })();
+</script>

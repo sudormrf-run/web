@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import IntroAnimation from '../../components/IntroAnimation.astro';
 import { useTranslations } from '../../i18n/utils';
 import { getLocalizedPath } from '../../i18n/config';
 
@@ -39,6 +40,8 @@ const sections = [
 ---
 
 <Layout title="sudoremove" locale={locale}>
+  <IntroAnimation />
+
   <!-- Hero Section -->
   <section class="hero">
     <!-- Animated Background -->
