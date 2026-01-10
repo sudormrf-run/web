@@ -7,6 +7,14 @@ import { useTranslations } from '../../i18n/utils';
 const locale = 'ko';
 const { t } = useTranslations(locale);
 
+// Highlight videos (hosted + participated events)
+const highlightVideos = [
+  { id: 'ASwwyra1_sc', title: 'CoRL 2025', type: 'participated' },
+  { id: 'T87wJWv0Hvg', title: 'Physical AI Workshop (ROBOTIS, SK Hynix)', type: 'hosted' },
+  { id: 'XeL5olUQPGU', title: 'AI Robotics Korea', type: 'participated' },
+  { id: 'HgN0qIFSd8I', title: 'HuggingFace LeRobot Hackathon', type: 'hosted' },
+];
+
 // Get all events for the current locale
 const allEvents = await getCollection('events', ({ slug }) => slug.startsWith('ko/'));
 
@@ -33,44 +41,81 @@ const pastEvents = sortedEvents.filter((event) => event.data.status === 'past');
         </p>
       </header>
 
-      <!-- Notice Section -->
-      <section class="notice-section">
-        <div class="notice-card">
-          <span class="notice-badge">공지</span>
-          <h3>LeRobot 커뮤니티에 참여하세요!</h3>
-          <p>카카오톡 오픈채팅방에서 LeRobot 프로젝트 관련 소식과 정보를 공유합니다.</p>
-          <a
-            href="https://open.kakao.com/o/gS5OQJth"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="kakao-link"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 3c-5.52 0-10 3.59-10 8 0 2.52 1.64 4.74 4.14 6.09-.18.64-.72 2.32-.82 2.68-.13.45.17.44.35.32.14-.09 2.25-1.53 3.16-2.14.68.1 1.39.15 2.17.15 5.52 0 10-3.59 10-8s-4.48-8-10-8z" />
-            </svg>
-            카카오톡 LeRobot 오픈채팅방 참여하기
-          </a>
+      <!-- Top Row: Notice + Upcoming Events -->
+      <section class="top-row">
+        <div class="top-row-grid">
+          <!-- Notice Card -->
+          <div class="top-card notice-card">
+            <span class="top-badge notice-badge">공지</span>
+            <h3>LeRobot 커뮤니티에 참여하세요!</h3>
+            <p>카카오톡 오픈채팅방에서 LeRobot 프로젝트 관련 소식과 정보를 공유합니다.</p>
+            <a
+              href="https://open.kakao.com/o/gS5OQJth"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="kakao-link"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3c-5.52 0-10 3.59-10 8 0 2.52 1.64 4.74 4.14 6.09-.18.64-.72 2.32-.82 2.68-.13.45.17.44.35.32.14-.09 2.25-1.53 3.16-2.14.68.1 1.39.15 2.17.15 5.52 0 10-3.59 10-8s-4.48-8-10-8z" />
+              </svg>
+              오픈채팅방 참여하기
+            </a>
+          </div>
+
+          <!-- Upcoming Event Cards -->
+          {upcomingEvents.map((event) => (
+            <a href={`/events/${event.slug.replace('ko/', '')}`} class="top-card upcoming-card">
+              <span class="top-badge upcoming-badge">예정된 행사</span>
+              <h3>{event.data.title}</h3>
+              <p>{event.data.description}</p>
+              <div class="upcoming-meta">
+                <span class="upcoming-date">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  {event.data.date.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long' })}
+                </span>
+              </div>
+            </a>
+          ))}
         </div>
       </section>
 
-      <!-- Upcoming Events -->
-      {upcomingEvents.length > 0 && (
-        <section class="events-section">
-          <h2 class="section-title">
-            <span class="title-icon upcoming-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </span>
-            예정된 행사
-          </h2>
-          <div class="events-grid">
-            {upcomingEvents.map((event) => (
-              <EventCard event={event} locale={locale} />
+      <!-- Highlight Videos Section -->
+      <section class="highlight-section">
+        <h2 class="section-title">
+          <span class="title-icon highlight-icon">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" />
+              <path fill="var(--color-bg-primary)" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+          </span>
+          하이라이트 영상
+        </h2>
+        <div class="highlight-scroll">
+          <div class="highlight-track">
+            {highlightVideos.map((video) => (
+              <div class="video-card">
+                <div class="video-wrapper">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.id}`}
+                    title={video.title}
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="video-info">
+                  <span class={`video-badge ${video.type}`}>
+                    {video.type === 'hosted' ? '주최' : '참가'}
+                  </span>
+                  <h3 class="video-title">{video.title}</h3>
+                </div>
+              </div>
             ))}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       <!-- Past Events -->
       {pastEvents.length > 0 && (
@@ -123,80 +168,140 @@ const pastEvents = sortedEvents.filter((event) => event.data.status === 'past');
     margin: 0 auto;
   }
 
-  /* Notice Section */
-  .notice-section {
+  /* Top Row: Notice + Upcoming */
+  .top-row {
     margin-bottom: 3rem;
   }
 
-  .notice-card {
-    background: linear-gradient(135deg, rgba(253, 115, 24, 0.1), rgba(67, 214, 168, 0.1));
-    border: 2px solid var(--color-accent);
-    border-radius: var(--radius-xl);
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
+  .top-row-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
   }
 
-  .notice-card::before {
+  @media (min-width: 768px) {
+    .top-row-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .top-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  .top-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.2),
+      0 0 20px rgba(253, 115, 24, 0.15);
+  }
+
+  .top-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--color-accent), var(--color-yellow), var(--color-green));
-    animation: shimmer 3s ease-in-out infinite;
   }
 
-  @keyframes shimmer {
-    0%,
-    100% {
-      transform: translateX(-100%);
-    }
-    50% {
-      transform: translateX(100%);
-    }
+  .notice-card::before {
+    background: linear-gradient(90deg, #fee500, var(--color-green));
+  }
+
+  .upcoming-card::before {
+    background: linear-gradient(90deg, var(--color-accent), var(--color-blue));
+  }
+
+  .notice-card {
+    border-color: var(--color-green);
+  }
+
+  .upcoming-card {
+    border-color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .top-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    width: fit-content;
   }
 
   .notice-badge {
-    display: inline-block;
-    background: var(--color-accent);
-    color: var(--color-bg-primary);
-    padding: 0.25rem 0.75rem;
-    border-radius: var(--radius-md);
-    font-size: 0.875rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-
-  .notice-card h3 {
-    font-size: 1.5rem;
+    background: rgba(67, 214, 168, 0.2);
     color: var(--color-green);
-    margin-bottom: 0.75rem;
   }
 
-  .notice-card p {
-    color: var(--color-text-secondary);
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
+  .upcoming-badge {
+    background: rgba(253, 115, 24, 0.2);
+    color: var(--color-accent);
+  }
+
+  .top-card h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .top-card p {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .kakao-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     background: #fee500;
     color: #3c1e1e;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
     border-radius: var(--radius-md);
+    font-size: 0.8rem;
     font-weight: 700;
     transition: all 0.3s;
+    width: fit-content;
   }
 
   .kakao-link:hover {
     background: #fdd835;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(254, 229, 0, 0.4);
+    box-shadow: 0 4px 12px rgba(254, 229, 0, 0.4);
+  }
+
+  .upcoming-meta {
+    margin-top: auto;
+  }
+
+  .upcoming-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    color: var(--color-green);
+    font-weight: 500;
   }
 
   /* Events Sections */
@@ -231,6 +336,117 @@ const pastEvents = sortedEvents.filter((event) => event.data.status === 'past');
   .past-icon {
     background: rgba(67, 214, 168, 0.15);
     color: var(--color-green);
+  }
+
+  .highlight-icon {
+    background: rgba(255, 0, 0, 0.15);
+    color: #ff0000;
+  }
+
+  /* Highlight Section */
+  .highlight-section {
+    margin-bottom: 4rem;
+  }
+
+  .highlight-scroll {
+    overflow-x: scroll;
+    margin: 0 -1rem;
+    padding: 0 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .highlight-scroll::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  .highlight-scroll::-webkit-scrollbar-track {
+    background: var(--color-bg-secondary);
+    border-radius: 5px;
+  }
+
+  .highlight-scroll::-webkit-scrollbar-thumb {
+    background: var(--color-border-hover);
+    border-radius: 5px;
+    border: 2px solid var(--color-bg-secondary);
+  }
+
+  .highlight-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+  }
+
+  .highlight-track {
+    display: flex;
+    gap: 1.25rem;
+    padding: 0.5rem 0 1rem;
+  }
+
+  .video-card {
+    flex-shrink: 0;
+    width: 320px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .video-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-4px);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(253, 115, 24, 0.3),
+      0 0 40px rgba(253, 115, 24, 0.1);
+  }
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    background: var(--color-bg-secondary);
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .video-info {
+    padding: 1rem;
+  }
+
+  .video-badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .video-badge.hosted {
+    background: rgba(253, 115, 24, 0.2);
+    color: var(--color-accent);
+  }
+
+  .video-badge.participated {
+    background: rgba(95, 173, 254, 0.2);
+    color: var(--color-blue);
+  }
+
+  .video-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .events-grid {
