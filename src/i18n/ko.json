@@ -39,6 +39,36 @@
       }
     }
   },
+  "media": {
+    "title": "미디어",
+    "subtitle": "Physical AI와 로보틱스 소식을 전합니다",
+    "subscribe": "채널 구독",
+    "follow": "팔로우",
+    "podcast": {
+      "title": "팟캐스트",
+      "description": "매주 진행하는 라이브 팟캐스트와 편집본",
+      "live": "라이브",
+      "clips": "편집본",
+      "physicalAI": "Physical AI"
+    },
+    "shorts": {
+      "title": "쇼츠 뉴스",
+      "description": "빠르게 전하는 AI/로보틱스 소식"
+    },
+    "essays": {
+      "title": "에세이 & 칼럼",
+      "description": "깊이 있는 분석과 인사이트"
+    },
+    "presentations": {
+      "title": "발표 & 강의 자료",
+      "description": "컨퍼런스, 워크샵, 강의에서 사용된 자료"
+    },
+    "news": {
+      "title": "자동 발행 뉴스",
+      "description": "AI가 큐레이션한 최신 뉴스",
+      "tbd": "준비 중"
+    }
+  },
   "common": {
     "readMore": "더 보기",
     "viewAll": "전체 보기",

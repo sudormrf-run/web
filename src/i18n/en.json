@@ -39,6 +39,36 @@
       }
     }
   },
+  "media": {
+    "title": "Media",
+    "subtitle": "News and insights on Physical AI and Robotics",
+    "subscribe": "Subscribe",
+    "follow": "Follow",
+    "podcast": {
+      "title": "Podcast",
+      "description": "Weekly live podcasts and edited clips",
+      "live": "Live",
+      "clips": "Clips",
+      "physicalAI": "Physical AI"
+    },
+    "shorts": {
+      "title": "Shorts News",
+      "description": "Quick updates on AI/Robotics"
+    },
+    "essays": {
+      "title": "Essays & Columns",
+      "description": "In-depth analysis and insights"
+    },
+    "presentations": {
+      "title": "Presentations & Lectures",
+      "description": "Materials from conferences, workshops, and lectures"
+    },
+    "news": {
+      "title": "Auto News",
+      "description": "AI-curated latest news",
+      "tbd": "Coming Soon"
+    }
+  },
   "common": {
     "readMore": "Read more",
     "viewAll": "View all",

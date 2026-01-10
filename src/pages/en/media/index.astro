@@ -1,0 +1,747 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { useTranslations } from '../../../i18n/utils';
+import { getLocalizedPath } from '../../../i18n/config';
+
+const locale = 'en';
+const { t } = useTranslations(locale);
+
+// YouTube & Social Links
+const youtubeChannel = 'https://www.youtube.com/@sudoremove';
+const instagramUrl = 'https://www.instagram.com/sudo.remove/';
+
+// Playlist URLs
+const playlists = {
+  live: 'https://www.youtube.com/playlist?list=PLLYXs4EFjbmmQ3zg8XAhcRJgz66VWoV6e',
+  clips: 'https://www.youtube.com/playlist?list=PLLYXs4EFjbmlC86qaN9FXSK7ib0y3h3jN',
+  physicalAI: 'https://www.youtube.com/playlist?list=PLLYXs4EFjbmkJRxJkkzv_oQXNJTZ8Z1nS',
+};
+
+
+// Presentations data
+const presentations = [
+  {
+    title: 'VLA, Realizing Physical AI',
+    speaker: 'Junho Jo',
+    event: 'Physical AI Workshop',
+    date: '2025-08-14',
+    link: 'https://sudormrf-run.github.io/community/slides/20250814_vla_talk.pdf',
+    type: 'pdf',
+  },
+  {
+    title: 'HuggingFace Action Data Scaling',
+    speaker: 'Jonghyun Park',
+    event: 'AI Robotics Korea',
+    date: '2025-08-15',
+    link: 'https://jonhpark7966.github.io/public-slides/250815_airk',
+    type: 'web',
+  },
+  {
+    title: 'LLM Fine-tuning',
+    speaker: 'Jonghyun Park',
+    event: 'Educational Material',
+    date: '2024',
+    link: 'https://github.com/jonhpark7966/public-slides/blob/main/250801_LLMFineTuning/LLM_FineTuning_250804.pdf',
+    type: 'pdf',
+  },
+];
+---
+
+<Layout title={t('media.title')} locale={locale}>
+  <div class="media-page">
+    <div class="container">
+      <!-- Header -->
+      <header class="page-header">
+        <h1 class="page-title">
+          <span class="gradient-text">{t('media.title')}</span>
+        </h1>
+        <p class="page-subtitle">
+          {t('media.subtitle')}
+        </p>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href={youtubeChannel} target="_blank" rel="noopener noreferrer" class="social-btn youtube">
+            <div class="youtube-btn-content">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" />
+                <path fill="var(--color-bg-primary)" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+              <span class="youtube-btn-text">
+                <span class="youtube-btn-main">{t('media.subscribe')}</span>
+                <span class="youtube-btn-sub">Live Every Sunday</span>
+              </span>
+            </div>
+            <span class="live-indicator">
+              <span class="live-dot"></span>
+              LIVE
+            </span>
+          </a>
+          <a href={instagramUrl} target="_blank" rel="noopener noreferrer" class="social-btn instagram">
+            <div class="instagram-btn-content">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <span class="instagram-btn-text">
+                <span class="instagram-btn-main">{t('media.follow')}</span>
+                <span class="instagram-btn-sub">Latest AI News Reels</span>
+              </span>
+            </div>
+          </a>
+        </div>
+      </header>
+
+      <!-- Podcast & AI News Section -->
+      <section class="media-section">
+        <div class="section-header">
+          <div class="section-title-wrapper">
+            <span class="section-icon podcast-icon">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2H3v2a9 9 0 0 0 8 8.94V23h2v-2.06A9 9 0 0 0 21 12v-2h-2z"/>
+              </svg>
+            </span>
+            <div>
+              <h2 class="section-title">Podcast & AI News</h2>
+              <p class="section-description">Weekly podcasts and latest AI updates</p>
+            </div>
+          </div>
+        </div>
+        <div class="podcast-grid">
+          <!-- Podcast Card (Embed) -->
+          <a href={playlists.clips} target="_blank" rel="noopener noreferrer" class="podcast-embed-card">
+            <div class="podcast-embed-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/videoseries?list=PLLYXs4EFjbmlC86qaN9FXSK7ib0y3h3jN"
+                title="Podcast Playlist"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="podcast-embed-info">
+              <h3 class="podcast-embed-title">Podcast</h3>
+              <p class="podcast-embed-description">Edited podcast clips collection</p>
+            </div>
+          </a>
+
+          <!-- AI Latest News Card -->
+          <a href="https://www.youtube.com/playlist?list=PLLYXs4EFjbmkqbBE7mskK9Uq7DwaCl8KL" target="_blank" rel="noopener noreferrer" class="podcast-embed-card news">
+            <div class="podcast-embed-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/videoseries?list=PLLYXs4EFjbmkqbBE7mskK9Uq7DwaCl8KL"
+                title="AI Latest News Playlist"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="podcast-embed-info">
+              <h3 class="podcast-embed-title">AI Latest News</h3>
+              <p class="podcast-embed-description">Latest AI and Robotics updates</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Essays & Columns Section -->
+      <section class="media-section">
+        <div class="section-header">
+          <div class="section-title-wrapper">
+            <span class="section-icon essays-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+              </svg>
+            </span>
+            <div>
+              <h2 class="section-title">{t('media.essays.title')}</h2>
+              <p class="section-description">{t('media.essays.description')}</p>
+            </div>
+          </div>
+        </div>
+        <div class="essays-grid">
+          <a href={getLocalizedPath('/media/essays', locale)} class="essay-card placeholder-card">
+            <div class="essay-icon">
+              <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+              </svg>
+            </div>
+            <p class="placeholder-text">{t('common.comingSoon')}</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Presentations Section -->
+      <section class="media-section">
+        <div class="section-header">
+          <div class="section-title-wrapper">
+            <span class="section-icon presentations-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
+              </svg>
+            </span>
+            <div>
+              <h2 class="section-title">{t('media.presentations.title')}</h2>
+              <p class="section-description">{t('media.presentations.description')}</p>
+            </div>
+          </div>
+        </div>
+        <div class="presentations-scroll">
+          <div class="presentations-track">
+            {presentations.map((pres) => (
+              <a href={pres.link} target="_blank" rel="noopener noreferrer" class="presentation-card">
+                <div class="presentation-icon-wrapper">
+                  {pres.type === 'pdf' ? (
+                    <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v6a1 1 0 001 1h6"/>
+                    </svg>
+                  ) : (
+                    <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                  )}
+                  <span class="presentation-type-badge">{pres.type === 'pdf' ? 'PDF' : 'WEB'}</span>
+                </div>
+                <div class="presentation-info">
+                  <span class="presentation-event">{pres.event}</span>
+                  <h3 class="presentation-title">{pres.title}</h3>
+                  <span class="presentation-speaker">{pres.speaker}</span>
+                  <span class="presentation-date">{pres.date}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Auto News Section (TBD) -->
+      <section class="media-section">
+        <div class="section-header">
+          <div class="section-title-wrapper">
+            <span class="section-icon news-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </span>
+            <div>
+              <h2 class="section-title">{t('media.news.title')}</h2>
+              <p class="section-description">{t('media.news.description')}</p>
+            </div>
+          </div>
+        </div>
+        <div class="tbd-card">
+          <div class="tbd-content">
+            <div class="tbd-icon">
+              <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+              </svg>
+            </div>
+            <h3 class="tbd-title">TBD</h3>
+            <p class="tbd-description">{t('media.news.tbd')}</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .media-page {
+    padding: 2rem 0 4rem;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+  }
+
+  /* Social Links */
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .social-btn.youtube {
+    background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .social-btn.youtube:hover {
+    background: linear-gradient(135deg, #cc0000 0%, #aa0000 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(255, 0, 0, 0.5);
+  }
+
+  .youtube-btn-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .youtube-btn-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+  }
+
+  .youtube-btn-main {
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .youtube-btn-sub {
+    font-size: 0.7rem;
+    opacity: 0.9;
+  }
+
+  .live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.65rem;
+    font-weight: 700;
+  }
+
+  .live-dot {
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .social-btn.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    padding: 0.5rem 1rem;
+  }
+
+  .social-btn.instagram:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(225, 48, 108, 0.5);
+  }
+
+  .instagram-btn-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .instagram-btn-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+  }
+
+  .instagram-btn-main {
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .instagram-btn-sub {
+    font-size: 0.7rem;
+    opacity: 0.9;
+  }
+
+  /* Media Sections */
+  .media-section {
+    margin-bottom: 4rem;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .section-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+  }
+
+  .podcast-icon {
+    background: rgba(255, 0, 0, 0.15);
+    color: #ff0000;
+  }
+
+  .essays-icon {
+    background: rgba(253, 115, 24, 0.15);
+    color: var(--color-accent);
+  }
+
+  .presentations-icon {
+    background: rgba(95, 173, 254, 0.15);
+    color: var(--color-blue);
+  }
+
+  .news-icon {
+    background: rgba(67, 214, 168, 0.15);
+    color: var(--color-green);
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .section-description {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  /* Podcast Grid */
+  .podcast-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 768px) {
+    .podcast-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Podcast Embed Card */
+  .podcast-embed-card {
+    display: block;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .podcast-embed-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-4px);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(253, 115, 24, 0.3);
+  }
+
+  .podcast-embed-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    background: var(--color-bg-secondary);
+  }
+
+  .podcast-embed-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .podcast-embed-card:hover .podcast-embed-wrapper iframe {
+    pointer-events: auto;
+  }
+
+  .podcast-embed-info {
+    padding: 1rem 1.25rem;
+  }
+
+  .podcast-embed-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .podcast-embed-description {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .podcast-embed-card.news:hover {
+    border-color: var(--color-green);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(67, 214, 168, 0.3);
+  }
+
+  /* Essays Grid */
+  .essays-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .essay-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .essay-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-4px);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.2),
+      0 0 20px rgba(253, 115, 24, 0.15);
+  }
+
+  .placeholder-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+    border-style: dashed;
+  }
+
+  .essay-icon {
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .placeholder-text {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+
+  /* Presentations */
+  .presentations-scroll {
+    overflow-x: scroll;
+    margin: 0 -1rem;
+    padding: 0 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .presentations-scroll::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  .presentations-scroll::-webkit-scrollbar-track {
+    background: var(--color-bg-secondary);
+    border-radius: 5px;
+  }
+
+  .presentations-scroll::-webkit-scrollbar-thumb {
+    background: var(--color-border-hover);
+    border-radius: 5px;
+    border: 2px solid var(--color-bg-secondary);
+  }
+
+  .presentations-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+  }
+
+  .presentations-track {
+    display: flex;
+    gap: 1.25rem;
+    padding: 0.5rem 0 1rem;
+  }
+
+  .presentation-card {
+    flex-shrink: 0;
+    width: 260px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .presentation-card:hover {
+    border-color: var(--color-blue);
+    transform: translateY(-4px);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(95, 173, 254, 0.3);
+  }
+
+  .presentation-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    background: linear-gradient(135deg, rgba(95, 173, 254, 0.1) 0%, rgba(95, 173, 254, 0.05) 100%);
+    color: var(--color-blue);
+    position: relative;
+  }
+
+  .presentation-type-badge {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: var(--color-blue);
+    color: white;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .presentation-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+  }
+
+  .presentation-event {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-blue);
+    text-transform: uppercase;
+  }
+
+  .presentation-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .presentation-speaker {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .presentation-date {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin-top: auto;
+  }
+
+  .view-all-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+
+  .view-all-link:hover {
+    color: var(--color-text-primary);
+  }
+
+  /* TBD Card */
+  .tbd-card {
+    background: var(--color-surface);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 3rem;
+  }
+
+  .tbd-content {
+    text-align: center;
+  }
+
+  .tbd-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(67, 214, 168, 0.1);
+    border-radius: 50%;
+    color: var(--color-green);
+    margin-bottom: 1rem;
+  }
+
+  .tbd-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .tbd-description {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .section-header {
+      flex-direction: column;
+    }
+
+    .playlist-tabs {
+      width: 100%;
+    }
+
+    .video-card {
+      width: 280px;
+    }
+
+    .presentation-card {
+      width: 240px;
+    }
+  }
+</style>
