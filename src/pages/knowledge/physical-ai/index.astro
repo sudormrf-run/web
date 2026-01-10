@@ -1,0 +1,200 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations } from '../../../i18n/utils';
+
+const locale = 'ko';
+const { t } = useTranslations(locale);
+
+// Get all knowledge content for Korean
+const allKnowledge = await getCollection('knowledge', ({ slug }) => slug.startsWith('ko/'));
+
+// Filter to only actual content (not category index pages)
+const contentItems = allKnowledge.filter(item => {
+  const segments = item.slug.split('/');
+  return segments.length >= 3;
+});
+
+// Group by category
+const categories = [
+  { id: 'models', name: '모델', color: 'blue' },
+  { id: 'companies', name: '기업', color: 'green' },
+  { id: 'hardware', name: '하드웨어', color: 'purple' },
+  { id: 'essays', name: '에세이', color: 'yellow' },
+  { id: 'people', name: '인물', color: 'pink' },
+];
+
+const groupedContent = categories.map(category => ({
+  ...category,
+  items: contentItems
+    .filter(item => item.data.category === category.id)
+    .sort((a, b) => a.data.title.localeCompare(b.data.title, 'ko')),
+}));
+---
+
+<Layout title="Physical AI | 지식 창고" locale={locale}>
+  <div class="physical-ai-page">
+    <div class="container">
+      <!-- Header -->
+      <header class="page-header">
+        <nav class="breadcrumb">
+          <a href="/knowledge">지식 창고</a>
+          <span class="separator">/</span>
+          <span class="current">Physical AI</span>
+        </nav>
+        <h1 class="page-title">Physical AI</h1>
+        <p class="page-subtitle">물리 세계를 이해하고 행동하는 AI에 대한 종합 가이드</p>
+      </header>
+
+      <!-- Categories -->
+      {groupedContent.map((category) => (
+        category.items.length > 0 && (
+          <section class="category-section">
+            <h2 class={`category-title title-${category.color}`}>{category.name}</h2>
+            <div class="items-grid">
+              {category.items.map((item) => (
+                <a href={`/knowledge/${item.slug.replace('ko/', '')}`} class="item-card">
+                  <h3 class="item-title">{item.data.title}</h3>
+                  <p class="item-description">{item.data.description}</p>
+                </a>
+              ))}
+            </div>
+          </section>
+        )
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .physical-ai-page {
+    padding: 2rem 0 4rem;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--color-accent);
+  }
+
+  .separator {
+    color: var(--color-border);
+  }
+
+  .current {
+    color: var(--color-text-secondary);
+  }
+
+  /* Header */
+  .page-header {
+    margin-bottom: 3rem;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+  }
+
+  /* Category Section */
+  .category-section {
+    margin-bottom: 3rem;
+  }
+
+  .category-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .title-blue { color: var(--color-blue); border-bottom-color: var(--color-blue); }
+  .title-green { color: var(--color-green); border-bottom-color: var(--color-green); }
+  .title-purple { color: #a78bfa; border-bottom-color: #a78bfa; }
+  .title-yellow { color: var(--color-yellow); border-bottom-color: var(--color-yellow); }
+  .title-pink { color: #f472b6; border-bottom-color: #f472b6; }
+
+  /* Items Grid */
+  .items-grid {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) {
+    .items-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .items-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .item-card {
+    display: block;
+    padding: 1rem 1.25rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .item-card:hover {
+    border-color: var(--color-accent);
+    background: var(--color-bg-secondary);
+  }
+
+  .item-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+  }
+
+  .item-card:hover .item-title {
+    color: var(--color-accent);
+  }
+
+  .item-description {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .page-title {
+      font-size: 1.75rem;
+    }
+  }
+</style>

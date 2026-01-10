@@ -5,7 +5,7 @@
   },
   "nav": {
     "home": "홈",
-    "knowledge": "Knowledge Base",
+    "knowledge": "지식 창고",
     "projects": "프로젝트",
     "media": "미디어",
     "events": "행사",
@@ -16,13 +16,13 @@
       "title": "AI를 모두에게",
       "subtitle": "Physical AI와 로보틱스 기술을 연구하고, 지식을 공유하며, 함께 성장하는 커뮤니티",
       "cta": {
-        "knowledge": "Knowledge Base 둘러보기",
+        "knowledge": "지식 창고 둘러보기",
         "projects": "프로젝트 보기"
       }
     },
     "sections": {
       "knowledge": {
-        "title": "Knowledge Base",
+        "title": "지식 창고",
         "description": "Physical AI, VLA 모델, 로보틱스 기업과 인물에 대한 종합 자료"
       },
       "projects": {
@@ -38,6 +38,39 @@
         "description": "밋업, 워크샵, 커뮤니티 이벤트"
       }
     }
+  },
+  "knowledge": {
+    "title": "지식 창고",
+    "subtitle": "AI와 로보틱스에 대한 깊이 있는 지식을 탐구합니다",
+    "sections": {
+      "physicalAI": {
+        "title": "Physical AI",
+        "description": "물리 세계를 이해하고 행동하는 AI에 대한 종합 가이드"
+      },
+      "models": {
+        "title": "모델",
+        "description": "VLA 모델들의 역사와 현황"
+      },
+      "companies": {
+        "title": "기업",
+        "description": "Physical AI 분야의 주요 기업들"
+      },
+      "hardware": {
+        "title": "하드웨어",
+        "description": "로봇 하드웨어와 플랫폼"
+      },
+      "essays": {
+        "title": "에세이",
+        "description": "심화 분석과 인사이트"
+      },
+      "people": {
+        "title": "인물",
+        "description": "Physical AI 분야의 주요 연구자들"
+      }
+    },
+    "explore": "탐색하기",
+    "recentUpdates": "최근 업데이트",
+    "documents": "문서"
   },
   "media": {
     "title": "미디어",

@@ -1,5 +1,55 @@
 import { defineCollection, z } from 'astro:content';
 
+// ============================================
+// Knowledge Base Collection
+// ============================================
+
+// Knowledge category enum - extensible for future sections
+const knowledgeCategoryEnum = z.enum([
+  'physical-ai',   // Physical AI fundamentals
+  'models',        // VLA models
+  'companies',     // Companies in the space
+  'hardware',      // Robot hardware
+  'essays',        // Essays and opinions
+  'people',        // Key people in the field
+]);
+
+// Knowledge collection schema
+const knowledgeCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    // Required fields
+    title: z.string(),
+    description: z.string(),
+    category: knowledgeCategoryEnum,
+
+    // Optional categorization
+    subcategory: z.string().optional(), // e.g., 'fundamentals', 'challenges', 'solutions'
+    tags: z.array(z.string()).optional(),
+
+    // Ordering and navigation
+    order: z.number().optional(), // For manual sorting within category
+    related: z.array(z.string()).optional(), // Related document slugs
+
+    // Metadata
+    author: z.string().optional(),
+    date: z.coerce.date().optional(), // For essays
+    lastUpdated: z.coerce.date().optional(),
+
+    // Status
+    isDraft: z.boolean().default(false),
+    isFeatured: z.boolean().default(false),
+
+    // Display options
+    icon: z.string().optional(), // Icon identifier for the document
+    thumbnail: z.string().optional(), // Thumbnail image URL
+  }),
+});
+
+// ============================================
+// Events Collection
+// ============================================
+
 // Event status enum
 const eventStatusEnum = z.enum(['upcoming', 'ongoing', 'past', 'cancelled']);
 
@@ -56,4 +106,5 @@ const eventsCollection = defineCollection({
 
 export const collections = {
   events: eventsCollection,
+  knowledge: knowledgeCollection,
 };

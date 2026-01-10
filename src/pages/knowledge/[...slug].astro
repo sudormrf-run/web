@@ -1,0 +1,345 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations } from '../../i18n/utils';
+
+const locale = 'ko';
+const { t } = useTranslations(locale);
+
+export async function getStaticPaths() {
+  const entries = await getCollection('knowledge', ({ slug }) => slug.startsWith('ko/'));
+  return entries.map((entry) => ({
+    params: { slug: entry.slug.replace('ko/', '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// Category colors for breadcrumb
+const categoryColors: Record<string, string> = {
+  'physical-ai': 'orange',
+  'models': 'blue',
+  'companies': 'green',
+  'hardware': 'purple',
+  'essays': 'yellow',
+  'people': 'pink',
+};
+
+const categoryNames: Record<string, string> = {
+  'physical-ai': 'Physical AI',
+  'models': '모델',
+  'companies': '기업',
+  'hardware': '하드웨어',
+  'essays': '에세이',
+  'people': '인물',
+};
+---
+
+<Layout title={entry.data.title} locale={locale}>
+  <article class="knowledge-article">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="/knowledge">지식 창고</a>
+        <span class="separator">/</span>
+        <a href={`/knowledge/${entry.data.category}`} class={`category-link category-${categoryColors[entry.data.category]}`}>
+          {categoryNames[entry.data.category]}
+        </a>
+        <span class="separator">/</span>
+        <span class="current">{entry.data.title}</span>
+      </nav>
+
+      <!-- Header -->
+      <header class="article-header">
+        <div class={`category-badge badge-${categoryColors[entry.data.category]}`}>
+          {categoryNames[entry.data.category]}
+        </div>
+        <h1 class="article-title">{entry.data.title}</h1>
+        <p class="article-description">{entry.data.description}</p>
+
+        {entry.data.tags && entry.data.tags.length > 0 && (
+          <div class="article-tags">
+            {entry.data.tags.map((tag: string) => (
+              <span class="tag">#{tag}</span>
+            ))}
+          </div>
+        )}
+      </header>
+
+      <!-- Content -->
+      <div class="article-content prose">
+        <Content />
+      </div>
+
+      <!-- Footer -->
+      <footer class="article-footer">
+        <a href="/knowledge" class="back-link">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          지식 창고로 돌아가기
+        </a>
+      </footer>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .knowledge-article {
+    padding: 2rem 0 4rem;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--color-text-primary);
+  }
+
+  .category-link.category-orange:hover { color: var(--color-accent); }
+  .category-link.category-blue:hover { color: var(--color-blue); }
+  .category-link.category-green:hover { color: var(--color-green); }
+  .category-link.category-purple:hover { color: #a78bfa; }
+  .category-link.category-yellow:hover { color: var(--color-yellow); }
+  .category-link.category-pink:hover { color: #f472b6; }
+
+  .separator {
+    color: var(--color-border);
+  }
+
+  .current {
+    color: var(--color-text-secondary);
+    font-weight: 500;
+  }
+
+  /* Header */
+  .article-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .category-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .badge-orange { background: rgba(253, 115, 24, 0.2); color: var(--color-accent); }
+  .badge-blue { background: rgba(95, 173, 254, 0.2); color: var(--color-blue); }
+  .badge-green { background: rgba(67, 214, 168, 0.2); color: var(--color-green); }
+  .badge-purple { background: rgba(167, 139, 250, 0.2); color: #a78bfa; }
+  .badge-yellow { background: rgba(253, 228, 113, 0.2); color: var(--color-yellow); }
+  .badge-pink { background: rgba(244, 114, 182, 0.2); color: #f472b6; }
+
+  .article-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .article-description {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    padding: 0.25rem 0.75rem;
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-sm);
+  }
+
+  /* Content */
+  .article-content {
+    max-width: 800px;
+  }
+
+  .article-content :global(h1) {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .article-content :global(h2) {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .article-content :global(h3) {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .article-content :global(p) {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .article-content :global(ul),
+  .article-content :global(ol) {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+
+  .article-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .article-content :global(a) {
+    color: var(--color-accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .article-content :global(a:hover) {
+    border-bottom-color: var(--color-accent);
+  }
+
+  .article-content :global(blockquote) {
+    border-left: 3px solid var(--color-accent);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  .article-content :global(code) {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--color-bg-secondary);
+    padding: 0.2rem 0.4rem;
+    border-radius: var(--radius-sm);
+    color: var(--color-accent);
+  }
+
+  .article-content :global(pre) {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .article-content :global(pre code) {
+    background: none;
+    padding: 0;
+    color: var(--color-text-secondary);
+  }
+
+  .article-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  .article-content :global(th),
+  .article-content :global(td) {
+    border: 1px solid var(--color-border);
+    padding: 0.75rem;
+    text-align: left;
+  }
+
+  .article-content :global(th) {
+    background: var(--color-bg-secondary);
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .article-content :global(td) {
+    color: var(--color-text-secondary);
+  }
+
+  .article-content :global(hr) {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 2rem 0;
+  }
+
+  .article-content :global(img) {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    margin: 1.5rem 0;
+  }
+
+  /* Footer */
+  .article-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover {
+    color: var(--color-accent);
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .breadcrumb {
+      font-size: 0.8rem;
+    }
+
+    .article-title {
+      font-size: 1.5rem;
+    }
+  }
+</style>

@@ -39,6 +39,39 @@
       }
     }
   },
+  "knowledge": {
+    "title": "Knowledge Base",
+    "subtitle": "Explore in-depth knowledge about AI and robotics",
+    "sections": {
+      "physicalAI": {
+        "title": "Physical AI",
+        "description": "A comprehensive guide to AI that understands and acts in the physical world"
+      },
+      "models": {
+        "title": "Models",
+        "description": "History and current state of VLA models"
+      },
+      "companies": {
+        "title": "Companies",
+        "description": "Key players in the Physical AI space"
+      },
+      "hardware": {
+        "title": "Hardware",
+        "description": "Robot hardware and platforms"
+      },
+      "essays": {
+        "title": "Essays",
+        "description": "In-depth analysis and insights"
+      },
+      "people": {
+        "title": "People",
+        "description": "Key researchers in Physical AI"
+      }
+    },
+    "explore": "Explore",
+    "recentUpdates": "Recent Updates",
+    "documents": "documents"
+  },
   "media": {
     "title": "Media",
     "subtitle": "Analyzing AI trends and sharing insights",
