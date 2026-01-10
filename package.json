@@ -11,6 +11,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.8",
+    "force-graph": "^1.51.0",
     "tailwindcss": "^4.1.18"
   }
 }

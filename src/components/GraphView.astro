@@ -1,0 +1,357 @@
+---
+/**
+ * GraphView Component
+ * Obsidian-style force-directed graph visualization
+ * Can be embedded in any page
+ */
+
+export interface Props {
+  graphData: {
+    nodes: Array<{
+      id: string;
+      type: 'document' | 'tag';
+      label: string;
+      category?: string;
+      color?: string;
+      url?: string;
+      val?: number;
+    }>;
+    links: Array<{
+      source: string;
+      target: string;
+      type: 'tag' | 'related';
+    }>;
+  };
+  height?: string;
+  locale?: 'ko' | 'en';
+}
+
+const { graphData, height = '500px', locale = 'ko' } = Astro.props;
+---
+
+<div class="graph-container" style={`height: ${height}`}>
+  <div class="graph-controls">
+    <div class="graph-legend">
+      <span class="legend-item">
+        <span class="legend-dot" style="background: #eab308"></span>
+        {locale === 'ko' ? '에세이' : 'Essays'}
+      </span>
+      <span class="legend-item">
+        <span class="legend-dot" style="background: #3b82f6"></span>
+        {locale === 'ko' ? '모델' : 'Models'}
+      </span>
+      <span class="legend-item">
+        <span class="legend-dot" style="background: #10b981"></span>
+        {locale === 'ko' ? '기업' : 'Companies'}
+      </span>
+      <span class="legend-item">
+        <span class="legend-dot" style="background: #a78bfa"></span>
+        {locale === 'ko' ? '하드웨어' : 'Hardware'}
+      </span>
+      <span class="legend-item">
+        <span class="legend-dot" style="background: #f472b6"></span>
+        {locale === 'ko' ? '인물' : 'People'}
+      </span>
+    </div>
+    <div class="graph-actions">
+      <button class="graph-btn" id="graphZoomIn" title="Zoom In">+</button>
+      <button class="graph-btn" id="graphZoomOut" title="Zoom Out">-</button>
+      <button class="graph-btn" id="graphReset" title="Reset View">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="graph-canvas" id="graphCanvas"></div>
+  <div class="graph-tooltip" id="graphTooltip"></div>
+</div>
+
+<script define:vars={{ graphData }}>
+  // Initialize graph after DOM is ready
+  async function initGraph() {
+    const ForceGraph = (await import('https://esm.sh/force-graph@1.43.5')).default;
+    const d3 = await import('https://esm.sh/d3-force@3');
+
+    const container = document.getElementById('graphCanvas');
+    const tooltip = document.getElementById('graphTooltip');
+
+    if (!container) return;
+
+    // Get container dimensions
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+
+    // Create the graph
+    // Track hovered node for highlighting
+    let hoveredNode = null;
+    let connectedNodes = new Set();
+
+    const graph = ForceGraph()(container)
+      .graphData(graphData)
+      .width(width)
+      .height(height)
+      .backgroundColor('transparent')
+      .nodeLabel(() => '') // We use custom tooltip
+      .nodeVal(node => node.val || 3)
+      .nodeRelSize(3)
+      .linkWidth(link => {
+        // Highlight links connected to hovered node
+        if (!hoveredNode) return 1;
+        const sourceId = typeof link.source === 'object' ? link.source.id : link.source;
+        const targetId = typeof link.target === 'object' ? link.target.id : link.target;
+        return (sourceId === hoveredNode.id || targetId === hoveredNode.id) ? 2 : 0.5;
+      })
+      .linkColor(link => {
+        if (!hoveredNode) return 'rgba(107, 114, 128, 0.3)';
+        const sourceId = typeof link.source === 'object' ? link.source.id : link.source;
+        const targetId = typeof link.target === 'object' ? link.target.id : link.target;
+        return (sourceId === hoveredNode.id || targetId === hoveredNode.id)
+          ? 'rgba(255, 255, 255, 0.6)'
+          : 'rgba(107, 114, 128, 0.15)';
+      })
+      // Force simulation - essays as local centers
+      .d3AlphaDecay(0.015)
+      .d3VelocityDecay(0.35)
+      .d3Force('charge', d3.forceManyBody()
+        .strength(node => node.category === 'essays' ? -100 : -50)
+        .distanceMax(200))
+      .d3Force('link', d3.forceLink().distance(50).strength(0.7))
+      .d3Force('center', d3.forceCenter().strength(0.05))
+      .d3Force('collision', d3.forceCollide().radius(node => (node.val || 3) + 4))
+      .d3Force('x', d3.forceX().strength(0.02))
+      .d3Force('y', d3.forceY().strength(0.02))
+      .warmupTicks(300)
+      .cooldownTicks(400)
+      .onNodeHover(node => {
+        container.style.cursor = node ? 'pointer' : 'default';
+        hoveredNode = node;
+
+        // Find connected nodes
+        connectedNodes.clear();
+        if (node) {
+          connectedNodes.add(node.id);
+          graphData.links.forEach(link => {
+            const sourceId = typeof link.source === 'object' ? link.source.id : link.source;
+            const targetId = typeof link.target === 'object' ? link.target.id : link.target;
+            if (sourceId === node.id) connectedNodes.add(targetId);
+            if (targetId === node.id) connectedNodes.add(sourceId);
+          });
+
+          tooltip.innerHTML = `
+            <div class="tooltip-title">${node.label}</div>
+            <div class="tooltip-type">${node.category || 'Document'}</div>
+            <div class="tooltip-connections">${connectedNodes.size - 1}개 연결</div>
+          `;
+          tooltip.style.display = 'block';
+        } else {
+          tooltip.style.display = 'none';
+        }
+
+        // Trigger re-render for highlighting
+        graph.nodeColor(graph.nodeColor());
+      })
+      .onNodeClick(node => {
+        if (node.url) {
+          window.location.href = node.url;
+        }
+      })
+      .onNodeDragEnd(node => {
+        node.fx = node.x;
+        node.fy = node.y;
+      });
+
+    // Draw custom node shapes
+    graph.nodeCanvasObject((node, ctx, globalScale) => {
+      const size = node.val || 4;
+      const fontSize = Math.max(10 / globalScale, 3);
+
+      // Determine if this node should be highlighted
+      const isHighlighted = !hoveredNode || connectedNodes.has(node.id);
+      const isHovered = hoveredNode && hoveredNode.id === node.id;
+      const opacity = isHighlighted ? 1 : 0.2;
+
+      // Draw filled circle
+      ctx.beginPath();
+      ctx.arc(node.x, node.y, isHovered ? size * 1.3 : size, 0, 2 * Math.PI);
+      ctx.fillStyle = node.color || '#6b7280';
+      ctx.globalAlpha = opacity;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+
+      // Draw border for hovered node
+      if (isHovered) {
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 2 / globalScale;
+        ctx.stroke();
+      }
+
+      // Draw label if zoomed in enough or if hovered/connected
+      if (globalScale > 0.8 || isHovered || (hoveredNode && connectedNodes.has(node.id))) {
+        ctx.font = `${isHovered ? fontSize * 1.2 : fontSize}px Pretendard, sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'top';
+        ctx.fillStyle = isHighlighted ? '#e5e5e5' : 'rgba(229, 229, 229, 0.3)';
+
+        const label = node.label.length > 25
+          ? node.label.substring(0, 23) + '...'
+          : node.label;
+        ctx.fillText(label, node.x, node.y + (isHovered ? size * 1.3 : size) + 2);
+      }
+    });
+
+    // Zoom controls
+    document.getElementById('graphZoomIn')?.addEventListener('click', () => {
+      graph.zoom(graph.zoom() * 1.5, 400);
+    });
+
+    document.getElementById('graphZoomOut')?.addEventListener('click', () => {
+      graph.zoom(graph.zoom() / 1.5, 400);
+    });
+
+    document.getElementById('graphReset')?.addEventListener('click', () => {
+      graph.zoomToFit(400, 50);
+    });
+
+    // Handle resize
+    window.addEventListener('resize', () => {
+      graph.width(container.clientWidth);
+      graph.height(container.clientHeight);
+    });
+
+    // Initial zoom to fit
+    setTimeout(() => {
+      graph.zoomToFit(400, 50);
+    }, 500);
+
+    // Track mouse for tooltip positioning
+    container.addEventListener('mousemove', (e) => {
+      const rect = container.getBoundingClientRect();
+      tooltip.style.left = `${e.clientX - rect.left + 15}px`;
+      tooltip.style.top = `${e.clientY - rect.top + 15}px`;
+    });
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGraph);
+  } else {
+    initGraph();
+  }
+</script>
+
+<style>
+  .graph-container {
+    position: relative;
+    width: 100%;
+    background: var(--color-bg-secondary, #111);
+    border: 1px solid var(--color-border, #333);
+    border-radius: var(--radius-lg, 12px);
+    overflow: hidden;
+  }
+
+  .graph-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(to bottom, rgba(10, 10, 15, 0.9), transparent);
+    z-index: 10;
+  }
+
+  .graph-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.7rem;
+    color: var(--color-text-muted, #888);
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  .graph-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .graph-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--color-bg-primary, #0a0a0f);
+    border: 1px solid var(--color-border, #333);
+    border-radius: var(--radius-sm, 6px);
+    color: var(--color-text-secondary, #aaa);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .graph-btn:hover {
+    background: var(--color-bg-secondary, #1a1a1f);
+    color: var(--color-text-primary, #fff);
+    border-color: var(--color-accent, #3b82f6);
+  }
+
+  .graph-canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  .graph-tooltip {
+    position: absolute;
+    display: none;
+    padding: 0.5rem 0.75rem;
+    background: var(--color-bg-primary, #0a0a0f);
+    border: 1px solid var(--color-border, #333);
+    border-radius: var(--radius-sm, 6px);
+    font-size: 0.8rem;
+    pointer-events: none;
+    z-index: 100;
+    max-width: 200px;
+  }
+
+  .tooltip-title {
+    color: var(--color-text-primary, #fff);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .tooltip-type {
+    color: var(--color-text-muted, #888);
+    font-size: 0.7rem;
+    text-transform: capitalize;
+  }
+
+  .tooltip-connections {
+    color: var(--color-accent, #3b82f6);
+    font-size: 0.7rem;
+    margin-top: 0.25rem;
+  }
+
+  @media (max-width: 640px) {
+    .graph-legend {
+      display: none;
+    }
+
+    .graph-controls {
+      justify-content: flex-end;
+    }
+  }
+</style>
