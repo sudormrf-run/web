@@ -1,0 +1,365 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { useTranslations } from '../../../i18n/utils';
+
+const locale = 'en';
+const { t } = useTranslations(locale);
+
+// Team members data
+const members = [
+  {
+    name: 'Jong Hyun Park',
+    role: 'Creator & AI Engineer',
+    bio: 'The one who started the journey to make AI accessible to everyone',
+    github: 'jonhpark7966',
+    twitter: null,
+    profileUrl: 'https://sudormrf.run/jong-hyun-park/',
+  },
+  {
+    name: 'Junho Cho',
+    role: 'AI Engineer & Contributor',
+    bio: 'An engineer building the future of AI together',
+    github: 'junhocho',
+    twitter: null,
+    profileUrl: 'https://sudormrf.run/junhocho/',
+  },
+  {
+    name: 'Jinho Kim',
+    role: 'PD',
+    bio: 'A producer who plans AI content and engages with the community',
+    github: 'Lonzino',
+    twitter: null,
+    profileUrl: null,
+  },
+];
+---
+
+<Layout title={t('nav.about')} locale={locale}>
+  <div class="about-page">
+    <div class="container">
+      <!-- Header -->
+      <header class="page-header">
+        <h1 class="page-title">
+          <span class="gradient-text">About Us</span>
+        </h1>
+        <p class="page-subtitle">
+          The people building sudoremove together
+        </p>
+      </header>
+
+      <!-- Team Section -->
+      <section class="team-section">
+        <h2 class="section-title">
+          <span class="title-icon team-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </span>
+          Team
+        </h2>
+
+        <div class="team-grid">
+          {members.map((member) => (
+            <div class="member-card">
+              <div class="member-image-wrapper">
+                <img
+                  src={`https://github.com/${member.github}.png`}
+                  alt={member.name}
+                  class="member-image"
+                  loading="lazy"
+                />
+              </div>
+              <div class="member-info">
+                <h3 class="member-name">{member.name}</h3>
+                <span class="member-role">{member.role}</span>
+                <p class="member-bio">{member.bio}</p>
+                <div class="member-links">
+                  {member.profileUrl && (
+                    <a href={member.profileUrl} target="_blank" rel="noopener noreferrer" class="member-link profile-link">
+                      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
+                      Profile
+                    </a>
+                  )}
+                  {member.github && (
+                    <a
+                      href={`https://github.com/${member.github}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="member-link github-link"
+                    >
+                      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                      </svg>
+                      GitHub
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact-section">
+        <div class="contact-icons">
+          <a
+            href="mailto:biz@sudormrf.run"
+            class="contact-icon-link"
+            title="Email"
+          >
+            <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </a>
+          <a
+            href="https://github.com/sudormrf-run"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-icon-link"
+            title="GitHub"
+          >
+            <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+          </a>
+          <a
+            href="https://youtube.com/@sudoremove"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-icon-link youtube"
+            title="YouTube"
+          >
+            <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" />
+              <path fill="var(--color-bg-primary)" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+          </a>
+          <a
+            href="https://open.kakao.com/o/gS5OQJth"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-icon-link kakao"
+            title="KakaoTalk"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 3c-5.52 0-10 3.59-10 8 0 2.52 1.64 4.74 4.14 6.09-.18.64-.72 2.32-.82 2.68-.13.45.17.44.35.32.14-.09 2.25-1.53 3.16-2.14.68.1 1.39.15 2.17.15 5.52 0 10-3.59 10-8s-4.48-8-10-8z" />
+            </svg>
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .about-page {
+    padding: 2rem 0 4rem;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Section Titles */
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .title-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+  }
+
+  .team-icon {
+    background: rgba(253, 115, 24, 0.15);
+    color: var(--color-accent);
+  }
+
+  /* Team Section */
+  .team-section {
+    margin-bottom: 4rem;
+  }
+
+  .team-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .member-card {
+    background: var(--color-surface);
+    border: 1px solid rgba(253, 115, 24, 0.3);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .member-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-accent);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(253, 115, 24, 0.3);
+  }
+
+  .member-image-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.25rem;
+    border-radius: 50%;
+    padding: 3px;
+    background: var(--color-accent);
+  }
+
+  .member-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--color-bg-primary);
+  }
+
+  .member-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .member-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+
+  .member-role {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .member-bio {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-top: 0.5rem;
+  }
+
+  .member-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .member-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius-md);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .profile-link {
+    background: rgba(253, 115, 24, 0.15);
+    color: var(--color-accent);
+  }
+
+  .profile-link:hover {
+    background: rgba(253, 115, 24, 0.25);
+  }
+
+  .github-link {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text-primary);
+  }
+
+  .github-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  /* Contact Section */
+  .contact-section {
+    margin-bottom: 2rem;
+  }
+
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .contact-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .contact-icon-link:hover {
+    transform: translateY(-2px);
+    color: var(--color-text-primary);
+    border-color: var(--color-text-muted);
+  }
+
+  .contact-icon-link.youtube:hover {
+    color: #ff0000;
+    border-color: #ff0000;
+  }
+
+  .contact-icon-link.kakao:hover {
+    color: #fee500;
+    border-color: #fee500;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .member-card {
+      padding: 1.5rem;
+    }
+  }
+</style>
