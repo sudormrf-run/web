@@ -1,0 +1,84 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const locale = 'en';
+const { t } = useTranslations(locale);
+---
+
+<Layout title={t('projects.title')} locale={locale}>
+  <div class="tbd-page">
+    <div class="container">
+      <div class="tbd-content">
+        <div class="tbd-icon">
+          <svg width="64" height="64" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+        </div>
+        <h1 class="tbd-title">Projects</h1>
+        <p class="tbd-description">Content coming soon</p>
+        <a href="/en" class="back-link">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to home
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .tbd-page {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0;
+  }
+
+  .tbd-content {
+    text-align: center;
+  }
+
+  .tbd-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    background: rgba(67, 214, 168, 0.1);
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    color: var(--color-green);
+  }
+
+  .tbd-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .tbd-description {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+
+  .back-link:hover {
+    gap: 0.75rem;
+  }
+</style>
