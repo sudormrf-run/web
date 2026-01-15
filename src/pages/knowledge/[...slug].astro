@@ -384,6 +384,22 @@ const categoryNames: Record<string, string> = {
 
   window.addEventListener('scroll', updateActiveHeading);
   updateActiveHeading();
+
+  // Scroll sidebar to show active item
+  const activeNavItem = document.querySelector('.nav-item.active');
+  if (activeNavItem && sidebar) {
+    // Wait for DOM to be ready
+    requestAnimationFrame(() => {
+      const sidebarRect = sidebar.getBoundingClientRect();
+      const itemRect = activeNavItem.getBoundingClientRect();
+      const sidebarScrollTop = sidebar.scrollTop;
+      const itemOffsetTop = itemRect.top - sidebarRect.top + sidebarScrollTop;
+
+      // Scroll to center the active item in the sidebar
+      const scrollTarget = itemOffsetTop - (sidebar.clientHeight / 2) + (itemRect.height / 2);
+      sidebar.scrollTop = Math.max(0, scrollTarget);
+    });
+  }
 </script>
 
 <style>
