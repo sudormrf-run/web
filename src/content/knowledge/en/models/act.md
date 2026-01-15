@@ -14,6 +14,21 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
+<div class="author-note">
+
+### Author's Note
+
+- The savior of countless demos. Anyone can easily collect dozens of teleop data samples and train ACT to create working demonstrations.
+- At the numerous exhibitions and conference demo booths I visited in 2025, most were built with ACT.
+
+</div>
+
+
+<video src="/assets/models/act/act_demo_slot_battery.mp4" controls width="100%" muted autoplay loop></video>
+<p align="center"><em>ACT Demo: Battery Slot Insertion - Precise Bimanual Manipulation</em></p>
+
+
+
 ## Key Significance
 
 - **Action Chunking Concept**: Inspired by psychology, groups continuous actions into single units (chunks) for execution - mitigates compounding error
@@ -23,9 +38,6 @@ lastEditedAt: 2026-01-15
 - **LeRobot Default Recommended Model**: Adopted as the default recommended model in HuggingFace LeRobot
 - **Fast Training with Low Compute**: Trainable on standard GPUs with short training time
 - **CVAE-Based Architecture**: Style variable (z) captures diverse demonstration styles, uses prior mean at inference
-
-<video src="/assets/models/act/act_demo_slot_battery.mp4" controls width="100%" muted autoplay loop></video>
-<p align="center"><em>ACT Demo: Battery Slot Insertion - Precise Bimanual Manipulation</em></p>
 
 ---
 

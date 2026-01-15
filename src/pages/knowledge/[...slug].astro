@@ -926,6 +926,53 @@ const categoryNames: Record<string, string> = {
     font-style: italic;
   }
 
+  /* Author's Note - Special comment box */
+  .article-content :global(.author-note) {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    margin: 0 0 2rem 0;
+    position: relative;
+  }
+
+  .article-content :global(.author-note::before) {
+    content: '✍';
+    position: absolute;
+    top: -0.75rem;
+    left: 1rem;
+    background: var(--color-bg-primary);
+    padding: 0 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  .article-content :global(.author-note h3) {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin: 0 0 0.75rem 0;
+    padding: 0;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .article-content :global(.author-note ul),
+  .article-content :global(.author-note ol) {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .article-content :global(.author-note li) {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.375rem;
+  }
+
+  .article-content :global(.author-note li:last-child) {
+    margin-bottom: 0;
+  }
+
   .article-content :global(code) {
     font-family: var(--font-mono);
     font-size: 0.9em;

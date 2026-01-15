@@ -14,6 +14,21 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
+<div class="author-note">
+
+### 필자의 의견
+
+- 수 많은 데모들의 구세주. 누구나 쉽게 teleop data 수 십개 수집하고, ACT 학습 시켜서 데모를 가능하게 해줍니다.
+- 2025년 방문한 수 많은 전시/학회 데모 부스에 가보면 ACT 로 만들었다고 하는 경우가 대부분입니다.
+
+</div>
+
+
+<video src="/assets/models/act/act_demo_slot_battery.mp4" controls width="100%" muted autoplay loop></video>
+<p align="center"><em>ACT 데모: 배터리 슬롯 삽입 - 정밀한 양팔 조작</em></p>
+
+
+
 ## 핵심 의의
 
 - **Action Chunking 개념 제시**: 심리학에서 영감받아 연속 동작을 하나의 단위(chunk)로 묶어 실행 - compounding error 완화
@@ -23,9 +38,6 @@ lastEditedAt: 2026-01-15
 - **LeRobot 기본 추천 모델**: HuggingFace LeRobot에서 기본으로 추천하는 모델로 채택
 - **빠른 학습과 낮은 연산 요구**: 일반 GPU에서도 학습 가능, 짧은 학습 시간
 - **CVAE 기반 아키텍처**: Style variable(z)로 다양한 시연 스타일 캡처, 추론 시에는 prior mean 사용
-
-<video src="/assets/models/act/act_demo_slot_battery.mp4" controls width="100%" muted autoplay loop></video>
-<p align="center"><em>ACT 데모: 배터리 슬롯 삽입 - 정밀한 양팔 조작</em></p>
 
 ---
 
