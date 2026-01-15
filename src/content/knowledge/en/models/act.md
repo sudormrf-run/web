@@ -86,7 +86,7 @@ Queries the policy more frequently and averages overlapping action chunks for ev
 
 ACT is trained as a **Conditional VAE (CVAE)** decoder.
 
-<!-- Image pending: ![ACT Architecture](../assets/models/act/act_architecture.png) -->
+![ACT Architecture](/assets/models/act/act_architecture.png)
 <p align="center"><em>ACT Architecture: CVAE-based, encodes style variable z during training, uses z=0 at inference</em></p>
 
 **Inputs:**
