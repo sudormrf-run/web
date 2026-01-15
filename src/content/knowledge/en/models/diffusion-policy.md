@@ -14,6 +14,15 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
+<div class="author-note">
+
+### Author's Note
+
+- A pivotal discovery that robot actions are inherently continuous, making diffusion more suitable than discrete token-based LLM approaches for action generation.
+- This pioneering work sparked a paradigm shift - many subsequent VLA models (π0's flow matching, Octo's diffusion decoder, etc.) now build their action decoders on diffusion/flow matching foundations.
+
+</div>
+
 ## Key Significance
 
 - **Pioneering Diffusion Application to Robotics**: First successful application of diffusion (successful in image generation) to robot action generation

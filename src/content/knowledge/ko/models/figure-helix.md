@@ -14,6 +14,15 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
+<div class="author-note">
+
+### 필자의 의견
+
+- 1시간 동안 연속 동작하는 영상을 공개하여, 단순한 체리피킹 데모가 아닌 VLA의 실전 가능성을 입증한 점이 인상적입니다.
+- Figure AI의 지속적인 하드웨어와 모델 발표가 기대됩니다.
+
+</div>
+
 ## 핵심 의의
 
 - **최초의 휴머노이드 전신 고속 제어 VLA**: 손목, 몸통, 머리, 개별 손가락까지 상체 전체를 고속 연속 제어하는 최초의 VLA
@@ -24,8 +33,10 @@ lastEditedAt: 2026-01-15
 - **대규모 투자 유치**: Jeff Bezos, Microsoft, NVIDIA, OpenAI 등에서 $675M 펀딩 (기업가치 $2.6B)
 - **System 1/2 구조**: 고수준 계획(7-9Hz)과 저수준 제어(200Hz) 분리로 효율적 아키텍처
 
-![Helix Architecture](../assets/models/figure-helix/helix_architecture.avif)
-<p align="center"><em>Helix 아키텍처: System 1(200Hz 저수준 제어) + System 2(7-9Hz 고수준 계획)</em></p>
+<div class="video-embed">
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/lkc2y0yb89U" title="Figure Helix - Official Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p align="center"><em>Figure Helix 공식 데모 영상</em></p>
 
 ---
 
@@ -63,6 +74,9 @@ Helix는 휴머노이드 상체 전체를 고속 연속 제어하는 **최초의
 ## Architecture
 
 **System 1 / System 2 구조** (Dual-system)
+
+![Helix Architecture](/assets/models/figure-helix/helix_architecture.png)
+<p align="center"><em>Helix 아키텍처: System 1(200Hz 저수준 제어) + System 2(7-9Hz 고수준 계획)</em></p>
 
 | 시스템 | 역할 | 주파수 |
 |--------|------|--------|

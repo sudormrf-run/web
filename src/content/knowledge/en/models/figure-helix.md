@@ -14,6 +14,15 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
+<div class="author-note">
+
+### Author's Note
+
+- Impressive that they released a 1-hour continuous operation video, proving real-world VLA capability rather than just cherry-picked demos.
+- Looking forward to Figure AI's continued hardware and model announcements.
+
+</div>
+
 ## Key Significance
 
 - **First Full-Body High-Speed Control VLA for Humanoids**: First VLA to continuously control entire upper body at high speed including wrists, torso, head, and individual fingers
@@ -24,8 +33,10 @@ lastEditedAt: 2026-01-15
 - **Major Investment Raised**: $675M funding from Jeff Bezos, Microsoft, NVIDIA, OpenAI, etc. (valuation $2.6B)
 - **System 1/2 Architecture**: Efficient architecture separating high-level planning (7-9Hz) and low-level control (200Hz)
 
-![Helix Architecture](../assets/models/figure-helix/helix_architecture.avif)
-<p align="center"><em>Helix Architecture: System 1 (200Hz low-level control) + System 2 (7-9Hz high-level planning)</em></p>
+<div class="video-embed">
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/lkc2y0yb89U" title="Figure Helix - Official Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p align="center"><em>Figure Helix Official Demo Video</em></p>
 
 ---
 
@@ -63,6 +74,9 @@ Two robots operate **simultaneously**:
 ## Architecture
 
 **System 1 / System 2 Structure** (Dual-system)
+
+![Helix Architecture](/assets/models/figure-helix/helix_architecture.png)
+<p align="center"><em>Helix Architecture: System 1 (200Hz low-level control) + System 2 (7-9Hz high-level planning)</em></p>
 
 | System | Role | Frequency |
 |--------|------|-----------|

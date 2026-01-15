@@ -14,6 +14,15 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
+<div class="author-note">
+
+### 필자의 의견
+
+- 로봇 액션은 본질적으로 연속적(continuous)이라는 점에서, discrete token 기반 LLM 접근보다 diffusion이 더 적합하다는 중요한 발견을 담은 연구입니다.
+- 이후 π0의 flow matching, Octo의 diffusion decoder 등 수많은 VLA 모델들이 action decoder를 diffusion/flow matching 기반으로 구성하게 된 시초격 연구입니다.
+
+</div>
+
 ## 핵심 의의
 
 - **로봇에 Diffusion 적용한 선구적 연구**: 이미지 생성에서 성공한 diffusion을 로봇 액션 생성에 최초로 성공적 적용
