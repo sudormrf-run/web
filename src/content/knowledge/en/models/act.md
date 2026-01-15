@@ -139,7 +139,7 @@ Low-cost bimanual manipulation system released alongside ACT.
 - Chain assembly (high-contact task)
 - Zip tie insertion (precision task)
 
-<video src="/assets/models/act/act_demo_reactive_cup.mov" controls width="100%"></video>
+<video src="/assets/models/act/act_demo_reactive_cup.mp4" controls width="100%"></video>
 <p align="center"><em>ACT Demo: Transparent Sauce Cup Manipulation - Reactive Bimanual Coordination</em></p>
 
 ---

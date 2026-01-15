@@ -139,7 +139,7 @@ ACT와 함께 공개된 저비용 양팔 조작 시스템.
 - 체인 조립 (접촉이 많은 태스크)
 - 지퍼 타이 끼우기 (정밀 태스크)
 
-<video src="/assets/models/act/act_demo_reactive_cup.mov" controls width="100%"></video>
+<video src="/assets/models/act/act_demo_reactive_cup.mp4" controls width="100%"></video>
 <p align="center"><em>ACT 데모: 투명 소스 컵 조작 - 반응형 양팔 협응</em></p>
 
 ---
