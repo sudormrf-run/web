@@ -3,6 +3,15 @@ title: Agibot (智元机器人)
 description: 중국 Zhiyuan Robotics의 범용 휴머노이드 로봇 및 GO-1 Foundation Model
 tags: [agibot, zhiyuan, humanoid, china, go-1, foundation-model, teleoperation, industrial-robotics, shanghai]
 category: hardware
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Agibot (智元机器人)

@@ -3,6 +3,15 @@ title: Skild AI
 description: Skild AI - Robot Foundation Model Startup from Carnegie Mellon
 tags: [skild-ai, foundation-model, cmu, simulation]
 category: companies
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Skild AI

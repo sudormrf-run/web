@@ -3,6 +3,15 @@ title: Sunday Robotics
 description: Sunday Robotics - Memo 로봇과 Zero Robot Data 접근법
 tags: [sunday-robotics, memo, act-1, gloves, zero-robot-data]
 category: companies
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Sunday Robotics

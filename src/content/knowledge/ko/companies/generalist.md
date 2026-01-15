@@ -3,6 +3,15 @@ title: Generalist AI
 description: Generalist AI - GEN-0와 로보틱스 스케일링 법칙
 tags: [generalist, gen0, scaling-laws, harmonic-reasoning]
 category: companies
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Generalist AI

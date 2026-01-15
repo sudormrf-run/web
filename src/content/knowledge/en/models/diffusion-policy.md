@@ -3,6 +3,15 @@ title: Diffusion Policy
 description: Columbia/MIT's Diffusion-based Visuomotor Policy Learning
 tags: [diffusion-policy, diffusion, columbia, mit, toyota-research, visuomotor]
 category: models
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Diffusion Policy
@@ -21,7 +30,7 @@ category: models
 - **LeRobot Default Support**: One of the default supported models in HuggingFace LeRobot alongside ACT
 - **Robustness**: Robust performance against occlusion, perturbation, and visual distractions
 
-<video src="../assets/models/diffusion-policy/diffusion_policy_highlight.mp4" controls width="100%" muted autoplay loop></video>
+<video src="/assets/models/diffusion-policy/diffusion_policy_highlight.mp4" controls width="100%" muted autoplay loop></video>
 <p align="center"><em>Diffusion Policy: Progressively generates action sequences from noise</em></p>
 
 ---

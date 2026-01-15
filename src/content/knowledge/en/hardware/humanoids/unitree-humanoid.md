@@ -4,6 +4,15 @@ description: Complete guide to Unitree Robotics humanoid robots - R1, G1, H1, H2
 tags: [unitree, humanoid, g1, h1, h2, r1, embodied-ai, groot, affordable-robotics]
 category: hardware
 date: 2026-01-09
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Unitree Humanoid

@@ -3,6 +3,15 @@ title: Gemini Robotics
 description: Google DeepMind의 Gemini 2.0 기반 로보틱스 모델
 tags: [gemini-robotics, google, deepmind, gemini, vla]
 category: models
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Gemini Robotics

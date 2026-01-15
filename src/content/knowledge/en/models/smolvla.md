@@ -3,6 +3,15 @@ title: SmolVLA
 description: HuggingFace's Lightweight Open-Source VLA Model
 tags: [smolvla, huggingface, lerobot, lightweight, open-source, flow-matching]
 category: models
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # SmolVLA

@@ -6,6 +6,15 @@ category: essays
 related:
   - scaling-problem.md
   - simulation-world-model.md
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # The Challenge of Evaluation

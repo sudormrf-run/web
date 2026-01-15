@@ -3,6 +3,15 @@ title: Karol Hausman
 description: Google DeepMind to Physical Intelligence Co-founder
 tags: [karol-hausman, google, deepmind, physical-intelligence, rt, pi0]
 category: people
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Karol Hausman

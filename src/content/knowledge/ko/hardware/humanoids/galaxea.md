@@ -3,6 +3,15 @@ title: Galaxea 휴머노이드
 description: Galaxea AI의 R1 시리즈 바퀴형 듀얼암 휴머노이드 로봇
 tags: [galaxea, r1, humanoid, wheeled, teleoperation, research, affordable]
 category: hardware
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Galaxea 휴머노이드

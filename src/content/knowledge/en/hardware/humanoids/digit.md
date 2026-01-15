@@ -3,6 +3,15 @@ title: Agility Digit
 description: Agility Robotics' industrial bipedal humanoid robot
 tags: [agility, digit, humanoid, industrial, logistics, amazon, gxo, cassie]
 category: hardware
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Agility Digit

@@ -5,6 +5,15 @@ tags: [lerobot, so100, so101, low-cost, 3d-print, open-source, feetech, sts3215,
 category: hardware
 created: 2025-05-01
 updated: 2026-01-09
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # LeRobot Arms (SO-100/SO-101)

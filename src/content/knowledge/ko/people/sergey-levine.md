@@ -3,6 +3,15 @@ title: Sergey Levine
 description: UC Berkeley 교수, Physical Intelligence 공동창업자, 로봇 RL의 대가
 tags: [sergey-levine, berkeley, physical-intelligence, rt, reinforcement-learning]
 category: people
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Sergey Levine

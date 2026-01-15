@@ -3,6 +3,15 @@ title: Octo
 description: UC Berkeley의 오픈소스 Generalist Robot Foundation Model
 tags: [octo, berkeley, stanford, cmu, open-source, foundation-model, transformer, diffusion]
 category: models
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Octo

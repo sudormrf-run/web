@@ -3,6 +3,15 @@ title: Skild AI
 description: Skild AI - Carnegie Mellon 출신 로봇 Foundation Model 스타트업
 tags: [skild-ai, foundation-model, cmu, simulation]
 category: companies
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Skild AI

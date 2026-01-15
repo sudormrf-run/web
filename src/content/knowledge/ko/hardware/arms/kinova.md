@@ -3,6 +3,15 @@ title: Kinova Robotics
 description: 캐나다 기반 경량 협동 로봇 제조사 - Gen3, Gen3 Lite, Link 6
 tags: [kinova, gen3, gen3-lite, link6, cobot, research, assistive, arm, canadian]
 category: hardware
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Kinova Robotics

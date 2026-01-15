@@ -3,6 +3,15 @@ title: Agibot (Zhiyuan Robotics)
 description: General-purpose humanoid robot and GO-1 Foundation Model from China's Zhiyuan Robotics
 tags: [agibot, zhiyuan, humanoid, china, go-1, foundation-model, teleoperation, industrial-robotics, shanghai]
 category: hardware
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Agibot (Zhiyuan Robotics)

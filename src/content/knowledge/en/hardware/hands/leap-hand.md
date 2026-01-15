@@ -4,6 +4,15 @@ description: Low-cost 3D printed dexterous hand - Human-like hand for robot lear
 tags: [leap, hand, low-cost, 3d-print, dexterous, cmu, open-source, dynamixel, vla]
 category: hardware
 created: 2024-01-09
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # LEAP Hand

@@ -3,6 +3,15 @@ title: Unitree Quadrupeds
 description: Unitree Robotics' 4-legged walking robot lineup - Global standard for value-oriented research quadrupeds
 tags: [unitree, quadruped, go1, go2, go2-w, b1, b2, b2-w, aliengo, research, ros2, sdk, reinforcement-learning, locomotion, sim-to-real, open-x-embodiment, nvidia-isaac, chinese-robotics]
 category: hardware
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Unitree Quadrupeds

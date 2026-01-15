@@ -3,6 +3,15 @@ title: Figure 휴머노이드
 description: Figure AI의 고성능 휴머노이드 로봇 - Figure 01, 02, 03 세대별 진화
 tags: [figure, humanoid, helix, vla, bmw, brett-adcock, figure-01, figure-02, figure-03]
 category: hardware
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Figure 휴머노이드

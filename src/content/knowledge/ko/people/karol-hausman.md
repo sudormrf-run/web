@@ -3,6 +3,15 @@ title: Karol Hausman
 description: Google DeepMind → Physical Intelligence 공동창업자
 tags: [karol-hausman, google, deepmind, physical-intelligence, rt, pi0]
 category: people
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Karol Hausman

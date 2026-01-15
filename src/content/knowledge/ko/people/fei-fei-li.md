@@ -3,6 +3,15 @@ title: Fei-Fei Li
 description: Stanford 교수, ImageNet 창시자, World Labs 창업자
 tags: [fei-fei-li, stanford, imagenet, world-labs, computer-vision]
 category: people
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Fei-Fei Li (李飞飞)

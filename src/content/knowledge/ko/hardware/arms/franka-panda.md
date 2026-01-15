@@ -6,6 +6,15 @@ category: hardware
 author: Physical AI Knowledge Base
 created: 2024-01-01
 updated: 2025-01-09
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Franka Emika Panda

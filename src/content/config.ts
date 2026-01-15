@@ -4,6 +4,12 @@ import { defineCollection, z } from 'astro:content';
 // Knowledge Base Collection
 // ============================================
 
+// Person schema for author/editor info
+const personSchema = z.object({
+  name: z.string(),
+  email: z.string().email().optional(),
+});
+
 // Knowledge category enum - extensible for future sections
 const knowledgeCategoryEnum = z.enum([
   'physical-ai',   // Physical AI fundamentals
@@ -32,9 +38,13 @@ const knowledgeCollection = defineCollection({
     related: z.array(z.string()).optional(), // Related document slugs
 
     // Metadata
-    author: z.string().optional(),
+    author: z.string().optional(), // Legacy field
     date: z.coerce.date().optional(), // For essays
-    lastUpdated: z.coerce.date().optional(),
+
+    // Authorship tracking
+    createdBy: personSchema.optional(), // First author
+    lastEditedBy: personSchema.optional(), // Last editor
+    lastEditedAt: z.coerce.date().optional(), // Last edit timestamp
 
     // Status
     isDraft: z.boolean().default(false),

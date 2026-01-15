@@ -7,6 +7,15 @@ related:
   - scaling-problem.md
   - non-teleop-data.md
   - companies/physical-intelligence.md
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Teleoperation 방식

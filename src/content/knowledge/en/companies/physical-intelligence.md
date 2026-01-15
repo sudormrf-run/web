@@ -3,6 +3,15 @@ title: Physical Intelligence
 description: Physical Intelligence and the pi0 Model
 tags: [physical-intelligence, pi0, foundation-model, flow-matching]
 category: companies
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Physical Intelligence

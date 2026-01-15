@@ -4,6 +4,15 @@ description: Trossen Robotics research robot arm series - Standard hardware for 
 tags: [interbotix, widowx, viperx, trossen, dynamixel, research, aloha, open-x-embodiment, vla, lerobot]
 category: hardware
 last_updated: 2026-01-09
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Interbotix / WidowX

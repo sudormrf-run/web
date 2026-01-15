@@ -3,6 +3,15 @@ title: Boston Dynamics Spot
 description: 산업용 4족 보행 로봇의 표준 - 대규모 상업 배치를 달성한 쿼드러펫
 tags: [boston-dynamics, spot, quadruped, industrial, inspection, mobile-manipulation, hyundai]
 category: hardware
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Boston Dynamics Spot

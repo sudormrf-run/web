@@ -3,6 +3,15 @@ title: Tony Zhao
 description: ACT & ALOHA 제1저자, Physical Intelligence
 tags: [tony-zhao, stanford, physical-intelligence, act, aloha]
 category: people
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Tony Zhao (赵彤阳)

@@ -3,6 +3,15 @@ title: Sunday ACT-1
 description: Sunday Robotics' Zero Robot Data Based Foundation Model
 tags: [sunday-act1, sunday-robotics, memo, zero-robot-data, gloves]
 category: models
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Sunday ACT-1

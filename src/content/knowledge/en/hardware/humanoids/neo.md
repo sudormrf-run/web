@@ -5,6 +5,15 @@ tags: [1x, neo, humanoid, redwood-ai, home-robot, tendon-drive, consumer]
 category: hardware
 company: 1X Technologies
 origin: Norway
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # 1X NEO

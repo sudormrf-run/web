@@ -3,6 +3,15 @@ title: Fei-Fei Li
 description: Stanford Professor, ImageNet Creator, World Labs Founder
 tags: [fei-fei-li, stanford, imagenet, world-labs, computer-vision]
 category: people
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Fei-Fei Li

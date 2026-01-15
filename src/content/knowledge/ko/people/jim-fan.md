@@ -3,6 +3,15 @@ title: Jim Fan
 description: NVIDIA Senior Research Manager, GR00T & Foundation Agent 연구
 tags: [jim-fan, nvidia, groot, voyager, foundation-agent]
 category: people
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Jim Fan (范麟熙)

@@ -3,6 +3,15 @@ title: Vincent Vanhoucke
 description: Google DeepMind Robotics Head
 tags: [vincent-vanhoucke, google, deepmind, robotics, rt]
 category: people
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Vincent Vanhoucke

@@ -3,6 +3,15 @@ title: OpenVLA
 description: Stanford/Berkeley's 7B Open-Source Vision-Language-Action Model
 tags: [openvla, stanford, berkeley, open-source, vla, llama, 7b]
 category: models
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # OpenVLA

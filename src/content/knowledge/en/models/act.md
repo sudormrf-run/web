@@ -3,6 +3,15 @@ title: ACT (Action Chunking with Transformers)
 description: Stanford's Action Chunking-based Imitation Learning Policy
 tags: [act, stanford, imitation-learning, aloha, cvae, transformer]
 category: models
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # ACT (Action Chunking with Transformers)
@@ -21,7 +30,7 @@ category: models
 - **Fast Training with Low Compute**: Trainable on standard GPUs with short training time
 - **CVAE-Based Architecture**: Style variable (z) captures diverse demonstration styles, uses prior mean at inference
 
-<video src="../assets/models/act/act_demo_slot_battery.mp4" controls width="100%" muted autoplay loop></video>
+<video src="/assets/models/act/act_demo_slot_battery.mp4" controls width="100%" muted autoplay loop></video>
 <p align="center"><em>ACT Demo: Battery Slot Insertion - Precise Bimanual Manipulation</em></p>
 
 ---
@@ -124,7 +133,7 @@ Low-cost bimanual manipulation system released alongside ACT.
 - Chain assembly (high-contact task)
 - Zip tie insertion (precision task)
 
-<video src="../assets/models/act/act_demo_reactive_cup.mov" controls width="100%"></video>
+<video src="/assets/models/act/act_demo_reactive_cup.mov" controls width="100%"></video>
 <p align="center"><em>ACT Demo: Transparent Sauce Cup Manipulation - Reactive Bimanual Coordination</em></p>
 
 ---

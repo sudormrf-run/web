@@ -4,6 +4,15 @@ description: Sanctuary AI's cognitive humanoid general-purpose robot
 tags: [sanctuary, phoenix, humanoid, cognitive, carbon, canada, magna]
 category: hardware
 last_updated: 2025-02-01
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Sanctuary Phoenix

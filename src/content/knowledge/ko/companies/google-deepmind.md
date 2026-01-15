@@ -3,6 +3,15 @@ title: Google DeepMind
 description: Google DeepMind의 로보틱스 연구
 tags: [google, deepmind, gemini-robotics, rt1, rt2, rt-x]
 category: companies
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Google DeepMind

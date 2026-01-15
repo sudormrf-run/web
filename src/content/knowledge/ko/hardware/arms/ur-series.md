@@ -3,6 +3,15 @@ title: Universal Robots 시리즈
 description: 협동 로봇(Cobot) 산업의 선구자이자 글로벌 표준
 tags: [ur, universal-robots, cobot, collaborative-robot, industrial, arm, e-series, danish-robotics]
 category: hardware
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Universal Robots 시리즈

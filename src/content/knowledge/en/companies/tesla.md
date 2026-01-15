@@ -3,6 +3,15 @@ title: Tesla
 description: Tesla's Optimus Humanoid Robot Project
 tags: [tesla, optimus, humanoid, teleoperation]
 category: companies
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Tesla

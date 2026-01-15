@@ -3,6 +3,15 @@ title: Shuran Song
 description: Stanford 교수, Diffusion Policy 창시자
 tags: [shuran-song, stanford, columbia, diffusion-policy, 3d-perception]
 category: people
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Shuran Song

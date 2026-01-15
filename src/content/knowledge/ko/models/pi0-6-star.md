@@ -3,6 +3,15 @@ title: π*0.6 (pi-star-zero-point-six)
 description: Physical Intelligence의 RL 기반 자가 개선 VLA
 tags: [pi0-6-star, physical-intelligence, reinforcement-learning, recap, vla, self-improvement]
 category: models
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # π*0.6 (pi-star-zero-point-six)

@@ -5,6 +5,15 @@ category: essays
 order: 1
 isFeatured: true
 icon: pen
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # 에세이 & 인사이트

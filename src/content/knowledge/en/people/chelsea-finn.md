@@ -3,6 +3,15 @@ title: Chelsea Finn
 description: Stanford Professor, Physical Intelligence Co-founder
 tags: [chelsea-finn, stanford, physical-intelligence, meta-learning, act, aloha]
 category: people
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Chelsea Finn

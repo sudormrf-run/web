@@ -3,6 +3,15 @@ title: Cheng Chi
 description: Diffusion Policy 제1저자, UMI 개발자
 tags: [cheng-chi, columbia, stanford, diffusion-policy, umi]
 category: people
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Cheng Chi (迟成)

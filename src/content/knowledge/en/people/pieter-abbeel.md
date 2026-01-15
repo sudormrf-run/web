@@ -3,6 +3,15 @@ title: Pieter Abbeel
 description: UC Berkeley Professor, Covariant Founder, Robot Reinforcement Learning Pioneer
 tags: [pieter-abbeel, berkeley, covariant, reinforcement-learning, robotics]
 category: people
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Pieter Abbeel

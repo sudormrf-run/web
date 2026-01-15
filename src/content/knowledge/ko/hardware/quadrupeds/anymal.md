@@ -3,6 +3,15 @@ title: ANYbotics ANYmal
 description: ETH Zurich 스핀오프 ANYbotics의 산업용 자율 검사 쿼드러펫 로봇
 tags: [anybotics, anymal, quadruped, industrial, inspection, eth-zurich, legged-robot, autonomous]
 category: hardware
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # ANYbotics ANYmal

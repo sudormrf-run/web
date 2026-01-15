@@ -3,6 +3,15 @@ title: Unitree
 description: Unitree Robotics - China's Low-Cost Robot Hardware Manufacturer
 tags: [unitree, hardware, quadruped, humanoid, g1, h1, china]
 category: companies
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Unitree

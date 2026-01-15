@@ -3,6 +3,15 @@ title: Boston Dynamics Spot
 description: The standard in industrial quadruped walking robots - Quadruped achieving large-scale commercial deployment
 tags: [boston-dynamics, spot, quadruped, industrial, inspection, mobile-manipulation, hyundai]
 category: hardware
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Boston Dynamics Spot

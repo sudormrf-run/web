@@ -3,6 +3,15 @@ title: ACT (Action Chunking with Transformers)
 description: Stanford의 Action Chunking 기반 Imitation Learning 정책
 tags: [act, stanford, imitation-learning, aloha, cvae, transformer]
 category: models
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # ACT (Action Chunking with Transformers)
@@ -21,7 +30,7 @@ category: models
 - **빠른 학습과 낮은 연산 요구**: 일반 GPU에서도 학습 가능, 짧은 학습 시간
 - **CVAE 기반 아키텍처**: Style variable(z)로 다양한 시연 스타일 캡처, 추론 시에는 prior mean 사용
 
-<video src="../assets/models/act/act_demo_slot_battery.mp4" controls width="100%" muted autoplay loop></video>
+<video src="/assets/models/act/act_demo_slot_battery.mp4" controls width="100%" muted autoplay loop></video>
 <p align="center"><em>ACT 데모: 배터리 슬롯 삽입 - 정밀한 양팔 조작</em></p>
 
 ---
@@ -124,7 +133,7 @@ ACT와 함께 공개된 저비용 양팔 조작 시스템.
 - 체인 조립 (접촉이 많은 태스크)
 - 지퍼 타이 끼우기 (정밀 태스크)
 
-<video src="../assets/models/act/act_demo_reactive_cup.mov" controls width="100%"></video>
+<video src="/assets/models/act/act_demo_reactive_cup.mov" controls width="100%"></video>
 <p align="center"><em>ACT 데모: 투명 소스 컵 조작 - 반응형 양팔 협응</em></p>
 
 ---

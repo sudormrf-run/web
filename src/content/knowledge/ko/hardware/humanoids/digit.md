@@ -3,6 +3,15 @@ title: Agility Digit
 description: Agility Robotics의 산업용 이족보행 휴머노이드 로봇
 tags: [agility, digit, humanoid, industrial, logistics, amazon, gxo, cassie]
 category: hardware
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Agility Digit

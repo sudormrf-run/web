@@ -3,6 +3,15 @@ title: Figure Helix
 description: Figure AI의 휴머노이드 로봇용 VLA 모델
 tags: [figure-helix, figure-ai, humanoid, vla, figure-02]
 category: models
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Figure Helix

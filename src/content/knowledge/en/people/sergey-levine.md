@@ -3,6 +3,15 @@ title: Sergey Levine
 description: UC Berkeley Professor, Physical Intelligence Co-founder, Robot RL Expert
 tags: [sergey-levine, berkeley, physical-intelligence, rt, reinforcement-learning]
 category: people
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Sergey Levine

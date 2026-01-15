@@ -5,6 +5,15 @@ category: essays
 order: 1
 isFeatured: true
 icon: pen
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Essays & Insights

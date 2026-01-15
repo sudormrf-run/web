@@ -3,6 +3,15 @@ title: Noetix Bumi
 description: 세계 최저가 소형 휴머노이드 로봇 - 교육 및 소비자 시장을 위한 혁신적 저가형 로봇
 tags: [noetix, bumi, low-cost, consumer, education, humanoid, china, bipedal]
 category: hardware
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Noetix Bumi

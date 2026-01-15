@@ -4,6 +4,15 @@ description: Pollen Robotics' open-source humanoid robot platform
 tags: [reachy, pollen-robotics, humanoid, open-source, orbita, ros2, teleoperation, maxon, apache-2.0]
 category: hardware
 last_updated: 2025-01-09
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Reachy 2

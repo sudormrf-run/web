@@ -3,6 +3,15 @@ title: Galaxea Arms (A1/A1X/A1Y)
 description: Galaxea AI의 경량 힘 제어 로봇 암 - Embodied AI 연구를 위한 고성능 저가형 매니퓰레이터
 tags: [galaxea, a1, a1x, a1y, arm, force-control, lightweight, teleoperation, embodied-ai, vla, research]
 category: hardware
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Galaxea Arms (A1/A1X/A1Y)

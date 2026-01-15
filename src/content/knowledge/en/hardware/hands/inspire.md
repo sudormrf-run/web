@@ -4,6 +4,15 @@ description: INSPIRE-ROBOTS dexterous hand - Robot hand recreating human hand pr
 tags: [inspire, hand, dexterous, china, beijing, rh56, f1, humanoid, unitree]
 category: hardware
 date: 2026-01-09
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Inspire Dexterous Hand

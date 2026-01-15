@@ -3,6 +3,15 @@ title: Gemini Robotics
 description: Google DeepMind's Gemini 2.0-based Robotics Model
 tags: [gemini-robotics, google, deepmind, gemini, vla]
 category: models
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Gemini Robotics

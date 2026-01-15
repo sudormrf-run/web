@@ -3,6 +3,15 @@ title: ANYbotics ANYmal
 description: ETH Zurich spinoff ANYbotics' industrial autonomous inspection quadruped robot
 tags: [anybotics, anymal, quadruped, industrial, inspection, eth-zurich, legged-robot, autonomous]
 category: hardware
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # ANYbotics ANYmal

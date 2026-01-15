@@ -3,6 +3,15 @@ title: Redwood AI (1X Technologies)
 description: 1X Technologies' Vision-Language-Action Model for NEO Humanoid
 tags: [redwood-ai, 1x, neo, humanoid, world-model, vla, home-robot]
 category: models
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Redwood AI (1X Technologies)

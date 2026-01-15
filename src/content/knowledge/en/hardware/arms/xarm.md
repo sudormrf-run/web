@@ -4,6 +4,15 @@ description: Accessible research/education robot arms - Cost-effective alternati
 tags: [xarm, ufactory, cobot, research, arm, vla, open-x-embodiment, lerobot]
 category: hardware
 last_verified: 2025-01
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # UFACTORY xArm Series

@@ -3,6 +3,15 @@ title: Sunday Robotics
 description: Sunday Robotics - Memo Robot and the Zero Robot Data Approach
 tags: [sunday-robotics, memo, act-1, gloves, zero-robot-data]
 category: companies
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Sunday Robotics

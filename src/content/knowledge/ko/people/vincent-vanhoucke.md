@@ -3,6 +3,15 @@ title: Vincent Vanhoucke
 description: Google DeepMind Robotics 총괄
 tags: [vincent-vanhoucke, google, deepmind, robotics, rt]
 category: people
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Vincent Vanhoucke

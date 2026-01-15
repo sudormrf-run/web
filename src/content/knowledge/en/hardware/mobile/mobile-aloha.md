@@ -3,6 +3,15 @@ title: Mobile ALOHA
 description: Stanford IRIS Lab's low-cost whole-body teleoperation mobile bimanual manipulation platform
 tags: [mobile-aloha, stanford, bimanual, teleoperation, mobile, aloha, co-training, imitation-learning, agilex, viperx]
 category: hardware
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Mobile ALOHA

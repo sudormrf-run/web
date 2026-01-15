@@ -3,6 +3,15 @@ title: Physical Intelligence
 description: Physical Intelligence와 pi0 모델
 tags: [physical-intelligence, pi0, foundation-model, flow-matching]
 category: companies
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Physical Intelligence

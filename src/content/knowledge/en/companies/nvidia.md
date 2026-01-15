@@ -3,6 +3,15 @@ title: NVIDIA
 description: NVIDIA's Robotics Infrastructure - Isaac, Omniverse, Cosmos, GR00T
 tags: [nvidia, omniverse, cosmos, simulation, world-model, isaac, groot]
 category: companies
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # NVIDIA

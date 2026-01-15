@@ -4,6 +4,15 @@ description: Unitree Robotics의 휴머노이드 로봇 완전 가이드 - R1, G
 tags: [unitree, humanoid, g1, h1, h2, r1, embodied-ai, groot, affordable-robotics]
 category: hardware
 date: 2026-01-09
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Unitree 휴머노이드

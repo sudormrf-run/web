@@ -3,6 +3,15 @@ title: Galaxea Humanoid
 description: R1 Series wheeled dual-arm humanoid robot from Galaxea AI
 tags: [galaxea, r1, humanoid, wheeled, teleoperation, research, affordable]
 category: hardware
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Galaxea Humanoid

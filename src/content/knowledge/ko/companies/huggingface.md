@@ -3,6 +3,15 @@ title: HuggingFace
 description: HuggingFace - LeRobot과 오픈소스 로보틱스 커뮤니티
 tags: [huggingface, lerobot, smolvla, open-source, community]
 category: companies
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # HuggingFace

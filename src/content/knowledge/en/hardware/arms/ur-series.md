@@ -3,6 +3,15 @@ title: Universal Robots Series
 description: Pioneer and global standard of the collaborative robot (Cobot) industry
 tags: [ur, universal-robots, cobot, collaborative-robot, industrial, arm, e-series, danish-robotics]
 category: hardware
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Universal Robots Series

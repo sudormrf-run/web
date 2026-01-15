@@ -4,6 +4,15 @@ description: Low-cost open-source full-size humanoid robot co-developed by Huggi
 tags: [hopejr, huggingface, the-robot-studio, low-cost, open-source, humanoid, lerobot, 3d-printed, teleoperation, dexterous-hands]
 category: hardware
 last_updated: 2026-01-09
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # HopeJR

@@ -3,6 +3,15 @@ title: Shuran Song
 description: Stanford Professor, Diffusion Policy Creator
 tags: [shuran-song, stanford, columbia, diffusion-policy, 3d-perception]
 category: people
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Shuran Song

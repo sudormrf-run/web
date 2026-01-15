@@ -3,6 +3,15 @@ title: GEX 시리즈
 description: 초저가 완전 구동 덱스터러스 핸드와 텔레오퍼레이션 시스템
 tags: [gex, gx11, ex12, hand, low-cost, dexterous, teleoperation, 3d-print, dynamixel]
 category: hardware
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # GEX 시리즈

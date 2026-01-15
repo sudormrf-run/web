@@ -4,6 +4,15 @@ description: 접근성 높은 연구/교육용 로봇 암 - Franka의 가성비 
 tags: [xarm, ufactory, cobot, research, arm, vla, open-x-embodiment, lerobot]
 category: hardware
 last_verified: 2025-01
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # UFACTORY xArm 시리즈

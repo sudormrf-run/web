@@ -5,6 +5,15 @@ category: people
 order: 1
 isFeatured: true
 icon: users
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Physical AI 주요 인물

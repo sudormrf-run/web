@@ -3,6 +3,15 @@ title: Noetix Bumi
 description: World's lowest-cost small humanoid robot - Innovative affordable robot for education and consumer markets
 tags: [noetix, bumi, low-cost, consumer, education, humanoid, china, bipedal]
 category: hardware
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Noetix Bumi

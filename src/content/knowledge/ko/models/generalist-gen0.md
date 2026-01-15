@@ -3,6 +3,15 @@ title: Generalist GEN-0
 description: Generalist AI의 대규모 실제 데이터 기반 Embodied Foundation Model
 tags: [generalist, gen0, foundation-model, scaling-laws, harmonic-reasoning]
 category: models
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Generalist GEN-0

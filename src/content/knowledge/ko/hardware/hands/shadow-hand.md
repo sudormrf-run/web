@@ -3,6 +3,15 @@ title: Shadow Dexterous Hand
 description: 고자유도 텐던 구동 방식의 연구용 덱스터러스 로봇 핸드
 tags: [shadow, hand, dexterous, tendon, tactile, manipulation, research, uk]
 category: hardware
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Shadow Dexterous Hand

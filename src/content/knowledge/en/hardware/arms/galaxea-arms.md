@@ -3,6 +3,15 @@ title: Galaxea Arms (A1/A1X/A1Y)
 description: Galaxea AI's lightweight force-controlled robot arms - High-performance low-cost manipulators for Embodied AI research
 tags: [galaxea, a1, a1x, a1y, arm, force-control, lightweight, teleoperation, embodied-ai, vla, research]
 category: hardware
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Galaxea Arms (A1/A1X/A1Y)

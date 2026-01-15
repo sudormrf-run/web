@@ -4,6 +4,15 @@ description: 멀티터치 감지 및 햅틱 피드백을 지원하는 첨단 바
 tags: [psyonic, ability-hand, bionic, prosthetic, haptic-feedback, touch-sensing, robotics]
 category: hardware
 last_updated: 2025-01
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # PSYONIC Ability Hand

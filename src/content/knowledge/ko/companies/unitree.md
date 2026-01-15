@@ -3,6 +3,15 @@ title: Unitree
 description: Unitree Robotics - 중국의 저가형 로봇 하드웨어 제조사
 tags: [unitree, hardware, quadruped, humanoid, g1, h1, china]
 category: companies
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Unitree

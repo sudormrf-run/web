@@ -3,6 +3,15 @@ title: Figure Humanoid
 description: Figure AI's high-performance humanoid robots - Figure 01, 02, 03 generational evolution
 tags: [figure, humanoid, helix, vla, bmw, brett-adcock, figure-01, figure-02, figure-03]
 category: hardware
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Figure Humanoid

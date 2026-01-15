@@ -6,6 +6,15 @@ category: essays
 related:
   - physical-vs-cognitive.md
   - humanoid-design.md
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # 촉각의 필요성

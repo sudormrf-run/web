@@ -5,6 +5,15 @@ tags: [reachy, pollen, huggingface, desktop, companion, education, open-source, 
 category: hardware
 created: 2025-05-01
 updated: 2026-01-09
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Reachy Mini

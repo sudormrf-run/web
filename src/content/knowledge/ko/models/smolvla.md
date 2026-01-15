@@ -3,6 +3,15 @@ title: SmolVLA
 description: HuggingFace의 경량 오픈소스 VLA 모델
 tags: [smolvla, huggingface, lerobot, lightweight, open-source, flow-matching]
 category: models
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # SmolVLA

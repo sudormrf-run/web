@@ -3,6 +3,15 @@ title: Pieter Abbeel
 description: UC Berkeley 교수, Covariant 창업자, 로봇 강화학습 선구자
 tags: [pieter-abbeel, berkeley, covariant, reinforcement-learning, robotics]
 category: people
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Pieter Abbeel

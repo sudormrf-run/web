@@ -3,6 +3,15 @@ title: π0 (pi-zero)
 description: Physical Intelligence의 첫 번째 Generalist Policy - Flow Matching 기반 VLA
 tags: [pi0, physical-intelligence, flow-matching, vla, foundation-model, paligemma]
 category: models
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # π0 (pi-zero)

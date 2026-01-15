@@ -3,6 +3,15 @@ title: GEX Series
 description: Ultra-low-cost fully-actuated dexterous hand and teleoperation system
 tags: [gex, gx11, ex12, hand, low-cost, dexterous, teleoperation, 3d-print, dynamixel]
 category: hardware
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # GEX Series

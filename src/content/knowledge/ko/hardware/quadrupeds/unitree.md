@@ -3,6 +3,15 @@ title: Unitree 쿼드러펫
 description: Unitree Robotics의 4족 보행 로봇 라인업 - 연구용 가성비 쿼드러펫의 글로벌 표준
 tags: [unitree, quadruped, go1, go2, go2-w, b1, b2, b2-w, aliengo, research, ros2, sdk, reinforcement-learning, locomotion, sim-to-real, open-x-embodiment, nvidia-isaac, chinese-robotics]
 category: hardware
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Unitree 쿼드러펫

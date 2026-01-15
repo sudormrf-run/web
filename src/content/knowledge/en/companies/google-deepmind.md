@@ -3,6 +3,15 @@ title: Google DeepMind
 description: Google DeepMind's Robotics Research
 tags: [google, deepmind, gemini-robotics, rt1, rt2, rt-x]
 category: companies
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Google DeepMind

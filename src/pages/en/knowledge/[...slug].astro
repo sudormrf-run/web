@@ -245,6 +245,39 @@ const categoryNames: Record<string, string> = {
           </div>
 
           <footer class="article-footer">
+            {/* Authorship info */}
+            {(entry.data.createdBy || entry.data.lastEditedBy) && (
+              <div class="authorship-info">
+                {entry.data.createdBy && (
+                  <div class="author-item">
+                    <span class="author-label">Written by</span>
+                    <span class="author-name">
+                      {entry.data.createdBy.email ? (
+                        <a href={`mailto:${entry.data.createdBy.email}`}>{entry.data.createdBy.name}</a>
+                      ) : (
+                        entry.data.createdBy.name
+                      )}
+                    </span>
+                  </div>
+                )}
+                {entry.data.lastEditedBy && entry.data.lastEditedAt && (
+                  <div class="author-item">
+                    <span class="author-label">Last edited by</span>
+                    <span class="author-name">
+                      {entry.data.lastEditedBy.email ? (
+                        <a href={`mailto:${entry.data.lastEditedBy.email}`}>{entry.data.lastEditedBy.name}</a>
+                      ) : (
+                        entry.data.lastEditedBy.name
+                      )}
+                    </span>
+                    <span class="author-date">
+                      {entry.data.lastEditedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                    </span>
+                  </div>
+                )}
+              </div>
+            )}
+
             <a href="/en/knowledge/physical-ai" class="back-link">
               <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -943,6 +976,47 @@ const categoryNames: Record<string, string> = {
     margin-top: 3rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--color-border);
+  }
+
+  /* Authorship Info */
+  .authorship-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.8rem;
+  }
+
+  .author-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .author-label {
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  .author-name {
+    color: var(--color-text-secondary);
+  }
+
+  .author-name a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .author-name a:hover {
+    color: var(--color-accent);
+  }
+
+  .author-date {
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
   }
 
   .back-link {

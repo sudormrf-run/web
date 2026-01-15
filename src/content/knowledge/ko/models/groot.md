@@ -3,6 +3,15 @@ title: GR00T (Project GR00T / GR00T N1 / N1.5 / N1.6)
 description: NVIDIA의 휴머노이드 로봇 파운데이션 모델
 tags: [groot, nvidia, humanoid, foundation-model, isaac, omniverse, jetson-thor, n1, n1-5, n1-6]
 category: models
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # GR00T (Generalist Robot 00 Technology)

@@ -6,6 +6,15 @@ category: essays
 related:
   - models/vla-history.md
   - scaling-problem.md
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # What are RFM & VLA?

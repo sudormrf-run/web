@@ -4,6 +4,15 @@ description: HuggingFace와 The Robot Studio가 공동 개발한 저가 오픈�
 tags: [hopejr, huggingface, the-robot-studio, low-cost, open-source, humanoid, lerobot, 3d-printed, teleoperation, dexterous-hands]
 category: hardware
 last_updated: 2026-01-09
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # HopeJR

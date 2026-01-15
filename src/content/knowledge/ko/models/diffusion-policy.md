@@ -3,6 +3,15 @@ title: Diffusion Policy
 description: Columbia/MIT의 Diffusion 기반 Visuomotor Policy Learning
 tags: [diffusion-policy, diffusion, columbia, mit, toyota-research, visuomotor]
 category: models
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Diffusion Policy
@@ -21,7 +30,7 @@ category: models
 - **LeRobot 기본 지원**: HuggingFace LeRobot에서 ACT와 함께 기본 지원 모델
 - **강건성**: 가림(occlusion), 외란(perturbation), 시각적 방해에 대해 강건한 성능
 
-<video src="../assets/models/diffusion-policy/diffusion_policy_highlight.mp4" controls width="100%" muted autoplay loop></video>
+<video src="/assets/models/diffusion-policy/diffusion_policy_highlight.mp4" controls width="100%" muted autoplay loop></video>
 <p align="center"><em>Diffusion Policy: 노이즈에서 액션 시퀀스를 점진적으로 생성</em></p>
 
 ---

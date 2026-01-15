@@ -6,6 +6,15 @@ category: essays
 related:
   - non-teleop-data.md
   - models/open-models.md
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # 커뮤니티 드리븐 접근

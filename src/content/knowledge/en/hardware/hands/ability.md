@@ -4,6 +4,15 @@ description: Advanced bionic hand with multi-touch sensing and haptic feedback
 tags: [psyonic, ability-hand, bionic, prosthetic, haptic-feedback, touch-sensing, robotics]
 category: hardware
 last_updated: 2025-01
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # PSYONIC Ability Hand

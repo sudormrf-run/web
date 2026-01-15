@@ -6,6 +6,15 @@ category: essays
 related:
   - what-is-rfm-vla.md
   - models/vla-history.md
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Specialist에서 Generalist로

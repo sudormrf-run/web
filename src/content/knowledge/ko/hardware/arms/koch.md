@@ -5,6 +5,15 @@ tags: [koch, low-cost, diy, lerobot, dynamixel, xl430, xl330, open-source, 3d-pr
 category: hardware
 created: 2024-04-01
 updated: 2025-01-09
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Koch v1.1

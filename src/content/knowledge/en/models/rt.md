@@ -3,6 +3,15 @@ title: RT (Robotics Transformer)
 description: Google DeepMind's RT-1, RT-2, RT-X Series
 tags: [rt, rt-1, rt-2, rt-x, google, deepmind, vla, transformer]
 category: models
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # RT (Robotics Transformer)
@@ -20,7 +29,7 @@ category: models
 - **Emergent Capabilities Discovered**: RT-2 observed emergent capabilities including interpreting new semantic commands not in training data and basic reasoning
 - **Foundation for Follow-up Research**: Most VLA research including OpenVLA, pi0, Octo reference RT series architecture and training methods
 
-<video src="../assets/models/rt/rt2simple.mp4" controls width="100%" muted autoplay loop></video>
+<video src="/assets/models/rt/rt2simple.mp4" controls width="100%" muted autoplay loop></video>
 <p align="center"><em>RT-2: Understanding language instructions and converting to robot actions</em></p>
 
 ---
@@ -76,7 +85,7 @@ First VLA model combining VLM (Vision-Language Model) with robot control.
 - Basic reasoning (selecting smallest/largest object)
 - Multi-step reasoning (e.g., "good drink for tired person" -> selecting energy drink)
 
-<video src="../assets/models/rt/rt2_videos_compressed.mp4" controls width="100%"></video>
+<video src="/assets/models/rt/rt2_videos_compressed.mp4" controls width="100%"></video>
 <p align="center"><em>RT-2 Demo: Various task execution scenes</em></p>
 
 ---
@@ -125,7 +134,7 @@ General-purpose robot model developed as part of Open X-Embodiment project in co
 
 ### RT-2
 
-![RT-2 Architecture](../assets/models/rt/rt2_architecture.png)
+![RT-2 Architecture](/assets/models/rt/rt2_architecture.png)
 <p align="center"><em>RT-2 Architecture: VLM receives images and language, outputs action tokens</em></p>
 
 ```

@@ -3,6 +3,15 @@ title: Figure Helix
 description: Figure AI's VLA Model for Humanoid Robots
 tags: [figure-helix, figure-ai, humanoid, vla, figure-02]
 category: models
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Figure Helix

@@ -4,6 +4,15 @@ description: Trossen Robotics의 연구용 로봇 암 시리즈 - VLA 및 Embodi
 tags: [interbotix, widowx, viperx, trossen, dynamixel, research, aloha, open-x-embodiment, vla, lerobot]
 category: hardware
 last_updated: 2026-01-09
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Interbotix / WidowX

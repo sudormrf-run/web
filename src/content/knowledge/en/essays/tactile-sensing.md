@@ -6,6 +6,15 @@ category: essays
 related:
   - physical-vs-cognitive.md
   - humanoid-design.md
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # The Need for Tactile Sensing

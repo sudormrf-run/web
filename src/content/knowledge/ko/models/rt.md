@@ -3,6 +3,15 @@ title: RT (Robotics Transformer)
 description: Google DeepMind의 RT-1, RT-2, RT-X 시리즈
 tags: [rt, rt-1, rt-2, rt-x, google, deepmind, vla, transformer]
 category: models
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # RT (Robotics Transformer)
@@ -20,7 +29,7 @@ category: models
 - **창발적 능력 발견**: RT-2에서 훈련 데이터에 없는 새로운 의미 명령 해석, 기초적 추론 등 emergent capabilities 관찰
 - **후속 연구의 기반**: OpenVLA, pi0, Octo 등 대부분의 VLA 연구가 RT 시리즈의 아키텍처와 학습 방식을 참고
 
-<video src="../assets/models/rt/rt2simple.mp4" controls width="100%" muted autoplay loop></video>
+<video src="/assets/models/rt/rt2simple.mp4" controls width="100%" muted autoplay loop></video>
 <p align="center"><em>RT-2: 언어 지시를 이해하고 로봇 액션으로 변환</em></p>
 
 ---
@@ -76,7 +85,7 @@ VLM(Vision-Language Model)과 로봇 제어를 결합한 최초의 VLA 모델.
 - 기초적 추론 (가장 작은/큰 물체 선택)
 - 다단계 추론 (예: "피곤한 사람에게 좋은 음료" → 에너지 드링크 선택)
 
-<video src="../assets/models/rt/rt2_videos_compressed.mp4" controls width="100%"></video>
+<video src="/assets/models/rt/rt2_videos_compressed.mp4" controls width="100%"></video>
 <p align="center"><em>RT-2 데모: 다양한 태스크 수행 장면</em></p>
 
 ---
@@ -125,7 +134,7 @@ Open X-Embodiment 프로젝트의 일환으로, 33개 연구실과 협력하여 
 
 ### RT-2
 
-![RT-2 Architecture](../assets/models/rt/rt2_architecture.png)
+![RT-2 Architecture](/assets/models/rt/rt2_architecture.png)
 <p align="center"><em>RT-2 아키텍처: VLM이 이미지와 언어를 받아 액션 토큰을 출력</em></p>
 
 ```

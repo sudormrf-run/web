@@ -3,6 +3,15 @@ title: Cheng Chi
 description: Diffusion Policy Lead Author, UMI Developer
 tags: [cheng-chi, columbia, stanford, diffusion-policy, umi]
 category: people
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Cheng Chi

@@ -3,6 +3,15 @@ title: π Series (Physical Intelligence)
 description: Physical Intelligence의 Vision-Language-Action 모델 시리즈 - π0, π0.5, π*0.6
 tags: [pi-series, physical-intelligence, vla, flow-matching, foundation-model]
 category: models
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # π Series (Physical Intelligence)

@@ -3,6 +3,15 @@ title: Pete Florence
 description: Google DeepMind → Physical Intelligence 공동창업자
 tags: [pete-florence, google, deepmind, physical-intelligence, dense-descriptors]
 category: people
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Pete Florence

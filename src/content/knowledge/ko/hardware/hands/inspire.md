@@ -4,6 +4,15 @@ description: INSPIRE-ROBOTS의 덱스터러스 핸드 - 인간 손의 정밀함�
 tags: [inspire, hand, dexterous, china, beijing, rh56, f1, humanoid, unitree]
 category: hardware
 date: 2026-01-09
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Inspire Dexterous Hand

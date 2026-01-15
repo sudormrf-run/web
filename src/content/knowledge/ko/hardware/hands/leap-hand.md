@@ -4,6 +4,15 @@ description: 저가 3D 프린트 덱스터러스 핸드 - CMU에서 개발한 �
 tags: [leap, hand, low-cost, 3d-print, dexterous, cmu, open-source, dynamixel, vla]
 category: hardware
 created: 2024-01-09
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # LEAP Hand

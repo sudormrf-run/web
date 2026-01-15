@@ -6,6 +6,15 @@ category: essays
 related:
   - what-is-rfm-vla.md
   - tactile-sensing.md
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Physical vs Cognitive Intelligence

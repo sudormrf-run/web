@@ -3,6 +3,15 @@ title: Sunday ACT-1
 description: Sunday Robotics의 Zero Robot Data 기반 Foundation Model
 tags: [sunday-act1, sunday-robotics, memo, zero-robot-data, gloves]
 category: models
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Sunday ACT-1

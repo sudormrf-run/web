@@ -5,6 +5,15 @@ category: people
 order: 1
 isFeatured: true
 icon: users
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Key People in Physical AI

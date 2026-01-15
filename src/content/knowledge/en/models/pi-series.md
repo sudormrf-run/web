@@ -3,6 +3,15 @@ title: Pi Series (Physical Intelligence)
 description: Physical Intelligence's Vision-Language-Action Model Series - Pi0, Pi0.5, Pi*0.6
 tags: [pi-series, physical-intelligence, vla, flow-matching, foundation-model]
 category: models
+
+# Authorship
+createdBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: Jong Hyun Park
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Pi Series (Physical Intelligence)

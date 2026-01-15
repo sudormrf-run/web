@@ -3,6 +3,15 @@ title: Redwood AI (1X Technologies)
 description: 1X Technologies의 NEO 휴머노이드용 Vision-Language-Action 모델
 tags: [redwood-ai, 1x, neo, humanoid, world-model, vla, home-robot]
 category: models
+
+# Authorship
+createdBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedBy:
+  name: 박종현
+  email: jhpark@sudormrf.run
+lastEditedAt: 2026-01-15
 ---
 
 # Redwood AI (1X Technologies)
