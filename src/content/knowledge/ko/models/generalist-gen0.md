@@ -14,6 +14,21 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
+<div class="author-note">
+
+### 필자의 의견
+
+- 레고 해체와 자연스러운 던지기 데모로 민첩한 행동(agile action)도 가능함을 보여주었습니다.
+- 나중에 알고 보니 UMI 스타일의 데이터 수집과 학습 방식이었습니다.
+- 공식 블로그에 따르면 엄청난 규모의 데이터를 수집 중이며, VLA에서도 scaling law가 적용됨을 확인했다고 합니다.
+
+</div>
+
+<div class="video-embed">
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/mhfleCK_IAI" title="Generalist GEN-0 - Official Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p align="center"><em>Generalist GEN-0 공식 데모 영상</em></p>
+
 ## 핵심 의의
 
 - **로보틱스 스케일링 법칙 발견 주장**: LLM처럼 데이터/컴퓨트 증가에 따른 예측 가능하고 일관된 성능 향상 관찰

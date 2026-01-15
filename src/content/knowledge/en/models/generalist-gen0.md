@@ -14,6 +14,21 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
+<div class="author-note">
+
+### Author's Note
+
+- The LEGO disassembly and natural throwing demos showed that agile actions are also possible.
+- Later found out it was UMI-style data collection and training approach.
+- According to the official blog, they are collecting massive amounts of data and have confirmed that scaling laws apply to VLAs as well.
+
+</div>
+
+<div class="video-embed">
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/mhfleCK_IAI" title="Generalist GEN-0 - Official Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p align="center"><em>Generalist GEN-0 Official Demo Video</em></p>
+
 ## Key Significance
 
 - **Claims Discovery of Robotics Scaling Laws**: Observes predictable and consistent performance improvement with data/compute increase, like LLMs
