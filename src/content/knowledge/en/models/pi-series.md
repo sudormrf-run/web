@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Pi Series (Physical Intelligence)
-
-> Home > Models > Pi Series
-
----
-
 ## Key Significance
 
 - **New Paradigm for VLAs**: Flow Matching-based continuous action generation as an alternative to Diffusion/Autoregressive approaches

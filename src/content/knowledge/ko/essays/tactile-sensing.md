@@ -17,12 +17,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# 촉각의 필요성
-
-> Home > Deep Dives > Tactile Sensing
-
----
-
 ## 촉각은 필요할까?
 
 ...

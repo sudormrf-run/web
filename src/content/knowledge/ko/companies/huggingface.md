@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# HuggingFace
-
-> Home > Companies > HuggingFace
-
----
-
 ## Overview
 
 HuggingFace는 AI 모델과 데이터셋의 "GitHub"로, LeRobot 프로젝트를 통해 로보틱스 분야에도 오픈소스 혁명을 일으키고 있습니다. SmolVLA와 커뮤니티 데이터셋으로 누구나 접근 가능한 로보틱스 AI를 추구합니다.

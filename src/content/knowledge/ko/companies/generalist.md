@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Generalist AI
-
-> Home > Companies > Generalist AI
-
----
-
 ## Overview
 
 Generalist AI는 OpenAI, Google DeepMind, Boston Dynamics 출신 팀이 설립한 스타트업입니다 (회사 발표 기반). 270,000시간의 실제 물리 상호작용 데이터로 로보틱스 분야 최초의 **스케일링 법칙**을 발견했다고 주장합니다.

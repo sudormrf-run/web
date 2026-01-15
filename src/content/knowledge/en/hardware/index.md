@@ -16,12 +16,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Robot Hardware
-
-> Robot hardware and platforms for Physical AI
-
----
-
 ## Humanoids
 
 | Robot | Company | Features |

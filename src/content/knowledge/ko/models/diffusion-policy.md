@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Diffusion Policy
-
-> Home > Models > Diffusion Policy
-
----
-
 ## 핵심 의의
 
 - **로봇에 Diffusion 적용한 선구적 연구**: 이미지 생성에서 성공한 diffusion을 로봇 액션 생성에 최초로 성공적 적용

@@ -17,12 +17,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Evaluation의 어려움
-
-> Home > Challenges > Evaluation Problem
-
----
-
 ## 핵심 문제
 
 Evaluation은 실물 로봇을 구동하면서 동작을 봐야 하는데:

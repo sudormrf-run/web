@@ -18,12 +18,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Teleoperation 방식
-
-> Home > Solutions > Teleoperation
-
----
-
 ## 개요
 
 Tesla, Google, Physical Intelligence, Galaxea 등 주요 AI robotics 업계는 Teleoperation으로 데이터를 직접 모으고 있습니다.

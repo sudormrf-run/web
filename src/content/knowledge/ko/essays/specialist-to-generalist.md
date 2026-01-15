@@ -17,12 +17,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Specialist에서 Generalist로
-
-> Home > Fundamentals > Specialist to Generalist
-
----
-
 ## Specialist 모델의 한계
 
 ...

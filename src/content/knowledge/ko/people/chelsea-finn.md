@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Chelsea Finn
-
-> Home > People > Chelsea Finn
-
----
-
 ## Profile
 
 | 항목 | 내용 |

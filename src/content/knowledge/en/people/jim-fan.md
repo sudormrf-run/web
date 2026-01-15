@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Jim Fan
-
-> Home > People > Jim Fan
-
----
-
 ## Profile
 
 | Field | Details |

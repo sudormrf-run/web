@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# GR00T (Generalist Robot 00 Technology)
-
-> Home > Models > GROOT
-
----
-
 ## Key Significance
 
 - **First Open Humanoid Foundation Model**: First open VLA for humanoid robots with GR00T N1

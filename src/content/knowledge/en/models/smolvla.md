@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# SmolVLA
-
-> Home > Models > SmolVLA
-
----
-
 ## Key Significance
 
 - **Extreme Efficiency**: 450M parameters achieving equal LIBERO benchmark performance (87.3%) as 7x larger Pi0 (3.3B)

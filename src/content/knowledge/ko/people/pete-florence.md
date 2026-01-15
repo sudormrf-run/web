@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Pete Florence
-
-> Home > People > Pete Florence
-
----
-
 ## Profile
 
 | 항목 | 내용 |

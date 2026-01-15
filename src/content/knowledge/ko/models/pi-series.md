@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# π Series (Physical Intelligence)
-
-> Home > Models > π Series
-
----
-
 ## 핵심 의의
 
 - **VLA의 새로운 패러다임**: Flow Matching 기반 연속 액션 생성으로 Diffusion/Autoregressive 방식의 대안 제시

@@ -17,12 +17,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Physical vs Cognitive Intelligence
-
-> Home > Challenges > Physical vs Cognitive
-
----
-
 ## What is Physical Intelligence?
 
 ...

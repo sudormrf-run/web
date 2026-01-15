@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# π0 (pi-zero)
-
-> Home > Models > [π Series](pi-series.md) > π0
-
----
-
 ## 핵심 의의
 
 - **Flow Matching의 성공적 적용**: Diffusion 대안으로 flow matching을 로봇에 처음 성공적으로 적용

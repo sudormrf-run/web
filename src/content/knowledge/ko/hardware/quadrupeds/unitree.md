@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Unitree 쿼드러펫
-
-> Home > Hardware > Quadrupeds > Unitree
-
----
-
 ## 핵심 의의
 
 - **쿼드러펫 민주화의 선구자**: Spot 대비 1/20 ~ 1/2 가격으로 고성능 쿼드러펫 대중화, 연구 접근성 혁신

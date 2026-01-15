@@ -17,12 +17,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# RFM & VLA란 무엇인가
-
-> Home > Fundamentals > RFM & VLA
-
----
-
 ## RFM (Robot Foundation Model)
 
 ...

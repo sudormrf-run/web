@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Tesla
-
-> Home > Companies > Tesla
-
----
-
 ## Overview
 
 Tesla는 2021년 AI Day에서 휴머노이드 로봇 Optimus (Tesla Bot)를 발표했습니다. 자동차 제조 및 자율주행 분야의 AI/하드웨어 역량을 로보틱스에 적용하며, 대규모 자체 생산을 통한 가격 경쟁력을 핵심 전략으로 삼고 있습니다.

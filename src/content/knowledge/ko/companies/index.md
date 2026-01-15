@@ -16,12 +16,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Physical AI 기업 목록
-
-> Physical AI / 로보틱스 분야의 주요 기업들
-
----
-
 ## 카테고리별 기업
 
 ### 대기업 (Big Tech)

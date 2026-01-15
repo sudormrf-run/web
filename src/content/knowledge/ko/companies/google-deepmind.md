@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Google DeepMind
-
-> Home > Companies > Google DeepMind
-
----
-
 ## Overview
 
 Google DeepMind는 로보틱스 AI 분야의 선구자로, RT-1부터 Gemini Robotics까지 VLA 모델의 핵심 발전을 이끌어 왔습니다. 2023년 Google Brain과 DeepMind가 합병하여 현재의 조직이 되었습니다.

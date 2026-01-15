@@ -16,12 +16,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# 에세이 & 인사이트
-
-> Physical AI에 대한 깊이 있는 분석과 의견
-
----
-
 ## 최신 에세이
 
 ### VLA는 Scaling & Evaluation이 어렵다

@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# OpenVLA
-
-> Home > Models > OpenVLA
-
----
-
 ## 핵심 의의
 
 - **VLA 연구의 민주화**: 최초의 대규모 오픈소스 VLA (7B 파라미터) - 체크포인트, 코드, 학습 파이프라인 전체 공개

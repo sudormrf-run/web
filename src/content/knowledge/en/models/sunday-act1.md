@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Sunday ACT-1
-
-> Home > Models > Sunday ACT-1
-
----
-
 ## Key Significance
 
 - **Zero Robot Data**: Trained purely on human movements (glove data) without any robot data - paradigm shift in data collection

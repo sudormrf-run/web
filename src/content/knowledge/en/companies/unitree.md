@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Unitree
-
-> Home > Companies > Unitree
-
----
-
 ## Overview
 
 Unitree Robotics is a Chinese robot hardware manufacturer producing affordable yet high-performance quadruped robots and humanoids. They are leading price innovation with the $16,000 G1 humanoid.

@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# ANYbotics ANYmal
-
-> Home > Hardware > Quadrupeds > ANYmal
-
----
-
 <!-- Image pending: ![ANYmal - ANYbotics Industrial Inspection Robot](../../assets/hardware/quadrupeds/anymal.png) -->
 *Image: ANYbotics ANYmal quadruped robot - See [ANYbotics official page](https://www.anybotics.com/robotics/anymal/)*
 

@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Figure Helix
-
-> Home > Models > Figure Helix
-
----
-
 ## Key Significance
 
 - **First Full-Body High-Speed Control VLA for Humanoids**: First VLA to continuously control entire upper body at high speed including wrists, torso, head, and individual fingers

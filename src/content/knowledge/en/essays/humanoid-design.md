@@ -17,12 +17,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Humanoid Design
-
-> Home > Deep Dives > Humanoid Design
-
----
-
 ## Does It Need to Look Exactly Like a Human?
 
 ...

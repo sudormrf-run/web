@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Tony Zhao
-
-> Home > People > Tony Zhao
-
----
-
 ## Profile
 
 | Field | Details |

@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# ACT (Action Chunking with Transformers)
-
-> Home > Models > ACT
-
----
-
 ## Key Significance
 
 - **Action Chunking Concept**: Inspired by psychology, groups continuous actions into single units (chunks) for execution - mitigates compounding error

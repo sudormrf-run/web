@@ -17,12 +17,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# From Specialist to Generalist
-
-> Home > Fundamentals > Specialist to Generalist
-
----
-
 ## Limitations of Specialist Models
 
 ...

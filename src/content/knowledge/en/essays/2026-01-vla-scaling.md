@@ -20,12 +20,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# VLA Faces Difficult Scaling & Evaluation Challenges
-
-> Home > Essays > VLA Scaling Essay
-
----
-
 Hello, I'm Jonghyun Park, CEO of sudoremove.
 
 Physical AI has been gaining significant attention across many media outlets lately.

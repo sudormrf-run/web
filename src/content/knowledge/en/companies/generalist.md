@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Generalist AI
-
-> Home > Companies > Generalist AI
-
----
-
 ## Overview
 
 Generalist AI is a startup founded by a team from OpenAI, Google DeepMind, and Boston Dynamics (per company announcement). They claim to have discovered the first **scaling laws** in robotics using 270,000 hours of real-world physical interaction data.

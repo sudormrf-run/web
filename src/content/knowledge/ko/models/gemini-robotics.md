@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Gemini Robotics
-
-> Home > Models > Gemini Robotics
-
----
-
 ## 핵심 의의
 
 - **대형 LLM 기반 VLA의 정점**: Gemini 2.0을 기반으로 하여 인터넷 스케일 지식을 로보틱스에 적용한 대표적 사례

@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Boston Dynamics Spot
-
-> Home > Hardware > Quadrupeds > Spot
-
----
-
 ## 핵심 의의
 
 Spot의 Physical AI 분야에서의 의의를 정리하면 다음과 같습니다:

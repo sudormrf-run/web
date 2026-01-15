@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Gemini Robotics
-
-> Home > Models > Gemini Robotics
-
----
-
 ## Key Significance
 
 - **Pinnacle of Large LLM-Based VLAs**: Representative case of applying internet-scale knowledge to robotics based on Gemini 2.0

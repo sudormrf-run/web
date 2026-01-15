@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Generalist GEN-0
-
-> Home > Models > Generalist GEN-0
-
----
-
 ## 핵심 의의
 
 - **로보틱스 스케일링 법칙 발견 주장**: LLM처럼 데이터/컴퓨트 증가에 따른 예측 가능하고 일관된 성능 향상 관찰

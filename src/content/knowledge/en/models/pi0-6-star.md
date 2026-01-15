@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Pi*0.6 (pi-star-zero-point-six)
-
-> Home > Models > [Pi Series](pi-series.md) > Pi*0.6
-
----
-
 ## Key Significance
 
 - **VLA Self-Improvement via RL**: Learns from real deployment experience for continuous performance improvement

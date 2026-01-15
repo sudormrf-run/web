@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# π*0.6 (pi-star-zero-point-six)
-
-> Home > Models > [π Series](pi-series.md) > π*0.6
-
----
-
 ## 핵심 의의
 
 - **VLA의 RL 자가 개선**: 배포 후 실제 경험에서 학습하여 지속적 성능 향상

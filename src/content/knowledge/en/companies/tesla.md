@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Tesla
-
-> Home > Companies > Tesla
-
----
-
 ## Overview
 
 Tesla announced the Optimus (Tesla Bot) humanoid robot at AI Day 2021. Leveraging their AI and hardware expertise from automotive manufacturing and autonomous driving, Tesla's core strategy centers on price competitiveness through large-scale in-house production.

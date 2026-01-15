@@ -17,12 +17,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Non-Teleop 데이터 수집
-
-> Home > Solutions > Non-Teleop Data
-
----
-
 ## 개요
 
 UMI 연구를 시작으로 Generalist와 Sunday Robotics는 Non-Teleop 데이터로 학습을 시도하고 있습니다.

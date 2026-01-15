@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Cheng Chi
-
-> Home > People > Cheng Chi
-
----
-
 ## Profile
 
 | Field | Details |

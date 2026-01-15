@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# NVIDIA
-
-> Home > Companies > NVIDIA
-
----
-
 ## Overview
 
 NVIDIA는 GPU를 넘어 로보틱스 AI의 핵심 인프라를 제공합니다. 시뮬레이션(Omniverse), 세계 모델(Cosmos), 휴머노이드 모델(GR00T), 개발 플랫폼(Isaac)까지 풀스택 로보틱스 솔루션을 구축하고 있습니다.

@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# OpenVLA
-
-> Home > Models > OpenVLA
-
----
-
 ## Key Significance
 
 - **Democratization of VLA Research**: First large-scale open-source VLA (7B parameters) - complete release of checkpoints, code, and training pipeline

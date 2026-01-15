@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Vincent Vanhoucke
-
-> Home > People > Vincent Vanhoucke
-
----
-
 ## Profile
 
 | Field | Details |

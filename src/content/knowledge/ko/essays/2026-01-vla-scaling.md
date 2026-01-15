@@ -20,12 +20,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# VLA는 Scaling & Evaluation이 어렵다
-
-> Home > Essays > VLA Scaling Essay
-
----
-
 안녕하세요, 수도리무브 대표 박종현입니다.
 
 현재 많은 매체에서 Physical AI라는 키워드가 관심을 받고 있습니다.

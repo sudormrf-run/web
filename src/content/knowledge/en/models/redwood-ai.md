@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Redwood AI (1X Technologies)
-
-> Home > Models > Redwood AI
-
----
-
 ## Key Significance
 
 - **First Consumer Humanoid Deployment**: VLA deployed in actual homes with NEO robot - ~$20,000 price point

@@ -18,12 +18,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Action Data Scaling 문제
-
-> Home > Challenges > Scaling Problem
-
----
-
 ## 핵심 문제
 
 Action 데이터는 인터넷에 존재하지 않아 바로 scaling 하는 것이 불가능합니다.

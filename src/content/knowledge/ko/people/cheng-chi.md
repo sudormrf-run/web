@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Cheng Chi (迟成)
-
-> Home > People > Cheng Chi
-
----
-
 ## Profile
 
 | 항목 | 내용 |

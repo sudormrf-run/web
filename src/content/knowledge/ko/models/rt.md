@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# RT (Robotics Transformer)
-
-> Home > Models > RT
-
----
-
 ## 핵심 의의
 
 - **VLA의 시초**: RT-2에서 "Action as Language" 패러다임을 제시하여 로봇 액션을 텍스트 토큰으로 표현, 이후 거의 모든 VLA 모델이 이 방식 채택

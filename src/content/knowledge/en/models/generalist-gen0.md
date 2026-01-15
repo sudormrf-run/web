@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Generalist GEN-0
-
-> Home > Models > Generalist GEN-0
-
----
-
 ## Key Significance
 
 - **Claims Discovery of Robotics Scaling Laws**: Observes predictable and consistent performance improvement with data/compute increase, like LLMs

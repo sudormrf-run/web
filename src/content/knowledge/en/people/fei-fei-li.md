@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Fei-Fei Li
-
-> Home > People > Fei-Fei Li
-
----
-
 ## Profile
 
 | Field | Details |

@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# RT (Robotics Transformer)
-
-> Home > Models > RT
-
----
-
 ## Key Significance
 
 - **Origin of VLA**: RT-2 introduced the "Action as Language" paradigm representing robot actions as text tokens, adopted by nearly all subsequent VLA models

@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Pieter Abbeel
-
-> Home > People > Pieter Abbeel
-
----
-
 ## Profile
 
 | Field | Details |

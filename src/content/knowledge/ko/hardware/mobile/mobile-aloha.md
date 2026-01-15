@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Mobile ALOHA
-
-> Home > Hardware > Mobile > Mobile ALOHA
-
----
-
 ## 핵심 의의
 
 - **모바일 양팔 조작의 민주화**: 기존 $200,000+ 수준의 모바일 매니퓰레이터를 ~$32,000로 구현 - 연구 접근성 대폭 향상

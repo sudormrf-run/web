@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# NVIDIA
-
-> Home > Companies > NVIDIA
-
----
-
 ## Overview
 
 NVIDIA goes beyond GPUs to provide core infrastructure for robotics AI. They are building a full-stack robotics solution spanning simulation (Omniverse), world models (Cosmos), humanoid models (GR00T), and development platforms (Isaac).

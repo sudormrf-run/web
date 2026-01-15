@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Sunday Robotics
-
-> Home > Companies > Sunday Robotics
-
----
-
 ## Overview
 
 Sunday Robotics는 Stanford PhD 출신 Tony Zhao (ACT 논문 저자)와 Cheng Chi (Diffusion Policy 저자)가 공동 설립한 스타트업입니다. **로봇 데이터 없이** 인간 동작 데이터만으로 학습하는 혁신적 접근법으로 주목받고 있습니다.

@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Skild AI
-
-> Home > Companies > Skild AI
-
----
-
 ## Overview
 
 Skild AI는 Carnegie Mellon University 교수진이 설립한 로보틱스 AI 스타트업으로, 범용 로봇 "두뇌"를 개발합니다. 2024년 $300M 시리즈 A 라운드로 $1.5B 기업가치를 달성했습니다.

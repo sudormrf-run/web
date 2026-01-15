@@ -16,12 +16,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# 로봇 하드웨어
-
-> Physical AI를 위한 로봇 하드웨어와 플랫폼
-
----
-
 ## 휴머노이드 (Humanoids)
 
 | 로봇 | 회사 | 특징 |

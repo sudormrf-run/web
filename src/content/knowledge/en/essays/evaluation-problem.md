@@ -17,12 +17,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# The Challenge of Evaluation
-
-> Home > Challenges > Evaluation Problem
-
----
-
 ## The Core Problem
 
 Evaluation requires running physical robots and observing their behavior, which presents several issues:

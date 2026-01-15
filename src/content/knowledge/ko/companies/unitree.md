@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Unitree
-
-> Home > Companies > Unitree
-
----
-
 ## Overview
 
 Unitree Robotics는 중국의 로봇 하드웨어 제조사로, 저렴하면서도 고성능인 사족보행 로봇과 휴머노이드를 생산합니다. $16,000 휴머노이드 G1으로 가격 혁신을 이끌고 있습니다.

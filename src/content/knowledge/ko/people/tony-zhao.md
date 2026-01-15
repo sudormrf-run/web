@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Tony Zhao (赵彤阳)
-
-> Home > People > Tony Zhao
-
----
-
 ## Profile
 
 | 항목 | 내용 |

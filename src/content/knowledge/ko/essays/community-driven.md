@@ -17,12 +17,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# 커뮤니티 드리븐 접근
-
-> Home > Solutions > Community Driven
-
----
-
 ## 개요
 
 HuggingFace는 오픈소스 정신으로 커뮤니티 드리븐 데이터를 모으고 있습니다.

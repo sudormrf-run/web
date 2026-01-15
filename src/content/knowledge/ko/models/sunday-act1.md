@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Sunday ACT-1
-
-> Home > Models > Sunday ACT-1
-
----
-
 ## 핵심 의의
 
 - **Zero Robot Data**: 로봇 데이터 없이 순수하게 인간의 움직임(장갑 데이터)만으로 학습 - 데이터 수집 패러다임 전환

@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# SmolVLA
-
-> Home > Models > SmolVLA
-
----
-
 ## 핵심 의의
 
 - **극한의 효율성**: 450M 파라미터로 7배 큰 π0(3.3B)와 동등한 LIBERO 벤치마크 성능 (87.3%)

@@ -16,12 +16,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Physical AI Companies
-
-> Key players in the Physical AI / robotics space
-
----
-
 ## Companies by Category
 
 ### Big Tech

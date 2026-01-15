@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Boston Dynamics Spot
-
-> Home > Hardware > Quadrupeds > Spot
-
----
-
 ## Key Significance
 
 Summary of Spot's significance in the Physical AI field:

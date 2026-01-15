@@ -16,12 +16,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Physical AI 주요 인물
-
-> 로보틱스와 Physical AI 분야를 이끄는 연구자들
-
----
-
 ## 연구자
 
 | 이름 | 소속 | 주요 업적 |

@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Unitree Quadrupeds
-
-> Home > Hardware > Quadrupeds > Unitree
-
----
-
 ## Key Significance
 
 - **Pioneer in Quadruped Democratization**: High-performance quadruped popularization at 1/20 ~ 1/2 price of Spot, research accessibility innovation

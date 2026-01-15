@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Google DeepMind
-
-> Home > Companies > Google DeepMind
-
----
-
 ## Overview
 
 Google DeepMind is a pioneer in robotics AI, leading key advancements in VLA models from RT-1 to Gemini Robotics. The current organization was formed in 2023 through the merger of Google Brain and DeepMind.

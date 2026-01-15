@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Redwood AI (1X Technologies)
-
-> Home > Models > Redwood AI
-
----
-
 ## 핵심 의의
 
 - **소비자 휴머노이드 최초 배포**: NEO 로봇과 함께 실제 가정에 배포되는 VLA - $20,000 가격대

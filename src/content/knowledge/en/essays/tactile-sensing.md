@@ -17,12 +17,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# The Need for Tactile Sensing
-
-> Home > Deep Dives > Tactile Sensing
-
----
-
 ## Is Tactile Sensing Necessary?
 
 ...

@@ -17,12 +17,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Community-Driven Approach
-
-> Home > Solutions > Community Driven
-
----
-
 ## Overview
 
 HuggingFace is collecting community-driven data with an open-source spirit.

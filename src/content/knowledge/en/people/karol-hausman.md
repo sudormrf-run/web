@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Karol Hausman
-
-> Home > People > Karol Hausman
-
----
-
 ## Profile
 
 | Field | Details |

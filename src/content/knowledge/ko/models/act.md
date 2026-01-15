@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# ACT (Action Chunking with Transformers)
-
-> Home > Models > ACT
-
----
-
 ## 핵심 의의
 
 - **Action Chunking 개념 제시**: 심리학에서 영감받아 연속 동작을 하나의 단위(chunk)로 묶어 실행 - compounding error 완화

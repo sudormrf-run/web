@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Octo
-
-> Home > Models > Octo
-
----
-
 ## Key Significance
 
 - **Ultra-Lightweight High Performance**: 93M parameters achieving similar performance to 55B RT-2-X - highest efficiency per parameter

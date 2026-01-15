@@ -18,12 +18,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# 시뮬레이션 & World Model
-
-> Home > Solutions > Simulation & World Model
-
----
-
 ## 개요
 
 NVIDIA는 물리 시뮬레이션(Omniverse)과 World Model(Cosmos)로 데이터를 생산, 증강, 평가하고자 합니다.

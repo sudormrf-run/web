@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Kinova Robotics
-
-> Home > Hardware > Arms > Kinova
-
----
-
 <!-- 이미지 파일 추가 필요: assets/hardware/arms/kinova.png -->
 <!-- Image pending: ![Kinova Gen3](../../assets/hardware/arms/kinova.png) -->
 

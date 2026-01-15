@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# GR00T (Generalist Robot 00 Technology)
-
-> Home > Models > GROOT
-
----
-
 ## 핵심 의의
 
 - **최초 오픈 휴머노이드 파운데이션 모델**: GR00T N1으로 휴머노이드 로봇용 오픈 VLA 최초 공개

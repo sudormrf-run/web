@@ -17,12 +17,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Non-Teleop Data Collection
-
-> Home > Solutions > Non-Teleop Data
-
----
-
 ## Overview
 
 Starting with UMI research, Generalist and Sunday Robotics are attempting to train with non-teleoperated data.

@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Diffusion Policy
-
-> Home > Models > Diffusion Policy
-
----
-
 ## Key Significance
 
 - **Pioneering Diffusion Application to Robotics**: First successful application of diffusion (successful in image generation) to robot action generation

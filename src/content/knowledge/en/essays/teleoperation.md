@@ -18,12 +18,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Teleoperation Approach
-
-> Home > Solutions > Teleoperation
-
----
-
 ## Overview
 
 Major AI robotics players including Tesla, Google, Physical Intelligence, and Galaxea are directly collecting data through teleoperation.

@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Octo
-
-> Home > Models > Octo
-
----
-
 ## 핵심 의의
 
 - **초경량 고성능**: 93M 파라미터로 55B RT-2-X와 유사한 성능 - 파라미터 대비 최고 효율

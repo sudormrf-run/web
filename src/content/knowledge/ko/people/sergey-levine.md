@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Sergey Levine
-
-> Home > People > Sergey Levine
-
----
-
 ## Profile
 
 | 항목 | 내용 |

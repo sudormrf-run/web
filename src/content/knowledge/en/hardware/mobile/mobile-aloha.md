@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Mobile ALOHA
-
-> Home > Hardware > Mobile > Mobile ALOHA
-
----
-
 ## Key Significance
 
 - **Democratization of Mobile Bimanual Manipulation**: Implemented ~$32,000 platform vs existing $200,000+ mobile manipulators - greatly improved research accessibility

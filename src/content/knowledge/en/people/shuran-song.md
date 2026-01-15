@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Shuran Song
-
-> Home > People > Shuran Song
-
----
-
 ## Profile
 
 | Field | Details |

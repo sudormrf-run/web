@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Jim Fan (范麟熙)
-
-> Home > People > Jim Fan
-
----
-
 ## Profile
 
 | 항목 | 내용 |

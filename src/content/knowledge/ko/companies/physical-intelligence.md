@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Physical Intelligence
-
-> Home > Companies > Physical Intelligence
-
----
-
 ## Overview
 
 Physical Intelligence (π)는 2024년 설립된 로보틱스 AI 스타트업으로, 범용 로봇 foundation model을 개발합니다. Google DeepMind, OpenAI, Stanford 출신 팀이 설립했으며, 역대 최대 규모의 로보틱스 시드 펀딩을 받았습니다.

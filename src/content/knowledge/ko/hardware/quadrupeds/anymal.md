@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# ANYbotics ANYmal
-
-> Home > Hardware > Quadrupeds > ANYmal
-
----
-
 <!-- 이미지 준비 중: <!-- Image pending: ![ANYmal - ANYbotics 산업용 검사 로봇](../../assets/hardware/quadrupeds/anymal.png) --> -->
 *이미지: ANYbotics ANYmal 쿼드러펫 로봇 - [ANYbotics 공식 페이지](https://www.anybotics.com/robotics/anymal/)에서 확인*
 

@@ -18,12 +18,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# The Action Data Scaling Problem
-
-> Home > Challenges > Scaling Problem
-
----
-
 ## The Core Problem
 
 Action data doesn't exist on the internet, making immediate scaling impossible.

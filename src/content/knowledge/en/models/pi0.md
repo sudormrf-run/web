@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Pi0 (pi-zero)
-
-> Home > Models > [Pi Series](pi-series.md) > Pi0
-
----
-
 ## Key Significance
 
 - **Successful Application of Flow Matching**: First successful application of flow matching to robotics as an alternative to Diffusion

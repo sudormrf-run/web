@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Figure Helix
-
-> Home > Models > Figure Helix
-
----
-
 ## 핵심 의의
 
 - **최초의 휴머노이드 전신 고속 제어 VLA**: 손목, 몸통, 머리, 개별 손가락까지 상체 전체를 고속 연속 제어하는 최초의 VLA

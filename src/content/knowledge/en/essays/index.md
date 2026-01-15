@@ -16,12 +16,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Essays & Insights
-
-> In-depth analysis and opinions on Physical AI
-
----
-
 ## Latest Essays
 
 ### VLA Scaling & Evaluation is Difficult

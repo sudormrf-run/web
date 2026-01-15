@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Skild AI
-
-> Home > Companies > Skild AI
-
----
-
 ## Overview
 
 Skild AI is a robotics AI startup founded by Carnegie Mellon University faculty, developing a general-purpose robot "brain." In 2024, they achieved a $1.5B valuation with a $300M Series A round.

@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Fei-Fei Li (李飞飞)
-
-> Home > People > Fei-Fei Li
-
----
-
 ## Profile
 
 | 항목 | 내용 |

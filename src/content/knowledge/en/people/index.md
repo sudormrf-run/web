@@ -16,12 +16,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Key People in Physical AI
-
-> Researchers and leaders driving the field of robotics and Physical AI
-
----
-
 ## Researchers
 
 | Name | Affiliation | Key Contributions |

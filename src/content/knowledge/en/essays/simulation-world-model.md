@@ -18,12 +18,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Simulation & World Models
-
-> Home > Solutions > Simulation & World Model
-
----
-
 ## Overview
 
 NVIDIA aims to produce, augment, and evaluate data through physics simulation (Omniverse) and World Models (Cosmos).

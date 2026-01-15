@@ -14,12 +14,6 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
-# Physical Intelligence
-
-> Home > Companies > Physical Intelligence
-
----
-
 ## Overview
 
 Physical Intelligence (π) is a robotics AI startup founded in 2024, developing general-purpose robot foundation models. Founded by a team from Google DeepMind, OpenAI, and Stanford, the company raised the largest seed funding round in robotics history.
