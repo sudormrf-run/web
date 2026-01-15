@@ -903,8 +903,21 @@ const categoryNames: Record<string, string> = {
     padding-left: 1.5rem;
   }
 
+  .article-content :global(ul) {
+    list-style-type: disc;
+  }
+
+  .article-content :global(ol) {
+    list-style-type: decimal;
+  }
+
   .article-content :global(li) {
     margin-bottom: 0.5rem;
+    display: list-item;
+  }
+
+  .article-content :global(li::marker) {
+    color: var(--color-accent);
   }
 
   .article-content :global(a) {
@@ -933,17 +946,6 @@ const categoryNames: Record<string, string> = {
     border-radius: var(--radius-lg);
     padding: 1.25rem 1.5rem;
     margin: 0 0 2rem 0;
-    position: relative;
-  }
-
-  .article-content :global(.author-note::before) {
-    content: '✍';
-    position: absolute;
-    top: -0.75rem;
-    left: 1rem;
-    background: var(--color-bg-primary);
-    padding: 0 0.5rem;
-    font-size: 1.25rem;
   }
 
   .article-content :global(.author-note h3) {
