@@ -157,8 +157,8 @@ RT-2: Single VLM directly outputs image-to-action
 
 ## See Also
 
-- [RT](../models/rt.md)
-- [pi0](../models/pi0.md)
-- [Physical Intelligence](../companies/physical-intelligence.md)
-- [Sergey Levine](sergey-levine.md)
-- [Chelsea Finn](chelsea-finn.md)
+- [RT](../models/rt)
+- [pi0](../models/pi0)
+- [Physical Intelligence](../companies/physical-intelligence)
+- [Sergey Levine](sergey-levine)
+- [Chelsea Finn](chelsea-finn)

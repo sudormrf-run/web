@@ -286,10 +286,10 @@ Released OpenPI framework as open-source in February 2025, fully integrated with
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [ALOHA](aloha.md)
-- [Dynamixel Servos](../actuators/dynamixel.md)
-- [Open X-Embodiment](../../datasets/open-x-embodiment.md)
+- [Hardware List](../index)
+- [ALOHA](aloha)
+- [Dynamixel Servos](../actuators/dynamixel)
+- [Open X-Embodiment](../../datasets/open-x-embodiment)
 
 ---
 

@@ -286,10 +286,10 @@ Physical Intelligence에서 개발한 범용 로봇 제어를 위한 VLA 플로�
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [ALOHA](aloha.md)
-- [Dynamixel 서보](../actuators/dynamixel.md)
-- [Open X-Embodiment](../../datasets/open-x-embodiment.md)
+- [하드웨어 목록](../index)
+- [ALOHA](aloha)
+- [Dynamixel 서보](../actuators/dynamixel)
+- [Open X-Embodiment](../../datasets/open-x-embodiment)
 
 ---
 

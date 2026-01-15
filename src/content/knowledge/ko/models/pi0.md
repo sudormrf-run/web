@@ -286,10 +286,10 @@ FAST 토크나이저를 적용한 autoregressive 버전:
 
 | 버전 | 발표 | 핵심 개선 |
 |------|------|----------|
-| [π0.5](pi0-5.md) | 2025.04 | Open-world 일반화 |
-| [π*0.6](pi0-6-star.md) | 2025.11 | RL 자가 개선 |
+| [π0.5](pi0-5) | 2025.04 | Open-world 일반화 |
+| [π*0.6](pi0-6-star) | 2025.11 | RL 자가 개선 |
 
-전체 시리즈 개요: [π Series](pi-series.md)
+전체 시리즈 개요: [π Series](pi-series)
 
 ---
 
@@ -305,15 +305,15 @@ FAST 토크나이저를 적용한 autoregressive 버전:
 
 ## See Also
 
-- [π Series](pi-series.md)
-- [π0.5](pi0-5.md)
-- [π*0.6](pi0-6-star.md)
-- [Physical Intelligence](../companies/physical-intelligence.md)
-- [Diffusion Policy](diffusion-policy.md)
+- [π Series](pi-series)
+- [π0.5](pi0-5)
+- [π*0.6](pi0-6-star)
+- [Physical Intelligence](../companies/physical-intelligence)
+- [Diffusion Policy](diffusion-policy)
 
 ### 관련 인물
-- [Karol Hausman](../people/karol-hausman.md) - Physical Intelligence 공동창업자
-- [Chelsea Finn](../people/chelsea-finn.md) - Physical Intelligence 공동창업자
-- [Sergey Levine](../people/sergey-levine.md) - Physical Intelligence 공동창업자
-- [Pete Florence](../people/pete-florence.md) - Physical Intelligence 공동창업자
+- [Karol Hausman](../people/karol-hausman) - Physical Intelligence 공동창업자
+- [Chelsea Finn](../people/chelsea-finn) - Physical Intelligence 공동창업자
+- [Sergey Levine](../people/sergey-levine) - Physical Intelligence 공동창업자
+- [Pete Florence](../people/pete-florence) - Physical Intelligence 공동창업자
 

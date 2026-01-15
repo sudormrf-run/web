@@ -141,6 +141,6 @@ If Sunday's approach succeeds:
 
 ## See Also
 
-- [Model List](index.md)
-- [Sunday Robotics](../companies/sunday-robotics.md)
-- [Non-Teleop Data Collection](../solutions/non-teleop-data.md)
+- [Model List](index)
+- [Sunday Robotics](../companies/sunday-robotics)
+- [Non-Teleop Data Collection](../solutions/non-teleop-data)

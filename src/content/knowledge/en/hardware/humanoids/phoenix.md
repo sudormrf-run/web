@@ -259,7 +259,7 @@ Sanctuary AI has demonstrated hundreds of tasks across more than 12 industries (
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Figure Humanoid](figure.md)
-- [Tesla Optimus](optimus.md)
-- [Apollo (Apptronik)](apollo.md)
+- [Hardware List](../index)
+- [Figure Humanoid](figure)
+- [Tesla Optimus](optimus)
+- [Apollo (Apptronik)](apollo)

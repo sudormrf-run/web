@@ -312,6 +312,6 @@ Digit은 **10만 개 이상의 토트 이동**을 달성하며 다음을 증명�
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [Figure 휴머노이드](figure.md)
-- [Tesla Optimus](optimus.md)
+- [하드웨어 목록](../index)
+- [Figure 휴머노이드](figure)
+- [Tesla Optimus](optimus)

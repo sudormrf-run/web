@@ -81,9 +81,9 @@ Pi Series is a Vision-Language-Action model series announced by Physical Intelli
 
 | Version | Released | Key Innovation | Detailed Doc |
 |---------|----------|----------------|--------------|
-| **Pi0** | 2024.10 | Flow Matching VLA, 50Hz control | [Pi0](pi0.md) |
-| **Pi0.5** | 2025.04 | Open-World generalization, Web data | [Pi0.5](pi0-5.md) |
-| **Pi*0.6** | 2025.11 | RL self-improvement, RECAP | [Pi*0.6](pi0-6-star.md) |
+| **Pi0** | 2024.10 | Flow Matching VLA, 50Hz control | [Pi0](pi0) |
+| **Pi0.5** | 2025.04 | Open-World generalization, Web data | [Pi0.5](pi0-5) |
+| **Pi*0.6** | 2025.11 | RL self-improvement, RECAP | [Pi*0.6](pi0-6-star) |
 
 ---
 
@@ -240,10 +240,10 @@ Previous achievements of Physical Intelligence founding team:
 
 | Person | Previous Affiliation | Key Contributions |
 |--------|---------------------|-------------------|
-| [Karol Hausman](../people/karol-hausman.md) | Google DeepMind | RT-1, RT-2 Lead |
-| [Chelsea Finn](../people/chelsea-finn.md) | Stanford/Google | MAML, Robotics Transformer |
-| [Sergey Levine](../people/sergey-levine.md) | UC Berkeley/Google | RL, Robot Learning |
-| [Pete Florence](../people/pete-florence.md) | Google DeepMind | Dense Descriptors |
+| [Karol Hausman](../people/karol-hausman) | Google DeepMind | RT-1, RT-2 Lead |
+| [Chelsea Finn](../people/chelsea-finn) | Stanford/Google | MAML, Robotics Transformer |
+| [Sergey Levine](../people/sergey-levine) | UC Berkeley/Google | RL, Robot Learning |
+| [Pete Florence](../people/pete-florence) | Google DeepMind | Dense Descriptors |
 
 ---
 
@@ -282,15 +282,15 @@ Impact of Pi Series on the robotics field:
 
 ## See Also
 
-- [Model List](index.md)
-- [Pi0](pi0.md)
-- [Pi0.5](pi0-5.md)
-- [Pi*0.6](pi0-6-star.md)
-- [Physical Intelligence](../companies/physical-intelligence.md)
-- [Diffusion Policy](diffusion-policy.md)
+- [Model List](index)
+- [Pi0](pi0)
+- [Pi0.5](pi0-5)
+- [Pi*0.6](pi0-6-star)
+- [Physical Intelligence](../companies/physical-intelligence)
+- [Diffusion Policy](diffusion-policy)
 
 ### Related People
-- [Karol Hausman](../people/karol-hausman.md)
-- [Chelsea Finn](../people/chelsea-finn.md)
-- [Sergey Levine](../people/sergey-levine.md)
-- [Pete Florence](../people/pete-florence.md)
+- [Karol Hausman](../people/karol-hausman)
+- [Chelsea Finn](../people/chelsea-finn)
+- [Sergey Levine](../people/sergey-levine)
+- [Pete Florence](../people/pete-florence)

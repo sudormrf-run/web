@@ -183,12 +183,12 @@ OpenVLA의 핵심 장점 중 하나는 **효율적인 파인튜닝**입니다.
 
 ## See Also
 
-- [모델 목록](index.md)
-- [Octo](octo.md)
-- [RT](rt.md)
-- [SmolVLA](smolvla.md)
+- [모델 목록](index)
+- [Octo](octo)
+- [RT](rt)
+- [SmolVLA](smolvla)
 
 ### 관련 인물
-- [Sergey Levine](../people/sergey-levine.md) - 공동 저자
-- [Chelsea Finn](../people/chelsea-finn.md) - Stanford 연구실
+- [Sergey Levine](../people/sergey-levine) - 공동 저자
+- [Chelsea Finn](../people/chelsea-finn) - Stanford 연구실
 

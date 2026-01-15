@@ -53,6 +53,6 @@ Evaluation은 실물 로봇을 구동하면서 동작을 봐야 하는데:
 
 ## See Also
 
-- [Action Data Scaling 문제](scaling-problem.md)
-- [시뮬레이션 & World Model](../simulation-world-model.md)
+- [Action Data Scaling 문제](scaling-problem)
+- [시뮬레이션 & World Model](../simulation-world-model)
 

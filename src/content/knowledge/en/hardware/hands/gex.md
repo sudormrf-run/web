@@ -214,7 +214,7 @@ GX11 is used in combination with EX12 exoskeleton glove:
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [LEAP Hand](leap-hand.md) - Similar low-cost design
-- [Shadow Hand](shadow-hand.md) - High-performance benchmark
-- [Allegro Hand](allegro.md) - Mid-range alternative
+- [Hardware List](../index)
+- [LEAP Hand](leap-hand) - Similar low-cost design
+- [Shadow Hand](shadow-hand) - High-performance benchmark
+- [Allegro Hand](allegro) - Mid-range alternative

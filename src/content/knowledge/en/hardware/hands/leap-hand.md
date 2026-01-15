@@ -270,6 +270,6 @@ LEAP Hand is not just hardware, but a **platform designed for robot learning res
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [GEX Series](gex.md)
-- [Shadow Hand](shadow-hand.md)
+- [Hardware List](../index)
+- [GEX Series](gex)
+- [Shadow Hand](shadow-hand)

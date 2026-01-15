@@ -396,7 +396,7 @@ lerobot-find-port
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [SmolVLA](../../models/smolvla.md)
-- [Koch](koch.md)
-- [ACT Policy](../../models/act.md)
+- [Hardware List](../index)
+- [SmolVLA](../../models/smolvla)
+- [Koch](koch)
+- [ACT Policy](../../models/act)

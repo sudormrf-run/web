@@ -356,7 +356,7 @@ Galaxea has open-sourced its self-developed **G0 VLA model**.
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Galaxea Humanoid](../humanoids/galaxea.md)
-- [xArm Series](xarm.md)
-- [Franka Research 3](franka-research3.md)
+- [Hardware List](../index)
+- [Galaxea Humanoid](../humanoids/galaxea)
+- [xArm Series](xarm)
+- [Franka Research 3](franka-research3)

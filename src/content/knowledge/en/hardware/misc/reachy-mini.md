@@ -306,7 +306,7 @@ At CES 2026, Jensen Huang demonstrated connecting Reachy Mini with NVIDIA DGX Sp
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Reachy 2](../humanoids/reachy.md)
-- [LeRobot Arms](../arms/lerobot-arms.md)
-- [SmolVLA](../../models/smolvla.md)
+- [Hardware List](../index)
+- [Reachy 2](../humanoids/reachy)
+- [LeRobot Arms](../arms/lerobot-arms)
+- [SmolVLA](../../models/smolvla)

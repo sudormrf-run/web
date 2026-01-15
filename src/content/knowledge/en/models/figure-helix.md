@@ -141,6 +141,6 @@ Two robots operate **simultaneously**:
 
 ## See Also
 
-- [Model List](index.md)
-- [GR00T](groot.md)
-- [pi0](pi0.md)
+- [Model List](index)
+- [GR00T](groot)
+- [pi0](pi0)

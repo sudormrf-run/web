@@ -36,7 +36,7 @@ Diffusion Policy is a new approach that represents robot visuomotor policies as 
 | Item | Details |
 |------|---------|
 | Published | March 2023 (RSS 2023) |
-| Authors | [Cheng Chi](../people/cheng-chi.md), Siyuan Feng, Yilun Du, Zhenjia Xu, [Shuran Song](../people/shuran-song.md) et al. |
+| Authors | [Cheng Chi](../people/cheng-chi), Siyuan Feng, Yilun Du, Zhenjia Xu, [Shuran Song](../people/shuran-song) et al. |
 | Affiliation | Columbia University, MIT, Toyota Research Institute |
 | Paper | [arXiv:2303.04137](https://arxiv.org/abs/2303.04137) |
 | Journal | IJRR 2024 (Extended version) |
@@ -156,10 +156,10 @@ Diffusion Policy is a pioneering work applying diffusion models to robot learnin
 
 ## See Also
 
-- [Model List](index.md)
-- [ACT](act.md)
-- [pi0](pi0.md)
+- [Model List](index)
+- [ACT](act)
+- [pi0](pi0)
 
 ### Related People
-- [Cheng Chi](../people/cheng-chi.md) - First Author
-- [Shuran Song](../people/shuran-song.md) - Advisor
+- [Cheng Chi](../people/cheng-chi) - First Author
+- [Shuran Song](../people/shuran-song) - Advisor

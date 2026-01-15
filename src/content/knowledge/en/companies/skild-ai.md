@@ -148,6 +148,6 @@ Physical Intelligence: "Real physical interaction is essential"
 
 ## See Also
 
-- [Company List](index.md)
-- [Simulation & World Model](../solutions/simulation-world-model.md)
-- [Physical Intelligence](physical-intelligence.md)
+- [Company List](index)
+- [Simulation & World Model](../solutions/simulation-world-model)
+- [Physical Intelligence](physical-intelligence)

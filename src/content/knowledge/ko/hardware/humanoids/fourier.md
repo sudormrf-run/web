@@ -289,7 +289,7 @@ Fourier의 차별점은 의료 분야에서의 실제 적용 경험이다.
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [Unitree 휴머노이드](unitree-humanoid.md)
-- [Tesla Optimus](optimus.md)
-- [Figure 휴머노이드](figure.md)
+- [하드웨어 목록](../index)
+- [Unitree 휴머노이드](unitree-humanoid)
+- [Tesla Optimus](optimus)
+- [Figure 휴머노이드](figure)

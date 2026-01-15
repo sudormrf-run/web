@@ -190,7 +190,7 @@ Mobile ALOHA는 ALOHA를 **모바일 베이스(AgileX Tracer)**에 장착한 확
 - 와인 쏟음 청소
 - 하이파이브
 
-자세한 내용은 [Mobile ALOHA](../mobile/mobile-aloha.md) 참조.
+자세한 내용은 [Mobile ALOHA](../mobile/mobile-aloha) 참조.
 
 ---
 
@@ -279,8 +279,8 @@ ALOHA에서 7B VLA 정책으로 **고주파 언어 기반 제어**를 달성. LI
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [Mobile ALOHA](../mobile/mobile-aloha.md)
-- [ACT](../../models/act.md)
-- [WidowX / Interbotix](widowx.md)
-- [OpenVLA](../../models/openvla.md)
+- [하드웨어 목록](../index)
+- [Mobile ALOHA](../mobile/mobile-aloha)
+- [ACT](../../models/act)
+- [WidowX / Interbotix](widowx)
+- [OpenVLA](../../models/openvla)

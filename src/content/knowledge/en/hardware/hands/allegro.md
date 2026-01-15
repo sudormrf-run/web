@@ -161,6 +161,6 @@ Allegro Hand is widely used in Vision-Language-Action (VLA) and learning-based m
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Shadow Hand](shadow-hand.md)
-- [LEAP Hand](leap-hand.md)
+- [Hardware List](../index)
+- [Shadow Hand](shadow-hand)
+- [LEAP Hand](leap-hand)

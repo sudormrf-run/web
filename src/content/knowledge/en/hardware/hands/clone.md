@@ -167,6 +167,6 @@ Kozlik posted the first prototype video on YouTube in 2019, which went viral, an
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Shadow Hand](shadow-hand.md)
-- [Allegro Hand](allegro.md)
+- [Hardware List](../index)
+- [Shadow Hand](shadow-hand)
+- [Allegro Hand](allegro)

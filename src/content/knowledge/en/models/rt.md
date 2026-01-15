@@ -155,12 +155,12 @@ The RT series is the starting point for VLA models, significantly influencing su
 
 ## See Also
 
-- [Model List](index.md)
-- [Google DeepMind](../companies/google-deepmind.md)
-- [Gemini Robotics](gemini-robotics.md)
-- [OpenVLA](openvla.md)
+- [Model List](index)
+- [Google DeepMind](../companies/google-deepmind)
+- [Gemini Robotics](gemini-robotics)
+- [OpenVLA](openvla)
 
 ### Related People
-- [Sergey Levine](../people/sergey-levine.md) - RT Series Key Researcher
-- [Karol Hausman](../people/karol-hausman.md) - RT Series Lead
-- [Vincent Vanhoucke](../people/vincent-vanhoucke.md) - Google Robotics Head
+- [Sergey Levine](../people/sergey-levine) - RT Series Key Researcher
+- [Karol Hausman](../people/karol-hausman) - RT Series Lead
+- [Vincent Vanhoucke](../people/vincent-vanhoucke) - Google Robotics Head

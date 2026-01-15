@@ -44,7 +44,7 @@ Action data doesn't exist on the internet, making immediate scaling impossible.
 
 ## See Also
 
-- [The Challenge of Evaluation](evaluation-problem.md)
-- [Solution: Teleoperation](../teleoperation.md)
-- [Solution: Simulation](../simulation-world-model.md)
-- [Solution: Non-Teleop Data](../non-teleop-data.md)
+- [The Challenge of Evaluation](evaluation-problem)
+- [Solution: Teleoperation](../teleoperation)
+- [Solution: Simulation](../simulation-world-model)
+- [Solution: Non-Teleop Data](../non-teleop-data)

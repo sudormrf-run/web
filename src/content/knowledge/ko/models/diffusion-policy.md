@@ -36,7 +36,7 @@ Diffusion Policy는 로봇의 visuomotor 정책을 조건부 denoising diffusion
 | 항목 | 내용 |
 |------|------|
 | 발표 | 2023년 3월 (RSS 2023) |
-| 저자 | [Cheng Chi](../people/cheng-chi.md), Siyuan Feng, Yilun Du, Zhenjia Xu, [Shuran Song](../people/shuran-song.md) 외 |
+| 저자 | [Cheng Chi](../people/cheng-chi), Siyuan Feng, Yilun Du, Zhenjia Xu, [Shuran Song](../people/shuran-song) 외 |
 | 소속 | Columbia University, MIT, Toyota Research Institute |
 | 논문 | [arXiv:2303.04137](https://arxiv.org/abs/2303.04137) |
 | 저널 | IJRR 2024 (확장판) |
@@ -156,11 +156,11 @@ Diffusion Policy는 로봇 학습에 diffusion model을 적용한 선구적 연�
 
 ## See Also
 
-- [모델 목록](index.md)
-- [ACT](act.md)
-- [pi0](pi0.md)
+- [모델 목록](index)
+- [ACT](act)
+- [pi0](pi0)
 
 ### 관련 인물
-- [Cheng Chi](../people/cheng-chi.md) - 제1저자
-- [Shuran Song](../people/shuran-song.md) - 지도교수
+- [Cheng Chi](../people/cheng-chi) - 제1저자
+- [Shuran Song](../people/shuran-song) - 지도교수
 

@@ -270,6 +270,6 @@ LEAP Hand는 단순한 하드웨어가 아닌, **로봇 학습 연구를 위해 
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [GEX 시리즈](gex.md)
-- [Shadow Hand](shadow-hand.md)
+- [하드웨어 목록](../index)
+- [GEX 시리즈](gex)
+- [Shadow Hand](shadow-hand)

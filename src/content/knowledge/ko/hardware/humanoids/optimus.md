@@ -216,8 +216,8 @@ Tesla Optimus의 AI는 FSD(Full Self-Driving)에서 검증된 **End-to-End 신�
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [Tesla](../../companies/tesla.md)
-- [Boston Dynamics Atlas](atlas.md)
-- [Figure 01](figure-01.md)
-- [End-to-End Learning](../../fundamentals/end-to-end.md)
+- [하드웨어 목록](../index)
+- [Tesla](../../companies/tesla)
+- [Boston Dynamics Atlas](atlas)
+- [Figure 01](figure-01)
+- [End-to-End Learning](../../fundamentals/end-to-end)

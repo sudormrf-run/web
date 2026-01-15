@@ -290,5 +290,5 @@ According to Hugging Face blog, the Reachy platform has been deployed and used i
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Reachy Mini](../misc/reachy-mini.md)
+- [Hardware List](../index)
+- [Reachy Mini](../misc/reachy-mini)

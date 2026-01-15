@@ -146,6 +146,6 @@ ACT: 관측 → 다음 k개 액션 시퀀스
 
 ## See Also
 
-- [ACT](../models/act.md)
-- [Chelsea Finn](chelsea-finn.md)
-- [Physical Intelligence](../companies/physical-intelligence.md)
+- [ACT](../models/act)
+- [Chelsea Finn](chelsea-finn)
+- [Physical Intelligence](../companies/physical-intelligence)

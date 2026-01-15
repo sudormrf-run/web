@@ -43,10 +43,10 @@ lastEditedAt: 2026-01-15
 
 | 접근법 | 주체 | 설명 |
 |--------|------|------|
-| [시뮬레이션](../simulation-world-model.md) | NVIDIA | 물리 시뮬레이션(Omniverse)과 World Model(Cosmos)로 데이터를 생산, 증강, 평가 |
-| [Teleoperation](../teleoperation.md) | Tesla, Google, Physical Intelligence, Galaxea | 직접 데이터를 수집 |
-| [Non-Teleop](../non-teleop-data.md) | UMI, Generalist, Sunday Robotics | Non-Teleop 데이터로 학습 시도 |
-| [커뮤니티](../community-driven.md) | HuggingFace | 오픈소스 정신으로 커뮤니티 드리븐 데이터 수집 |
+| [시뮬레이션](../simulation-world-model) | NVIDIA | 물리 시뮬레이션(Omniverse)과 World Model(Cosmos)로 데이터를 생산, 증강, 평가 |
+| [Teleoperation](../teleoperation) | Tesla, Google, Physical Intelligence, Galaxea | 직접 데이터를 수집 |
+| [Non-Teleop](../non-teleop-data) | UMI, Generalist, Sunday Robotics | Non-Teleop 데이터로 학습 시도 |
+| [커뮤니티](../community-driven) | HuggingFace | 오픈소스 정신으로 커뮤니티 드리븐 데이터 수집 |
 | World Model | 1X | Evaluation 자동화 |
 | 분산 평가 | 학계 | OXE, RoboArena 등 |
 | 기타 | 다양함 | 휴먼 비디오에서 Action 추출, 에고센트릭 데이터 수집 장비 등 |
@@ -65,7 +65,7 @@ lastEditedAt: 2026-01-15
 
 ## See Also
 
-- [Action Data Scaling 문제](../scaling-problem.md)
-- [Evaluation의 어려움](../evaluation-problem.md)
-- [해결책들](../teleoperation.md)
+- [Action Data Scaling 문제](../scaling-problem)
+- [Evaluation의 어려움](../evaluation-problem)
+- [해결책들](../teleoperation)
 

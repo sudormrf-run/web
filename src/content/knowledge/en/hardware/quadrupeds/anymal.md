@@ -364,7 +364,7 @@ ANYmal Research is an international community for advancing legged robot researc
 
 ## See Also
 
-- [Hardware List](../index.md)
+- [Hardware List](../index)
 - [[Boston Dynamics Spot]]
 - [[Unitree Robots]]
 - [[Legged Robot Control]]

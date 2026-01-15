@@ -159,9 +159,9 @@ Sunday의 접근법이 성공한다면:
 
 ## See Also
 
-- [회사 목록](index.md)
-- [Sunday ACT-1](../models/sunday-act1.md)
-- [Non-Teleop 데이터 수집](../solutions/non-teleop-data.md)
-- [ACT](../models/act.md)
-- [Diffusion Policy](../models/diffusion-policy.md)
+- [회사 목록](index)
+- [Sunday ACT-1](../models/sunday-act1)
+- [Non-Teleop 데이터 수집](../solutions/non-teleop-data)
+- [ACT](../models/act)
+- [Diffusion Policy](../models/diffusion-policy)
 

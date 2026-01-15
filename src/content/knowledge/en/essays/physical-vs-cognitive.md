@@ -45,6 +45,6 @@ The limitations of simply applying LLM approaches without a fundamental understa
 
 ## See Also
 
-- [What are RFM & VLA](../what-is-rfm-vla.md)
-- [The Need for Tactile Sensing](../tactile-sensing.md)
-- [Humanoid Design](../humanoid-design.md)
+- [What are RFM & VLA](../what-is-rfm-vla)
+- [The Need for Tactile Sensing](../tactile-sensing)
+- [Humanoid Design](../humanoid-design)

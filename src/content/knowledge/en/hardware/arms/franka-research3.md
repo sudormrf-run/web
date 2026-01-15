@@ -406,7 +406,7 @@ FR3 is one of the most widely used robot platforms in VLA (Vision-Language-Actio
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Franka Panda](franka-panda.md)
-- [OpenVLA](../../models/openvla.md)
-- [Open X-Embodiment](../../datasets/open-x-embodiment.md)
+- [Hardware List](../index)
+- [Franka Panda](franka-panda)
+- [OpenVLA](../../models/openvla)
+- [Open X-Embodiment](../../datasets/open-x-embodiment)

@@ -329,14 +329,14 @@ Advantage = V(s') - V(s)  (다음 상태 value - 현재 상태 value)
 
 ## See Also
 
-- [π Series](pi-series.md)
-- [π0](pi0.md)
-- [π0.5](pi0-5.md)
-- [Physical Intelligence](../companies/physical-intelligence.md)
+- [π Series](pi-series)
+- [π0](pi0)
+- [π0.5](pi0-5)
+- [Physical Intelligence](../companies/physical-intelligence)
 
 ### 관련 인물
-- [Karol Hausman](../people/karol-hausman.md) - Physical Intelligence 공동창업자
-- [Chelsea Finn](../people/chelsea-finn.md) - Physical Intelligence 공동창업자
-- [Sergey Levine](../people/sergey-levine.md) - Physical Intelligence 공동창업자
-- [Pete Florence](../people/pete-florence.md) - Physical Intelligence 공동창업자
+- [Karol Hausman](../people/karol-hausman) - Physical Intelligence 공동창업자
+- [Chelsea Finn](../people/chelsea-finn) - Physical Intelligence 공동창업자
+- [Sergey Levine](../people/sergey-levine) - Physical Intelligence 공동창업자
+- [Pete Florence](../people/pete-florence) - Physical Intelligence 공동창업자
 

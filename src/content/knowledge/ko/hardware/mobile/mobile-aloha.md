@@ -246,7 +246,7 @@ Mobile ALOHA: 16-DoF
 
 | 알고리즘 | 설명 |
 |----------|------|
-| [ACT](../../models/act.md) | Action Chunking Transformer |
+| [ACT](../../models/act) | Action Chunking Transformer |
 | Diffusion Policy | Diffusion 기반 행동 생성 |
 | VINN | Visual Imitation through Nearest Neighbors |
 
@@ -296,8 +296,8 @@ Mobile ALOHA: 16-DoF
 | 이름 | 역할 |
 |------|------|
 | [Zipeng Fu](https://zipengfu.github.io/) | 공동 제1저자 |
-| [Tony Z. Zhao](../people/tony-zhao.md) | 공동 제1저자 |
-| [Chelsea Finn](../people/chelsea-finn.md) | 지도교수 |
+| [Tony Z. Zhao](../people/tony-zhao) | 공동 제1저자 |
+| [Chelsea Finn](../people/chelsea-finn) | 지도교수 |
 
 ### 지원
 
@@ -371,8 +371,8 @@ Trossen Robotics에서 ALOHA 키트 판매:
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [ALOHA (정적)](../arms/aloha.md)
-- [ACT](../../models/act.md)
-- [Tony Zhao](../../people/tony-zhao.md)
-- [Chelsea Finn](../../people/chelsea-finn.md)
+- [하드웨어 목록](../index)
+- [ALOHA (정적)](../arms/aloha)
+- [ACT](../../models/act)
+- [Tony Zhao](../../people/tony-zhao)
+- [Chelsea Finn](../../people/chelsea-finn)

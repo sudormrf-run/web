@@ -364,7 +364,7 @@ ANYmal Research는 보행 로봇 연구 발전을 위한 국제 커뮤니티로,
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
+- [하드웨어 목록](../index)
 - [[Boston Dynamics Spot]]
 - [[Unitree 로봇]]
 - [[보행 로봇 제어]]

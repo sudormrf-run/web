@@ -306,7 +306,7 @@ CES 2026에서 Jensen Huang은 Reachy Mini와 NVIDIA DGX Spark를 연결한 데�
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [Reachy 2](../humanoids/reachy.md)
-- [LeRobot Arms](../arms/lerobot-arms.md)
-- [SmolVLA](../../models/smolvla.md)
+- [하드웨어 목록](../index)
+- [Reachy 2](../humanoids/reachy)
+- [LeRobot Arms](../arms/lerobot-arms)
+- [SmolVLA](../../models/smolvla)

@@ -144,6 +144,6 @@ Advantages:
 
 ## See Also
 
-- [Diffusion Policy](../models/diffusion-policy.md)
-- [Shuran Song](shuran-song.md)
-- [ACT](../models/act.md)
+- [Diffusion Policy](../models/diffusion-policy)
+- [Shuran Song](shuran-song)
+- [ACT](../models/act)

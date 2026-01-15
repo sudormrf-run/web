@@ -156,7 +156,7 @@ Advantages:
 
 ## See Also
 
-- [pi0](../models/pi0.md)
-- [Physical Intelligence](../companies/physical-intelligence.md)
-- [Karol Hausman](karol-hausman.md)
-- [Sergey Levine](sergey-levine.md)
+- [pi0](../models/pi0)
+- [Physical Intelligence](../companies/physical-intelligence)
+- [Karol Hausman](karol-hausman)
+- [Sergey Levine](sergey-levine)

@@ -187,6 +187,6 @@ Pieter Abbeel lab alumni/collaborators:
 
 ## See Also
 
-- [Chelsea Finn](chelsea-finn.md)
-- [Sergey Levine](sergey-levine.md)
-- [Covariant](../companies/covariant.md)
+- [Chelsea Finn](chelsea-finn)
+- [Sergey Levine](sergey-levine)
+- [Covariant](../companies/covariant)

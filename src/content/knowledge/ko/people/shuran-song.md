@@ -154,6 +154,6 @@ lastEditedAt: 2026-01-15
 
 ## See Also
 
-- [Diffusion Policy](../models/diffusion-policy.md)
-- [Cheng Chi](cheng-chi.md)
-- [ACT](../models/act.md)
+- [Diffusion Policy](../models/diffusion-policy)
+- [Cheng Chi](cheng-chi)
+- [ACT](../models/act)

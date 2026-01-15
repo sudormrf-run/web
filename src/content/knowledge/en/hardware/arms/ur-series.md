@@ -287,4 +287,4 @@ Universal Robots collaborative robots provide the following advantages for VLA r
 
 ## See Also
 
-- [Hardware List](../index.md)
+- [Hardware List](../index)

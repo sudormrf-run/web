@@ -286,10 +286,10 @@ Evolved versions after Pi0:
 
 | Version | Released | Key Improvements |
 |---------|----------|------------------|
-| [Pi0.5](pi0-5.md) | 2025.04 | Open-world generalization |
-| [Pi*0.6](pi0-6-star.md) | 2025.11 | RL self-improvement |
+| [Pi0.5](pi0-5) | 2025.04 | Open-world generalization |
+| [Pi*0.6](pi0-6-star) | 2025.11 | RL self-improvement |
 
-Full series overview: [Pi Series](pi-series.md)
+Full series overview: [Pi Series](pi-series)
 
 ---
 
@@ -305,14 +305,14 @@ Full series overview: [Pi Series](pi-series.md)
 
 ## See Also
 
-- [Pi Series](pi-series.md)
-- [Pi0.5](pi0-5.md)
-- [Pi*0.6](pi0-6-star.md)
-- [Physical Intelligence](../companies/physical-intelligence.md)
-- [Diffusion Policy](diffusion-policy.md)
+- [Pi Series](pi-series)
+- [Pi0.5](pi0-5)
+- [Pi*0.6](pi0-6-star)
+- [Physical Intelligence](../companies/physical-intelligence)
+- [Diffusion Policy](diffusion-policy)
 
 ### Related People
-- [Karol Hausman](../people/karol-hausman.md) - Physical Intelligence Co-founder
-- [Chelsea Finn](../people/chelsea-finn.md) - Physical Intelligence Co-founder
-- [Sergey Levine](../people/sergey-levine.md) - Physical Intelligence Co-founder
-- [Pete Florence](../people/pete-florence.md) - Physical Intelligence Co-founder
+- [Karol Hausman](../people/karol-hausman) - Physical Intelligence Co-founder
+- [Chelsea Finn](../people/chelsea-finn) - Physical Intelligence Co-founder
+- [Sergey Levine](../people/sergey-levine) - Physical Intelligence Co-founder
+- [Pete Florence](../people/pete-florence) - Physical Intelligence Co-founder

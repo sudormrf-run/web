@@ -184,8 +184,8 @@ PSYONIC은 전 세계 로보틱스 연구자들을 위해 Ability Hand를 연구
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [Inspire Hand](inspire.md)
+- [하드웨어 목록](../index)
+- [Inspire Hand](inspire)
 
 ---
 

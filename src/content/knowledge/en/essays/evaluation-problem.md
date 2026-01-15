@@ -53,5 +53,5 @@ Evaluation requires running physical robots and observing their behavior, which 
 
 ## See Also
 
-- [Action Data Scaling Problem](scaling-problem.md)
-- [Simulation & World Model](../simulation-world-model.md)
+- [Action Data Scaling Problem](scaling-problem)
+- [Simulation & World Model](../simulation-world-model)

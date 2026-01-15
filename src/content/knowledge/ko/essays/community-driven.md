@@ -62,7 +62,7 @@ LeRobot 해커톤을 서울에서 호스팅하면서 느낀 커뮤니티 드리�
 
 ## See Also
 
-- [Non-Teleop 데이터 수집](non-teleop-data.md)
-- [오픈소스 VLA 모델들](../models/open-models.md)
-- [HuggingFace](../companies/huggingface.md)
+- [Non-Teleop 데이터 수집](non-teleop-data)
+- [오픈소스 VLA 모델들](../models/open-models)
+- [HuggingFace](../companies/huggingface)
 

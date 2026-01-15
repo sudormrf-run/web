@@ -264,9 +264,9 @@ Meituan, IDG Capital, Baidu Ventures 등 30개 이상 투자사 참여. [^2]
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [Galaxea Arms](../arms/galaxea-arms.md)
-- [Unitree 휴머노이드](unitree-humanoid.md)
+- [하드웨어 목록](../index)
+- [Galaxea Arms](../arms/galaxea-arms)
+- [Unitree 휴머노이드](unitree-humanoid)
 
 ---
 

@@ -198,10 +198,10 @@ Actions made possible:
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [1X Technologies](../../companies/1x.md)
-- [Redwood AI](../../models/redwood-ai.md)
-- [Tendon Drive System](../../fundamentals/actuation/tendon-drive.md)
+- [Hardware List](../index)
+- [1X Technologies](../../companies/1x)
+- [Redwood AI](../../models/redwood-ai)
+- [Tendon Drive System](../../fundamentals/actuation/tendon-drive)
 
 ---
 

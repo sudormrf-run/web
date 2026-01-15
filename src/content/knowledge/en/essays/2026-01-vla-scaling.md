@@ -43,10 +43,10 @@ To address these problems, different companies and research groups are taking va
 
 | Approach | Organization | Description |
 |----------|--------------|-------------|
-| [Simulation](../simulation-world-model.md) | NVIDIA | Data generation, augmentation, and evaluation through physics simulation (Omniverse) and World Model (Cosmos) |
-| [Teleoperation](../teleoperation.md) | Tesla, Google, Physical Intelligence, Galaxea | Direct data collection |
-| [Non-Teleop](../non-teleop-data.md) | UMI, Generalist, Sunday Robotics | Training with non-teleoperated data |
-| [Community](../community-driven.md) | HuggingFace | Community-driven data collection with open-source spirit |
+| [Simulation](../simulation-world-model) | NVIDIA | Data generation, augmentation, and evaluation through physics simulation (Omniverse) and World Model (Cosmos) |
+| [Teleoperation](../teleoperation) | Tesla, Google, Physical Intelligence, Galaxea | Direct data collection |
+| [Non-Teleop](../non-teleop-data) | UMI, Generalist, Sunday Robotics | Training with non-teleoperated data |
+| [Community](../community-driven) | HuggingFace | Community-driven data collection with open-source spirit |
 | World Model | 1X | Evaluation automation |
 | Distributed Evaluation | Academia | OXE, RoboArena, etc. |
 | Others | Various | Extracting actions from human videos, egocentric data collection devices, etc. |
@@ -65,6 +65,6 @@ I believe there are many opportunities in this chaotic present, and I want to sh
 
 ## See Also
 
-- [Action Data Scaling Problem](../scaling-problem.md)
-- [Challenges of Evaluation](../evaluation-problem.md)
-- [Solutions](../teleoperation.md)
+- [Action Data Scaling Problem](../scaling-problem)
+- [Challenges of Evaluation](../evaluation-problem)
+- [Solutions](../teleoperation)

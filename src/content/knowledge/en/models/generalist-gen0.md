@@ -128,6 +128,6 @@ If GEN-0's claims are true:
 
 ## See Also
 
-- [Model List](index.md)
-- [Generalist](../companies/generalist.md)
-- [Non-Teleop Data Collection](../solutions/non-teleop-data.md)
+- [Model List](index)
+- [Generalist](../companies/generalist)
+- [Non-Teleop Data Collection](../solutions/non-teleop-data)

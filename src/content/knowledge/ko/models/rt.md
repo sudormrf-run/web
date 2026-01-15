@@ -155,13 +155,13 @@ RT 시리즈는 VLA 모델의 시작점으로, 이후 OpenVLA, pi0 등 후속 �
 
 ## See Also
 
-- [모델 목록](index.md)
-- [Google DeepMind](../companies/google-deepmind.md)
-- [Gemini Robotics](gemini-robotics.md)
-- [OpenVLA](openvla.md)
+- [모델 목록](index)
+- [Google DeepMind](../companies/google-deepmind)
+- [Gemini Robotics](gemini-robotics)
+- [OpenVLA](openvla)
 
 ### 관련 인물
-- [Sergey Levine](../people/sergey-levine.md) - RT 시리즈 핵심 연구자
-- [Karol Hausman](../people/karol-hausman.md) - RT 시리즈 리더
-- [Vincent Vanhoucke](../people/vincent-vanhoucke.md) - Google Robotics 총괄
+- [Sergey Levine](../people/sergey-levine) - RT 시리즈 핵심 연구자
+- [Karol Hausman](../people/karol-hausman) - RT 시리즈 리더
+- [Vincent Vanhoucke](../people/vincent-vanhoucke) - Google Robotics 총괄
 

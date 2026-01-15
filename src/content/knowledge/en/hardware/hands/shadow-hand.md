@@ -214,10 +214,10 @@ DEX-EE was developed over 5 years at Google DeepMind's request, a **next-generat
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [LEAP Hand](leap-hand.md) - Low-cost open-source alternative to Shadow Hand
-- [Allegro Hand](allegro.md)
-- [GEX Series](gex.md)
+- [Hardware List](../index)
+- [LEAP Hand](leap-hand) - Low-cost open-source alternative to Shadow Hand
+- [Allegro Hand](allegro)
+- [GEX Series](gex)
 
 ---
 

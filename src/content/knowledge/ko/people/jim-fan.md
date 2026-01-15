@@ -181,6 +181,6 @@ lastEditedAt: 2026-01-15
 
 ## See Also
 
-- [GR00T](../models/groot.md)
-- [NVIDIA](../companies/nvidia.md)
-- [Fei-Fei Li](fei-fei-li.md)
+- [GR00T](../models/groot)
+- [NVIDIA](../companies/nvidia)
+- [Fei-Fei Li](fei-fei-li)

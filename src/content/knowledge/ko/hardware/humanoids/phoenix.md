@@ -259,7 +259,7 @@ Sanctuary AI는 12개 이상 산업에서 수백 개 작업을 시연했다 (202
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [Figure 휴머노이드](figure.md)
-- [Tesla Optimus](optimus.md)
-- [Apollo (Apptronik)](apollo.md)
+- [하드웨어 목록](../index)
+- [Figure 휴머노이드](figure)
+- [Tesla Optimus](optimus)
+- [Apollo (Apptronik)](apollo)

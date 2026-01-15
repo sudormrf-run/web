@@ -49,14 +49,14 @@ lastEditedAt: 2026-01-15
 
 ## 그러나...
 
-- [Scaling이 어려운 이유](../scaling-problem.md)
-- [Evaluation이 어려운 이유](../evaluation-problem.md)
+- [Scaling이 어려운 이유](../scaling-problem)
+- [Evaluation이 어려운 이유](../evaluation-problem)
 
 ---
 
 ## See Also
 
-- [Specialist에서 Generalist로](specialist-to-generalist.md)
-- [VLA 모델의 역사](../models/vla-history.md)
-- [왜 Scaling이 어려운가](../scaling-problem.md)
+- [Specialist에서 Generalist로](specialist-to-generalist)
+- [VLA 모델의 역사](../models/vla-history)
+- [왜 Scaling이 어려운가](../scaling-problem)
 

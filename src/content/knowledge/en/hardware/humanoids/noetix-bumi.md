@@ -223,6 +223,6 @@ As a result of this achievement, Noetix reportedly received **over 1,000 orders 
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Unitree H2](unitree-h2.md)
-- [Low-cost Humanoid Trends](../../trends/low-cost-humanoids.md)
+- [Hardware List](../index)
+- [Unitree H2](unitree-h2)
+- [Low-cost Humanoid Trends](../../trends/low-cost-humanoids)

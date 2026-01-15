@@ -49,5 +49,5 @@ lastEditedAt: 2026-01-15
 
 ## See Also
 
-- [Physical vs Cognitive Intelligence](../physical-vs-cognitive.md)
-- [Humanoid Design](humanoid-design.md)
+- [Physical vs Cognitive Intelligence](../physical-vs-cognitive)
+- [Humanoid Design](humanoid-design)

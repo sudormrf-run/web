@@ -354,8 +354,8 @@ Unitree는 저가 시장에서 강한 입지를 확보하며 연구/교육 시�
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [Unitree 쿼드러펫](../quadrupeds/unitree.md)
-- [GR00T 모델](../../models/vla/groot.md)
-- [Figure 휴머노이드](figure.md)
-- [Tesla Optimus](tesla-optimus.md)
+- [하드웨어 목록](../index)
+- [Unitree 쿼드러펫](../quadrupeds/unitree)
+- [GR00T 모델](../../models/vla/groot)
+- [Figure 휴머노이드](figure)
+- [Tesla Optimus](tesla-optimus)

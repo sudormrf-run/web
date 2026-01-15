@@ -156,7 +156,7 @@ lastEditedAt: 2026-01-15
 
 ## See Also
 
-- [π0](../models/pi0.md)
-- [Physical Intelligence](../companies/physical-intelligence.md)
-- [Karol Hausman](karol-hausman.md)
-- [Sergey Levine](sergey-levine.md)
+- [π0](../models/pi0)
+- [Physical Intelligence](../companies/physical-intelligence)
+- [Karol Hausman](karol-hausman)
+- [Sergey Levine](sergey-levine)

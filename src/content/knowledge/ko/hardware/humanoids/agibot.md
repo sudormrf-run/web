@@ -224,4 +224,4 @@ ROS(Robot Operating System)보다 빠르고 효율적인 자체 개발 미들웨
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
+- [하드웨어 목록](../index)

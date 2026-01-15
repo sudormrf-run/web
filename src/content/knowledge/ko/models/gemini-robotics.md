@@ -145,7 +145,7 @@ Gemini 2.0에 물리적 액션 출력을 추가한 VLA 모델.
 
 ## See Also
 
-- [모델 목록](index.md)
-- [RT](rt.md)
-- [Google DeepMind](../companies/google-deepmind.md)
+- [모델 목록](index)
+- [RT](rt)
+- [Google DeepMind](../companies/google-deepmind)
 

@@ -167,9 +167,9 @@ SmolVLA의 의의:
 
 ## See Also
 
-- [모델 목록](index.md)
-- [HuggingFace](../companies/huggingface.md)
-- [ACT](act.md)
-- [pi0](pi0.md)
-- [커뮤니티 드리븐 접근](../solutions/community-driven.md)
+- [모델 목록](index)
+- [HuggingFace](../companies/huggingface)
+- [ACT](act)
+- [pi0](pi0)
+- [커뮤니티 드리븐 접근](../solutions/community-driven)
 

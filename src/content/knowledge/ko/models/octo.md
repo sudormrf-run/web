@@ -188,7 +188,7 @@ Octo의 핵심 강점은 **빠른 적응**입니다.
 
 ## See Also
 
-- [모델 목록](index.md)
-- [OpenVLA](openvla.md)
-- [RT](rt.md)
+- [모델 목록](index)
+- [OpenVLA](openvla)
+- [RT](rt)
 

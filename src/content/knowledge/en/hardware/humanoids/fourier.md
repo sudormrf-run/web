@@ -289,7 +289,7 @@ Fourier's differentiator is its actual application experience in the medical fie
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Unitree Humanoid](unitree-humanoid.md)
-- [Tesla Optimus](optimus.md)
-- [Figure Humanoid](figure.md)
+- [Hardware List](../index)
+- [Unitree Humanoid](unitree-humanoid)
+- [Tesla Optimus](optimus)
+- [Figure Humanoid](figure)

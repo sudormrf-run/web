@@ -66,8 +66,8 @@ Evaluation 자동화를 위한 World Model 활용
 
 ## See Also
 
-- [Teleoperation 방식](teleoperation.md)
-- [Action Data Scaling 문제](../scaling-problem.md)
-- [Evaluation의 어려움](../evaluation-problem.md)
-- [NVIDIA](../companies/nvidia.md)
+- [Teleoperation 방식](teleoperation)
+- [Action Data Scaling 문제](../scaling-problem)
+- [Evaluation의 어려움](../evaluation-problem)
+- [NVIDIA](../companies/nvidia)
 

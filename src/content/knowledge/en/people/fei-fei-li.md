@@ -189,5 +189,5 @@ Goals:
 
 ## See Also
 
-- [World Labs](../companies/world-labs.md)
-- [Stanford](../companies/stanford.md)
+- [World Labs](../companies/world-labs)
+- [Stanford](../companies/stanford)

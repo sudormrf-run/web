@@ -141,7 +141,7 @@ Helix는 휴머노이드 상체 전체를 고속 연속 제어하는 **최초의
 
 ## See Also
 
-- [모델 목록](index.md)
-- [GR00T](groot.md)
-- [pi0](pi0.md)
+- [모델 목록](index)
+- [GR00T](groot)
+- [pi0](pi0)
 

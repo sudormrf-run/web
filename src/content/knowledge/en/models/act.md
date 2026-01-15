@@ -36,7 +36,7 @@ ACT (Action Chunking with Transformers) is an imitation learning algorithm devel
 | Item | Details |
 |------|---------|
 | Published | April 2023 (RSS 2023) |
-| Authors | [Tony Zhao](../people/tony-zhao.md), Vikash Kumar, [Sergey Levine](../people/sergey-levine.md), [Chelsea Finn](../people/chelsea-finn.md) |
+| Authors | [Tony Zhao](../people/tony-zhao), Vikash Kumar, [Sergey Levine](../people/sergey-levine), [Chelsea Finn](../people/chelsea-finn) |
 | Affiliation | Stanford University |
 | Paper | [arXiv:2304.13705](https://arxiv.org/abs/2304.13705) |
 | Project | [tonyzhaozh.github.io/aloha](https://tonyzhaozh.github.io/aloha/) |
@@ -161,11 +161,11 @@ ACT is widely adopted for the following reasons:
 
 ## See Also
 
-- [Model List](index.md)
-- [Diffusion Policy](diffusion-policy.md)
-- [SmolVLA](smolvla.md)
+- [Model List](index)
+- [Diffusion Policy](diffusion-policy)
+- [SmolVLA](smolvla)
 
 ### Related People
-- [Tony Zhao](../people/tony-zhao.md) - First Author
-- [Chelsea Finn](../people/chelsea-finn.md) - Advisor
-- [Sergey Levine](../people/sergey-levine.md) - Co-author
+- [Tony Zhao](../people/tony-zhao) - First Author
+- [Chelsea Finn](../people/chelsea-finn) - Advisor
+- [Sergey Levine](../people/sergey-levine) - Co-author

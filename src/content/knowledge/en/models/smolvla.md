@@ -167,8 +167,8 @@ Significance of SmolVLA:
 
 ## See Also
 
-- [Model List](index.md)
-- [HuggingFace](../companies/huggingface.md)
-- [ACT](act.md)
-- [pi0](pi0.md)
-- [Community-Driven Approach](../solutions/community-driven.md)
+- [Model List](index)
+- [HuggingFace](../companies/huggingface)
+- [ACT](act)
+- [pi0](pi0)
+- [Community-Driven Approach](../solutions/community-driven)

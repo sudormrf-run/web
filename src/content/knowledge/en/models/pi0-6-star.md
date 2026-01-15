@@ -329,13 +329,13 @@ Only know the outcome after the episode ends
 
 ## See Also
 
-- [Pi Series](pi-series.md)
-- [Pi0](pi0.md)
-- [Pi0.5](pi0-5.md)
-- [Physical Intelligence](../companies/physical-intelligence.md)
+- [Pi Series](pi-series)
+- [Pi0](pi0)
+- [Pi0.5](pi0-5)
+- [Physical Intelligence](../companies/physical-intelligence)
 
 ### Related People
-- [Karol Hausman](../people/karol-hausman.md) - Physical Intelligence Co-founder
-- [Chelsea Finn](../people/chelsea-finn.md) - Physical Intelligence Co-founder
-- [Sergey Levine](../people/sergey-levine.md) - Physical Intelligence Co-founder
-- [Pete Florence](../people/pete-florence.md) - Physical Intelligence Co-founder
+- [Karol Hausman](../people/karol-hausman) - Physical Intelligence Co-founder
+- [Chelsea Finn](../people/chelsea-finn) - Physical Intelligence Co-founder
+- [Sergey Levine](../people/sergey-levine) - Physical Intelligence Co-founder
+- [Pete Florence](../people/pete-florence) - Physical Intelligence Co-founder

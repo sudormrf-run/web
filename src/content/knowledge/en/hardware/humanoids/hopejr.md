@@ -226,10 +226,10 @@ Desktop robot announced alongside by HuggingFace, expected to release at $250~$3
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [LeRobot Arms](../arms/lerobot-arms.md)
-- [Reachy](reachy.md)
-- [SmolVLA](../../models/smolvla.md)
+- [Hardware List](../index)
+- [LeRobot Arms](../arms/lerobot-arms)
+- [Reachy](reachy)
+- [SmolVLA](../../models/smolvla)
 
 ---
 

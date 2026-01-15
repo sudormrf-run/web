@@ -157,8 +157,8 @@ RT-2: 단일 VLM이 이미지→액션 직접 출력
 
 ## See Also
 
-- [RT](../models/rt.md)
-- [π0](../models/pi0.md)
-- [Physical Intelligence](../companies/physical-intelligence.md)
-- [Sergey Levine](sergey-levine.md)
-- [Chelsea Finn](chelsea-finn.md)
+- [RT](../models/rt)
+- [π0](../models/pi0)
+- [Physical Intelligence](../companies/physical-intelligence)
+- [Sergey Levine](sergey-levine)
+- [Chelsea Finn](chelsea-finn)

@@ -137,7 +137,7 @@ Physical Intelligence 목표 = 로보틱스에 동일 접근 적용
 
 ## See Also
 
-- [회사 목록](index.md)
-- [pi0](../models/pi0.md)
-- [Flow Matching 접근법](../models/diffusion-policy.md)
+- [회사 목록](index)
+- [pi0](../models/pi0)
+- [Flow Matching 접근법](../models/diffusion-policy)
 

@@ -264,9 +264,9 @@ Over 30 investors including Meituan, IDG Capital, Baidu Ventures participated. [
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Galaxea Arms](../arms/galaxea-arms.md)
-- [Unitree Humanoid](unitree-humanoid.md)
+- [Hardware List](../index)
+- [Galaxea Arms](../arms/galaxea-arms)
+- [Unitree Humanoid](unitree-humanoid)
 
 ---
 

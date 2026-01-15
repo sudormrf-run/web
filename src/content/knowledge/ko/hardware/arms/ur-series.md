@@ -287,4 +287,4 @@ Universal Robots 협동 로봇은 VLA 연구에서 다음과 같은 장점을 �
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
+- [하드웨어 목록](../index)

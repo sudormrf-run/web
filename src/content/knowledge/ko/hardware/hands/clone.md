@@ -167,6 +167,6 @@ Koźlik은 2019년 첫 프로토타입 영상을 유튜브에 공개하여 바�
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [Shadow Hand](shadow-hand.md)
-- [Allegro Hand](allegro.md)
+- [하드웨어 목록](../index)
+- [Shadow Hand](shadow-hand)
+- [Allegro Hand](allegro)

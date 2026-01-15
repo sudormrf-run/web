@@ -173,8 +173,8 @@ Sergey Levine lab alumni:
 
 ## See Also
 
-- [RT](../models/rt.md)
-- [OpenVLA](../models/openvla.md)
-- [Octo](../models/octo.md)
-- [Chelsea Finn](chelsea-finn.md)
-- [Physical Intelligence](../companies/physical-intelligence.md)
+- [RT](../models/rt)
+- [OpenVLA](../models/openvla)
+- [Octo](../models/octo)
+- [Chelsea Finn](chelsea-finn)
+- [Physical Intelligence](../companies/physical-intelligence)

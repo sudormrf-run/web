@@ -190,7 +190,7 @@ Mobile ALOHA is an extended version with ALOHA mounted on a **mobile base (Agile
 - Cleaning wine spill
 - High-five
 
-See [Mobile ALOHA](../mobile/mobile-aloha.md) for details.
+See [Mobile ALOHA](../mobile/mobile-aloha) for details.
 
 ---
 
@@ -279,8 +279,8 @@ Achieves **high-frequency language-based control** with 7B VLA policy on ALOHA. 
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Mobile ALOHA](../mobile/mobile-aloha.md)
-- [ACT](../../models/act.md)
-- [WidowX / Interbotix](widowx.md)
-- [OpenVLA](../../models/openvla.md)
+- [Hardware List](../index)
+- [Mobile ALOHA](../mobile/mobile-aloha)
+- [ACT](../../models/act)
+- [WidowX / Interbotix](widowx)
+- [OpenVLA](../../models/openvla)

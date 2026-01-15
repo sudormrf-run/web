@@ -284,7 +284,7 @@ Franka Panda is one of the most widely used robot platforms in VLA (Vision-Langu
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Franka Research 3](franka-research3.md)
-- [Open X-Embodiment](../../datasets/open-x-embodiment.md)
-- [OpenVLA](../../models/openvla.md)
+- [Hardware List](../index)
+- [Franka Research 3](franka-research3)
+- [Open X-Embodiment](../../datasets/open-x-embodiment)
+- [OpenVLA](../../models/openvla)

@@ -146,6 +146,6 @@ Features:
 
 ## See Also
 
-- [ACT](../models/act.md)
-- [Chelsea Finn](chelsea-finn.md)
-- [Physical Intelligence](../companies/physical-intelligence.md)
+- [ACT](../models/act)
+- [Chelsea Finn](chelsea-finn)
+- [Physical Intelligence](../companies/physical-intelligence)

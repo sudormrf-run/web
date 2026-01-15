@@ -290,5 +290,5 @@ Hugging Face 블로그에 따르면 Reachy 플랫폼은 전 세계 20개국 이�
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [Reachy Mini](../misc/reachy-mini.md)
+- [하드웨어 목록](../index)
+- [Reachy Mini](../misc/reachy-mini)

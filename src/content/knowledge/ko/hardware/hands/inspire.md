@@ -214,6 +214,6 @@ git clone https://github.com/unitreerobotics/DFX_inspire_service
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [Ability Hand](ability.md)
-- [Shadow Dexterous Hand](shadow.md)
+- [하드웨어 목록](../index)
+- [Ability Hand](ability)
+- [Shadow Dexterous Hand](shadow)

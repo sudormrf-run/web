@@ -183,11 +183,11 @@ One of OpenVLA's key strengths is **efficient fine-tuning**.
 
 ## See Also
 
-- [Model List](index.md)
-- [Octo](octo.md)
-- [RT](rt.md)
-- [SmolVLA](smolvla.md)
+- [Model List](index)
+- [Octo](octo)
+- [RT](rt)
+- [SmolVLA](smolvla)
 
 ### Related People
-- [Sergey Levine](../people/sergey-levine.md) - Co-author
-- [Chelsea Finn](../people/chelsea-finn.md) - Stanford Lab
+- [Sergey Levine](../people/sergey-levine) - Co-author
+- [Chelsea Finn](../people/chelsea-finn) - Stanford Lab

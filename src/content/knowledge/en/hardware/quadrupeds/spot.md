@@ -325,14 +325,14 @@ Hyundai Motor Group is expanding into the robotics field through the Boston Dyna
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Unitree Quadrupeds](unitree.md)
-- [ANYmal](anymal.md)
+- [Hardware List](../index)
+- [Unitree Quadrupeds](unitree)
+- [ANYmal](anymal)
 
 ### Related Hardware
-- [Boston Dynamics Stretch](../mobile/stretch.md)
-- [Mobile ALOHA](../mobile/mobile-aloha.md)
+- [Boston Dynamics Stretch](../mobile/stretch)
+- [Mobile ALOHA](../mobile/mobile-aloha)
 
 ### Related Companies
-- [NVIDIA](../../companies/nvidia.md) - Isaac Lab, RL Researcher Kit collaboration
-- [Unitree](../../companies/unitree.md) - Competing quadruped manufacturer
+- [NVIDIA](../../companies/nvidia) - Isaac Lab, RL Researcher Kit collaboration
+- [Unitree](../../companies/unitree) - Competing quadruped manufacturer

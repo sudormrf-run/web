@@ -226,10 +226,10 @@ HuggingFace가 함께 발표한 데스크탑 로봇으로, $250~$300에 출시 �
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [LeRobot Arms](../arms/lerobot-arms.md)
-- [Reachy](reachy.md)
-- [SmolVLA](../../models/smolvla.md)
+- [하드웨어 목록](../index)
+- [LeRobot Arms](../arms/lerobot-arms)
+- [Reachy](reachy)
+- [SmolVLA](../../models/smolvla)
 
 ---
 

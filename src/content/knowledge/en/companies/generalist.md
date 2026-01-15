@@ -183,6 +183,6 @@ If GEN-0's claims are true:
 
 ## See Also
 
-- [Company List](index.md)
-- [GEN-0 Model](../models/generalist-gen0.md)
-- [Action Data Scaling Problem](../challenges/scaling-problem.md)
+- [Company List](index)
+- [GEN-0 Model](../models/generalist-gen0)
+- [Action Data Scaling Problem](../challenges/scaling-problem)

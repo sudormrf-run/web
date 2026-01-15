@@ -515,8 +515,8 @@ Koch의 저가 구조는 분산된 커뮤니티 데이터 수집을 가능하게
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [LeRobot Arms (SO-100/SO-101)](lerobot-arms.md)
-- [SmolVLA](../../models/smolvla.md)
-- [ACT Policy](../../models/act.md)
-- [Diffusion Policy](../../models/diffusion-policy.md)
+- [하드웨어 목록](../index)
+- [LeRobot Arms (SO-100/SO-101)](lerobot-arms)
+- [SmolVLA](../../models/smolvla)
+- [ACT Policy](../../models/act)
+- [Diffusion Policy](../../models/diffusion-policy)

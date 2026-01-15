@@ -174,6 +174,6 @@ Kinova Gen3 is being used as a core platform for VLA (Vision-Language-Action) mo
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Franka Panda](franka-panda.md)
-- [UR Series](ur-series.md)
+- [Hardware List](../index)
+- [Franka Panda](franka-panda)
+- [UR Series](ur-series)

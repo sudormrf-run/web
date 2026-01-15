@@ -654,8 +654,8 @@ Unitree quadrupeds are widely adopted by universities and research institutions 
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Boston Dynamics Spot](spot.md)
-- [ANYbotics ANYmal](anymal.md)
-- [Unitree Humanoids](../humanoids/unitree-humanoid.md)
-- [GR00T](../../models/groot.md)
+- [Hardware List](../index)
+- [Boston Dynamics Spot](spot)
+- [ANYbotics ANYmal](anymal)
+- [Unitree Humanoids](../humanoids/unitree-humanoid)
+- [GR00T](../../models/groot)

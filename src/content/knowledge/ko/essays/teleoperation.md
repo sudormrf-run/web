@@ -60,7 +60,7 @@ Tesla, Google, Physical Intelligence, Galaxea 등 주요 AI robotics 업계는 T
 
 ## See Also
 
-- [Non-Teleop 데이터 수집](non-teleop-data.md)
-- [시뮬레이션 & World Model](simulation-world-model.md)
-- [Action Data Scaling 문제](../scaling-problem.md)
+- [Non-Teleop 데이터 수집](non-teleop-data)
+- [시뮬레이션 & World Model](simulation-world-model)
+- [Action Data Scaling 문제](../scaling-problem)
 

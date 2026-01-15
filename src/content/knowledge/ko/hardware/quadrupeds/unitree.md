@@ -654,8 +654,8 @@ Unitree 쿼드러펫은 저렴한 가격과 개방적인 SDK로 인해 전 세�
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [Boston Dynamics Spot](spot.md)
-- [ANYbotics ANYmal](anymal.md)
-- [Unitree 휴머노이드](../humanoids/unitree-humanoid.md)
-- [GR00T](../../models/groot.md)
+- [하드웨어 목록](../index)
+- [Boston Dynamics Spot](spot)
+- [ANYbotics ANYmal](anymal)
+- [Unitree 휴머노이드](../humanoids/unitree-humanoid)
+- [GR00T](../../models/groot)

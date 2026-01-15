@@ -184,8 +184,8 @@ PSYONIC has released Ability Hand separately for robotics researchers worldwide.
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Inspire Hand](inspire.md)
+- [Hardware List](../index)
+- [Inspire Hand](inspire)
 
 ---
 

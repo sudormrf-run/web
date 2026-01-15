@@ -81,9 +81,9 @@ lastEditedAt: 2026-01-15
 
 | 버전 | 발표 | 핵심 혁신 | 상세 문서 |
 |------|------|----------|----------|
-| **π0** | 2024.10 | Flow Matching VLA, 50Hz 제어 | [π0](pi0.md) |
-| **π0.5** | 2025.04 | Open-World 일반화, Web 데이터 | [π0.5](pi0-5.md) |
-| **π*0.6** | 2025.11 | RL 자가 개선, RECAP | [π*0.6](pi0-6-star.md) |
+| **π0** | 2024.10 | Flow Matching VLA, 50Hz 제어 | [π0](pi0) |
+| **π0.5** | 2025.04 | Open-World 일반화, Web 데이터 | [π0.5](pi0-5) |
+| **π*0.6** | 2025.11 | RL 자가 개선, RECAP | [π*0.6](pi0-6-star) |
 
 ---
 
@@ -240,10 +240,10 @@ Physical Intelligence 창업팀의 이전 업적:
 
 | 인물 | 이전 소속 | 주요 기여 |
 |------|----------|----------|
-| [Karol Hausman](../people/karol-hausman.md) | Google DeepMind | RT-1, RT-2 리드 |
-| [Chelsea Finn](../people/chelsea-finn.md) | Stanford/Google | MAML, Robotics Transformer |
-| [Sergey Levine](../people/sergey-levine.md) | UC Berkeley/Google | RL, Robot Learning |
-| [Pete Florence](../people/pete-florence.md) | Google DeepMind | Dense Descriptors |
+| [Karol Hausman](../people/karol-hausman) | Google DeepMind | RT-1, RT-2 리드 |
+| [Chelsea Finn](../people/chelsea-finn) | Stanford/Google | MAML, Robotics Transformer |
+| [Sergey Levine](../people/sergey-levine) | UC Berkeley/Google | RL, Robot Learning |
+| [Pete Florence](../people/pete-florence) | Google DeepMind | Dense Descriptors |
 
 ---
 
@@ -282,16 +282,16 @@ Physical Intelligence 창업팀의 이전 업적:
 
 ## See Also
 
-- [모델 목록](index.md)
-- [π0](pi0.md)
-- [π0.5](pi0-5.md)
-- [π*0.6](pi0-6-star.md)
-- [Physical Intelligence](../companies/physical-intelligence.md)
-- [Diffusion Policy](diffusion-policy.md)
+- [모델 목록](index)
+- [π0](pi0)
+- [π0.5](pi0-5)
+- [π*0.6](pi0-6-star)
+- [Physical Intelligence](../companies/physical-intelligence)
+- [Diffusion Policy](diffusion-policy)
 
 ### 관련 인물
-- [Karol Hausman](../people/karol-hausman.md)
-- [Chelsea Finn](../people/chelsea-finn.md)
-- [Sergey Levine](../people/sergey-levine.md)
-- [Pete Florence](../people/pete-florence.md)
+- [Karol Hausman](../people/karol-hausman)
+- [Chelsea Finn](../people/chelsea-finn)
+- [Sergey Levine](../people/sergey-levine)
+- [Pete Florence](../people/pete-florence)
 

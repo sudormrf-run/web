@@ -156,7 +156,7 @@ LLM 민주화 (HuggingFace 성공)
 |------|----------|
 | 2024 | LeRobot 프로젝트 시작 |
 | 2024-25 | 커뮤니티 데이터셋 성장 |
-| 2025.06 | [SmolVLA](../models/smolvla.md) 발표 |
+| 2025.06 | [SmolVLA](../models/smolvla) 발표 |
 | 2025+ | 더 효율적인 모델, 더 많은 하드웨어 지원 (예상) |
 
 ---
@@ -172,8 +172,8 @@ LLM 민주화 (HuggingFace 성공)
 
 ## See Also
 
-- [회사 목록](index.md)
-- [SmolVLA](../models/smolvla.md)
-- [커뮤니티 드리븐 접근](../solutions/community-driven.md)
-- [ACT](../models/act.md)
+- [회사 목록](index)
+- [SmolVLA](../models/smolvla)
+- [커뮤니티 드리븐 접근](../solutions/community-driven)
+- [ACT](../models/act)
 

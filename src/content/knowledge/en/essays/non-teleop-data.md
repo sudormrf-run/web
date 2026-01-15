@@ -59,6 +59,6 @@ Data collection through glasses-style devices
 
 ## See Also
 
-- [Teleoperation Approach](teleoperation.md)
-- [Community-Driven Approach](community-driven.md)
-- [Action Data Scaling Problem](../scaling-problem.md)
+- [Teleoperation Approach](teleoperation)
+- [Community-Driven Approach](community-driven)
+- [Action Data Scaling Problem](../scaling-problem)

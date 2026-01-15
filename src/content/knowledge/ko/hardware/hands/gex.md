@@ -214,7 +214,7 @@ GX11은 EX12 엑소스켈레톤 글러브와 결합하여 사용:
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [LEAP Hand](leap-hand.md) - 유사한 저가형 설계
-- [Shadow Hand](shadow-hand.md) - 고성능 벤치마크
-- [Allegro Hand](allegro.md) - 중간 가격대 대안
+- [하드웨어 목록](../index)
+- [LEAP Hand](leap-hand) - 유사한 저가형 설계
+- [Shadow Hand](shadow-hand) - 고성능 벤치마크
+- [Allegro Hand](allegro) - 중간 가격대 대안

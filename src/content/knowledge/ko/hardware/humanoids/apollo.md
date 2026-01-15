@@ -243,8 +243,8 @@ CEO Jeff Cardenas: "경제성이 맞는 지점에 도달했다. 공장과 창고
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [Tesla Optimus](optimus.md)
-- [Figure 휴머노이드](figure.md)
-- [Agility Digit](digit.md)
-- [Boston Dynamics Atlas](atlas.md)
+- [하드웨어 목록](../index)
+- [Tesla Optimus](optimus)
+- [Figure 휴머노이드](figure)
+- [Agility Digit](digit)
+- [Boston Dynamics Atlas](atlas)

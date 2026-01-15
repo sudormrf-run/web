@@ -515,8 +515,8 @@ Koch's low-cost structure enables distributed community data collection:
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [LeRobot Arms (SO-100/SO-101)](lerobot-arms.md)
-- [SmolVLA](../../models/smolvla.md)
-- [ACT Policy](../../models/act.md)
-- [Diffusion Policy](../../models/diffusion-policy.md)
+- [Hardware List](../index)
+- [LeRobot Arms (SO-100/SO-101)](lerobot-arms)
+- [SmolVLA](../../models/smolvla)
+- [ACT Policy](../../models/act)
+- [Diffusion Policy](../../models/diffusion-policy)

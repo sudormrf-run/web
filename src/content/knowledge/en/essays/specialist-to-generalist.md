@@ -37,6 +37,6 @@ lastEditedAt: 2026-01-15
 
 ## See Also
 
-- [What are RFM & VLA](what-is-rfm-vla.md)
-- [History of VLA Models](../models/vla-history.md)
-- [Open-Source Models](../models/open-models.md)
+- [What are RFM & VLA](what-is-rfm-vla)
+- [History of VLA Models](../models/vla-history)
+- [Open-Source Models](../models/open-models)

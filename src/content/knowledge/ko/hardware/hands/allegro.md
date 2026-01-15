@@ -161,6 +161,6 @@ Allegro Hand는 Vision-Language-Action (VLA) 및 학습 기반 매니퓰레이�
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [Shadow Hand](shadow-hand.md)
-- [LEAP Hand](leap-hand.md)
+- [하드웨어 목록](../index)
+- [Shadow Hand](shadow-hand)
+- [LEAP Hand](leap-hand)

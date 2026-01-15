@@ -312,6 +312,6 @@ The logistics industry faces increasing volumes and persistent labor shortages, 
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Figure Humanoid](figure.md)
-- [Tesla Optimus](optimus.md)
+- [Hardware List](../index)
+- [Figure Humanoid](figure)
+- [Tesla Optimus](optimus)

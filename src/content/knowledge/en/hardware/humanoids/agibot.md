@@ -224,4 +224,4 @@ Embodied Intelligent Operating System released in **July 2025**.
 
 ## See Also
 
-- [Hardware List](../index.md)
+- [Hardware List](../index)

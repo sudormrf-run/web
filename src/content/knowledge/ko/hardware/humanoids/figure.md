@@ -277,8 +277,8 @@ BMW 배포에서 얻은 주요 교훈이 Figure 03 설계에 반영되었습니�
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [Figure AI](../../companies/figure.md)
-- [Figure Helix](../../models/figure-helix.md)
-- [Tesla Optimus](optimus.md)
+- [하드웨어 목록](../index)
+- [Figure AI](../../companies/figure)
+- [Figure Helix](../../models/figure-helix)
+- [Tesla Optimus](optimus)
 

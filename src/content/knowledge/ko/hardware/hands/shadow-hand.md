@@ -214,10 +214,10 @@ DEX-EE는 Google DeepMind의 요청으로 5년간 개발된, **강화학습 실�
 
 ## See Also
 
-- [하드웨어 목록](../index.md)
-- [LEAP Hand](leap-hand.md) - Shadow Hand 대비 저렴한 오픈소스 대안
-- [Allegro Hand](allegro.md)
-- [GEX 시리즈](gex.md)
+- [하드웨어 목록](../index)
+- [LEAP Hand](leap-hand) - Shadow Hand 대비 저렴한 오픈소스 대안
+- [Allegro Hand](allegro)
+- [GEX 시리즈](gex)
 
 ---
 

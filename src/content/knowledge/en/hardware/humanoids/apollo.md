@@ -243,8 +243,8 @@ CEO Jeff Cardenas: "We've reached the point where the economics work. Factories 
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Tesla Optimus](optimus.md)
-- [Figure Humanoid](figure.md)
-- [Agility Digit](digit.md)
-- [Boston Dynamics Atlas](atlas.md)
+- [Hardware List](../index)
+- [Tesla Optimus](optimus)
+- [Figure Humanoid](figure)
+- [Agility Digit](digit)
+- [Boston Dynamics Atlas](atlas)

@@ -277,7 +277,7 @@ Key lessons from BMW deployment reflected in Figure 03 design:
 
 ## See Also
 
-- [Hardware List](../index.md)
-- [Figure AI](../../companies/figure.md)
-- [Figure Helix](../../models/figure-helix.md)
-- [Tesla Optimus](optimus.md)
+- [Hardware List](../index)
+- [Figure AI](../../companies/figure)
+- [Figure Helix](../../models/figure-helix)
+- [Tesla Optimus](optimus)

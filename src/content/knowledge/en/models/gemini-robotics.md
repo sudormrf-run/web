@@ -145,6 +145,6 @@ Single model supports various robot forms:
 
 ## See Also
 
-- [Model List](index.md)
-- [RT](rt.md)
-- [Google DeepMind](../companies/google-deepmind.md)
+- [Model List](index)
+- [RT](rt)
+- [Google DeepMind](../companies/google-deepmind)

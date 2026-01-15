@@ -37,7 +37,7 @@ lastEditedAt: 2026-01-15
 
 ## See Also
 
-- [RFM & VLA란 무엇인가](what-is-rfm-vla.md)
-- [VLA 모델의 역사](../models/vla-history.md)
-- [오픈소스 모델들](../models/open-models.md)
+- [RFM & VLA란 무엇인가](what-is-rfm-vla)
+- [VLA 모델의 역사](../models/vla-history)
+- [오픈소스 모델들](../models/open-models)
 

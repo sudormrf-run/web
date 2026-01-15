@@ -156,7 +156,7 @@ Robotics Democratization (LeRobot Goal)
 |----------|-----------|
 | 2024 | LeRobot project launch |
 | 2024-25 | Community dataset growth |
-| 2025.06 | [SmolVLA](../models/smolvla.md) release |
+| 2025.06 | [SmolVLA](../models/smolvla) release |
 | 2025+ | More efficient models, broader hardware support (expected) |
 
 ---
@@ -172,7 +172,7 @@ Robotics Democratization (LeRobot Goal)
 
 ## See Also
 
-- [Company List](index.md)
-- [SmolVLA](../models/smolvla.md)
-- [Community-Driven Approach](../solutions/community-driven.md)
-- [ACT](../models/act.md)
+- [Company List](index)
+- [SmolVLA](../models/smolvla)
+- [Community-Driven Approach](../solutions/community-driven)
+- [ACT](../models/act)
