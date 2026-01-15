@@ -14,6 +14,21 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
+<div class="author-note">
+
+### 필자의 의견
+
+- Cross-embodiment를 실제로 구현하고, 새로운 태스크를 일부라도 수행하는 데모를 공개적으로 선보인 점이 인상적입니다.
+- 클라우드에서 돌아가는 System 2 모델과 온디바이스에서 돌아가는 System 1 구조의 효율적인 조화를 보여주었습니다.
+- CoRL 2025에서 DeepMind 엔지니어에게 직접 물어본 결과, 자세한 데이터 양은 공개할 수 없지만 정말 많은 데이터를 학습해서 가능했다고 답변했습니다.
+
+</div>
+
+<div class="video-embed">
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/ASwwyra1_sc?start=38" title="Gemini Robotics - Official Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p align="center"><em>Gemini Robotics 공식 데모 영상</em></p>
+
 ## 핵심 의의
 
 - **대형 LLM 기반 VLA의 정점**: Gemini 2.0을 기반으로 하여 인터넷 스케일 지식을 로보틱스에 적용한 대표적 사례

@@ -14,6 +14,21 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
+<div class="author-note">
+
+### Author's Note
+
+- Impressive that they publicly demonstrated real cross-embodiment implementation and performing new tasks (at least partially).
+- Showed efficient harmony between the cloud-based System 2 model and on-device System 1 structure.
+- When I directly asked a DeepMind engineer at CoRL 2025, they said they couldn't disclose exact data amounts, but confirmed that training on a massive amount of data made this possible.
+
+</div>
+
+<div class="video-embed">
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/ASwwyra1_sc?start=38" title="Gemini Robotics - Official Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p align="center"><em>Gemini Robotics Official Demo Video</em></p>
+
 ## Key Significance
 
 - **Pinnacle of Large LLM-Based VLAs**: Representative case of applying internet-scale knowledge to robotics based on Gemini 2.0
