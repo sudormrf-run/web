@@ -1,0 +1,441 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const locale = 'ko';
+
+// Fetch all archive items
+const archiveItems = await getCollection('archive', ({ slug }) =>
+  slug.startsWith('ko/')
+);
+const sortedArchive = archiveItems.sort((a, b) =>
+  b.data.date.getTime() - a.data.date.getTime()
+);
+
+// Group by source/category for filtering
+const sources = [...new Set(sortedArchive.map(item => item.data.source).filter(Boolean))];
+---
+
+<Layout title="자료 창고" locale={locale}>
+  <div class="archive-page">
+    <div class="container">
+      <!-- Header -->
+      <header class="page-header">
+        <h1 class="page-title">
+          <span class="gradient-text">자료 창고</span>
+        </h1>
+        <p class="page-subtitle">
+          수도리무브 큐레이션, 우리가 보는 양질의 영상들
+        </p>
+        <p class="page-description">
+          AI와 로보틱스 분야의 핵심 영상들을 한국어 자막과 함께 제공합니다.
+          각 영상에는 타임스탬프가 포함된 상세한 노트가 함께 제공되어,
+          빠르게 핵심 내용을 파악할 수 있습니다.
+        </p>
+      </header>
+
+      <!-- Filter Tags (if multiple sources exist) -->
+      {sources.length > 1 && (
+        <div class="filter-section">
+          <span class="filter-label">소스:</span>
+          <div class="filter-tags">
+            <button class="filter-tag active" data-filter="all">전체</button>
+            {sources.map(source => (
+              <button class="filter-tag" data-filter={source}>{source}</button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Archive List -->
+      <div class="archive-list">
+        {sortedArchive.map((item) => {
+          const slug = item.slug.replace('ko/', '');
+          const summaryLines = item.data.description.split('\n').filter(l => l.trim());
+          return (
+            <article class="archive-item" data-source={item.data.source}>
+              <a href={`/archive/${slug}`} class="archive-item-link">
+                <div class="archive-item-video">
+                  <div class="video-thumbnail">
+                    <img
+                      src={`https://img.youtube.com/vi/${item.data.videoId}/mqdefault.jpg`}
+                      alt={item.data.title}
+                      loading="lazy"
+                    />
+                    <div class="video-duration">{item.data.duration}</div>
+                    <div class="video-overlay">
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="archive-item-content">
+                  <div class="archive-item-meta">
+                    {item.data.source && (
+                      <span class="archive-source">{item.data.source}</span>
+                    )}
+                    <span class="archive-date">{item.data.date.toISOString().split('T')[0]}</span>
+                  </div>
+                  <h2 class="archive-item-title">{item.data.title}</h2>
+                  <div class="archive-item-summary">
+                    <ul>
+                      {summaryLines.slice(0, 3).map(line => (
+                        <li>{line.replace(/^\d+\.\s*/, '')}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div class="archive-item-footer">
+                    <div class="archive-chapters-preview">
+                      {item.data.chapters?.slice(0, 4).map(ch => (
+                        <span class="chapter-tag">{ch.title}</span>
+                      ))}
+                      {(item.data.chapters?.length || 0) > 4 && (
+                        <span class="chapter-more">+{(item.data.chapters?.length || 0) - 4}</span>
+                      )}
+                    </div>
+                    <span class="archive-chapters-count">
+                      {item.data.chapters?.length || 0} chapters
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
+          );
+        })}
+      </div>
+
+      {sortedArchive.length === 0 && (
+        <div class="empty-state">
+          <div class="empty-icon">
+            <svg width="64" height="64" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+            </svg>
+          </div>
+          <h3>콘텐츠 준비 중</h3>
+          <p>곧 양질의 영상들이 추가될 예정입니다.</p>
+        </div>
+      )}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .archive-page {
+    padding: 2rem 0 4rem;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .page-description {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Filter Section */
+  .filter-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-label {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  .filter-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-tag {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius-md);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .filter-tag:hover {
+    border-color: var(--color-green);
+    color: var(--color-text-primary);
+  }
+
+  .filter-tag.active {
+    background: rgba(67, 214, 168, 0.15);
+    border-color: var(--color-green);
+    color: var(--color-green);
+  }
+
+  /* Archive List */
+  .archive-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .archive-item {
+    background: var(--color-surface);
+    border: 1px solid rgba(67, 214, 168, 0.2);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .archive-item:hover {
+    border-color: var(--color-green);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.2),
+      0 0 20px rgba(67, 214, 168, 0.2);
+  }
+
+  .archive-item-link {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  @media (max-width: 768px) {
+    .archive-item-link {
+      flex-direction: column;
+    }
+  }
+
+  /* Video Thumbnail */
+  .archive-item-video {
+    flex-shrink: 0;
+    width: 320px;
+  }
+
+  @media (max-width: 768px) {
+    .archive-item-video {
+      width: 100%;
+    }
+  }
+
+  .video-thumbnail {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+  }
+
+  .video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .archive-item:hover .video-thumbnail img {
+    transform: scale(1.05);
+  }
+
+  .video-duration {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.4rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .video-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+  }
+
+  .archive-item:hover .video-overlay {
+    opacity: 1;
+  }
+
+  /* Content */
+  .archive-item-content {
+    flex: 1;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .archive-item-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .archive-source {
+    background: rgba(67, 214, 168, 0.15);
+    color: var(--color-green);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .archive-date {
+    color: var(--color-text-muted);
+  }
+
+  .archive-item-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .archive-item-summary {
+    flex: 1;
+  }
+
+  .archive-item-summary ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .archive-item-summary li {
+    margin-bottom: 0.25rem;
+  }
+
+  .archive-item-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .archive-chapters-preview {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .chapter-tag {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-muted);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+  }
+
+  .chapter-more {
+    color: var(--color-green);
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .archive-chapters-count {
+    color: var(--color-green);
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* Empty State */
+  .empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--color-surface);
+    border: 2px dashed rgba(67, 214, 168, 0.3);
+    border-radius: var(--radius-xl);
+  }
+
+  .empty-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background: rgba(67, 214, 168, 0.1);
+    border-radius: 50%;
+    color: var(--color-green);
+    margin-bottom: 1.5rem;
+  }
+
+  .empty-state h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .empty-state p {
+    color: var(--color-text-muted);
+  }
+</style>
+
+<script>
+  // Simple filter functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterTags = document.querySelectorAll('.filter-tag');
+    const archiveItems = document.querySelectorAll('.archive-item');
+
+    filterTags.forEach(tag => {
+      tag.addEventListener('click', () => {
+        const filter = tag.getAttribute('data-filter');
+
+        filterTags.forEach(t => t.classList.remove('active'));
+        tag.classList.add('active');
+
+        archiveItems.forEach(item => {
+          const source = item.getAttribute('data-source');
+          if (filter === 'all' || source === filter) {
+            (item as HTMLElement).style.display = 'block';
+          } else {
+            (item as HTMLElement).style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>

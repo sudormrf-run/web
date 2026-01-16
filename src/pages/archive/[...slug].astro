@@ -1,0 +1,484 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const archiveItems = await getCollection('archive', ({ slug }) =>
+    slug.startsWith('ko/')
+  );
+
+  return archiveItems.map((item) => ({
+    params: { slug: item.slug.replace('ko/', '') },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+const locale = 'ko';
+
+// Parse summary lines
+const summaryLines = item.data.description.split('\n').filter(l => l.trim());
+
+// Helper to convert timestamp to seconds
+function timestampToSeconds(timestamp: string): number {
+  const parts = timestamp.split(':').map(Number);
+  if (parts.length === 2) {
+    return parts[0] * 60 + parts[1];
+  } else if (parts.length === 3) {
+    return parts[0] * 3600 + parts[1] * 60 + parts[2];
+  }
+  return 0;
+}
+---
+
+<Layout title={item.data.title} locale={locale}>
+  <div class="archive-detail-page">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="/archive">자료 창고</a>
+        <span class="separator">/</span>
+        <span class="current">{item.data.title}</span>
+      </nav>
+
+      <!-- Video Section -->
+      <div class="video-section">
+        <div class="video-container">
+          <iframe
+            id="youtube-player"
+            src={`https://www.youtube.com/embed/${item.data.videoId}?enablejsapi=1`}
+            title={item.data.title}
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Content Layout -->
+      <div class="content-layout">
+        <!-- Main Content -->
+        <main class="main-content">
+          <!-- Title & Meta -->
+          <header class="content-header">
+            <div class="content-meta">
+              {item.data.source && (
+                <span class="content-source">{item.data.source}</span>
+              )}
+              <span class="content-date">{item.data.date.toISOString().split('T')[0]}</span>
+              <span class="content-duration">{item.data.duration}</span>
+            </div>
+            <h1 class="content-title">{item.data.title}</h1>
+
+            <!-- Summary -->
+            <div class="content-summary">
+              <h2 class="summary-title">요약</h2>
+              <ol class="summary-list">
+                {summaryLines.slice(0, 3).map(line => (
+                  <li>{line.replace(/^\d+\.\s*/, '')}</li>
+                ))}
+              </ol>
+            </div>
+
+            <!-- Tags -->
+            {item.data.tags && item.data.tags.length > 0 && (
+              <div class="content-tags">
+                {item.data.tags.map(tag => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+            )}
+
+            <!-- Original Video Link -->
+            {item.data.originalVideoId && (
+              <div class="original-link">
+                <a href={`https://www.youtube.com/watch?v=${item.data.originalVideoId}`} target="_blank" rel="noopener noreferrer">
+                  <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                  원본 영상 보기
+                </a>
+              </div>
+            )}
+          </header>
+
+          <!-- Notes Content -->
+          <article class="notes-content">
+            <Content />
+          </article>
+        </main>
+
+        <!-- Sidebar - Chapters -->
+        <aside class="sidebar">
+          <div class="chapters-panel">
+            <h3 class="chapters-title">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+              Chapters ({item.data.chapters?.length || 0})
+            </h3>
+            <div class="chapters-list">
+              {item.data.chapters?.map((chapter, index) => (
+                <button
+                  class="chapter-item"
+                  data-time={timestampToSeconds(chapter.startTime)}
+                >
+                  <span class="chapter-time">{chapter.startTime}</span>
+                  <span class="chapter-name">{chapter.title}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .archive-detail-page {
+    padding: 1.5rem 0 4rem;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-muted);
+  }
+
+  .breadcrumb a {
+    color: var(--color-green);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--color-text-primary);
+  }
+
+  .breadcrumb .separator {
+    color: var(--color-text-muted);
+  }
+
+  .breadcrumb .current {
+    color: var(--color-text-secondary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 400px;
+  }
+
+  /* Video Section */
+  .video-section {
+    margin-bottom: 2rem;
+  }
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+    background: var(--color-bg-secondary);
+    border: 1px solid rgba(67, 214, 168, 0.2);
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Content Layout */
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+  }
+
+  @media (max-width: 1024px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+      order: -1;
+    }
+  }
+
+  /* Main Content */
+  .main-content {
+    min-width: 0;
+  }
+
+  .content-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .content-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .content-source {
+    background: rgba(67, 214, 168, 0.15);
+    color: var(--color-green);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .content-date,
+  .content-duration {
+    color: var(--color-text-muted);
+  }
+
+  .content-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    color: var(--color-text-primary);
+    line-height: 1.3;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Summary */
+  .content-summary {
+    background: var(--color-surface);
+    border: 1px solid rgba(67, 214, 168, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .summary-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-green);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .summary-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .summary-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .summary-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Tags */
+  .content-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .tag {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Original Link */
+  .original-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .original-link a:hover {
+    color: var(--color-green);
+  }
+
+  /* Notes Content */
+  .notes-content {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+
+  .notes-content :global(h2) {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .notes-content :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .notes-content :global(ul) {
+    margin: 0 0 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .notes-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .notes-content :global(blockquote) {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    background: var(--color-surface);
+    border-left: 3px solid var(--color-green);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    font-style: italic;
+    color: var(--color-text-secondary);
+  }
+
+  .notes-content :global(blockquote p) {
+    margin: 0;
+  }
+
+  .notes-content :global(code) {
+    background: var(--color-bg-secondary);
+    padding: 0.15rem 0.4rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85em;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    position: sticky;
+    top: 1.5rem;
+    height: fit-content;
+  }
+
+  .chapters-panel {
+    background: var(--color-surface);
+    border: 1px solid rgba(67, 214, 168, 0.2);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .chapters-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    padding: 1rem;
+    margin: 0;
+    background: var(--color-bg-secondary);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .chapters-list {
+    max-height: 500px;
+    overflow-y: auto;
+  }
+
+  .chapter-item {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s;
+  }
+
+  .chapter-item:last-child {
+    border-bottom: none;
+  }
+
+  .chapter-item:hover {
+    background: rgba(67, 214, 168, 0.1);
+  }
+
+  .chapter-time {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-green);
+    font-family: 'JetBrains Mono', monospace;
+    min-width: 40px;
+  }
+
+  .chapter-name {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+  }
+
+  /* Scrollbar */
+  .chapters-list::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .chapters-list::-webkit-scrollbar-track {
+    background: var(--color-bg-secondary);
+  }
+
+  .chapters-list::-webkit-scrollbar-thumb {
+    background: var(--color-border-hover);
+    border-radius: 3px;
+  }
+
+  .chapters-list::-webkit-scrollbar-thumb:hover {
+    background: var(--color-green);
+  }
+</style>
+
+<script>
+  // YouTube IFrame API interaction
+  document.addEventListener('DOMContentLoaded', () => {
+    const chapterButtons = document.querySelectorAll('.chapter-item');
+
+    chapterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const time = parseInt(button.getAttribute('data-time') || '0', 10);
+        const iframe = document.getElementById('youtube-player') as HTMLIFrameElement;
+
+        if (iframe && iframe.contentWindow) {
+          // Use postMessage to seek
+          iframe.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'seekTo',
+            args: [time, true]
+          }), '*');
+        }
+      });
+    });
+  });
+</script>

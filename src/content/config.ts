@@ -114,7 +114,46 @@ const eventsCollection = defineCollection({
   }),
 });
 
+// ============================================
+// Archive Collection (자료 창고 - Video Notes)
+// ============================================
+
+// Chapter schema for video notes
+const chapterSchema = z.object({
+  title: z.string(),
+  startTime: z.string(), // "MM:SS" format
+  endTime: z.string().optional(),
+});
+
+// Archive collection schema
+const archiveCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    // Required fields
+    title: z.string(),
+    description: z.string(), // 3-line summary
+    date: z.coerce.date(),
+
+    // Video info
+    videoId: z.string(), // YouTube video ID (uploaded version with Korean subs)
+    originalVideoId: z.string().optional(), // Original video ID
+    duration: z.string().optional(), // "HH:MM:SS" or "MM:SS"
+    thumbnail: z.string().optional(),
+
+    // Chapters for quick navigation
+    chapters: z.array(chapterSchema).optional(),
+
+    // Categorization
+    tags: z.array(z.string()).optional(),
+    source: z.string().optional(), // e.g., "NeurIPS 2025", "Princeton"
+
+    // Status
+    isFeatured: z.boolean().default(false),
+  }),
+});
+
 export const collections = {
   events: eventsCollection,
   knowledge: knowledgeCollection,
+  archive: archiveCollection,
 };

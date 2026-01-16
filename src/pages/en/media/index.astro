@@ -2,9 +2,18 @@
 import Layout from '../../../layouts/Layout.astro';
 import { useTranslations } from '../../../i18n/utils';
 import { getLocalizedPath } from '../../../i18n/config';
+import { getCollection } from 'astro:content';
 
 const locale = 'en';
 const { t } = useTranslations(locale);
+
+// Fetch archive items (자료 창고) - show Korean content with "for koreans" note
+const archiveItems = await getCollection('archive', ({ slug }) =>
+  slug.startsWith('ko/')
+);
+const sortedArchive = archiveItems.sort((a, b) =>
+  b.data.date.getTime() - a.data.date.getTime()
+).slice(0, 4);
 
 // YouTube & Social Links
 const youtubeChannel = 'https://www.youtube.com/@sudoremove';
@@ -235,6 +244,60 @@ const presentations = [
               </a>
             ))}
           </div>
+        </div>
+      </section>
+
+      <!-- Archive Section (for Koreans) -->
+      <section class="media-section">
+        <div class="section-header">
+          <div class="section-title-wrapper">
+            <span class="section-icon archive-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+              </svg>
+            </span>
+            <div>
+              <h2 class="section-title">Video Archive <span class="korean-badge">for Koreans</span></h2>
+              <p class="section-description">Curated quality videos with Korean subtitles and notes</p>
+            </div>
+          </div>
+          <a href="/archive" class="view-all-link archive-view-all">
+            View All →
+          </a>
+        </div>
+        <div class="archive-grid">
+          {sortedArchive.length > 0 ? (
+            sortedArchive.map((item) => {
+              const slug = item.slug.replace('ko/', '');
+              return (
+                <a href={`/archive/${slug}`} class="archive-card">
+                  <div class="archive-card-content">
+                    <div class="archive-meta">
+                      <span class="archive-source">{item.data.source}</span>
+                      <span class="archive-date">{item.data.date.toISOString().split('T')[0]}</span>
+                    </div>
+                    <h3 class="archive-title">{item.data.title}</h3>
+                    <p class="archive-summary">{item.data.description.split('\n')[0].replace(/^\d+\.\s*/, '')}</p>
+                    <div class="archive-footer">
+                      <span class="archive-duration">
+                        <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        {item.data.duration}
+                      </span>
+                      <span class="archive-chapters">
+                        {item.data.chapters?.length || 0} chapters
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              );
+            })
+          ) : (
+            <div class="archive-empty">
+              <p>Content coming soon...</p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -749,10 +812,149 @@ const presentations = [
     color: var(--color-text-primary);
   }
 
-  /* TBD Card - Green theme (matches auto news icon) */
+  /* Archive Section - Green theme */
+  .archive-icon {
+    background: rgba(67, 214, 168, 0.15);
+    color: var(--color-green);
+  }
+
+  .korean-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    background: var(--color-bg-secondary);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+
+  .archive-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) {
+    .archive-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .archive-card {
+    background: var(--color-surface);
+    border: 1px solid rgba(67, 214, 168, 0.3);
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+  }
+
+  .archive-card:hover {
+    border-color: var(--color-green);
+    transform: translateY(-2px);
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.2),
+      0 0 12px rgba(67, 214, 168, 0.3);
+  }
+
+  .archive-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .archive-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.7rem;
+  }
+
+  .archive-source {
+    background: rgba(67, 214, 168, 0.15);
+    color: var(--color-green);
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .archive-date {
+    color: var(--color-text-muted);
+  }
+
+  .archive-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .archive-summary {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .archive-footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.25rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(67, 214, 168, 0.3);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  .archive-view-all {
+    color: var(--color-green);
+  }
+
+  .archive-view-all:hover {
+    color: #5ee9b5;
+  }
+
+  .archive-duration {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .archive-chapters {
+    color: var(--color-green);
+    font-weight: 500;
+  }
+
+  .archive-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2rem;
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+    border: 2px dashed rgba(67, 214, 168, 0.3);
+    border-radius: var(--radius-lg);
+  }
+
+  /* TBD Card - Yellow theme (Auto News) */
+  .news-icon {
+    background: rgba(253, 228, 113, 0.15);
+    color: var(--color-yellow);
+  }
+
   .tbd-card {
     background: var(--color-surface);
-    border: 2px dashed rgba(67, 214, 168, 0.4);
+    border: 2px dashed rgba(253, 228, 113, 0.4);
     border-radius: var(--radius-xl);
     padding: 3rem;
   }
@@ -767,9 +969,9 @@ const presentations = [
     justify-content: center;
     width: 80px;
     height: 80px;
-    background: rgba(67, 214, 168, 0.1);
+    background: rgba(253, 228, 113, 0.1);
     border-radius: 50%;
-    color: var(--color-green);
+    color: var(--color-yellow);
     margin-bottom: 1rem;
   }
 
