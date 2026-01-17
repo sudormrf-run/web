@@ -13,7 +13,7 @@ const archiveItems = await getCollection('archive', ({ slug }) =>
 );
 const sortedArchive = archiveItems.sort((a, b) =>
   b.data.date.getTime() - a.data.date.getTime()
-).slice(0, 6); // Show latest items on media page (horizontal scroll)
+).slice(0, 3); // Show only 3 latest items
 
 // YouTube & Social Links
 const youtubeChannel = 'https://www.youtube.com/@sudoremove';
@@ -265,41 +265,39 @@ const presentations = [
             View All →
           </a>
         </div>
-        <div class="archive-scroll">
-          <div class="archive-track">
-            {sortedArchive.length > 0 ? (
-              sortedArchive.map((item) => {
-                const slug = item.slug.replace('ko/', '');
-                return (
-                  <a href={`/archive/${slug}`} class="archive-card">
-                    <div class="archive-card-content">
-                      <div class="archive-meta">
-                        <span class="archive-source">{item.data.source}</span>
-                        <span class="archive-date">{item.data.date.toISOString().split('T')[0]}</span>
-                      </div>
-                      <h3 class="archive-title">{item.data.title}</h3>
-                      <p class="archive-summary">{item.data.description.split('\n')[0].replace(/^\d+\.\s*/, '')}</p>
-                      <div class="archive-footer">
-                        <span class="archive-duration">
-                          <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                          </svg>
-                          {item.data.duration}
-                        </span>
-                        <span class="archive-chapters">
-                          {item.data.chapters?.length || 0} chapters
-                        </span>
-                      </div>
+        <div class="archive-grid">
+          {sortedArchive.length > 0 ? (
+            sortedArchive.map((item) => {
+              const slug = item.slug.replace('ko/', '');
+              return (
+                <a href={`/archive/${slug}`} class="archive-card">
+                  <div class="archive-card-content">
+                    <div class="archive-meta">
+                      <span class="archive-source">{item.data.source}</span>
+                      <span class="archive-date">{item.data.date.toISOString().split('T')[0]}</span>
                     </div>
-                  </a>
-                );
-              })
-            ) : (
-              <div class="archive-empty">
-                <p>Content coming soon...</p>
-              </div>
-            )}
-          </div>
+                    <h3 class="archive-title">{item.data.title}</h3>
+                    <p class="archive-summary">{item.data.description.split('\n')[0].replace(/^\d+\.\s*/, '')}</p>
+                    <div class="archive-footer">
+                      <span class="archive-duration">
+                        <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        {item.data.duration}
+                      </span>
+                      <span class="archive-chapters">
+                        {item.data.chapters?.length || 0} chapters
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              );
+            })
+          ) : (
+            <div class="archive-empty">
+              <p>Content coming soon...</p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -831,42 +829,26 @@ const presentations = [
     vertical-align: middle;
   }
 
-  /* Archive Horizontal Scroll */
-  .archive-scroll {
-    overflow-x: scroll;
-    margin: 0 -1rem;
-    padding: 0 1rem;
-    -webkit-overflow-scrolling: touch;
+  /* Archive Grid - 3 columns on desktop */
+  .archive-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
   }
 
-  .archive-scroll::-webkit-scrollbar {
-    height: 10px;
+  @media (min-width: 640px) {
+    .archive-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
-  .archive-scroll::-webkit-scrollbar-track {
-    background: var(--color-bg-secondary);
-    border-radius: 5px;
-  }
-
-  .archive-scroll::-webkit-scrollbar-thumb {
-    background: var(--color-border-hover);
-    border-radius: 5px;
-    border: 2px solid var(--color-bg-secondary);
-  }
-
-  .archive-scroll::-webkit-scrollbar-thumb:hover {
-    background: var(--color-green);
-  }
-
-  .archive-track {
-    display: flex;
-    gap: 1.25rem;
-    padding: 0.5rem 0 1rem;
+  @media (min-width: 1024px) {
+    .archive-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   .archive-card {
-    flex-shrink: 0;
-    width: 300px;
     background: var(--color-surface);
     border: 1px solid rgba(67, 214, 168, 0.3);
     border-radius: var(--radius-lg);
