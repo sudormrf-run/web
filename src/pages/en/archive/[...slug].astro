@@ -1,51 +1,50 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
-import { getCollection, type CollectionEntry } from 'astro:content';
-
-const locale = 'en';
+import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const events = await getCollection('events', ({ slug }) => slug.startsWith('ko/'));
-  return events.map((event) => ({
-    params: { slug: event.slug.replace('ko/', '') },
-    props: { event },
+  // Generate paths for all Korean archive items so /en/archive/{slug} can redirect
+  const archiveItems = await getCollection('archive', ({ slug }) =>
+    slug.startsWith('ko/')
+  );
+
+  return archiveItems.map((item) => ({
+    params: { slug: item.slug.replace('ko/', '') },
+    props: { item },
   }));
 }
 
-interface Props {
-  event: CollectionEntry<'events'>;
-}
-
-const { event } = Astro.props;
-const koreanUrl = `/events/${event.slug.replace('ko/', '')}`;
+const { item } = Astro.props;
+const locale = 'en';
+const koreanUrl = `/archive/${item.slug.replace('ko/', '')}`;
 ---
 
-<Layout title={event.data.title} locale={locale}>
+<Layout title={item.data.title} locale={locale}>
   <div class="fallback-page">
     <div class="container">
       <div class="fallback-content">
         <div class="fallback-icon">
           <svg width="64" height="64" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
           </svg>
         </div>
         <h1 class="fallback-title">Korean Only</h1>
         <p class="fallback-message">
-          This event content is currently available in Korean only.
+          This content is currently available in Korean only.
         </p>
-        <h2 class="content-preview-title">{event.data.title}</h2>
+        <h2 class="content-preview-title">{item.data.title}</h2>
         <p class="fallback-sub">
           We're working on English translations. You can view the Korean version with auto-translate enabled in your browser.
         </p>
         <div class="fallback-actions">
           <a href={koreanUrl} class="btn-primary">
             <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
             </svg>
             View in Korean
           </a>
-          <a href="/en/events/" class="btn-secondary">
-            Back to Events
+          <a href="/en/archive/" class="btn-secondary">
+            Back to Archive
           </a>
         </div>
       </div>
@@ -73,9 +72,9 @@ const koreanUrl = `/events/${event.slug.replace('ko/', '')}`;
     justify-content: center;
     width: 100px;
     height: 100px;
-    background: rgba(253, 115, 24, 0.1);
+    background: rgba(67, 214, 168, 0.1);
     border-radius: 50%;
-    color: var(--color-accent);
+    color: var(--color-green);
     margin-bottom: 1.5rem;
   }
 
@@ -131,14 +130,14 @@ const koreanUrl = `/events/${event.slug.replace('ko/', '')}`;
   }
 
   .btn-primary {
-    background: var(--color-accent);
+    background: var(--color-green);
     color: var(--color-bg-primary);
   }
 
   .btn-primary:hover {
-    filter: brightness(1.1);
+    background: var(--color-green-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(253, 115, 24, 0.3);
+    box-shadow: 0 4px 12px rgba(67, 214, 168, 0.3);
   }
 
   .btn-secondary {
@@ -148,7 +147,7 @@ const koreanUrl = `/events/${event.slug.replace('ko/', '')}`;
   }
 
   .btn-secondary:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
+    border-color: var(--color-green);
+    color: var(--color-green);
   }
 </style>
