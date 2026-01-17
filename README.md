@@ -87,6 +87,10 @@ web/
 - [DESIGN.md](./docs/DESIGN.md) - 디자인 시스템
 - [CONTENT.md](./docs/CONTENT.md) - 콘텐츠 작성 가이드
 
+## TODO
+
+- [ ] 자료창고: 노트의 `[MM:SS]` 타임스탬프 클릭 시 YouTube 해당 시간으로 이동하도록 구현
+
 ## License
 
 MIT-NC (Non-Commercial) - 상업적 사용 금지. [LICENSE](./LICENSE) 참조.
