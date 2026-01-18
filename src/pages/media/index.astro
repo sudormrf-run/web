@@ -173,41 +173,57 @@ const presentations = [
         </div>
       </section>
 
-      <!-- Essays & Columns Section -->
+      <!-- AI 데일리 뉴스 Section -->
       <section class="media-section">
         <div class="section-header">
           <div class="section-title-wrapper">
-            <span class="section-icon essays-icon">
+            <span class="section-icon ainews-icon">
               <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
               </svg>
             </span>
             <div>
-              <h2 class="section-title">{t('media.essays.title')}</h2>
-              <p class="section-description">{t('media.essays.description')}</p>
+              <h2 class="section-title">{t('media.news.title')}</h2>
+              <p class="section-description">{t('media.news.description')}</p>
             </div>
           </div>
+          <a href="/news" class="view-all-link ainews-view-all">
+            전체 보기 →
+          </a>
         </div>
-        <div class="essays-grid">
-          {essays.map((essay) => (
-            <a href={essay.link} target={essay.isExternal ? "_blank" : undefined} rel={essay.isExternal ? "noopener noreferrer" : undefined} class="essay-card">
-              <div class="essay-content">
-                <h3 class="essay-title">{essay.title}</h3>
-                <p class="essay-description">{essay.description}</p>
-                <div class="essay-meta">
-                  <span class="essay-author">{essay.author}</span>
-                  <span class="essay-date">{essay.date}</span>
-                  {essay.isExternal && (
-                    <span class="essay-external">
-                      <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                      </svg>
-                    </span>
-                  )}
-                </div>
-              </div>
-            </a>
-          ))}
+        <div class="ainews-grid">
+          {sortedNews.length > 0 ? (
+            sortedNews.map((item) => {
+              const slug = item.slug.replace('ko/', '');
+              return (
+                <a href={`/news/${slug}`} class="ainews-card">
+                  <div class="ainews-card-content">
+                    <div class="ainews-meta">
+                      {item.data.hasHeadline && <span class="ainews-headline-badge">헤드라인</span>}
+                      <span class="ainews-date">{item.data.date.toISOString().split('T')[0]}</span>
+                    </div>
+                    <h3 class="ainews-title">{item.data.title}</h3>
+                    <ul class="ainews-summary">
+                      {item.data.summary.slice(0, 2).map((line) => (
+                        <li>{line}</li>
+                      ))}
+                    </ul>
+                    {item.data.tags && item.data.tags.length > 0 && (
+                      <div class="ainews-tags">
+                        {item.data.tags.slice(0, 3).map((tag) => (
+                          <span class="ainews-tag">#{tag}</span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </a>
+              );
+            })
+          ) : (
+            <div class="ainews-empty">
+              <p>아직 등록된 뉴스가 없습니다.</p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -309,57 +325,41 @@ const presentations = [
         </div>
       </section>
 
-      <!-- 자동 발행 뉴스 Section -->
+      <!-- Essays & Columns Section -->
       <section class="media-section">
         <div class="section-header">
           <div class="section-title-wrapper">
-            <span class="section-icon ainews-icon">
+            <span class="section-icon essays-icon">
               <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
               </svg>
             </span>
             <div>
-              <h2 class="section-title">{t('media.news.title')}</h2>
-              <p class="section-description">{t('media.news.description')}</p>
+              <h2 class="section-title">{t('media.essays.title')}</h2>
+              <p class="section-description">{t('media.essays.description')}</p>
             </div>
           </div>
-          <a href="/news" class="view-all-link ainews-view-all">
-            전체 보기 →
-          </a>
         </div>
-        <div class="ainews-grid">
-          {sortedNews.length > 0 ? (
-            sortedNews.map((item) => {
-              const slug = item.slug.replace('ko/', '');
-              return (
-                <a href={`/news/${slug}`} class="ainews-card">
-                  <div class="ainews-card-content">
-                    <div class="ainews-meta">
-                      {item.data.hasHeadline && <span class="ainews-headline-badge">헤드라인</span>}
-                      <span class="ainews-date">{item.data.date.toISOString().split('T')[0]}</span>
-                    </div>
-                    <h3 class="ainews-title">{item.data.title}</h3>
-                    <ul class="ainews-summary">
-                      {item.data.summary.slice(0, 2).map((line) => (
-                        <li>{line}</li>
-                      ))}
-                    </ul>
-                    {item.data.tags && item.data.tags.length > 0 && (
-                      <div class="ainews-tags">
-                        {item.data.tags.slice(0, 3).map((tag) => (
-                          <span class="ainews-tag">#{tag}</span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </a>
-              );
-            })
-          ) : (
-            <div class="ainews-empty">
-              <p>아직 등록된 뉴스가 없습니다.</p>
-            </div>
-          )}
+        <div class="essays-grid">
+          {essays.map((essay) => (
+            <a href={essay.link} target={essay.isExternal ? "_blank" : undefined} rel={essay.isExternal ? "noopener noreferrer" : undefined} class="essay-card">
+              <div class="essay-content">
+                <h3 class="essay-title">{essay.title}</h3>
+                <p class="essay-description">{essay.description}</p>
+                <div class="essay-meta">
+                  <span class="essay-author">{essay.author}</span>
+                  <span class="essay-date">{essay.date}</span>
+                  {essay.isExternal && (
+                    <span class="essay-external">
+                      <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                      </svg>
+                    </span>
+                  )}
+                </div>
+              </div>
+            </a>
+          ))}
         </div>
       </section>
     </div>

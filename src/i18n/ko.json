@@ -99,8 +99,8 @@
       "description": "컨퍼런스, 워크샵, 강의에서 사용된 자료"
     },
     "news": {
-      "title": "자동 발행 뉴스",
-      "description": "AI가 큐레이션한 최신 뉴스",
+      "title": "AI 데일리 뉴스",
+      "description": "smol.ai AI 뉴스 한국어 번역",
       "tbd": "준비 중"
     }
   },

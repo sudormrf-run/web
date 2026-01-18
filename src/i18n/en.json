@@ -99,8 +99,8 @@
       "description": "Materials from conferences, workshops, and lectures"
     },
     "news": {
-      "title": "Auto News",
-      "description": "AI-curated latest news",
+      "title": "AI Daily News",
+      "description": "smol.ai AI news in Korean",
       "tbd": "Coming Soon"
     }
   },
