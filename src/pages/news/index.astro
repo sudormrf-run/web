@@ -12,10 +12,6 @@ const allNews = await getCollection('ainews', ({ slug }) => slug.startsWith('ko/
 // Sort by date (newest first)
 const sortedNews = allNews.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-// Separate featured and regular news
-const featuredNews = sortedNews.filter((news) => news.data.isFeatured);
-const regularNews = sortedNews.filter((news) => !news.data.isFeatured);
-
 const formatDate = (date: Date) => {
   return date.toLocaleDateString('ko-KR', {
     year: 'numeric',
@@ -25,93 +21,43 @@ const formatDate = (date: Date) => {
 };
 ---
 
-<Layout title="AI 뉴스" locale={locale}>
+<Layout title="AI 데일리 뉴스" locale={locale}>
   <div class="news-page">
     <div class="container">
       <!-- Header -->
       <header class="page-header">
         <h1 class="page-title">
-          <span class="gradient-text">AI 뉴스</span>
+          <span class="gradient-text">AI 데일리 뉴스</span>
         </h1>
         <p class="page-subtitle">
-          smol.ai AI 뉴스의 한국어 번역
+          smol.ai AI 뉴스 한국어 번역
         </p>
       </header>
 
-      <!-- Featured News -->
-      {featuredNews.length > 0 && (
-        <section class="news-section featured-section">
-          <h2 class="section-title">
-            <span class="title-icon featured-icon">
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-              </svg>
-            </span>
-            주요 뉴스
-          </h2>
-          <div class="featured-grid">
-            {featuredNews.map((news) => (
-              <a href={`/news/${news.slug.replace('ko/', '')}`} class="featured-card">
-                <div class="featured-header">
-                  <span class="news-badge featured-badge">주요</span>
-                  <span class="news-date">{formatDate(news.data.date)}</span>
-                </div>
-                <h3 class="featured-title">{news.data.title}</h3>
-                {news.data.hasHeadline && news.data.headline && (
-                  <p class="featured-headline">{news.data.headline}</p>
-                )}
-                <ul class="summary-list">
-                  {news.data.summary.slice(0, 3).map((item) => (
-                    <li>{item}</li>
-                  ))}
-                </ul>
-                {news.data.tags && news.data.tags.length > 0 && (
-                  <div class="news-tags">
-                    {news.data.tags.slice(0, 4).map((tag) => (
-                      <span class="tag">#{tag}</span>
-                    ))}
-                  </div>
-                )}
-              </a>
-            ))}
-          </div>
-        </section>
-      )}
-
-      <!-- All News -->
-      <section class="news-section">
-        <h2 class="section-title">
-          <span class="title-icon news-icon">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-2-2h-2" />
-            </svg>
-          </span>
-          전체 뉴스
-        </h2>
-        <div class="news-grid">
-          {sortedNews.map((news) => (
-            <a href={`/news/${news.slug.replace('ko/', '')}`} class="news-card">
-              <div class="news-header">
-                {news.data.hasHeadline && <span class="news-badge headline-badge">헤드라인</span>}
-                <span class="news-date">{formatDate(news.data.date)}</span>
-              </div>
-              <h3 class="news-title">{news.data.title}</h3>
-              <ul class="summary-preview">
-                {news.data.summary.slice(0, 2).map((item) => (
-                  <li>{item}</li>
+      <!-- News List -->
+      <div class="news-list">
+        {sortedNews.map((news) => (
+          <a href={`/news/${news.slug.replace('ko/', '')}`} class="news-card">
+            <div class="news-header">
+              <span class="news-date">{formatDate(news.data.date)}</span>
+              {news.data.hasHeadline && <span class="news-badge">헤드라인</span>}
+            </div>
+            <h2 class="news-title">{news.data.title}</h2>
+            <ul class="news-summary">
+              {news.data.summary.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+            {news.data.tags && news.data.tags.length > 0 && (
+              <div class="news-tags">
+                {news.data.tags.map((tag) => (
+                  <span class="tag">#{tag}</span>
                 ))}
-              </ul>
-              {news.data.tags && news.data.tags.length > 0 && (
-                <div class="news-tags">
-                  {news.data.tags.slice(0, 3).map((tag) => (
-                    <span class="tag">#{tag}</span>
-                  ))}
-                </div>
-              )}
-            </a>
-          ))}
-        </div>
-      </section>
+              </div>
+            )}
+          </a>
+        ))}
+      </div>
 
       {allNews.length === 0 && (
         <div class="no-news">
@@ -158,232 +104,104 @@ const formatDate = (date: Date) => {
     margin: 0 auto;
   }
 
-  /* Sections */
-  .news-section {
-    margin-bottom: 3rem;
-  }
-
-  .section-title {
+  /* News List */
+  .news-list {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-text-primary);
-    margin-bottom: 1.5rem;
-  }
-
-  .title-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: var(--radius-md);
-  }
-
-  .featured-icon {
-    background: rgba(253, 115, 24, 0.15);
-    color: var(--color-accent);
-  }
-
-  .news-icon {
-    background: rgba(95, 173, 254, 0.15);
-    color: var(--color-blue);
-  }
-
-  /* Featured Grid */
-  .featured-grid {
-    display: grid;
+    flex-direction: column;
     gap: 1.5rem;
-    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
-  @media (min-width: 768px) {
-    .featured-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  .featured-card {
+  .news-card {
     background: var(--color-surface);
-    border: 1px solid rgba(253, 115, 24, 0.4);
+    border: 1px solid rgba(168, 85, 247, 0.3);
     border-radius: var(--radius-xl);
     padding: 1.5rem;
     text-decoration: none;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .featured-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--color-accent), var(--color-green));
-  }
-
-  .featured-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--color-accent);
-    box-shadow:
-      0 8px 24px rgba(0, 0, 0, 0.2),
-      0 0 20px rgba(253, 115, 24, 0.15);
-  }
-
-  .featured-header {
-    display: flex;
-    align-items: center;
     gap: 0.75rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .featured-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-text-primary);
-    margin-bottom: 0.5rem;
-    line-height: 1.3;
-  }
-
-  .featured-headline {
-    font-size: 0.9rem;
-    color: var(--color-accent);
-    margin-bottom: 1rem;
-    font-weight: 500;
-  }
-
-  /* News Grid */
-  .news-grid {
-    display: grid;
-    gap: 1.25rem;
-    grid-template-columns: 1fr;
-  }
-
-  @media (min-width: 640px) {
-    .news-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .news-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .news-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: 1.25rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
   }
 
   .news-card:hover {
     transform: translateY(-2px);
-    border-color: var(--color-accent);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    border-color: #a855f7;
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.2),
+      0 0 12px rgba(168, 85, 247, 0.2);
   }
 
   .news-header {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .news-date {
+    font-size: 0.85rem;
+    color: #a855f7;
+    font-weight: 600;
   }
 
   .news-badge {
     display: inline-block;
-    padding: 0.2rem 0.5rem;
+    padding: 0.2rem 0.6rem;
     border-radius: var(--radius-sm);
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-  }
-
-  .featured-badge {
-    background: rgba(253, 115, 24, 0.2);
-    color: var(--color-accent);
-  }
-
-  .headline-badge {
     background: rgba(67, 214, 168, 0.2);
     color: var(--color-green);
   }
 
-  .news-date {
-    font-size: 0.75rem;
-    color: var(--color-text-muted);
-    margin-left: auto;
-  }
-
   .news-title {
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--color-text-primary);
-    margin-bottom: 0.75rem;
     line-height: 1.4;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
 
-  /* Summary Lists */
-  .summary-list,
-  .summary-preview {
+  .news-summary {
     list-style: none;
     padding: 0;
-    margin: 0 0 1rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  .summary-list li,
-  .summary-preview li {
-    font-size: 0.85rem;
+  .news-summary li {
+    font-size: 0.9rem;
     color: var(--color-text-secondary);
     line-height: 1.5;
-    padding-left: 1rem;
+    padding-left: 1.25rem;
     position: relative;
-    margin-bottom: 0.5rem;
   }
 
-  .summary-list li::before,
-  .summary-preview li::before {
-    content: '•';
+  .news-summary li::before {
+    content: '';
     position: absolute;
     left: 0;
-    color: var(--color-accent);
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    background: #a855f7;
+    border-radius: 50%;
   }
 
-  .summary-preview li {
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  /* Tags */
   .news-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.375rem;
-    margin-top: auto;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
   }
 
   .tag {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: var(--color-text-muted);
-    padding: 0.15rem 0.5rem;
+    padding: 0.2rem 0.6rem;
     background: var(--color-bg-secondary);
     border-radius: var(--radius-sm);
   }
