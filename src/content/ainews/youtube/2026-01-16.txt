@@ -1,0 +1,9 @@
+AI 뉴스 브리프 (2026.01.16)
+
+- OpenAI가 ChatGPT Go 플랜($8/월)을 출시하고 무료 및 Go 티어에서 광고 테스트를 시작
+- 중국 연구진은 2026년 AI 병목이 훈련이 아닌 추론(inference)에 있다고 분석
+- Claude Opus 4.5가 SWE-bench에서 63.3% 해결률로 1위 기록
+- FLUX.2 [klein]이 4B 파라미터의 소비자 친화적 모델로 vLLM 지원과 함께 출시
+- Cursor Ultra 사용자들이 5분에 $2 소비 등 요금 폭탄 사례 공유
+
+더보기: https://sudoremove.com/news/2026-01-16-chatgpt-ads

@@ -115,6 +115,30 @@ const eventsCollection = defineCollection({
 });
 
 // ============================================
+// AI News Collection (smol.ai 한국어 번역)
+// ============================================
+
+// AI News collection schema
+const ainewsCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    // Required fields
+    title: z.string(),
+    summary: z.array(z.string()).length(5), // 5줄 요약
+    date: z.coerce.date(),
+    originalUrl: z.string().url(), // smol.ai 원문
+
+    // Headline info
+    hasHeadline: z.boolean().default(false), // 헤드라인 유무
+    headline: z.string().optional(), // 헤드라인 (있는 경우)
+
+    // Metadata
+    tags: z.array(z.string()).optional(),
+    isFeatured: z.boolean().default(false),
+  }),
+});
+
+// ============================================
 // Archive Collection (자료 창고 - Video Notes)
 // ============================================
 
@@ -156,4 +180,5 @@ export const collections = {
   events: eventsCollection,
   knowledge: knowledgeCollection,
   archive: archiveCollection,
+  ainews: ainewsCollection,
 };

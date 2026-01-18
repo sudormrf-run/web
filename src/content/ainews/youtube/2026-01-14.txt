@@ -1,0 +1,9 @@
+AI 뉴스 브리프 (2026.01.14)
+
+- OpenAI가 GPT-5.2-Codex API를 Responses API를 통해 출시
+- Cerebras가 추론 스케일링을 위해 OpenAI와 파트너십 체결
+- LangChain이 파일시스템 스타일 에이전트 관리 기능을 갖춘 Agent Builder 출시
+- Ahmad Al-Dahle(Meta Llama 리드)이 Airbnb CTO로 합류
+- ERNIE-5.0이 Text Arena 리더보드 8위 진입, 최초의 중국 모델 톱 10 진입
+
+더보기: https://sudoremove.com/news/2026-01-14-not-much

@@ -15,6 +15,7 @@ const navItems = [
   { href: '/knowledge', label: t('nav.knowledge'), section: 'knowledge' },
   { href: '/projects', label: t('nav.projects'), section: 'projects' },
   { href: '/media', label: t('nav.media'), section: 'media' },
+  { href: '/news', label: t('nav.news'), section: 'news' },
   { href: '/events', label: t('nav.events'), section: 'events' },
   { href: '/about', label: t('nav.about'), section: 'about' },
 ];
@@ -221,6 +222,13 @@ const navItems = [
   }
   .nav-media:hover {
     color: #ff0000;
+  }
+
+  .nav-news::after {
+    background: #a855f7;
+  }
+  .nav-news:hover {
+    color: #a855f7;
   }
 
   .nav-events::after {
