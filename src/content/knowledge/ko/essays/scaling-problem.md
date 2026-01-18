@@ -45,7 +45,7 @@ Action 데이터는 인터넷에 존재하지 않아 바로 scaling 하는 것�
 ## See Also
 
 - [Evaluation의 어려움](evaluation-problem)
-- [해결책: Teleoperation](../teleoperation)
-- [해결책: 시뮬레이션](../simulation-world-model)
-- [해결책: Non-Teleop 데이터](../non-teleop-data)
+- [해결책: Teleoperation](teleoperation)
+- [해결책: 시뮬레이션](simulation-world-model)
+- [해결책: Non-Teleop 데이터](non-teleop-data)
 

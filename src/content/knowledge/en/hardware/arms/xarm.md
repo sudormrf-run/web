@@ -302,5 +302,5 @@ print(dataset)
 ## See Also
 
 - [Hardware List](../index)
-- [Franka Emika](franka)
+- [Franka Emika](franka-panda)
 - [WidowX](widowx)

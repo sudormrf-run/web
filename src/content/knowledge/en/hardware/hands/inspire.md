@@ -216,4 +216,4 @@ git clone https://github.com/unitreerobotics/DFX_inspire_service
 
 - [Hardware List](../index)
 - [Ability Hand](ability)
-- [Shadow Dexterous Hand](shadow)
+- [Shadow Dexterous Hand](shadow-hand)

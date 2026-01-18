@@ -143,4 +143,4 @@ If Sunday's approach succeeds:
 
 - [Model List](index)
 - [Sunday Robotics](../companies/sunday-robotics)
-- [Non-Teleop Data Collection](../solutions/non-teleop-data)
+- [Non-Teleop Data Collection](../essays/non-teleop-data)

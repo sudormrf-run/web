@@ -330,7 +330,6 @@ Hyundai Motor Group is expanding into the robotics field through the Boston Dyna
 - [ANYmal](anymal)
 
 ### Related Hardware
-- [Boston Dynamics Stretch](../mobile/stretch)
 - [Mobile ALOHA](../mobile/mobile-aloha)
 
 ### Related Companies

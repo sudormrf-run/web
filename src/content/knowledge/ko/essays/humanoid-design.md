@@ -64,5 +64,5 @@ lastEditedAt: 2026-01-15
 ## See Also
 
 - [촉각의 필요성](tactile-sensing)
-- [Physical vs Cognitive Intelligence](../physical-vs-cognitive)
+- [Physical vs Cognitive Intelligence](physical-vs-cognitive)
 

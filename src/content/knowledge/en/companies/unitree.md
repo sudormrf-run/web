@@ -163,5 +163,5 @@ Unitree G1:           ~$16,000  ← Most affordable
 ## See Also
 
 - [Company List](index)
-- [Humanoid Design](../deep-dives/humanoid-design)
+- [Humanoid Design](../essays/humanoid-design)
 - [Tesla](tesla)

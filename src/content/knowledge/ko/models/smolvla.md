@@ -171,5 +171,5 @@ SmolVLA의 의의:
 - [HuggingFace](../companies/huggingface)
 - [ACT](act)
 - [pi0](pi0)
-- [커뮤니티 드리븐 접근](../solutions/community-driven)
+- [커뮤니티 드리븐 접근](../essays/community-driven)
 

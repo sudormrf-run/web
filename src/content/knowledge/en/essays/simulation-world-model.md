@@ -67,6 +67,6 @@ Leveraging World Models for evaluation automation
 ## See Also
 
 - [Teleoperation Approach](teleoperation)
-- [Action Data Scaling Problem](../scaling-problem)
-- [The Challenge of Evaluation](../evaluation-problem)
+- [Action Data Scaling Problem](scaling-problem)
+- [The Challenge of Evaluation](evaluation-problem)
 - [NVIDIA](../companies/nvidia)

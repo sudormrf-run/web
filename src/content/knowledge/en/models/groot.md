@@ -307,7 +307,7 @@ Significance of GR00T series:
 
 - [Model List](index)
 - [NVIDIA](../companies/nvidia)
-- [Simulation & World Model](../solutions/simulation-world-model)
+- [Simulation & World Model](../essays/simulation-world-model)
 
 ### Related People
 - [Jim Fan](../people/jim-fan) - NVIDIA GEAR Lab, GR00T Research Lead

@@ -63,5 +63,5 @@ Hopes and challenges of the community-driven approach experienced while hosting 
 ## See Also
 
 - [Non-Teleop Data Collection](non-teleop-data)
-- [Open-Source VLA Models](../models/open-models)
+- [Open-Source VLA Models](../models/openvla)
 - [HuggingFace](../companies/huggingface)

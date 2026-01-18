@@ -145,5 +145,5 @@ GEN-0의 주장이 사실이라면:
 
 - [모델 목록](index)
 - [Generalist](../companies/generalist)
-- [Non-Teleop 데이터 수집](../solutions/non-teleop-data)
+- [Non-Teleop 데이터 수집](../essays/non-teleop-data)
 

@@ -112,5 +112,5 @@ Tesla operates a large-scale **teleoperation team** (based on reports):
 ## See Also
 
 - [Company List](index)
-- [Teleoperation Methods](../solutions/teleoperation)
-- [Humanoid Design](../deep-dives/humanoid-design)
+- [Teleoperation Methods](../essays/teleoperation)
+- [Humanoid Design](../essays/humanoid-design)

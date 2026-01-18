@@ -64,4 +64,4 @@ lastEditedAt: 2026-01-15
 ## See Also
 
 - [The Need for Tactile Sensing](tactile-sensing)
-- [Physical vs Cognitive Intelligence](../physical-vs-cognitive)
+- [Physical vs Cognitive Intelligence](physical-vs-cognitive)

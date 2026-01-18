@@ -356,6 +356,6 @@ Unitree is securing strong position in the low-price market and preempting the r
 
 - [Hardware List](../index)
 - [Unitree Quadrupeds](../quadrupeds/unitree)
-- [GR00T Model](../../models/vla/groot)
+- [GR00T Model](../../models/groot)
 - [Figure Humanoid](figure)
-- [Tesla Optimus](tesla-optimus)
+- [Tesla Optimus](optimus)

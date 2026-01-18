@@ -174,5 +174,5 @@ Robotics Democratization (LeRobot Goal)
 
 - [Company List](index)
 - [SmolVLA](../models/smolvla)
-- [Community-Driven Approach](../solutions/community-driven)
+- [Community-Driven Approach](../essays/community-driven)
 - [ACT](../models/act)

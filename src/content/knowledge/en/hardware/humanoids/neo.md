@@ -201,7 +201,6 @@ Actions made possible:
 - [Hardware List](../index)
 - [1X Technologies](../../companies/1x)
 - [Redwood AI](../../models/redwood-ai)
-- [Tendon Drive System](../../fundamentals/actuation/tendon-drive)
 
 ---
 

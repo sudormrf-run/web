@@ -190,4 +190,4 @@ ImageNet: 1400만 이미지, 2만+ 카테고리, 인간 레이블
 ## See Also
 
 - [World Labs](../companies/world-labs)
-- [Stanford](../companies/stanford)
+- [Stanford HAI](https://hai.stanford.edu/)

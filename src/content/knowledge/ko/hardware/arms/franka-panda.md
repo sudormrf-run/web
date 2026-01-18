@@ -286,5 +286,4 @@ Franka Panda는 VLA(Vision-Language-Action) 모델 연구에서 가장 널리 �
 
 - [하드웨어 목록](../index)
 - [Franka Research 3](franka-research3)
-- [Open X-Embodiment](../../datasets/open-x-embodiment)
 - [OpenVLA](../../models/openvla)

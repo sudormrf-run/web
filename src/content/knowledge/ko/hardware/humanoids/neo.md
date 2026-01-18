@@ -201,7 +201,6 @@ Redwood의 가장 큰 기술적 차별점은 **보행과 조작의 통합 제어
 - [하드웨어 목록](../index)
 - [1X Technologies](../../companies/1x)
 - [Redwood AI](../../models/redwood-ai)
-- [텐던 구동 시스템](../../fundamentals/actuation/tendon-drive)
 
 ---
 

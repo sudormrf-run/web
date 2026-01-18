@@ -62,4 +62,4 @@ Major AI robotics players including Tesla, Google, Physical Intelligence, and Ga
 
 - [Non-Teleop Data Collection](non-teleop-data)
 - [Simulation & World Models](simulation-world-model)
-- [Action Data Scaling Problem](../scaling-problem)
+- [Action Data Scaling Problem](scaling-problem)

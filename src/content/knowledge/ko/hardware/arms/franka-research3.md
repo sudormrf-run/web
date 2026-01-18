@@ -408,4 +408,3 @@ FR3는 VLA(Vision-Language-Action) 모델 연구에서 가장 널리 사용되�
 - [하드웨어 목록](../index)
 - [Franka Panda](franka-panda)
 - [OpenVLA](../../models/openvla)
-- [Open X-Embodiment](../../datasets/open-x-embodiment)

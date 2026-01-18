@@ -185,5 +185,5 @@ GEN-0의 주장이 사실이라면:
 
 - [회사 목록](index)
 - [GEN-0 모델](../models/generalist-gen0)
-- [Action Data Scaling 문제](../challenges/scaling-problem)
+- [Action Data Scaling 문제](../essays/scaling-problem)
 

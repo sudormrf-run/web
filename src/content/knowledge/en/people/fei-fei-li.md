@@ -190,4 +190,4 @@ Goals:
 ## See Also
 
 - [World Labs](../companies/world-labs)
-- [Stanford](../companies/stanford)
+- [Stanford HAI](https://hai.stanford.edu/)

@@ -185,4 +185,4 @@ If GEN-0's claims are true:
 
 - [Company List](index)
 - [GEN-0 Model](../models/generalist-gen0)
-- [Action Data Scaling Problem](../challenges/scaling-problem)
+- [Action Data Scaling Problem](../essays/scaling-problem)

@@ -171,4 +171,4 @@ Significance of SmolVLA:
 - [HuggingFace](../companies/huggingface)
 - [ACT](act)
 - [pi0](pi0)
-- [Community-Driven Approach](../solutions/community-driven)
+- [Community-Driven Approach](../essays/community-driven)

@@ -219,5 +219,4 @@ Tesla Optimus AI is based on **End-to-End neural network** approach validated in
 - [Hardware List](../index)
 - [Tesla](../../companies/tesla)
 - [Boston Dynamics Atlas](atlas)
-- [Figure 01](figure-01)
-- [End-to-End Learning](../../fundamentals/end-to-end)
+- [Figure Humanoid](figure)

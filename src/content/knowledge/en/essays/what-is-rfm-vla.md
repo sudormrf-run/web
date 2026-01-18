@@ -49,13 +49,13 @@ lastEditedAt: 2026-01-15
 
 ## However...
 
-- [Why Scaling is Difficult](../scaling-problem)
-- [Why Evaluation is Difficult](../evaluation-problem)
+- [Why Scaling is Difficult](scaling-problem)
+- [Why Evaluation is Difficult](evaluation-problem)
 
 ---
 
 ## See Also
 
 - [From Specialist to Generalist](specialist-to-generalist)
-- [History of VLA Models](../models/vla-history)
-- [Why Scaling is Difficult](../scaling-problem)
+- [History of VLA Models](specialist-to-generalist)
+- [Why Scaling is Difficult](scaling-problem)

@@ -307,7 +307,7 @@ GR00T 시리즈의 의의:
 
 - [모델 목록](index)
 - [NVIDIA](../companies/nvidia)
-- [시뮬레이션 & World Model](../solutions/simulation-world-model)
+- [시뮬레이션 & World Model](../essays/simulation-world-model)
 
 ### 관련 인물
 - [Jim Fan](../people/jim-fan) - NVIDIA GEAR Lab, GR00T 연구 리드

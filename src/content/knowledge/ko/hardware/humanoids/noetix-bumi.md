@@ -224,5 +224,4 @@ Noetix의 대형 휴머노이드 로봇 N2 정보 [7]:
 ## See Also
 
 - [하드웨어 목록](../index)
-- [Unitree H2](unitree-h2)
-- [저가 휴머노이드 트렌드](../../trends/low-cost-humanoids)
+- [Unitree 휴머노이드](unitree-humanoid)

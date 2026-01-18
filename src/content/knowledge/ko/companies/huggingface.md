@@ -174,6 +174,6 @@ LLM 민주화 (HuggingFace 성공)
 
 - [회사 목록](index)
 - [SmolVLA](../models/smolvla)
-- [커뮤니티 드리븐 접근](../solutions/community-driven)
+- [커뮤니티 드리븐 접근](../essays/community-driven)
 - [ACT](../models/act)
 

@@ -338,4 +338,4 @@ Single Redwood model supports both platforms
 - [1X Technologies](../companies/1x)
 - [GR00T](groot)
 - [Figure Helix](figure-helix)
-- [World Model](../solutions/simulation-world-model)
+- [World Model](../essays/simulation-world-model)

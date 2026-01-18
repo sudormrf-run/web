@@ -161,6 +161,6 @@ If Sunday's approach succeeds:
 
 - [Company List](index)
 - [Sunday ACT-1](../models/sunday-act1)
-- [Non-Teleop Data Collection](../solutions/non-teleop-data)
+- [Non-Teleop Data Collection](../essays/non-teleop-data)
 - [ACT](../models/act)
 - [Diffusion Policy](../models/diffusion-policy)

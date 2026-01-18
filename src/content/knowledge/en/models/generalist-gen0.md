@@ -145,4 +145,4 @@ If GEN-0's claims are true:
 
 - [Model List](index)
 - [Generalist](../companies/generalist)
-- [Non-Teleop Data Collection](../solutions/non-teleop-data)
+- [Non-Teleop Data Collection](../essays/non-teleop-data)

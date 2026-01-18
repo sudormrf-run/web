@@ -330,7 +330,6 @@ Hyundai Motor Group은 Boston Dynamics 인수를 통해 로보틱스 분야로 �
 - [ANYmal](anymal)
 
 ### 관련 하드웨어
-- [Boston Dynamics Stretch](../mobile/stretch)
 - [Mobile ALOHA](../mobile/mobile-aloha)
 
 ### 관련 회사
