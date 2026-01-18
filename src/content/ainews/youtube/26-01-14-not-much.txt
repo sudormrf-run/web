@@ -1,0 +1,29 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [01/19] AI News | AI 뉴스
+
+Description:
+------------------------------
+📋 목차:
+1. 헤드라인: 에이전트가 1주일 자율로 브라우저 제작
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. /r/LocalLlama + /r/localLLM Recap
+5. Less Technical AI Subreddit Recap
+6. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/26-01-14-not-much/
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI, 머신러닝, AI뉴스, 테크뉴스, 인공지능
+
+Date: 2026-01-19
+==================================================
