@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [01/16] OpenAI, ChatGPT Go($8/월) 출시 및 Free·Go 광고 테스트 발표 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI가 Free·Go 티어 광고 테스트 시작
+• ChatGPT Go($8/월), 메시지 10배 제공
+• Sam Altman, ‘매우 빠른 Codex’ 예고
+• FLUX.2 [klein], vLLM-Omni day-0 지원
+• SWE-rebench 12월, Opus 4.5 63.3% 1위
+
+📋 목차:
+1. 헤드라인: OpenAI, ChatGPT Go($8/월) 출시 및 Free·Go 광고 테스트 발표
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/26-01-16-chatgpt-ads/
+
+#OpenAI #ChatGPT Go #광고 #Codex #Claude
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Codex, Claude, OpenAI, 광고, ChatGPT Go, AI뉴스, 머신러닝, 테크뉴스, 인공지능, AI
+
+Date: 2026-01-16
+==================================================
