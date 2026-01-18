@@ -1,13 +1,4 @@
 ---
-title: "AI News"
-date: 2026-01-19
-originalUrl: "https://news.smol.ai/issues/26-01-14-not-much/"
-hasHeadline: false
-isFeatured: false
----
-
-```yaml
----
 title: "GPT-5.2-Codex, 1주일 자율 실행으로 브라우저 제작"
 summary:
   - "GPT-5.2-Codex API 출시, Cursor 통합"
@@ -26,7 +17,6 @@ tags:
   - Gemini
 isFeatured: false
 ---
-```
 
 ## 헤드라인: 에이전트가 1주일 자율로 브라우저 제작
 
