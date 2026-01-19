@@ -115,7 +115,7 @@ const formatDate = (date: Date) => {
 
   .news-card {
     background: var(--color-surface);
-    border: 1px solid rgba(168, 85, 247, 0.3);
+    border: 1px solid rgba(253, 115, 24, 0.3);
     border-radius: var(--radius-xl);
     padding: 1.5rem;
     text-decoration: none;
@@ -127,10 +127,10 @@ const formatDate = (date: Date) => {
 
   .news-card:hover {
     transform: translateY(-2px);
-    border-color: #a855f7;
+    border-color: var(--color-accent);
     box-shadow:
       0 4px 16px rgba(0, 0, 0, 0.2),
-      0 0 12px rgba(168, 85, 247, 0.2);
+      0 0 12px rgba(253, 115, 24, 0.2);
   }
 
   .news-header {
@@ -141,7 +141,7 @@ const formatDate = (date: Date) => {
 
   .news-date {
     font-size: 0.85rem;
-    color: #a855f7;
+    color: var(--color-accent);
     font-weight: 600;
   }
 
@@ -187,7 +187,7 @@ const formatDate = (date: Date) => {
     top: 0.6em;
     width: 6px;
     height: 6px;
-    background: #a855f7;
+    background: var(--color-accent);
     border-radius: 50%;
   }
 
