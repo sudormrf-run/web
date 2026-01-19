@@ -175,13 +175,17 @@ function timestampToSeconds(timestamp: string): number {
 
   /* Video Section */
   .video-section {
-    margin-bottom: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--color-bg-primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
   }
 
   .video-container {
     position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
+    height: min(56.25vw, 50vh);
     overflow: hidden;
     border-radius: var(--radius-xl);
     background: var(--color-bg-secondary);
@@ -204,12 +208,28 @@ function timestampToSeconds(timestamp: string): number {
   }
 
   @media (max-width: 1024px) {
+    .video-section {
+      margin-left: -1rem;
+      margin-right: -1rem;
+      padding: 0.5rem 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .video-container {
+      height: 35vh;
+    }
+
     .content-layout {
       grid-template-columns: 1fr;
     }
 
     .sidebar {
       order: -1;
+      position: static;
+    }
+
+    .chapters-list {
+      max-height: none;
     }
   }
 
@@ -392,8 +412,6 @@ function timestampToSeconds(timestamp: string): number {
 
   /* Sidebar */
   .sidebar {
-    position: sticky;
-    top: 1.5rem;
     height: fit-content;
   }
 
