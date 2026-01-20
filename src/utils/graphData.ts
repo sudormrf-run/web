@@ -33,7 +33,10 @@ const categoryColors: Record<string, string> = {
 };
 
 // Parse markdown links from content body
-// Matches patterns like [text](../people/tony-zhao.md) or [text](../models/act.md)
+// Matches patterns like:
+// - [text](../people/tony-zhao.md) - relative path with extension
+// - [text](../models/act) - relative path without extension
+// - [text](cosmos) - bare slug (same folder reference)
 function parseMarkdownLinks(body: string, currentSlug: string): string[] {
   const linkedSlugs: string[] = [];
 
@@ -41,22 +44,33 @@ function parseMarkdownLinks(body: string, currentSlug: string): string[] {
   const linkRegex = /\[([^\]]*)\]\(([^)]+)\)/g;
   let match;
 
+  // Extract current document's category folder for bare slug resolution
+  // e.g., "ko/models/groot-n1-6" -> "models"
+  const currentCategory = currentSlug.split('/')[1] || '';
+
   while ((match = linkRegex.exec(body)) !== null) {
     const path = match[2];
 
-    // Only process relative markdown links (not external URLs)
+    // Skip external URLs, anchors, and asset paths
     if (path.startsWith('http') || path.startsWith('#')) continue;
-    if (!path.includes('.md') && !path.startsWith('../')) continue;
+    if (path.startsWith('../assets') || path.startsWith('./assets')) continue;
 
     // Extract the slug from relative path
-    // e.g., "../people/tony-zhao.md" -> "people/tony-zhao"
-    // e.g., "../../models/act.md" -> "models/act"
-    const cleanPath = path
+    let cleanPath = path
       .replace(/^(\.\.\/)+/, '')  // Remove ALL leading ../
       .replace(/^\.\//, '')       // Remove leading ./
       .replace(/\.md$/, '');      // Remove .md extension
 
-    if (cleanPath && !cleanPath.startsWith('http') && !cleanPath.startsWith('assets')) {
+    // Skip if still looks like an external URL or asset
+    if (cleanPath.startsWith('http') || cleanPath.startsWith('assets')) continue;
+
+    // Handle bare slugs (same folder reference)
+    // e.g., "cosmos" in models folder -> "models/cosmos"
+    if (cleanPath && !cleanPath.includes('/') && currentCategory) {
+      cleanPath = `${currentCategory}/${cleanPath}`;
+    }
+
+    if (cleanPath) {
       linkedSlugs.push(cleanPath);
     }
   }
