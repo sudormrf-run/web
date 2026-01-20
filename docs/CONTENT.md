@@ -117,6 +117,57 @@ tags: [meetup, offline]
 
 ## Writing Guidelines
 
+### 필자의 의견 (Author's Note)
+
+Knowledge Base 문서(models, companies, hardware 등)에 필자의 개인적 견해를 추가할 때 사용합니다.
+
+**위치:** 문서 **맨 위** (frontmatter 바로 다음, `## 핵심 의의`나 다른 모든 섹션보다 **반드시 앞**에 위치)
+
+**형식:**
+```markdown
+<div class="author-note">
+
+### 필자의 의견
+
+- 핵심 포인트 1: 간결하게 작성
+- 핵심 포인트 2: 개인적 경험이나 관찰 포함 가능
+- 핵심 포인트 3: 업계 트렌드와 연결
+
+</div>
+```
+
+**작성 원칙:**
+- **간결함**: 2-4개의 bullet point로 제한
+- **구어체 허용**: 딱딱한 논문체보다 자연스러운 어투
+- **개인 경험 환영**: "~해봤는데", "~에서 봤는데" 등 실제 경험 기반 의견
+- **핵심만 전달**: 상세한 설명은 본문에, 여기선 인사이트만
+
+**예시 (ACT 문서):**
+```markdown
+<div class="author-note">
+
+### 필자의 의견
+
+- 수 많은 데모들의 구세주. 누구나 쉽게 teleop data 수 십개 수집하고, ACT 학습 시켜서 데모를 가능하게 해줍니다.
+- 2025년 방문한 수 많은 전시/학회 데모 부스에 가보면 ACT 로 만들었다고 하는 경우가 대부분입니다.
+
+</div>
+```
+
+**영어 버전:**
+```markdown
+<div class="author-note">
+
+### Author's Note
+
+- Key insight 1
+- Key insight 2
+
+</div>
+```
+
+---
+
 ### 제목 (Title)
 
 - 명확하고 검색 가능하게
