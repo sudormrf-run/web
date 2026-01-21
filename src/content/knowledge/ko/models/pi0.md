@@ -14,9 +14,19 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
+<div class="author-note">
+
+### 필자의 의견
+
+- **VLM + Flow Matching Action Expert의 가능성 입증**. Pretrained VLM 백본에 Flow Matching 기반 Action Expert를 결합하는 설계의 가능성을 보여주었고, 이후 많은 후속 연구들이 비슷한 접근을 취함.
+- **General Robot Policy의 시초**. Cross-embodiment, dexterous task를 실제로 잘 수행함을 보여준 첫 사례.
+- **Teleop 기반 Real Data 학습의 증명**. 대규모 텔레오퍼레이션 데이터를 모아서 학습하면 범용 로봇 정책이 가능하다는 것을 실증함.
+
+</div>
+
 ## 핵심 의의
 
-- **Flow Matching의 성공적 적용**: Diffusion 대안으로 flow matching을 로봇에 처음 성공적으로 적용
+- **Flow Matching 기반 VLA 설계**: 사전학습 VLM에 Flow Matching 기반 연속 액션 생성을 결합한 새로운 VLA 설계를 제시
 - **VLM 지식의 로봇 전이**: PaliGemma(3B) VLM의 인터넷 스케일 지식을 dexterous manipulation에 활용
 - **50Hz 고주파 제어**: Action Chunking으로 초당 50회 모터 명령 생성
 - **8개 로봇 플랫폼**: 단일 암, 양팔, 모바일 매니퓰레이터 등 다양한 embodiment에서 학습
@@ -45,36 +55,6 @@ lastEditedAt: 2026-01-15
 ## Architecture
 
 π0는 **VLM + Flow Matching Action Expert** 하이브리드 구조입니다.
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                      π0 Architecture                         │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│   ┌────────────────────────────────────────────────────┐    │
-│   │              PaliGemma VLM (3B)                    │    │
-│   │         Internet-scale Semantic Knowledge          │    │
-│   │    • 이미지 이해    • 언어 지시 처리               │    │
-│   └───────────────────────┬────────────────────────────┘    │
-│                           │                                  │
-│                           ▼                                  │
-│   ┌────────────────────────────────────────────────────┐    │
-│   │            Action Expert (+300M)                   │    │
-│   │    • Proprioceptive states 처리                    │    │
-│   │    • Action tokens 간 양방향 어텐션                │    │
-│   │    • 별도 Transformer 가중치                       │    │
-│   └───────────────────────┬────────────────────────────┘    │
-│                           │                                  │
-│                           ▼                                  │
-│   ┌────────────────────────────────────────────────────┐    │
-│   │              Flow Matching                         │    │
-│   │    • 연속 action distribution 생성                 │    │
-│   │    • Multimodal action 처리                        │    │
-│   │    • 50Hz 고주파 제어                              │    │
-│   └────────────────────────────────────────────────────┘    │
-│                                                              │
-└─────────────────────────────────────────────────────────────┘
-```
 
 ### Model Specifications
 
@@ -151,6 +131,9 @@ Physical Intelligence가 직접 수집한 dexterous manipulation 데이터:
 
 ## Performance
 
+![π0 Zero-shot 성능 비교](../assets/models/pi0/pi0-results.png)
+<p align="center"><em>π0 Zero-shot 성능: OpenVLA/Octo 대비 복잡한 Dexterous 태스크 성능</em></p>
+
 ### vs OpenVLA, Octo (Zero-shot)
 
 복잡한 multi-stage dexterous 태스크에서 비교:
@@ -203,37 +186,6 @@ Physical Intelligence가 직접 수집한 dexterous manipulation 데이터:
 - 인간 개입 시 복구
 - 실패 후 재시도
 - 다양한 물체 형태 대응
-
----
-
-## Deployment Modes
-
-### 1. Zero-shot
-
-```
-언어 지시 → π0 → 로봇 액션
-```
-
-- 추가 학습 없이 바로 사용
-- 학습 분포 내 태스크에 적합
-
-### 2. Fine-tuning
-
-```
-소량 시연 데이터 → π0 파인튜닝 → 전문화된 π0
-```
-
-- 1-20시간 데이터로 충분
-- 새로운 태스크/환경에 적응
-
-### 3. Language-Conditioned
-
-```
-고수준 VLM 계획 → π0 실행
-```
-
-- 외부 VLM이 고수준 계획 생성
-- π0는 저수준 실행 담당
 
 ---
 

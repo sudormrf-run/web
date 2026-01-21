@@ -14,9 +14,19 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
+<div class="author-note">
+
+### Author's Note
+
+- **Proved the potential of VLM + Flow Matching Action Expert**. Demonstrated the viability of combining a pretrained VLM backbone with a Flow Matching-based Action Expert, inspiring many subsequent works to adopt similar approaches.
+- **Pioneer of General Robot Policy**. First case to show actual success on cross-embodiment and dexterous tasks.
+- **Proved teleop-based real data training works**. Demonstrated that collecting large-scale teleoperation data enables general-purpose robot policies.
+
+</div>
+
 ## Key Significance
 
-- **Successful Application of Flow Matching**: First successful application of flow matching to robotics as an alternative to Diffusion
+- **Flow Matching-based VLA Design**: Introduced a new VLA design combining pretrained VLM with Flow Matching-based continuous action generation
 - **VLM Knowledge Transfer to Robots**: Leverages PaliGemma (3B) VLM's internet-scale knowledge for dexterous manipulation
 - **50Hz High-Frequency Control**: Generates 50 motor commands per second via Action Chunking
 - **8 Robot Platforms**: Learns across diverse embodiments including single arm, bimanual, and mobile manipulators
@@ -45,36 +55,6 @@ Pi0 (pi-zero) is the first general-purpose robot foundation model announced by P
 ## Architecture
 
 Pi0 is a **VLM + Flow Matching Action Expert** hybrid architecture.
-
-```
-+-------------------------------------------------------------+
-|                      Pi0 Architecture                        |
-+-------------------------------------------------------------+
-|                                                              |
-|   +----------------------------------------------------+    |
-|   |              PaliGemma VLM (3B)                    |    |
-|   |         Internet-scale Semantic Knowledge          |    |
-|   |    * Image understanding    * Language instruction |    |
-|   +------------------------+---------------------------+    |
-|                            |                                 |
-|                            v                                 |
-|   +----------------------------------------------------+    |
-|   |            Action Expert (+300M)                   |    |
-|   |    * Proprioceptive states processing              |    |
-|   |    * Bidirectional attention between action tokens |    |
-|   |    * Separate Transformer weights                  |    |
-|   +------------------------+---------------------------+    |
-|                            |                                 |
-|                            v                                 |
-|   +----------------------------------------------------+    |
-|   |              Flow Matching                         |    |
-|   |    * Continuous action distribution generation     |    |
-|   |    * Multimodal action handling                    |    |
-|   |    * 50Hz high-frequency control                   |    |
-|   +----------------------------------------------------+    |
-|                                                              |
-+-------------------------------------------------------------+
-```
 
 ### Model Specifications
 
@@ -151,6 +131,9 @@ Dexterous manipulation data directly collected by Physical Intelligence:
 
 ## Performance
 
+![Pi0 Zero-shot Performance Comparison](../assets/models/pi0/pi0-results.png)
+<p align="center"><em>Pi0 Zero-shot Performance vs OpenVLA/Octo on Complex Dexterous Tasks</em></p>
+
 ### vs OpenVLA, Octo (Zero-shot)
 
 Comparison on complex multi-stage dexterous tasks:
@@ -203,37 +186,6 @@ Specialization with small additional data:
 - Recovery after human intervention
 - Retry after failure
 - Handling various object shapes
-
----
-
-## Deployment Modes
-
-### 1. Zero-shot
-
-```
-Language instruction -> Pi0 -> Robot action
-```
-
-- Use immediately without additional training
-- Suitable for tasks within training distribution
-
-### 2. Fine-tuning
-
-```
-Small demonstration data -> Pi0 fine-tuning -> Specialized Pi0
-```
-
-- 1-20 hours of data sufficient
-- Adapts to new tasks/environments
-
-### 3. Language-Conditioned
-
-```
-High-level VLM planning -> Pi0 execution
-```
-
-- External VLM generates high-level plan
-- Pi0 handles low-level execution
 
 ---
 

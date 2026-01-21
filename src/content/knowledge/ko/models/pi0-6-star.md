@@ -11,317 +11,153 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-21
 ---
+
+<div class="author-note">
+
+### 필자의 의견
+
+- **VLA + RL의 실용적 증명**. 대규모 VLA에 RL을 적용하여 실제 환경에서 자가 개선이 가능하다는 것을 실증. 시뮬레이션이 아닌 실제 로봇에서 RL이 작동함을 보여줌.
+- **Coaching의 핵심 역할**. 단순 자율 경험 수집만으로는 부족하고, 실패 상황에서의 전문가 개입(코칭)이 성능 향상에 핵심적. 완전 자율 학습까지는 아직 갈 길이 있음.
+- **Binarized Advantage의 단순함**. 복잡한 advantage 수치 대신 "positive/negative" 텍스트로 조건화하는 단순한 방식이 효과적. VLA의 언어 이해 능력을 활용한 영리한 설계.
+
+</div>
 
 ## 핵심 의의
 
 - **VLA의 RL 자가 개선**: 배포 후 실제 경험에서 학습하여 지속적 성능 향상
-- **RECAP 방법론**: RL with Experience & Corrections via Advantage-conditioned Policies
-- **90%+ 성공률**: 다양한 실세계 태스크에서 90% 이상 성공률 달성
-- **2배 처리량**: 어려운 태스크에서 처리량 2배 이상 향상
-- **24시간 연속 운영**: 에스프레소 제조 5:30am~11:30pm, 50개 빨래 연속 접기
-- **공장 배포**: 59개 초콜릿 포장 박스 조립 실증
-- **Value Function 기반**: 상황별 성공 확률 예측으로 신용 할당 문제 해결
+- **RECAP 방법론**: 시연 + 자율 경험 + 코칭 데이터를 통합한 RL 학습
+- **90%+ 성공률**: T-shirt folding 97%, Box assembly ~90% 등 고성능 달성
+- **2배+ 처리량 향상**: 어려운 태스크에서 처리량 2배 이상, 실패율 절반 감소
+- **24시간 연속 운영**: 에스프레소 5:30am~11:30pm, 50개 빨래 연속 접기
+- **공장 배포 실증**: 59개 초콜릿 포장 박스 조립
 
-![π*0.6 Architecture](../assets/models/pi0/pi06star.png)
+![π*0.6 Overview](../assets/models/pi0/pi06star.png)
 <p align="center"><em>π*0.6: RECAP - 경험과 코칭에서 학습하는 강화학습</em></p>
 
 ---
 
 ## Overview
 
-π*0.6는 Physical Intelligence가 2025년 11월 발표한 RL 기반 자가 개선 VLA입니다. 기존 imitation learning의 한계를 극복하고, 실제 배포 환경에서의 경험을 통해 지속적으로 성능을 향상시킵니다.
+π*0.6는 Physical Intelligence가 2025년 11월 발표한 RL 기반 자가 개선 VLA입니다. Imitation learning의 한계(오류 누적, 시연 품질 종속, 실패 복구 어려움)를 극복하고, 실제 배포 환경에서의 경험을 통해 지속적으로 성능을 향상시킵니다.
 
 | 항목 | 내용 |
 |------|------|
 | 발표 | 2025년 11월 17일 |
 | 회사 | Physical Intelligence |
+| 논문 | [arXiv:2511.14759](https://arxiv.org/abs/2511.14759) |
 | 블로그 | [pi.website/blog/pistar06](https://www.pi.website/blog/pistar06) |
-| 논문 | [pi.website/download/pistar06.pdf](https://www.pi.website/download/pistar06.pdf) |
 | 기반 | π0.5 |
-
----
-
-## Why RL for VLAs?
-
-### Imitation Learning의 한계
-
-| 문제 | 설명 |
-|------|------|
-| **데이터 한계** | 시연 데이터의 품질에 종속 |
-| **실패 복구** | 실패 상황 데이터 부족 |
-| **오류 누적** | 작은 오류가 누적되어 실패 |
-| **천장 효과** | 시연자의 성능을 넘기 어려움 |
-
-### RL의 장점
-
-| 장점 | 설명 |
-|------|------|
-| **경험 학습** | 실제 실패/성공에서 학습 |
-| **자가 개선** | 시연 품질을 초과 가능 |
-| **실패 복구** | 실패 상황에서 복구 학습 |
-
----
-
-## RECAP: Core Method
-
-RECAP (RL with Experience & Corrections via Advantage-conditioned Policies)
-
-### 3단계 학습 파이프라인
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    RECAP Learning Pipeline                   │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│   Stage 1: Demonstration                                     │
-│   ┌──────────────────────────────────────────────────┐      │
-│   │  텔레오퍼레이션으로 초기 시연 데이터 수집        │      │
-│   └──────────────────────────────────────────────────┘      │
-│                           ↓                                  │
-│   Stage 2: Autonomous Deployment                             │
-│   ┌──────────────────────────────────────────────────┐      │
-│   │  자율 실행 → 성공/실패 경험 수집                 │      │
-│   └──────────────────────────────────────────────────┘      │
-│                           ↓                                  │
-│   Stage 3: Coaching (Expert Intervention)                    │
-│   ┌──────────────────────────────────────────────────┐      │
-│   │  실패 시 전문가가 개입하여 올바른 행동 시연      │      │
-│   └──────────────────────────────────────────────────┘      │
-│                           ↓                                  │
-│   RL Training with Value Function                            │
-│   ┌──────────────────────────────────────────────────┐      │
-│   │  Advantage conditioning으로 좋은 행동 강화       │      │
-│   └──────────────────────────────────────────────────┘      │
-│                                                              │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### Value Function
-
-**핵심 역할**: 현재 상황이 얼마나 "좋은지" 예측
-
-```
-관측 상태 → Value Function → 성공 확률 예측 (0~1)
-```
-
-| 상황 | Value |
-|------|-------|
-| 목표 달성 중 | 높음 (증가) |
-| 정체 중 | 낮음 (평탄) |
-| 실패 방향 | 매우 낮음 (감소) |
-
-**예시 - 에스프레소 제조:**
-- 컵 잡기 성공 → Value ↑
-- 기계 앞으로 이동 → Value ↑
-- 진행 없음 → Value 평탄
-- 컵 놓침 → Value ↓
-
-### Advantage Conditioning
-
-```
-Advantage = V(s') - V(s)  (다음 상태 value - 현재 상태 value)
-```
-
-| Advantage | 의미 | 학습 |
-|-----------|------|------|
-| 양수 (+) | 좋은 행동 | 강화 |
-| 음수 (-) | 나쁜 행동 | 억제 |
-
-**핵심**: 모델을 advantage에 조건화하여 "좋은 행동만" 생성하도록 학습
-
-### Coaching Mechanism
-
-| 방식 | 설명 |
-|------|------|
-| **개입 시점** | 로봇이 실수할 때 |
-| **개입 방법** | 전문가가 텔레오퍼레이션으로 교정 |
-| **장점** | 실제 문제 상황에서의 데이터 수집 |
-
-> "초기 시연만으로는 정책이 실제로 마주치는 상황을 커버하지 못함"
-
----
-
-## Performance Results
-
-### Success Rate
-
-| 메트릭 | 결과 |
-|--------|------|
-| 전체 성공률 | **90%+** |
-| 실패율 감소 | **2배 이상** |
-
-### Throughput
-
-| 태스크 | 개선 |
-|--------|------|
-| 에스프레소 제조 | **2배+ 처리량** |
-| 어려운 조작 태스크 | 상당한 향상 |
-
-### Real-World Deployment
-
-| 태스크 | 성과 |
-|--------|------|
-| **에스프레소 제조** | 5:30am ~ 11:30pm 연속 운영 |
-| **빨래 접기** | 50개 새 아이템 연속 처리 |
-| **박스 조립** | 59개 초콜릿 포장 박스 (공장) |
 
 ---
 
 ## Architecture
 
-### vs π0.5
+### Model Specifications
 
-| 항목 | π0.5 | π*0.6 |
-|------|------|-------|
-| 학습 방식 | Imitation Learning | **+ Reinforcement Learning** |
-| Backbone | 3B | **약간 더 큰 backbone** |
-| 조건화 | 언어 + 이미지 | **+ Advantage conditioning** |
-| 개선 | 정적 | **배포 후 지속 개선** |
-
-### Model Components
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    π*0.6 Architecture                        │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│   ┌────────────────────────────────────────────────────┐    │
-│   │                  π0.5 Base Model                   │    │
-│   │              (VLM + Action Expert)                 │    │
-│   └───────────────────────┬────────────────────────────┘    │
-│                           │                                  │
-│                           ▼                                  │
-│   ┌────────────────────────────────────────────────────┐    │
-│   │               Value Function V(s)                  │    │
-│   │            상황별 성공 확률 예측                   │    │
-│   └───────────────────────┬────────────────────────────┘    │
-│                           │                                  │
-│                           ▼                                  │
-│   ┌────────────────────────────────────────────────────┐    │
-│   │          Advantage-Conditioned Policy              │    │
-│   │         좋은 행동(A>0)에 조건화된 출력             │    │
-│   └────────────────────────────────────────────────────┘    │
-│                                                              │
-└─────────────────────────────────────────────────────────────┘
-```
+| 구성 요소 | 사양 |
+|----------|------|
+| VLM Backbone | **Gemma 3 4B** |
+| Action Expert | **860M** 파라미터 (Flow Matching) |
+| Value Function | **670M** 파라미터 (별도 Gemma 3 backbone) |
+| 제어 주파수 | 50Hz |
 
 ---
 
-## Training Pipeline
+## RECAP: Core Method
 
-### Phase 1: Offline RL Pre-training
+**RECAP** (RL with Experience & Corrections via Advantage-conditioned Policies)
 
-```
-시연 데이터 + 경험 데이터 → Offline RL → π* (base policy)
-```
+### 3단계 데이터 수집
 
-- 기존 데이터로 초기 정책 학습
-- Value function 동시 학습
-
-### Phase 2: Online Deployment + Coaching
-
-```
-π* 배포 → 자율 실행 → 실패 시 코칭 → 데이터 수집
-```
-
-- 실제 환경에서 경험 축적
-- 전문가 개입으로 교정 데이터 확보
-
-### Phase 3: RL Fine-tuning
-
-```
-경험 데이터 + 코칭 데이터 → RL 업데이트 → π*' (개선된 정책)
-```
-
-- Advantage conditioning으로 좋은 행동 강화
-- 반복적 개선
-
----
-
-## Credit Assignment Problem
-
-### 문제
-
-> "어떤 행동이 성공/실패를 야기했는가?"
-
-에피소드가 끝난 후에야 결과를 알 수 있음
-
-### 해결: Value Function
-
-| 접근 | 방법 |
+| 단계 | 설명 |
 |------|------|
-| **Value 학습** | 각 상태의 성공 확률 예측 |
-| **Advantage 계산** | 상태 전이의 가치 변화 측정 |
-| **신용 할당** | 개별 행동의 기여도 평가 |
+| **1. Demonstration** | 텔레오퍼레이션으로 초기 시연 데이터 수집 |
+| **2. Autonomous** | 자율 실행하며 성공/실패 경험 수집 |
+| **3. Coaching** | 실패 시 전문가가 개입하여 교정 시연 |
 
-**체스 비유:**
-- Value function = 현재 보드 상태의 승률 예측
-- Advantage = 수를 둔 후 승률 변화
-- 좋은 수 = 승률 상승, 나쁜 수 = 승률 하락
+> "초기 시연만으로는 정책이 실제로 마주치는 상황을 커버하지 못함" - 코칭이 핵심
 
----
+<video src="/assets/models/pi0/intervention_example.mp4" controls width="100%"></video>
+<p align="center"><em>Coaching 예시: 실패 상황에서 전문가가 개입하여 교정</em></p>
 
-## Real-World Demonstrations
+![π*0.6 Components](../assets/models/pi0/pistar06-components.png)
+<p align="center"><em>π*0.6 구성 요소: Policy, Value Function, Advantage Conditioning</em></p>
 
-### Espresso Making
+### Value Function
 
-| 단계 | 동작 |
+현재 상황의 성공 확률을 예측하는 별도 모델:
+
+| 특징 | 설명 |
 |------|------|
-| 1 | 컵 집기 |
-| 2 | 에스프레소 기계로 이동 |
-| 3 | 컵 배치 |
-| 4 | 버튼 누르기 |
-| 5 | 완성된 음료 제공 |
+| 아키텍처 | 670M Gemma 3 backbone (별도 모델) |
+| 출력 | **201 bins 분포적 (distributional) 예측** |
+| 역할 | 상황별 성공 확률 예측 → Credit assignment 해결 |
 
-**운영**: 5:30am ~ 11:30pm (18시간 연속)
+**예시 - 에스프레소 제조:**
+- 컵 잡기 성공 → Value ↑
+- 기계 앞으로 이동 → Value ↑
+- 컵 놓침 → Value ↓
 
-### Laundry Folding
+### Advantage Conditioning
 
-- **50개** 처음 보는 의류 아이템
-- **연속 처리** (중단 없음)
-- **다양한 형태**: 셔츠, 바지, 수건 등
+**Binarized Text Input 방식:**
 
-### Factory Box Assembly
+```
+Advantage = V(s') - V(s)
 
-- **59개** 초콜릿 포장 박스
-- **실제 공장 환경**
-- **생산 라인 통합**
+→ 양수면: "Advantage: positive" 텍스트로 조건화
+→ 음수면: "Advantage: negative" 텍스트로 조건화
+```
+
+- 복잡한 수치 대신 **이진 텍스트**로 단순화
+- VLA의 언어 이해 능력 활용
+- 좋은 행동(positive)만 생성하도록 추론 시 조건화
+
+### Training Pipeline
+
+| 단계 | 내용 |
+|------|------|
+| **Pre-training** | 수만 시간의 시연 데이터로 offline RL (Value + Policy 동시 학습) |
+| **Fine-tuning** | SFT → 자율 수집 + 코칭 → Value 재학습 → Policy 재학습 (반복) |
 
 ---
 
-## Comparison with Other RL Approaches
+## Performance Results
 
-| 접근 | RECAP | 기존 Robot RL |
-|------|-------|--------------|
-| 데이터 | 이질적 (시연+경험+코칭) | 동질적 |
-| 환경 | 실제 환경 | 주로 시뮬레이션 |
-| 리셋 | 불완전 리셋 처리 | 완전 리셋 가정 |
-| 스케일 | 대규모 VLA | 작은 정책 |
+### 태스크별 성과
+
+| 태스크 | 성공률 | 처리량 |
+|--------|--------|--------|
+| T-shirt Folding | **97%** | 50% 향상 |
+| Box Assembly | **~90%** | 2배 향상 |
+| Espresso | **90%+** | 2배+ 향상 |
+| Diverse Laundry | **~80%** | 2배+, 실패율 절반 |
+
+### Real-World Deployment
+
+| 태스크 | 성과 |
+|--------|------|
+| **에스프레소 제조** | 5:30am ~ 11:30pm 연속 운영 (18시간) |
+| **빨래 접기** | 50개 새 아이템 연속 처리 |
+| **박스 조립** | 59개 초콜릿 포장 박스 (실제 공장) |
 
 ---
 
-## Limitations & Future Work
-
-### 현재 한계
+## Limitations
 
 | 한계 | 설명 |
 |------|------|
-| 코칭 비용 | 전문가 개입 필요 |
-| 배포 시간 | 충분한 경험 수집 필요 |
-| 안전성 | 실패 시 물리적 위험 |
-
-### 미래 방향
-
-- 자동 코칭 (AI 기반)
-- 시뮬레이션 → 실제 전이
-- 더 효율적인 exploration
+| **Human-in-the-loop 필요** | 라벨링, 코칭 개입, 씬 리셋에 사람 필요 |
+| **Greedy Exploration** | 탐색이 주로 정책의 확률성에 의존, 적극적 탐색 부족 |
+| **Offline Batch 학습** | 완전한 online RL이 아닌 배치 단위 오프라인 학습 |
 
 ---
 
 ## References
 
+- [arXiv Paper](https://arxiv.org/abs/2511.14759)
 - [Physical Intelligence Blog - π*0.6](https://www.pi.website/blog/pistar06)
 - [Technical Report](https://www.pi.website/download/pistar06.pdf)
 
@@ -339,4 +175,3 @@ Advantage = V(s') - V(s)  (다음 상태 value - 현재 상태 value)
 - [Chelsea Finn](../people/chelsea-finn) - Physical Intelligence 공동창업자
 - [Sergey Levine](../people/sergey-levine) - Physical Intelligence 공동창업자
 - [Pete Florence](../people/pete-florence) - Physical Intelligence 공동창업자
-
