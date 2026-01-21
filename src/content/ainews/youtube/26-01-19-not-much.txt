@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [01/19] Zhipu AI, GLM-4.7-Flash 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Zhipu AI가 GLM-4.7-Flash 공개
+• STEM·RePo로 메모리·컨텍스트 확장
+• DSPy에 `dspy.RLM`로 RLM 도입
+• DeepMind, Gemini 안전 프로브 운영
+• GPT-5.2 에이전트로 3M줄 브라우저
+
+📋 목차:
+1. 헤드라인: Zhipu AI, GLM-4.7-Flash 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/26-01-19-not-much/
+
+#OpenAI #Codex #GLM-4.7 #DSPy #Gemini
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: DSPy, 인공지능, AI, Codex, OpenAI, Gemini, 머신러닝, 테크뉴스, AI뉴스, GLM-4.7
+
+Date: 2026-01-19
+==================================================
