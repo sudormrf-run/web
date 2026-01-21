@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [01/20] X가 ‘For You’ 추천 알고리즘을 오픈소스 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• X가 ‘For You’ 추천 알고리즘을 오픈소스 공개
+• OpenAI가 ChatGPT 연령 예측을 전 세계 적용
+• GLM-4.7-Flash 로컬 추론(inference) 주목
+• Liquid AI가 900MB 온디바이스 추론 모델 공개
+• Microsoft가 내부 Claude Code 배포를 일시 중단
+
+📋 목차:
+1. 헤드라인: X가 ‘For You’ 추천 알고리즘을 오픈소스 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/26-01-20-not-much/
+
+#X #OpenAI #GLM-4.7-Flash #Microsoft #MCP
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: MCP, AI, 인공지능, Microsoft, AI뉴스, 테크뉴스, X, GLM-4.7-Flash, 머신러닝, OpenAI
+
+Date: 2026-01-20
+==================================================
