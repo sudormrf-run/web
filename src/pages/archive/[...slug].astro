@@ -43,8 +43,13 @@ function timestampToSeconds(timestamp: string): number {
       </nav>
 
       <!-- Video Section -->
-      <div class="video-section">
-        <div class="video-container">
+      <div class="video-section" id="video-section">
+        <div class="video-container" id="video-container">
+          <button class="pip-close" id="pip-close" aria-label="PiP 닫기">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
           <iframe
             id="youtube-player"
             src={`https://www.youtube.com/embed/${item.data.videoId}?enablejsapi=1`}
@@ -53,6 +58,9 @@ function timestampToSeconds(timestamp: string): number {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
+        </div>
+        <div class="video-placeholder" id="video-placeholder">
+          <span>영상으로 돌아가기</span>
         </div>
       </div>
 
@@ -175,12 +183,7 @@ function timestampToSeconds(timestamp: string): number {
 
   /* Video Section */
   .video-section {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: var(--color-bg-primary);
     margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
   }
 
   .video-container {
@@ -190,6 +193,7 @@ function timestampToSeconds(timestamp: string): number {
     border-radius: var(--radius-xl);
     background: var(--color-bg-secondary);
     border: 1px solid rgba(67, 214, 168, 0.2);
+    transition: all 0.3s ease;
   }
 
   .video-container iframe {
@@ -198,6 +202,70 @@ function timestampToSeconds(timestamp: string): number {
     left: 0;
     width: 100%;
     height: 100%;
+  }
+
+  /* PiP Mode */
+  .video-container.pip-mode {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 320px;
+    height: 180px;
+    z-index: 1000;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(67, 214, 168, 0.3);
+  }
+
+  .pip-close {
+    display: none;
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 28px;
+    height: 28px;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    z-index: 1001;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .pip-close:hover {
+    background: var(--color-green);
+    color: var(--color-bg-primary);
+    border-color: var(--color-green);
+  }
+
+  .video-container.pip-mode .pip-close {
+    display: flex;
+  }
+
+  /* Placeholder when in PiP mode */
+  .video-placeholder {
+    display: none;
+    height: min(56.25vw, 50vh);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-xl);
+    border: 1px dashed var(--color-border);
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .video-placeholder:hover {
+    border-color: var(--color-green);
+    color: var(--color-green);
+  }
+
+  .video-section.has-pip .video-placeholder {
+    display: flex;
   }
 
   /* Content Layout */
@@ -216,6 +284,17 @@ function timestampToSeconds(timestamp: string): number {
     }
 
     .video-container {
+      height: 35vh;
+    }
+
+    .video-container.pip-mode {
+      width: 240px;
+      height: 135px;
+      bottom: 1rem;
+      right: 1rem;
+    }
+
+    .video-placeholder {
       height: 35vh;
     }
 
@@ -500,6 +579,50 @@ function timestampToSeconds(timestamp: string): number {
   // YouTube IFrame API interaction
   document.addEventListener('DOMContentLoaded', () => {
     const iframe = document.getElementById('youtube-player') as HTMLIFrameElement;
+    const videoSection = document.getElementById('video-section');
+    const videoContainer = document.getElementById('video-container');
+    const pipClose = document.getElementById('pip-close');
+    const videoPlaceholder = document.getElementById('video-placeholder');
+
+    let pipEnabled = true;
+
+    // PiP Mode with IntersectionObserver
+    if (videoSection && videoContainer) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!pipEnabled) return;
+
+            if (!entry.isIntersecting) {
+              videoContainer.classList.add('pip-mode');
+              videoSection.classList.add('has-pip');
+            } else {
+              videoContainer.classList.remove('pip-mode');
+              videoSection.classList.remove('has-pip');
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      observer.observe(videoSection);
+    }
+
+    // PiP close button
+    if (pipClose) {
+      pipClose.addEventListener('click', () => {
+        pipEnabled = false;
+        videoContainer?.classList.remove('pip-mode');
+        videoSection?.classList.remove('has-pip');
+      });
+    }
+
+    // Click placeholder to scroll back to video
+    if (videoPlaceholder && videoSection) {
+      videoPlaceholder.addEventListener('click', () => {
+        videoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
 
     // Helper function to seek to a specific time
     function seekToTime(seconds: number) {
