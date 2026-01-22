@@ -3,9 +3,10 @@ title: The Challenge of Evaluation
 description: Why evaluating VLA models is so difficult
 tags: [evaluation, challenge, robotics]
 category: essays
+order: 4
 related:
   - scaling-problem.md
-  - simulation-world-model.md
+  - ../insights/simulation-world-model.md
 
 # Authorship
 createdBy:

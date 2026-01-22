@@ -3,10 +3,11 @@ title: The Action Data Scaling Problem
 description: Why VLA cannot scale as easily as LLMs
 tags: [scaling, action-data, challenge]
 category: essays
+order: 3
 related:
   - evaluation-problem.md
-  - teleoperation.md
-  - simulation-world-model.md
+  - ../insights/teleoperation.md
+  - ../insights/simulation-world-model.md
 
 # Authorship
 createdBy:

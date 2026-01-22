@@ -3,9 +3,10 @@ title: Evaluation의 어려움
 description: VLA 모델 평가가 어려운 이유
 tags: [evaluation, challenge, robotics]
 category: essays
+order: 4
 related:
   - scaling-problem.md
-  - simulation-world-model.md
+  - ../insights/simulation-world-model.md
 
 # Authorship
 createdBy:

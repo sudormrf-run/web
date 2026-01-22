@@ -3,10 +3,11 @@ title: Action Data Scaling 문제
 description: VLA가 LLM처럼 쉽게 스케일링되지 않는 이유
 tags: [scaling, action-data, challenge]
 category: essays
+order: 3
 related:
   - evaluation-problem.md
-  - teleoperation.md
-  - simulation-world-model.md
+  - ../insights/teleoperation.md
+  - ../insights/simulation-world-model.md
 
 # Authorship
 createdBy:

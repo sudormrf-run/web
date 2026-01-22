@@ -3,9 +3,10 @@ title: What are RFM & VLA?
 description: Concepts of Robot Foundation Models and Vision-Language-Action models, the evolution from LLM to VLA, from Specialist to Generalist
 tags: [rfm, vla, lbm, foundation-model, llm, world-knowledge, specialist, generalist, basics]
 category: essays
+order: 1
 related:
+  - specialist-to-generalist.md
   - scaling-problem.md
-  - evaluation-problem.md
 
 # Authorship
 createdBy:

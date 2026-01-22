@@ -13,23 +13,52 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-23
 ---
 
-## Latest Essays
+## Fundamentals
 
-### VLA Scaling & Evaluation is Difficult
+New to Physical AI? Read through these in order.
 
-Why VLA can't simply follow LLM's success formula:
+### Learning Path
 
-- Action data doesn't exist on the internet, making direct scaling impossible
-- Evaluation requires running actual robots and observing behavior
-- Need for fundamental understanding of Physical Intelligence
+```
+1. What are RFM & VLA?
+   └─▶ Basic concepts and terminology
+
+2. From Specialist to Generalist
+   └─▶ Why VLA enables general-purpose robots
+
+3. The Action Data Scaling Problem
+   └─▶ Why VLA can't scale as easily as LLMs
+
+4. The Challenge of Evaluation
+   └─▶ Why evaluating VLA models is so difficult
+```
+
+### Get Started
+
+Start with **[1. What are RFM & VLA?](fundamentals/what-is-rfm-vla)**
 
 ---
 
-## Topics
+## Insights
 
-- **Scaling Problem**: Difficulty of data collection
-- **Evaluation Problem**: Difficulty of evaluation
-- **Solutions**: Teleoperation, Simulation, Community approaches
+After completing the fundamentals, explore topics that interest you.
+
+### Solutions
+
+- **[Teleoperation](insights/teleoperation)** - Direct data collection methods
+- **[Non-Teleop Data](insights/non-teleop-data)** - Collecting data without teleoperation
+- **[Simulation & World Model](insights/simulation-world-model)** - Simulation-based approaches
+- **[Community Approaches](insights/community-driven)** - Open-source collaborative data collection
+
+### Deep Dives
+
+- **[Physical AI vs Cognitive AI](insights/physical-vs-cognitive)** - The difference between physical and cognitive intelligence
+- **[Humanoid Design](insights/humanoid-design)** - Philosophy of humanoid robot design
+- **[Tactile Sensing](insights/tactile-sensing)** - Giving robots the sense of touch
+
+### Blog
+
+- **[VLA Scaling & Evaluation is Difficult](insights/2026-01-vla-scaling)** - Core challenges of Physical AI

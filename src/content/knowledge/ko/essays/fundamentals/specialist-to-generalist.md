@@ -3,6 +3,7 @@ title: Specialist에서 Generalist로
 description: 특화된 로봇 모델에서 범용 모델로의 전환, VLA가 Generalist가 될 수 있는 이유
 tags: [specialist, generalist, evolution, vla, rfm]
 category: essays
+order: 2
 related:
   - what-is-rfm-vla.md
   - scaling-problem.md

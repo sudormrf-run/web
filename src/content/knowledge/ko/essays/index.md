@@ -13,23 +13,52 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-23
 ---
 
-## 최신 에세이
+## 입문 가이드
 
-### VLA는 Scaling & Evaluation이 어렵다
+Physical AI가 처음이시라면 아래 순서대로 읽어보세요.
 
-VLA가 LLM의 성공 공식을 그대로 따라가기 어려운 이유:
+### 학습 순서
 
-- Action 데이터는 인터넷에 존재하지 않아 바로 scaling 하는 것이 불가
-- Evaluation은 실물 로봇을 구동하면서 동작을 봐야 함
-- Physical Intelligence에 대한 본질적인 이해 필요
+```
+1. RFM & VLA란 무엇인가
+   └─▶ VLA의 기본 개념과 용어 정리
+
+2. Specialist에서 Generalist로
+   └─▶ 왜 VLA가 범용 로봇을 가능하게 하는가
+
+3. Action Data Scaling 문제
+   └─▶ VLA가 LLM처럼 쉽게 스케일링되지 않는 이유
+
+4. Evaluation의 어려움
+   └─▶ VLA 모델 평가가 어려운 이유
+```
+
+### 시작하기
+
+**[1. RFM & VLA란 무엇인가](fundamentals/what-is-rfm-vla)** 부터 시작하세요.
 
 ---
 
-## 주제별 분류
+## 인사이트
 
-- **Scaling 문제**: 데이터 수집의 어려움
-- **Evaluation 문제**: 평가의 어려움
-- **해결책들**: Teleoperation, 시뮬레이션, 커뮤니티 접근
+입문 가이드를 마치셨다면, 관심 있는 주제를 골라 읽어보세요.
+
+### 해결책들
+
+- **[Teleoperation](insights/teleoperation)** - 직접 데이터를 수집하는 방법
+- **[Non-Teleop 데이터](insights/non-teleop-data)** - 텔레오퍼레이션 없이 데이터를 수집하는 방법
+- **[시뮬레이션 & World Model](insights/simulation-world-model)** - 시뮬레이션을 활용한 접근
+- **[커뮤니티 접근](insights/community-driven)** - 오픈소스 정신으로 함께 만드는 데이터
+
+### 심화 주제
+
+- **[Physical AI vs Cognitive AI](insights/physical-vs-cognitive)** - 물리적 지능과 인지적 지능의 차이
+- **[휴머노이드 디자인](insights/humanoid-design)** - 인간형 로봇 디자인의 철학
+- **[촉각 센싱](insights/tactile-sensing)** - 로봇에게 촉각을 부여하는 기술
+
+### 블로그
+
+- **[VLA는 Scaling & Evaluation이 어렵다](insights/2026-01-vla-scaling)** - Physical AI의 핵심 도전과제

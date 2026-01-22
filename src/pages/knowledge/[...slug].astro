@@ -50,6 +50,12 @@ const hardwareSubcategories = [
   { id: 'misc', name: '기타' },
 ];
 
+// Essays subcategories
+const essaysSubcategories = [
+  { id: 'fundamentals', name: '입문 가이드' },
+  { id: 'insights', name: '인사이트' },
+];
+
 // Group content by category
 const groupedContent = categories.map(category => {
   const items = contentItems
@@ -69,6 +75,30 @@ const groupedContent = categories.map(category => {
     }).filter(sub => sub.items.length > 0);
   }
 
+  // For essays, group by subcategory with custom sorting
+  if (category.id === 'essays') {
+    subcategories = essaysSubcategories.map(sub => {
+      const subItems = items.filter(item => {
+        const slugParts = item.slug.split('/');
+        // Check if the item is in this subcategory (e.g., ko/essays/fundamentals/...)
+        return slugParts.length >= 4 && slugParts[2] === sub.id;
+      });
+
+      // Sort fundamentals by order, insights by date (newest first)
+      if (sub.id === 'fundamentals') {
+        subItems.sort((a, b) => (a.data.order || 999) - (b.data.order || 999));
+      } else if (sub.id === 'insights') {
+        subItems.sort((a, b) => {
+          const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+          const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+          return dateB - dateA; // newest first
+        });
+      }
+
+      return { ...sub, items: subItems };
+    }).filter(sub => sub.items.length > 0);
+  }
+
   return { ...category, items, subcategories };
 });
 
@@ -82,6 +112,15 @@ if (currentCategory === 'hardware') {
   const slugParts = entry.slug.split('/');
   if (slugParts.length >= 4) {
     currentHardwareSubcategory = slugParts[2];
+  }
+}
+
+// Determine current essays subcategory if applicable
+let currentEssaysSubcategory = null;
+if (currentCategory === 'essays') {
+  const slugParts = entry.slug.split('/');
+  if (slugParts.length >= 4) {
+    currentEssaysSubcategory = slugParts[2];
   }
 }
 
@@ -170,13 +209,17 @@ const categoryNames: Record<string, string> = {
 
               <div class="category-content expanded">
                 {category.subcategories ? (
-                  // Hardware with subcategories
-                  category.subcategories.map((sub) => (
+                  // Categories with subcategories (hardware, essays)
+                  category.subcategories.map((sub) => {
+                    const currentSubcategory = category.id === 'hardware' ? currentHardwareSubcategory :
+                                               category.id === 'essays' ? currentEssaysSubcategory : null;
+                    const isExpanded = currentSubcategory === sub.id;
+                    return (
                     <div class="nav-subcategory" data-subcategory={sub.id}>
                       <button
-                        class={`subcategory-toggle ${currentHardwareSubcategory === sub.id ? 'expanded' : ''}`}
-                        data-expanded={currentHardwareSubcategory === sub.id ? 'true' : 'false'}
-                        aria-expanded={currentHardwareSubcategory === sub.id ? 'true' : 'false'}
+                        class={`subcategory-toggle ${isExpanded ? 'expanded' : ''}`}
+                        data-expanded={isExpanded ? 'true' : 'false'}
+                        aria-expanded={isExpanded ? 'true' : 'false'}
                       >
                         <svg class="toggle-icon" width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -184,7 +227,7 @@ const categoryNames: Record<string, string> = {
                         <span class="subcategory-name">{sub.name}</span>
                         <span class="subcategory-count">{sub.items.length}</span>
                       </button>
-                      <div class={`subcategory-content ${currentHardwareSubcategory === sub.id ? 'expanded' : ''}`}>
+                      <div class={`subcategory-content ${isExpanded ? 'expanded' : ''}`}>
                         {sub.items.map((item) => (
                           <a
                             href={`/knowledge/${item.slug.replace('ko/', '')}`}
@@ -195,7 +238,7 @@ const categoryNames: Record<string, string> = {
                         ))}
                       </div>
                     </div>
-                  ))
+                  )})
                 ) : (
                   // Other categories without subcategories
                   category.items.map((item) => (

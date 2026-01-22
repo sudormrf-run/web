@@ -3,6 +3,7 @@ title: From Specialist to Generalist
 description: The transition from specialized robot models to general-purpose models, why VLAs can become Generalists
 tags: [specialist, generalist, evolution, vla, rfm]
 category: essays
+order: 2
 related:
   - what-is-rfm-vla.md
   - scaling-problem.md
