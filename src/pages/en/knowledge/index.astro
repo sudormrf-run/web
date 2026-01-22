@@ -30,10 +30,46 @@ const { t } = useTranslations(locale);
               <p class="card-description">Explore document connections as a graph</p>
             </div>
           </a>
-          <div class="card card-placeholder">
-            <h3 class="card-title">TBD</h3>
-            <p class="card-description">Content coming soon</p>
-          </div>
+          <a href="/en/knowledge/physical-ai" class="card card-overview">
+            <div class="card-visual">
+              <div class="visual-bg"></div>
+              <div class="visual-content">
+                <div class="roadmap">
+                  <div class="roadmap-line"></div>
+                  <div class="roadmap-steps">
+                    <div class="roadmap-step">
+                      <span class="step-dot"></span>
+                      <span class="step-label">VLA?</span>
+                    </div>
+                    <div class="roadmap-step">
+                      <span class="step-dot"></span>
+                      <span class="step-label">Generalist</span>
+                    </div>
+                    <div class="roadmap-step">
+                      <span class="step-dot"></span>
+                      <span class="step-label">Scaling</span>
+                    </div>
+                    <div class="roadmap-step">
+                      <span class="step-dot"></span>
+                      <span class="step-label">Challenges</span>
+                    </div>
+                  </div>
+                  <div class="roadmap-arrow">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="start-badge">
+                  <span class="badge-text">START</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Physical AI Introduction</h3>
+              <p class="card-description">An introduction to the definition, core concepts, and challenges of Physical AI</p>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -171,6 +207,172 @@ const { t } = useTranslations(locale);
 
   .card-graph .card-description {
     margin: 0;
+  }
+
+  .card-overview {
+    width: 320px;
+    min-height: auto;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .card-visual {
+    width: 100%;
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .visual-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.06) 0%, rgba(139, 92, 246, 0.1) 100%);
+  }
+
+  .visual-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .start-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 1rem;
+    padding: 0.25rem 0.5rem;
+    background: var(--color-accent);
+    border-radius: 4px;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .badge-text {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.05em;
+  }
+
+  .roadmap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .roadmap-line {
+    position: absolute;
+    left: 1.5rem;
+    right: 3rem;
+    top: 50%;
+    height: 2px;
+    background: linear-gradient(90deg,
+      var(--color-accent) 0%,
+      rgba(139, 92, 246, 0.5) 100%
+    );
+    margin-top: 0.25rem;
+    opacity: 0.3;
+  }
+
+  .roadmap-steps {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .roadmap-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.2s;
+  }
+
+  .card-overview:hover .roadmap-step:nth-child(1) { transform: translateY(-2px); transition-delay: 0ms; }
+  .card-overview:hover .roadmap-step:nth-child(2) { transform: translateY(-2px); transition-delay: 50ms; }
+  .card-overview:hover .roadmap-step:nth-child(3) { transform: translateY(-2px); transition-delay: 100ms; }
+  .card-overview:hover .roadmap-step:nth-child(4) { transform: translateY(-2px); transition-delay: 150ms; }
+
+  .step-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--color-bg-primary);
+    border: 2px solid var(--color-accent);
+    border-radius: 50%;
+    transition: all 0.2s;
+  }
+
+  .card-overview:hover .step-dot {
+    background: var(--color-accent);
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+  }
+
+  .step-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+
+  .card-overview:hover .step-label {
+    color: var(--color-text-secondary);
+  }
+
+  .roadmap-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: rgba(59, 130, 246, 0.15);
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: all 0.3s;
+  }
+
+  .roadmap-arrow svg {
+    color: var(--color-accent);
+    transition: transform 0.3s;
+  }
+
+  .card-overview:hover .roadmap-arrow {
+    background: var(--color-accent);
+  }
+
+  .card-overview:hover .roadmap-arrow svg {
+    color: white;
+    transform: translateX(2px);
+  }
+
+  .card-overview .card-body {
+    padding: 1rem 1.25rem 1.25rem;
+  }
+
+  .card-overview .card-title {
+    margin-bottom: 0.25rem;
+  }
+
+  .card-overview .card-description {
+    margin: 0;
+  }
+
+  .card-overview:hover {
+    border-color: var(--color-accent);
+  }
+
+  .card-overview:hover .card-title {
+    color: var(--color-accent);
   }
 
   .card-link:hover {
