@@ -188,7 +188,7 @@ function timestampToSeconds(timestamp: string): number {
 
   .video-container {
     position: relative;
-    height: min(56.25vw, 50vh);
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     border-radius: var(--radius-xl);
     background: var(--color-bg-secondary);
@@ -247,7 +247,7 @@ function timestampToSeconds(timestamp: string): number {
   /* Placeholder when in PiP mode */
   .video-placeholder {
     display: none;
-    height: min(56.25vw, 50vh);
+    aspect-ratio: 16 / 9;
     background: var(--color-bg-secondary);
     border-radius: var(--radius-xl);
     border: 1px dashed var(--color-border);
@@ -283,19 +283,11 @@ function timestampToSeconds(timestamp: string): number {
       margin-bottom: 1rem;
     }
 
-    .video-container {
-      height: 35vh;
-    }
-
     .video-container.pip-mode {
       width: 240px;
       height: 135px;
       bottom: 1rem;
       right: 1rem;
-    }
-
-    .video-placeholder {
-      height: 35vh;
     }
 
     .content-layout {
