@@ -124,9 +124,8 @@ Strengthening generalization capabilities by training with web data, simulation 
 
 ---
 
-## See Also
+## Next Document
 
-- [What are RFM & VLA?](what-is-rfm-vla)
-- [Why Scaling is Difficult](scaling-problem)
-- [Open-Source Ecosystem](community-driven)
-- [Pi0.5](../models/pi0-5)
+Let's dive deeper into VLA, the core technology for implementing Generalist robots.
+
+**Next: [What are RFM & VLA?](what-is-rfm-vla)**

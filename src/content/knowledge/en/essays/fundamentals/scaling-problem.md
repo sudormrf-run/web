@@ -3,7 +3,7 @@ title: The Action Data Scaling Problem
 description: Why VLA cannot scale as easily as LLMs
 tags: [scaling, action-data, challenge]
 category: essays
-order: 3
+order: 4
 related:
   - evaluation-problem.md
   - ../insights/teleoperation.md
@@ -43,9 +43,8 @@ Action data doesn't exist on the internet, making immediate scaling impossible.
 
 ---
 
-## See Also
+## Next Document
 
-- [The Challenge of Evaluation](evaluation-problem)
-- [Solution: Teleoperation](teleoperation)
-- [Solution: Simulation](simulation-world-model)
-- [Solution: Non-Teleop Data](non-teleop-data)
+Another challenge as difficult as data collection exists: Evaluation.
+
+**Next: [The Challenge of Evaluation](evaluation-problem)**

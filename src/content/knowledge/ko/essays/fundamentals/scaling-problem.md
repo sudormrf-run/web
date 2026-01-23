@@ -3,7 +3,7 @@ title: Action Data Scaling 문제
 description: VLA가 LLM처럼 쉽게 스케일링되지 않는 이유
 tags: [scaling, action-data, challenge]
 category: essays
-order: 3
+order: 4
 related:
   - evaluation-problem.md
   - ../insights/teleoperation.md
@@ -43,10 +43,9 @@ Action 데이터는 인터넷에 존재하지 않아 바로 scaling 하는 것�
 
 ---
 
-## See Also
+## 다음 문서
 
-- [Evaluation의 어려움](evaluation-problem)
-- [해결책: Teleoperation](teleoperation)
-- [해결책: 시뮬레이션](simulation-world-model)
-- [해결책: Non-Teleop 데이터](non-teleop-data)
+데이터 수집만큼이나 어려운 문제가 있습니다. 바로 평가(Evaluation)입니다.
+
+**다음: [Evaluation의 어려움](evaluation-problem)**
 

@@ -3,7 +3,7 @@ title: The Challenge of Evaluation
 description: Why evaluating VLA models is so difficult
 tags: [evaluation, challenge, robotics]
 category: essays
-order: 4
+order: 5
 related:
   - scaling-problem.md
   - ../insights/simulation-world-model.md
@@ -52,7 +52,27 @@ Evaluation requires running physical robots and observing their behavior, which 
 
 ---
 
-## See Also
+## Introduction Guide Complete
 
-- [Action Data Scaling Problem](scaling-problem)
-- [Simulation & World Model](simulation-world-model)
+Congratulations! You've covered all the basic concepts of Physical AI.
+
+Now feel free to explore topics that interest you:
+
+### Data Collection Methods
+- **[Teleoperation](../insights/teleoperation)**: Collecting data by directly controlling robots
+- **[Non-Teleop Data](../insights/non-teleop-data)**: Methods for collecting data without teleoperation
+- **[Simulation & World Model](../insights/simulation-world-model)**: Generating data in virtual environments
+
+### Hardware and Sensing
+- **[Humanoid Design](../insights/humanoid-design)**: Why humanoids? Design philosophy and trade-offs
+- **[Tactile Sensing](../insights/tactile-sensing)**: Technology for giving robots the sense of touch
+
+### Philosophical Questions
+- **[Physical AI vs Cognitive AI](../insights/physical-vs-cognitive)**: The difference between physical and cognitive intelligence
+
+### Community
+- **[Community Driven Approaches](../insights/community-driven)**: Building the Physical AI ecosystem together through open source
+
+---
+
+Or explore **Models**, **Companies**, **Hardware**, and **People** from the left sidebar.

@@ -3,7 +3,7 @@ title: Evaluation의 어려움
 description: VLA 모델 평가가 어려운 이유
 tags: [evaluation, challenge, robotics]
 category: essays
-order: 4
+order: 5
 related:
   - scaling-problem.md
   - ../insights/simulation-world-model.md
@@ -52,8 +52,28 @@ Evaluation은 실물 로봇을 구동하면서 동작을 봐야 하는데:
 
 ---
 
-## See Also
+## 입문 가이드 완료
 
-- [Action Data Scaling 문제](scaling-problem)
-- [시뮬레이션 & World Model](simulation-world-model)
+축하합니다! Physical AI의 기본 개념을 모두 살펴봤습니다.
+
+이제 관심 있는 주제를 자유롭게 탐색해보세요:
+
+### 데이터 수집 방법론
+- **[Teleoperation](../insights/teleoperation)**: 사람이 직접 로봇을 조종하며 데이터 수집
+- **[Non-Teleop 데이터](../insights/non-teleop-data)**: 텔레오퍼레이션 없이 데이터를 수집하는 방법들
+- **[시뮬레이션 & World Model](../insights/simulation-world-model)**: 가상 환경에서 데이터 생성
+
+### 하드웨어와 센싱
+- **[휴머노이드 디자인](../insights/humanoid-design)**: 왜 휴머노이드인가? 디자인 철학과 트레이드오프
+- **[촉각 센싱](../insights/tactile-sensing)**: 로봇에게 촉각을 부여하는 기술
+
+### 철학적 질문
+- **[Physical AI vs Cognitive AI](../insights/physical-vs-cognitive)**: 물리적 지능과 인지적 지능의 차이
+
+### 커뮤니티
+- **[커뮤니티 드리븐 접근](../insights/community-driven)**: 오픈소스로 함께 만들어가는 Physical AI 생태계
+
+---
+
+또는 좌측 사이드바에서 **모델**, **기업**, **하드웨어**, **인물**을 탐색해보세요.
 

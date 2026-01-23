@@ -124,9 +124,8 @@ Web 데이터, 시뮬레이션 데이터, 로봇 데이터를 함께 학습하�
 
 ---
 
-## See Also
+## 다음 문서
 
-- [RFM & VLA란 무엇인가](what-is-rfm-vla)
-- [왜 Scaling이 어려운가](scaling-problem)
-- [오픈소스 생태계](community-driven)
-- [π0.5](../models/pi0-5)
+Generalist 로봇을 구현하는 핵심 기술인 VLA에 대해 자세히 알아봅시다.
+
+**다음: [RFM & VLA란 무엇인가](what-is-rfm-vla)**

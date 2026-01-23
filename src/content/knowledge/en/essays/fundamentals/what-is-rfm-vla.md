@@ -3,7 +3,7 @@ title: What are RFM & VLA?
 description: Concepts of Robot Foundation Models and Vision-Language-Action models, the evolution from LLM to VLA, from Specialist to Generalist
 tags: [rfm, vla, lbm, foundation-model, llm, world-knowledge, specialist, generalist, basics]
 category: essays
-order: 1
+order: 3
 related:
   - specialist-to-generalist.md
   - scaling-problem.md
@@ -186,9 +186,8 @@ Whether VLA succeeds or not, there's one biggest problem.
 
 ---
 
-## See Also
+## Next Document
 
-- [Scaling Problem](scaling-problem)
-- [Evaluation Problem](evaluation-problem)
-- [Teleoperation](teleoperation)
-- [Non-Teleoperation Data](non-teleop-data)
+VLA holds promise, but reality is not that simple. Data is the biggest challenge.
+
+**Next: [The Action Data Scaling Problem](scaling-problem)**

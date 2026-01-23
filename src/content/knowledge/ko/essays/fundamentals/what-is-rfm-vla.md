@@ -3,7 +3,7 @@ title: RFM & VLA란 무엇인가
 description: Robot Foundation Model과 Vision-Language-Action 모델의 개념, LLM에서 VLA로의 발전, Specialist에서 Generalist로
 tags: [rfm, vla, lbm, foundation-model, llm, world-knowledge, specialist, generalist, basics]
 category: essays
-order: 1
+order: 3
 related:
   - specialist-to-generalist.md
   - scaling-problem.md
@@ -186,9 +186,8 @@ VLA가 성공할지 말지, 여기엔 가장 큰 문제가 하나 있습니다.
 
 ---
 
-## See Also
+## 다음 문서
 
-- [Scaling 문제](scaling-problem)
-- [Evaluation 문제](evaluation-problem)
-- [텔레오퍼레이션](teleoperation)
-- [비텔레오퍼레이션 데이터](non-teleop-data)
+VLA가 정말로 LLM처럼 성공할 수 있을까요? 가장 큰 문제는 데이터입니다.
+
+**다음: [Action Data Scaling 문제](scaling-problem)**
