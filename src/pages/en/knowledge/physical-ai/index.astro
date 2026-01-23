@@ -42,6 +42,12 @@ const hardwareSubcategories = [
   { id: 'misc', name: 'Misc' },
 ];
 
+// Essays subcategories
+const essaysSubcategories = [
+  { id: 'fundamentals', name: 'Fundamentals' },
+  { id: 'insights', name: 'Insights' },
+];
+
 // Group content by category
 const groupedContent = categories.map(category => {
   const items = contentItems
@@ -56,6 +62,29 @@ const groupedContent = categories.map(category => {
         const slugParts = item.slug.split('/');
         return slugParts.length >= 4 && slugParts[2] === sub.id;
       });
+      return { ...sub, items: subItems };
+    }).filter(sub => sub.items.length > 0);
+  }
+
+  // For essays, group by subcategory with custom sorting
+  if (category.id === 'essays') {
+    subcategories = essaysSubcategories.map(sub => {
+      const subItems = items.filter(item => {
+        const slugParts = item.slug.split('/');
+        return slugParts.length >= 4 && slugParts[2] === sub.id;
+      });
+
+      // Sort fundamentals by order, insights by date (newest first)
+      if (sub.id === 'fundamentals') {
+        subItems.sort((a, b) => (a.data.order || 999) - (b.data.order || 999));
+      } else if (sub.id === 'insights') {
+        subItems.sort((a, b) => {
+          const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+          const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+          return dateB - dateA; // newest first
+        });
+      }
+
       return { ...sub, items: subItems };
     }).filter(sub => sub.items.length > 0);
   }
@@ -123,7 +152,7 @@ const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
 
               <div class="category-content expanded">
                 {category.subcategories ? (
-                  // Hardware with subcategories
+                  // Categories with subcategories (hardware, essays)
                   category.subcategories.map((sub) => (
                     <div class="nav-subcategory" data-subcategory={sub.id}>
                       <button

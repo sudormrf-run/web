@@ -16,6 +16,9 @@ lastEditedBy:
 lastEditedAt: 2026-01-23
 ---
 
+![GTC 2024 Jensen Huang Keynote](/images/humanoids_gtc_2024.jpg)
+*GTC 2024 Jensen Huang Keynote (March 18, 2024) — The moment that launched the era of Physical AI*
+
 ## Physical AI: Why the Sudden Attention?
 
 In 2024, after NVIDIA's Jensen Huang declared "Physical AI" at GTC, this keyword became a central topic in the AI industry.

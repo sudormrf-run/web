@@ -16,6 +16,9 @@ lastEditedBy:
 lastEditedAt: 2026-01-23
 ---
 
+![GTC 2024 Jensen Huang 키노트](/images/humanoids_gtc_2024.jpg)
+*GTC 2024 Jensen Huang 키노트 (2024년 3월 18일) — Physical AI의 시작을 알린 순간*
+
 ## Physical AI, 왜 갑자기 주목받는가?
 
 2024년, NVIDIA의 Jensen Huang이 GTC에서 "Physical AI"를 선언한 이후, 이 키워드는 AI 업계의 핵심 화두가 되었습니다.
