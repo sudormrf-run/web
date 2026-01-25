@@ -13,85 +13,47 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 Introducing the key researchers, engineers, and founders leading the Physical AI field.
 
 ---
 
-## Academic Leaders
-
-Professors and researchers leading Physical AI research in academia.
-
-### [Fei-Fei Li](./fei-fei-li)
-**Stanford Professor | ImageNet Creator | World Labs Founder**
-
-The godmother of computer vision who sparked the modern deep learning revolution with ImageNet. As Co-Director of Stanford HAI, she leads AI ethics and policy research. Founded World Labs in 2024 to pursue Spatial Intelligence and 3D world understanding AI.
-
-### [Pieter Abbeel](./pieter-abbeel)
-**UC Berkeley Professor | Covariant Founder**
-
-Pioneer of robot reinforcement learning who developed key techniques including Inverse RL and Domain Randomization. Mentored influential researchers including Chelsea Finn and Sergey Levine. Founded Covariant to commercialize AI-powered logistics robots ($2B+ valuation).
-
-### [Sergey Levine](./sergey-levine)
-**UC Berkeley Professor | Physical Intelligence Co-founder**
-
-Developer of modern RL algorithms including SAC (Soft Actor-Critic). Played a key role in developing RT-1, RT-2, RT-X and establishing the VLA paradigm. Led development of open-source VLAs including OpenVLA and Octo. Co-founded Physical Intelligence.
+## People
 
 ### [Chelsea Finn](./chelsea-finn)
-**Stanford Professor | Physical Intelligence Co-founder**
-
-Revolutionized few-shot learning with MAML (Model-Agnostic Meta-Learning) (10,000+ citations). Democratized robot learning research with ACT algorithm and ALOHA low-cost bimanual system. Co-founded Physical Intelligence.
-
-### [Shuran Song](./shuran-song)
-**Stanford Professor | Diffusion Policy Creator**
-
-Robot learning expert who moved from Columbia to Stanford. Pioneered a new paradigm in robot action generation with Diffusion Policy. Innovated universal data collection methodology with UMI (Universal Manipulation Interface).
-
-### [Yuke Zhu](./yuke-zhu)
-**UT Austin Associate Professor | NVIDIA GEAR Lab Co-Lead**
-
-Co-leads GEAR Lab at NVIDIA with Jim Fan and leads the GR00T project. Developed robot simulation frameworks including robosuite, MimicGen, and RoboCasa. Key figure bridging academia and industry.
-
----
-
-## Industry Leaders
-
-Leaders driving Physical AI research and development in industry.
-
-### [Jim Fan](./jim-fan)
-**NVIDIA Senior Research Manager | GEAR Lab Co-Lead**
-
-Earned Stanford PhD under Fei-Fei Li's supervision, then founded GEAR Lab at NVIDIA. Developed Voyager (LLM-based Minecraft agent) and Eureka (automatic reward generation). Leads GR00T humanoid foundation model research. Active AI communicator (100K+ followers).
-
-### [Vincent Vanhoucke](./vincent-vanhoucke)
-**Google DeepMind Distinguished Scientist | Robotics Lead**
-
-20+ years at Google, transitioned from Speech to Robotics. Oversaw development of RT-1, RT-2, RT-X. Leads the Gemini Robotics team developing Gemini 2.0-based VLA models.
-
-### [Karol Hausman](./karol-hausman)
-**Physical Intelligence Co-founder | Former Google DeepMind**
-
-Led key projects at Google including RT-1, RT-2, RT-X, SayCan, and PaLM-E. Played a crucial role in establishing the VLA paradigm. Co-founded Physical Intelligence in 2024 to develop Pi-0.
-
-### [Pete Florence](./pete-florence)
-**Physical Intelligence Co-founder | Former Google DeepMind**
-
-Developed Dense Object Nets under Russ Tedrake's supervision at MIT. Researched implicit representations and NeRF applications for robotics at Google. Co-founded Physical Intelligence in 2024.
-
----
-
-## Next-Generation Researchers
-
-Emerging researchers leading key research during or immediately after their PhD.
-
-### [Tony Zhao](./tony-zhao)
-**Physical Intelligence | Former Stanford PhD**
-
-First author of ACT algorithm and designer of ALOHA hardware under Chelsea Finn's supervision. Contributed to democratizing robot learning research with $20K low-cost bimanual system. Developed Mobile ALOHA. Currently participating in Pi-0 development at Physical Intelligence.
+Stanford Professor, Physical Intelligence Co-founder. Revolutionized few-shot learning with MAML, democratized robot learning with ACT/ALOHA.
 
 ### [Cheng Chi](./cheng-chi)
-**Stanford PhD | Diffusion Policy First Author**
+Stanford PhD, Diffusion Policy First Author. Developed UMI and 3D Diffusion Policy.
 
-First author of Diffusion Policy under Shuran Song's supervision, pioneering the application of diffusion to robot action generation. Developed UMI (Universal Manipulation Interface) and 3D Diffusion Policy. Moved from Columbia to Stanford with Shuran Song.
+### [Fei-Fei Li](./fei-fei-li)
+Stanford Professor, ImageNet Creator, World Labs Founder. The godmother of computer vision.
+
+### [Jim Fan](./jim-fan)
+NVIDIA Senior Research Manager, GEAR Lab Co-Lead. Leading Voyager, Eureka, and GR00T research.
+
+### [Karol Hausman](./karol-hausman)
+Physical Intelligence Co-founder, Former Google DeepMind. Led RT series, SayCan, PaLM-E.
+
+### [Pete Florence](./pete-florence)
+Physical Intelligence Co-founder, Former Google DeepMind. Developed Dense Object Nets.
+
+### [Pieter Abbeel](./pieter-abbeel)
+UC Berkeley Professor, Covariant Founder. Pioneer of robot RL, advisor to Chelsea Finn/Sergey Levine.
+
+### [Sergey Levine](./sergey-levine)
+UC Berkeley Professor, Physical Intelligence Co-founder. Developed SAC, key role in RT series, led OpenVLA/Octo.
+
+### [Shuran Song](./shuran-song)
+Stanford Professor, Diffusion Policy Creator. Innovated universal data collection with UMI.
+
+### [Tony Zhao](./tony-zhao)
+Physical Intelligence, Former Stanford PhD. First author of ACT, designer of ALOHA/Mobile ALOHA.
+
+### [Vincent Vanhoucke](./vincent-vanhoucke)
+Google DeepMind Distinguished Scientist, Robotics Lead. Oversaw RT series and Gemini Robotics development.
+
+### [Yuke Zhu](./yuke-zhu)
+UT Austin Associate Professor, NVIDIA GEAR Lab Co-Lead. Leads GR00T project, developed robosuite/MimicGen/RoboCasa.

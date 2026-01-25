@@ -57,21 +57,15 @@ src/
 
 자세한 내용은 `docs/CONTENT.md` 참조
 
-### 콘텐츠 추가
+### Knowledge Base 작성
 
-1. `src/content/` 하위에 `.md` 파일 생성
-2. Frontmatter 작성 (title, description, category 등)
-3. 본문 작성
-4. `npm run dev`로 확인
+⚠️ **필독**: `docs/KNOWLEDGE-GUIDE.md` 참조
 
-### tmp/PhysicalAI
-
-기존 Physical AI 콘텐츠가 `tmp/PhysicalAI/`에 있음. 새 구조로 마이그레이션 필요:
-- models/ → src/content/knowledge/ko/models/
-- companies/ → src/content/knowledge/ko/companies/
-- people/ → src/content/knowledge/ko/people/
-- essays/ → src/content/knowledge/ko/essays/
-- hardware/ → src/content/knowledge/ko/hardware/
+Knowledge Base 문서 작성 시 반드시 따라야 할 규칙:
+- 내부 링크 형식: `[제목](./filename)` 또는 `[제목](../category/filename)`
+- `[제목](index)` 사용 금지 → `[제목](./)` 사용
+- 새 문서 추가 시 카테고리 인덱스(`index.md`)도 함께 업데이트
+- 그래프 색인은 자동 업데이트 (링크와 `related` 필드 기반)
 
 ## i18n
 
