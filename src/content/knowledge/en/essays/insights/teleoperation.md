@@ -4,9 +4,9 @@ description: Action data collection through remote operation
 tags: [teleoperation, data-collection, solution]
 category: essays
 related:
-  - scaling-problem.md
+  - ../fundamentals/scaling-problem.md
   - non-teleop-data.md
-  - companies/physical-intelligence.md
+  - ../../companies/physical-intelligence.md
 
 # Authorship
 createdBy:
@@ -62,4 +62,4 @@ Major AI robotics players including Tesla, Google, Physical Intelligence, and Ga
 
 - [Non-Teleop Data Collection](non-teleop-data)
 - [Simulation & World Models](simulation-world-model)
-- [Action Data Scaling Problem](scaling-problem)
+- [Action Data Scaling Problem](../fundamentals/scaling-problem)

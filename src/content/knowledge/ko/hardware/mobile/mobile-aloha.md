@@ -296,8 +296,8 @@ Mobile ALOHA: 16-DoF
 | 이름 | 역할 |
 |------|------|
 | [Zipeng Fu](https://zipengfu.github.io/) | 공동 제1저자 |
-| [Tony Z. Zhao](../people/tony-zhao) | 공동 제1저자 |
-| [Chelsea Finn](../people/chelsea-finn) | 지도교수 |
+| [Tony Z. Zhao](../../people/tony-zhao) | 공동 제1저자 |
+| [Chelsea Finn](../../people/chelsea-finn) | 지도교수 |
 
 ### 지원
 

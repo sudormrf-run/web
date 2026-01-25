@@ -165,7 +165,7 @@ Diffusion Policy is a pioneering work applying diffusion models to robot learnin
 
 ## See Also
 
-- [Model List](index)
+- [Model List](./)
 - [ACT](act)
 - [pi0](pi0)
 

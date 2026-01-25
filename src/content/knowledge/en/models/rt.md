@@ -155,7 +155,7 @@ The RT series is the starting point for VLA models, significantly influencing su
 
 ## See Also
 
-- [Model List](index)
+- [Model List](./)
 - [Google DeepMind](../companies/google-deepmind)
 - [Gemini Robotics](gemini-robotics)
 - [OpenVLA](openvla)

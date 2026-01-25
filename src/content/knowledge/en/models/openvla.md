@@ -183,7 +183,7 @@ One of OpenVLA's key strengths is **efficient fine-tuning**.
 
 ## See Also
 
-- [Model List](index)
+- [Model List](./)
 - [Octo](octo)
 - [RT](rt)
 - [SmolVLA](smolvla)

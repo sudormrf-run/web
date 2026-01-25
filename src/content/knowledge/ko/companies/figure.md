@@ -124,7 +124,7 @@ Figure AI가 자체 개발한 Vision-Language-Action 모델:
 
 ## See Also
 
-- [회사 목록](index)
+- [회사 목록](./)
 - [Figure 휴머노이드](../hardware/humanoids/figure)
 - [Figure Helix](../models/figure-helix)
 - [Tesla](tesla)

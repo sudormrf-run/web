@@ -6,8 +6,8 @@ category: essays
 author: 박종현 (수도리무브 대표)
 date: 2026-01
 related:
-  - scaling-problem.md
-  - evaluation-problem.md
+  - ../fundamentals/scaling-problem.md
+  - ../fundamentals/evaluation-problem.md
   - teleoperation.md
 
 # Authorship
@@ -65,7 +65,7 @@ lastEditedAt: 2026-01-15
 
 ## See Also
 
-- [Action Data Scaling 문제](scaling-problem)
-- [Evaluation의 어려움](evaluation-problem)
+- [Action Data Scaling 문제](../fundamentals/scaling-problem)
+- [Evaluation의 어려움](../fundamentals/evaluation-problem)
 - [해결책들](teleoperation)
 

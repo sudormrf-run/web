@@ -4,9 +4,9 @@ description: 원격 조종을 통한 Action 데이터 수집
 tags: [teleoperation, data-collection, solution]
 category: essays
 related:
-  - scaling-problem.md
+  - ../fundamentals/scaling-problem.md
   - non-teleop-data.md
-  - companies/physical-intelligence.md
+  - ../../companies/physical-intelligence.md
 
 # Authorship
 createdBy:
@@ -62,5 +62,5 @@ Tesla, Google, Physical Intelligence, Galaxea 등 주요 AI robotics 업계는 T
 
 - [Non-Teleop 데이터 수집](non-teleop-data)
 - [시뮬레이션 & World Model](simulation-world-model)
-- [Action Data Scaling 문제](scaling-problem)
+- [Action Data Scaling 문제](../fundamentals/scaling-problem)
 

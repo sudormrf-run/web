@@ -162,7 +162,7 @@ Unitree G1:          ~$16,000  ← 가장 저렴
 
 ## See Also
 
-- [회사 목록](index)
-- [휴머노이드 설계](../essays/humanoid-design)
+- [회사 목록](./)
+- [휴머노이드 설계](../essays/insights/humanoid-design)
 - [Tesla](tesla)
 

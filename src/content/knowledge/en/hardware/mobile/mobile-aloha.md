@@ -296,8 +296,8 @@ Static data: 14-DoF actions (base velocity padded with 0)
 | Name | Role |
 |------|------|
 | [Zipeng Fu](https://zipengfu.github.io/) | Co-first author |
-| [Tony Z. Zhao](../people/tony-zhao) | Co-first author |
-| [Chelsea Finn](../people/chelsea-finn) | Advisor |
+| [Tony Z. Zhao](../../people/tony-zhao) | Co-first author |
+| [Chelsea Finn](../../people/chelsea-finn) | Advisor |
 
 ### Support
 

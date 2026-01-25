@@ -64,7 +64,7 @@ LeRobot is an open-source project to democratize robotics AI.
 
 ### Overview
 
-A **450M parameter** [VLA](../models/index.md#vla-vision-language-action) released in June 2025:
+A **450M parameter** [VLA](../essays/fundamentals/what-is-rfm-vla) released in June 2025:
 
 | Item | Details |
 |------|---------|
@@ -172,7 +172,7 @@ Robotics Democratization (LeRobot Goal)
 
 ## See Also
 
-- [Company List](index)
+- [Company List](./)
 - [SmolVLA](../models/smolvla)
-- [Community-Driven Approach](../essays/community-driven)
+- [Community-Driven Approach](../essays/insights/community-driven)
 - [ACT](../models/act)

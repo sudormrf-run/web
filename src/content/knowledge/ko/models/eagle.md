@@ -273,7 +273,7 @@ Eagle VLM은 NVIDIA GR00T 로봇 파운데이션 모델의 **System 2 (The Think
 
 ## See Also
 
-- [모델 목록](index)
+- [모델 목록](./)
 - [GR00T](groot) - Eagle을 VLM으로 사용하는 휴머노이드 로봇 파운데이션 모델
 - [NVIDIA](../companies/nvidia)
 

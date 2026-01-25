@@ -273,7 +273,7 @@ Eagle VLM serves as the **System 2 (The Thinker)** in NVIDIA's GR00T robot found
 
 ## See Also
 
-- [Model Index](index)
+- [Model Index](./)
 - [GR00T](groot) - Humanoid robot foundation model using Eagle as VLM
 - [NVIDIA](../companies/nvidia)
 

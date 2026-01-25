@@ -160,6 +160,6 @@ Single model supports various robot forms:
 
 ## See Also
 
-- [Model List](index)
+- [Model List](./)
 - [RT](rt)
 - [Google DeepMind](../companies/google-deepmind)

@@ -5,7 +5,7 @@ tags: [umi, non-teleop, data-collection, sunday-robotics, generalist]
 category: essays
 related:
   - teleoperation.md
-  - scaling-problem.md
+  - ../fundamentals/scaling-problem.md
 
 # Authorship
 createdBy:
@@ -61,5 +61,5 @@ UMI 연구를 시작으로 Generalist와 Sunday Robotics는 Non-Teleop 데이터
 
 - [Teleoperation 방식](teleoperation)
 - [커뮤니티 드리븐 접근](community-driven)
-- [Action Data Scaling 문제](scaling-problem)
+- [Action Data Scaling 문제](../fundamentals/scaling-problem)
 

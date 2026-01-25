@@ -4,9 +4,9 @@ description: NVIDIA Omniverse, Cosmos 등을 통한 데이터 생성과 평가
 tags: [simulation, world-model, nvidia, cosmos, omniverse]
 category: essays
 related:
-  - scaling-problem.md
-  - evaluation-problem.md
-  - companies/nvidia.md
+  - ../fundamentals/scaling-problem.md
+  - ../fundamentals/evaluation-problem.md
+  - ../../companies/nvidia.md
 
 # Authorship
 createdBy:
@@ -67,7 +67,7 @@ Evaluation 자동화를 위한 World Model 활용
 ## See Also
 
 - [Teleoperation 방식](teleoperation)
-- [Action Data Scaling 문제](scaling-problem)
-- [Evaluation의 어려움](evaluation-problem)
-- [NVIDIA](../companies/nvidia)
+- [Action Data Scaling 문제](../fundamentals/scaling-problem)
+- [Evaluation의 어려움](../fundamentals/evaluation-problem)
+- [NVIDIA](../../companies/nvidia)
 

@@ -5,7 +5,7 @@ tags: [umi, non-teleop, data-collection, sunday-robotics, generalist]
 category: essays
 related:
   - teleoperation.md
-  - scaling-problem.md
+  - ../fundamentals/scaling-problem.md
 
 # Authorship
 createdBy:
@@ -61,4 +61,4 @@ Data collection through glasses-style devices
 
 - [Teleoperation Approach](teleoperation)
 - [Community-Driven Approach](community-driven)
-- [Action Data Scaling Problem](scaling-problem)
+- [Action Data Scaling Problem](../fundamentals/scaling-problem)

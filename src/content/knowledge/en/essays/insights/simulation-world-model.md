@@ -4,9 +4,9 @@ description: Data generation and evaluation through NVIDIA Omniverse, Cosmos, an
 tags: [simulation, world-model, nvidia, cosmos, omniverse]
 category: essays
 related:
-  - scaling-problem.md
-  - evaluation-problem.md
-  - companies/nvidia.md
+  - ../fundamentals/scaling-problem.md
+  - ../fundamentals/evaluation-problem.md
+  - ../../companies/nvidia.md
 
 # Authorship
 createdBy:
@@ -67,6 +67,6 @@ Leveraging World Models for evaluation automation
 ## See Also
 
 - [Teleoperation Approach](teleoperation)
-- [Action Data Scaling Problem](scaling-problem)
-- [The Challenge of Evaluation](evaluation-problem)
-- [NVIDIA](../companies/nvidia)
+- [Action Data Scaling Problem](../fundamentals/scaling-problem)
+- [The Challenge of Evaluation](../fundamentals/evaluation-problem)
+- [NVIDIA](../../companies/nvidia)

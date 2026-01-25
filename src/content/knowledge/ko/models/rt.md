@@ -155,7 +155,7 @@ RT 시리즈는 VLA 모델의 시작점으로, 이후 OpenVLA, pi0 등 후속 �
 
 ## See Also
 
-- [모델 목록](index)
+- [모델 목록](./)
 - [Google DeepMind](../companies/google-deepmind)
 - [Gemini Robotics](gemini-robotics)
 - [OpenVLA](openvla)

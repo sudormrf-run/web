@@ -334,9 +334,9 @@ Redwood AI가 탑재되는 휴머노이드 로봇
 
 ## See Also
 
-- [모델 목록](index)
+- [모델 목록](./)
 - [1X Technologies](../companies/1x)
 - [GR00T](groot)
 - [Figure Helix](figure-helix)
-- [World Model](../essays/simulation-world-model)
+- [World Model](../essays/insights/simulation-world-model)
 

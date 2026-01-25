@@ -102,7 +102,7 @@ Google DeepMind는 로보틱스 AI 분야의 선구자로, RT-1부터 Gemini Rob
 
 ## See Also
 
-- [회사 목록](index)
+- [회사 목록](./)
 - [RT 시리즈](../models/rt)
 - [Gemini Robotics](../models/gemini-robotics)
 

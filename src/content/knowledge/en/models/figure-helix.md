@@ -155,6 +155,6 @@ Two robots operate **simultaneously**:
 
 ## See Also
 
-- [Model List](index)
+- [Model List](./)
 - [GR00T](groot)
 - [pi0](pi0)

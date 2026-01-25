@@ -4,7 +4,7 @@ description: 물리적 지능과 인지적 지능의 본질적 차이
 tags: [physical-intelligence, cognitive-intelligence, philosophy]
 category: essays
 related:
-  - what-is-rfm-vla.md
+  - ../fundamentals/what-is-rfm-vla.md
   - tactile-sensing.md
 
 # Authorship
@@ -45,7 +45,7 @@ Physical Intelligence에 대한 본질적인 이해 없이 단순히 LLM의 접�
 
 ## See Also
 
-- [RFM & VLA란 무엇인가](what-is-rfm-vla)
+- [RFM & VLA란 무엇인가](../fundamentals/what-is-rfm-vla)
 - [촉각의 필요성](tactile-sensing)
 - [휴머노이드 디자인](humanoid-design)
 

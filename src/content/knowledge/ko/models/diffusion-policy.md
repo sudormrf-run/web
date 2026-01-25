@@ -165,7 +165,7 @@ Diffusion Policy는 로봇 학습에 diffusion model을 적용한 선구적 연�
 
 ## See Also
 
-- [모델 목록](index)
+- [모델 목록](./)
 - [ACT](act)
 - [pi0](pi0)
 

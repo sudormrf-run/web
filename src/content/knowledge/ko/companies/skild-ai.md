@@ -148,7 +148,7 @@ Physical Intelligence: "실제 물리 상호작용이 필수"
 
 ## See Also
 
-- [회사 목록](index)
-- [시뮬레이션 & World Model](../essays/simulation-world-model)
+- [회사 목록](./)
+- [시뮬레이션 & World Model](../essays/insights/simulation-world-model)
 - [Physical Intelligence](physical-intelligence)
 

@@ -4,7 +4,7 @@ description: The fundamental differences between physical and cognitive intellig
 tags: [physical-intelligence, cognitive-intelligence, philosophy]
 category: essays
 related:
-  - what-is-rfm-vla.md
+  - ../fundamentals/what-is-rfm-vla.md
   - tactile-sensing.md
 
 # Authorship
@@ -45,6 +45,6 @@ The limitations of simply applying LLM approaches without a fundamental understa
 
 ## See Also
 
-- [What are RFM & VLA](what-is-rfm-vla)
+- [What are RFM & VLA](../fundamentals/what-is-rfm-vla)
 - [The Need for Tactile Sensing](tactile-sensing)
 - [Humanoid Design](humanoid-design)

@@ -71,7 +71,7 @@ LLM이 너무 똑똑해지고 모달리티도 확장되어서 다양한 일들�
 
 RFM은 이걸 로봇에 그대로 붙인 겁니다. VLA를 기반으로 동작하는 로봇이 다양한 일들을 인간 대신 해줄 것이라는 기대를 투영한 용어죠.
 
-이런 기대를 보여주듯 2025년에만 수많은 VLA들이 나왔습니다: [π0](../models/pi0), [OpenVLA](../models/openvla), [SmolVLA](../models/smolvla), [GR00T](../models/groot) 등.
+이런 기대를 보여주듯 2025년에만 수많은 VLA들이 나왔습니다: [π0](../../models/pi0), [OpenVLA](../../models/openvla), [SmolVLA](../../models/smolvla), [GR00T](../../models/groot) 등.
 
 ---
 

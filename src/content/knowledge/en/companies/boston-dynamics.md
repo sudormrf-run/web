@@ -111,5 +111,5 @@ Nevertheless, the fact that the leader of Classical Robotics is introducing lear
 
 ## See Also
 
-- [Company Index](index)
+- [Company Index](./)
 - [Defining Physical AI](../essays/fundamentals/definition)

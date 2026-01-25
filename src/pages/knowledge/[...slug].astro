@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import KnowledgeSidebar from '../../components/KnowledgeSidebar.astro';
 import { getCollection } from 'astro:content';
 import { useTranslations } from '../../i18n/utils';
 
@@ -17,115 +18,95 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content, headings } = await entry.render();
 
-// Get all content for sidebar navigation
+// Get all content for related docs resolution
 const allKnowledge = await getCollection('knowledge', ({ slug }) => slug.startsWith('ko/'));
-
-// Get overview document (slug might be 'ko/physical-ai' or 'ko/physical-ai/index')
-const overviewDoc = allKnowledge.find(item =>
-  item.slug === 'ko/physical-ai/index' || item.slug === 'ko/physical-ai'
-);
-
-// Filter to only actual content (not index pages)
-const contentItems = allKnowledge.filter(item => {
-  const segments = item.slug.split('/');
-  return segments.length >= 3;
-});
-
-// Categories configuration
-const categories = [
-  { id: 'essays', name: '에세이', color: 'yellow' },
-  { id: 'models', name: '모델', color: 'blue' },
-  { id: 'companies', name: '기업', color: 'green' },
-  { id: 'hardware', name: '하드웨어', color: 'purple' },
-  { id: 'people', name: '인물', color: 'pink' },
-];
-
-// Hardware subcategories
-const hardwareSubcategories = [
-  { id: 'humanoids', name: '휴머노이드' },
-  { id: 'quadrupeds', name: '4족 보행' },
-  { id: 'arms', name: '로봇 팔' },
-  { id: 'hands', name: '로봇 손' },
-  { id: 'mobile', name: '모바일' },
-  { id: 'misc', name: '기타' },
-];
-
-// Essays subcategories
-const essaysSubcategories = [
-  { id: 'fundamentals', name: '입문 가이드' },
-  { id: 'insights', name: '인사이트' },
-];
-
-// Group content by category
-const groupedContent = categories.map(category => {
-  const items = contentItems
-    .filter(item => item.data.category === category.id)
-    .sort((a, b) => a.data.title.localeCompare(b.data.title, 'ko'));
-
-  // For hardware, group by subcategory
-  let subcategories = null;
-  if (category.id === 'hardware') {
-    subcategories = hardwareSubcategories.map(sub => {
-      const subItems = items.filter(item => {
-        const slugParts = item.slug.split('/');
-        // Check if the item is in this subcategory (e.g., ko/hardware/humanoids/...)
-        return slugParts.length >= 4 && slugParts[2] === sub.id;
-      });
-      return { ...sub, items: subItems };
-    }).filter(sub => sub.items.length > 0);
-  }
-
-  // For essays, group by subcategory with custom sorting
-  if (category.id === 'essays') {
-    subcategories = essaysSubcategories.map(sub => {
-      const subItems = items.filter(item => {
-        const slugParts = item.slug.split('/');
-        // Check if the item is in this subcategory (e.g., ko/essays/fundamentals/...)
-        return slugParts.length >= 4 && slugParts[2] === sub.id;
-      });
-
-      // Sort fundamentals by order, insights by date (newest first)
-      if (sub.id === 'fundamentals') {
-        subItems.sort((a, b) => (a.data.order || 999) - (b.data.order || 999));
-      } else if (sub.id === 'insights') {
-        subItems.sort((a, b) => {
-          const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
-          const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
-          return dateB - dateA; // newest first
-        });
-      }
-
-      return { ...sub, items: subItems };
-    }).filter(sub => sub.items.length > 0);
-  }
-
-  return { ...category, items, subcategories };
-});
 
 // Get current slug for highlighting
 const currentSlug = entry.slug.replace('ko/', '');
 const currentCategory = entry.data.category;
 
-// Determine current hardware subcategory if applicable
-let currentHardwareSubcategory = null;
-if (currentCategory === 'hardware') {
-  const slugParts = entry.slug.split('/');
-  if (slugParts.length >= 4) {
-    currentHardwareSubcategory = slugParts[2];
-  }
-}
-
-// Determine current essays subcategory if applicable
-let currentEssaysSubcategory = null;
-if (currentCategory === 'essays') {
-  const slugParts = entry.slug.split('/');
-  if (slugParts.length >= 4) {
-    currentEssaysSubcategory = slugParts[2];
-  }
+// Determine current subcategory if applicable
+let currentSubcategory = null;
+const slugParts = entry.slug.split('/');
+if ((currentCategory === 'hardware' || currentCategory === 'essays') && slugParts.length >= 4) {
+  currentSubcategory = slugParts[2];
 }
 
 // Filter headings for TOC (h2 and h3 only)
 const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
+
+// Get related documents for See Also section
+const relatedDocs = (entry.data.related || []).map(relatedSlug => {
+  // Remove .md extension if present
+  const cleanSlug = relatedSlug.replace(/\.md$/, '');
+
+  // Get the current document's folder path (e.g., 'ko/essays/fundamentals' from 'ko/essays/fundamentals/definition')
+  const currentSlugParts = entry.slug.split('/');
+  currentSlugParts.pop(); // Remove the filename
+  const folderPath = currentSlugParts.join('/');
+
+  let matchedDoc = null;
+
+  // 1. Handle relative paths (e.g., ../insights/simulation-world-model)
+  if (cleanSlug.startsWith('../') || cleanSlug.startsWith('./')) {
+    const parts = folderPath.split('/');
+    const relParts = cleanSlug.split('/');
+
+    for (const part of relParts) {
+      if (part === '..') {
+        parts.pop();
+      } else if (part !== '.') {
+        parts.push(part);
+      }
+    }
+    const resolvedSlug = parts.join('/');
+    matchedDoc = allKnowledge.find(item => item.slug === resolvedSlug);
+  }
+
+  // 2. Handle cross-category paths (e.g., models/xxx, companies/xxx)
+  if (!matchedDoc && cleanSlug.includes('/')) {
+    const fullSlug = `ko/${cleanSlug}`;
+    matchedDoc = allKnowledge.find(item => item.slug === fullSlug);
+  }
+
+  // 3. Try same folder first
+  if (!matchedDoc) {
+    const fullSlug = `${folderPath}/${cleanSlug}`;
+    matchedDoc = allKnowledge.find(item => item.slug === fullSlug);
+  }
+
+  // 4. Try sibling folders (e.g., fundamentals -> insights or vice versa for essays)
+  if (!matchedDoc) {
+    const parentParts = folderPath.split('/');
+    parentParts.pop(); // Remove current subfolder (e.g., 'fundamentals')
+    const parentPath = parentParts.join('/');
+
+    // Search in all sibling subfolders
+    matchedDoc = allKnowledge.find(item => {
+      const itemParts = item.slug.split('/');
+      const itemName = itemParts.pop();
+      const itemParent = itemParts.slice(0, -1).join('/');
+      return itemParent === parentPath && itemName === cleanSlug;
+    });
+  }
+
+  // 5. Search anywhere in the knowledge base by filename
+  if (!matchedDoc) {
+    matchedDoc = allKnowledge.find(item => {
+      const itemName = item.slug.split('/').pop();
+      return itemName === cleanSlug;
+    });
+  }
+
+  if (matchedDoc) {
+    return {
+      title: matchedDoc.data.title,
+      url: `/knowledge/${matchedDoc.slug.replace('ko/', '')}`,
+      category: matchedDoc.data.category,
+    };
+  }
+  return null;
+}).filter(Boolean);
 
 // Category colors
 const categoryColors: Record<string, string> = {
@@ -147,118 +128,13 @@ const categoryNames: Record<string, string> = {
 
 <Layout title={entry.data.title} locale={locale}>
   <div class="doc-layout">
-    <!-- Mobile sidebar toggle -->
-    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation">
-      <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-
-    <!-- Left Sidebar: Full Navigation Tree -->
-    <aside class="sidebar-left" id="sidebarLeft">
-      <div class="sidebar-header">
-        <a href="/knowledge/physical-ai" class="sidebar-title">
-          Physical AI
-        </a>
-        <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation">
-          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-
-      <nav class="sidebar-nav">
-        {/* Overview link at top */}
-        {overviewDoc && (
-          <a
-            href="/knowledge/physical-ai"
-            class={`overview-link ${currentSlug === 'physical-ai/index' || currentSlug === 'physical-ai' ? 'active' : ''}`}
-          >
-            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
-            Overview
-          </a>
-        )}
-
-        {/* Browse/Index link */}
-        <a
-          href="/knowledge/physical-ai/browse"
-          class={`browse-link ${currentSlug === 'physical-ai/browse' ? 'active' : ''}`}
-        >
-          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-          색인
-        </a>
-
-        {groupedContent.map((category) => (
-          category.items.length > 0 && (
-            <div class="nav-category" data-category={category.id}>
-              <button
-                class={`category-toggle category-toggle-${category.color} expanded ${currentCategory === category.id ? 'active' : ''}`}
-                data-expanded="true"
-                aria-expanded="true"
-              >
-                <svg class="toggle-icon" width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-                <span class={`category-name color-${category.color}`}>{category.name}</span>
-                <span class="category-count">{category.items.length}</span>
-              </button>
-
-              <div class="category-content expanded">
-                {category.subcategories ? (
-                  // Categories with subcategories (hardware, essays)
-                  category.subcategories.map((sub) => {
-                    const currentSubcategory = category.id === 'hardware' ? currentHardwareSubcategory :
-                                               category.id === 'essays' ? currentEssaysSubcategory : null;
-                    const isExpanded = currentSubcategory === sub.id;
-                    return (
-                    <div class="nav-subcategory" data-subcategory={sub.id}>
-                      <button
-                        class={`subcategory-toggle ${isExpanded ? 'expanded' : ''}`}
-                        data-expanded={isExpanded ? 'true' : 'false'}
-                        aria-expanded={isExpanded ? 'true' : 'false'}
-                      >
-                        <svg class="toggle-icon" width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                        <span class="subcategory-name">{sub.name}</span>
-                        <span class="subcategory-count">{sub.items.length}</span>
-                      </button>
-                      <div class={`subcategory-content ${isExpanded ? 'expanded' : ''}`}>
-                        {sub.items.map((item) => (
-                          <a
-                            href={`/knowledge/${item.slug.replace('ko/', '')}`}
-                            class={`nav-item nav-item-${category.color} ${item.slug.replace('ko/', '') === currentSlug ? 'active' : ''}`}
-                          >
-                            {item.data.title}
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  )})
-                ) : (
-                  // Other categories without subcategories
-                  category.items.map((item) => (
-                    <a
-                      href={`/knowledge/${item.slug.replace('ko/', '')}`}
-                      class={`nav-item nav-item-${category.color} ${item.slug.replace('ko/', '') === currentSlug ? 'active' : ''}`}
-                    >
-                      {item.data.title}
-                    </a>
-                  ))
-                )}
-              </div>
-            </div>
-          )
-        ))}
-      </nav>
-    </aside>
-
-    <!-- Overlay for mobile -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <KnowledgeSidebar
+      locale={locale}
+      currentSlug={currentSlug}
+      currentCategory={currentCategory}
+      currentSubcategory={currentSubcategory}
+      activePage="content"
+    />
 
     <!-- Main Content -->
     <main class="doc-main">
@@ -286,6 +162,22 @@ const categoryNames: Record<string, string> = {
           <div class="article-content prose">
             <Content />
           </div>
+
+          {/* See Also Section */}
+          {relatedDocs.length > 0 && (
+            <section class="see-also">
+              <h3 class="see-also-title">See Also</h3>
+              <ul class="see-also-list">
+                {relatedDocs.map((doc) => (
+                  <li>
+                    <a href={doc.url} class={`see-also-link color-${categoryColors[doc.category]}`}>
+                      {doc.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           <footer class="article-footer">
             {/* Authorship info */}
@@ -355,54 +247,6 @@ const categoryNames: Record<string, string> = {
 </Layout>
 
 <script>
-  // Sidebar toggle for mobile
-  const toggle = document.getElementById('sidebarToggle');
-  const close = document.getElementById('sidebarClose');
-  const sidebar = document.getElementById('sidebarLeft');
-  const overlay = document.getElementById('sidebarOverlay');
-
-  function openSidebar() {
-    sidebar?.classList.add('open');
-    overlay?.classList.add('show');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeSidebar() {
-    sidebar?.classList.remove('open');
-    overlay?.classList.remove('show');
-    document.body.style.overflow = '';
-  }
-
-  toggle?.addEventListener('click', openSidebar);
-  close?.addEventListener('click', closeSidebar);
-  overlay?.addEventListener('click', closeSidebar);
-
-  // Category toggle
-  document.querySelectorAll('.category-toggle').forEach(button => {
-    button.addEventListener('click', () => {
-      const isExpanded = button.getAttribute('data-expanded') === 'true';
-      const content = button.nextElementSibling as HTMLElement;
-
-      button.setAttribute('data-expanded', String(!isExpanded));
-      button.setAttribute('aria-expanded', String(!isExpanded));
-      button.classList.toggle('expanded', !isExpanded);
-      content?.classList.toggle('expanded', !isExpanded);
-    });
-  });
-
-  // Subcategory toggle
-  document.querySelectorAll('.subcategory-toggle').forEach(button => {
-    button.addEventListener('click', () => {
-      const isExpanded = button.getAttribute('data-expanded') === 'true';
-      const content = button.nextElementSibling as HTMLElement;
-
-      button.setAttribute('data-expanded', String(!isExpanded));
-      button.setAttribute('aria-expanded', String(!isExpanded));
-      button.classList.toggle('expanded', !isExpanded);
-      content?.classList.toggle('expanded', !isExpanded);
-    });
-  });
-
   // Table of contents scroll spy
   const tocLinks = document.querySelectorAll('.toc-link');
   const headings = document.querySelectorAll('.article-content h2, .article-content h3');
@@ -427,22 +271,6 @@ const categoryNames: Record<string, string> = {
 
   window.addEventListener('scroll', updateActiveHeading);
   updateActiveHeading();
-
-  // Scroll sidebar to show active item
-  const activeNavItem = document.querySelector('.nav-item.active');
-  if (activeNavItem && sidebar) {
-    // Wait for DOM to be ready
-    requestAnimationFrame(() => {
-      const sidebarRect = sidebar.getBoundingClientRect();
-      const itemRect = activeNavItem.getBoundingClientRect();
-      const sidebarScrollTop = sidebar.scrollTop;
-      const itemOffsetTop = itemRect.top - sidebarRect.top + sidebarScrollTop;
-
-      // Scroll to center the active item in the sidebar
-      const scrollTarget = itemOffsetTop - (sidebar.clientHeight / 2) + (itemRect.height / 2);
-      sidebar.scrollTop = Math.max(0, scrollTarget);
-    });
-  }
 </script>
 
 <style>
@@ -461,382 +289,6 @@ const categoryNames: Record<string, string> = {
   @media (min-width: 1280px) {
     .doc-layout {
       grid-template-columns: 300px 1fr 240px;
-    }
-  }
-
-  /* Mobile toggle button */
-  .sidebar-toggle {
-    position: fixed;
-    bottom: 1.5rem;
-    left: 1.5rem;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    background: var(--color-accent);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s;
-  }
-
-  .sidebar-toggle:hover {
-    transform: scale(1.05);
-  }
-
-  @media (min-width: 1024px) {
-    .sidebar-toggle {
-      display: none;
-    }
-  }
-
-  /* Left Sidebar */
-  .sidebar-left {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 300px;
-    background: var(--color-bg-primary);
-    border-right: 1px solid var(--color-border);
-    z-index: 200;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    overflow-y: auto;
-    padding-top: 64px;
-  }
-
-  .sidebar-left.open {
-    transform: translateX(0);
-  }
-
-  @media (min-width: 1024px) {
-    .sidebar-left {
-      position: sticky;
-      top: 64px;
-      height: calc(100vh - 64px);
-      transform: translateX(0);
-      padding-top: 0;
-      width: auto;
-    }
-  }
-
-  .sidebar-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1rem;
-    border-bottom: 1px solid var(--color-border);
-    position: sticky;
-    top: 0;
-    background: var(--color-bg-primary);
-    z-index: 10;
-  }
-
-  .sidebar-title {
-    font-size: 1rem;
-    font-weight: 800;
-    color: var(--color-accent);
-    text-decoration: none;
-    letter-spacing: -0.01em;
-  }
-
-  .sidebar-title:hover {
-    opacity: 0.8;
-  }
-
-  .sidebar-close {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    background: transparent;
-    border: none;
-    color: var(--color-text-muted);
-    cursor: pointer;
-    border-radius: var(--radius-sm);
-  }
-
-  .sidebar-close:hover {
-    background: var(--color-bg-secondary);
-    color: var(--color-text-primary);
-  }
-
-  @media (min-width: 1024px) {
-    .sidebar-close {
-      display: none;
-    }
-  }
-
-  .sidebar-nav {
-    padding: 0;
-  }
-
-  /* Overview Link */
-  .overview-link {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--color-text-secondary);
-    text-decoration: none;
-    border-bottom: 1px solid var(--color-border);
-    transition: all 0.15s;
-  }
-
-  .overview-link:hover {
-    background: var(--color-bg-secondary);
-    color: var(--color-text-primary);
-  }
-
-  .overview-link.active {
-    background: var(--color-bg-secondary);
-    color: var(--color-text-primary);
-    border-left: 2px solid var(--color-text-primary);
-  }
-
-  .overview-link svg {
-    flex-shrink: 0;
-  }
-
-  /* Browse Link */
-  .browse-link {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--color-text-secondary);
-    text-decoration: none;
-    border-bottom: 1px solid var(--color-border);
-    transition: all 0.15s;
-  }
-
-  .browse-link:hover {
-    background: var(--color-bg-secondary);
-    color: var(--color-text-primary);
-  }
-
-  .browse-link.active {
-    background: var(--color-bg-secondary);
-    color: var(--color-text-primary);
-    border-left: 2px solid var(--color-text-primary);
-  }
-
-  .browse-link svg {
-    flex-shrink: 0;
-  }
-
-  /* Category Toggle */
-  .nav-category {
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .nav-category:last-child {
-    border-bottom: none;
-  }
-
-  .category-toggle {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    width: 100%;
-    padding: 0.75rem 1rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    transition: background 0.15s;
-  }
-
-  .category-toggle:hover {
-    background: var(--color-bg-secondary);
-  }
-
-  /* Category-specific active toggle colors */
-  .category-toggle-yellow.active {
-    background: rgba(234, 179, 8, 0.08);
-  }
-
-  .category-toggle-blue.active {
-    background: rgba(59, 130, 246, 0.08);
-  }
-
-  .category-toggle-green.active {
-    background: rgba(16, 185, 129, 0.08);
-  }
-
-  .category-toggle-purple.active {
-    background: rgba(167, 139, 250, 0.08);
-  }
-
-  .category-toggle-pink.active {
-    background: rgba(244, 114, 182, 0.08);
-  }
-
-  .toggle-icon {
-    flex-shrink: 0;
-    color: var(--color-text-muted);
-    transition: transform 0.2s;
-  }
-
-  .category-toggle.expanded .toggle-icon,
-  .subcategory-toggle.expanded .toggle-icon {
-    transform: rotate(90deg);
-  }
-
-  .category-name {
-    flex: 1;
-    font-size: 0.875rem;
-    font-weight: 600;
-  }
-
-  .color-blue { color: var(--color-blue); }
-  .color-green { color: var(--color-green); }
-  .color-purple { color: #a78bfa; }
-  .color-yellow { color: var(--color-yellow); }
-  .color-pink { color: #f472b6; }
-
-  .category-count,
-  .subcategory-count {
-    font-size: 0.7rem;
-    color: var(--color-text-muted);
-    background: var(--color-bg-secondary);
-    padding: 0.125rem 0.375rem;
-    border-radius: 999px;
-  }
-
-  .category-content {
-    display: none;
-    padding-bottom: 0.5rem;
-  }
-
-  .category-content.expanded {
-    display: block;
-  }
-
-  /* Subcategory Toggle */
-  .nav-subcategory {
-    margin-left: 0.5rem;
-  }
-
-  .subcategory-toggle {
-    display: flex;
-    align-items: center;
-    gap: 0.375rem;
-    width: 100%;
-    padding: 0.5rem 0.75rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    transition: background 0.15s;
-  }
-
-  .subcategory-toggle:hover {
-    background: var(--color-bg-secondary);
-  }
-
-  .subcategory-name {
-    flex: 1;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--color-text-secondary);
-  }
-
-  .subcategory-content {
-    display: none;
-    margin-left: 1rem;
-  }
-
-  .subcategory-content.expanded {
-    display: block;
-  }
-
-  /* Nav Items */
-  .nav-item {
-    display: block;
-    padding: 0.375rem 1rem;
-    font-size: 0.8rem;
-    color: var(--color-text-muted);
-    text-decoration: none;
-    transition: all 0.15s;
-    border-left: 2px solid transparent;
-    margin-left: 0.5rem;
-  }
-
-  .nav-item:hover {
-    color: var(--color-text-primary);
-    background: var(--color-bg-secondary);
-  }
-
-  .nav-item.active {
-    font-weight: 500;
-  }
-
-  /* Category-specific active colors */
-  .nav-item-yellow.active {
-    color: var(--color-yellow);
-    background: rgba(234, 179, 8, 0.1);
-    border-left-color: var(--color-yellow);
-  }
-
-  .nav-item-blue.active {
-    color: var(--color-blue);
-    background: rgba(59, 130, 246, 0.1);
-    border-left-color: var(--color-blue);
-  }
-
-  .nav-item-green.active {
-    color: var(--color-green);
-    background: rgba(16, 185, 129, 0.1);
-    border-left-color: var(--color-green);
-  }
-
-  .nav-item-purple.active {
-    color: #a78bfa;
-    background: rgba(167, 139, 250, 0.1);
-    border-left-color: #a78bfa;
-  }
-
-  .nav-item-pink.active {
-    color: #f472b6;
-    background: rgba(244, 114, 182, 0.1);
-    border-left-color: #f472b6;
-  }
-
-  /* Subcategory nav items need more indent */
-  .subcategory-content .nav-item {
-    margin-left: 0.25rem;
-  }
-
-  /* Overlay */
-  .sidebar-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 150;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-  }
-
-  .sidebar-overlay.show {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  @media (min-width: 1024px) {
-    .sidebar-overlay {
-      display: none;
     }
   }
 
@@ -1079,9 +531,71 @@ const categoryNames: Record<string, string> = {
     margin: 2rem 0;
   }
 
+  /* See Also Section */
+  .see-also {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+  }
+
+  .see-also-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .see-also-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .see-also-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .see-also-link::before {
+    content: '→';
+    color: var(--color-text-muted);
+    transition: color 0.2s;
+  }
+
+  .see-also-link:hover {
+    color: var(--color-accent);
+  }
+
+  .see-also-link:hover::before {
+    color: var(--color-accent);
+  }
+
+  .see-also-link.color-blue:hover { color: var(--color-blue); }
+  .see-also-link.color-blue:hover::before { color: var(--color-blue); }
+  .see-also-link.color-green:hover { color: var(--color-green); }
+  .see-also-link.color-green:hover::before { color: var(--color-green); }
+  .see-also-link.color-purple:hover { color: #a78bfa; }
+  .see-also-link.color-purple:hover::before { color: #a78bfa; }
+  .see-also-link.color-yellow:hover { color: var(--color-yellow); }
+  .see-also-link.color-yellow:hover::before { color: var(--color-yellow); }
+  .see-also-link.color-pink:hover { color: #f472b6; }
+  .see-also-link.color-pink:hover::before { color: #f472b6; }
+
   /* Footer */
   .article-footer {
-    margin-top: 3rem;
+    margin-top: 2rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--color-border);
   }

@@ -166,6 +166,6 @@ NVIDIA's strategy is to dominate the **infrastructure layer** of robotics AI.
 
 ## See Also
 
-- [Company List](index)
+- [Company List](./)
 - [GR00T](../models/groot)
-- [Simulation & World Model](../essays/simulation-world-model)
+- [Simulation & World Model](../essays/insights/simulation-world-model)

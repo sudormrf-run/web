@@ -136,6 +136,6 @@ Covariant는 2017년에 설립된 (원래 Embodied Intelligence) AI 로보틱스
 
 ## See Also
 
-- [회사 목록](index)
+- [회사 목록](./)
 - [Pieter Abbeel](../people/pieter-abbeel)
-- [Non-Teleop 데이터 수집](../essays/non-teleop-data)
+- [Non-Teleop 데이터 수집](../essays/insights/non-teleop-data)

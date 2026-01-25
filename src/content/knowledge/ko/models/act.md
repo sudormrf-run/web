@@ -173,7 +173,7 @@ ACT는 다음과 같은 이유로 널리 채택되고 있습니다:
 
 ## See Also
 
-- [모델 목록](index)
+- [모델 목록](./)
 - [Diffusion Policy](diffusion-policy)
 - [SmolVLA](smolvla)
 

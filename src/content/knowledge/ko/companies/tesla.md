@@ -111,7 +111,7 @@ Tesla는 대규모 **teleoperation 팀**을 운영 (보도 기반 추정):
 
 ## See Also
 
-- [회사 목록](index)
-- [Teleoperation 방식](../essays/teleoperation)
-- [휴머노이드 설계](../essays/humanoid-design)
+- [회사 목록](./)
+- [Teleoperation 방식](../essays/insights/teleoperation)
+- [휴머노이드 설계](../essays/insights/humanoid-design)
 

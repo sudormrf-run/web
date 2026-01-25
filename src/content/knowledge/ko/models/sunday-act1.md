@@ -141,7 +141,7 @@ Sunday의 접근법이 성공한다면:
 
 ## See Also
 
-- [모델 목록](index)
+- [모델 목록](./)
 - [Sunday Robotics](../companies/sunday-robotics)
-- [Non-Teleop 데이터 수집](../essays/non-teleop-data)
+- [Non-Teleop 데이터 수집](../essays/insights/non-teleop-data)
 

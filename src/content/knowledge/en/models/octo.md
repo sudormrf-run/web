@@ -188,6 +188,6 @@ Octo's key strength is **fast adaptation**.
 
 ## See Also
 
-- [Model List](index)
+- [Model List](./)
 - [OpenVLA](openvla)
 - [RT](rt)

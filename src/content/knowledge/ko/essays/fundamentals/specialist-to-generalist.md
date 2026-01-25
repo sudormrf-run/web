@@ -80,7 +80,7 @@ LLM에서 증명된 Scaling Law가 VLA에도 적용될 것이라는 기대:
 
 ### π0.5: Open-World Generalization
 
-Physical Intelligence의 [π0.5](../models/pi0-5)는 학습하지 않은 완전히 새로운 가정에서도 동작함을 보여줬습니다.
+Physical Intelligence의 [π0.5](../../models/pi0-5)는 학습하지 않은 완전히 새로운 가정에서도 동작함을 보여줬습니다.
 
 - 새로운 가정 환경
 - 새로운 물체
@@ -88,11 +88,11 @@ Physical Intelligence의 [π0.5](../models/pi0-5)는 학습하지 않은 완전�
 
 ### GR00T: Cross-Embodiment
 
-NVIDIA의 [GR00T](../models/groot) 시리즈는 다양한 로봇 하드웨어에서의 일반화를 목표로 합니다.
+NVIDIA의 [GR00T](../../models/groot) 시리즈는 다양한 로봇 하드웨어에서의 일반화를 목표로 합니다.
 
 ### SmolVLA: 효율적 Generalist
 
-HuggingFace의 [SmolVLA](../models/smolvla)는 450M 파라미터로도 Generalist 수준 성능이 가능함을 보여줍니다.
+HuggingFace의 [SmolVLA](../../models/smolvla)는 450M 파라미터로도 Generalist 수준 성능이 가능함을 보여줍니다.
 
 ---
 

@@ -1,0 +1,209 @@
+{
+  "main": {
+    "id": "ceb7fd22d4a20526",
+    "type": "split",
+    "children": [
+      {
+        "id": "bbd5f4515bf69d82",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5ae9a1430a1df75f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "essays/fundamentals/definition.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "definition"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b6894219f5021155",
+    "type": "split",
+    "children": [
+      {
+        "id": "0e0fcbca955b5beb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1599388c7f58e610",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "258f956e294b7e70",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "bb61b5d23aa09174",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "2fe2da924f1595b7",
+    "type": "split",
+    "children": [
+      {
+        "id": "c047e27849814c7b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e73214741ae93fc8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "essays/fundamentals/definition.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for definition"
+            }
+          },
+          {
+            "id": "d5cb4f26b45de8ee",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "essays/fundamentals/definition.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from definition"
+            }
+          },
+          {
+            "id": "bd0a308bdf6fb240",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "430eb3fbb6e8883d",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "f2795ab20d5a5706",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "essays/fundamentals/definition.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of definition"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "5ae9a1430a1df75f",
+  "lastOpenFiles": [
+    "companies/boston-dynamics.md",
+    "physical-ai/index.md",
+    "essays/fundamentals/definition.md",
+    "essays/index.md",
+    "essays/2026-01-vla-scaling.md",
+    "essays/insights/tactile-sensing.md",
+    "essays/insights/humanoid-design.md",
+    "essays/insights/physical-vs-cognitive.md",
+    "essays/insights/community-driven.md",
+    "essays/insights/simulation-world-model.md",
+    "essays/insights/non-teleop-data.md",
+    "essays/insights/teleoperation.md",
+    "essays/insights/2026-01-vla-scaling.md",
+    "essays/what-is-rfm-vla.md",
+    "essays/fundamentals/evaluation-problem.md",
+    "essays/fundamentals/scaling-problem.md",
+    "essays/fundamentals/specialist-to-generalist.md",
+    "essays/fundamentals/what-is-rfm-vla.md",
+    "essays/insights",
+    "essays/fundamentals"
+  ]
+}

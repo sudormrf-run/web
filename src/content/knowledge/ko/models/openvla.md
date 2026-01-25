@@ -183,7 +183,7 @@ OpenVLA의 핵심 장점 중 하나는 **효율적인 파인튜닝**입니다.
 
 ## See Also
 
-- [모델 목록](index)
+- [모델 목록](./)
 - [Octo](octo)
 - [RT](rt)
 - [SmolVLA](smolvla)

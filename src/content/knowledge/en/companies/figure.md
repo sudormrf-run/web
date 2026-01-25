@@ -124,7 +124,7 @@ Figure AI's in-house developed Vision-Language-Action model:
 
 ## See Also
 
-- [Company List](index)
+- [Company List](./)
 - [Figure Humanoid](../hardware/humanoids/figure)
 - [Figure Helix](../models/figure-helix)
 - [Tesla](tesla)

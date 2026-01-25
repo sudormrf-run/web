@@ -137,6 +137,6 @@ Physical Intelligence Goal = Apply same approach to robotics
 
 ## See Also
 
-- [Company List](index)
+- [Company List](./)
 - [pi0](../models/pi0)
 - [Flow Matching Approach](../models/diffusion-policy)

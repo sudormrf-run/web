@@ -6,8 +6,8 @@ category: essays
 author: Jonghyun Park (CEO, sudoremove)
 date: 2026-01
 related:
-  - scaling-problem.md
-  - evaluation-problem.md
+  - ../fundamentals/scaling-problem.md
+  - ../fundamentals/evaluation-problem.md
   - teleoperation.md
 
 # Authorship
@@ -65,6 +65,6 @@ I believe there are many opportunities in this chaotic present, and I want to sh
 
 ## See Also
 
-- [Action Data Scaling Problem](scaling-problem)
-- [Challenges of Evaluation](evaluation-problem)
+- [Action Data Scaling Problem](../fundamentals/scaling-problem)
+- [Challenges of Evaluation](../fundamentals/evaluation-problem)
 - [Solutions](teleoperation)
