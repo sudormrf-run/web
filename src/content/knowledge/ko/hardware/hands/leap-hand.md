@@ -33,8 +33,8 @@ lastEditedAt: 2026-01-15
 | 항목 | 스펙 | 출처 |
 |------|------|------|
 | 자유도 (DoF) | 16 DoF (손가락당 4 DoF) | [Shaw et al., 2023] |
-| 모터 | Dynamixel XC330 (Full) / XL330 (Lite) | [ROBOTIS] |
-| 가격 | ~$2,000 (Full) / ~$700 (Lite) | [v1.leaphand.com] |
+| 모터 | Dynamixel XC330-M288-T (Full) / XL330-M288-T (Lite) | [ROBOTIS] |
+| 가격 | $1,772 (Full) / $714 (Lite) | [v1.leaphand.com/parts] |
 | 조립 시간 | 4시간 이내 | [Shaw et al., 2023] |
 | 무게 | 595g (4손가락 구성) | [Shaw et al., 2023] |
 | 크기 | 인간 손 대비 약 30% 큼 | [Shaw et al., 2023] |
@@ -57,10 +57,10 @@ LEAP Hand의 가장 큰 의의는 **고성능 덱스터러스 매니퓰레이션
 - 높은 비용이 조작(manipulation) 연구의 발전을 저해
 
 LEAP Hand가 제공하는 가치:
-- **$2,000**로 동등 이상의 성능 제공
+- **$1,772**로 동등 이상의 성능 제공
 - **3D 프린터**와 **드라이버**만으로 조립 가능
 - 전 세계 연구자들이 덱스터러스 매니퓰레이션 연구 시작 가능
-- 교육 목적으로도 활용 가능 (Lite 버전 $700)
+- 교육 목적으로도 활용 가능 (Lite 버전 $714)
 
 > "LEAP Hand significantly outperforms its closest competitor Allegro Hand in all experiments while being 1/8th of the cost."
 > — [Shaw et al., RSS 2023](https://www.roboticsproceedings.org/rss19/p089.pdf)
@@ -225,25 +225,26 @@ LEAP Hand는 단순한 하드웨어가 아닌, **로봇 학습 연구를 위해 
 
 | 항목 | V1 (2023)[^1] | V2 (2024)[^2] | V2 Advanced (2024)[^3] |
 |------|-----------|-----------|-------------------|
-| 가격 | ~$2,000 | ~$200 | ~$300 |
-| DoF | 16 | 8 | 17 |
-| 조립 시간 | 4시간 | 2시간 | 3시간 |
+| 가격 | $1,772 | ~$500 | $3,000-$4,000 |
+| 총 DoF | 16 (16 모터) | 16 (8 모터, 언더액추에이션) | 21 (17 모터) |
+| 조립 시간 | 4시간 | 2시간 | 하루 이내 |
 | 구조 | 전통적 Rigid | 하이브리드 Rigid-Soft | 하이브리드 Rigid-Soft |
-| 대상 | 연구용 (고성능) | 교육/데모용 | 연구용 (고순응성) |
+| 모터 | Dynamixel XC330 | Feetech HLS3612M/HLS3606M | Dynamixel XM430/XC330 |
+| 대상 | 연구용 (고성능) | 연구/교육용 | 연구용 (고순응성) |
 | 공식 사이트 | [v1.leaphand.com](https://v1.leaphand.com) | [v2.leaphand.com](https://v2.leaphand.com) | [v2-adv.leaphand.com](https://v2-adv.leaphand.com) |
 
 [^1]: Shaw et al., "LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning", RSS 2023
-[^2]: 공식 V2 웹사이트 (v2.leaphand.com) 기준
-[^3]: 공식 V2 Advanced 웹사이트 (v2-adv.leaphand.com) 기준
+[^2]: 공식 V2 웹사이트 (v2.leaphand.com) 기준, 2025년 8월 가격
+[^3]: 공식 V2 Advanced 웹사이트 (v2-adv.leaphand.com) 기준, 메탈 버전 ~$5,000
 
 ### V2 시리즈 특징
 
-- **하이브리드 Rigid-Soft 구조**: 3D 프린트된 유연 구조와 강체 구조의 조합
+- **하이브리드 Rigid-Soft 구조**: 3D 프린트된 유연 구조와 강체 구조의 조합 (TPU + PLA 멀티소재)
 - **높은 순응성 (Compliance)**: 물체와의 접촉 시 자연스러운 적응
-- **극적인 비용 절감**: V1 대비 약 1/10 가격
-- **V2 Advanced**: 손바닥에 구동 관절 추가 (17 DoF), 인간형 MCP 운동학
+- **언더액추에이션 설계**: V2 Standard는 8개 모터로 16 DoF 구현 (차동 관절 강성)
+- **V2 Advanced**: 손바닥에 2개의 독립 구동 관절 추가, 접이식 손바닥 설계
 
-> **가격 참고**: 위 가격은 2024년 기준 공식 사이트 정보이며, 변동될 수 있다.
+> **가격 참고**: V2 가격은 2025년 8월 기준이며 관세 및 환율에 따라 변동될 수 있다. 사전 조립 키트(~$500) 및 3D 프린트 파트 키트($100)도 요청 시 구매 가능.
 
 ---
 
@@ -270,6 +271,6 @@ LEAP Hand는 단순한 하드웨어가 아닌, **로봇 학습 연구를 위해 
 
 ## See Also
 
-- [하드웨어 목록](../index)
-- [GEX 시리즈](gex)
-- [Shadow Hand](shadow-hand)
+- [하드웨어 목록](../)
+- [GEX 시리즈](./gex)
+- [Shadow Hand](./shadow-hand)

@@ -29,10 +29,11 @@ GEX는 **Democratizing Dexterity**를 목표로 개발된 초저가 덱스터러
 
 | 항목 | GX11 Hand | EX12 Glove |
 |------|-----------|------------|
-| DoF | 11 | 12 |
-| 가격 | ~$600 | - |
-| 조립 시간 | 4시간 이내 | - |
-| 손가락 수 | 3개 (엄지, 검지, 중지) | 3개 |
+| DoF | 11 (엄지 3 + 검지 4 + 중지 4) | 12 (엄지 4 + 검지 4 + 중지 4) |
+| 가격 | ~$600 | ~$600 |
+| 조립 시간 | 4시간 이내 | 4시간 이내 |
+| 손가락 수 | 3개 (엄지, 검지, 중지) | 3개 (엄지, 검지, 중지) |
+| 액추에이터 | Dynamixel XL330-M288-T (288:1) | Dynamixel XL330-M077-T (77:1) |
 | 비용 비교 | Shadow Hand 대비 **1/125**, Allegro 대비 **1/20** (논문 기준) | - |
 
 ---
@@ -78,8 +79,8 @@ GEX는 **Democratizing Dexterity**를 목표로 개발된 초저가 덱스터러
 GEX 프로젝트의 가장 큰 의의는 **덱스터러스 조작 연구의 진입장벽을 획기적으로 낮춘 것**입니다.
 
 기존의 문제점:
-- Shadow Hand ($75K+): 뛰어난 성능이지만 대부분의 연구실에서 구매 불가
-- Allegro Hand ($12K+): 중간 가격대지만 여전히 높은 초기 비용
+- Shadow Hand ($100K+): 뛰어난 성능이지만 대부분의 연구실에서 구매 불가
+- Allegro Hand ($16K+): 중간 가격대지만 여전히 높은 초기 비용
 - 텐던 구동 방식: 유지보수 어려움, 케이블 마모 문제
 
 GEX의 해결책:
@@ -102,7 +103,7 @@ GEX의 해결책:
 
 ### 왜 3손가락인가?
 
-LEAP Hand의 5손가락 설계에서 벗어나 3손가락 구조를 채택한 이유:
+LEAP Hand의 4손가락 설계에서 벗어나 3손가락 구조를 채택한 이유:
 
 - **유연성 극대화**: 엄지, 검지, 중지만으로도 대부분의 조작 태스크 수행 가능
 - **인간 손 모방**: 인간의 핵심 파지 패턴(precision grip, power grip) 재현
@@ -144,13 +145,13 @@ LEAP Hand의 5손가락 설계에서 벗어나 3손가락 구조를 채택한 �
 
 | 제품 | 가격 (논문 기준) | 비용 비율 |
 |------|-----------------|----------|
-| Shadow Hand | $75,000+ | **125x** |
-| Allegro Hand | $12,000+ | **20x** |
+| Shadow Hand | $100,000+ | **125x+** |
+| Allegro Hand | $16,000+ | **~27x** |
 | Clone Hand | ~$2,800 | ~5x |
 | LEAP Hand | ~$2,000 | ~3x |
 | **GEX GX11** | **~$600** | 1x |
 
-*참고: Shadow Hand, Allegro 가격은 논문에서 언급한 비율(1/125, 1/20) 기준 역산 값. 실제 시장가는 변동 가능*
+*참고: 논문에서는 Allegro 대비 1/20, Shadow 대비 1/125 비용으로 명시됨. 실제 시장가는 변동 가능*
 
 ### 총 소유 비용 (TCO) 관점
 
@@ -175,8 +176,10 @@ GEX의 장점은 초기 비용만이 아닙니다:
 
 GX11은 EX12 엑소스켈레톤 글러브와 결합하여 사용:
 
-- 총 **23 DoF** 폐루프 시스템
+- 총 **23 DoF** 폐루프 시스템 (GX11 11 DoF + EX12 12 DoF)
+- **OpenRB-150** 모터 컨트롤 보드로 통합 제어 (ARM Cortex-M0+, 48MHz)
 - **기구학 리타겟팅** 알고리즘으로 고충실도 제어
+- **libgex** Python 라이브러리로 모터 통신 및 제어
 - 전류 제어 모드로 **토크 추정** 기반 간접적 힘 감지 가능 (별도 햅틱 센서 미탑재)
 
 ---
@@ -208,7 +211,11 @@ GX11은 EX12 엑소스켈레톤 글러브와 결합하여 사용:
 ## References
 
 - **논문**: Dong, Y., Liu, X., Wan, J., & Deng, Z. (2025). "GEX: Democratizing Dexterity with Fully-Actuated Dexterous Hand and Exoskeleton Glove." [arXiv:2506.04982](https://arxiv.org/abs/2506.04982)
-- **액추에이터**: [Dynamixel XL330-M288-T](https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/)
+  - 소속: Huazhong University of Science and Technology (Liu, Wan)
+- **GitHub**: [Democratizing-Dexterous](https://github.com/orgs/Democratizing-Dexterous/repositories)
+- **액추에이터**:
+  - [Dynamixel XL330-M288-T](https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/) (GX11 Hand)
+  - [Dynamixel XL330-M077-T](https://emanual.robotis.com/docs/en/dxl/x/xl330-m077/) (EX12 Glove)
 
 ---
 

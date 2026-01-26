@@ -32,7 +32,7 @@ lastEditedAt: 2026-01-15
 ## Key Significance
 
 - **Action Chunking Concept**: Inspired by psychology, groups continuous actions into single units (chunks) for execution - mitigates compounding error
-- **Extreme Data Efficiency**: Achieves 80-90% success rate with just 10 minutes of demonstration data - breakthrough in precision manipulation
+- **Extreme Data Efficiency**: Reports ~80–90% success on some tasks with ~10 minutes of demonstrations (task/data-regime dependent)
 - **Low-Cost ALOHA Hardware**: Enables bimanual dexterous manipulation system for ~$20K with modular design for easy maintenance
 - **New Standard for Bimanual Dexterous Manipulation**: Performs precision tasks previously difficult like zip tie insertion and battery placement
 - **LeRobot Default Recommended Model**: Adopted as the default recommended model in HuggingFace LeRobot
@@ -43,7 +43,7 @@ lastEditedAt: 2026-01-15
 
 ## Overview
 
-ACT (Action Chunking with Transformers) is an imitation learning algorithm developed at Stanford. Released alongside the low-cost hardware system ALOHA, it demonstrated that bimanual dexterous manipulation can be learned with just 10 minutes of demonstration data.
+ACT (Action Chunking with Transformers) is an imitation learning algorithm developed at Stanford. Released alongside the low-cost hardware system ALOHA, it reports that some bimanual dexterous manipulation tasks can be learned with ~10 minutes of demonstration data (task-dependent).
 
 | Item | Details |
 |------|---------|
@@ -126,7 +126,7 @@ Low-cost bimanual manipulation system released alongside ACT.
 | Task 4 | 92% |
 
 **Demonstration Data Efficiency:**
-- **10 minutes** of demonstration data achieves 80-90% success rate
+- Reports ~80–90% success on some tasks with **~10 minutes** of demonstrations (task-dependent)
 - Performs precision tasks like zip tie insertion and battery placement
 
 ---

@@ -32,7 +32,7 @@ lastEditedAt: 2026-01-15
 ## 핵심 의의
 
 - **Action Chunking 개념 제시**: 심리학에서 영감받아 연속 동작을 하나의 단위(chunk)로 묶어 실행 - compounding error 완화
-- **극도의 데이터 효율성**: 단 10분의 시연 데이터로 80-90% 성공률 달성 - 정밀 조작에서 획기적
+- **극도의 데이터 효율성**: 일부 태스크에서 단 10분 내외의 시연 데이터로 ~80-90%를 보고 - 정밀 조작에서 획기적
 - **저비용 하드웨어 ALOHA**: ~$20K로 양팔 섬세 조작 시스템 구축 가능, 모듈형 설계로 유지보수 용이
 - **양팔 섬세 조작의 새 기준**: 케이블 타이 끼우기, 배터리 삽입 등 기존에 어려웠던 정밀 작업 수행
 - **LeRobot 기본 추천 모델**: HuggingFace LeRobot에서 기본으로 추천하는 모델로 채택
@@ -43,7 +43,7 @@ lastEditedAt: 2026-01-15
 
 ## Overview
 
-ACT(Action Chunking with Transformers)는 Stanford에서 개발한 imitation learning 알고리즘입니다. 저비용 하드웨어 시스템 ALOHA와 함께 발표되어, 양팔 섬세 조작(bimanual manipulation)을 10분의 시연 데이터만으로 학습할 수 있음을 보여주었습니다.
+ACT(Action Chunking with Transformers)는 Stanford에서 개발한 imitation learning 알고리즘입니다. 저비용 하드웨어 시스템 ALOHA와 함께 발표되어, 일부 양팔 섬세 조작(bimanual manipulation) 태스크가 10분 내외의 시연 데이터로도 가능함을 보고했습니다(태스크/데이터 조건에 의존).
 
 | 항목 | 내용 |
 |------|------|
@@ -126,7 +126,7 @@ ACT와 함께 공개된 저비용 양팔 조작 시스템.
 | 태스크 4 | 92% |
 
 **시연 데이터 효율:**
-- 단 **10분**의 시연 데이터로 80-90% 성공률
+- 일부 태스크에서 단 **10분** 내외의 시연 데이터로 ~80-90%를 보고(태스크/데이터 조건에 의존)
 - 케이블 타이 끼우기, 배터리 삽입 등 정밀 작업 수행
 
 ---
@@ -181,4 +181,3 @@ ACT는 다음과 같은 이유로 널리 채택되고 있습니다:
 - [Tony Zhao](../people/tony-zhao) - 제1저자
 - [Chelsea Finn](../people/chelsea-finn) - 지도교수
 - [Sergey Levine](../people/sergey-levine) - 공동 저자
-

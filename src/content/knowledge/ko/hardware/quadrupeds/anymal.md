@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 <!-- 이미지 준비 중: <!-- Image pending: ![ANYmal - ANYbotics 산업용 검사 로봇](../../assets/hardware/quadrupeds/anymal.png) --> -->
@@ -35,7 +35,7 @@ ANYmal은 스위스 ETH Zurich의 Robotic Systems Lab (RSL)에서 개발되어 2
 
 ### ETH Zurich에서 ANYbotics로
 
-ANYbotics는 2016년 ETH Zurich Robotic Systems Lab의 연구 성과를 기반으로 설립된 스핀오프 기업이다.
+ANYbotics는 2016년 ETH Zurich Robotic Systems Lab의 연구 성과를 기반으로 설립된 스핀오프 기업이다. ANYmal의 기원은 2009년으로 거슬러 올라가며, ETH Zurich 연구진이 일련의 쿼드러펫 로봇을 개발해 왔고 2016년 첫 번째 ANYmal 버전이 완성되면서 상용화가 시작되었다.
 
 **창립 멤버:**
 - Marco Hutter (교수, RSL 디렉터)
@@ -52,10 +52,12 @@ ANYbotics는 2016년 ETH Zurich Robotic Systems Lab의 연구 성과를 기반�
 - European Research Council (ERC)
 
 **기업 성장 (보도 자료 기준):**
-- 2024년 12월: 총 1억 2700만 유로 이상 투자 유치 [[출처]](https://www.startuphub.ai/ai-news/funding-round/2025/anybotics-secures-over-e127-million-for-robotics-expansion/)
 - 2024년 11월: 샌프란시스코 지사 설립 [[출처]](https://www.startuphub.ai/ai-news/funding-round/2025/anybotics-secures-over-e127-million-for-robotics-expansion/)
+- 2024년 12월: 5,700만 유로 투자 라운드
 - 2025년 5월: Switzerland Global Enterprise 수출상 수상 [[출처]](https://www.startuphub.ai/ai-news/funding-round/2025/anybotics-secures-over-e127-million-for-robotics-expansion/)
-- 2025년 9월: Climate Investment 전략적 투자 유치 [[출처]](https://www.climateinvestment.com/news/climate-investment-ci-joins-investment-in-anybotics-to-transform-oil-gas-inspection-through-autonomous-robotics)
+- 2025년 9월: Climate Investment 전략적 투자 유치 (2,000만 스위스 프랑)
+- 2025년: 총 1억 5,000만 달러 (약 1억 2,700만 유로) 이상 누적 투자 [[출처]](https://www.climateinvestment.com/news/climate-investment-ci-joins-investment-in-anybotics-to-transform-oil-gas-inspection-through-autonomous-robotics)
+- 2025년 초: 약 200명 직원, 취리히 및 샌프란시스코 사무소 운영
 
 ---
 
@@ -84,23 +86,24 @@ ANYmal C는 산업 검사에 최적화된 첫 상용 버전으로, 높은 가용
 
 ANYmal D는 개선된 자율성과 이동성을 제공하는 현재 주력 모델이다. [[RobotsGuide 상세]](https://robotsguide.com/robots/anymal)
 
-**물리적 사양** (제3자 자료 기준 [[RobotsGuide]](https://robotsguide.com/robots/anymal) [[Wevolver]](https://www.wevolver.com/specs/anymal)):
+**물리적 사양** (제3자 자료 기준 [[RobotsGuide]](https://robotsguide.com/robots/anymal)):
 
 | 항목 | 수치 | 비고 |
 |------|------|------|
-| 길이 | 약 800 mm | 자세에 따라 변동 |
-| 너비 | 400~600 mm | 보행 자세 기준 |
-| 높이 | 약 700 mm | 기본 보행 자세 |
-| 무게 | 약 30 kg | 페이로드 미포함 |
-| 최대 속도 | 3.6 km/h (1 m/s) | 전방향 이동 |
-| 페이로드 | 10~15 kg | 설정에 따라 상이 |
+| 길이 | 930 mm | ANYmal C와 동일 |
+| 너비 | 530 mm | 기본 보행 자세 |
+| 높이 (보행) | 890 mm | |
+| 무게 | 약 55 kg | 검사 페이로드 포함 시 증가 |
+| 최대 속도 | 4.68 km/h (1.3 m/s) | 전방향 이동 |
+| 페이로드 | 최대 10 kg | 추가 센서 탑재용 |
 
 **액추에이터** [[출처]](https://robotsguide.com/robots/anymal):
 - 12개 전기식 직렬 탄성 액추에이터 (ANYdrive)
-- 최대 출력: 720W (관절당)
+- 최대 토크: 85 Nm (관절당)
 - 360도 관절 회전 가능
+- 정밀 토크 제어 (토크 분해능 8 mNm, 위치 정확도 0.025도)
 - IP67 방수/방진
-- CAN 버스 독립 제어
+- 견고한 충격 보호 설계
 
 **이동 능력** (조건에 따라 성능 상이):
 
@@ -108,37 +111,42 @@ ANYmal D는 개선된 자율성과 이동성을 제공하는 현재 주력 모�
 |------|------|------|
 | 최대 경사 | 약 30도 | 지면 조건에 따라 변동 |
 | 계단 각도 | 최대 45도 | 표준 계단 기준 |
-| 단차 극복 | 최대 35 cm | |
+| 단차 극복 | 최대 250 mm | 산업 계단 기준 |
 | 장애물 극복 | 최대 20 cm | |
 | 간극 통과 | 25~30 cm | |
 | 최소 통로 폭 | 60 cm | |
 
 **배터리:**
-- 교체 가능한 리튬이온 배터리 팩
-- 작동 시간: 2~4시간 (활동에 따라 상이)
-- 자율 도킹 스테이션 충전
+- 리튬이온 배터리 팩 (932.4 Wh, UN 38.3 인증)
+- 작동 시간: 90~120분 (활동에 따라 상이)
+- 자율 도킹 스테이션 충전 및 배터리 팩 교체 지원
 
 **컴퓨팅:**
-- 3× Intel i7 프로세서
-  - 보행 제어용
-  - 내비게이션용
-  - 태스크 애플리케이션용
+- 2× Intel Core i7 (6코어) CPU
+- 2× 8 GB RAM
+- 2× 240 GB SSD
+- 2.4/5 GHz 802.11ac Wi-Fi (옵션: 4G LTE)
 - EtherCAT 통신
 - Ubuntu Linux OS
 - ROS 기반 커스텀 프레임워크
 - C++, Python API 지원
+- Gazebo 3D 시뮬레이션 환경 제공
 
-### ANYmal X (출시 예정)
+### ANYmal X (폭발 위험 환경용)
 
-ANYmal X는 ATEX Zone 1 인증을 목표로 개발 중인 보행 로봇으로, 폭발 위험 환경에서 운용 가능하도록 설계되었다. [[출처]](https://www.startuphub.ai/ai-news/funding-round/2025/anybotics-secures-over-e127-million-for-robotics-expansion/)
+ANYmal X는 세계 최초로 IECEx 및 ATEX Zone 1 인증을 획득한 보행 로봇으로, 폭발 위험 환경에서 운용 가능하도록 설계되었다. 2022년 OTC Asia에서 PETRONAS와 함께 공개되었으며, 2026년 본격적인 고객 배송이 시작된다. [[출처]](https://www.anybotics.com/robotics/anymal-x/)
 
 **특징:**
-- ATEX Zone 1 인증 목표 (폭발 위험 환경용)
-- ANYmal D 기반 설계
-- 고객 배송 예정 (일정은 ANYbotics 공식 발표 참조)
-- BASF, Equinor 등과 파일럿 프로그램 진행 중 [[출처]](https://www.anybotics.com/news/anybotics-climate-investment-strategic-investor/)
+- IECEx 및 ATEX Zone 1 인증 획득 (세계 최초 Ex-proof 보행 로봇)
+- ANYmal D와 동일한 성능, 기능, 속도, 이동성 유지
+- IP67 방수/방진 등급
+- 메탄, 일산화탄소, 황화수소 등 가스 감지 센서 탑재
+- 열화상 및 진동 분석 기능
 
-> **참고**: ANYmal X의 정확한 출시 일정과 인증 상태는 ANYbotics 공식 채널을 통해 확인하시기 바랍니다.
+**고객 및 파일럿 프로그램:**
+- PETRONAS (2022년 상업 계약 체결)
+- Equinor, Petrobras, Woodside, Shell 등 온보딩 프로그램 참여
+- 향후 수년간 300대 이상 배치 예정 [[출처]](https://jpt.spe.org/company-releases-four-legged-robot-for-explosive-environments)
 
 ---
 
@@ -150,15 +158,15 @@ ANYmal X는 ATEX Zone 1 인증을 목표로 개발 중인 보행 로봇으로, �
 
 | 센서 | 사양 | 비고 |
 |------|------|------|
-| LiDAR | 360도 | 최대 100m 범위 |
-| 깊이 카메라 | 6개 | 지형 인식용 |
-| 원격 조작 카메라 | 2개 | 텔레오퍼레이션용 |
+| LiDAR | 360도 (Velodyne Puck) | 최대 100m 범위 |
+| 깊이 카메라 | 6개 (Intel RealSense) | 근거리 환경 인식용 |
+| 광각 카메라 | 2개 | 전면/후면 텔레오퍼레이션용 |
 | IMU | 내장 | 본체 및 액추에이터 |
 
 ### 검사 페이로드
 
 **광학 시스템:**
-- 30배 줌 카메라
+- 20배 광학 줌 카메라 (4K 영상 촬영)
 - 능동 LED 조명
 - +/- 90도 수직, +/- 165도 수평 팬틸트
 
@@ -313,15 +321,17 @@ ANYmal Research는 보행 로봇 연구 발전을 위한 국제 커뮤니티로,
 
 | 항목 | ANYmal C | ANYmal D |
 |------|----------|----------|
-| 무게 | 약 50 kg | 약 30 kg |
-| 페이로드 | 최대 10 kg | 10-15 kg |
-| 배터리 | 약 2시간 | 2-4시간 |
+| 무게 | 약 50 kg | 약 55 kg |
+| 페이로드 | 최대 10 kg | 최대 10 kg |
+| 배터리 | 약 2시간 | 90-120분 |
 | 방수/방진 | IP67 | IP67 |
-| CPU | 2× i7 6코어 | 3× i7 |
-| 액추에이터 | 12 SEA | 12 SEA (720W) |
+| CPU | 2× i7 6코어 | 2× i7 6코어 |
+| RAM/저장장치 | 2× 8GB / 2× 240GB SSD | 2× 8GB / 2× 240GB SSD |
+| 액추에이터 | 12 SEA | 12 SEA (85 Nm 토크) |
+| 최대 속도 | 3.6 km/h (1 m/s) | 4.68 km/h (1.3 m/s) |
 | 최대 경사 | 약 20도 | 약 30도 |
-| 계단 | 최대 45도 | 최대 45도 |
-| 단차 | 최대 35 cm | 최대 35 cm |
+| 계단 | 최대 45도 | 최대 45도 (250mm 단차) |
+| LiDAR 범위 | 100m | 100m |
 
 ---
 

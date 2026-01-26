@@ -1,7 +1,7 @@
 ---
 title: Cheng Chi
-description: Diffusion Policy 제1저자, UMI 개발자
-tags: [cheng-chi, columbia, stanford, diffusion-policy, umi]
+description: Diffusion Policy 제1저자, UMI 개발자, Sunday Robotics CTO
+tags: [cheng-chi, columbia, stanford, diffusion-policy, umi, sunday-robotics]
 category: people
 
 # Authorship
@@ -11,40 +11,45 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Profile
 
 | 항목 | 내용 |
 |------|------|
-| 현직 | Stanford University PhD |
-| 이전 | Columbia University |
+| 현직 | Co-founder & CTO, [Sunday Robotics](../companies/sunday-robotics) |
+| 이전 | Columbia University PhD, Stanford SNF |
 | 지도교수 | Shuran Song |
 
 ---
 
 ## 핵심 기여
 
-- **Diffusion Policy 제1저자**: 로봇 액션 생성에 diffusion 적용
-- **UMI (Universal Manipulation Interface)**: 범용 조작 데이터 수집 인터페이스
-- **3D Diffusion Policy**: 3D 표현 + diffusion 결합
+- **Diffusion Policy 제1저자**: 로봇 액션 생성에 diffusion 적용 (RSS 2023 Best Paper Finalist)
+- **UMI (Universal Manipulation Interface)**: 범용 조작 데이터 수집 인터페이스 (RSS 2024 Best Systems Paper Finalist)
+- **Iterative Residual Policy**: 반복 작업을 위한 학습 프레임워크 (RSS 2022 Best Paper Award)
+- **Sunday Robotics 공동창업**: 가정용 로봇 스타트업 CTO
 
 ---
 
 ## Research Timeline
 
-### Columbia → Stanford PhD
+### Columbia → Stanford → Sunday Robotics
 
 **Shuran Song 지도**
 
 | Year | Work | Impact |
 |------|------|--------|
-| 2022 | 연구 시작 | Columbia CAIR Lab |
-| 2023 | **Diffusion Policy** | 로봇 diffusion 선구적 연구 |
-| 2024 | **UMI** | 범용 조작 인터페이스 |
-| 2024 | **3D Diffusion Policy** | 3D + diffusion |
-| 2024 | Stanford 이동 | Shuran Song과 함께 |
+| 2020 | Nuro 근무 | Mapping & Localization Team |
+| 2021.01 | PhD 시작 | Columbia CAIR Lab |
+| 2022 | **Iterative Residual Policy** | RSS 2022 Best Paper Award |
+| 2022 | **DextAIRity** | RSS 2022 Best Systems Paper Finalist |
+| 2023 | **Diffusion Policy** | 로봇 diffusion 선구적 연구 (RSS 2023) |
+| 2024 | **UMI** | RSS 2024 Best Systems Paper Finalist |
+| 2024 | Stanford 이동 | Shuran Song과 함께 (SNF) |
+| 2024.04 | Sunday Robotics 공동창업 | Tony Zhao와 함께 |
+| 2025.11 | Memo 로봇 출시 | 가정용 로봇 공개 |
 
 ---
 
@@ -66,9 +71,13 @@ lastEditedAt: 2026-01-15
 - 다양한 로봇에 전이 가능
 - 실제 환경(in-the-wild) 데이터 수집
 
-### 3D Diffusion Policy (2024)
-- 3D point cloud 입력
-- Diffusion policy + 3D representation
+### Iterative Residual Policy (RSS 2022)
+**"Iterative Residual Policy for Goal-Conditioned Dynamic Manipulation of Deformable Objects"**
+
+핵심 기여:
+- 반복 작업을 위한 일반적인 학습 프레임워크
+- 부정확한 시뮬레이션 데이터에서 학습 가능
+- RSS 2022 Best Paper Award, Best Student Paper Finalist
 
 ---
 
@@ -127,18 +136,21 @@ p(a|o) = ∫ p(aK) ∏ p(ak-1|ak, o) dak:K
 > "좋은 표현(representation)과 좋은 생성 모델의 결합이 핵심"
 
 ### 연구 방향
-1. **2022-2023**: Diffusion for robot learning
-2. **2024-현재**: Data collection interfaces, 3D representations
+1. **2021-2023**: Diffusion for robot learning
+2. **2024**: Data collection interfaces (UMI)
+3. **2024-현재**: Sunday Robotics - 가정용 로봇 상용화
 
 ---
 
 ## Links
 
 - [Personal Website](https://cheng-chi.github.io/)
+- [Sunday Robotics](https://sunday.ai/)
 - [Diffusion Policy Project](https://diffusion-policy.cs.columbia.edu/)
 - [UMI Project](https://umi-gripper.github.io/)
 - [GitHub](https://github.com/cheng-chi)
-- [Google Scholar](https://scholar.google.com/citations?user=XXXXXXXXX)
+- [X (Twitter)](https://twitter.com/chichengcc)
+- [Google Scholar](https://scholar.google.com/citations?user=EO0PHdAAAAAJ)
 
 ---
 
@@ -146,4 +158,5 @@ p(a|o) = ∫ p(aK) ∏ p(ak-1|ak, o) dak:K
 
 - [Diffusion Policy](../models/diffusion-policy)
 - [Shuran Song](shuran-song)
+- [Sunday Robotics](../companies/sunday-robotics)
 - [ACT](../models/act)

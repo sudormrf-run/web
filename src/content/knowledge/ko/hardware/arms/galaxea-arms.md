@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Galaxea Arms (A1/A1X/A1Y)
@@ -58,7 +58,7 @@ Galaxea Arms는 **Embodied AI 연구를 위해 설계된 힘 제어 로봇 암**
 | 힘 제어 | 전 관절 | 전 관절 | 제한적 |
 | 최대 속도 | 10 m/s | 1.5 m/s | 1 m/s |
 | 무게 | 6kg | 18kg | 13.7kg |
-| 회사 상태 | 정상 운영 | 2023년 도산 신청 | 정상 운영 |
+| 회사 상태 | 정상 운영 | 2023년 도산 후 Agile Robots에 인수 | 정상 운영 |
 
 **Galaxea A1의 차별점**:
 - **압도적 속도**: 경쟁사 대비 5-10배 빠른 말단 속도로 고속 manipulation 연구 가능
@@ -77,15 +77,19 @@ Galaxea Arms는 **Embodied AI 연구를 위해 설계된 힘 제어 로봇 암**
 | 본사 | 중국 베이징 |
 | 기업가치 | $700M (2025년 기준) |
 | 미션 | "100억 로봇으로 100억 인류 서비스" |
-| 주요 투자자 | Meituan, IDG Capital, Ant Group, Baidu Ventures |
-| 주요 고객 | Huawei, Volkswagen, Samsung, ByteDance, Stanford, MIT, Physical Intelligence |
+| 누적 투자 | 약 $210M (A4/A5 라운드 합계 $100M+) |
+| 주요 투자자 | Capital Today, Meituan (Long-Z Investments), Ant Group, IDG Capital, Baidu Ventures, GL Ventures, FunPlus 등 18개 기관 |
+| 주요 고객 | Huawei Cloud, Volkswagen, Haier, Samsung, ByteDance, Physical Intelligence, Stanford, MIT 등 40개+ |
+| 직원 수 | 120명 (2025년), 200명 목표 (연말) |
 
-Galaxea AI는 청화대학교와 스탠포드 대학교 출신 과학자들이 설립한 Embodied AI 전문 기업이다. CEO **Jiyang Gao (高继扬)**는 Waymo와 Momenta에서 자율주행 경력을, 공동 창업자 **Huazhe Xu**는 UC Berkeley 박사, 스탠포드 포닥을 거쳐 청화대 조교수로 재직 중이다.
+Galaxea AI는 청화대학교와 스탠포드 대학교 출신 과학자들이 설립한 Embodied AI 전문 기업이다. 창업팀은 4명(Jiyang Gao, Hang Zhao, Tianwei Li, Huazhe Xu)으로 구성되어 있으며, 그 중 3명이 청화대 출신이다. CEO **Jiyang Gao (高继扬)**는 1992년생으로 청화대학교 전자공학과 출신, USC에서 컴퓨터 비전 박사학위를 취득했으며, Google, SenseTime 인턴을 거쳐 Waymo와 Momenta에서 자율주행 경력을 쌓았다. 공동 창업자이자 공동 최고과학책임자 **Huazhe Xu**는 UC Berkeley 박사, 스탠포드 포닥을 거쳐 현재 청화대학교 교차정보연구원(IIIS) 조교수로 재직하며 Embodied AI 연구실(TEA Lab)을 이끌고 있다. CoRL'23 최우수 시스템 논문상 수상자이기도 하다.
 
 **핵심 역량**:
 - 로봇 암 (A-Series), 그리퍼 (G-Series), 휴머노이드 (R-Series) 풀 라인업
 - **G0 VLA 모델**: 자체 개발 Vision-Language-Action 모델
 - **Open-World 데이터셋**: 500시간 이상의 실세계 조작 데이터
+- **R1 휴머노이드**: $44,500 ~ $64,000 가격대, 2025년 말까지 1,000대 출하 목표
+- **이족 보행 휴머노이드**: 2026년 출시 예정
 
 ---
 
@@ -213,7 +217,8 @@ Galaxea Arms의 핵심 차별화 요소는 **전 관절 힘 제어 능력**이�
 | 관절 수 | 12 |
 | 무게 | 540 g |
 | 반복정밀도 | 0.20 mm |
-| 손가락 파지력 | 10 N (최대) |
+| 엄지 파지력 | 15 N (최대) |
+| 손바닥 손가락 힘 | 100 N (최대) |
 
 ---
 

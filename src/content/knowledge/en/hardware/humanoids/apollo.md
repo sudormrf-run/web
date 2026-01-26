@@ -55,7 +55,7 @@ The most significant aspect of Apollo is presenting **humanoids as practical ind
 
 ### Why is Apollo Important?
 
-1. **NASA Technology Lineage**: The Apptronik founding team participated in developing NASA's Valkyrie (R5) robot for the 2013 DARPA Robotics Challenge. CTO Nick Paine is from the NASA-JSC Valkyrie DRC team, bringing robust robot design experience for extreme environments to Apollo.
+1. **NASA Technology Lineage**: The Apptronik founding team participated in developing NASA's Valkyrie (R5) robot for the 2012-2013 DARPA Robotics Challenge. CTO Nick Paine and Dr. Luis Sentis were core members of the NASA-JSC Valkyrie DRC team, responsible for actuators and control systems, bringing robust robot design experience for extreme environments to Apollo.
 
 2. **Force Control Architecture**: Unlike traditional industrial robots, Apollo detects and responds to external forces in real-time through torque sensors in each joint. This is a key element of Collaborative Robot (Cobot) design, aimed at safe collaboration with humans.
 
@@ -71,7 +71,7 @@ The most significant aspect of Apollo is presenting **humanoids as practical ind
 
 - **2013**: Participated in NASA's Valkyrie robot project for DARPA Robotics Challenge
 - **2016**: Spun out from UT Austin Human Centered Robotics Lab to establish Apptronik
-- **Founders**: Dr. Nicholas Paine (CTO), Dr. Luis Sentis (Scientific Advisor), and 4 co-founders
+- **Founders**: Jeff Cardenas (CEO), Dr. Nicholas Paine (CTO), Dr. Luis Sentis (Scientific Advisor), Bill Helmsing (COO), Bill Welch - 5 co-founders
 - **Mission**: Developing "robots that help humans, not replace them"
 
 ### Funding Status
@@ -84,6 +84,7 @@ The most significant aspect of Apollo is presenting **humanoids as practical ind
 
 - Mercedes-Benz invested "low-to-mid double-digit euros (~$10-14M)" in the Series A additional round (Reuters report)
 - Google participated in Series A
+- Additional investors: Japan Post Capital, ARK Invest, Helium-3, Magnetar, RyderVentures, Korea Investment Partners, and others
 
 ---
 
@@ -194,7 +195,7 @@ CEO Jeff Cardenas: "We've reached the point where the economics work. Factories 
 
 1. **Dynamic Capabilities**: Lacking dynamic movement demonstrations like running, jumping compared to Atlas, Optimus
 2. **AI Capabilities**: Google participated in Series A, but no proprietary VLA model
-3. **Production Scale**: 2026 mass production plan announced with Jabil, actual production verification needed
+3. **Production Scale**: February 2025 Jabil manufacturing partnership announced, 2026 mass production target, actual production verification needed
 4. **Market Competition**: May be disadvantaged in price competition with Tesla ($20-30K target)
 
 ---
@@ -203,13 +204,14 @@ CEO Jeff Cardenas: "We've reached the point where the economics work. Factories 
 
 | Period | Event |
 |--------|-------|
-| 2013 | NASA Valkyrie project participation (DARPA Robotics Challenge) |
+| 2012-2013 | NASA Valkyrie project participation (DARPA Robotics Challenge Trials) |
 | 2016 | Apptronik spinoff from UT Austin |
-| 2022 | NASA humanoid commercialization partnership agreement |
+| 2022.09 | NASA humanoid commercialization partnership agreement |
 | 2023.08 | Apollo humanoid unveiled |
 | 2024.03 | Mercedes-Benz commercial pilot contract signed |
 | 2025.01 | Apollo work demonstration at CES 2025 |
 | 2025.02-03 | Series A $403M close ($350M + additional $53M, Mercedes-Benz, Google participation) |
+| 2025.02 | Jabil manufacturing partnership announced |
 | 2026 | Target mass production start with Jabil |
 
 ---
@@ -238,6 +240,10 @@ CEO Jeff Cardenas: "We've reached the point where the economics work. Factories 
 
 ### NASA Connection
 - [NASA-Apptronik Partnership](https://www.iotworldtoday.com/robotics/nasa-apptronik-partner-to-commercialize-humanoid-robots) - NASA collaboration background
+- [TechCrunch: NASA Partnership 2022](https://techcrunch.com/2022/09/20/are-general-purpose-robots-impossible-apptronik-disagrees-pockets-fresh-nasa-partnership/) - September 2022 partnership announcement
+
+### Manufacturing Partnership
+- [Apptronik-Jabil Collaboration Announcement](https://apptronik.com/news-collection/apptronik-and-jabil-collaborate-to-scale-production) - February 2025 manufacturing partnership
 
 ---
 

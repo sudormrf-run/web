@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Overview
@@ -23,7 +23,7 @@ HuggingFace is the "GitHub" of AI models and datasets, bringing the open-source 
 | Headquarters | New York, NY / Paris, France |
 | Founded | 2016 |
 | CEO | Clément Delangue |
-| Robotics Lead | Rémi Cadène |
+| Robotics Lead | Rémi Cadène (Principal Research Scientist) |
 | Core Projects | LeRobot, SmolVLA |
 
 ---
@@ -46,7 +46,7 @@ LeRobot is an open-source project to democratize robotics AI.
 | Component | Description |
 |-----------|-------------|
 | Models | ACT, Diffusion Policy, SmolVLA, etc. |
-| Datasets | 487+ community-shared datasets (as of June 2025) |
+| Datasets | Community-shared datasets (continuously growing) |
 | Hardware Support | SO100, Koch, Unitree G1, etc. |
 | Tools | Training, evaluation, visualization pipelines |
 
@@ -70,7 +70,7 @@ A **450M parameter** [VLA](../essays/fundamentals/what-is-rfm-vla) released in J
 |------|---------|
 | Parameters | 450M |
 | Feature | Runs on MacBook |
-| Training Data | 10M frames (community data) |
+| Training Data | ~30K episodes (community data) |
 | Architecture | VLM + Flow Matching |
 
 ### Performance
@@ -97,8 +97,8 @@ SmolVLA-450M ≈ Equivalent performance to 10× larger VLAs
 
 | Hackathon | Details |
 |-----------|---------|
-| 2024 #1 | First community hackathon |
-| 2025 #2 | Focus on low-cost hardware |
+| Oct 2024 | First community hackathon (Toulouse, France) |
+| Jun 2025 | Worldwide hackathon (global simultaneous event) |
 | Outcomes | Diverse environment dataset sharing |
 
 ### Dataset Hub
@@ -109,7 +109,7 @@ HuggingFace Hub
     ├── pusht_v2 (simulation)
     ├── aloha_static_* (ALOHA data)
     ├── so100_* (community collected)
-    └── ... (487+ datasets)
+    └── ... (many community datasets)
 ```
 
 ### Community Contributions
@@ -140,9 +140,9 @@ Robotics Democratization (LeRobot Goal)
 
 | Equipment | Cost |
 |-----------|------|
-| SO100 arm | ~$300 |
-| LeKiwi base | ~$200 |
-| Full setup | ~$500-1000 |
+| SO100/SO101 arm | ~$100 (single) |
+| LeKiwi base | ~$300 |
+| Teleoperation setup (2 arms) | ~$660 |
 
 → "Lowering barriers to entry for robotics research"
 

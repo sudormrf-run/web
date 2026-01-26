@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Profile
@@ -19,7 +19,7 @@ lastEditedAt: 2026-01-15
 | 항목 | 내용 |
 |------|------|
 | 현직 | UC Berkeley 교수 |
-| 회사 | Covariant 공동창업자 & Chief Scientist |
+| 회사 | Covariant 공동창업자 & President (2017-2024), Amazon Scholar (2024-) |
 | 이전 | OpenAI 연구 과학자 (2016-2017) |
 | PhD | Stanford University (Advisor: Andrew Ng) |
 | 국적 | 벨기에 |
@@ -30,7 +30,7 @@ lastEditedAt: 2026-01-15
 
 - **로봇 강화학습 선구자**: 실제 로봇에서 동작하는 RL 연구의 초기 개척자
 - **Inverse Reinforcement Learning**: 시연에서 보상 함수 학습
-- **Covariant 창업**: AI 기반 로봇 피킹 회사, $2B+ 가치
+- **Covariant 창업**: AI 기반 로봇 피킹 회사 (2024년 Amazon에 인수)
 - **OpenAI 초기 멤버**: 초기 로봇 연구 주도
 - **다수의 영향력 있는 제자 배출**: Chelsea Finn, Sergey Levine 등
 
@@ -69,24 +69,23 @@ lastEditedAt: 2026-01-15
 | 2017 | One-Shot Imitation Learning | Few-shot 로봇 학습 |
 | 2017 | Domain Randomization | Sim-to-Real 핵심 기법 |
 
-### Covariant (2017-present)
+### Covariant (2017-2024)
 
 **AI 로봇 피킹 회사 창업**
 
 | Year | Work | Impact |
 |------|------|--------|
-| 2017 | Covariant 창업 | AI 기반 물류 로봇 |
+| 2017 | Covariant 창업 (구 Embodied Intelligence) | AI 기반 물류 로봇 |
 | 2020 | Covariant Brain | 범용 로봇 AI 플랫폼 |
 | 2023 | RFM-1 | Robotics Foundation Model |
-| 2024 | $2B+ 가치 평가 | 로봇 AI 스타트업 선두 |
+| 2024 | Amazon 합류 | 창업자들과 함께 Amazon으로 이적 |
 
 ---
 
 ## Major Publications
 
 ### Inverse Reinforcement Learning
-- **Apprenticeship Learning via IRL** (ICML 2004) - IRL 초기 연구
-- Maximum Entropy IRL (AAAI 2008)
+- **Apprenticeship Learning via IRL** (ICML 2004) - Andrew Ng과 공저, IRL 초기 연구
 
 ### Deep Reinforcement Learning
 - **TRPO** (Trust Region Policy Optimization, 2015)
@@ -129,11 +128,11 @@ IRL: π* → R (전문가 정책 → 보상 추론)
 
 ## Covariant & RFM-1
 
-### Covariant (2017-)
+### Covariant (2017-2024)
 - **미션**: 범용 로봇 AI
 - **제품**: AI 기반 물류 피킹 로봇
 - **고객**: DHL, ABB, Knapp 등
-- **가치**: $2B+ (2024)
+- **결과**: 2024년 8월 Amazon이 기술 라이선스 및 창업자 영입
 
 ### RFM-1 (2023)
 - **Robotics Foundation Model**
@@ -158,10 +157,13 @@ IRL: π* → R (전문가 정책 → 보상 추론)
 ## Students & Mentees
 
 Pieter Abbeel 연구실 출신/협력:
-- **Chelsea Finn** (Stanford 교수)
-- **Sergey Levine** (UC Berkeley 교수)
-- **Rocky Duan** (Covariant)
-- **John Schulman** (OpenAI, PPO 개발자)
+- **John Schulman** (PhD 학생, OpenAI 공동창업자, PPO 개발자)
+- **Chelsea Finn** (PhD 학생, Sergey Levine과 공동 지도, Stanford 교수)
+- **Sergey Levine** (포닥 2014-2016, UC Berkeley 교수)
+- **Peter Chen** (PhD 학생, Covariant 공동창업자)
+- **Rocky Duan** (PhD 학생, Covariant 공동창업자)
+- **Aravind Srinivas** (Perplexity 공동창업자)
+- **Deepak Pathak** (Skild 공동창업자)
 - 다수의 RL/로봇 연구자
 
 ---
@@ -169,8 +171,10 @@ Pieter Abbeel 연구실 출신/협력:
 ## Awards & Recognition
 
 - ACM Prize in Computing (2021)
-- IEEE RAS Early Career Award
-- IJCAI Computers and Thought Award
+- IJCAI Computers and Thought Award (2017)
+- IEEE Fellow
+- PECASE (Presidential Early Career Award for Scientists and Engineers)
+- NSF CAREER Award
 - Sloan Research Fellowship
 - TR35 (MIT Technology Review 35 Under 35)
 
@@ -181,7 +185,7 @@ Pieter Abbeel 연구실 출신/협력:
 - [UC Berkeley Profile](https://people.eecs.berkeley.edu/~pabbeel/)
 - [Covariant](https://covariant.ai/)
 - [Google Scholar](https://scholar.google.com/citations?user=vtwH6GkAAAAJ)
-- [Twitter/X](https://twitter.com/paborisov)
+- [X (Twitter)](https://x.com/pabbeel)
 
 ---
 

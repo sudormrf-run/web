@@ -11,39 +11,48 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Overview
 
-Physical Intelligence (π) is a robotics AI startup founded in 2024, developing general-purpose robot foundation models. Founded by a team from Google DeepMind, OpenAI, and Stanford, the company raised the largest seed funding round in robotics history.
+Physical Intelligence (π) is a robotics AI startup founded in 2024, developing general-purpose robot foundation models. Founded by a team from Google DeepMind, UC Berkeley, and Stanford, the company raised the largest seed funding round in robotics history.
 
 | Item | Details |
 |------|---------|
 | Headquarters | San Francisco, CA |
 | Founded | March 2024 |
 | CEO | Karol Hausman (formerly Google DeepMind) |
-| Funding | $400M+ (Seed: $70M, Series A: $400M) |
-| Valuation | $2.4B (as of November 2024) |
+| Funding | $1.07B (Seed: $70M, Series A: $400M, Series B: $600M) |
+| Valuation | $5.6B (as of November 2025) |
 
 ---
 
 ## Founding Team
 
-### Co-Founders
+### Co-Founders (7 members)
 
 | Name | Previous Role | Position |
 |------|---------------|----------|
-| Karol Hausman | Google DeepMind (RT-2) | CEO |
-| Sergey Levine | UC Berkeley (RL Expert) | Chief Scientist |
-| Chelsea Finn | Stanford (MAML, Meta-learning) | Research |
+| Karol Hausman | Google DeepMind (RT-2), Stanford Adjunct Professor | CEO |
+| Sergey Levine | UC Berkeley Professor (RL Expert) | Chief Scientist |
+| Chelsea Finn | Stanford Professor (MAML, Meta-learning) | Research |
 | Brian Ichter | Google DeepMind (RT-2) | Research |
+| Lachy Groom | Stripe (Former Head of Stripe Issuing) | Business/Product |
+| Adnan Esmail | Anduril (Former Head of Electrical Systems), MIT | Engineering |
+| Quan Vuong | Robotics/RL Researcher | Research |
 
 ### Key Investors
 
+**Seed/Series A:**
 - Thrive Capital, Lux Capital
 - Khosla Ventures, OpenAI
-- Jeff Bezos, Sequoia
+- Jeff Bezos, Sequoia, Bond
+
+**Series B:**
+- CapitalG (Lead), Lux Capital
+- Redpoint Ventures, Sequoia Capital
+- T. Rowe Price, NVIDIA (NVentures)
 
 ---
 
@@ -53,10 +62,10 @@ Physical Intelligence (π) is a robotics AI startup founded in 2024, developing 
 
 | Item | Details |
 |------|---------|
-| Parameters | 3.3B |
+| Parameters | 3B (3 billion) |
 | Architecture | PaliGemma + Flow Matching |
 | Core Technology | Action Expert with Flow Matching |
-| Open Source | Released in 2025 |
+| Open Source | Released February 4, 2025 (openpi) |
 
 ### Flow Matching Approach
 
@@ -73,7 +82,8 @@ Uses **Flow Matching** instead of Diffusion:
 
 ### Performance
 
-- Trained on 51 tasks across 20 robot configurations
+- Trained on 68 tasks across 7 robot embodiments
+- Over 10,000 hours of real-world robot data
 - Zero-shot generalization capability
 - Superior performance compared to single-robot policies
 
@@ -118,10 +128,12 @@ Physical Intelligence Goal = Apply same approach to robotics
 
 | Timeline | Milestone |
 |----------|-----------|
-| 2024.03 | Company founded |
+| 2024.03 | Company founded, $70M seed funding |
 | 2024.10 | pi0 release |
-| 2024.11 | $400M Series A |
-| 2025 | pi0 open source release |
+| 2024.11 | $400M Series A ($2.4B valuation) |
+| 2025.02 | pi0 open source release (openpi) |
+| 2025 | pi0.5 release (open-world generalization) |
+| 2025.11 | pi0.6 release, $600M Series B ($5.6B valuation) |
 | 2025+ | Commercial deployment |
 
 ---
@@ -131,7 +143,9 @@ Physical Intelligence Goal = Apply same approach to robotics
 - [Physical Intelligence Website](https://www.physicalintelligence.company/)
 - [pi0 Paper](https://www.physicalintelligence.company/research/pi0)
 - [arXiv: pi0](https://arxiv.org/abs/2410.24164)
+- [GitHub: openpi](https://github.com/Physical-Intelligence/openpi)
 - [TechCrunch - $400M Funding](https://techcrunch.com/2024/11/04/physical-intelligence-400m-series-a/)
+- [Bloomberg - $600M Series B](https://www.bloomberg.com/news/articles/2025-11-20/robotics-startup-physical-intelligence-valued-at-5-6-billion-in-new-funding)
 
 ---
 

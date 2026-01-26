@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Profile
@@ -21,7 +21,7 @@ lastEditedAt: 2026-01-15
 | Current Position | Associate Professor, UC Berkeley |
 | Lab | RAIL Lab (Robotic AI & Learning Lab) |
 | Company | Physical Intelligence Co-founder |
-| Previous | Google Brain (2016-2021) |
+| Previous | Google Research (2016-2024, concurrent) |
 | PhD | Stanford University |
 
 ---
@@ -48,18 +48,18 @@ lastEditedAt: 2026-01-15
 | 2015 | End-to-End Visuomotor Policies | Direct image-to-action learning |
 | 2016 | Deep RL for Robotic Manipulation | Practical robot RL |
 
-### Google Brain (2016-2021)
+### UC Berkeley + Google (2016-2024)
 
-**Google Robotics Research**
+**UC Berkeley Faculty & Google Research Collaboration**
 
 | Year | Work | Impact |
 |------|------|--------|
-| 2017 | QT-Opt | Large-scale robot grasping |
+| 2018 | QT-Opt | Large-scale robot grasping |
 | 2018 | Soft Actor-Critic (SAC) | Most widely used off-policy RL |
 | 2020 | Offline RL Survey | Established offline RL |
-| 2021 | Decision Transformer | RL as sequence modeling |
+| 2021 | Trajectory Transformer | RL as sequence modeling |
 
-### UC Berkeley + Google (2021-2024)
+### RT Series & VLA (2022-2024)
 
 **RT Series, Open-source VLA**
 
@@ -82,7 +82,7 @@ Co-founded Physical Intelligence, pi0 development
 ### Reinforcement Learning
 - **SAC** (Soft Actor-Critic) - Most widely used off-policy RL
 - **CQL** (Conservative Q-Learning) - Core offline RL method
-- **Decision Transformer** - RL as sequence modeling
+- **Trajectory Transformer** - RL as sequence modeling (concurrent with Decision Transformer)
 - **Offline RL Tutorial** - Established the field
 
 ### Robot Learning
@@ -146,19 +146,23 @@ Core: Represent robot actions as text tokens to integrate with VLM
 ## Students & Mentees
 
 Sergey Levine lab alumni:
-- Chelsea Finn (Stanford Professor)
-- Aviral Kumar (Google DeepMind)
-- Ilya Kostrikov (Google DeepMind)
+- Aviral Kumar (CMU Professor, Google DeepMind Researcher)
+- Justin Fu (Google DeepMind)
+- Michael Janner (UC Berkeley)
 - Numerous robotics/RL researchers
+
+Key collaborators:
+- Chelsea Finn (Stanford Professor, Physical Intelligence Co-founder)
+- Pieter Abbeel (UC Berkeley Professor)
 
 ---
 
 ## Awards & Recognition
 
-- IEEE RAS Early Career Award
-- Sloan Research Fellowship
-- NSF CAREER Award
-- ICML Best Paper (multiple)
+- Presidential Early Career Award for Scientists and Engineers (PECASE)
+- Sloan Research Fellowship (2019)
+- CoRL Best Systems Paper (QT-Opt, 2018)
+- Multiple conference Best Paper Awards
 
 ---
 
@@ -167,7 +171,7 @@ Sergey Levine lab alumni:
 - [UC Berkeley Profile](https://people.eecs.berkeley.edu/~svlevine/)
 - [RAIL Lab](https://rail.eecs.berkeley.edu/)
 - [Google Scholar](https://scholar.google.com/citations?user=8R35rCwAAAAJ)
-- [Twitter/X](https://twitter.com/svaborisov)
+- [Twitter/X](https://twitter.com/svlevine)
 
 ---
 

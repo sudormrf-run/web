@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-18
+lastEditedAt: 2026-01-26
 ---
 
 ## Overview
@@ -23,7 +23,7 @@ Atlas is an advanced humanoid robot developed by Boston Dynamics. Originally cre
 | Item | Details |
 |------|---------|
 | Company | Boston Dynamics (Hyundai subsidiary) |
-| First Unveiled | July 2013 |
+| First Unveiled | July 11, 2013 |
 | Current Version | Electric Atlas (2024) |
 | Status | Commercial deployment (2025-2026) |
 
@@ -37,8 +37,9 @@ Atlas is an advanced humanoid robot developed by Boston Dynamics. Originally cre
 |------|-----------|
 | 2011 | Fukushima disaster highlights need for disaster-response robots |
 | 2012 | DARPA selects Boston Dynamics for development |
-| 2013 | First Atlas unveiled (hydraulic) |
-| 2014 | DARPA Robotics Challenge - 6 teams compete with Atlas |
+| 2013.07 | First Atlas unveiled (hydraulic, 1.88m, 149kg) |
+| 2015.06 | DARPA Robotics Challenge Finals - 7 teams compete with Atlas |
+| 2016.02 | Next Generation Atlas unveiled (1.75m, 82kg) |
 | 2024.04 | Hydraulic Atlas retired, Electric Atlas announced |
 | 2025 | Hyundai factory pilot begins |
 | 2026.01 | Commercial version unveiled at CES |
@@ -47,15 +48,17 @@ Atlas is an advanced humanoid robot developed by Boston Dynamics. Originally cre
 
 ## Specifications Comparison
 
-| Item | Hydraulic Atlas | Electric Atlas (2024) |
-|------|-----------------|----------------------|
-| Height | 1.5m | 1.9m (6.2 ft) |
-| Weight | 89kg | Not disclosed |
-| DoF | 28 | 56 (rotary joints) |
-| Reach | 2.3m | 2.3m |
-| Lift Capacity | 50kg | Improved |
-| Temperature Range | -20° to 40°C | -20° to 40°C |
-| Power | Hydraulic | Electric |
+| Item | Original Atlas (2013) | Next-Gen Atlas (2016) | Electric Atlas (2024) |
+|------|----------------------|----------------------|-----------------------|
+| Height | 1.88m (6'2") | 1.75m (5'9") | 1.9m (6.2 ft) |
+| Weight | 149kg (330 lbs) | 82kg (180 lbs) | 90kg (198 lbs) |
+| DoF | 28 | 28 | 56 (360° rotary joints) |
+| Reach | - | - | 2.3m (7.5 ft) |
+| Lift Capacity | - | - | 50kg instant, 30kg sustained |
+| Temperature Range | - | - | -20° to 40°C |
+| Power | Hydraulic (tethered) | Hydraulic (battery) | Electric (battery) |
+| IP Rating | - | - | IP67 |
+| Battery Life | - | ~1 hour | ~4 hours |
 
 ---
 
@@ -63,10 +66,11 @@ Atlas is an advanced humanoid robot developed by Boston Dynamics. Originally cre
 
 ### Key Improvements
 
-- **Full Redesign**: Complete transition from hydraulic to electric
-- **Enhanced Mobility**: Stronger, more agile, expanded range of motion
-- **Lighter & More Compact**: While maintaining power
-- **Battery System**: Automatic battery swap system (3-minute exchange)
+- **Full Redesign**: Complete transition from hydraulic to electric, titanium/aluminum frame (3D printing)
+- **Enhanced Mobility**: Strength exceeding human capabilities, 56 DoF with 360° rotation joints
+- **4-Finger Hands**: Tactile sensing in fingers and palms
+- **Battery System**: Dual battery packs, ~4 hour runtime, autonomous battery swap
+- **Computing**: NVIDIA Jetson Thor platform (800 TFLOPS AI performance)
 - **Machine Learning**: Simulation-trained for irregular object manipulation
 
 ### AI Capabilities
@@ -84,15 +88,17 @@ Atlas is an advanced humanoid robot developed by Boston Dynamics. Originally cre
 
 | Item | Details |
 |------|---------|
-| Location | Hyundai Georgia Mega Factory (HMGMA) |
+| Location | Hyundai Georgia Mega Factory (HMGMA), Robotics Metaplant Application Center (RMAC) |
 | Start | 2025 pilot testing |
-| Status | Autonomous operations begun |
-| Partners | Hyundai, Google DeepMind |
+| Status | RMAC opening in 2026 |
+| Partners | Hyundai, Google DeepMind (Gemini Robotics AI integration) |
+| Future Plans | Task sequencing by 2028, assembly operations by 2030 |
 
 ### Deployment Plans
 
-- 2026: All Atlas deployments pre-committed
-- Future: Thousands of units planned
+- 2026: All Atlas deployments pre-committed (Hyundai RMAC, Google DeepMind)
+- Production: Boston Dynamics HQ (future factory planned for 30,000 units annually)
+- Supply Chain: Hyundai Mobis supplying actuators
 - Target sectors: Automotive manufacturing, logistics
 
 ---
@@ -121,6 +127,9 @@ Atlas is an advanced humanoid robot developed by Boston Dynamics. Originally cre
 |------|-------------|
 | DoF | Degrees of Freedom - number of independent movement axes |
 | DARPA | Defense Advanced Research Projects Agency |
+| HMGMA | Hyundai Motor Group Metaplant America - Hyundai Georgia Mega Factory |
+| RMAC | Robotics Metaplant Application Center |
+| IP67 | Ingress Protection rating (protected against 1m water submersion for 30 min) |
 | Hydraulic | Power system using pressurized fluid |
 | Electric | Power system using electric motors and batteries |
 

@@ -11,19 +11,20 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-23
+lastEditedAt: 2026-01-26
 ---
 
 ## 개요
 
-Boston Dynamics는 1992년 MIT에서 스핀오프된 로보틱스 회사로, 동적 이동 로봇 분야의 선구자입니다. Atlas의 백플립, Spot의 안정적인 보행 등으로 유명하며, Classical Robotics의 대표 주자로 알려져 있습니다. 2020년 현대자동차 그룹에 인수되었습니다.
+Boston Dynamics는 1992년 Marc Raibert가 MIT의 Leg Laboratory 연구를 기반으로 스핀오프한 로보틱스 회사입니다. 동적 이동 로봇 분야의 선구자로, Atlas의 백플립, Spot의 안정적인 보행 등으로 유명하며, Classical Robotics의 대표 주자로 알려져 있습니다. 2020년 인수 발표 후 2021년 현대자동차 그룹에 정식 인수되었습니다.
 
 | 항목 | 내용 |
 |------|------|
 | 본사 | Waltham, Massachusetts |
-| 설립 | 1992년 |
-| CEO | Robert Playter |
-| 모회사 | Hyundai Motor Group (2020~) |
+| 설립 | 1992년 (MIT 스핀오프) |
+| 창업자 | Marc Raibert |
+| CEO | Robert Playter (2019~) |
+| 모회사 | Hyundai Motor Group (2021~, 80% 지분) |
 
 ---
 
@@ -56,7 +57,7 @@ Boston Dynamics는 오랫동안 **모듈 분리 방식**으로 유명했습니�
 
 ### Toyota Research Institute(TRI)와의 협업
 
-2025년, Boston Dynamics는 TRI와 협업하여 **Large Behavior Model(LBM)** 연구를 시작했습니다.
+2024년 10월, Boston Dynamics와 TRI는 **Large Behavior Model(LBM)** 공동 연구 파트너십을 발표했습니다. 2025년 8월에는 LBM으로 구동되는 Atlas 휴머노이드 로봇의 데모를 공개했습니다.
 
 > "Boston Dynamics is developing Large Behavior Models (LBMs) for Atlas as part of a collaboration between AI research teams at Toyota Research Institute (TRI) and Boston Dynamics."
 > — [The Robot Report](https://www.therobotreport.com/boston-dynamics-tri-use-large-behavior-models-train-atlas-humanoid/)
@@ -91,13 +92,16 @@ Boston Dynamics는 완전한 end-to-end(pixels-to-torques)는 채택하지 않�
 
 ## 주요 마일스톤
 
-- **1992**: MIT에서 스핀오프
-- **2005**: BigDog 공개
-- **2013**: Google에 인수
-- **2017**: SoftBank에 인수
-- **2020**: Hyundai Motor Group에 인수
-- **2024**: 전기 구동 Atlas 공개
-- **2025**: TRI와 LBM 협업 발표
+- **1992**: MIT에서 스핀오프 (창업자: Marc Raibert)
+- **2005**: BigDog 공개 (DARPA 지원)
+- **2013**: Google에 인수 (12월)
+- **2017**: SoftBank에 인수 (6월)
+- **2019**: Robert Playter CEO 취임 (10월)
+- **2020**: Hyundai Motor Group 인수 발표 (12월)
+- **2021**: Hyundai 인수 완료 (6월, 80% 지분)
+- **2024**: 전기 구동 Atlas 공개 (4월), 유압식 Atlas 은퇴
+- **2024**: TRI와 LBM 연구 파트너십 발표 (10월)
+- **2025**: Atlas LBM 데모 공개 (8월)
 
 ---
 

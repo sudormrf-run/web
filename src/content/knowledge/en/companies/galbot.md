@@ -11,19 +11,52 @@ createdBy:
 lastEditedBy:
   name: Junho Cho
   email: junho@sudormrf.run
-lastEditedAt: 2026-01-25
+lastEditedAt: 2026-01-26
 ---
 
 ## Overview
 
-Galbot is a China-based full-stack robotics unicorn that achieved the first large-scale commercial deployment in the VLA field with its **"Synthetic First, Real Data as a Complement"** philosophy. They build production-ready systems with 99% synthetic + <1% real data.
+Galbot (Galaxy General Robotics) is a China-based full-stack robotics unicorn that achieved the first large-scale commercial deployment in the VLA field with its **"Synthetic First, Real Data as a Complement"** philosophy. They build production-ready systems with 99% synthetic + <1% real data.
 
 | Item | Details |
 |------|---------|
-| Headquarters | Beijing, China |
-| CTO | He Wang (Peking University CFCS) |
+| Founded | May 2023 |
+| Headquarters | Beijing, China (Haidian District) |
+| R&D Centers | Beijing, Shenzhen, Suzhou, Hong Kong |
+| Co-founders | He Wang (CTO), TengZhou Yao |
 | Affiliations | Beijing Academy of AI (BAAI), PKU EPIC Lab |
+| Total Funding | $800M+ (as of December 2025) |
+| Valuation | $3B (as of December 2025) |
 | Mission | "Make robots for every industry and every home" |
+
+**He Wang**: Born 1992, graduated from Tsinghua University, earned PhD from Stanford University in 2021 (advisor: Leonidas J. Guibas). Currently an Assistant Professor at Peking University CFCS and founder of PKU EPIC Lab.
+
+---
+
+## Key Products
+
+### Galbot G1
+
+Semi-humanoid mobile manipulator:
+
+| Specification | Value |
+|---------------|-------|
+| Height | 173cm |
+| Weight | 85kg |
+| Arm Span | 190cm |
+| Max Reach Height | 240cm |
+| Payload | 5kg (single arm) |
+| Battery Life | 10 hours continuous |
+| Item Handling | 5,000+ SKU types |
+
+### Galbot S1
+
+Industrial heavy-duty robot (launched 2025):
+
+| Specification | Value |
+|---------------|-------|
+| Payload | 50kg (continuous dual-arm) |
+| Application | Manufacturing, heavy industry |
 
 ---
 
@@ -33,11 +66,16 @@ Galbot is a China-based full-stack robotics unicorn that achieved the first larg
 
 | Metric | Value |
 |--------|-------|
-| Galbot Store | 10+ Chinese cities |
-| Smart Pharmacy Warehouses | 30+ fully unmanned |
+| Galbot Store | 30+ Chinese cities |
+| Smart Pharmacy/Warehouses | 30+ fully unmanned |
 | Workers per warehouse | 0 |
 | MTBF | 1 month+ |
-| Continuous operation | 6 hours/charge |
+| Continuous operation | 10 hours/charge |
+
+### Key Partnerships
+
+- **Manufacturing**: CATL, Bosch, Toyota, Hyundai
+- **Healthcare**: Xuanwu Hospital (patient rooms, pharmacies, guidance systems)
 
 ### GraspVLA Performance (LIBERO Zero-shot)
 
@@ -179,7 +217,7 @@ Sim2Real Transfer (1B frames convergence)
 
 | Item | Galbot | Physical Intelligence | Figure |
 |------|--------|----------------------|--------|
-| Deployment Scale | **10+ cities + 30+ warehouses** | Research demo | Research demo |
+| Deployment Scale | **30+ cities + 30+ warehouses** | Research demo | Research demo |
 | Data Strategy | 99% synthetic | Cross-embodiment real | VLA (Helix) |
 | Strength | Only commercial deployment | Pursuing generality | Industrial optimization |
 | Weakness | Grasping-specialized | Weak zero-shot | No consumer support |
@@ -198,7 +236,7 @@ Sim2Real Transfer (1B frames convergence)
 
 ## See Also
 
-- [Company List](index)
-- [Physical Intelligence](physical-intelligence)
-- [π0](../models/pi0) - Comparison VLA model
+- [Company List](./)
+- [Physical Intelligence](./physical-intelligence)
+- [pi0](../models/pi0) - Comparison VLA model
 - [Diffusion Policy](../models/diffusion-policy)

@@ -59,23 +59,36 @@ The adaptive grasping function based on linear servo drives enables safe manipul
 
 | Model | Features | Main Applications | Source |
 |-------|----------|-------------------|--------|
-| **RH56BFX** | High-speed movement, precision interaction ("The Pianist") | Precision manipulation, musical instrument demonstration | [^1] |
-| **RH56DFX** | Strong grip, moderate speed, integrated force sensors | Grasping tasks, prosthetics | [^1] |
+| **RH56BFX** | High-speed movement (thumb 235°/s, fingers 570°/s), precision interaction ("The Pianist") | Piano playing, gesture interaction | [^1] |
+| **RH56DFX** | Strong grip (thumb 15N), moderate speed, integrated force sensors | Grasping tasks, prosthetics | [^1] |
+
+#### RH56BFX Detailed Specs
+
+| Item | Spec | Source |
+|------|------|--------|
+| Thumb Grip Force | 6N | [^2] |
+| Finger Grip Force | 4N | [^2] |
+| Thumb Rotation Speed | 235°/s | [^2] |
+| Thumb Flexion Speed | 150°/s | [^2] |
+| Finger Flexion Speed | 570°/s | [^2] |
+| Force Resolution | 0.5N | [^2] |
+| Communication | RS485 | [^2] |
 
 #### RH56DFX Detailed Specs
 
 | Item | Spec | Source |
 |------|------|--------|
-| Thumb Grip Force | 15N | [^3] |
-| Palm Grip Force | 10N | [^3] |
-| Thumb Rotation | >65 degrees @ 107 deg/s | [^3] |
-| Thumb Flexion Speed | 70 deg/s | [^3] |
-| Finger Flexion Speed | 260 deg/s | [^3] |
-| Weight | 540g | [^2] |
+| Thumb Grip Force | 15N | [^2][^3] |
+| Finger Grip Force | 10N | [^2][^3] |
+| Thumb Rotation | >65° @ 107°/s | [^2][^3] |
+| Thumb Flexion Speed | 70°/s | [^2][^3] |
+| Finger Flexion Speed | 260°/s | [^2][^3] |
+| Weight | 540g (standard) / 790g (enhanced) | [^7] |
 | Operating Voltage | DC24V ±10% | [^2] |
 | Idle Current | 0.2A | [^2] |
-| Max Current | 2A | [^2] |
+| Max Current | 2A (standard) / 4A (enhanced) | [^2][^7] |
 | Communication | RS485 | [^2] |
+| Force Resolution | 0.5N | [^2] |
 
 ### F1 Series (Advanced)
 
@@ -83,18 +96,32 @@ The F1 series is a premium line with significantly enhanced structural rigidity 
 
 | Item | Spec | Source |
 |------|------|--------|
-| Communication | 1kHz high-speed real-time (EtherCAT + RS485) | [^1] |
-| Static Passive Load | 30kg | [^1] |
-| Fingertip Grip Force | 15N | [^1] |
-| Sensors | 24 multi-dimensional (tactile/force/position/temperature) | [^1] |
+| Communication | 1kHz high-speed real-time (EtherCAT + RS485) | [^1][^8] |
+| Static Passive Load | 30kg | [^1][^8] |
+| Thumb Grip Force | ≥15N | [^8] |
+| Finger Grip Force | ≥10N | [^8] |
+| Force Resolution | 0.1N | [^8] |
+| Sensors | 24 multi-dimensional (tactile/force/position/temperature) | [^1][^8] |
+| Tactile Sensors | 6 (measurement range 30N, accuracy 5% FS) | [^8] |
 | Degrees of Freedom | 6 DoF | [^1] |
 | Number of Joints | 12 | [^1] |
 | Weight | 620 ± 10g | [^1] |
 | Operating Voltage | 24V - 48V | [^1] |
-| Idle Current (RS485) | 194 ± 10mA @ 24V | [^1] |
-| Idle Current (EtherCAT) | 210 ± 10mA @ 24V | [^1] |
-| Max Current | 5A | [^1] |
+| Idle Current (RS485) | 194 ± 10mA @ 24V | [^1][^8] |
+| Idle Current (EtherCAT) | 210 ± 10mA @ 24V | [^1][^8] |
+| Max Current | 5A @ 24V | [^1][^8] |
+| Hand Closing Time | ≤0.8s | [^8] |
 | Quality Testing | Passed 20 standardized tests | [^1] |
+
+#### F1 Series Motion Specs
+
+| Item | Spec | Source |
+|------|------|--------|
+| Thumb Lateral Rotation Range | 56° - 180° | [^8] |
+| Thumb Lateral Rotation Speed | >155°/s | [^8] |
+| Thumb Flexion Speed | >37°/s | [^8] |
+| Finger Flexion Speed | >107°/s | [^8] |
+| Fingertip Repeat Positioning Accuracy | ±0.2mm | [^8] |
 
 #### F1 Series Key Features
 
@@ -204,6 +231,8 @@ git clone https://github.com/unitreerobotics/DFX_inspire_service
 [^4]: Shadow Robot Company. "Shadow Dexterous Hand Technical Specification." https://www.shadowrobot.com/wp-content/uploads/2022/03/shadow_dexterous_hand_e_technical_specification.pdf
 [^5]: PSYONIC. "Ability Hand." https://www.psyonic.io/ability-hand
 [^6]: Unitree Robotics. "Dexterous Hand - H1 Developer Documentation." https://support.unitree.com/home/en/H1_developer/Dexterous_hand
+[^7]: Multiple Distributors. RH56DFX Specifications (540g/790g variants). https://rcdrone.top/products/inspire-robots-rh56dfx-dexterous-robot-hand
+[^8]: US Robot Store. "Inspire Robots RH56F1 - 5-Finger Robotic Dexterous Hand." https://www.usrobotstore.com/products/inspire-robots-rh56f1-5-finger-robotic-dexterous-hand
 
 ### Additional References
 
@@ -214,6 +243,6 @@ git clone https://github.com/unitreerobotics/DFX_inspire_service
 
 ## See Also
 
-- [Hardware List](../index)
-- [Ability Hand](ability)
-- [Shadow Dexterous Hand](shadow-hand)
+- [Hardware List](../)
+- [Ability Hand](./ability)
+- [Shadow Dexterous Hand](./shadow-hand)

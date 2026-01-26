@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Galaxea Arms (A1/A1X/A1Y)
@@ -58,7 +58,7 @@ Galaxea Arms is a **force-controlled robot arm designed for Embodied AI research
 | Force Control | All joints | All joints | Limited |
 | Max Speed | 10 m/s | 1.5 m/s | 1 m/s |
 | Weight | 6kg | 18kg | 13.7kg |
-| Company Status | Active | Filed for insolvency in 2023 | Active |
+| Company Status | Active | Acquired by Agile Robots after 2023 insolvency | Active |
 
 **Galaxea A1 Differentiators**:
 - **Overwhelming Speed**: 5-10x faster end-effector speed compared to competitors, enabling high-speed manipulation research
@@ -77,15 +77,19 @@ Galaxea Arms is a **force-controlled robot arm designed for Embodied AI research
 | Headquarters | Beijing, China |
 | Valuation | $700M (as of 2025) |
 | Mission | "Serving 10 billion humans with 10 billion robots" |
-| Key Investors | Meituan, IDG Capital, Ant Group, Baidu Ventures |
-| Major Customers | Huawei, Volkswagen, Samsung, ByteDance, Stanford, MIT, Physical Intelligence |
+| Cumulative Funding | ~$210M (A4/A5 rounds combined $100M+) |
+| Key Investors | Capital Today, Meituan (Long-Z Investments), Ant Group, IDG Capital, Baidu Ventures, GL Ventures, FunPlus, and 18 other institutions |
+| Major Customers | Huawei Cloud, Volkswagen, Haier, Samsung, ByteDance, Physical Intelligence, Stanford, MIT, and 40+ others |
+| Employees | 120 (2025), targeting 200 by year-end |
 
-Galaxea AI is an Embodied AI company founded by scientists from Tsinghua University and Stanford University. CEO **Jiyang Gao (高继扬)** has autonomous driving experience from Waymo and Momenta, while co-founder **Huazhe Xu** completed his PhD at UC Berkeley, postdoc at Stanford, and is currently an assistant professor at Tsinghua University.
+Galaxea AI is an Embodied AI company founded by scientists from Tsinghua University and Stanford University. The founding team consists of 4 members (Jiyang Gao, Hang Zhao, Tianwei Li, Huazhe Xu), with 3 of them being Tsinghua alumni. CEO **Jiyang Gao (高继扬)**, born in 1992, graduated from Tsinghua University's Department of Electronic Engineering, completed his PhD in computer vision at USC, and gained experience through internships at Google and SenseTime before working on autonomous driving at Waymo and Momenta. Co-founder and Co-Chief Science Officer **Huazhe Xu** completed his PhD at UC Berkeley, postdoc at Stanford, and is currently an assistant professor at Tsinghua University's Institute for Interdisciplinary Information Sciences (IIIS), leading the Embodied AI Laboratory (TEA Lab). He is also a winner of the CoRL'23 Best System Paper Award.
 
 **Core Capabilities**:
 - Full lineup of robot arms (A-Series), grippers (G-Series), and humanoids (R-Series)
 - **G0 VLA Model**: Self-developed Vision-Language-Action model
 - **Open-World Dataset**: Over 500 hours of real-world manipulation data
+- **R1 Humanoid**: Priced $44,500 ~ $64,000, targeting 1,000 unit shipments by end of 2025
+- **Bipedal Humanoid**: Planned for 2026 release
 
 ---
 
@@ -213,7 +217,8 @@ The core differentiator of Galaxea Arms is **all-joint force control capability*
 | Number of Joints | 12 |
 | Weight | 540 g |
 | Repeatability | 0.20 mm |
-| Finger Grip Force | 10 N (max) |
+| Thumb Grip Force | 15 N (max) |
+| Palm Finger Force | 100 N (max) |
 
 ---
 

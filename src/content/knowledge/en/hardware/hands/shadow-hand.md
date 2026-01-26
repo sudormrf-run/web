@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Shadow Dexterous Hand
@@ -28,10 +28,10 @@ lastEditedAt: 2026-01-15
 |------|------|--------|
 | Manufacturer | Shadow Robot Company (London, UK) | [^1] |
 | Founded | 1987 | [^1] |
-| Commercialized | 2005 | [^2] |
+| Commercialized | Around 2004 (transition from prototype to product) | [^2] |
 | DoF | 20 degrees of freedom, 24 movements | [^3] |
 | Motors | 20 | [^3] |
-| Sensors | 129+ (up to 1kHz sampling) | [^3] |
+| Sensors | 100+ (up to 1kHz sampling) | [^3] |
 | Drive Method | Tendon-driven | [^3] |
 | Communication | EtherCAT (100Mbps) | [^3] |
 | Software | Full ROS integration | [^3] |
@@ -45,7 +45,7 @@ lastEditedAt: 2026-01-15
 
 - **Highest Level DoF**: One of the few robot hands on the market offering 24 movements and 20 DoF [^3]
 - **Human-Hand-Like Structure**: High flexibility with each finger able to move laterally independently [^3]
-- **Long Track Record**: Since commercialization in 2005, adopted by major research institutions including NASA, OpenAI, Google DeepMind, and Carnegie Mellon [^2]
+- **Long Track Record**: Since commercialization around 2004, adopted by major research institutions including NASA, OpenAI, Google DeepMind, and Carnegie Mellon [^2]
 - **Major Platform for AI/ML Research**: Widely used in reinforcement learning-based dexterous manipulation research [^5][^6]
 
 ---
@@ -63,7 +63,7 @@ The core philosophy of Shadow Hand is **faithfully reproducing the anatomical st
 - Continuous force transmission from wrist to fingertips
 
 **Sensor Architecture**
-- 129+ sensors mimic human hand proprioception and tactile sense [^3]
+- 100+ sensors mimic human hand proprioception and tactile sense [^3]
 - Provides various sensory information including position, force, and temperature
 - High-speed sampling up to 1kHz enables real-time control
 
@@ -94,9 +94,9 @@ The core philosophy of Shadow Hand is **faithfully reproducing the anatomical st
 | Force Sensors | Measures tendon tension |
 
 **BioTac Sensor Details** [^7]
-- 24 taxels (tactile elements)
+- 19 impedance-sensing electrodes (BioTac Classic) or 24 (BioTac SP)
 - 100Hz sampling
-- Overall fluid pressure and temperature change detection
+- Fluid pressure (pdc), vibration (pac), temperature (tdc/tac) detection
 - Form and mechanical properties similar to human fingertips
 
 ### Communication and Interface [^3]
@@ -115,7 +115,7 @@ The core philosophy of Shadow Hand is **faithfully reproducing the anatomical st
 
 - 24 movements, 20 DoF
 - 5-finger structure
-- 129+ sensors
+- 100+ sensors
 - ROS integration
 - Price: Approximately 110,000 euros (approximately $180,000 with BioTac, as of 2023) [^4]
 
@@ -202,11 +202,11 @@ DEX-EE was developed over 5 years at Google DeepMind's request, a **next-generat
 
 | Item | Details | Source |
 |------|---------|--------|
-| Founded | 1987 (Richard Greenhill, started in London attic) | [^1] |
-| Official Registration | 1997 (triggered by robot leg component commission) | [^2] |
+| Founded | 1987 (Richard Greenhill, started as hobby group in home attic in London) | [^1] |
+| Official Registration | January 27, 1997 (triggered by robot leg component commission) | [^2] |
 | Headquarters | London, UK | [^1] |
 | Branches | Bristol, Madrid | [^1] |
-| Notable | One of the UK's longest-running robot companies | [^1] |
+| Notable | Britain's longest-running robot company | [^1] |
 
 **Major Customers**: NASA, ESA, OpenAI, Google DeepMind, Carnegie Mellon, UCL, University of Bielefeld, GSK, etc. (per official site and Wikipedia) [^1][^2]
 
@@ -214,10 +214,10 @@ DEX-EE was developed over 5 years at Google DeepMind's request, a **next-generat
 
 ## See Also
 
-- [Hardware List](../index)
-- [LEAP Hand](leap-hand) - Low-cost open-source alternative to Shadow Hand
-- [Allegro Hand](allegro)
-- [GEX Series](gex)
+- [Hardware List](../)
+- [LEAP Hand](./leap-hand) - Low-cost open-source alternative to Shadow Hand
+- [Allegro Hand](./allegro)
+- [GEX Series](./gex)
 
 ---
 

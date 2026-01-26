@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "definition"
             }
+          },
+          {
+            "id": "a0aba6058c041f08",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.5"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.11.5"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -183,7 +196,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "5ae9a1430a1df75f",
+  "active": "a0aba6058c041f08",
   "lastOpenFiles": [
     "companies/boston-dynamics.md",
     "physical-ai/index.md",

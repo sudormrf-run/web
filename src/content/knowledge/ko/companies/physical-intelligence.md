@@ -11,39 +11,48 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Overview
 
-Physical Intelligence (π)는 2024년 설립된 로보틱스 AI 스타트업으로, 범용 로봇 foundation model을 개발합니다. Google DeepMind, OpenAI, Stanford 출신 팀이 설립했으며, 역대 최대 규모의 로보틱스 시드 펀딩을 받았습니다.
+Physical Intelligence (π)는 2024년 설립된 로보틱스 AI 스타트업으로, 범용 로봇 foundation model을 개발합니다. Google DeepMind, UC Berkeley, Stanford 출신 팀이 설립했으며, 역대 최대 규모의 로보틱스 시드 펀딩을 받았습니다.
 
 | 항목 | 내용 |
 |------|------|
 | 본사 | San Francisco, CA |
 | 설립 | 2024년 3월 |
 | CEO | Karol Hausman (前 Google DeepMind) |
-| 펀딩 | $400M+ (시드: $70M, 시리즈 A: $400M) |
-| 기업가치 | $2.4B (2024년 11월 기준) |
+| 펀딩 | $1.07B (시드: $70M, 시리즈 A: $400M, 시리즈 B: $600M) |
+| 기업가치 | $5.6B (2025년 11월 기준) |
 
 ---
 
 ## 창업팀
 
-### 공동 창업자
+### 공동 창업자 (7명)
 
 | 이름 | 이전 경력 | 역할 |
 |------|-----------|------|
-| Karol Hausman | Google DeepMind (RT-2) | CEO |
-| Sergey Levine | UC Berkeley (RL 전문가) | Chief Scientist |
-| Chelsea Finn | Stanford (MAML, Meta-learning) | Research |
+| Karol Hausman | Google DeepMind (RT-2), Stanford 겸임교수 | CEO |
+| Sergey Levine | UC Berkeley 교수 (RL 전문가) | Chief Scientist |
+| Chelsea Finn | Stanford 교수 (MAML, Meta-learning) | Research |
 | Brian Ichter | Google DeepMind (RT-2) | Research |
+| Lachy Groom | Stripe (前 Head of Stripe Issuing) | Business/Product |
+| Adnan Esmail | Anduril (前 Head of Electrical Systems), MIT | Engineering |
+| Quan Vuong | Robotics/RL 연구자 | Research |
 
 ### 주요 투자자
 
+**시드/시리즈 A:**
 - Thrive Capital, Lux Capital
 - Khosla Ventures, OpenAI
-- Jeff Bezos, Sequoia
+- Jeff Bezos, Sequoia, Bond
+
+**시리즈 B:**
+- CapitalG (리드), Lux Capital
+- Redpoint Ventures, Sequoia Capital
+- T. Rowe Price, NVIDIA (NVentures)
 
 ---
 
@@ -53,10 +62,10 @@ Physical Intelligence (π)는 2024년 설립된 로보틱스 AI 스타트업으�
 
 | 항목 | 내용 |
 |------|------|
-| 파라미터 | 3.3B |
+| 파라미터 | 3B (30억) |
 | 아키텍처 | PaliGemma + Flow Matching |
 | 핵심 기술 | Action Expert with Flow Matching |
-| 오픈소스 | 2025년 공개 |
+| 오픈소스 | 2025년 2월 4일 공개 (openpi) |
 
 ### Flow Matching 방식
 
@@ -73,7 +82,8 @@ Diffusion 대신 **Flow Matching** 사용:
 
 ### 성능
 
-- 51개 태스크, 20개 로봇 구성에서 학습
+- 68개 태스크, 7개 로봇 embodiment에서 학습
+- 10,000시간 이상의 실제 로봇 데이터로 훈련
 - Zero-shot 일반화 능력 보유
 - 단일 로봇 policy 대비 우수한 성능
 
@@ -118,10 +128,12 @@ Physical Intelligence 목표 = 로보틱스에 동일 접근 적용
 
 | 시기 | 마일스톤 |
 |------|----------|
-| 2024.03 | 회사 설립 |
+| 2024.03 | 회사 설립, $70M 시드 펀딩 |
 | 2024.10 | pi0 공개 |
-| 2024.11 | $400M 시리즈 A |
-| 2025 | pi0 오픈소스 공개 |
+| 2024.11 | $400M 시리즈 A ($2.4B 기업가치) |
+| 2025.02 | pi0 오픈소스 공개 (openpi) |
+| 2025 | pi0.5 공개 (open-world 일반화) |
+| 2025.11 | pi0.6 공개, $600M 시리즈 B ($5.6B 기업가치) |
 | 2025+ | 상업적 배포 |
 
 ---
@@ -131,7 +143,9 @@ Physical Intelligence 목표 = 로보틱스에 동일 접근 적용
 - [Physical Intelligence Website](https://www.physicalintelligence.company/)
 - [pi0 Paper](https://www.physicalintelligence.company/research/pi0)
 - [arXiv: pi0](https://arxiv.org/abs/2410.24164)
+- [GitHub: openpi](https://github.com/Physical-Intelligence/openpi)
 - [TechCrunch - $400M Funding](https://techcrunch.com/2024/11/04/physical-intelligence-400m-series-a/)
+- [Bloomberg - $600M Series B](https://www.bloomberg.com/news/articles/2025-11-20/robotics-startup-physical-intelligence-valued-at-5-6-billion-in-new-funding)
 
 ---
 

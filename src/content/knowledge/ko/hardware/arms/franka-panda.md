@@ -36,10 +36,10 @@ Franka Emika Panda는 독일 뮌헨에서 개발된 7축 협동 로봇(cobot)으
 | **제조사** | Franka Emika (독일, 현 Agile Robots) | Franka Emika |
 | **자유도 (DoF)** | 7축 | 7축 |
 | **페이로드** | 3 kg | 3 kg |
-| **리치** | 850 mm | 855 mm |
+| **리치** | 855 mm | 855 mm |
 | **반복정밀도** | ±0.1 mm | ±0.1 mm |
 | **최대 속도** | 2 m/s (엔드 이펙터) | 2 m/s |
-| **로봇 중량** | 18 kg | 18 kg |
+| **로봇 중량** | ~17.8 kg | ~17.8 kg |
 | **제어 주파수** | 1 kHz | 1 kHz |
 | **힘 분해능** | < 0.05 N | < 0.05 N |
 | **힘 정확도** | 0.8 N (상대) | 0.8 N |
@@ -52,7 +52,7 @@ Franka Emika Panda는 독일 뮌헨에서 개발된 7축 협동 로봇(cobot)으
 ## 핵심 의의
 
 ### 1. 연구용 로봇의 민주화
-Franka Panda는 출시 당시 약 $10,500의 혁신적 가격으로 고가의 산업용 로봇만 존재하던 시장에 파란을 일으켰다. 이로 인해 전 세계 대학과 연구소에서 정밀 매니퓰레이션 연구가 가능해졌으며, MIT, Stanford, Oxford Robotics Institute 등 세계적 연구기관이 표준 플랫폼으로 채택했다.
+Franka Panda는 출시 당시 약 $10,500 (€9,900)의 혁신적 가격으로 고가의 산업용 로봇만 존재하던 시장에 파란을 일으켰다 (2018년에는 약 $17,000로 인상). 이로 인해 전 세계 대학과 연구소에서 정밀 매니퓰레이션 연구가 가능해졌으며, MIT, Stanford, Oxford Robotics Institute 등 세계적 연구기관이 표준 플랫폼으로 채택했다.
 
 ### 2. VLA/로봇 학습의 데이터 수집 표준
 Open X-Embodiment, DROID, BridgeData 등 대규모 로봇 학습 데이터셋의 핵심 수집 플랫폼으로 활용되며, OpenVLA, RT-X, Octo 등 최신 VLA 모델 학습의 근간이 되었다.
@@ -72,7 +72,7 @@ Franka Emika의 창립자 Sami Haddadin과 Simon Haddadin 형제는 **"인간과
 
 1. **인간 중심 설계 (Human-Centric Design)**
    - 7축 설계로 인간 팔과 유사한 운동학적 구조 구현
-   - 인간 팔 무게(약 5kg)의 3.6배 수준인 18kg 경량 설계
+   - 인간 팔 무게(약 5kg)의 약 3.6배 수준인 ~17.8kg 경량 설계
    - 협동 로봇으로 설계되어 적절한 위험성 평가 및 안전 설정 시 인간 근접 작업 가능 (ISO 10218, ISO/TS 15066 준수 필요)
 
 2. **촉각 감각의 구현**
@@ -183,7 +183,7 @@ Franka Panda는 VLA(Vision-Language-Action) 모델 연구에서 가장 널리 �
 |------|--------------|------|--------|----------|
 | **DoF** | 7 | 6 | 7 | 7 |
 | **페이로드** | 3 kg | 5 kg | 4 kg | 7 kg |
-| **리치** | 850 mm | 850 mm | 1,260 mm | 800 mm |
+| **리치** | 855 mm | 850 mm | 1,260 mm | 800 mm |
 | **반복정밀도** | ±0.1 mm | ±0.03 mm | ±0.1 mm | ±0.1 mm |
 | **토크 센서** | 모든 관절 | 없음 | 관절당 | 모든 관절 |
 | **힘 제어** | 네이티브 | 외부 F/T 필요 | 제한적 | 네이티브 |
@@ -206,7 +206,7 @@ Franka Panda는 VLA(Vision-Language-Action) 모델 연구에서 가장 널리 �
 ### 창업팀
 
 - **Sami Haddadin**: 공동 창업자, 로봇공학/AI 교수 (TUM MIRMI 설립 책임자, 2018-2025)
-- **Simon Haddadin**: 공동 창업자, CEO (의사 출신, DLR 연구원)
+- **Simon Haddadin**: 공동 창업자, CEO (의학박사, 전 DLR 연구원, 2016년 의료계에서 전향)
 - **Sven Parusel**: 공동 창업자
 
 ### 주요 연혁
@@ -215,11 +215,11 @@ Franka Panda는 VLA(Vision-Language-Action) 모델 연구에서 가장 널리 �
 |------|------|
 | 2016 | Franka Emika GmbH 설립 (뮌헨) |
 | 2017 | 독일 미래상(Deutscher Zukunftspreis) 수상 |
-| 2018 | Time "50 Best Inventions" 선정, 첫 해 2,000대 출하 |
+| 2018 | Time "50 Best Inventions" 선정 (표지 게재), 연말까지 약 2,500대 출하 |
 | 2020 | National Geographic 특집 |
 | 2022 | Franka Research 3 (FR3) 출시 |
 | 2023.08 | 주주 분쟁으로 예비 파산 신청 |
-| 2023.11 | Agile Robots AG에 인수 (약 3,200만 유로) |
+| 2023.11 | Agile Robots AG에 인수 (비공개 금액, 언론 보도 약 2,850만~3,300만 유로) |
 
 ### 현재 상태 (2024-2025)
 

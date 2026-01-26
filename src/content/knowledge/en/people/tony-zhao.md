@@ -1,7 +1,7 @@
 ---
 title: Tony Zhao
-description: ACT & ALOHA Lead Author, Physical Intelligence
-tags: [tony-zhao, stanford, physical-intelligence, act, aloha]
+description: ACT & ALOHA Lead Author, Sunday Robotics Co-founder/CEO
+tags: [tony-zhao, stanford, sunday-robotics, act, aloha]
 category: people
 
 # Authorship
@@ -11,17 +11,18 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Profile
 
 | Field | Details |
 |-------|---------|
-| Current Position | Physical Intelligence |
-| Previous | Stanford University PhD |
-| Advisor | Chelsea Finn |
-| Undergraduate | UC Berkeley |
+| Current Position | Sunday Robotics Co-founder/CEO |
+| Previous | Stanford University PhD program (dropped out) |
+| Advisor | Chelsea Finn (IRIS Lab) |
+| Undergraduate | UC Berkeley EECS (2021) |
+| Undergrad Advisors | Sergey Levine, Dan Klein |
 
 ---
 
@@ -30,29 +31,39 @@ lastEditedAt: 2026-01-15
 - **ACT Lead Author**: Action Chunking with Transformers, precise manipulation from 10-minute demonstrations
 - **ALOHA Design**: $20K low-cost bimanual robot system
 - **Mobile ALOHA**: Mobile bimanual robot
+- **Sunday Robotics**: Home robot Memo development
 - **Open-Source Contributions**: Full code and hardware design release
 
 ---
 
 ## Research Timeline
 
-### Stanford PhD (2020-2024)
+### UC Berkeley (2017-2021)
 
-**Advised by Chelsea Finn**
+**Advised by Sergey Levine, Dan Klein**
 
 | Year | Work | Impact |
 |------|------|--------|
-| 2021 | PhD Started | IRIS Lab |
+| 2021 | EECS Bachelor's | AI/ML research foundation |
+
+### Stanford PhD Program (2021-2024)
+
+**Advised by Chelsea Finn (IRIS Lab)**
+
+| Year | Work | Impact |
+|------|------|--------|
+| 2021 | PhD Started | IRIS Lab, Stanford Robotics Fellowship (2022-23) |
 | 2023 | **ACT** | Action Chunking, learning from 10-minute demonstrations |
-| 2023 | **ALOHA** | $20K bimanual system |
-| 2024 | **Mobile ALOHA** | Mobile bimanual robot |
-| 2024 | PhD Graduation | |
+| 2023 | **ALOHA** | $20K bimanual system (RSS 2023) |
+| 2024 | **Mobile ALOHA** | Mobile bimanual robot (CoRL 2024) |
+| 2024 | Dropped out of PhD | Founded Sunday Robotics |
 
-### Physical Intelligence (2024-present)
+### Sunday Robotics (2024-present)
 
 | Year | Work | Impact |
 |------|------|--------|
-| 2024 | Joined Physical Intelligence | Participating in pi0 development |
+| 2024 | Co-founded Sunday Robotics | CEO alongside Cheng Chi (CTO) |
+| 2025 | **Memo** launch | Home robot, $35M funding raised |
 
 ---
 
@@ -137,10 +148,12 @@ Features:
 ## Links
 
 - [Personal Website](https://tonyzhaozh.github.io/)
+- [Sunday Robotics](https://sunday.ai/)
 - [ALOHA Project](https://tonyzhaozh.github.io/aloha/)
 - [Mobile ALOHA](https://mobile-aloha.github.io/)
+- [X (Twitter)](https://x.com/tonyzzhao)
 - [GitHub](https://github.com/tonyzhaozh)
-- [Google Scholar](https://scholar.google.com/citations?user=XXXXXXXXX)
+- [Google Scholar](https://scholar.google.com/citations?user=2IXVwTMAAAAJ)
 
 ---
 
@@ -148,4 +161,3 @@ Features:
 
 - [ACT](../models/act)
 - [Chelsea Finn](chelsea-finn)
-- [Physical Intelligence](../companies/physical-intelligence)

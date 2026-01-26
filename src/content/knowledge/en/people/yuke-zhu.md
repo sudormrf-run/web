@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: Jonghyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-20
+lastEditedAt: 2026-01-26
 ---
 
 ## Key Significance
@@ -29,7 +29,7 @@ Yuke Zhu is a leading researcher in **Robot Learning** and **Embodied AI**.
 
 | Item | Details |
 |------|---------|
-| Position | Associate Professor, UT Austin |
+| Position | Associate Professor, UT Austin (2025-), Assistant Professor (2020-2025) |
 | Affiliation | NVIDIA Research Director & Distinguished Research Scientist |
 | Team | GEAR Lab (Generalist Embodied Agent Research) Co-Lead |
 | Lab | RPL Lab (Robot Perception and Learning Lab) |
@@ -64,7 +64,8 @@ Yuke Zhu is a leading researcher in **Robot Learning** and **Embodied AI**.
 
 ### UT Austin (2020-present)
 
-**Associate Professor, Computer Science**
+**Associate Professor, Computer Science** (2025-)
+**Assistant Professor** (2020-2025)
 
 | Year | Work | Impact |
 |------|------|--------|

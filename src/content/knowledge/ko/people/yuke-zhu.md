@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-20
+lastEditedAt: 2026-01-26
 ---
 
 ## 핵심 의의
@@ -29,7 +29,7 @@ Yuke Zhu는 **로봇 학습(Robot Learning)**과 **구현된 인공지능(Embodi
 
 | 항목 | 내용 |
 |------|------|
-| 현직 | UT Austin 부교수 (Associate Professor) |
+| 현직 | UT Austin 부교수 (Associate Professor, 2025-), 조교수 (2020-2025) |
 | 소속 | NVIDIA Research Director & Distinguished Research Scientist |
 | 팀 | GEAR Lab (Generalist Embodied Agent Research) 공동 리드 |
 | 연구실 | RPL Lab (Robot Perception and Learning Lab) |
@@ -64,7 +64,8 @@ Yuke Zhu는 **로봇 학습(Robot Learning)**과 **구현된 인공지능(Embodi
 
 ### UT Austin (2020-present)
 
-**Associate Professor, Computer Science**
+**Associate Professor, Computer Science** (2025-)
+**Assistant Professor** (2020-2025)
 
 | Year | Work | Impact |
 |------|------|--------|

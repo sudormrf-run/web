@@ -39,7 +39,7 @@ lastEditedAt: 2026-01-15
 | 항목 | 내용 |
 |------|------|
 | 제조사 | Agility Robotics |
-| 본사 | Albany, Oregon / Pittsburgh, Pennsylvania |
+| 본사 | Corvallis, Oregon (본사) / Pittsburgh, Pennsylvania (지사) |
 | 설립 | 2015년 (Oregon State University 스핀오프) |
 | 시장 | 산업용, 물류, 창고 자동화 |
 | 주요 파트너 | Amazon, GXO Logistics |
@@ -60,9 +60,11 @@ Agility Robotics의 Digit은 **물류 환경에서 상용 배포된 초기 휴�
 
 | 창업자 | 역할 | 배경 |
 |--------|------|------|
-| Jonathan Hurst | Chief Robot Officer | Oregon State University 교수, CMU 박사 |
-| Damion Shelton | Chairman of the Board | CMU 박사, Hurst와 동문 |
+| Jonathan Hurst | Chief Robot Officer (CRO) | Oregon State University 교수, CMU 박사 |
+| Damion Shelton | Chairman (전 CEO, 2015-2024) | CMU 박사, Hurst와 동문 |
 | Mikhail Jones | VP of Software | Oregon State 졸업 |
+
+> 참고: 2024년 3월, Peggy Johnson이 CEO로 취임하여 현재 회사를 이끌고 있다. Johnson은 전 Magic Leap CEO이자 Microsoft 임원 출신이다.
 
 Agility Robotics는 2015년 Oregon State University의 **Dynamic Robotics Lab**에서 스핀오프되었다 [^3]. 창업자 Jonathan Hurst는 CMU에서 로보틱스 박사학위를 취득한 후 OSU에서 **족보행(legged locomotion)**의 물리학을 연구했으며, OSU Robotics Institute를 공동 설립했다.
 
@@ -85,10 +87,11 @@ Cassie는 Agility의 첫 번째 로봇으로, **타조와 화식조(cassowary)**
 
 | 버전 | 시기 | 주요 특징 | 출처 |
 |------|------|----------|------|
-| Digit V1 | 2019 | 최초 휴머노이드 버전, 상체/팔 추가 | [^3] |
-| Digit V2 | 2020-2021 | Ford와 라스트마일 배송 연구 협력 (보고됨) | [^3] |
-| Digit (상용) | 2023 | 물류 특화 설계, 개선된 End Effector | [^10] |
-| Digit (차세대) | 2024 | 배터리 확장, 페이로드 증가 | [^6] |
+| Digit V1 | 2019.02 | 최초 휴머노이드 버전, 상체/팔 추가, Cassie 기반 | [^3] |
+| Digit V2 | 2020.01 | Ford에 첫 상용 판매, 라스트마일 배송 연구 협력 | [^3][^17] |
+| Digit V3-V4 | 2023 | 물류 특화 설계, 개선된 End Effector, ProMat에서 공개 | [^10] |
+| Digit (2024) | 2024 | 배터리 확장 (4시간), 페이로드 증가 (23kg) | [^6] |
+| Digit V5 | 2025 말 (예정) | 차세대 버전, 추가 개선 예정 | [^3] |
 
 ---
 
@@ -111,19 +114,20 @@ Cassie는 Agility의 첫 번째 로봇으로, **타조와 화식조(cassowary)**
 | 버전 | DoF 구성 | 출처 |
 |------|----------|------|
 | 초기 | 16 DoF (다리 5x2 + 팔 3x2) | [^9] |
-| 상용 | 28 DoF | [^7] |
-| 최신 | 32 DoF (다리 6x2 + 팔 7x2 + 그리퍼 1x2 + 허리 2 + 목 2) | [^7] |
+| 중기 | 20 DoF | [^9] |
+| 상용 (2023+) | 28 DoF | [^7] |
 
-*DoF 구성은 버전별로 상이하며, 출처에 따라 수치가 다를 수 있음*
+*DoF 구성은 버전별로 상이하며, 출처에 따라 수치가 다를 수 있음. Agility 공식 발표에 따르면 현재 상용 버전은 28 DoF.*
 
 ### 배터리 및 전력
 
 | 항목 | 스펙 | 출처 |
 |------|------|------|
 | 배터리 타입 | Custom 1.2kWh Li-Po | [^7] |
-| 보행 시간 | 1.5시간 (초기) → 4시간 (2024년 버전) | [^6] |
-| 대기 시간 | 3시간 | [^7] |
-| 작업:충전 비율 | 4:1 (보고됨) | [^6] |
+| 작업 시간 | 3-5시간 (작업 강도에 따라 상이) | [^6][^7] |
+| 2024년 버전 | 최대 4시간 연속 작업 | [^6] |
+| 작업:충전 비율 | 4:1 (4분 작업 당 1분 충전) | [^6] |
+| 일일 운영 | 최대 16시간 (충전 휴식 포함, 3교대 가능) | [^6] |
 | 자율 도킹 | 지원 (2024년 추가) | [^6] |
 
 ### 센서 및 컴퓨팅
@@ -307,11 +311,12 @@ Digit은 **10만 개 이상의 토트 이동**을 달성하며 다음을 증명�
 [^14]: [OPB: Corvallis robotics company Salem factory](https://www.opb.org/article/2023/09/24/oregon-state-university-robotics-digit-technology-education-business/)
 [^15]: [Contrary Research: Agility Robotics 파트너십 분석](https://research.contrary.com/company/agility-robotics) - 제3자 분석
 [^16]: [Humanoid Robots 2025-2026 전망](https://www.winssolutions.org/humanoid-robots-2025-2026-reality-hype/) - 업계 분석
+[^17]: [Ford Digit 구매 발표](https://media.ford.com/content/fordmedia/fna/us/en/news/2020/01/06/agility-robotics-sell-first-digit-robots-to-ford.html) - Ford Media Center
 
 ---
 
 ## See Also
 
-- [하드웨어 목록](../index)
-- [Figure 휴머노이드](figure)
-- [Tesla Optimus](optimus)
+- [하드웨어 목록](./)
+- [Figure 휴머노이드](./figure)
+- [Tesla Optimus](./optimus)

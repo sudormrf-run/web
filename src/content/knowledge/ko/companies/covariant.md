@@ -11,18 +11,19 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-18
+lastEditedAt: 2026-01-26
 ---
 
 ## 개요
 
-Covariant는 2017년에 설립된 (원래 Embodied Intelligence) AI 로보틱스 회사로, 범용 로봇 AI를 개발하고 있습니다. 물류 및 창고 자동화에 집중하며, 글로벌 주요 소매업체 및 물류 회사에 배포되어 있습니다.
+Covariant는 2017년 10월에 설립된 (원래 Embodied Intelligence) AI 로보틱스 회사로, 범용 로봇 AI를 개발하고 있습니다. 2020년 1월 29일 스텔스 모드에서 공식 출시되었습니다. 물류 및 창고 자동화에 집중하며, 15개국 이상의 글로벌 주요 소매업체 및 물류 회사에 배포되어 있습니다.
 
 | 항목 | 내용 |
 |------|------|
 | 본사 | Emeryville, California |
-| 설립 | 2017년 |
+| 설립 | 2017년 10월 |
 | 원래 이름 | Embodied Intelligence |
+| 스텔스 출시 | 2020년 1월 29일 |
 | 총 펀딩 | $222M+ |
 | 주요 고객 | GXO Logistics, Otto Group, McKesson, Crate & Barrel |
 
@@ -39,7 +40,7 @@ Covariant는 2017년에 설립된 (원래 Embodied Intelligence) AI 로보틱스
 | Rocky Duan | 前 CTO | OpenAI, UC Berkeley |
 | Tianhao Zhang | 공동창업자 | UC Berkeley |
 
-*참고: 2024년 8월 Amazon이 Abbeel, Chen, Duan을 고용. 현재 Ted Stinson이 CEO로 활동 중.*
+*참고: 2024년 8월 Amazon이 Abbeel, Chen, Duan 및 직원 약 25%를 고용. 현재 Ted Stinson (前 COO)이 CEO로, Tianhao Zhang이 공동 리더로 활동 중.*
 
 ---
 
@@ -86,7 +87,7 @@ Covariant는 2017년에 설립된 (원래 Embodied Intelligence) AI 로보틱스
 - Capacity
 - Radial
 
-**26개 이상 고객**에 활성 배포
+**15개국 50개 이상 고객 및 파트너**와 협력하여 수백 대의 AI 로봇 배포
 
 ---
 
@@ -94,18 +95,19 @@ Covariant는 2017년에 설립된 (원래 Embodied Intelligence) AI 로보틱스
 
 | 시기 | 라운드 | 금액 | 리드 투자자 |
 |------|--------|------|-------------|
-| 2017 | Seed | - | Lux Capital, Amplify Partners |
-| 2018 | Series A | - | Samsung NEXT |
-| 2020 | Series B | $40M | Index Ventures |
-| 2021 | Series C-1 | $80M | Index Ventures, Radical Ventures |
-| 2023 | Series C-2 | $75M | Radical Ventures, Index Ventures |
+| 2017.11 | Seed | $7M | Amplify Partners, Lux Capital |
+| 2018.06 | Series A | $20M | Samsung NEXT |
+| 2020.05 | Series B | $40M | Index Ventures |
+| 2021.07 | Series C-1 | $80M | Index Ventures |
+| 2023.04 | Series C-2 | $75M | Radical Ventures, Index Ventures |
 
 **총 펀딩**: $222M+
 
-### Amazon 딜 (2024)
+### Amazon 딜 (2024년 8월)
 
-- 기술 라이선싱 계약: $380M + $20M 추가
-- 주요 창업자 (Abbeel, Chen, Duan) Amazon 합류
+- 기술 라이선싱 계약: $380M + $20M 추가 (비독점적 라이선스)
+- 주요 창업자 (Abbeel, Chen, Duan) 및 직원 약 25% Amazon 합류
+- Covariant는 Ted Stinson (CEO)과 Tianhao Zhang 리더십 하에 독립 운영 지속
 
 ---
 

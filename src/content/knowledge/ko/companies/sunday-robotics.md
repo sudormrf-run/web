@@ -11,16 +11,16 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Overview
 
-Sunday Robotics는 Stanford PhD 출신 Tony Zhao (ACT 논문 저자)와 Cheng Chi (Diffusion Policy 저자)가 공동 설립한 스타트업입니다. **로봇 데이터 없이** 인간 동작 데이터만으로 학습하는 혁신적 접근법으로 주목받고 있습니다.
+Sunday는 Tony Zhao (ACT 논문 저자, Stanford 박사과정 중퇴)와 Cheng Chi (Diffusion Policy 저자, Columbia/Stanford 박사과정)가 공동 설립한 스타트업입니다. **로봇 데이터 없이** 인간 동작 데이터만으로 학습하는 혁신적 접근법으로 주목받고 있습니다.
 
 | 항목 | 내용 |
 |------|------|
-| 본사 | San Francisco, CA |
+| 본사 | Mountain View, CA |
 | 설립 | 2024년 |
 | 공동 창업자 | Tony Zhao (CEO), Cheng Chi (CTO) |
 | 펀딩 | $35M (Benchmark, Conviction) |
@@ -32,14 +32,17 @@ Sunday Robotics는 Stanford PhD 출신 Tony Zhao (ACT 논문 저자)와 Cheng Ch
 
 ### Tony Zhao (CEO)
 
-- Stanford PhD
-- ACT (Action Chunking with Transformers) 논문 저자
-- ALOHA 로봇 시스템 개발
+- Stanford 박사과정 (Chelsea Finn 지도, 2024년 중퇴)
+- UC Berkeley EECS 학사 (2021)
+- ACT (Action Chunking with Transformers) 논문 제1저자
+- ALOHA / Mobile ALOHA 로봇 시스템 개발
+- 이전 경력: DeepMind, Tesla, GoogleX
 
 ### Cheng Chi (CTO)
 
-- Stanford PhD
-- Diffusion Policy 논문 저자
+- Columbia 박사과정 시작 → Stanford로 이동 (Shuran Song 지도)
+- Diffusion Policy 논문 제1저자
+- UMI (Universal Manipulation Interface) 개발
 - 로보틱스 AI 학습 전문가
 
 ---

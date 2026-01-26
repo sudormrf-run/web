@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Key Significance
@@ -58,7 +58,7 @@ Mobile ALOHA is a low-cost whole-body teleoperation system developed by Stanford
 | Motors | 150W brushless servo x 2 |
 | Max Speed | 1.6 m/s (human walking speed) |
 | Payload | 100 kg |
-| Size (L x W x H) | 702 x 610 x 169 mm |
+| Size (L x W x H) | 660 x 516 x 163.5 mm |
 | Ground Clearance | 30 mm |
 | Obstacle Crossing | 10 mm height, 8 degree slope |
 | Operating Time | Up to 4 hours (100kg load) |
@@ -112,6 +112,13 @@ Mobile ALOHA is a low-cost whole-body teleoperation system developed by Stanford
 | Weight | 14 kg |
 | Position | Bottom of base (doubles as counterweight) |
 | Features | Untethered wireless operation |
+
+### Base Weight
+
+| Item | Spec |
+|------|------|
+| AgileX Tracer Weight | 30 kg |
+| Battery Weight | 14 kg |
 
 ---
 
@@ -209,10 +216,10 @@ Static data: 14-DoF actions (base velocity padded with 0)
 
 | Task | Success Rate | Description |
 |------|--------------|-------------|
-| Wipe Wine | **95%** | Wipe wine spill |
+| Wipe Wine | **100%** | Wipe wine spill |
 | Call Elevator | **95%** | Call elevator and board |
 | Use Cabinet | **85%** | Open wall cabinet and store pot |
-| High Five | **85%** | High five |
+| High Five | **85%** | High five (20 demos) |
 | Rinse Pan | **80%** | Rinse pan at kitchen sink |
 | Push Chairs | **80%** | Organize chairs |
 | Cook Shrimp | **40%** | Stir-fry shrimp (75 sec, only 20 demos used) |
@@ -309,12 +316,14 @@ Static data: 14-DoF actions (base velocity padded with 0)
 
 ## Subsequent Developments
 
-### ALOHA 2 (Google DeepMind, 2024)
+### ALOHA 2 (Google DeepMind, Stanford, Hoku Labs, 2024)
 
-Google DeepMind announced improved hardware version:
-- Improved rigidity and precision
-- Improved gripper design
-- Better cable management
+Improved version jointly developed by Google DeepMind, Stanford, and Hoku Labs:
+- **Gripper Operation Force Reduction**: Leader arm gripper force requirement 14.68N to 0.84N (10x reduction)
+- **2x Gripper Strength**: Follower gripper max gripping force 12.8N to 27.9N
+- **Material Upgrade**: PLA/acrylic to 3D-printed carbon fiber nylon
+- **Passive Gravity Compensation**: Rubber bands to adjustable hanging retractors, 42% efficiency improvement
+- **Large-Scale Data Collection**: Capable of collecting 100s-1000s demonstrations per robot per day
 
 ### Commercialization
 
@@ -335,7 +344,7 @@ Trossen Robotics sells ALOHA kits:
 
 ### Industrial Implications
 
-> "Mobile ALOHA has demonstrated something unique: relatively cheap robot hardware can solve really complex problems." - Lerrel Pinto, NYU
+> "Mobile ALOHA has demonstrated something unique: relatively cheap robot hardware can solve really complex problems." - Lerrel Pinto, Associate Professor of Computer Science, NYU
 
 - Demonstrated feasibility of household robots
 - Complex tasks possible even with low-cost hardware

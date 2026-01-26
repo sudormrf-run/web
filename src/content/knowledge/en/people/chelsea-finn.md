@@ -18,10 +18,11 @@ lastEditedAt: 2026-01-15
 
 | Field | Details |
 |-------|---------|
-| Current Position | Assistant Professor, Stanford University |
+| Current Position | Assistant Professor (CS & EE), Stanford University, Hoover Faculty Fellow |
 | Lab | IRIS Lab (Intelligence through Robotic Interaction at Scale) |
-| Company | Physical Intelligence Co-founder |
-| PhD | UC Berkeley (Advisors: Sergey Levine, Pieter Abbeel) |
+| Company | Physical Intelligence Co-founder (2024~) |
+| Previous | Google Research Scientist (2018-2024) |
+| PhD | UC Berkeley EECS (2018), Advisors: Pieter Abbeel, Sergey Levine |
 | Undergraduate | MIT (EECS) |
 
 ---
@@ -120,11 +121,14 @@ theta* = theta - alpha*grad_theta(L(f_theta'))  where theta' = theta - beta*grad
 
 ## Awards & Recognition
 
-- MIT Technology Review 35 Under 35 (2019)
+- **ACM Doctoral Dissertation Award (2018)** - "Learning to Learn with Gradients" (first female winner in ~15 years)
+- Presidential Early Career Award for Scientists and Engineers (PECASE, 2025)
+- IEEE RAS Early Academic Career Award in Robotics and Automation
+- Sloan Research Fellowship (2023)
+- ONR Young Investigator Award (2021)
+- Microsoft Research Faculty Fellowship (2020)
 - NSF CAREER Award
-- Sloan Research Fellowship
-- ONR Young Investigator Award
-- ACM Doctoral Dissertation Award Honorable Mention
+- MIT Technology Review 35 Under 35 (2018)
 
 ---
 
@@ -140,6 +144,6 @@ theta* = theta - alpha*grad_theta(L(f_theta'))  where theta' = theta - beta*grad
 ## See Also
 
 - [ACT](../models/act)
-- [Sergey Levine](sergey-levine)
+- [Sergey Levine](./sergey-levine)
 - [Physical Intelligence](../companies/physical-intelligence)
 - [pi0](../models/pi0)

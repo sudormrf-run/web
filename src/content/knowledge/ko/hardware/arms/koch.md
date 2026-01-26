@@ -13,7 +13,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Koch v1.1
@@ -30,14 +30,15 @@ Koch v1.1은 **Alexander Koch**가 설계한 저가 오픈소스 로봇 암을 *
 
 | 항목 | 내용 |
 |------|------|
-| **원 설계자** | Alexander Koch (Tau Robotics 공동 창립자) |
+| **원 설계자** | Alexander Koch (Tau Robotics CEO & 공동 창립자) |
 | **v1.1 개선** | Jess Moss (HuggingFace) |
-| **라이선스** | 오픈소스 (GitHub 공개) |
+| **라이선스** | MIT 라이선스 (오픈소스) |
 | **유형** | 6-DoF 저가 3D 프린트 로봇 암 |
 | **DoF** | 6 (Shoulder Pan, Shoulder Lift, Elbow, Wrist Flex, Wrist Roll, Gripper) |
 | **모터** | Dynamixel XL430-W250-T + XL330-M288-T |
-| **부품 비용** | ~$258 (Follower) / ~$183 (Leader) / ~$441 (쌍) |
-| **공개 시기** | 원본: 2024년 초, v1.1: 2024년 7월 |
+| **DIY 부품 비용** | ~$278 (Follower) / ~$199 (Leader) / ~$477 (쌍) |
+| **ROBOTIS 키트** | $212.92 (Follower) / $204.85 (Leader) / $417.77 (쌍) - 전자부품만, 3D 프린트 별도 |
+| **공개 시기** | 원본: 2024년 3월 23일, v1.1: 2024년 7월 |
 
 ---
 
@@ -48,9 +49,10 @@ Koch v1.1은 **Alexander Koch**가 설계한 저가 오픈소스 로봇 암을 *
 Koch 로봇 암의 가장 중요한 기여는 **VLA(Vision-Language-Action) 연구의 데이터 수집 비용을 획기적으로 낮춘 것**이다.
 
 1. **극저가 하드웨어**: 기존 연구용 로봇 암(Franka $30K+, UR $25K+)과 비교해 1/100 수준의 비용
-2. **완전 오픈소스**: CAD 파일, SolidWorks 모델, BOM, 제어 코드 전체 공개
+2. **완전 오픈소스**: CAD 파일, SolidWorks 모델, BOM, 제어 코드 전체 공개 (MIT 라이선스)
 3. **3D 프린팅 기반**: 일반 FDM 프린터(Prusa, Ender, Bambu)로 제작 가능
 4. **LeRobot 통합**: HuggingFace의 로보틱스 ML 프레임워크와 완벽 호환
+5. **ALOHA/GELLO 영감**: Stanford/UC Berkeley의 로봇 프로젝트에서 영감을 받은 설계
 
 ### Tau Robotics의 비전
 
@@ -98,48 +100,58 @@ Leader 암은 그리퍼 대신 **핸들과 트리거**로 구성되어 인간 �
 
 ## Bill of Materials (BOM)
 
-### Follower 암 (제어 대상)
+### Follower 암 (제어 대상) - DIY BOM
 
 | 부품 | 수량 | 가격 (USD) | 비고 |
 |------|------|------------|------|
-| Dynamixel XL430-W250-T | 2 | $100 | 어깨 관절 (고토크) |
-| Dynamixel XL330-M288-T | 4 | $96 | 팔꿈치, 손목, 그리퍼 |
-| XL330 Frame & Idler Wheel Set | 1 | $10 | 4개 세트, 2-3개 사용 |
-| XL430 Idler Wheel Set | 1 | $7 | |
-| Waveshare Serial Bus Servo Driver | 1 | $10 | USB-C 연결 |
-| 12V to 5V Voltage Reducer | 1 | $10 | XL330용 전압 변환 |
-| 12V Power Supply | 1 | $12 | 메인 전원 |
-| Table Clamp | 1 | $6 | 마운팅 |
-| Wires/Connectors | - | $7 | 배선 |
-| **총계** | | **~$258** | 3D 프린트 비용 별도 |
+| Dynamixel XL430-W250-T | 2 | ~$100 | 어깨 관절 (고토크) |
+| Dynamixel XL330-M288-T | 4 | ~$96 | 팔꿈치, 손목, 그리퍼 |
+| XL330 Frame & Idler Wheel Set | 1 | ~$10 | 4개 세트, 2-3개 사용 |
+| XL430 Idler Wheel Set | 1 | ~$7 | |
+| Waveshare Serial Bus Servo Driver | 1 | ~$10 | USB-C 연결 (DIY 옵션) |
+| 12V to 5V Voltage Reducer | 1 | ~$10 | XL330용 전압 변환 |
+| 12V Power Supply | 1 | ~$12 | 메인 전원 |
+| Table Clamp | 1 | ~$6 | 마운팅 |
+| Wires/Connectors | - | ~$7 | 배선 |
+| **DIY 총계** | | **~$278** | 3D 프린트 비용 별도 |
 
-### Leader 암 (텔레오퍼레이션 컨트롤러)
+### Leader 암 (텔레오퍼레이션 컨트롤러) - DIY BOM
 
 | 부품 | 수량 | 가격 (USD) | 비고 |
 |------|------|------------|------|
-| Dynamixel XL330-M077-T | 6 | $144 | 전 관절 통일 |
-| XL330 Frame | 1 | $7 | |
-| XL330 Idler Wheel Set | 1 | $10 | |
-| Waveshare Serial Bus Servo Driver | 1 | $10 | |
-| 5V Power Supply | 1 | $6 | Leader는 5V만 사용 |
-| Table Clamp | 1 | $6 | |
-| **총계** | | **~$183** | 3D 프린트 비용 별도 |
+| Dynamixel XL330-M077-T | 6 | ~$144 | 전 관절 통일 |
+| XL330 Frame & Idler Wheel Set | 1 | ~$10 | 4개 세트, 3개 사용 |
+| Waveshare Serial Bus Servo Driver | 1 | ~$10 | (DIY 옵션) |
+| 5V Power Supply | 1 | ~$6 | Leader는 5V만 사용 |
+| Table Clamp | 1 | ~$6 | |
+| Wires/USB-C cable | - | ~$7 | |
+| **DIY 총계** | | **~$199** | 3D 프린트 비용 별도 |
+
+### ROBOTIS 키트 (권장)
+
+ROBOTIS에서 판매하는 공식 키트는 **OpenRB-150** 컨트롤 보드를 포함하며, Waveshare 보드 대신 사용된다.
+
+| 구성 | ROBOTIS 키트 가격 | 포함 내용 |
+|------|-------------------|-----------|
+| Follower Kit | $212.92 | XL430x2, XL330-M288x4, OpenRB-150, 프레임 세트 |
+| Leader Kit | $204.85 | XL330-M077x6, OpenRB-150, 프레임 세트 |
+| 3D 프린트 파트 (옵션) | $40 | ROBOTIS 주문제작 |
 
 ### 총 시스템 비용
 
-| 구성 | 비용 | 용도 |
-|------|------|------|
-| Follower 단독 | ~$258 | 자율 제어 연구 |
-| Leader + Follower | ~$441 | 텔레오퍼레이션 데이터 수집 |
-| 듀얼 암 시스템 | ~$882 | 양팔 매니퓰레이션 |
+| 구성 | DIY 비용 | ROBOTIS 키트 | 용도 |
+|------|----------|--------------|------|
+| Follower 단독 | ~$278 | $212.92 | 자율 제어 연구 |
+| Leader + Follower | ~$477 | $417.77 | 텔레오퍼레이션 데이터 수집 |
+| 듀얼 암 시스템 | ~$954 | ~$835 | 양팔 매니퓰레이션 |
 
 ### 구매처
 
-- **ROBOTIS**: [Koch v1.1 Leader Kit](https://robotis.us/koch-v1-1-low-cost-robot-arm-leader/), [Follower Kit](https://www.robotis.us/koch-v1-1-low-cost-robot-arm-follower/)
+- **ROBOTIS (권장)**: [Koch v1.1 Leader Kit](https://robotis.us/koch-v1-1-low-cost-robot-arm-leader/) ($204.85), [Follower Kit](https://www.robotis.us/koch-v1-1-low-cost-robot-arm-follower/) ($212.92)
 - **PartaBot**: 완제품 및 부품 키트 판매
 - **Tau Robotics**: [대기 목록](https://tau-robotics.com) - 원스톱 패키지
 
-> **Tip**: ROBOTIS 공식 샵에서 10% 할인 코드를 자주 제공한다.
+> **참고**: ROBOTIS 키트는 OpenRB-150 컨트롤 보드를 포함하여 Waveshare 보드를 별도로 구매할 필요가 없다. 3D 프린트 파트는 별도 구매 또는 직접 프린트 필요.
 
 ---
 

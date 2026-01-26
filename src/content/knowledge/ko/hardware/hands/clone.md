@@ -13,7 +13,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Clone Robotics Hand
@@ -26,7 +26,7 @@ lastEditedAt: 2026-01-15
 
 ## Overview
 
-Clone Robotics Hand는 폴란드-미국 스타트업 Clone Robotics가 개발한 **수압식 인공 근육(Myofiber)** 기반의 생체모방 로봇 핸드이다. 8년 이상의 R&D를 통해 개발된 이 기술은 전통적인 전기 모터나 케이블 기반 시스템과 달리, 인간 손의 해부학적 구조를 직접 복제하는 접근 방식을 취한다.
+Clone Robotics Hand는 폴란드-미국 스타트업 Clone Robotics가 개발한 **수압식 인공 근육(Myofiber)** 기반의 생체모방 로봇 핸드이다. 8년간의 개발과 18번의 반복 개선을 통해 완성된 이 기술은 전통적인 전기 모터나 케이블 기반 시스템과 달리, 인간 손의 해부학적 구조를 직접 복제하는 접근 방식을 취한다.
 
 | 항목 | 스펙 |
 |------|------|
@@ -67,7 +67,7 @@ Clone은 **인간 근육의 길항근(antagonistic muscle) 구조**를 그대로
 
 ### 작동 원리
 
-Myofiber는 Clone Robotics의 핵심 기술인 **수압식 인공 근육**이다. 작은 튜브 형태로, 물이 가압되면 수축하고 감압되면 이완된다.
+Myofiber는 2021년에 출시된 Clone Robotics의 핵심 기술인 **수압식 인공 근육**이다. 가압된 메시 튜브 형태로, 유체가 채워지면 수축하고 감압되면 이완된다.
 
 | 항목 | 사양 |
 |------|------|
@@ -91,9 +91,9 @@ Myofiber는 Clone Robotics의 핵심 기술인 **수압식 인공 근육**이다
 
 ## Protoclone 통합
 
-Clone Hand는 Clone Robotics의 전신 안드로이드 프로젝트 **Protoclone V1** 및 **Clone Alpha**에 통합된다.
+Clone Hand는 Clone Robotics의 전신 안드로이드 프로젝트 **Clone Alpha** (기술 데모 명칭: **Protoclone V1**)에 통합된다.
 
-### Protoclone V1 사양
+### Clone Alpha / Protoclone V1 사양
 
 | 항목 | 스펙 |
 |------|------|
@@ -150,9 +150,9 @@ Protoclone은 가정용 및 상업용 작업(요리, 청소 등)을 목표로 �
 
 ## 회사 정보
 
-Clone Robotics는 2021년 **Dhanush Radhakrishnan** (CEO)과 **Łukasz Koźlik** (리드 엔지니어)가 공동 창업했다. 본사는 폴란드 바르샤바에 위치하며, 미국에도 사무소를 운영한다.
+Clone Robotics는 2021년 **Dhanush Radhakrishnan** (CEO)과 **Łukasz Koźlik** (CTO)가 공동 창업했다. 회사는 미국 뉴욕에 공식 본사를 두고 있으며, 폴란드 바르샤바와 브로츠와프에 R&D 및 제조 시설을 운영한다. 실리콘 밸리에도 사무소 확장을 계획 중이다.
 
-Koźlik은 2019년 첫 프로토타입 영상을 유튜브에 공개하여 바이럴을 일으켰으며, 이후 8년 이상의 R&D를 거쳐 현재의 Myofiber 기술을 완성했다. 폴란드에서의 제조로 미국 대비 개발 및 생산 비용을 크게 절감했다.
+Koźlik은 2014년 인공 근육에 관심을 갖기 시작했으며, 2019년 첫 프로토타입 영상을 유튜브에 공개하여 바이럴을 일으켰다. 11개의 프로토타입과 18번의 반복 개선을 거쳐 현재의 Myofiber 기술을 완성했다. 2021년 Myofiber 기술이 공식 출시되었으며, 폴란드에서의 제조로 미국 대비 개발 및 생산 비용을 크게 절감했다. 2023년 Initialized Capital 주도로 600만 달러 시드 펀딩을 유치했으며, 현재 약 46명의 직원이 근무하고 있다.
 
 ---
 
@@ -167,6 +167,6 @@ Koźlik은 2019년 첫 프로토타입 영상을 유튜브에 공개하여 바�
 
 ## See Also
 
-- [하드웨어 목록](../index)
-- [Shadow Hand](shadow-hand)
-- [Allegro Hand](allegro)
+- [하드웨어 목록](../)
+- [Shadow Hand](./shadow-hand)
+- [Allegro Hand](./allegro)

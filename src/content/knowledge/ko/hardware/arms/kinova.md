@@ -19,7 +19,7 @@ lastEditedAt: 2026-01-15
 
 ## Overview
 
-Kinova는 2006년 캐나다 퀘벡 Boisbriand에서 설립된 서비스 로보틱스 기업으로, 원래 상체 장애인을 위한 보조 로봇 팔 개발에서 시작했다. 창업자 Charles Deguire의 삼촌 Jaco가 근육 디스트로피로 인해 휠체어 생활을 하면서 직접 만든 로봇 팔에서 영감을 받아 회사를 설립했으며, 첫 제품명 'Jaco'도 그의 이름에서 유래했다. ([Wikipedia](https://en.wikipedia.org/wiki/Kinova))
+Kinova는 2006년 캐나다 퀘벡 Boisbriand에서 Charles Deguire와 Louis-Joseph L'Ecuyer가 공동 설립한 서비스 로보틱스 기업으로, 원래 상체 장애인을 위한 보조 로봇 팔 개발에서 시작했다. 창업자 Charles Deguire의 삼촌 Jacques Forest(애칭 Jaco)가 근육 디스트로피로 인해 휠체어 생활을 하면서 1980년대에 와이퍼 모터, 자전거 와이어, 전등 부품 등을 활용해 직접 로봇 팔을 만들었고, 이에 영감을 받아 회사를 설립했다. Jacques는 1993년에 세상을 떠났지만, 첫 제품명 'Jaco'는 그의 애칭에서 유래했다. ([Wikipedia](https://en.wikipedia.org/wiki/Kinova), [IEEE Spectrum](https://spectrum.ieee.org/startup-spotlight-kinova))
 
 현재 Kinova는 보조 로봇(Assistive), 연구용(Research), 산업용(Industrial) 세 가지 분야로 사업을 확장하여 전 세계 50개국 이상, 500개 이상의 학술 및 산업 연구 센터에서 사용되고 있다. Google, Johns Hopkins University 등 세계적인 기관에서 채택하고 있다. ([Trade Commissioner Canada](https://www.tradecommissioner.gc.ca/canadexport/0004324.aspx))
 
@@ -30,7 +30,7 @@ Kinova는 2006년 캐나다 퀘벡 Boisbriand에서 설립된 서비스 로보�
 1. **보조 로봇의 선구자**: 휠체어 장착형 로봇 팔로 시작하여 상체 장애인의 일상 활동(식사, 화장, 약 복용 등)을 지원하는 기술을 개발
 2. **무한 관절 회전(Infinite Joint Rotation)**: 케이블 래핑 제한 없이 모든 액추에이터가 무한 회전 가능하여 조작 자유도 극대화
 3. **내장 토크 센서**: 각 관절에 토크 센서를 내장하여 힘 피드백, 임피던스 제어, 안전한 협업 작업 지원
-4. **통합 비전 시스템**: Gen3는 내장 2D/3D 비전 센서를 탑재한 연구용 로봇 암으로, 비전 기반 로봇 제어에 최적화
+4. **통합 비전 시스템**: Gen3는 옵션 2D/3D 비전 모듈을 탑재할 수 있는 연구용 로봇 암으로, 비전 기반 로봇 제어에 최적화
 5. **경량 휴대성**: 30분 이내 설치 가능한 초경량 설계로 연구팀, 프로젝트, 환경 간 이동이 용이
 
 ---
@@ -46,11 +46,14 @@ Kinova는 2006년 캐나다 퀘벡 Boisbriand에서 설립된 서비스 로보�
 | 페이로드 | 4 kg | 4 kg |
 | 리치 | 902 mm | 891 mm |
 | 무게 | 8.2 kg | 7.2 kg |
-| 비전 | 내장 2D/3D 센서 | 내장 2D/3D 센서 |
+| 최대 속도 | 500 mm/s | 500 mm/s |
+| 평균 소비전력 | 36 W | 36 W |
+| 비전 | 옵션 2D/3D 모듈 | 옵션 2D/3D 모듈 |
+| 방진방수 | IP33 | IP33 |
 | 토크 센서 | 모든 관절 내장 | 모든 관절 내장 |
 | 그리퍼 | Robotiq 2F-85/140 호환 | Robotiq 2F-85/140 호환 |
 
-*출처: [Gen3 공식 제품 페이지](https://www.kinovarobotics.com/product/gen3-robots)*
+*출처: [Gen3 공식 제품 페이지](https://www.kinovarobotics.com/product/gen3-robots), [QVIRO Gen3 Specifications](https://qviro.com/product/kinova/gen3/specifications)*
 
 ### Gen3 Lite (교육/입문용)
 
@@ -61,13 +64,15 @@ Kinova는 2006년 캐나다 퀘벡 Boisbriand에서 설립된 서비스 로보�
 | 페이로드 | 0.5 kg |
 | 리치 | 760 mm |
 | 무게 | 5.4 kg |
+| 최대 속도 | 250 mm/s |
 | 제어 주파수 | 1 kHz 저레벨 클로즈드 루프 |
-| 대기 전력 | 20 W |
+| 평균 전력 | 20 W |
+| 방진방수 | IP22 |
 | 컨트롤러 | 암 내장형 |
 | 그리퍼 | 암 내장형 |
 | 설치 시간 | 10분 이내 |
 
-*출처: [Gen3 Lite 공식 제품 페이지](https://www.kinovarobotics.com/product/gen3-lite-robots)*
+*출처: [Gen3 Lite 공식 제품 페이지](https://www.kinovarobotics.com/product/gen3-lite-robots), [QVIRO Gen3 Lite Specifications](https://qviro.com/product/kinova/gen3-lite/specifications)*
 
 ### Link 6 (산업용 협동 로봇)
 
@@ -78,11 +83,13 @@ Kinova는 2006년 캐나다 퀘벡 Boisbriand에서 설립된 서비스 로보�
 | 페이로드 | 6 kg |
 | 리치 | 1000 mm |
 | 반복정밀도 | +/-0.1 mm |
-| 최대 속도 | 2 m/s |
-| 무게 | 23.45 kg |
-| 프로세서 | Intel Core i7, 8 GB DDR4, SSD |
+| 최대 속도 | 1.65 m/s (1650 mm/s) |
+| 무게 | 23.45 kg (로봇 암) |
+| 컨트롤러 무게 | 17.6 kg |
+| 프로세서 | Intel Core i7, 8 GB DDR4, 128 GB SSD |
 | 방진방수 | IP54 |
 | 작동 온도 | 0~40 °C |
+| 전원 | 110-240 VAC, 50-60 Hz |
 | 힘/토크 센서 | 내장 |
 | 특징 | GPU 확장 옵션, 노코드 프로그래밍 |
 
@@ -108,7 +115,8 @@ Kinova Kortex는 Gen3 제품군(Gen3, Gen3 Lite)의 공통 소프트웨어 플�
 ros2_kortex 드라이버는 ros2_control 하드웨어 인터페이스(SystemInterface)를 구현하며, 각 관절에 대해 position, velocity, effort 인터페이스를 제공한다. 엔드이펙터용 twist 인터페이스도 지원한다.
 
 **지원 ROS2 버전:**
-- ROS2 Jazzy (Ubuntu 24.04)
+- ROS2 Jazzy (Ubuntu 24.04) - main branch
+- ROS2 Humble (Ubuntu 22.04)
 
 **지원 그리퍼:**
 - Robotiq 2F-85
@@ -124,7 +132,7 @@ Kinova Gen3는 VLA(Vision-Language-Action) 모델 연구의 핵심 플랫폼으�
 1. **"Towards Generalist Robot Policies: What Matters in Building Vision-Language-Action Models" (2024)**: Gen3 7DoF + Robotiq 2F-85 조합으로 20가지 태스크(열기, 닫기, 버튼 누르기, Pick & Place 등) 실험 수행 ([arXiv:2412.14058](https://arxiv.org/abs/2412.14058))
 2. **강화학습 연구**: 볼 밸런싱, 충돌 회피 등 동적 평형 유지 태스크에서 RL 기반 제어 연구 ([IRJMS 2024](https://www.irjms.com/wp-content/uploads/2024/01/Manuscript_IRJMS_0213_WS.pdf))
 3. **모바일 매니퓰레이션**: Clearpath Robotics 모바일 플랫폼과 통합되어 이동 조작 연구에 활용
-4. **비전 기반 조작**: 내장 2D/3D 센서를 활용한 비전 기반 로봇 제어 연구
+4. **비전 기반 조작**: 옵션 2D/3D 비전 모듈을 활용한 비전 기반 로봇 제어 연구
 
 **연구 적합성:**
 - 경량 설계로 다양한 환경에서 빠른 설치/이동
@@ -174,6 +182,6 @@ Kinova Gen3는 VLA(Vision-Language-Action) 모델 연구의 핵심 플랫폼으�
 
 ## See Also
 
-- [하드웨어 목록](../index)
-- [Franka Panda](franka-panda)
-- [UR Series](ur-series)
+- [하드웨어 목록](./)
+- [Franka Panda](./franka-panda)
+- [UR Series](./ur-series)

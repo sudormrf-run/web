@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Galaxea 휴머노이드
@@ -26,14 +26,14 @@ lastEditedAt: 2026-01-15
 
 | 항목 | 내용 |
 |------|------|
-| 제조사 | Galaxea AI (星海图, 중국 베이징) |
+| 제조사 | Galaxea AI (星海图, 중국 쑤저우) |
 | 유형 | 바퀴형 듀얼암 휴머노이드 |
 | 설립 | 2023년 9월 (청화대/스탠포드 출신 팀) |
 | 컴퓨팅 | NVIDIA Jetson AGX Orin 32GB |
-| 가격대 | $27,500 ~ $40,000 (모델별 상이) |
-| 주요 고객 | Huawei, Volkswagen, Samsung, ByteDance, Stanford, MIT [^1] |
+| 가격대 | $44,500 ~ $64,000 (모델별 상이) |
+| 주요 고객 | Huawei Cloud, Volkswagen, Haier, Samsung, ByteDance, Physical Intelligence, Stanford, MIT [^1] |
 
-> **Note**: 가격 및 사양 정보는 2025년 1분기 기준이며, 변동될 수 있습니다.
+> **Note**: 가격 및 사양 정보는 2025년 하반기 기준이며, 변동될 수 있습니다.
 
 [^1]: [Forbes via Yahoo Finance - Galaxea AI Raises $100M](https://finance.yahoo.com/news/beijings-galaxea-ai-raises-100-000126844.html)
 
@@ -41,12 +41,12 @@ lastEditedAt: 2026-01-15
 
 ## 핵심 의의
 
-Galaxea R1 시리즈는 **저렴한 가격의 연구용 휴머노이드 플랫폼**으로서 중요한 의미를 가진다.
+Galaxea R1 시리즈는 **연구 및 산업용 휴머노이드 플랫폼**으로서 중요한 의미를 가진다.
 
 ### 연구 접근성 향상
 
-- **합리적 가격**: R1 Pro 기준 약 $27,500(199,000 RMB)부터 시작하여, Figure 02($100K+)나 Unitree H1($90,000) 대비 현저히 저렴
-- **완전한 기능**: 저가임에도 26 DoF, 7개 HD 카메라, LiDAR, 힘 센서 등 풀스펙 제공
+- **합리적 가격**: R1 시리즈 기준 약 $44,500~$64,000으로, Figure 02($100K+)나 Unitree H1($90,000) 대비 경쟁력 있는 가격
+- **완전한 기능**: 26 DoF, 7개 HD 카메라, LiDAR, 힘 센서 등 풀스펙 제공
 - **다양한 텔레오퍼레이션**: Isomorphic과 VR 원격 조작 지원으로 데이터 수집 용이
 
 ### 바퀴 기반 설계의 장점
@@ -81,9 +81,9 @@ Galaxea R1 시리즈는 **저렴한 가격의 연구용 휴머노이드 플랫�
 | 음성 상호작용 | O | X | X |
 | VR 텔레옵 | O | O | X |
 | Isomorphic 텔레옵 | O | O | O |
-| 가격 | ~$27,500 | N/A | ~$40,000 |
+| 가격 | ~$44,500+ | N/A | ~$40,000 |
 
-> **Note**: R1 Lite가 R1 Pro보다 높은 가격인 이유는 R1 Lite가 완전 조립된 데이터 수집 전용 플랫폼으로 판매되는 반면, R1 Pro는 연구/개발용 기본 가격이기 때문입니다. 실제 구매 시 구성에 따라 가격이 달라질 수 있습니다.
+> **Note**: R1 시리즈 가격은 구성 및 옵션에 따라 $44,500에서 $64,000 사이로 다양합니다. 2025년 말까지 약 1,000대 출하를 목표로 하고 있습니다.
 
 ### R1 Pro 상세
 
@@ -97,7 +97,7 @@ Galaxea R1 시리즈는 **저렴한 가격의 연구용 휴머노이드 플랫�
 | 컴퓨팅 | NVIDIA Jetson AGX Orin 32GB (200 TOPS) |
 | 샤시 | 3륜 벡터 스티어링 |
 | 텔레오퍼레이션 | Isomorphic + VR |
-| 가격 | ~199,000 RMB (~$27,500) |
+| 가격 | ~$44,500+ (구성에 따라 상이) |
 
 ### R1 상세
 
@@ -189,10 +189,10 @@ Meta Quest 3 VR 헤드셋을 활용한 몰입형 원격 조작 시스템.
 | 항목 | 내용 |
 |------|------|
 | 설립 | 2023년 9월 |
-| 본사 | 중국 베이징/쑤저우 |
+| 본사 | 중국 쑤저우 |
 | 미션 | "100억 로봇으로 100억 인류 서비스" |
-| 기업가치 | $700M (2025년 기준) [^2] |
-| 누적 투자 | ~15억 RMB (~$100M+) [^2] |
+| 기업가치 | $700M (2025년 8월 기준) [^2] |
+| 누적 투자 | ~$210M (~15억 RMB) [^2] |
 
 [^2]: [Benzinga - Galaxea AI Raises $100M at $700M Valuation](https://www.benzinga.com/news/topics/25/08/47431117/beijings-galaxea-ai-raises-100-million-at-700-million-valuation-says-humanoids-will-enter-homes-in-le)
 
@@ -216,10 +216,13 @@ Meituan, IDG Capital, Baidu Ventures 등 30개 이상 투자사 참여. [^2]
 
 ### AI 모델
 
-**G0 모델** - Galaxea 자체 개발 AI 모델
-- 언어 이해
-- 추론 수행
-- 복잡한 태스크 실행 (예: 침대 정리)
+**G0 모델** - Galaxea 자체 개발 VLA(Vision-Language-Action) 모델 [^4]
+- **G0-VLM**: 멀티모달 플래너로 고수준 추론 및 서브태스크 플래닝
+- **G0-VLA**: 실시간 실행기로 정밀한 저수준 액션 제어
+- **Galaxea Open-World Dataset**: 150개 이상 태스크, 50개 장면에서 수집한 500시간 고품질 데이터
+- 3단계 커리큘럼 학습: 크로스 임바디먼트 사전학습 → 단일 임바디먼트 사전학습 → 태스크별 후훈련
+
+[^4]: [Galaxea G0 - Open-World Dataset and Dual-System VLA Model](https://opengalaxea.github.io/G0/)
 
 ### 향후 계획
 
@@ -255,10 +258,13 @@ Meituan, IDG Capital, Baidu Ventures 등 30개 이상 투자사 참여. [^2]
 
 | 로봇 | 제조사 | 유형 | 가격 | DoF |
 |------|--------|------|------|-----|
-| R1 Pro | Galaxea | 바퀴형 | ~$27,500 | 26 |
+| R1 Pro | Galaxea AI | 바퀴형 | ~$44,500+ | 26 |
+| Galbot G1 | Galbot (银河通用) | 바퀴형 | N/A | N/A |
 | G1 | Unitree | 보행형 | ~$16,000 | 23 |
 | H1 | Unitree | 보행형 | ~$90,000 | N/A |
 | Figure 02 | Figure AI | 보행형 | ~$100,000+ | N/A |
+
+> **Note**: Galbot(银河通用机器人)은 Galaxea AI(星海图)와 다른 별개의 중국 로보틱스 회사입니다. Galbot은 Wang He(왕허)가 설립했으며, Galaxea AI는 Jiyang Gao(가오지양)가 설립했습니다.
 
 ---
 
@@ -280,3 +286,5 @@ Meituan, IDG Capital, Baidu Ventures 등 30개 이상 투자사 참여. [^2]
 - [Isomorphic Teleop 튜토리얼](https://docs.galaxea-ai.com/Guide/R1Pro/isomorphic_teleop/R1Pro_Teleop_Usage_Tutorial/)
 - [Forbes: Galaxea AI Raises $100M](https://finance.yahoo.com/news/beijings-galaxea-ai-raises-100-000126844.html)
 - [Robotuo: R1 Series 발표](https://robotuo.com/2025/01/05/galaxea-ai-announces-the-launch-of-the-r1-series-humanoid-robots/)
+- [Galaxea G0 VLA Model](https://opengalaxea.github.io/G0/)
+- [GitHub: OpenGalaxea/G0](https://github.com/OpenGalaxea/G0)

@@ -12,7 +12,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Interbotix / WidowX
@@ -31,7 +31,7 @@ Interbotix is a research robot arm brand developed by Trossen Robotics, providin
 | Item | Details | Source |
 |------|---------|--------|
 | Manufacturer | [Trossen Robotics](https://www.trossenrobotics.com/) | Official site |
-| Founded | 2005, by Matt Trossen | [Tracxn](https://tracxn.com/d/companies/trossen-robotics) |
+| Founded | 2005 (some sources cite 2004), by Matt Trossen | [Tracxn](https://tracxn.com/d/companies/trossen-robotics) |
 | Headquarters | Downers Grove, Illinois, USA | [CBInsights](https://www.cbinsights.com/company/trossen-robotics) |
 | Motors | ROBOTIS Dynamixel X-Series | [Official docs](https://docs.trossenrobotics.com/interbotix_xsarms_docs/) |
 | Price Range | $2,000 - $6,500 (as of 2024, subject to change) | [Product page](https://www.trossenrobotics.com/robotic-arms.aspx) |
@@ -41,7 +41,7 @@ Interbotix is a research robot arm brand developed by Trossen Robotics, providin
 
 ## Company Introduction: Trossen Robotics
 
-Trossen Robotics is a robotics company founded in 2005 by Matt Trossen, supplying robot hardware to research labs and educational institutions for over 20 years[^1]. They manufacture and distribute research manipulators, unmanned ground vehicles (UGV), and ML/AI integrated research kits, and are particularly famous for their Interbotix brand utilizing ROBOTIS Dynamixel servos.
+Trossen Robotics is a robotics company founded circa 2004-2005 by Matt Trossen, supplying robot hardware to research labs and educational institutions for over 20 years[^1]. They manufacture and distribute research manipulators, unmanned ground vehicles (UGV), and ML/AI integrated research kits, and are particularly famous for their Interbotix brand utilizing ROBOTIS Dynamixel servos.
 
 By supplying hardware for the ALOHA project and Open X-Embodiment dataset, they have established a central position in the Embodied AI research community.
 
@@ -268,8 +268,9 @@ VLA flow model for general robot control developed by Physical Intelligence[^6].
 
 | Item | Details |
 |------|---------|
-| Base Model | PaliGemma VLM |
-| Training Data | 7 robot platforms, 68 tasks |
+| Parameters | 3.3B (PaliGemma 3B + Action Expert 300M) |
+| Base Model | PaliGemma VLM (SigLIP + Gemma) |
+| Training Data | 7 robot platforms, 68 tasks, including Open X-Embodiment |
 | Control Frequency | Up to 50Hz |
 | Action Generation | Flow Matching (Diffusion variant) |
 

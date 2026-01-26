@@ -18,10 +18,11 @@ lastEditedAt: 2026-01-15
 
 | 항목 | 내용 |
 |------|------|
-| 현직 | Stanford University 조교수 |
+| 현직 | Stanford University 조교수 (CS & EE), Hoover Faculty Fellow |
 | 연구실 | IRIS Lab (Intelligence through Robotic Interaction at Scale) |
-| 회사 | Physical Intelligence 공동창업자 |
-| PhD | UC Berkeley (Advisor: Sergey Levine, Pieter Abbeel) |
+| 회사 | Physical Intelligence 공동창업자 (2024~) |
+| 이전 | Google Research Scientist (2018-2024) |
+| PhD | UC Berkeley EECS (2018), 지도교수: Pieter Abbeel, Sergey Levine |
 | 학력 | MIT 학부 (EECS) |
 
 ---
@@ -120,11 +121,14 @@ Physical Intelligence 공동창업, π0 개발 참여
 
 ## Awards & Recognition
 
-- MIT Technology Review 35 Under 35 (2019)
+- **ACM Doctoral Dissertation Award (2018)** - "Learning to Learn with Gradients" (약 15년 만의 첫 여성 수상자)
+- Presidential Early Career Award for Scientists and Engineers (PECASE, 2025)
+- IEEE RAS Early Academic Career Award in Robotics and Automation
+- Sloan Research Fellowship (2023)
+- ONR Young Investigator Award (2021)
+- Microsoft Research Faculty Fellowship (2020)
 - NSF CAREER Award
-- Sloan Research Fellowship
-- ONR Young Investigator Award
-- ACM Doctoral Dissertation Award Honorable Mention
+- MIT Technology Review 35 Under 35 (2018)
 
 ---
 
@@ -140,6 +144,6 @@ Physical Intelligence 공동창업, π0 개발 참여
 ## See Also
 
 - [ACT](../models/act)
-- [Sergey Levine](sergey-levine)
+- [Sergey Levine](./sergey-levine)
 - [Physical Intelligence](../companies/physical-intelligence)
 - [π0](../models/pi0)

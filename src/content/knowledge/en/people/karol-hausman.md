@@ -11,16 +11,17 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Profile
 
 | Field | Details |
 |-------|---------|
-| Current Position | Physical Intelligence Co-founder |
-| Previous | Google DeepMind Staff Research Scientist |
-| PhD | USC (University of Southern California) |
+| Current Position | Physical Intelligence Co-founder & CEO |
+| Previous | Google DeepMind Staff Research Scientist, Stanford Adjunct Professor (2021-) |
+| PhD | USC (University of Southern California), 2013-2018, advised by Gaurav Sukhatme |
+| M.Sc. | Technical University of Munich (2011-2013), Warsaw University of Technology (2007-2012) |
 | Nationality | Polish |
 
 ---
@@ -36,22 +37,23 @@ lastEditedAt: 2026-01-15
 
 ## Research Timeline
 
-### PhD & Early Career (2012-2017)
+### PhD & Early Career (2013-2018)
 
-**USC - Advised by Stefan Schaal**
+**USC - Advised by Gaurav Sukhatme (collaborated with Stefan Schaal's group)**
 
 | Year | Work | Impact |
 |------|------|--------|
 | 2015 | Skill Learning | Robot skill learning |
 | 2017 | Multi-Task Learning | Multi-task robot learning |
 
-### Google Brain / DeepMind (2017-2024)
+### Google Brain / DeepMind (2018-2024)
 
 **Core Google Robotics Research**
 
 | Year | Work | Impact |
 |------|------|--------|
-| 2018 | Joined | Google Brain Robotics |
+| 2017 | Internship | Google Brain (during PhD) |
+| 2018 | Joined full-time | Google Brain Robotics |
 | 2020 | Multi-Task RL | Multi-task learning |
 | 2022 | **SayCan** | LLM + robot grounding |
 | 2022 | **RT-1** | Robotics Transformer |
@@ -126,8 +128,8 @@ RT-2: Single VLM directly outputs image-to-action
 > "The key to robot AI is generalization. The goal is general capability, not specific tasks."
 
 ### Research Direction Evolution
-1. **2012-2017**: Skill learning, multi-task RL
-2. **2017-2022**: Large-scale robot learning at Google
+1. **2013-2018**: Skill learning, multi-task RL (PhD at USC)
+2. **2018-2022**: Large-scale robot learning at Google
 3. **2022-2023**: LLM + robotics, VLA models
 4. **2024-present**: Foundation models, Physical Intelligence
 
@@ -149,9 +151,11 @@ RT-2: Single VLM directly outputs image-to-action
 
 ## Links
 
-- [Google Scholar](https://scholar.google.com/citations?user=XXXXXXXXX)
-- [Physical Intelligence](https://physicalintelligence.company/)
-- [Twitter/X](https://twitter.com/hauaborisov)
+- [Google Scholar](https://scholar.google.com/citations?user=yy0UFOwAAAAJ)
+- [Personal Website](https://karolhausman.github.io/)
+- [Physical Intelligence](https://www.physicalintelligence.company/)
+- [LinkedIn](https://www.linkedin.com/in/karolhausman/)
+- [Twitter/X](https://x.com/hausman_k)
 
 ---
 

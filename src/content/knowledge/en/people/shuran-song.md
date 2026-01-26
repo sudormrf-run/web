@@ -11,17 +11,18 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Profile
 
 | Field | Details |
 |-------|---------|
-| Current Position | Assistant Professor, Stanford University |
-| Previous | Assistant Professor, Columbia University (2019-2024) |
-| PhD | Princeton University |
-| Lab | Columbia Artificial Intelligence and Robotics Lab (CAIR) |
+| Current Position | Assistant Professor of Electrical Engineering (by courtesy, Computer Science), Stanford University |
+| Previous | Assistant Professor, Columbia University (2019-2023) |
+| PhD | Princeton University (2018) |
+| B.Eng | Hong Kong University of Science and Technology (2013) |
+| Lab | REAL@Stanford (Robotics and Embodied AI Lab) |
 
 ---
 
@@ -30,7 +31,7 @@ lastEditedAt: 2026-01-15
 - **Diffusion Policy**: Applied diffusion to robot action generation, new paradigm for VLA action generation
 - **3D Perception**: 3D perception research for robotics
 - **UMI (Universal Manipulation Interface)**: Universal data collection interface
-- **Columbia to Stanford Move**: Strengthening robot learning research
+- **Columbia to Stanford Move (2023)**: Strengthening robot learning research
 
 ---
 
@@ -46,25 +47,26 @@ lastEditedAt: 2026-01-15
 | 2017 | Semantic Scene Completion | 3D scene understanding |
 | 2018 | PhD Graduation | |
 
-### Columbia University (2019-2024)
+### Columbia University (2019-2023)
 
 **CAIR Lab Founding**
 
 | Year | Work | Impact |
 |------|------|--------|
 | 2019 | Joined Columbia as Professor | Founded CAIR Lab |
-| 2021 | Transporter Networks collaboration | Object rearrangement |
+| 2022 | Sloan Research Fellowship | |
 | 2023 | **Diffusion Policy** | Pioneering robot diffusion research |
-| 2024 | **UMI** | Universal manipulation interface |
 
-### Stanford University (2024-present)
+### Stanford University (2023-present)
 
-**Moved to Stanford**
+**REAL@Stanford Founding**
 
 | Year | Work | Impact |
 |------|------|--------|
-| 2024 | Moved to Stanford as Professor | |
-| 2024- | Continuing robot learning research | |
+| 2023 | Moved to Stanford as Professor | Founded REAL Lab |
+| 2024 | **UMI** | Universal manipulation interface (RSS Outstanding System Paper Finalist) |
+| 2024 | MIT Technology Review Innovators Under 35 | |
+| 2025 | IEEE RAS Early Academic Career Award | |
 
 ---
 
@@ -75,13 +77,12 @@ lastEditedAt: 2026-01-15
 - 3D Diffusion Policy (2024)
 
 ### 3D Perception
-- **3D ShapeNets** (CVPR 2015)
-- Semantic Scene Completion (CVPR 2017)
-- ScanNet (CVPR 2017)
+- **3D ShapeNets** (CVPR 2015) - Zhirong Wu, Shuran Song et al.
+- **Semantic Scene Completion** (CVPR 2017) - Shuran Song, Fisher Yu et al.
 
 ### Robot Manipulation
-- **UMI** (Universal Manipulation Interface, 2024)
-- Transporter Networks related research
+- **UMI** (Universal Manipulation Interface, RSS 2024) - Outstanding System Paper Finalist
+- TidyBot (Autonomous Robots 2023) - Collaboration with Andy Zeng et al.
 
 ---
 
@@ -132,23 +133,31 @@ Features:
 ## Key Collaborations
 
 - **Cheng Chi**: Diffusion Policy lead author, UMI collaboration
-- **Toyota Research Institute**: Diffusion Policy collaboration
-- **MIT**: Diffusion Policy collaboration
+- **Toyota Research Institute**: Diffusion Policy collaboration (Benjamin Burchfiel)
+- **MIT**: Diffusion Policy collaboration (Russ Tedrake)
+- **Andy Zeng**: TidyBot and other collaborations
 
 ---
 
 ## Awards & Recognition
 
+- IEEE Robotics and Automation Society Early Academic Career Award (2025)
+- MIT Technology Review Innovators Under 35 (2024)
+- Samsung AI Researcher of the Year Award (2024)
+- Sloan Research Fellowship (2022)
 - NSF CAREER Award
-- Amazon Research Award
-- Google Research Scholar
+- Best Paper Awards: RSS 2022, T-RO 2020
+- Best System Paper Awards: CoRL 2021, RSS 2019
+- Research Awards: Microsoft, Toyota Research, Google, Amazon, JP Morgan
 
 ---
 
 ## Links
 
-- [Stanford Profile](https://shurans.github.io/)
-- [Google Scholar](https://scholar.google.com/citations?user=XXXXXXXXX)
+- [Personal Website](https://shurans.github.io/)
+- [REAL@Stanford Lab](https://real.stanford.edu/)
+- [Google Scholar](https://scholar.google.com/citations?user=5031vK4AAAAJ)
+- [X (Twitter)](https://x.com/SongShuran)
 
 ---
 

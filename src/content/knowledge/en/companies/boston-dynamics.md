@@ -11,19 +11,20 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-23
+lastEditedAt: 2026-01-26
 ---
 
 ## Overview
 
-Boston Dynamics is a robotics company spun off from MIT in 1992, pioneering the field of dynamic locomotion robots. Known for Atlas's backflips and Spot's stable locomotion, it has been recognized as a leader in Classical Robotics. The company was acquired by Hyundai Motor Group in 2020.
+Boston Dynamics is a robotics company founded in 1992 by Marc Raibert as a spin-off from MIT's Leg Laboratory research. As a pioneer in the field of dynamic locomotion robots, the company is known for Atlas's backflips and Spot's stable locomotion, and has been recognized as a leader in Classical Robotics. After the acquisition announcement in 2020, the company was officially acquired by Hyundai Motor Group in 2021.
 
 | Item | Details |
 |------|---------|
 | Headquarters | Waltham, Massachusetts |
-| Founded | 1992 |
-| CEO | Robert Playter |
-| Parent Company | Hyundai Motor Group (2020~) |
+| Founded | 1992 (MIT spin-off) |
+| Founder | Marc Raibert |
+| CEO | Robert Playter (2019~) |
+| Parent Company | Hyundai Motor Group (2021~, 80% stake) |
 
 ---
 
@@ -56,7 +57,7 @@ This approach produced impressive demos like Atlas's backflips, parkour, and Spo
 
 ### Collaboration with Toyota Research Institute (TRI)
 
-In 2025, Boston Dynamics began **Large Behavior Model (LBM)** research in collaboration with TRI.
+In October 2024, Boston Dynamics and TRI announced a joint research partnership on **Large Behavior Models (LBMs)**. In August 2025, they unveiled a demonstration of the Atlas humanoid robot powered by LBM.
 
 > "Boston Dynamics is developing Large Behavior Models (LBMs) for Atlas as part of a collaboration between AI research teams at Toyota Research Institute (TRI) and Boston Dynamics."
 > — [The Robot Report](https://www.therobotreport.com/boston-dynamics-tri-use-large-behavior-models-train-atlas-humanoid/)
@@ -91,13 +92,16 @@ Nevertheless, the fact that the leader of Classical Robotics is introducing lear
 
 ## Key Milestones
 
-- **1992**: Spun off from MIT
-- **2005**: BigDog unveiled
-- **2013**: Acquired by Google
-- **2017**: Acquired by SoftBank
-- **2020**: Acquired by Hyundai Motor Group
-- **2024**: Electric-powered Atlas unveiled
-- **2025**: LBM collaboration with TRI announced
+- **1992**: Spun off from MIT (Founder: Marc Raibert)
+- **2005**: BigDog unveiled (DARPA-funded)
+- **2013**: Acquired by Google (December)
+- **2017**: Acquired by SoftBank (June)
+- **2019**: Robert Playter becomes CEO (October)
+- **2020**: Hyundai Motor Group acquisition announced (December)
+- **2021**: Hyundai acquisition completed (June, 80% stake)
+- **2024**: Electric-powered Atlas unveiled (April), hydraulic Atlas retired
+- **2024**: LBM research partnership with TRI announced (October)
+- **2025**: Atlas LBM demonstration unveiled (August)
 
 ---
 

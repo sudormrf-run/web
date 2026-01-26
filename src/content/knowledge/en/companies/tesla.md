@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Overview
@@ -23,7 +23,7 @@ Tesla announced the Optimus (Tesla Bot) humanoid robot at AI Day 2021. Leveragin
 | Headquarters | Austin, Texas |
 | Founded | 2003 (Robotics: 2021) |
 | CEO | Elon Musk |
-| Robot | Optimus (Gen 1, Gen 2) |
+| Robot | Optimus (Gen 2, Gen 3) |
 
 ---
 
@@ -33,19 +33,19 @@ Tesla announced the Optimus (Tesla Bot) humanoid robot at AI Day 2021. Leveragin
 
 | Generation | Announcement | Features |
 |------------|-------------|----------|
-| Bumblebee | Sept 2022 | First prototype |
-| Gen 1 | Dec 2023 | Improved walking |
-| Gen 2 | Dec 2024 | Increased DoF, improved hands |
+| Bumble-C | Sept 2022 | First prototype (AI Day 2022) |
+| Gen 2 | Dec 2023 | 30% faster walking, 10kg lighter, improved hands |
+| Gen 3 | May 2024 announced, Jan 2026 mass production | 22 DoF hands, tendon-driven system |
 
 ### Specs (Gen 2, per Tesla announcement)
 
 | Item | Specs |
 |------|-------|
-| Height | ~173cm |
-| Weight | ~57kg |
-| DoF | 28 DoF (body) + 22 DoF (hands) |
-| Walking Speed | ~8km/h |
-| Fingers | 11 DoF, tactile sensors |
+| Height | ~173cm (5'8") |
+| Weight | ~47kg (10kg lighter than Gen 1) |
+| DoF | 28 DoF (body) + 11 DoF (per hand) |
+| Walking Speed | ~8km/h (target) |
+| Hands | 11 DoF, tactile sensors (Gen 3: 22 DoF)
 
 ---
 
@@ -53,11 +53,12 @@ Tesla announced the Optimus (Tesla Bot) humanoid robot at AI Day 2021. Leveragin
 
 ### Teleoperation
 
-Tesla operates a large-scale **teleoperation team** (based on reports):
+Tesla operates **teleoperation-based data collection** (based on reports):
 
-- Operating a teleoperator team of hundreds
+- Hired 50+ Data Collection Operators (based on reports)
 - Using VR headsets + motion capture suits
 - Collecting data while performing real work in their own factories
+- Transitioning to vision-based learning from 2025
 
 ### Imitation Learning
 
@@ -71,17 +72,20 @@ Tesla operates a large-scale **teleoperation team** (based on reports):
 
 *The following is based on Tesla announcements and reports; subject to change.*
 
-### Internal Deployment
+### Internal Deployment (2024-2025)
 
-- Test deployment ongoing in Tesla factories
+- Test deployment ongoing in Tesla factories and Palo Alto office
 - Performing limited tasks like battery cell moving and sorting
+- Hundreds of units produced as of Sept 2024 (for data collection and design testing)
 
 ### Announced Roadmap
 
 | Timeline | Announced Plan | Source |
 |----------|---------------|--------|
-| 2025 | Target for external sales | Elon Musk announcement |
-| Long-term | Target price $20,000-30,000 | Tesla AI Day |
+| 2025 | 5,000-10,000 unit production target | Tesla announcement |
+| Jan 2026 | Gen 3 mass production begins (Fremont) | Tesla announcement |
+| Late 2026 | External sales expected to begin | Elon Musk announcement |
+| Long-term | Target price under $20,000 (at scale) | Elon Musk statement |
 
 ---
 

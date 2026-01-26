@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Key Significance
@@ -31,13 +31,13 @@ Summary of Spot's significance in the Physical AI field:
 
 ## Overview
 
-Spot is a commercial quadruped walking robot developed by Boston Dynamics. Since starting general sales in 2020, it has been utilized for inspection and data collection tasks in various industries including construction, energy, manufacturing, and mining.
+Spot is a commercial quadruped walking robot developed by Boston Dynamics. Since starting general sales in June 2020, it has been utilized for inspection and data collection tasks in various industries including construction, energy, manufacturing, and mining.
 
 | Item | Content |
 |------|---------|
 | Manufacturer | Boston Dynamics (Hyundai Motor Group subsidiary) |
 | Headquarters | Waltham, Massachusetts, USA |
-| Release | 2020 (general sales) |
+| Release | June 2020 (general sales) |
 
 ---
 
@@ -50,11 +50,13 @@ Spot is a commercial quadruped walking robot developed by Boston Dynamics. Since
 | 1992 | Founded by Marc Raibert as spinoff from MIT Leg Laboratory | [Wikipedia](https://en.wikipedia.org/wiki/Boston_Dynamics) |
 | 2005 | BigDog development started with DARPA funding | [Wikipedia](https://en.wikipedia.org/wiki/Boston_Dynamics) |
 | 2013 | Acquired by Google (Alphabet) | [Wikipedia](https://en.wikipedia.org/wiki/Boston_Dynamics) |
+| 2015.02 | Spot first unveiled (electro-hydraulic, 72.5kg) | [Boston Dynamics](https://bostondynamics.com/) |
+| 2016.06 | SpotMini unveiled (all-electric, 25kg) | [Boston Dynamics](https://bostondynamics.com/) |
 | 2017 | Acquired by SoftBank | [SoftBank official announcement](https://group.softbank/en/news/press/20201211_0) |
-| 2019 | Early version of Spot unveiled | [Boston Dynamics](https://bostondynamics.com/) |
-| 2020 | Spot commercial sales started | [Boston Dynamics](https://bostondynamics.com/products/spot/) |
+| 2019 | Spot Early Adopter Program started (leasing) | [Boston Dynamics](https://bostondynamics.com/) |
+| 2020.06 | Spot general commercial sales started ($74,500) | [Boston Dynamics](https://bostondynamics.com/products/spot/) |
 | 2021.06 | Hyundai Motor Group acquisition completed | [Boston Dynamics official announcement](https://bostondynamics.com/news/hyundai-motor-group-completes-acquisition-of-boston-dynamics-from-softbank/) |
-| 2024 | Electric Atlas humanoid unveiled | [Wikipedia](https://en.wikipedia.org/wiki/Boston_Dynamics) |
+| 2024.04 | Electric Atlas humanoid unveiled | [Boston Dynamics](https://bostondynamics.com/blog/electric-new-era-for-atlas/) |
 
 ### Key Figures
 
@@ -74,7 +76,7 @@ As of the acquisition completion in June 2021, Hyundai Motor Group holds 80% and
 
 | Item | Spec |
 |------|------|
-| Weight | 32.5 kg (71.7 lbs) |
+| Weight | 31.7 kg (69.9 lbs) (including battery) |
 | Size (LxWxH) | 1,100 x 500 x 840 mm (standing) |
 | Payload | 14 kg (30 lbs) |
 | Battery | 605 Wh lithium-ion |
@@ -94,7 +96,7 @@ As of the acquisition completion in June 2021, Hyundai Motor Group holds 80% and
 
 ### Sensors and Perception
 
-- 5 stereo cameras (360-degree view)
+- 5 stereo camera pairs (10 cameras total, 360-degree view)
 - LiDAR option (for mapping and autonomous navigation)
 - IMU (Inertial Measurement Unit)
 - Various payload sensors mountable
@@ -111,8 +113,8 @@ A 6-DoF manipulator mountable on Spot, enabling mobile manipulation tasks.
 |------|------|
 | Degrees of Freedom (DoF) | 6 + gripper |
 | Arm Weight | 8 kg |
-| Arm Length | 985 mm (fully extended) |
-| Max Height | 1,800 mm (robot standing) |
+| Arm Length | 984 mm (fully extended) |
+| Max Height | 1,820 mm (robot standing) |
 | Max Lift | 11 kg (24.3 lbs) |
 | Continuous Lift (0.5m) | 5 kg (11 lbs) |
 | Drag Capability | Up to 25 kg (on carpet) |
@@ -325,7 +327,7 @@ Hyundai Motor Group is expanding into the robotics field through the Boston Dyna
 
 ## See Also
 
-- [Hardware List](../index)
+- [Hardware List](../)
 - [Unitree Quadrupeds](unitree)
 - [ANYmal](anymal)
 

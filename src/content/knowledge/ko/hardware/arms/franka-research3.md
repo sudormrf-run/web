@@ -5,7 +5,7 @@ tags: [franka, research3, fr3, cobot, research, arm, torque-sensor, force-contro
 category: hardware
 author: Physical AI Knowledge Base
 created: 2024-01-01
-updated: 2026-01-09
+updated: 2026-01-26
 
 # Authorship
 createdBy:
@@ -14,7 +14,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Franka Research 3 (FR3)
@@ -52,7 +52,7 @@ Franka Research 3(FR3)는 독일 Franka Robotics(구 Franka Emika)가 개발한 
 | **보호 등급** | IP40 (로봇) / IP20 (컨트롤러) | IP30 |
 | **작동 온도** | +5°C ~ +45°C (최적: 15-25°C) | +15°C ~ +25°C |
 | **전원** | 100-240V AC, 50-60Hz, 80W | - |
-| **가격** | ~$40,000+ | ~$30,000+ (단종) |
+| **가격** | ~€25,000+ (기본) / ~$40,000+ (FCI 포함) | ~$30,000+ (단종) |
 
 상기 스펙은 공식 데이터시트 및 제품 페이지 기준. [^fr3-specs]
 
@@ -355,6 +355,7 @@ FR3는 VLA(Vision-Language-Action) 모델 연구에서 가장 널리 사용되�
 
 ### 가격 정보
 
+- **Franka Research 3 기본**: ~€25,000+ (FCI 미포함)
 - **Franka Research 3 + FCI 라이선스**: ~$40,000+
 - **Franka Hand (그리퍼)**: 별도 구매
 - **AI Companion**: 별도 견적

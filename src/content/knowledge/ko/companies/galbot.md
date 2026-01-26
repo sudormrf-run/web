@@ -11,19 +11,52 @@ createdBy:
 lastEditedBy:
   name: 조준호
   email: junho@sudormrf.run
-lastEditedAt: 2026-01-25
+lastEditedAt: 2026-01-26
 ---
 
 ## Overview
 
-Galbot은 중국 기반의 full-stack 로보틱스 유니콘으로, **"Synthetic First, Real Data as a Complement"** 철학으로 VLA 분야 최초의 대규모 상용 배포를 달성했습니다. 99% synthetic + <1% real data로 production-ready 시스템을 구축합니다.
+Galbot(银河通用机器人, Galaxy General Robotics)은 중국 기반의 full-stack 로보틱스 유니콘으로, **"Synthetic First, Real Data as a Complement"** 철학으로 VLA 분야 최초의 대규모 상용 배포를 달성했습니다. 99% synthetic + <1% real data로 production-ready 시스템을 구축합니다.
 
 | 항목 | 내용 |
 |------|------|
-| 본사 | Beijing, China |
-| CTO | He Wang (Peking University CFCS) |
+| 설립 | 2023년 5월 |
+| 본사 | Beijing, China (Haidian District) |
+| R&D 센터 | Beijing, Shenzhen, Suzhou, Hong Kong |
+| 공동 창업자 | He Wang (왕허, CTO), TengZhou Yao (야오텅저우) |
 | 연계 기관 | Beijing Academy of AI (BAAI), PKU EPIC Lab |
+| 펀딩 | 총 $800M+ (2025년 12월 기준) |
+| 기업가치 | $3B (2025년 12월 기준) |
 | 미션 | "Make robots for every industry and every home" |
+
+**He Wang (왕허)**: 1992년생, Tsinghua University 졸업 후 Stanford University에서 박사학위 취득(2021, 지도교수: Leonidas J. Guibas). 현재 Peking University CFCS 조교수이자 PKU EPIC Lab 설립자.
+
+---
+
+## 주요 제품
+
+### Galbot G1
+
+세미 휴머노이드 모바일 매니퓰레이터:
+
+| 항목 | 사양 |
+|------|------|
+| 높이 | 173cm |
+| 무게 | 85kg |
+| 팔 span | 190cm |
+| 최대 도달 높이 | 240cm |
+| Payload | 5kg (단일 팔) |
+| 배터리 | 10시간 연속 작동 |
+| 처리 가능 품목 | 5,000+ 종류 |
+
+### Galbot S1
+
+산업용 중량급 로봇 (2025년 출시):
+
+| 항목 | 사양 |
+|------|------|
+| Payload | 50kg (양팔 연속) |
+| 용도 | 제조업, 중공업 |
 
 ---
 
@@ -33,11 +66,16 @@ Galbot은 중국 기반의 full-stack 로보틱스 유니콘으로, **"Synthetic
 
 | 항목 | 수치 |
 |------|------|
-| Galbot Store | 10+ 중국 도시 |
-| 스마트 약국 창고 | 30+ 완전 무인 |
+| Galbot Store | 30+ 중국 도시 |
+| 스마트 약국/창고 | 30+ 완전 무인 |
 | 창고 내 인력 | 0명 |
 | MTBF | 1개월+ |
-| 연속 작업 | 6시간/충전 |
+| 연속 작업 | 10시간/충전 |
+
+### 주요 파트너십
+
+- **제조업**: CATL, Bosch, Toyota, Hyundai
+- **헬스케어**: Xuanwu Hospital (환자실, 약국, 안내 시스템)
 
 ### GraspVLA 성능 (LIBERO Zero-shot)
 
@@ -179,7 +217,7 @@ Sim2Real Transfer (1B frames 수렴)
 
 | 항목 | Galbot | Physical Intelligence | Figure |
 |------|--------|----------------------|--------|
-| 배포 규모 | **10+ 도시 + 30+ 창고** | 연구 데모 | 연구 데모 |
+| 배포 규모 | **30+ 도시 + 30+ 창고** | 연구 데모 | 연구 데모 |
 | 데이터 전략 | 99% synthetic | Cross-embodiment real | VLA (Helix) |
 | 강점 | 상용 배포 유일 | 범용성 추구 | 산업용 최적화 |
 | 한계 | Grasping 특화 | Zero-shot 약함 | 가정용 미지원 |
@@ -198,7 +236,7 @@ Sim2Real Transfer (1B frames 수렴)
 
 ## See Also
 
-- [회사 목록](index)
-- [Physical Intelligence](physical-intelligence)
-- [π0](../models/pi0) - 비교 대상 VLA
+- [회사 목록](./)
+- [Physical Intelligence](./physical-intelligence)
+- [pi0](../models/pi0) - 비교 대상 VLA
 - [Diffusion Policy](../models/diffusion-policy)

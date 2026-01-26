@@ -31,19 +31,19 @@ lastEditedAt: 2026-01-15
 | Item | Spec | Source |
 |------|------|--------|
 | Manufacturer | 1X Technologies | [1] |
-| Headquarters | Moss, Norway (relocated to Palo Alto, USA in 2024) | [3][4] |
-| Height | Approximately 165-168cm (5'5"-5'6") | [1][5] |
+| Headquarters | Moss, Norway (relocated to Palo Alto, USA in July 2025) | [3][4] |
+| Height | Approximately 167-168cm (5'6") | [1][5] |
 | Weight | Approximately 30kg (66 lbs) | [1] |
-| Lifting Capacity | 68kg (150 lbs) or more (per announcement) | [1] |
+| Lifting Capacity | 70kg (154 lbs) (per announcement) | [1] |
 | Carrying Capacity | Approximately 25kg (55 lbs) | [1] |
 | Hand DoF | 22 DOF (total 75 DOF announced) | [1] |
-| Movement Speed | Walking approximately 4km/h, max approximately 12km/h | [1] |
+| Movement Speed | Walking 1.4m/s (~5km/h), max 6.2m/s (~22km/h) | [1] |
 | Battery | 842Wh, approximately 4 hours operation (per announcement) | [1] |
 | Charging Time | Approximately 24 minutes (fast charging, per announcement) | [1] |
 | Noise Level | Approximately 22dB (per announcement) | [1] |
 | Water Resistance | Hands: IP68, Body: IP44 (per announcement) | [1] |
 | Drive Method | Tendon Drive | [1] |
-| AI Model | Redwood AI | [2] |
+| AI Model | Redwood AI (160M parameters) | [2] |
 | Target Price | $20,000 (monthly $499 subscription option) | [1][6] |
 
 > **Note**: Some specs may vary slightly by source; figures above are based on 1X official announcements.
@@ -110,9 +110,9 @@ Traditional robots have motors directly connected to joints, resulting in high r
 
 | Version | Release | Key Features | Source |
 |---------|---------|--------------|--------|
-| **NEO Beta** | August 2024 | Initial prototype, basic bipedal walking demonstration | [5] |
-| **NEO Gamma** | February 2025 | Enhanced dexterity, refined design, strengthened Redwood AI integration | [5] |
-| **NEO (Consumer)** | October 2025 | Consumer version pre-orders start, US delivery scheduled for 2026 | [6] |
+| **NEO Beta** | August 30, 2024 | Initial prototype, basic bipedal walking demonstration, 4km/h walking, 12km/h max | [5] |
+| **NEO Gamma** | February 21, 2025 | Enhanced dexterity, refined design, improved manufacturability and reliability | [5] |
+| **NEO (Consumer)** | October 28, 2025 | Consumer version pre-orders start, US delivery scheduled for 2026, global expansion in 2027 | [6] |
 
 > **Note**: Refer to official announcement materials for exact release dates.
 
@@ -126,9 +126,9 @@ Traditional robots have motors directly connected to joints, resulting in high r
 
 | Component | Description |
 |-----------|-------------|
-| Model Size | Transformer-based (refer to official announcement for specific parameter count) |
-| Execution Environment | NEO onboard GPU (per announcement) |
-| Execution Speed | Several Hz level (approximately 5Hz per announcement) |
+| Model Size | Transformer-based, 160M parameters |
+| Execution Environment | NEO onboard GPU (NVIDIA Jetson Thor based) |
+| Execution Speed | Approximately 5Hz (runs locally without cloud connection) |
 | Input | Pre-trained language embeddings + vision tokens + proprioceptive embeddings |
 | Output | Action generation through Diffusion Policy |
 
@@ -179,7 +179,7 @@ Actions made possible:
 |------|---------|
 | Founded | 2014 (formerly Halodi Robotics) |
 | Founder/CEO | Bernt Bornich (Bernt Bornich) |
-| Headquarters | Founded in Moss, Norway, later relocated to Palo Alto, USA |
+| Headquarters | Founded in Moss, Norway, relocated to Palo Alto, USA in July 2025 |
 | Key Investors | OpenAI, Tiger Global, EQT Ventures, Samsung NEXT |
 | Total Investment | Over $137M (as of 2024) |
 
@@ -198,7 +198,7 @@ Actions made possible:
 
 ## See Also
 
-- [Hardware List](../index)
+- [Hardware List](../)
 - [1X Technologies](../../companies/1x)
 - [Redwood AI](../../models/redwood-ai)
 

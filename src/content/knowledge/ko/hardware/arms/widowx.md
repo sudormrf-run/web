@@ -12,7 +12,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Interbotix / WidowX
@@ -31,7 +31,7 @@ Interbotix는 Trossen Robotics에서 개발한 연구용 로봇 암 브랜드로
 | 항목 | 내용 | 출처 |
 |------|------|------|
 | 제조사 | [Trossen Robotics](https://www.trossenrobotics.com/) | 공식 사이트 |
-| 설립 | 2005년, Matt Trossen | [Tracxn](https://tracxn.com/d/companies/trossen-robotics) |
+| 설립 | 2005년 (일부 출처 2004년), Matt Trossen | [Tracxn](https://tracxn.com/d/companies/trossen-robotics) |
 | 본사 | Downers Grove, Illinois, USA | [CBInsights](https://www.cbinsights.com/company/trossen-robotics) |
 | 모터 | ROBOTIS Dynamixel X-Series | [공식 문서](https://docs.trossenrobotics.com/interbotix_xsarms_docs/) |
 | 가격대 | $2,000 - $6,500 (2024년 기준, 변동 가능) | [제품 페이지](https://www.trossenrobotics.com/robotic-arms.aspx) |
@@ -41,7 +41,7 @@ Interbotix는 Trossen Robotics에서 개발한 연구용 로봇 암 브랜드로
 
 ## 회사 소개: Trossen Robotics
 
-Trossen Robotics는 2005년 Matt Trossen이 설립한 로봇 전문 기업으로, 20년 이상 연구실 및 교육기관에 로봇 하드웨어를 공급해왔다[^1]. 연구용 매니퓰레이터, 무인 지상 차량(UGV), ML/AI 통합 연구 키트 등을 제조 및 유통하며, 특히 ROBOTIS Dynamixel 서보를 활용한 Interbotix 브랜드로 유명하다.
+Trossen Robotics는 2004-2005년경 Matt Trossen이 설립한 로봇 전문 기업으로, 20년 이상 연구실 및 교육기관에 로봇 하드웨어를 공급해왔다[^1]. 연구용 매니퓰레이터, 무인 지상 차량(UGV), ML/AI 통합 연구 키트 등을 제조 및 유통하며, 특히 ROBOTIS Dynamixel 서보를 활용한 Interbotix 브랜드로 유명하다.
 
 ALOHA 프로젝트와 Open X-Embodiment 데이터셋에 하드웨어를 공급하면서 Embodied AI 연구 커뮤니티에서 핵심적인 위치를 차지하게 되었다.
 
@@ -268,8 +268,9 @@ Physical Intelligence에서 개발한 범용 로봇 제어를 위한 VLA 플로�
 
 | 항목 | 내용 |
 |------|------|
-| 기반 모델 | PaliGemma VLM |
-| 학습 데이터 | 7개 로봇 플랫폼, 68개 태스크 |
+| 파라미터 수 | 3.3B (PaliGemma 3B + Action Expert 300M) |
+| 기반 모델 | PaliGemma VLM (SigLIP + Gemma) |
+| 학습 데이터 | 7개 로봇 플랫폼, 68개 태스크, Open X-Embodiment 포함 |
 | 제어 주파수 | 최대 50Hz |
 | 액션 생성 | Flow Matching (Diffusion 변형) |
 

@@ -37,12 +37,12 @@ lastEditedAt: 2026-01-15
 | 항목 | 내용 |
 |------|------|
 | 정식 명칭 | A Low-cost Open-source Hardware System for Bimanual Teleoperation |
-| 개발 기관 | Stanford IRIS Lab (Chelsea Finn) + Trossen Robotics |
-| 주요 연구자 | Tony Z. Zhao, Zipeng Fu, Chelsea Finn |
+| 개발 기관 | Stanford University, UC Berkeley, Meta; Interbotix 암(Trossen Robotics) 기반 |
+| 주요 연구자 | Tony Z. Zhao, Vikash Kumar, Sergey Levine, Chelsea Finn |
 | 발표 | RSS 2023 |
-| 구성 | ViperX 300 암 x 2 (팔로워) + WidowX 250 암 x 2 (리더) |
-| 총 비용 | 약 $32,000 (웹캠, 노트북 포함) |
-| 크기 | L121.9 x W101.6 x H203.2 cm |
+| 구성 | Interbotix ViperX-300(6DoF) x 2 (팔로워) + Interbotix WidowX-250(6DoF) x 2 (리더) |
+| 총 비용 | 포함 범위(리더/카메라/컴퓨트)에 따라 대략 ~$20k–$32k |
+| 크기 | 표준화된 단일 규격 없음(프레임/테이블 구성에 따라 달라짐) |
 | 용도 | VLA 데이터 수집, 양팔 조작 연구, 모방 학습 |
 
 ---
@@ -51,7 +51,7 @@ lastEditedAt: 2026-01-15
 
 ### 1. VLA 연구의 표준 플랫폼
 
-ALOHA는 단순한 하드웨어가 아니라, **현대 로봇 모방 학습 연구의 핵심 인프라**로 자리잡았다. $32,000이라는 저렴한 가격에 기존 상용 양팔 로봇($200,000+)과 비교할 수 있는 성능을 제공하여 연구 접근성을 혁신적으로 높였다.
+ALOHA는 단순한 하드웨어가 아니라, **현대 로봇 모방 학습 연구의 핵심 인프라**로 자리잡았다. 포함 범위에 따라 수만 달러(USD) 수준(대략 ~$20k–$30k+로 자주 인용)에 기존 상용 양팔 로봇($200,000+)과 비교할 수 있는 성능을 제공하여 연구 접근성을 혁신적으로 높였다.
 
 ### 2. ACT (Action Chunking with Transformers) 원조 플랫폼
 
@@ -92,38 +92,33 @@ Google DeepMind가 주도한 **Open X-Embodiment 데이터셋**(22개 로봇, 10
 
 ### 전체 비용 내역
 
-| 구성 요소 | 비용 | 비고 |
-|----------|------|------|
-| ViperX 300 x 2 + WidowX 250 x 2 | ~$9,680 | 팔로워 2대 + 리더 2대 세트 |
-| 카메라, 센서, 마운트 | ~$5,000 | 손목 카메라 + 외부 시점 |
-| 노트북 (GPU 포함) | ~$5,000 | 소비자용 GPU |
-| 프레임 및 기타 하드웨어 | ~$12,320 | 알루미늄 익스트루전, 케이블, 전원 등 |
-| **총합** | **~$32,000** | 3D 프린팅으로 추가 절감 가능 |
+비용은 SKU(예: 5DoF vs 6DoF), 리더 스테이션 포함 여부, 컴퓨트/카메라 구성에 따라 크게 달라지며 일반적으로 수만 달러(USD) 수준입니다.
 
 > **참고**: 비용은 [원본 논문](https://arxiv.org/abs/2304.13705) 및 [Trossen Robotics](https://www.trossenrobotics.com/viperx-aloha) 가격 기준 (2023). 환율 및 구매 시점에 따라 변동 가능.
 
-### ViperX 300 사양
+### ViperX 300 6DoF 사양
 
 | 사양 | 값 |
 |------|-----|
-| 자유도 | 6 DoF |
+| 자유도 | 6 DoF(암) + 1 DoF(그리퍼) |
 | 도달 거리 | 750mm |
-| 페이로드 | 750g |
+| 페이로드 | 750g (50% 확장 시 권장) |
 | 모터 | DYNAMIXEL X-Series |
-| 허리/어깨 | XM540-W270 (4096 레벨 피드백, ±0.1mm 반복 정밀도) |
-| 손목/그리퍼 | XM430-W350 (향상된 열 관리) |
+| Waist/Shoulder/Elbow/Forearm Roll/Wrist Angle | XM540-W270 |
+| Wrist Rotate/Gripper | XM430-W350 |
+| 통신 | RS485 (1Mbps), U2D2 인터페이스 |
 
 ### 카메라 시스템
 
 | 버전 | 카메라 | 특징 |
 |------|--------|------|
-| ALOHA (Original) | 소비자용 웹캠 | RGB, 다중 시점 |
-| ALOHA 2 | Intel RealSense D405 | 넓은 FOV, 뎁스, 글로벌 셔터 |
+| ALOHA (Original) | Logitech C922x 웹캠 x 4 | RGB 480x640 @ 50Hz, 고정 2개 + 손목 장착 2개 |
+| ALOHA 2 | Intel RealSense D405 x 4 | RGB + Depth, 글로벌 셔터, 넓은 시야각, 좌/우 손목 + 상단/하단 뷰 |
 
 ### 그리퍼
 
-- **팔로워**: 평행 그리퍼, 향상된 그립테이프
-- **리더 (ALOHA 2)**: XC430-W150-T 모터로 교체 (저마찰 금속 기어)
+- **ALOHA (Original)**: 시저헤드 그리퍼, XL430-W250-T 모터
+- **ALOHA 2**: 저마찰 레일 설계, XC430-W150-T 모터 (기존 대비 개폐력 10배 감소, 플라스틱 기어 → 저마찰 금속 기어)
 
 ---
 
@@ -162,10 +157,12 @@ ALOHA의 텔레오퍼레이션은 **백드라이빙(Backdriving) 기반 퍼펫�
 | 항목 | ALOHA (Original) | ALOHA 2 |
 |------|-----------------|---------|
 | 발표 | 2023 (RSS) | 2024 |
-| 그리퍼 | 고마찰 | 저마찰 레일 설계 |
-| 중력 보상 | 고무밴드 | 패시브 기구학 메커니즘 |
-| 카메라 | 웹캠 | Intel RealSense D405 |
-| 프레임 | 기본 | 20x20mm 알루미늄 익스트루전 |
+| 개발 | Stanford, UC Berkeley, Meta | Google, Stanford, Hoku Labs |
+| 그리퍼 | 시저헤드, 고마찰 (XL430-W250-T) | 저마찰 레일 설계 (XC430-W150-T) |
+| 중력 보상 | 고무밴드 | 패시브 기구학 메커니즘 (기성품 부품) |
+| 카메라 | Logitech C922x 웹캠 x 4 | Intel RealSense D405 x 4 |
+| 프레임 | 기본 | 48" x 30" 테이블 + 알루미늄 케이지 |
+| 소프트웨어 | ROS | ROS 2 (50Hz 로깅) |
 | 내구성 | 보통 | 향상 |
 
 ---
@@ -176,10 +173,12 @@ Mobile ALOHA는 ALOHA를 **모바일 베이스(AgileX Tracer)**에 장착한 확
 
 | 항목 | 내용 |
 |------|------|
-| 베이스 | AgileX Tracer AGV (~$7,000) |
+| 베이스 | AgileX Tracer AGV (~$7,000) - 차동 구동, 최대 속도 1.6m/s, 최대 적재 100kg |
+| 전체 비용 | ~$32,000 (온보드 전원 및 컴퓨트 포함) |
+| 크기 | 90cm x 135cm, 중량 75kg |
 | 이동 방식 | 사용자가 시스템에 물리적으로 연결되어 바퀴 백드라이빙 |
 | 데이터 | 베이스 속도 + 암 퍼펫티어링 동시 기록 |
-| 학습 | 50회 시연으로 자율 수행 가능 |
+| 학습 | 50회 시연으로 자율 수행 가능 (co-training으로 성공률 최대 90% 향상) |
 
 ### Mobile ALOHA 학습 태스크 예시
 
@@ -205,7 +204,7 @@ ALOHA는 다양한 VLA(Vision-Language-Action) 모델의 핵심 평가/학습 �
 | 핵심 아이디어 | 단일 액션 대신 **액션 시퀀스(chunk)** 예측 |
 | 아키텍처 | Conditional VAE + Transformer Encoder/Decoder |
 | 문제 해결 | Compounding error를 k배 감소 (k = chunk 길이) |
-| 성능 | 10분 시연으로 80-90% 성공률 달성 |
+| 성능 | 일부 태스크에서 약 10분 시연으로 ~80–90%를 보고(태스크/데이터 조건에 의존) |
 | 태스크 | 투명 컵 열기, 배터리 삽입 등 세밀한 양팔 조작 |
 
 ### OpenVLA

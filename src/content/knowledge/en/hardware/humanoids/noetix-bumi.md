@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Noetix Bumi
@@ -26,7 +26,7 @@ lastEditedAt: 2026-01-15
 
 Noetix Bumi is a product that **achieved a high-performance bipedal humanoid robot at under $1,400** [1][4]. As a case that proves humanoid robots can be made available to the public at a price cheaper than flagship smartphones, it is evaluated as a milestone symbolizing the democratization of Physical AI.
 
-- **Price Innovation**: Significantly cheaper than existing high-performance humanoid robots (Unitree H2 ~$16,000) [8]
+- **Price Innovation**: Significantly cheaper than existing high-performance humanoid robots (Unitree H2 ~$29,900) [8]
 - **Vertical Integration Strategy**: Cost reduction through self-developed controllers and actuators [2]
 - **Educational Accessibility**: Greatly lowered the barrier to entry for robot research for students, researchers, and hobbyist developers [1]
 - **Mass Production Potential**: Easy to scale up utilizing supply chains within China [2]
@@ -47,7 +47,7 @@ Noetix Bumi is a product that **achieved a high-performance bipedal humanoid rob
 
 ### Founder Background
 
-Founder Jiang Zheyuan (27 years old) completed his undergraduate degree at Tsinghua University's Electronic Engineering Department and took a leave of absence during his PhD program in 2023 to start Noetix [7]. With the goal of commercializing humanoid robot technology, he assembled a young engineering team and succeeded in rapidly developing from research robots to mass-producible consumer products [1][7].
+Founder Jiang Zheyuan (25 years old at founding) completed his undergraduate degree at Tsinghua University's Electronic Engineering Department and took a leave of absence during his PhD program in 2023 to start Noetix [7]. With the goal of commercializing humanoid robot technology, he assembled a young engineering team and succeeded in rapidly developing from research robots to mass-producible consumer products [1][7].
 
 ### Funding Status
 
@@ -170,7 +170,7 @@ Information about Noetix's larger humanoid robot N2 [7]:
 | Item | Spec |
 |------|------|
 | Height | 1.2m |
-| Weight | 29-30kg |
+| Weight | 29kg |
 | Price | ¥39,900 (~$5,500) |
 | Max Speed | 3.5m/s (10km/h) |
 | Capabilities | Backflip, large strides, running, jumping, dancing |
@@ -201,7 +201,8 @@ As a result of this achievement, Noetix reportedly received **over 1,000 orders 
 |---------|--------------|--------|-------------|-----|----------|
 | **Bumi** | Noetix | 94cm | ~$1,370 | 21 | Lowest-cost consumer, education market target |
 | N2 | Noetix | 1.2m | ~$5,500 | N/A | High-performance, marathon 2nd place |
-| H2 | Unitree | 1.8m | ~$16,000 | 31 | Industrial, high DOF |
+| G1 | Unitree | 1.32m | ~$16,000+ | 23-43 | Research, various DOF configurations |
+| H2 | Unitree | 1.82m | ~$29,900 | 31 | Commercial/Research, full-size |
 
 *Note: Prices are as of announcement date and subject to change*
 

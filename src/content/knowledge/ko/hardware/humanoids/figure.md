@@ -39,7 +39,7 @@ Figure AI의 휴머노이드는 다음과 같은 점에서 Physical AI 분야에
 - **수직 통합 AI 전략**: OpenAI 파트너십을 종료하고 자체 Helix VLA 개발로 전환 (2025년 2월) [^techcrunch]
 - **고성능 하드웨어-소프트웨어 통합**: 200Hz 전신 제어가 가능한 Helix VLA와 최적화된 하드웨어의 결합 [^helix]
 - **급격한 원가 절감 목표**: Figure 03에서 부품 비용 90% 절감을 목표로, 대량생산 시 $20,000 이하 가격대 지향 [^figure03]
-- **대규모 생산 인프라**: BotQ 공장에서 연간 12,000대 생산 목표 (2025년 3월 발표) [^wiki]
+- **대규모 생산 인프라**: BotQ 공장에서 연간 12,000대 생산 목표 (2025년 3월 15일 발표) [^botq]
 - **실증된 산업 성과**: BMW 공장에서 30,000대 이상의 X3 생산에 기여 [^bmw]
 
 ---
@@ -49,17 +49,17 @@ Figure AI의 휴머노이드는 다음과 같은 점에서 Physical AI 분야에
 | 항목 | Figure 01 (2023) | Figure 02 (2024) | Figure 03 (2025) |
 |------|------------------|------------------|------------------|
 | **목적** | 프로토타입 | 산업용 파일럿 | 상용 대량생산 |
-| **높이** | ~170cm | ~170cm | 168cm (5'6") |
-| **무게** | - | ~66kg | 60kg (-9%) |
-| **손 자유도 (DoF)** | 기본 그리퍼 | 16 DoF | 개선된 디자인 |
-| **전체 자유도 (DoF)** | - | 35 DoF | 35+ DoF |
-| **손 페이로드** | - | 25kg | 25kg |
+| **높이** | 168cm (5'6") | 168cm (5'6") | 168cm (5'6") |
+| **무게** | 60kg (132 lbs) | 70kg (154 lbs) | 60kg (-14%) |
+| **손 자유도 (DoF)** | 기본 그리퍼 | 16 DoF (양손) | 개선된 디자인 |
+| **전체 자유도 (DoF)** | 24 DoF | 35 DoF | 35+ DoF |
+| **손 페이로드** | 20kg | 20kg | 25kg |
 | **카메라** | 기본 | 6x RGB | 8x (손바닥 2개 포함) |
-| **배터리** | - | 내장형 | 2.3 kWh (5시간) |
+| **배터리** | 내장형 (5시간) | 2.25 kWh (5시간) | 2.3 kWh (5시간) |
 | **충전 방식** | 유선 | 유선 | 무선 유도 (2kW) |
 | **컴퓨팅** | 기본 | NVIDIA RTX 듀얼 | 듀얼 GPU (S1/S2) |
 | **제조 방식** | 수작업 | CNC 가공 | 다이캐스팅/사출성형 |
-| **목표 가격** | - | $100K+ | $20K 이하 (목표) |
+| **목표 가격** | - | ~$30K (추정) | $20K 이하 (목표) |
 
 *출처: Wikipedia, Figure AI 공식 발표*
 
@@ -67,7 +67,19 @@ Figure AI의 휴머노이드는 다음과 같은 점에서 Physical AI 분야에
 
 ## Figure 01
 
-2023년 3월 공식 발표된 Figure AI의 첫 번째 휴머노이드 로봇입니다. [^wiki]
+2023년 3월 2일 공식 발표된 Figure AI의 첫 번째 휴머노이드 로봇입니다. 2023년 5월에 첫 걸음을 내딛었습니다. [^wiki]
+
+### 물리적 사양
+
+| 항목 | 스펙 |
+|------|------|
+| 높이 | 168cm (5'6") |
+| 무게 | 60kg (132 lbs) |
+| 페이로드 | 최대 20kg (44 lbs) |
+| 자유도 (DoF) | 24 |
+| 작동 주파수 | 200 Hz |
+| 작동 시간 | 최대 5시간 |
+| 이동 속도 | 1.2 m/s |
 
 ### 주요 특징
 
@@ -75,12 +87,24 @@ Figure AI의 휴머노이드는 다음과 같은 점에서 Physical AI 분야에
 - **기본 조작 능력**: 계단 오르기, 상자 들기, 도구 사용
 - **OpenAI 통합**: 대규모 언어 모델을 활용한 음성 대화 및 추론 능력
 - **인간 수준의 손재주**: 정밀함과 협응이 필요한 작업 수행 가능
+- **토크 제어 보행**: 불균일한 지형 및 외부 교란에 적응 가능
 
 ---
 
 ## Figure 02
 
 2024년 8월 6일 발표된 2세대 휴머노이드로, 산업용 배포를 위한 본격적인 단계입니다. [^wiki]
+
+### 물리적 사양
+
+| 항목 | 스펙 |
+|------|------|
+| 높이 | 168cm (5'6") |
+| 무게 | 70kg (154 lbs) |
+| 페이로드 | 최대 20kg |
+| 이동 속도 | 1.2 m/s |
+| 배터리 | 2.25 kWh (커스텀) |
+| 작동 시간 | 5시간 이상 |
 
 ### 주요 특징
 
@@ -89,30 +113,33 @@ Figure AI의 휴머노이드는 다음과 같은 점에서 Physical AI 분야에
 | 손 자유도 (DoF) | 16 (5손가락 양손) |
 | 전체 자유도 (DoF) | 35 |
 | 손 페이로드 | 최대 25kg |
+| 토크 | 최대 150Nm |
+| 관절 가동 범위 | 최대 195도 |
 | 카메라 | 6x RGB |
 | 컴퓨팅 | 듀얼 NVIDIA RTX GPU (이전 대비 3x) |
 | 센서 | RGB 카메라, IMU (관성 측정 장치), 자이로스코프, 힘 센서, 비접촉 감지, 마이크, 스피커 |
 
 ### 주요 개선점
 
-- 팔다리에 케이블 통합 설계
-- 토르소에 배터리 통합
+- 팔다리에 케이블 통합 설계 (매끄러운 매트 블랙 외관)
+- 토르소에 배터리 통합 (이전 대비 50% 더 많은 에너지)
 - 온보드 VLM (비전 언어 모델) 탑재
 - 실시간 인식, 의사결정, 실행 가능
+- OpenAI 모델과 연동한 음성 대화 기능
 
 ---
 
 ## Figure 03
 
-2025년 10월 발표된 3세대 휴머노이드로, 가정용과 상업용 모두를 타겟으로 한 대량생산 모델입니다. [^figure03]
+2025년 10월 9일 발표된 3세대 휴머노이드로, 가정용과 상업용 모두를 타겟으로 한 대량생산 모델입니다. 같은 날 초기 파트너 배포가 시작되었습니다. [^figure03]
 
 ### 물리적 사양
 
 | 항목 | 스펙 |
 |------|------|
 | 높이 | 168cm (5'6") |
-| 무게 | 60kg (Figure 02 대비 -9%) |
-| 배터리 | 2.3 kWh (커스텀) |
+| 무게 | 60kg (Figure 02 대비 -14%) |
+| 배터리 | 2.3 kWh (커스텀, Figure 02 대비 78% 비용 절감) |
 | 작동 시간 | 약 5시간 (300분) |
 | 충전 | 무선 유도 2kW (발바닥 코일) |
 | 데이터 전송 | 10 Gbps mmWave |
@@ -198,6 +225,8 @@ Figure AI에 따르면, 범용 휴머노이드를 자동차 생산 시설에 상
 - **처리 부품**: 90,000개 이상의 판금 부품 로딩
 - **생산 기여**: 30,000대 이상의 BMW X3 생산에 기여
 - **작업 내용**: 판금 부품을 랙/빈에서 집어 용접 장비에 배치
+- **총 이동 거리**: 약 200마일 (322km)
+- **정확도**: 99% 이상
 
 ### 성능 요구사항
 
@@ -223,13 +252,13 @@ BMW 배포에서 얻은 주요 교훈이 Figure 03 설계에 반영되었습니�
 
 | 시기 | 라운드 | 금액 | 기업가치 | 주요 투자자 |
 |------|--------|------|----------|-------------|
-| 2023년 | Series A | ~$70M | - | 초기 투자자 |
-| 2024.02 | Series B | $675M | $2.6B | Jeff Bezos, Microsoft, NVIDIA, Intel, Amazon, OpenAI |
-| 2025.09 | Series C | $1B | $39B | Intel, NVIDIA, Qualcomm, T-Mobile, Salesforce, Brookfield |
+| 2023.05 | Series A | ~$70M | - | Parkway Venture Capital 주도 |
+| 2024.02 | Series B | $675M | $2.6B | Jeff Bezos, Microsoft, NVIDIA, Intel Capital, Amazon Industrial Innovation Fund, OpenAI Startup Fund, ARK Invest, Align Ventures |
+| 2025.09 | Series C | $1B+ | $39B | Parkway Venture Capital 주도, Brookfield, NVIDIA, Macquarie Capital, Intel Capital, Align Ventures, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures |
 
 *출처: [Wikipedia](https://en.wikipedia.org/wiki/Figure_AI), [PRNewswire](https://www.prnewswire.com/news-releases/figure-raises-675m-at-2-6b-valuation-and-signs-collaboration-agreement-with-openai-302074897.html)*
 
-**누적 펀딩**: 약 $1.7B+ (Series A + B + C)
+**누적 펀딩**: 약 $2B (Series A + B + C)
 
 ### OpenAI 파트너십
 
@@ -241,9 +270,10 @@ BMW 배포에서 얻은 주요 교훈이 Figure 03 설계에 반영되었습니�
 
 ## 향후 계획
 
-- **BotQ 공장**: 2025년 3월 발표, 연간 12,000대 생산 목표 [^wiki]
+- **BotQ 공장**: 2025년 3월 15일 발표, 연간 12,000대 생산 목표로 미국 내 최대 휴머노이드 공장 [^botq]
 - **4년 내 10만대 출하** 계획 (로드맵)
-- **가정용 시장 진출**: Figure 03의 가사 도우미 역할 (빨래, 청소, 식기세척기 등) [^figure03]
+- **가정용 시장 진출**: 2026년 소비자 시장 진입 예정, Figure 03의 가사 도우미 역할 (빨래, 청소, 식기세척기 등) [^figure03]
+- **Figure 02 퇴역**: Figure 03 출시 후 Figure 02 플릿 전체 퇴역 진행 중
 
 ---
 
@@ -268,6 +298,7 @@ BMW 배포에서 얻은 주요 교훈이 Figure 03 설계에 반영되었습니�
 [^bmwpress]: [BMW 공식 보도자료](https://www.press.bmwgroup.com/global/article/detail/T0444265EN/successful-test-of-humanoid-robots-at-bmw-group-plant-spartanburg)
 [^seriesb]: [Series B 펀딩 발표](https://www.prnewswire.com/news-releases/figure-raises-675m-at-2-6b-valuation-and-signs-collaboration-agreement-with-openai-302074897.html)
 [^techcrunch]: [Figure drops OpenAI - TechCrunch](https://techcrunch.com/2025/02/04/figure-drops-openai-in-favor-of-in-house-models/)
+[^botq]: [BotQ 발표](https://www.figure.ai/news/botq)
 
 **추가 참고 자료**:
 - [Figure AI 공식 사이트](https://www.figure.ai/)

@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Agibot (智元机器人)
@@ -32,7 +32,7 @@ lastEditedAt: 2026-01-15
 | 설립 | 2023년 2월 |
 | 창업자 | Peng Zhihui (彭志辉), Deng Taihua - 前 Huawei "Top Minds" 프로그램 |
 | 투자자 | Sequoia Capital China, Hillhouse Capital, BYD, JD.com |
-| 밸류에이션 | $1B+ (2024년 유니콘 달성) |
+| 밸류에이션 | $6.4B (2025년 10월 기준), 2024년 유니콘 달성 |
 
 ---
 
@@ -40,33 +40,62 @@ lastEditedAt: 2026-01-15
 
 ### 주요 모델 라인업
 
+#### A 시리즈 (이족 휴머노이드)
+
+| 모델 | 형태 | DoF | 높이 | 무게 | 용도 |
+|------|------|-----|------|------|------|
+| A2 | 인터랙티브 서비스 로봇 | 49+ | 175cm | 55kg | 고객 서비스/안내 |
+| A2 Ultra | 고급형 (iF/Red Dot 수상) | 49+ | 175cm | 55kg | 범용/텔레오퍼레이션 |
+| A2 Lite | 보급형 | - | - | - | 범용/텔레오퍼레이션 |
+| A2-W | 휠형 제조 로봇 | 22 | 163cm | 230kg | 산업 유연 제조 |
+| A2-Max | 중장비형 | - | - | - | 고하중 산업 작업 |
+| RAISE A1 | 최초 모델 (2023.08) | 49 | 175cm | 53-55kg | 산업/R&D |
+
+#### G 시리즈 (휠 휴머노이드)
+
+| 모델 | 형태 | DoF | 높이 | 무게 | 런타임 | 용도 |
+|------|------|-----|------|------|--------|------|
+| G1 | 휠 휴머노이드 | 26 | 조절 가능 | - | - | 범용 |
+| G2 | 산업용 휠 휴머노이드 | 26 | 최대 180cm | 185kg | 4시간 | 제조/물류/서비스 |
+
+#### X 시리즈 (반신 휴머노이드)
+
 | 모델 | 형태 | DoF | 높이 | 무게 | 가격 | 용도 |
 |------|------|-----|------|------|------|------|
-| A2 | 이족 휴머노이드 | 49 | 169cm | 55kg | - | 범용/산업 |
-| A2 Ultra | 이족 휴머노이드 (고급형) | 49 | 169cm | - | - | 범용/텔레오퍼레이션 |
-| A2 Lite | 이족 휴머노이드 (보급형) | - | - | - | - | 범용/텔레오퍼레이션 |
-| A2 Youth | 이족 휴머노이드 | 23 | - | - | ~$23K | 엔터테인먼트 |
-| G1/G2 | 휠 휴머노이드 | 26 | 130-180cm (조절) | 150kg | ~$60K | 산업/상업 |
-| X1 Lingxi | 반신 휴머노이드 | 27 | 130cm | - | ~$14K | 인터랙션 |
-| RAISE A1 | 이족 휴머노이드 | 49 | 175cm | 53kg | - | 산업 |
+| X1 Lingxi | 오픈소스 개발자 키트 | 34 | 130-133cm | 33-44kg | ~$19.5K | 연구/개발 |
+| X2 Lingxi | 범용 반신 로봇 | 28 | 130cm | 33.8kg | - | 보안/가사/청소 |
 
-### G 시리즈 상세 스펙 (26 DoF)
+### A2 시리즈 상세 스펙
+
+| 항목 | 스펙 |
+|------|------|
+| 총 DoF | 49+ |
+| 양팔 | 7 DoF x 2 = 14 DoF (힘-위치 하이브리드 제어) |
+| 덱스터러스 핸드 | 19 DoF (바늘 꿰기 수준 정밀도) |
+| SkillHand | 12 능동 DoF + 5 수동 DoF, 손끝 비전센서 내장 |
+| 보행 속도 | 최대 7km/h (3.3m/s) |
+| 런타임 | 2시간 연속 운용 |
+| 페이로드 | 팔당 5kg, 전체 15kg |
+| 피크 토크 | 512Nm (통합 관절), PowerFlow 350Nm |
+| 카메라 | 마이크 어레이, LiDAR, RGB-D |
+| 컴퓨팅 | 200 TOPS (온디바이스 AI) |
+| AI 정확도 | 96% 의도 이해 (소음 환경), 99% 얼굴 인식 |
+| A2 Ultra 신뢰성 | 1,300시간+ 연속 보행, 실환경 21개월 무전복 |
+
+### G2 시리즈 상세 스펙 (26 DoF)
 
 | 항목 | 스펙 |
 |------|------|
 | 총 DoF | 26 |
-| 양팔 | 7 DoF x 2 = 14 DoF |
-| 허리 | 3 DoF (굽힘/신장, 회전) |
-| 하체/힙 | 2 DoF (동적 자세 변경) |
-| 헤드/기타 | 7 DoF (수평/수직 회전 포함, 공식 사양 기준) |
-| 팔 | 7 DoF 힘제어 (전관절 토크센서), 힘제어 정확도 >0.5N |
+| 양팔 | 7 DoF x 2 = 14 DoF (전관절 토크센서) |
+| 힘제어 정확도 | >0.5N |
+| 높이 | 최대 180cm (조절 가능) |
+| 무게 | 185kg |
+| 런타임 | 4시간 (핫스왑 배터리) |
 | 페이로드 | 팔당 5kg |
-| 그리퍼 | 모듈형 (표준 그리퍼 / 6 DoF 덱스터러스 핸드) |
-| SkillHand | 12 능동 DoF + 5 수동 DoF, 손끝 비전센서 내장 |
-| 카메라 | 8개 고해상도 (3D 인식), RGBD (전/후방) |
-| 센서 | LiDAR, 6축 힘센서 (양팔) |
-| 컴퓨팅 | 200 TOPS (온디바이스 AI) |
-| 인증 | IP42, -15°C ~ 50°C 극한환경, 130+ 부품 테스트 통과 |
+| 센서 | LiDAR, RGB-D, 360도 상황 인식용 다중 RGB |
+| 인증 | IP42 실내등급 |
+| 인증 | -15°C ~ 50°C 극한환경, 130+ 부품 테스트 통과 |
 
 ---
 
@@ -93,8 +122,13 @@ Agibot은 **중국 산업용 휴머노이드 로봇의 대표주자**로, 다음
 - 데이터 수집/훈련
 - 연구/교육
 
-### 3. 중국/미국/EU 인증 (2025.05)
-글로벌 시장 진출을 위한 3대 지역 인증 획득으로 해외 시장 확대 기반 마련.
+### 3. 세계 최초 3대 지역 인증 (2025.05)
+- **AgiBot A2**: 세계 최초로 중국/미국/EU 3개 지역 동시 인증 획득
+- 중국 CR001 인증: 기계/전기 안전, EMC, 기능 안전, 지능 성능 종합 평가
+- A2 Ultra: 2025 iF Design Award, 2025 Red Dot Award 수상
+
+### 4. 기네스 세계 기록 (2025.11)
+- AgiBot A2: **106.286km** 연속 보행 기록 달성
 
 ---
 
@@ -107,17 +141,23 @@ Agibot은 **중국 산업용 휴머노이드 로봇의 대표주자**로, 다음
 고품질 데이터셋과 대규모 비디오 데이터를 효과적으로 활용하여 일반화 능력을 극대화하는 새로운 아키텍처.
 
 ### 학습 방식
-- **AgiBot World 데이터셋** 기반: 100만+ 실세계 조작 궤적
+- **AgiBot World 데이터셋** 기반:
+  - 1,003,672개 궤적 (Beta 버전)
+  - 217개 태스크, 87개 스킬
+  - 3,000+ 물체, 100+ 실환경 시나리오
+  - 총 2,976.4시간 분량
 - 인간 비디오 데이터로부터 학습
-- 100+ 시나리오 (40% 가정환경, 20% 산업환경)
+- 5개 도메인: 가정, 소매, 산업, 레스토랑, 오피스
 
 ### 핵심 성능
 | 지표 | 내용 |
 |------|------|
-| 성공률 향상 | 기존 모델 대비 **+32%** |
+| 성공률 향상 | 기존 모델 대비 **+32%** (46% → 78%) |
+| 복잡 태스크 성공률 | 60%+ (장기 시퀀스 태스크) |
 | 일반화 | 최소 데이터로 새로운 태스크 적응 (Zero-shot/Few-shot) |
 | 전이 학습 | "One-Brain-Multiple-Forms" - 다양한 로봇 플랫폼 간 전이 |
 | 지속 학습 | 실세계 실행 데이터로 지속적 개선 |
+| 수상 | IROS 2025 Award Finalist |
 
 ### 주요 태스크
 - 음료 배달/물 따르기
@@ -147,10 +187,11 @@ A2 Ultra/A2 Lite 호환 VR 제어 시스템.
 
 ### AgiBot World 데이터 수집
 - **4,000+ m² 전용 시설**
-- 100대 로봇 동시 운용
+- 100대+ AgiBot G1 로봇 동시 운용
 - 3,000+ 물리 객체
-- 가정/산업/슈퍼마켓/오피스 환경 재현
+- 5개 도메인 환경 재현: 가정/소매/산업/레스토랑/오피스
 - **일일 수만 건 모션 데이터 생성**
+- 오픈소스: [GitHub](https://github.com/OpenDriveLab/AgiBot-World), [HuggingFace](https://huggingface.co/agibot-world)
 
 ---
 
@@ -175,10 +216,18 @@ A2 Ultra/A2 Lite 호환 VR 제어 시스템.
 
 ### AimRT 미들웨어
 ROS(Robot Operating System)보다 빠르고 효율적인 자체 개발 미들웨어.
+- C++20 기반, 50,000줄 미만 (ROS2 ~200,000줄 대비 경량)
+- ROS2 대비 멀티노드 통신 지연 최대 30% 감소
+- ROS2/HTTP/gRPC/MQTT/Zenoh 등 다중 프로토콜 지원
+- ROS/ROS2 생태계와 플러그인 호환
+- 오픈소스 공개
 
 ### Lingqu OS
-**2025년 7월** 출시된 Embodied Intelligent Operating System.
-- 첫 산업 배치 및 지속적 현장 운영 지원.
+**2025년 7월** 출시된 업계 최초 Embodied Intelligent Operating System.
+- AimRT 기반 분산 통신, 실시간 스케줄링, 하드웨어 추상화
+- 표준화된 Intelligent Agent 서비스 프레임워크
+- 개발/디버깅, 시뮬레이션, 데이터 관리, 모델 배포 툴체인 포함
+- 오픈 공동 개발 모델로 Q4부터 롤아웃
 
 ### 온디바이스 AI
 - 200 TOPS 처리 성능
@@ -192,9 +241,11 @@ ROS(Robot Operating System)보다 빠르고 효율적인 자체 개발 미들웨
 
 | 파트너 | 내용 |
 |--------|------|
-| Pepsi | "Fizzbot" 커스텀 A2 휴머노이드 앰배서더 |
+| Pepsi | "Fizz Bot" 브랜드 휴머노이드 (David Beckham과 런칭, 2025 WAIC 음료 서빙) |
 | Fulin Precision | A2-W 휠형 휴머노이드 ~100대 주문 |
 | Longcheer Technology | Real-World RL 파일럿 배치 |
+| BYD | 투자 및 산업 자동화/물류 채택 |
+| SAIC Motor | 산업 자동화/물류 채택 |
 | JD.com | 투자 및 이커머스 판매 채널 |
 
 ---
@@ -203,9 +254,12 @@ ROS(Robot Operating System)보다 빠르고 효율적인 자체 개발 미들웨
 
 | 차별점 | 설명 |
 |--------|------|
-| 대중 시장 타겟 | 다양한 가격대 제품군 ($14K ~ $60K+) |
+| 글로벌 1위 | 2025년 전 세계 휴머노이드 출하량 1위, 시장점유율 39% (5,168대) |
+| 대중 시장 타겟 | 다양한 가격대 제품군 ($19.5K ~ $60K+) |
 | 직접 판매 | 자체 이커머스 + JD.com 채널 |
-| 주요 경쟁사 | Unitree Robotics (연구/파워유저 타겟) |
+| 주요 경쟁사 | Unitree Robotics (32%), Tesla Optimus, Agility Robotics |
+| 글로벌 인증 | 세계 최초 중국/미국/EU 3개 지역 동시 인증 (2025.05) |
+| 해외 진출 | 말레이시아 첫 해외 체험센터, 북미/유럽/중동/일본/한국/동남아 확대 |
 
 ---
 
@@ -216,12 +270,17 @@ ROS(Robot Operating System)보다 빠르고 효율적인 자체 개발 미들웨
 - [AgiBot - Wikipedia](https://en.wikipedia.org/wiki/AgiBot)
 - [The Rise of AgiBot (Zhiyuan Shanghai Robotics) - Mike Kalil](https://mikekalil.com/blog/agibot-zhiyuan-robotics/)
 - [AgiBot World Dataset - Mike Kalil](https://mikekalil.com/blog/agibot-world/)
-- [GO-1 Foundation Model - AIBase](https://www.aibase.com/news/16123)
-- [AgiBot G2 Industrial Robot](https://humanoidroboticstechnology.com/industry-news/agibot-launches-g2-humanoid-robot-for-industrial-grade-automation/)
+- [GO-1 Foundation Model - GlobeNewswire](https://www.globenewswire.com/news-release/2025/03/11/3040608/0/en/AgiBot-GO-1-The-Evolution-of-Generalist-Embodied-Foundation-Model-from-VLA-to-ViLLA.html)
+- [AgiBot World GitHub](https://github.com/OpenDriveLab/AgiBot-World)
+- [AgiBot World HuggingFace](https://huggingface.co/agibot-world)
+- [AgiBot G2 Industrial Robot - Robots International](https://www.robotsinternational.com/Agibot-G2-General-Purpose-Wheeled-Humanoid-Robot.htm)
 - [AgiBot Real-World RL Deployment - PRNewswire](https://www.prnewswire.com/news-releases/agibot-achieves-first-real-world-deployment-of-reinforcement-learning-in-industrial-robotics-302601935.html)
+- [AgiBot 5,000대 생산 달성 - PRNewswire](https://www.prnewswire.com/news-releases/agibot-announces-the-rollout-of-its-5-000th-mass-produced-humanoid-robot-302635127.html)
+- [AgiBot A2 중국/미국/EU 인증 - ECNS](http://www.ecns.cn/m/news/cns-wire/2025-05-30/detail-iherwsih6789577.shtml)
+- [AgiBot 글로벌 시장점유율 1위 - TechNode](https://technode.com/2026/01/09/chinas-agibot-leads-global-humanoid-robot-shipments-in-2025-omdia-says/)
 
 ---
 
 ## See Also
 
-- [하드웨어 목록](../index)
+- [하드웨어 목록](./)

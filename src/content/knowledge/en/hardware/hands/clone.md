@@ -13,7 +13,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Clone Robotics Hand
@@ -26,7 +26,7 @@ lastEditedAt: 2026-01-15
 
 ## Overview
 
-Clone Robotics Hand is a biomimetic robot hand based on **hydraulic artificial muscles (Myofiber)** developed by Polish-American startup Clone Robotics. Developed over 8+ years of R&D, this technology takes an approach of directly replicating the anatomical structure of the human hand, unlike traditional electric motor or cable-based systems.
+Clone Robotics Hand is a biomimetic robot hand based on **hydraulic artificial muscles (Myofiber)** developed by Polish-American startup Clone Robotics. Perfected over 8 years of development and 18 iterations, this technology takes an approach of directly replicating the anatomical structure of the human hand, unlike traditional electric motor or cable-based systems.
 
 | Item | Spec |
 |------|------|
@@ -67,7 +67,7 @@ Clone directly mimics the **antagonistic muscle structure of human muscles**, wh
 
 ### Operating Principle
 
-Myofiber is Clone Robotics' core technology - **hydraulic artificial muscles**. In small tube form, it contracts when water is pressurized and relaxes when depressurized.
+Myofiber is Clone Robotics' core technology - **hydraulic artificial muscles** - launched in 2021. In pressurized mesh tube form, it contracts when filled with fluid and relaxes when depressurized.
 
 | Item | Specification |
 |------|---------------|
@@ -91,9 +91,9 @@ In November 2025, Clone unveiled the **Neural Joint V2 Controller**. This contro
 
 ## Protoclone Integration
 
-Clone Hand is integrated into Clone Robotics' full-body android projects **Protoclone V1** and **Clone Alpha**.
+Clone Hand is integrated into Clone Robotics' full-body android project **Clone Alpha** (technical demo name: **Protoclone V1**).
 
-### Protoclone V1 Specifications
+### Clone Alpha / Protoclone V1 Specifications
 
 | Item | Spec |
 |------|------|
@@ -150,9 +150,9 @@ Protoclone targets household and commercial tasks (cooking, cleaning, etc.) and 
 
 ## Company Information
 
-Clone Robotics was co-founded in 2021 by **Dhanush Radhakrishnan** (CEO) and **Lukasz Kozlik** (Lead Engineer). Headquarters is in Warsaw, Poland, with offices also in the US.
+Clone Robotics was co-founded in 2021 by **Dhanush Radhakrishnan** (CEO) and **Lukasz Kozlik** (CTO). The company has its official headquarters in New York, with R&D and manufacturing facilities in Warsaw and Wroclaw, Poland. They are also planning to expand with an office in the Bay Area.
 
-Kozlik posted the first prototype video on YouTube in 2019, which went viral, and after 8+ years of R&D, completed the current Myofiber technology. Manufacturing in Poland significantly reduced development and production costs compared to the US.
+Kozlik began his interest in artificial muscles in 2014, and posted the first prototype video on YouTube in 2019, which went viral. After 11 prototypes and 18 iterations, the current Myofiber technology was completed. Myofiber was officially launched in 2021. Manufacturing in Poland significantly reduced development and production costs compared to the US. In 2023, the company raised $6 million in seed funding led by Initialized Capital, and currently has approximately 46 employees.
 
 ---
 
@@ -167,6 +167,6 @@ Kozlik posted the first prototype video on YouTube in 2019, which went viral, an
 
 ## See Also
 
-- [Hardware List](../index)
-- [Shadow Hand](shadow-hand)
-- [Allegro Hand](allegro)
+- [Hardware List](../)
+- [Shadow Hand](./shadow-hand)
+- [Allegro Hand](./allegro)

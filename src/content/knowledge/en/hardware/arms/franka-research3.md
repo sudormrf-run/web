@@ -5,7 +5,7 @@ tags: [franka, research3, fr3, cobot, research, arm, torque-sensor, force-contro
 category: hardware
 author: Physical AI Knowledge Base
 created: 2024-01-01
-updated: 2026-01-09
+updated: 2026-01-26
 
 # Authorship
 createdBy:
@@ -14,7 +14,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Franka Research 3 (FR3)
@@ -39,7 +39,7 @@ Franka Research 3 (FR3) is a next-generation 7-axis collaborative robot develope
 | **Manufacturer** | Franka Robotics (under Agile Robots AG) | Franka Emika |
 | **Degrees of Freedom (DoF)** | 7-axis | 7-axis |
 | **Payload** | 3 kg | 3 kg |
-| **Reach** | 855 mm | 850 mm |
+| **Reach** | 855 mm | 855 mm |
 | **Repeatability** | ±0.1 mm (ISO 9283) | ±0.1 mm |
 | **Workspace Coverage** | 94.5% | - |
 | **Maximum End-Effector Speed** | 2 m/s | 2 m/s |
@@ -52,7 +52,7 @@ Franka Research 3 (FR3) is a next-generation 7-axis collaborative robot develope
 | **Protection Rating** | IP40 (robot) / IP20 (controller) | IP30 |
 | **Operating Temperature** | +5°C ~ +45°C (optimal: 15-25°C) | +15°C ~ +25°C |
 | **Power** | 100-240V AC, 50-60Hz, 80W | - |
-| **Price** | ~$40,000+ | ~$30,000+ (discontinued) |
+| **Price** | ~€25,000+ (base) / ~$40,000+ (with FCI) | ~$30,000+ (discontinued) |
 
 Above specifications based on official datasheet and product page. [^fr3-specs]
 
@@ -104,7 +104,7 @@ With torque sensors embedded in all 7 joints, **real-time external force estimat
 
 | Item | Panda | FR3 | Improvement |
 |------|-------|-----|-------------|
-| **Reach** | 850 mm | 855 mm | 5mm increase |
+| **Reach** | 855 mm | 855 mm | Same reach |
 | **Workspace Coverage** | Undisclosed | 94.5% | Optimized kinematics |
 | **Weight** | 18 kg | 17.8 kg | 200g weight reduction |
 | **Joint Marking** | None | X/Y axis markings | Intuitive setup |
@@ -339,7 +339,7 @@ FR3 is one of the most widely used robot platforms in VLA (Vision-Language-Actio
 | 2018 | Time "50 Best Inventions" selection |
 | 2022 | Franka Research 3 (FR3) release |
 | 2023.08 | Preliminary insolvency filing due to shareholder dispute |
-| 2023.11 | Acquired by Agile Robots AG (~32 million euros) |
+| 2023.10 | Acquired by Agile Robots AG (terms undisclosed) |
 | 2025.02 | FR3 1,000 units production achieved |
 | 2025 | ROS 2 Jazzy, MoveIt 2, Desk API support |
 
@@ -356,6 +356,7 @@ FR3 is one of the most widely used robot platforms in VLA (Vision-Language-Actio
 
 ### Pricing Information
 
+- **Franka Research 3 Base**: ~€25,000+ (without FCI)
 - **Franka Research 3 + FCI License**: ~$40,000+
 - **Franka Hand (Gripper)**: Separate purchase
 - **AI Companion**: Separate quote

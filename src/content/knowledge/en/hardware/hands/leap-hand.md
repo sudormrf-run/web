@@ -33,8 +33,8 @@ lastEditedAt: 2026-01-15
 | Item | Spec | Source |
 |------|------|--------|
 | Degrees of Freedom (DoF) | 16 DoF (4 DoF per finger) | [Shaw et al., 2023] |
-| Motors | Dynamixel XC330 (Full) / XL330 (Lite) | [ROBOTIS] |
-| Price | ~$2,000 (Full) / ~$700 (Lite) | [v1.leaphand.com] |
+| Motors | Dynamixel XC330-M288-T (Full) / XL330-M288-T (Lite) | [ROBOTIS] |
+| Price | $1,772 (Full) / $714 (Lite) | [v1.leaphand.com/parts] |
 | Assembly Time | Under 4 hours | [Shaw et al., 2023] |
 | Weight | 595g (4-finger configuration) | [Shaw et al., 2023] |
 | Size | Approximately 30% larger than human hand | [Shaw et al., 2023] |
@@ -57,10 +57,10 @@ Problems with existing dexterous hands:
 - High costs hindering progress in manipulation research
 
 Value provided by LEAP Hand:
-- Provides equal or better performance at **$2,000**
+- Provides equal or better performance at **$1,772**
 - Assemblable with only a **3D printer** and **driver**
 - Enables researchers worldwide to start dexterous manipulation research
-- Also usable for educational purposes (Lite version $700)
+- Also usable for educational purposes (Lite version $714)
 
 > "LEAP Hand significantly outperforms its closest competitor Allegro Hand in all experiments while being 1/8th of the cost."
 > — [Shaw et al., RSS 2023](https://www.roboticsproceedings.org/rss19/p089.pdf)
@@ -225,25 +225,26 @@ LEAP Hand is not just hardware, but a **platform designed for robot learning res
 
 | Item | V1 (2023)[^1] | V2 (2024)[^2] | V2 Advanced (2024)[^3] |
 |------|---------------|---------------|------------------------|
-| Price | ~$2,000 | ~$200 | ~$300 |
-| DoF | 16 | 8 | 17 |
-| Assembly Time | 4 hours | 2 hours | 3 hours |
+| Price | $1,772 | ~$500 | $3,000-$4,000 |
+| Total DoF | 16 (16 motors) | 16 (8 motors, underactuated) | 21 (17 motors) |
+| Assembly Time | 4 hours | 2 hours | Under a day |
 | Structure | Traditional Rigid | Hybrid Rigid-Soft | Hybrid Rigid-Soft |
-| Target | Research (high-performance) | Education/Demo | Research (high-compliance) |
+| Motors | Dynamixel XC330 | Feetech HLS3612M/HLS3606M | Dynamixel XM430/XC330 |
+| Target | Research (high-performance) | Research/Education | Research (high-compliance) |
 | Official Site | [v1.leaphand.com](https://v1.leaphand.com) | [v2.leaphand.com](https://v2.leaphand.com) | [v2-adv.leaphand.com](https://v2-adv.leaphand.com) |
 
 [^1]: Shaw et al., "LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning", RSS 2023
-[^2]: Official V2 website (v2.leaphand.com)
-[^3]: Official V2 Advanced website (v2-adv.leaphand.com)
+[^2]: Official V2 website (v2.leaphand.com), August 2025 pricing
+[^3]: Official V2 Advanced website (v2-adv.leaphand.com), metal version ~$5,000
 
 ### V2 Series Features
 
-- **Hybrid Rigid-Soft Structure**: Combination of 3D printed flexible and rigid structures
+- **Hybrid Rigid-Soft Structure**: Combination of 3D printed flexible and rigid structures (TPU + PLA multi-material)
 - **High Compliance**: Natural adaptation on contact with objects
-- **Dramatic Cost Reduction**: Approximately 1/10 price compared to V1
-- **V2 Advanced**: Added actuated joints in palm (17 DoF), human-like MCP kinematics
+- **Underactuated Design**: V2 Standard achieves 16 DoF with 8 motors (differential joint stiffness)
+- **V2 Advanced**: Two independently powered articulations in palm, foldable palm design
 
-> **Price Note**: Prices above are based on official site information as of 2024 and may change.
+> **Price Note**: V2 prices are based on August 2025 and may vary with tariffs and exchange rates. Pre-assembled kits (~$500) and 3D printed part kits ($100) are also available upon request.
 
 ---
 
@@ -270,6 +271,6 @@ LEAP Hand is not just hardware, but a **platform designed for robot learning res
 
 ## See Also
 
-- [Hardware List](../index)
-- [GEX Series](gex)
-- [Shadow Hand](shadow-hand)
+- [Hardware List](../)
+- [GEX Series](./gex)
+- [Shadow Hand](./shadow-hand)

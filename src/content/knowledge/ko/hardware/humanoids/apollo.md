@@ -55,7 +55,7 @@ Apollo의 가장 핵심적인 의의는 **실용적인 산업용 협업 로봇(C
 
 ### 왜 Apollo가 중요한가?
 
-1. **NASA 기술 계보**: Apptronik 창업팀은 2013년 DARPA Robotics Challenge에서 NASA의 Valkyrie(R5) 로봇 개발에 참여했다. CTO Nick Paine은 NASA-JSC Valkyrie DRC 팀 출신으로, 극한 환경을 위한 견고한 로봇 설계 경험을 Apollo에 녹여냈다.
+1. **NASA 기술 계보**: Apptronik 창업팀은 2012-2013년 DARPA Robotics Challenge에서 NASA의 Valkyrie(R5) 로봇 개발에 참여했다. CTO Nick Paine과 Dr. Luis Sentis는 NASA-JSC Valkyrie DRC 팀 핵심 멤버로, 액추에이터와 제어 시스템을 담당했으며, 극한 환경을 위한 견고한 로봇 설계 경험을 Apollo에 녹여냈다.
 
 2. **Force Control 아키텍처**: 기존 산업용 로봇과 달리, Apollo는 각 관절의 토크 센서를 통해 실시간으로 외력을 감지하고 반응한다. 이는 Collaborative Robot(Cobot) 설계의 핵심 요소로, 인간과의 안전한 협업을 목표로 한다.
 
@@ -71,7 +71,7 @@ Apollo의 가장 핵심적인 의의는 **실용적인 산업용 협업 로봇(C
 
 - **2013**: DARPA Robotics Challenge에서 NASA의 Valkyrie 로봇 프로젝트에 참여
 - **2016**: UT Austin Human Centered Robotics Lab에서 스핀아웃하여 Apptronik 설립
-- **설립자**: Dr. Nicholas Paine (CTO), Dr. Luis Sentis (Scientific Advisor) 등 4명의 공동 창업
+- **설립자**: Jeff Cardenas (CEO), Dr. Nicholas Paine (CTO), Dr. Luis Sentis (Scientific Advisor), Bill Helmsing (COO), Bill Welch 등 5명의 공동 창업
 - **미션**: "인간을 대체하는 것이 아닌, 인간을 돕는 로봇" 개발
 
 ### 펀딩 현황
@@ -84,6 +84,7 @@ Apollo의 가장 핵심적인 의의는 **실용적인 산업용 협업 로봇(C
 
 - Mercedes-Benz는 Series A 추가 라운드에서 "저~중간 두 자리 유로(약 $10-14M)"를 투자 (Reuters 보도)
 - Google이 Series A에 참여
+- 추가 투자자: Japan Post Capital, ARK Invest, Helium-3, Magnetar, RyderVentures, Korea Investment Partners 등
 
 ---
 
@@ -194,7 +195,7 @@ CEO Jeff Cardenas: "경제성이 맞는 지점에 도달했다. 공장과 창고
 
 1. **동적 능력**: Atlas, Optimus 대비 달리기, 점프 등 동적 움직임 시연 부족
 2. **AI 역량**: Google이 Series A에 참여했으나, 독자 VLA 모델 부재
-3. **생산 규모**: 2026년 Jabil과 양산 계획 발표, 실제 생산량 검증 필요
+3. **생산 규모**: 2025년 2월 Jabil과 제조 파트너십 발표, 2026년 양산 시작 목표, 실제 생산량 검증 필요
 4. **시장 경쟁**: Tesla($20-30K 목표)와의 가격 경쟁에서 불리할 수 있음
 
 ---
@@ -203,13 +204,14 @@ CEO Jeff Cardenas: "경제성이 맞는 지점에 도달했다. 공장과 창고
 
 | 시기 | 이벤트 |
 |------|--------|
-| 2013 | NASA Valkyrie 프로젝트 참여 (DARPA Robotics Challenge) |
+| 2012-2013 | NASA Valkyrie 프로젝트 참여 (DARPA Robotics Challenge Trials) |
 | 2016 | UT Austin에서 Apptronik 스핀아웃 |
-| 2022 | NASA와 휴머노이드 상용화 파트너십 체결 |
+| 2022.09 | NASA와 휴머노이드 상용화 파트너십 체결 |
 | 2023.08 | Apollo 휴머노이드 공개 |
 | 2024.03 | Mercedes-Benz와 상업 파일럿 계약 체결 |
 | 2025.01 | CES 2025에서 Apollo 작업 시연 |
 | 2025.02-03 | Series A $403M 클로징 ($350M + 추가 $53M, Mercedes-Benz, Google 참여) |
+| 2025.02 | Jabil과 제조 파트너십 발표 |
 | 2026 | Jabil과 양산 시작 목표 |
 
 ---
@@ -238,6 +240,10 @@ CEO Jeff Cardenas: "경제성이 맞는 지점에 도달했다. 공장과 창고
 
 ### NASA 연계
 - [NASA-Apptronik 파트너십](https://www.iotworldtoday.com/robotics/nasa-apptronik-partner-to-commercialize-humanoid-robots) - NASA 협력 배경
+- [TechCrunch: NASA 파트너십 2022](https://techcrunch.com/2022/09/20/are-general-purpose-robots-impossible-apptronik-disagrees-pockets-fresh-nasa-partnership/) - 2022년 9월 파트너십 발표
+
+### 제조 파트너십
+- [Apptronik-Jabil 협력 발표](https://apptronik.com/news-collection/apptronik-and-jabil-collaborate-to-scale-production) - 2025년 2월 제조 파트너십
 
 ---
 

@@ -12,7 +12,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Sanctuary Phoenix
@@ -29,7 +29,7 @@ lastEditedAt: 2026-01-15
 | Item | Details |
 |------|---------|
 | Manufacturer | Sanctuary AI (Vancouver, Canada) |
-| Latest Version | Gen 8 (2025.02) |
+| Latest Version | Gen 8 (2025.01) |
 | AI System | Carbon |
 | Core Approach | Cognitive Generalization |
 | Price | ~$40,000 [^1] |
@@ -53,17 +53,20 @@ Sanctuary AI Phoenix is a humanoid representing the **Cognitive Architecture** c
 |------|---------|
 | Founded | 2018 |
 | Headquarters | Vancouver, Canada |
-| CEO | Geordie Rose (D-Wave Co-founder) |
+| Founders | Geordie Rose (D-Wave Co-founder), Suzanne Gildert |
+| Current CEO | James Wells (Interim, Nov 2024~) |
+| Former CEO | Geordie Rose (2018~Nov 2024) |
 | Core Mission | "Creating the world's first human-like intelligence in general-purpose robots" |
 
-Sanctuary AI is a company founded by Geordie Rose, co-founder of D-Wave Systems (quantum computers), with the goal of physical implementation of artificial general intelligence (AGI). It represents the Canadian AI robotics ecosystem based in Vancouver.
+Sanctuary AI is a company co-founded by Geordie Rose, co-founder of D-Wave Systems (quantum computers), and Suzanne Gildert, with the goal of physical implementation of artificial general intelligence (AGI). It represents the Canadian AI robotics ecosystem based in Vancouver. Co-founder and CTO Suzanne Gildert departed in April 2024, followed by Geordie Rose stepping down as CEO in November 2024 following a board decision. James Wells currently serves as interim CEO.
 
 ### Funding and Partnerships
-- **Series A** (2022.03): $75.5M - Magna Technology Investments participation [^3]
-- **Magna Strategic Partnership** (2024): Manufacturing cooperation and equity investment [^4]
-- **Microsoft Azure Partnership** (2024.05): Cloud infrastructure integration
+- **Series A** (2022.03): C$75.5M (US$58.5M) - Led by Bell, with Magna, Verizon Ventures, Workday Ventures, and others [^3]
+- **Canadian Government Support** (2022.11): $30M from Strategic Innovation Fund
+- **Magna Strategic Partnership** (2024.04): Manufacturing cooperation and additional equity investment [^4]
+- **Microsoft Azure Partnership** (2024.05): Cloud infrastructure and AI research collaboration
 
-[^3]: Based on The Robot Report 2024.04 report.
+[^3]: Based on Sanctuary AI official announcement and Tracxn. Total cumulative funding approximately $140M.
 [^4]: Based on Sanctuary AI official announcement 2024.04.
 
 ---
@@ -150,7 +153,7 @@ Telepresence-based imitation learning:
 | Gen 5 | 2023.01 | First commercial deployment |
 | Gen 6 | Mid-2023 | Legs introduced, TIME 2023 Best Inventions selected |
 | Gen 7 | 2024.04 | 50x faster task automation speed, 24-hour new task learning |
-| Gen 8 | 2025.02 | High-quality data capture optimization, FOV/telemetry improvements |
+| Gen 8 | 2025.01 | High-quality data capture optimization, FOV/telemetry improvements |
 
 ### Gen 7 Major Improvements (2024.04 Announcement)
 - Significantly improved visual accuracy and tactile sensing
@@ -159,7 +162,7 @@ Telepresence-based imitation learning:
 - Reduced manufacturing costs and improved production speed
 - "The closest system to human" - Geordie Rose CEO
 
-### Gen 8 Major Improvements (2025.02 Announcement)
+### Gen 8 Major Improvements (2025.01 Announcement)
 - Optimized for high-quality training data capture
 - Expanded field of view (FOV)
 - Improved telemetry system
@@ -171,8 +174,8 @@ Telepresence-based imitation learning:
 ## Magna Partnership
 
 ### Background
-- Magna International: Canada-based global automotive parts manufacturer
-- Investor in Sanctuary AI since 2021 (participated in $75.5M Series A)
+- Magna International: Canada-based global automotive parts manufacturer (with vehicle manufacturing facilities in Austria)
+- Investor in Sanctuary AI since 2021 (participated in C$75.5M Series A)
 
 ### Partnership Details (April 2024 Announcement) [^4]
 1. **Phoenix Deployment at Magna Manufacturing Facilities**
@@ -259,7 +262,7 @@ Sanctuary AI has demonstrated hundreds of tasks across more than 12 industries (
 
 ## See Also
 
-- [Hardware List](../index)
-- [Figure Humanoid](figure)
-- [Tesla Optimus](optimus)
-- [Apollo (Apptronik)](apollo)
+- [Hardware List](../)
+- [Figure Humanoid](./figure)
+- [Tesla Optimus](./optimus)
+- [Apollo (Apptronik)](./apollo)

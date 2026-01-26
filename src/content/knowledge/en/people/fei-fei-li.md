@@ -11,72 +11,81 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Profile
 
 | Field | Details |
 |-------|---------|
-| Current Position | Professor, Stanford University |
-| Role | Co-Director, Stanford HAI (Human-Centered AI) |
-| Company | Founder, World Labs (2024) |
-| Previous | Google Cloud AI/ML Chief Scientist (2017-2018) |
-| PhD | Caltech |
-| Birthplace | Beijing, China |
+| Current Position | Sequoia Professor, Stanford University (on partial leave) |
+| Role | Founding Co-Director, Stanford HAI |
+| Company | Co-founder/CEO, World Labs (2024) |
+| Previous | VP & Chief Scientist of AI/ML, Google Cloud (2017-2018) |
+| PhD | Caltech (Electrical Engineering, 2005) |
+| BA | Princeton University (Physics, 1999) |
+| Birthplace | Beijing, China (1976) |
 
 ---
 
 ## Key Contributions
 
 - **ImageNet**: Catalyst for the modern deep learning revolution, paradigm shift in computer vision
+- **Stanford AI Lab (SAIL)**: Director (2013-2018)
 - **Stanford Vision Lab**: Center for computer vision research
-- **HAI**: Research on AI ethics, policy, and human-centered AI
-- **World Labs**: Founded Spatial Intelligence company for 3D world understanding AI (2024)
+- **HAI**: Research on AI ethics, policy, and human-centered AI (Founding Co-Director 2019)
+- **World Labs**: Co-founded Spatial Intelligence company for 3D world understanding AI (2024)
 
 ---
 
 ## Research Timeline
 
-### PhD & Early Career (2000-2007)
+### PhD & Early Career (2000-2009)
 
-**Caltech -> Princeton -> Stanford**
+**Caltech -> UIUC -> Princeton -> Stanford**
 
 | Year | Work | Impact |
 |------|------|--------|
-| 2005 | One-Shot Learning | Learning from limited data |
-| 2006 | Joined Princeton as Professor | |
-| 2007 | Moved to Stanford | Founded Stanford Vision Lab |
+| 2005 | PhD completed, UIUC Assistant Professor | PhD under Pietro Perona at Caltech |
+| 2006 | One-Shot Learning paper (PAMI) | Methodology for learning from limited data |
+| 2007 | Princeton Assistant Professor | Started ImageNet project |
+| 2009 | Stanford Assistant Professor | Founded Stanford Vision Lab |
 
-### ImageNet Era (2007-2015)
+### ImageNet Era (2009-2018)
 
 **ImageNet & Deep Learning Revolution**
 
 | Year | Work | Impact |
 |------|------|--------|
-| 2009 | **ImageNet** Released | 14 million images, 20,000+ categories |
-| 2010 | ImageNet Challenge Begins | Annual competition |
-| 2012 | AlexNet Wins | Deep learning revolution begins |
+| 2009 | **ImageNet** presented at CVPR | Initial 3.2M+ images, 5,247 categories |
+| 2010 | ImageNet Challenge (ILSVRC) Begins | Annual competition, 1,000 class subset |
+| 2012 | AlexNet Wins | Deep learning revolution begins, 15.3% top-5 error |
+| 2013 | Became SAIL Director | Led Stanford AI Lab |
 | 2015 | ResNet Surpasses Humans | Exceeds human performance in image classification |
+| 2018 | Stepped down as SAIL Director | Returned to Stanford from Google |
 
-### Google & HAI (2016-2023)
+### Google & HAI (2017-2023)
 
 **Industry Experience & AI Ethics**
 
 | Year | Work | Impact |
 |------|------|--------|
-| 2017-18 | Google Cloud AI Chief Scientist | Industry experience |
-| 2019 | **HAI** Co-founded | Human-Centered AI Institute |
-| 2021 | HAI Co-Director | AI policy, ethics research |
+| 2017-18 | Google Cloud VP & AI Chief Scientist | Industry experience, Cloud AutoML launch |
+| 2019 | **HAI** Founding Co-Director | Human-Centered AI Institute, with John Etchemendy |
+| 2020 | Elected to NAE, NAM | National Academy recognition |
+| 2021 | Elected to AAAS | American Academy of Arts and Sciences |
 
 ### World Labs (2024-present)
 
-**Founded Spatial Intelligence Company**
+**Co-founded Spatial Intelligence Company**
 
 | Year | Work | Impact |
 |------|------|--------|
-| 2024 | **World Labs** Founded | $1B+ valuation |
-| 2024 | Spatial Intelligence Research | 3D world understanding AI |
+| 2024 | **World Labs** Co-founded as CEO | With Justin Johnson, Christoph Lassner, Ben Mildenhall |
+| 2024 | Series A $230M funding | a16z, NEA, Radical Ventures, and others |
+| 2024 | VinFuture Prize | |
+| 2025 | Queen Elizabeth Prize for Engineering | Recognition for advancing deep learning |
+| 2025 | TIME Person of the Year | Recognition for AI influence |
 
 ---
 
@@ -105,7 +114,8 @@ lastEditedAt: 2026-01-15
 Core: Large-scale, high-quality datasets are key to AI advancement
 
 Before: Thousands to tens of thousands of images
-ImageNet: 14 million images, 20,000+ categories, human-labeled
+ImageNet (2009): Initial 3.2M+ images, 5,247 categories
+ImageNet (current): 14M+ images, 21,841 categories, Amazon Mechanical Turk crowdsourced
 ```
 
 **Impact:**
@@ -146,10 +156,15 @@ Goals:
 ## World Labs
 
 ### Company Overview
-- **Founded**: 2024
+- **Founded**: January 2024
+- **Founders**: Fei-Fei Li (CEO), Justin Johnson, Christoph Lassner, Ben Mildenhall
 - **Mission**: Spatial Intelligence - AI that understands the 3D world
-- **Valuation**: $1B+ (2024)
-- **Investors**: a16z, Radical Ventures, and others
+- **Funding**: Series A $230M (2024)
+- **Investors**: a16z, NEA, Radical Ventures, NVIDIA, Sanabil, Temasek, and others
+- **Individual Investors**: Jeff Dean, Geoffrey Hinton, Ashton Kutcher, and others
+
+### Products
+- **Marble** (2025): 3D world generation from text/images, 6DoF browser exploration
 
 ### Technology Direction
 - Image/video to 3D reconstruction
@@ -160,17 +175,27 @@ Goals:
 
 ## Awards & Recognition
 
-- Member, National Academy of Engineering
-- Member, National Academy of Medicine
-- Member, American Academy of Arts and Sciences
-- ACM Fellow
-- Time 100 Most Influential People (2015)
+- **Queen Elizabeth Prize for Engineering** (2025)
+- **TIME Person of the Year** (2025)
+- **VinFuture Prize** (2024)
+- **TIME100 AI** (2023)
+- **National Academy of Engineering** member (2020)
+- **National Academy of Medicine** member (2020)
+- **American Academy of Arts and Sciences** member (2021)
+- **ACM Fellow**
+- **IEEE PAMI Thomas Huang Memorial Prize** (2022)
+- **Foreign Policy Global Thinker** (2015)
+- **NSF CAREER Award** (2009)
 
 ---
 
 ## Books & Media
 
-- **"The Worlds I See"** (2023) - Memoir
+- **"The Worlds I See: Curiosity, Exploration, and Discovery at the Dawn of AI"** (2023) - Memoir
+  - Published by Flatiron Books
+  - Barack Obama's recommended AI book
+  - Financial Times Best Books of 2023
+  - Princeton Pre-read for Class of 2028
 - TED Talks (multiple)
 - Numerous AI-related interviews and publications
 
@@ -183,7 +208,7 @@ Goals:
 - [HAI](https://hai.stanford.edu/)
 - [World Labs](https://www.worldlabs.ai/)
 - [Google Scholar](https://scholar.google.com/citations?user=rDfyQnIAAAAJ)
-- [Twitter/X](https://twitter.com/drfeifei)
+- [X (Twitter)](https://x.com/drfeifei)
 
 ---
 

@@ -4,7 +4,7 @@ description: Open-source low-cost research robot arms developed collaboratively 
 tags: [lerobot, so100, so101, low-cost, 3d-print, open-source, feetech, sts3215, smolvla, vla]
 category: hardware
 created: 2025-05-01
-updated: 2026-01-09
+updated: 2026-01-26
 
 # Authorship
 createdBy:
@@ -13,7 +13,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # LeRobot Arms (SO-100/SO-101)
@@ -35,7 +35,7 @@ LeRobot SO-100/SO-101 is an open-source robot arm jointly developed by **Hugging
 | **Type** | Low-cost 3D printed robot arm |
 | **DoF** | 6 (Base, Shoulder, Elbow, Wrist Flex, Wrist Roll, Gripper) |
 | **Parts Cost** | ~$130 (single arm) / ~$230 (Leader-Follower pair) |
-| **Release Date** | SO-100: 2024, SO-101: May 2025 |
+| **Release Date** | SO-100: October 2024, SO-101: April 2025 |
 
 ---
 
@@ -58,7 +58,7 @@ This enables university research labs, startups, and individual researchers to p
 
 | Item | SO-100 | SO-101 |
 |------|--------|--------|
-| **Release** | 2024 | May 2025 |
+| **Release** | October 2024 | April 2025 |
 | **Status** | Deprecated | Currently recommended version |
 | **Wiring** | Wire breakage issues at Joint 3 | Improved wiring prevents breakage |
 | **Assembly** | Gear removal required | No gear removal, simplified assembly |
@@ -78,14 +78,14 @@ This enables university research labs, startups, and individual researchers to p
 
 ## Hardware Specifications
 
-> **Source and Verification Date**: Specifications below are based on [Feetech Official Specifications](https://www.seeedstudio.com/STS3215-19kg-cm-7-4V-Serial-Servo-p-6338.html) and [LeRobot SO-101 Documentation](https://huggingface.co/docs/lerobot/so101) (verified May 2025). Check official documentation for latest information.
+> **Source and Verification Date**: Specifications below are based on [Feetech Official Specifications](https://www.feetechrc.com/products.html?keyword=STS3215) and [LeRobot SO-101 Documentation](https://huggingface.co/docs/lerobot/so101) (verified January 2026). Check official documentation for latest information.
 
 ### STS3215 Servo Motor Specifications
 
 | Item | 7.4V Version | 12V Version |
 |------|--------------|-------------|
-| **Stall Torque** | 16.5 kg.cm (6V) / 19.5 kg.cm (7.4V) | 30 kg.cm |
-| **Rated Torque** | 5 kg.cm | - |
+| **Stall Torque** | 16.5 kg.cm (6V) | 30 kg.cm (12V) |
+| **Rated Torque** | 5 kg.cm | 10 kg.cm |
 | **Encoder** | 12-bit magnetic encoder (0-4096) | 12-bit magnetic encoder |
 | **Rotation Range** | 360-degree continuous rotation, multi-turn support (±7 turns) | Same |
 | **Communication** | TTL Serial Bus (bidirectional) | TTL Serial Bus |
@@ -111,7 +111,7 @@ All 6 motors use STS3215 with **1/345 gear ratio** (uniform high-torque configur
 
 ## Bill of Materials (BOM)
 
-> **Pricing Information**: Prices below are based on [SO-ARM100 GitHub BOM](https://github.com/TheRobotStudio/SO-ARM100) and [Seeed Studio](https://www.seeedstudio.com/) (verified May 2025). May vary by exchange rate and supply conditions.
+> **Pricing Information**: Prices below are based on [SO-ARM100 GitHub BOM](https://github.com/TheRobotStudio/SO-ARM100) and [Seeed Studio](https://www.seeedstudio.com/) (verified January 2026). May vary by exchange rate and supply conditions.
 
 ### Leader + Follower Pair (Dual Arm Configuration)
 
@@ -280,7 +280,7 @@ python lerobot/scripts/train.py \
 
 SmolVLA's community dataset pretraining **improved success rate from 51.7% to 78.3%** on SO-100 physical robot benchmarks.
 
-> **Source**: [SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics](https://arxiv.org/abs/2506.01844) (arXiv:2506.01844, June 2025). The figures report 51.7% success rate with task-specific training only, 78.3% with community dataset pretraining added.
+> **Source**: [SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics](https://arxiv.org/abs/2506.01844) (arXiv:2506.01844, June 2, 2025). The figures report 51.7% success rate with task-specific training only, 78.3% with community dataset pretraining added. SmolVLA (450M) significantly outperforms ACT (80M) at 48.3% and pi0 (3.5B) at 61.7% success rates.
 
 ```python
 # SmolVLA fine-tuning example
@@ -302,8 +302,8 @@ policy = SmolVLAPolicy.from_pretrained("lerobot/smolvla_base")
 | Component | Quantity | Purpose |
 |-----------|----------|---------|
 | SO-101 Arms | 2 | Bimanual manipulation |
-| LeKiwi Base | 1 | Mobile platform |
-| Anker 300Wh Battery | 1 | Power |
+| LeKiwi Base | 1 | Mobile platform (~$300) |
+| Battery | 1 | Power |
 | Wrist RGB Cameras | 2 | Visual feedback |
 | Head Depth Camera (2-DoF neck) | 1 | Environment perception |
 | **Total Cost** | - | **~$660** |

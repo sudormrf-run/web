@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Key Significance
@@ -54,59 +54,60 @@ Unitree has a diverse quadruped lineup from consumer/research to industrial. Eac
 
 | Model | Release | Price | Weight | Speed | Payload | Runtime | Primary Use |
 |-------|---------|-------|--------|-------|---------|---------|-------------|
-| **Aliengo** | 2019 | ~$15,000 | 21.5kg | 3.3m/s | 5kg | 2-4 hrs | Research/Dev |
-| **Go1 Air** | 2021 | $2,700 | 12kg | 2.5m/s | 3kg | 1 hr | Entry/Hobby |
+| **Aliengo** | 2019 | ~$50,000 | 21.5kg | 1.5m/s | 10kg | 2-4 hrs | Research/Dev |
+| **Go1 Air** | 2021 | $2,700 | 12kg | 3.7m/s | 3kg | 1 hr | Entry/Hobby |
 | **Go1 Pro** | 2021 | $3,500 | 12kg | 3.5m/s | 5kg | 1.5 hrs | Consumer |
-| **Go1 Edu** | 2021 | ~$8,500 | 12kg | 3.7m/s | 5kg | 2 hrs | Research/Education |
-| **Go2 Air** | 2023 | $1,600 | 15kg | 2.5m/s | 7kg | 1-2 hrs | Next-gen Entry |
-| **Go2 Pro** | 2023 | $2,800 | 15kg | 3.5m/s | 8kg | 1-2 hrs | Consumer |
-| **Go2 Edu** | 2023 | Inquiry | 15kg | 5m/s | 8kg | 2-4 hrs | Research/Education |
-| **Go2-W** | 2024 | $4,500 ~ $14,000 | 18kg | 2.5m/s | 12kg | 1.5-3 hrs | Hybrid |
-| **B1** | 2020 | ~$40,000 | 50kg | 1.8m/s | 5kg | 2-4 hrs | Industrial |
-| **B2** | 2023 | ~$100,000 | 60kg | 6m/s+ | 40kg | 4-6 hrs | Industrial Premium |
-| **B2-W** | 2024 | ~$90,000 | - | 5.56m/s | 40kg | 50km range | Industrial Wheeled |
+| **Go1 Edu** | 2021 | ~$8,500 | 12kg | 3.7m/s | 5kg (max 10kg) | 2 hrs | Research/Education |
+| **Go2 Air** | 2023 | $1,600 | 15kg | 3.7m/s | 8kg | 1-2 hrs | Next-gen Entry |
+| **Go2 Pro** | 2023 | $2,800 | 15kg | 3.7m/s | 8kg (max 12kg) | 1-2 hrs | Consumer |
+| **Go2 Edu** | 2023 | ~$14,500 | 15kg | 5m/s | 8kg (max 12kg) | 2-4 hrs | Research/Education |
+| **Go2-W** | 2024 | ~$14,000 | 18kg | 2.5m/s | 8kg (max 12kg) | 2-4 hrs | Hybrid |
+| **B1** | 2020 | ~$90,000 | 50kg | 1.2-1.8m/s | 20kg (walk)/80kg (stand) | 2-4 hrs | Industrial |
+| **B2** | 2023 | ~$100,000 | 60kg | 6m/s+ | 40kg (walk)/120kg (stand) | 4-6 hrs | Industrial Premium |
+| **B2-W** | 2024 | ~$90,000 | 70-75kg | 5.56m/s | 40kg | 25-50km range | Industrial Wheeled |
 
 ### Consumer/Research Series
 
 #### Go1 Series (2021)
 
-Go1 is the product that made Unitree famous worldwide. Starting at $2,700, it dramatically lowered the barrier to entry for quadruped research.
+Go1 is the product that made Unitree famous worldwide. Starting at $2,700, it dramatically lowered the barrier to entry for quadruped research. Go1 holds a speed record of 4.7m/s, though actual operating speed is limited to 3.7m/s for safety.
 
 | Model | Price | Weight | Max Speed | Payload | Runtime | Key Features |
 |-------|-------|--------|-----------|---------|---------|--------------|
-| **Go1 Air** | $2,700 | 12kg | 2.5m/s | 3kg | 1 hr | Entry level, basic sensors |
+| **Go1 Air** | $2,700 | 12kg | 3.7m/s | 3kg | 1 hr | Entry level, basic sensors |
 | **Go1 Pro** | $3,500 | 12kg | 3.5m/s | 5kg | 1.5 hrs | Enhanced sensors, ultrasonic |
-| **Go1 Edu** | ~$8,500 | 12kg | 3.7m/s | 5kg | 2 hrs | SDK/API access, Jetson |
+| **Go1 Edu** | ~$8,500 | 12kg | 3.7m/s | 5kg (max 10kg) | 2-2.5 hrs | SDK/API access, Jetson |
 
 #### Go2 Series (2023)
 
-Go2 is the successor to Go1, with significantly improved performance and sensors. The 4D LiDAR in particular greatly improves autonomous navigation capabilities.
+Go2 is the successor to Go1, with significantly improved performance and sensors. The self-developed 4D LiDAR L1 in particular greatly improves autonomous navigation capabilities. Battery capacity increased to 8,000mAh, with 15,000mAh extended battery option available.
 
 | Model | Price | Weight | Max Speed | Payload | Runtime | Key Features |
 |-------|-------|--------|-----------|---------|---------|--------------|
-| **Go2 Air** | $1,600 | 15kg | 2.5m/s | 7kg | 1-2 hrs | Next-gen entry |
-| **Go2 Pro** | $2,800 | 15kg | 3.5m/s | 8kg | 1-2 hrs | 4G, ISS 2.0, 4D LiDAR |
-| **Go2 Edu** | Inquiry | 15kg | 5m/s | 8kg | 2-4 hrs | Jetson Orin, foot force sensors |
-| **Go2-W** | $4,500 ~ $14,000 | 18kg | 2.5m/s | 12kg | 1.5-3 hrs | Wheel+leg hybrid |
+| **Go2 Air** | $1,600 | 15kg | 3.7m/s | 8kg (max 10kg) | 1-2 hrs | Next-gen entry, 4D LiDAR |
+| **Go2 Pro** | $2,800 | 15kg | 3.7m/s | 8kg (max 12kg) | 1-2 hrs | 4G, ISS 2.0, 4D LiDAR, voice commands |
+| **Go2 Edu** | ~$14,500 | 15kg | 5m/s | 8kg (max 12kg) | 2-4 hrs | Jetson Orin Nano 8GB (40 TOPS), foot force sensors |
+| **Go2 Edu Plus** | ~$22,500 | 15kg | 5m/s | 8kg (max 12kg) | 2-4 hrs | Jetson Orin NX 16GB (100 TOPS) |
+| **Go2-W** | ~$14,000 | 18kg | 2.5m/s | 8kg (max 12kg) | 2-4 hrs | 7-inch pneumatic tires, wheel+leg hybrid |
 
 ### Research Series
 
 #### Aliengo (2019)
 
-Aliengo is Unitree's first serious research-grade quadruped. Released before Go1, it was adopted by academic research communities first.
+Aliengo is Unitree's first serious research-grade quadruped. Released before Go1, it was adopted by academic research communities first. One size larger than the A1, yet smaller than Boston Dynamics Spot - a medium-sized machine.
 
 | Item | Spec |
 |------|------|
 | Release | 2019 |
-| Price | ~$15,000 (Edu version) |
-| Weight | 21.5kg |
+| Price | ~$50,000 |
+| Weight | ~19-21.5kg |
 | Size | 650mm x 320mm x 600mm |
-| Max Speed | 3.3m/s |
-| Payload | 5kg |
+| Max Speed | 1.5m/s (stable), max 3.3m/s |
+| Payload | 10kg |
 | Joint Torque | 40N.m |
-| Runtime | 2-4 hours |
+| Runtime | Up to 4.5 hours (lithium battery, intelligent air cooling system) |
 | Computing | NVIDIA Jetson TX2/Xavier NX |
-| Features | EtherCAT motor communication, C++ SDK |
+| Features | EtherCAT motor communication, C++ SDK, ROS support, 21-degree incline climbing |
 
 **Why Aliengo was used in research:**
 - Only affordable research-grade quadruped before Go1
@@ -123,24 +124,26 @@ B1 is Unitree's first large industrial quadruped.
 | Item | Spec |
 |------|------|
 | Release | 2020 |
-| Price | ~$40,000 |
-| Weight | 50kg |
-| Size | 1080mm x 460mm x 650mm |
-| Max Speed | 1.8m/s |
-| Payload | 5kg |
+| Price | ~$90,000 |
+| Weight | 50kg (with battery) |
+| Size | 1126mm x 467mm x 636mm (standing), 1202mm x 467mm x 297mm (folded) |
+| Max Speed | 1.2-1.8m/s |
+| Payload | 20kg (continuous walk), 80kg (max standing) |
 | Joint Torque | 180N.m |
-| Runtime | 2-4 hours |
-| Water/Dust | IP54 |
+| Runtime | ~5 hrs (standing), 2-2.5 hrs (continuous walk) |
+| Water/Dust | IP67 (IP68 optional) |
 | Operating Temp | -20C ~ 55C |
+| Obstacle Clearance | ~20cm |
+| Sensors | Intel RealSense D430 x5, 3D perception stack |
 
 #### B2 Series (2023)
 
-B2 is the successor to B1, offering industry-leading performance.
+B2 is the successor to B1, offering industry-leading performance. It's the fastest industrial quadruped at 6m/s, with 360N.m torque motors capable of leaping over 1.6m obstacles and surviving drops from 2.8m heights.
 
 | Model | Price | Weight | Max Speed | Payload | Runtime | Key Features |
 |-------|-------|--------|-----------|---------|---------|--------------|
-| **B2** | ~$100,000 | 60kg | 6m/s+ | 40kg(moving)/120kg(stationary) | 4-6 hrs | Industrial, IP67 |
-| **B2-W** | ~$90,000 | - | 5.56m/s (20km/h) | 40kg | 50km range | 12-inch wheels |
+| **B2** | ~$100,000 | 60kg | 6m/s | 40kg (walk)/120kg (stand) | 4-6 hrs | Industrial, IP67, NVIDIA Orin |
+| **B2-W** | ~$90,000 | 70-75kg | 5.56m/s (20km/h) | 40kg | 25-50km range | 12-inch wheels, dual mobility modes |
 
 ---
 
@@ -246,20 +249,33 @@ Unitree's innovative wheel+leg hybrid robots.
 |------|------|
 | Size | 70cm x 43cm x 50cm |
 | Weight | ~18kg |
-| Tires | 7-inch pneumatic |
+| Tires | 7-inch pneumatic (20-40 kPa) |
 | Max Speed | 2.5m/s |
-| Obstacle Clearance | 70cm |
+| Obstacle Clearance | Up to 70cm |
 | Climb Angle | 35 degrees |
+| Payload | 8kg (max 12kg) |
+| Battery | 15,000mAh |
+| Runtime | 2-4 hours |
+| Computing (EDU) | NVIDIA Jetson Orin NX 16GB (100 TOPS) |
+| Price | ~$14,000 |
 
 ### B2-W
 
 | Item | Spec |
 |------|------|
+| Weight | 70-75kg |
 | Tires | 12-inch pneumatic (225mm) |
 | Wheel Torque | 50N.m |
-| Max Speed | 5.56m/s (20km/h) |
-| Range | 50km with 40kg load |
-| Price | ~$90,000 |
+| Max Speed | Up to 20km/h (5.56m/s) |
+| Range | 25km with 40kg load, 30km unloaded, up to 50km max |
+| Payload | 40kg (walk), 120kg (stand) |
+| Climb Height | 40cm (forward) |
+| Climb Angle | 45 degrees+ |
+| Stairs | 20-25cm continuous climb |
+| Water/Dust | IP67 |
+| Operating Temp | -20C ~ 55C |
+| Computing | Intel Core i5/i7, Jetson Orin NX (up to 3) |
+| Price | ~$90,000-$106,000 |
 
 ---
 

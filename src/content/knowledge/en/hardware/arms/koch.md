@@ -13,7 +13,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Koch v1.1
@@ -30,14 +30,15 @@ Koch v1.1 is an improved version of the low-cost open-source robot arm **designe
 
 | Item | Details |
 |------|---------|
-| **Original Designer** | Alexander Koch (Co-founder of Tau Robotics) |
+| **Original Designer** | Alexander Koch (CEO & Co-founder of Tau Robotics) |
 | **v1.1 Improvements** | Jess Moss (HuggingFace) |
-| **License** | Open Source (GitHub public) |
+| **License** | MIT License (Open Source) |
 | **Type** | 6-DoF low-cost 3D printed robot arm |
 | **DoF** | 6 (Shoulder Pan, Shoulder Lift, Elbow, Wrist Flex, Wrist Roll, Gripper) |
 | **Motors** | Dynamixel XL430-W250-T + XL330-M288-T |
-| **Parts Cost** | ~$258 (Follower) / ~$183 (Leader) / ~$441 (pair) |
-| **Release Date** | Original: Early 2024, v1.1: July 2024 |
+| **DIY Parts Cost** | ~$278 (Follower) / ~$199 (Leader) / ~$477 (pair) |
+| **ROBOTIS Kit** | $212.92 (Follower) / $204.85 (Leader) / $417.77 (pair) - electronics only, 3D print separate |
+| **Release Date** | Original: March 23, 2024, v1.1: July 2024 |
 
 ---
 
@@ -48,9 +49,10 @@ Koch v1.1 is an improved version of the low-cost open-source robot arm **designe
 The most important contribution of the Koch robot arm is **dramatically lowering the data collection cost for VLA (Vision-Language-Action) research**.
 
 1. **Ultra-low-cost Hardware**: 1/100 the cost compared to existing research robot arms (Franka $30K+, UR $25K+)
-2. **Fully Open Source**: CAD files, SolidWorks models, BOM, and control code all publicly available
+2. **Fully Open Source**: CAD files, SolidWorks models, BOM, and control code all publicly available (MIT License)
 3. **3D Printing Based**: Manufacturable with standard FDM printers (Prusa, Ender, Bambu)
 4. **LeRobot Integration**: Perfect compatibility with HuggingFace's robotics ML framework
+5. **ALOHA/GELLO Inspired**: Design inspired by Stanford/UC Berkeley robot projects
 
 ### Tau Robotics' Vision
 
@@ -98,48 +100,58 @@ The Leader arm is configured with a **handle and trigger** instead of a gripper 
 
 ## Bill of Materials (BOM)
 
-### Follower Arm (Controlled Target)
+### Follower Arm (Controlled Target) - DIY BOM
 
 | Part | Quantity | Price (USD) | Notes |
 |------|----------|-------------|-------|
-| Dynamixel XL430-W250-T | 2 | $100 | Shoulder joints (high torque) |
-| Dynamixel XL330-M288-T | 4 | $96 | Elbow, wrist, gripper |
-| XL330 Frame & Idler Wheel Set | 1 | $10 | 4pc set, use 2-3 |
-| XL430 Idler Wheel Set | 1 | $7 | |
-| Waveshare Serial Bus Servo Driver | 1 | $10 | USB-C connection |
-| 12V to 5V Voltage Reducer | 1 | $10 | Voltage conversion for XL330 |
-| 12V Power Supply | 1 | $12 | Main power |
-| Table Clamp | 1 | $6 | Mounting |
-| Wires/Connectors | - | $7 | Wiring |
-| **Total** | | **~$258** | 3D printing cost separate |
+| Dynamixel XL430-W250-T | 2 | ~$100 | Shoulder joints (high torque) |
+| Dynamixel XL330-M288-T | 4 | ~$96 | Elbow, wrist, gripper |
+| XL330 Frame & Idler Wheel Set | 1 | ~$10 | 4pc set, use 2-3 |
+| XL430 Idler Wheel Set | 1 | ~$7 | |
+| Waveshare Serial Bus Servo Driver | 1 | ~$10 | USB-C connection (DIY option) |
+| 12V to 5V Voltage Reducer | 1 | ~$10 | Voltage conversion for XL330 |
+| 12V Power Supply | 1 | ~$12 | Main power |
+| Table Clamp | 1 | ~$6 | Mounting |
+| Wires/Connectors | - | ~$7 | Wiring |
+| **DIY Total** | | **~$278** | 3D printing cost separate |
 
-### Leader Arm (Teleoperation Controller)
+### Leader Arm (Teleoperation Controller) - DIY BOM
 
 | Part | Quantity | Price (USD) | Notes |
 |------|----------|-------------|-------|
-| Dynamixel XL330-M077-T | 6 | $144 | Unified for all joints |
-| XL330 Frame | 1 | $7 | |
-| XL330 Idler Wheel Set | 1 | $10 | |
-| Waveshare Serial Bus Servo Driver | 1 | $10 | |
-| 5V Power Supply | 1 | $6 | Leader uses 5V only |
-| Table Clamp | 1 | $6 | |
-| **Total** | | **~$183** | 3D printing cost separate |
+| Dynamixel XL330-M077-T | 6 | ~$144 | Unified for all joints |
+| XL330 Frame & Idler Wheel Set | 1 | ~$10 | 4pc set, use 3 |
+| Waveshare Serial Bus Servo Driver | 1 | ~$10 | (DIY option) |
+| 5V Power Supply | 1 | ~$6 | Leader uses 5V only |
+| Table Clamp | 1 | ~$6 | |
+| Wires/USB-C cable | - | ~$7 | |
+| **DIY Total** | | **~$199** | 3D printing cost separate |
+
+### ROBOTIS Kits (Recommended)
+
+ROBOTIS official kits include the **OpenRB-150** control board instead of Waveshare board.
+
+| Configuration | ROBOTIS Kit Price | Included |
+|---------------|-------------------|----------|
+| Follower Kit | $212.92 | XL430x2, XL330-M288x4, OpenRB-150, frame sets |
+| Leader Kit | $204.85 | XL330-M077x6, OpenRB-150, frame sets |
+| 3D Printed Parts (optional) | $40 | Made to order by ROBOTIS |
 
 ### Total System Cost
 
-| Configuration | Cost | Use Case |
-|---------------|------|----------|
-| Follower only | ~$258 | Autonomous control research |
-| Leader + Follower | ~$441 | Teleoperation data collection |
-| Dual arm system | ~$882 | Bimanual manipulation |
+| Configuration | DIY Cost | ROBOTIS Kit | Use Case |
+|---------------|----------|-------------|----------|
+| Follower only | ~$278 | $212.92 | Autonomous control research |
+| Leader + Follower | ~$477 | $417.77 | Teleoperation data collection |
+| Dual arm system | ~$954 | ~$835 | Bimanual manipulation |
 
 ### Where to Buy
 
-- **ROBOTIS**: [Koch v1.1 Leader Kit](https://robotis.us/koch-v1-1-low-cost-robot-arm-leader/), [Follower Kit](https://www.robotis.us/koch-v1-1-low-cost-robot-arm-follower/)
+- **ROBOTIS (Recommended)**: [Koch v1.1 Leader Kit](https://robotis.us/koch-v1-1-low-cost-robot-arm-leader/) ($204.85), [Follower Kit](https://www.robotis.us/koch-v1-1-low-cost-robot-arm-follower/) ($212.92)
 - **PartaBot**: Complete products and parts kits
 - **Tau Robotics**: [Waiting list](https://tau-robotics.com) - One-stop package
 
-> **Tip**: ROBOTIS official shop frequently offers 10% discount codes.
+> **Note**: ROBOTIS kits include the OpenRB-150 control board, eliminating the need to purchase a Waveshare board separately. 3D printed parts must be purchased separately or printed yourself.
 
 ---
 

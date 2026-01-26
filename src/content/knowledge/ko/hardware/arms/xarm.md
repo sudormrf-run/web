@@ -3,7 +3,7 @@ title: UFACTORY xArm 시리즈
 description: 접근성 높은 연구/교육용 로봇 암 - Franka의 가성비 대안
 tags: [xarm, ufactory, cobot, research, arm, vla, open-x-embodiment, lerobot]
 category: hardware
-last_verified: 2025-01
+last_verified: 2026-01
 
 # Authorship
 createdBy:
@@ -33,13 +33,13 @@ lastEditedAt: 2026-01-15
 | 설립연도 | 2013년 [^1] |
 | 유형 | 협동 로봇 (Collaborative Robot) |
 | 특징 | 가성비, 연구 접근성, 오픈소스 SDK |
-| 글로벌 판매 | 80+ 국가 (공식 발표 기준) [^1] |
+| 글로벌 판매 | 100+ 국가 (공식 발표 기준) [^1] |
 
 ---
 
 ## 회사 소개
 
-UFACTORY는 2013년 중국 심천(Shenzhen)에서 설립된 로봇 제조 스타트업이다 [^1]. 세계 최초의 데스크톱 오픈소스 로봇 암인 **uArm**을 Kickstarter에서 출시하며 명성을 얻었으며, uArm Swift PRO는 크라우드펀딩 플랫폼에서 100만 달러 이상의 후원을 받았다 [^2].
+UFACTORY는 2013년 중국 심천(Shenzhen)에서 설립된 로봇 제조 스타트업이다 [^1]. 세계 최초의 데스크톱 오픈소스 로봇 암인 **uArm**을 Kickstarter에서 출시하며 명성을 얻었으며, uArm Swift PRO는 Indiegogo 크라우드펀딩에서 목표 대비 5,500% 이상을 달성하며 약 100만 달러에 가까운 후원을 받았다 [^2].
 
 심천의 제조업 생태계를 활용하여 산업용 기술을 연구/교육 시장에 접근 가능한 가격으로 제공하는 것이 회사의 핵심 전략이다. 투자자로는 **Tencent AI Accelerator**와 **Sinovation Ventures**가 있다 [^2].
 
@@ -79,11 +79,11 @@ Franka는 전 관절 토크 센싱 등 하드웨어 기능에서 우위가 있�
 
 | 모델 | 축 | 페이로드 | 리치 | 반복정밀도 | 최대 속도 | 무게 | 가격대(USD) |
 |------|-----|---------|------|-----------|----------|------|-----------|
-| **Lite 6** | 6 | 600g | 440mm | 0.5mm | 500mm/s | ~7kg | $2,999~ [^6] |
-| **xArm 5** | 5 | 3kg | 700mm | 0.1mm | 330mm/s | ~11kg | $5,000~ [^3] |
-| **xArm 6** | 6 | 5kg | 700mm | 0.1mm | 1m/s | ~12kg | $8,000~ [^3] |
-| **xArm 7** | 7 | 3.5kg | 700mm | 0.1mm | 1m/s | ~14kg | $10,000~ [^3] |
-| **UFACTORY 850** | 6 | 5kg | 850mm | 0.02mm | 1m/s | ~20kg | $8,999~ [^7] |
+| **Lite 6** | 6 | 600g | 440mm | 0.5mm | 500mm/s | 7.2kg | $2,999~ [^6] |
+| **xArm 5** | 5 | 3kg | 700mm | 0.1mm | 1m/s | 11.2kg | $5,749~ [^3] |
+| **xArm 6** | 6 | 5kg | 700mm | 0.1mm | 1m/s | 12.2kg | $8,849~ [^3] |
+| **xArm 7** | 7 | 3.5kg | 700mm | 0.1mm | 1m/s | 13.7kg | $10,449~ [^3] |
+| **UFACTORY 850** | 6 | 5kg | 850mm | 0.02mm | 1m/s | 17kg | $9,849~ [^7] |
 
 ### 모델별 특징
 
@@ -287,8 +287,8 @@ print(dataset)
 ## Footnotes
 
 [^1]: UFACTORY 공식 정보 및 Crunchbase 프로필 기준
-[^2]: Kickstarter 캠페인 및 투자 정보 (Tracxn, CBInsights)
-[^3]: UFACTORY 공식 사이트 및 유통사(RobotShop, Top3DShop) 기준 (2025년 1월 확인). 가격은 변동될 수 있음
+[^2]: Indiegogo 캠페인 및 투자 정보 (Tracxn, CBInsights)
+[^3]: UFACTORY 공식 사이트 및 유통사(RobotShop, Top3DShop, Blue Sky Robotics) 기준 (2026년 1월 확인). 가격은 변동될 수 있음
 [^4]: UFACTORY 공식 문서 (docs.ufactory.cc)
 [^5]: Franka Robotics 공식 사양
 [^6]: UFACTORY Lite 6 공식 제품 페이지

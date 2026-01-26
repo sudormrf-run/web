@@ -39,7 +39,7 @@ lastEditedAt: 2026-01-15
 | Item | Content |
 |------|---------|
 | Manufacturer | Agility Robotics |
-| Headquarters | Albany, Oregon / Pittsburgh, Pennsylvania |
+| Headquarters | Corvallis, Oregon (HQ) / Pittsburgh, Pennsylvania (branch) |
 | Founded | 2015 (Oregon State University spinoff) |
 | Market | Industrial, logistics, warehouse automation |
 | Key Partners | Amazon, GXO Logistics |
@@ -60,9 +60,11 @@ Agility Robotics' Digit is **one of the first humanoid robots commercially deplo
 
 | Founder | Role | Background |
 |---------|------|------------|
-| Jonathan Hurst | Chief Robot Officer | Oregon State University Professor, CMU PhD |
-| Damion Shelton | Chairman of the Board | CMU PhD, Hurst's classmate |
+| Jonathan Hurst | Chief Robot Officer (CRO) | Oregon State University Professor, CMU PhD |
+| Damion Shelton | Chairman (former CEO, 2015-2024) | CMU PhD, Hurst's classmate |
 | Mikhail Jones | VP of Software | Oregon State graduate |
+
+> Note: In March 2024, Peggy Johnson was appointed as CEO and currently leads the company. Johnson is a former Magic Leap CEO and Microsoft executive.
 
 Agility Robotics was spun off from Oregon State University's **Dynamic Robotics Lab** in 2015 [^3]. Founder Jonathan Hurst obtained his robotics PhD from CMU, then researched **the physics of legged locomotion** at OSU and co-founded the OSU Robotics Institute.
 
@@ -85,10 +87,11 @@ Cassie was Agility's first robot, designed inspired by the leg mechanics of **os
 
 | Version | Period | Key Features | Source |
 |---------|--------|--------------|--------|
-| Digit V1 | 2019 | First humanoid version, upper body/arms added | [^3] |
-| Digit V2 | 2020-2021 | Last-mile delivery research collaboration with Ford (reported) | [^3] |
-| Digit (Commercial) | 2023 | Logistics-specialized design, improved End Effector | [^10] |
-| Digit (Next-gen) | 2024 | Battery expansion, payload increase | [^6] |
+| Digit V1 | Feb 2019 | First humanoid version, upper body/arms added, Cassie-based | [^3] |
+| Digit V2 | Jan 2020 | First commercial sale to Ford, last-mile delivery research | [^3][^17] |
+| Digit V3-V4 | 2023 | Logistics-specialized design, improved End Effector, unveiled at ProMat | [^10] |
+| Digit (2024) | 2024 | Battery expansion (4 hours), payload increase (23kg) | [^6] |
+| Digit V5 | Late 2025 (planned) | Next-gen version, additional improvements expected | [^3] |
 
 ---
 
@@ -111,19 +114,20 @@ Cassie was Agility's first robot, designed inspired by the leg mechanics of **os
 | Version | DoF Configuration | Source |
 |---------|-------------------|--------|
 | Initial | 16 DoF (legs 5x2 + arms 3x2) | [^9] |
-| Commercial | 28 DoF | [^7] |
-| Latest | 32 DoF (legs 6x2 + arms 7x2 + grippers 1x2 + waist 2 + neck 2) | [^7] |
+| Mid-gen | 20 DoF | [^9] |
+| Commercial (2023+) | 28 DoF | [^7] |
 
-*DoF configuration varies by version; figures may differ by source*
+*DoF configuration varies by version; figures may differ by source. According to Agility's official announcements, the current commercial version has 28 DoF.*
 
 ### Battery and Power
 
 | Item | Spec | Source |
 |------|------|--------|
 | Battery Type | Custom 1.2kWh Li-Po | [^7] |
-| Walking Time | 1.5 hours (initial) → 4 hours (2024 version) | [^6] |
-| Standby Time | 3 hours | [^7] |
-| Work:Charge Ratio | 4:1 (reported) | [^6] |
+| Working Time | 3-5 hours (varies by task intensity) | [^6][^7] |
+| 2024 Version | Up to 4 hours continuous operation | [^6] |
+| Work:Charge Ratio | 4:1 (4 min work per 1 min charge) | [^6] |
+| Daily Operation | Up to 16 hours (with charging breaks, 3 shifts possible) | [^6] |
 | Auto Docking | Supported (added 2024) | [^6] |
 
 ### Sensors and Computing
@@ -307,11 +311,12 @@ The logistics industry faces increasing volumes and persistent labor shortages, 
 [^14]: [OPB: Corvallis robotics company Salem factory](https://www.opb.org/article/2023/09/24/oregon-state-university-robotics-digit-technology-education-business/)
 [^15]: [Contrary Research: Agility Robotics Partnership Analysis](https://research.contrary.com/company/agility-robotics) - Third-party analysis
 [^16]: [Humanoid Robots 2025-2026 Outlook](https://www.winssolutions.org/humanoid-robots-2025-2026-reality-hype/) - Industry analysis
+[^17]: [Ford Digit Purchase Announcement](https://media.ford.com/content/fordmedia/fna/us/en/news/2020/01/06/agility-robotics-sell-first-digit-robots-to-ford.html) - Ford Media Center
 
 ---
 
 ## See Also
 
-- [Hardware List](../index)
-- [Figure Humanoid](figure)
-- [Tesla Optimus](optimus)
+- [Hardware List](./)
+- [Figure Humanoid](./figure)
+- [Tesla Optimus](./optimus)

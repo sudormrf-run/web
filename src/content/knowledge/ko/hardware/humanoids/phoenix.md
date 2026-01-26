@@ -12,7 +12,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Sanctuary Phoenix
@@ -29,7 +29,7 @@ lastEditedAt: 2026-01-15
 | 항목 | 내용 |
 |------|------|
 | 제조사 | Sanctuary AI (캐나다, 밴쿠버) |
-| 최신 버전 | Gen 8 (2025.02) |
+| 최신 버전 | Gen 8 (2025.01) |
 | AI 시스템 | Carbon |
 | 핵심 접근법 | 인지 일반화 (Cognitive Generalization) |
 | 가격 | ~$40,000 [^1] |
@@ -53,17 +53,20 @@ Sanctuary AI Phoenix는 **인지 아키텍처(Cognitive Architecture)** 중심 �
 |------|------|
 | 설립 | 2018년 |
 | 본사 | 밴쿠버, 캐나다 |
-| CEO | Geordie Rose (D-Wave 공동창업자) |
+| 창업자 | Geordie Rose (D-Wave 공동창업자), Suzanne Gildert |
+| 현 CEO | James Wells (임시, 2024.11~) |
+| 전 CEO | Geordie Rose (2018~2024.11) |
 | 핵심 미션 | "Creating the world's first human-like intelligence in general-purpose robots" |
 
-Sanctuary AI는 D-Wave Systems(양자 컴퓨터)의 공동창업자 Geordie Rose가 설립한 회사로, 범용 인공지능(AGI)의 물리적 구현을 목표로 한다. 밴쿠버 기반의 캐나다 AI 로보틱스 생태계를 대표하는 기업이다.
+Sanctuary AI는 D-Wave Systems(양자 컴퓨터)의 공동창업자 Geordie Rose와 Suzanne Gildert가 공동 설립한 회사로, 범용 인공지능(AGI)의 물리적 구현을 목표로 한다. 밴쿠버 기반의 캐나다 AI 로보틱스 생태계를 대표하는 기업이다. 2024년 4월 공동창업자 겸 CTO Suzanne Gildert가 퇴사했고, 2024년 11월 Geordie Rose도 이사회 결정으로 CEO직에서 물러났다. 현재 James Wells가 임시 CEO로 회사를 이끌고 있다.
 
 ### 펀딩 및 파트너십
-- **Series A** (2022.03): $75.5M - Magna Technology Investments 참여 [^3]
-- **Magna 전략적 파트너십** (2024): 제조 협력 및 지분 투자 [^4]
-- **Microsoft Azure 파트너십** (2024.05): 클라우드 인프라 통합
+- **Series A** (2022.03): C$75.5M (US$58.5M) - Bell 주도, Magna, Verizon Ventures, Workday Ventures 등 참여 [^3]
+- **캐나다 정부 지원** (2022.11): Strategic Innovation Fund에서 $30M 지원
+- **Magna 전략적 파트너십** (2024.04): 제조 협력 및 추가 지분 투자 [^4]
+- **Microsoft Azure 파트너십** (2024.05): 클라우드 인프라 및 AI 연구 협력
 
-[^3]: The Robot Report 2024.04 보도 기준.
+[^3]: Sanctuary AI 공식 발표 및 Tracxn 기준. 총 누적 투자액 약 $140M.
 [^4]: Sanctuary AI 공식 발표 2024.04 기준.
 
 ---
@@ -150,7 +153,7 @@ Carbon Architecture
 | Gen 5 | 2023.01 | 최초 상용 배포 |
 | Gen 6 | 2023 중반 | 다리 도입, TIME 2023 최고 발명품 선정 |
 | Gen 7 | 2024.04 | 작업 자동화 속도 50배 향상, 24시간 내 새 작업 학습 |
-| Gen 8 | 2025.02 | 고품질 데이터 캡처 최적화, FOV/텔레메트리 개선 |
+| Gen 8 | 2025.01 | 고품질 데이터 캡처 최적화, FOV/텔레메트리 개선 |
 
 ### Gen 7 주요 개선사항 (2024.04 발표)
 - 시각 정확도 및 촉각 센싱 대폭 향상
@@ -159,7 +162,7 @@ Carbon Architecture
 - 제조 비용 절감 및 생산 속도 향상
 - "가장 사람에 가까운 시스템" - Geordie Rose CEO
 
-### Gen 8 주요 개선사항 (2025.02 발표)
+### Gen 8 주요 개선사항 (2025.01 발표)
 - 고품질 학습 데이터 캡처에 최적화
 - 시야각(FOV) 확대
 - 텔레메트리 시스템 개선
@@ -171,8 +174,8 @@ Carbon Architecture
 ## Magna 파트너십
 
 ### 배경
-- Magna International: 캐나다 기반 글로벌 자동차 부품 제조사
-- 2021년부터 Sanctuary AI 투자자 (Series A $75.5M 참여)
+- Magna International: 캐나다 기반 글로벌 자동차 부품 제조사 (오스트리아에 완성차 제조시설 보유)
+- 2021년부터 Sanctuary AI 투자자 (Series A C$75.5M 참여)
 
 ### 파트너십 내용 (2024년 4월 발표) [^4]
 1. **Magna 제조시설에 Phoenix 배포**
@@ -259,7 +262,7 @@ Sanctuary AI는 12개 이상 산업에서 수백 개 작업을 시연했다 (202
 
 ## See Also
 
-- [하드웨어 목록](../index)
-- [Figure 휴머노이드](figure)
-- [Tesla Optimus](optimus)
-- [Apollo (Apptronik)](apollo)
+- [하드웨어 목록](../)
+- [Figure 휴머노이드](./figure)
+- [Tesla Optimus](./optimus)
+- [Apollo (Apptronik)](./apollo)

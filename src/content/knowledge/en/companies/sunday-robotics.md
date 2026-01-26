@@ -11,16 +11,16 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Overview
 
-Sunday Robotics is a startup co-founded by Stanford PhD graduates Tony Zhao (author of the ACT paper) and Cheng Chi (author of Diffusion Policy). They are gaining attention for their innovative approach of training **without robot data**, using only human motion data.
+Sunday is a startup co-founded by Tony Zhao (author of the ACT paper, Stanford PhD dropout) and Cheng Chi (author of Diffusion Policy, Columbia/Stanford PhD student). They are gaining attention for their innovative approach of training **without robot data**, using only human motion data.
 
 | Item | Details |
 |------|---------|
-| Headquarters | San Francisco, CA |
+| Headquarters | Mountain View, CA |
 | Founded | 2024 |
 | Co-Founders | Tony Zhao (CEO), Cheng Chi (CTO) |
 | Funding | $35M (Benchmark, Conviction) |
@@ -32,14 +32,17 @@ Sunday Robotics is a startup co-founded by Stanford PhD graduates Tony Zhao (aut
 
 ### Tony Zhao (CEO)
 
-- Stanford PhD
-- Author of ACT (Action Chunking with Transformers) paper
-- Developer of ALOHA robot system
+- Stanford PhD program (advised by Chelsea Finn, left in 2024)
+- UC Berkeley EECS B.S. (2021)
+- Lead author of ACT (Action Chunking with Transformers) paper
+- Developer of ALOHA / Mobile ALOHA robot systems
+- Previous: DeepMind, Tesla, GoogleX
 
 ### Cheng Chi (CTO)
 
-- Stanford PhD
-- Author of Diffusion Policy paper
+- Started PhD at Columbia, moved to Stanford (advised by Shuran Song)
+- Lead author of Diffusion Policy paper
+- Developer of UMI (Universal Manipulation Interface)
 - Expert in robotics AI learning
 
 ---

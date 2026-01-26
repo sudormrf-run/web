@@ -11,33 +11,43 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Overview
 
-Generalist AI는 OpenAI, Google DeepMind, Boston Dynamics 출신 팀이 설립한 스타트업입니다 (회사 발표 기반). 270,000시간의 실제 물리 상호작용 데이터로 로보틱스 분야 최초의 **스케일링 법칙**을 발견했다고 주장합니다.
+Generalist AI는 2024년에 설립된 로보틱스 AI 스타트업으로, 범용 로봇을 현실화하는 것을 목표로 합니다. Google DeepMind, Boston Dynamics 출신 창업팀이 설립했습니다. 270,000시간의 실제 물리 상호작용 데이터로 로보틱스 분야 최초의 **스케일링 법칙**을 발견했다고 주장합니다.
 
 | 항목 | 내용 |
 |------|------|
-| 발표 | 2025년 11월 4일 |
-| 핵심 모델 | GEN-0 |
+| 설립 | 2024년 |
+| 본사 | San Mateo, California |
+| GEN-0 발표 | 2025년 11월 4일 |
+| 핵심 모델 | GEN-0 (GEN-θ) |
 | 핵심 주장 | 로보틱스 스케일링 법칙 발견 |
 | 데이터 | 270,000+ 시간 실제 데이터 |
-| 블로그 | [generalistai.com/blog](https://generalistai.com/blog/nov-04-2025-GEN-0) |
+| 펀딩 | $140M (Bezos Expeditions, NVentures, Boldstart Ventures 등) |
+| 웹사이트 | [generalistai.com](https://generalistai.com/) |
 
 ---
 
 ## 창업팀
 
-### 배경
+### 공동 창업자
+
+| 이름 | 직책 | 배경 |
+|------|------|------|
+| Pete Florence | CEO | Google DeepMind 시니어 연구원, PaLM-E/RT-2 연구 리드 |
+| Andrew Barry | CTO | Boston Dynamics 시니어 로보티시스트, MIT CSAIL PhD |
+| Andy Zeng | Chief Scientist | Google DeepMind 연구원, TossingBot 개발, Princeton/UC Berkeley |
+
+### 팀 배경
 
 | 출신 | 기여 |
 |------|------|
-| OpenAI | ChatGPT, GPT-4 스케일링 |
 | Google DeepMind | PaLM-E, RT-2 개발 |
 | Boston Dynamics | Atlas, Spot, Stretch |
-| 기타 | 자율주행 기반 기술 |
+| 기타 | 자율주행, 로봇 공학 기반 기술 |
 
 ---
 
@@ -174,10 +184,13 @@ GEN-0의 주장이 사실이라면:
 
 ## References
 
-- [Generalist AI - GEN-0](https://generalistai.com/blog/nov-04-2025-GEN-0)
-- [Generalist AI Website](https://generalistai.com/)
-- [Humanoids Daily Article](https://www.humanoidsdaily.com/feed/generalist-ai-unveils-gen-0-claims-scaling-laws-for-robotics-backed-by-270-000-hours-of-real-world-data)
-- [MarkTechPost Article](https://www.marktechpost.com/2025/11/05/generalist-ai-introduces-gen-%CE%B8/) (GEN-0)
+- [Generalist AI - GEN-0 공식 블로그](https://generalistai.com/blog/nov-04-2025-GEN-0)
+- [Generalist AI 공식 웹사이트](https://generalistai.com/)
+- [Humanoids Daily - GEN-0 발표 기사](https://www.humanoidsdaily.com/feed/generalist-ai-unveils-gen-0-claims-scaling-laws-for-robotics-backed-by-270-000-hours-of-real-world-data)
+- [MarkTechPost - GEN-θ 소개](https://www.marktechpost.com/2025/11/05/generalist-ai-introduces-gen-%CE%B8/)
+- [TechCrunch - Pete Florence 창업 소식](https://techcrunch.com/2025/03/19/a-key-deepmind-robotics-researcher-left-google-and-nvidia-has-already-backed-his-stealth-startup/)
+- [Pete Florence 공식 페이지](https://www.peteflorence.com/)
+- [Andy Zeng 공식 페이지](https://andyzeng.github.io/)
 
 ---
 

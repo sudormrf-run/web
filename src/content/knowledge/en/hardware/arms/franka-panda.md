@@ -36,10 +36,10 @@ Franka Emika Panda is a 7-axis collaborative robot (cobot) developed in Munich, 
 | **Manufacturer** | Franka Emika (Germany, now Agile Robots) | Franka Emika |
 | **Degrees of Freedom (DoF)** | 7-axis | 7-axis |
 | **Payload** | 3 kg | 3 kg |
-| **Reach** | 850 mm | 855 mm |
+| **Reach** | 855 mm | 855 mm |
 | **Repeatability** | ±0.1 mm | ±0.1 mm |
 | **Maximum Speed** | 2 m/s (end effector) | 2 m/s |
-| **Robot Weight** | 18 kg | 18 kg |
+| **Robot Weight** | ~17.8 kg | ~17.8 kg |
 | **Control Frequency** | 1 kHz | 1 kHz |
 | **Force Resolution** | < 0.05 N | < 0.05 N |
 | **Force Accuracy** | 0.8 N (relative) | 0.8 N |
@@ -52,7 +52,7 @@ Franka Emika Panda is a 7-axis collaborative robot (cobot) developed in Munich, 
 ## Key Significance
 
 ### 1. Democratization of Research Robots
-At launch, Franka Panda disrupted the market dominated by large, heavy, and expensive industrial robots with its revolutionary price of approximately $10,500. This enabled precision manipulation research at universities and research institutes worldwide, with world-leading institutions such as MIT, Stanford, and Oxford Robotics Institute adopting it as their standard platform.
+At launch in 2017, Franka Panda disrupted the market dominated by large, heavy, and expensive industrial robots with its base price of approximately $10,500 (EUR 9,900), increasing to around $17,000 by 2018. This enabled precision manipulation research at universities and research institutes worldwide, with world-leading institutions such as MIT, Stanford, and Oxford Robotics Institute adopting it as their standard platform.
 
 ### 2. Data Collection Standard for VLA/Robot Learning
 Used as a core collection platform for large-scale robot learning datasets including Open X-Embodiment, DROID, and BridgeData, it has become the foundation for training state-of-the-art VLA models like OpenVLA, RT-X, and Octo.
@@ -72,7 +72,7 @@ Franka Emika founders Sami Haddadin and Simon Haddadin designed Panda with the v
 
 1. **Human-Centric Design**
    - 7-axis design implements kinematic structure similar to human arm
-   - Lightweight design at 18kg, 3.6 times human arm weight (approximately 5kg)
+   - Lightweight design at ~17.8kg, approximately 3.6 times human arm weight (~5kg)
    - Designed as collaborative robot, capable of close proximity work with humans when proper risk assessment and safety settings are applied (ISO 10218, ISO/TS 15066 compliance required)
 
 2. **Implementation of Tactile Sensing**
@@ -183,7 +183,7 @@ Franka Panda is one of the most widely used robot platforms in VLA (Vision-Langu
 |------|--------------|------|--------|----------|
 | **DoF** | 7 | 6 | 7 | 7 |
 | **Payload** | 3 kg | 5 kg | 4 kg | 7 kg |
-| **Reach** | 850 mm | 850 mm | 1,260 mm | 800 mm |
+| **Reach** | 855 mm | 850 mm | 1,260 mm | 800 mm |
 | **Repeatability** | ±0.1 mm | ±0.03 mm | ±0.1 mm | ±0.1 mm |
 | **Torque Sensors** | All joints | None | Per joint | All joints |
 | **Force Control** | Native | External F/T required | Limited | Native |
@@ -205,8 +205,8 @@ Franka Panda is one of the most widely used robot platforms in VLA (Vision-Langu
 
 ### Founding Team
 
-- **Sami Haddadin**: Co-founder, Robotics/AI Professor (TUM MIRMI founding director, 2018-2025)
-- **Simon Haddadin**: Co-founder, CEO (physician background, DLR researcher)
+- **Sami Haddadin**: Co-founder, Robotics/AI Professor (TUM MIRMI founding director, since 2018)
+- **Simon Haddadin**: Co-founder, CEO (Medical Doctor, former DLR researcher, transitioned from medicine in 2016)
 - **Sven Parusel**: Co-founder
 
 ### Major Milestones
@@ -214,12 +214,12 @@ Franka Panda is one of the most widely used robot platforms in VLA (Vision-Langu
 | Year | Event |
 |------|-------|
 | 2016 | Franka Emika GmbH founded (Munich) |
-| 2017 | German Future Prize (Deutscher Zukunftspreis) winner |
-| 2018 | Time "50 Best Inventions" selection, 2,000 units shipped in first year |
+| 2017 | German Future Prize (Deutscher Zukunftspreis) winner (Haddadin et al., robotics research) |
+| 2018 | Time "50 Best Inventions" selection (featured on cover), ~2,500 units shipped by year end |
 | 2020 | National Geographic feature |
 | 2022 | Franka Research 3 (FR3) release |
 | 2023.08 | Preliminary insolvency filing due to shareholder dispute |
-| 2023.11 | Acquired by Agile Robots AG (approximately 32 million euros) |
+| 2023.11 | Acquired by Agile Robots AG (terms undisclosed, press reports EUR 28.5-33M) |
 
 ### Current Status (2024-2025)
 

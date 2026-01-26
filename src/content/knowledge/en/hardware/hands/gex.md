@@ -29,10 +29,11 @@ GEX is an ultra-low-cost dexterous manipulation system developed with the goal o
 
 | Item | GX11 Hand | EX12 Glove |
 |------|-----------|------------|
-| DoF | 11 | 12 |
-| Price | ~$600 | - |
-| Assembly Time | Under 4 hours | - |
-| Number of Fingers | 3 (thumb, index, middle) | 3 |
+| DoF | 11 (Thumb 3 + Index 4 + Middle 4) | 12 (Thumb 4 + Index 4 + Middle 4) |
+| Price | ~$600 | ~$600 |
+| Assembly Time | Under 4 hours | Under 4 hours |
+| Number of Fingers | 3 (thumb, index, middle) | 3 (thumb, index, middle) |
+| Actuator | Dynamixel XL330-M288-T (288:1) | Dynamixel XL330-M077-T (77:1) |
 | Cost Comparison | **1/125** of Shadow Hand, **1/20** of Allegro (per paper) | - |
 
 ---
@@ -78,8 +79,8 @@ GEX is an ultra-low-cost dexterous manipulation system developed with the goal o
 The greatest significance of the GEX project is **dramatically lowering the barrier to entry for dexterous manipulation research**.
 
 Existing problems:
-- Shadow Hand ($75K+): Excellent performance but unaffordable for most labs
-- Allegro Hand ($12K+): Mid-range price but still high initial cost
+- Shadow Hand ($100K+): Excellent performance but unaffordable for most labs
+- Allegro Hand ($16K+): Mid-range price but still high initial cost
 - Tendon-driven systems: Difficult maintenance, cable wear issues
 
 GEX solutions:
@@ -102,7 +103,7 @@ Proliferation of affordable dexterous hands directly impacts VLA (Vision-Languag
 
 ### Why 3 Fingers?
 
-Reasons for adopting 3-finger structure departing from LEAP Hand's 5-finger design:
+Reasons for adopting 3-finger structure departing from LEAP Hand's 4-finger design:
 
 - **Maximum Flexibility**: Most manipulation tasks achievable with thumb, index, and middle fingers only
 - **Human Hand Mimicry**: Reproduces core human grip patterns (precision grip, power grip)
@@ -144,13 +145,13 @@ Reasons for adopting 3-finger structure departing from LEAP Hand's 5-finger desi
 
 | Product | Price (per paper) | Cost Ratio |
 |---------|-------------------|------------|
-| Shadow Hand | $75,000+ | **125x** |
-| Allegro Hand | $12,000+ | **20x** |
+| Shadow Hand | $100,000+ | **125x+** |
+| Allegro Hand | $16,000+ | **~27x** |
 | Clone Hand | ~$2,800 | ~5x |
 | LEAP Hand | ~$2,000 | ~3x |
 | **GEX GX11** | **~$600** | 1x |
 
-*Note: Shadow Hand, Allegro prices reverse-calculated from paper-stated ratios (1/125, 1/20). Actual market prices may vary*
+*Note: Paper states 1/20 of Allegro, 1/125 of Shadow Hand. Actual market prices may vary*
 
 ### Total Cost of Ownership (TCO) Perspective
 
@@ -175,8 +176,10 @@ GEX advantages go beyond initial cost:
 
 GX11 is used in combination with EX12 exoskeleton glove:
 
-- Total **23 DoF** closed-loop system
+- Total **23 DoF** closed-loop system (GX11 11 DoF + EX12 12 DoF)
+- **OpenRB-150** motor control board for unified control (ARM Cortex-M0+, 48MHz)
 - High-fidelity control through **kinematics retargeting** algorithm
+- **libgex** Python library for motor communication and control
 - Indirect force sensing via **torque estimation** based on current control mode (no separate haptic sensors)
 
 ---
@@ -208,7 +211,11 @@ GX11 is used in combination with EX12 exoskeleton glove:
 ## References
 
 - **Paper**: Dong, Y., Liu, X., Wan, J., & Deng, Z. (2025). "GEX: Democratizing Dexterity with Fully-Actuated Dexterous Hand and Exoskeleton Glove." [arXiv:2506.04982](https://arxiv.org/abs/2506.04982)
-- **Actuator**: [Dynamixel XL330-M288-T](https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/)
+  - Affiliations: Huazhong University of Science and Technology (Liu, Wan)
+- **GitHub**: [Democratizing-Dexterous](https://github.com/orgs/Democratizing-Dexterous/repositories)
+- **Actuators**:
+  - [Dynamixel XL330-M288-T](https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/) (GX11 Hand)
+  - [Dynamixel XL330-M077-T](https://emanual.robotis.com/docs/en/dxl/x/xl330-m077/) (EX12 Glove)
 
 ---
 

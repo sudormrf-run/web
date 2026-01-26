@@ -11,33 +11,43 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Overview
 
-Generalist AI is a startup founded by a team from OpenAI, Google DeepMind, and Boston Dynamics (per company announcement). They claim to have discovered the first **scaling laws** in robotics using 270,000 hours of real-world physical interaction data.
+Generalist AI is a robotics AI startup founded in 2024 with a mission to make general-purpose robots a reality. The company was founded by a team from Google DeepMind and Boston Dynamics. They claim to have discovered the first **scaling laws** in robotics using 270,000 hours of real-world physical interaction data.
 
 | Item | Details |
 |------|---------|
-| Announcement | November 4, 2025 |
-| Core Model | GEN-0 |
+| Founded | 2024 |
+| Headquarters | San Mateo, California |
+| GEN-0 Announcement | November 4, 2025 |
+| Core Model | GEN-0 (GEN-θ) |
 | Key Claim | Discovery of robotics scaling laws |
 | Data | 270,000+ hours of real data |
-| Blog | [generalistai.com/blog](https://generalistai.com/blog/nov-04-2025-GEN-0) |
+| Funding | $140M (Bezos Expeditions, NVentures, Boldstart Ventures, etc.) |
+| Website | [generalistai.com](https://generalistai.com/) |
 
 ---
 
 ## Founding Team
 
-### Background
+### Co-Founders
+
+| Name | Role | Background |
+|------|------|------------|
+| Pete Florence | CEO | Google DeepMind Senior Research Scientist, PaLM-E/RT-2 research lead |
+| Andrew Barry | CTO | Boston Dynamics Senior Roboticist, MIT CSAIL PhD |
+| Andy Zeng | Chief Scientist | Google DeepMind Research Scientist, TossingBot developer, Princeton/UC Berkeley |
+
+### Team Background
 
 | Origin | Contribution |
 |--------|-------------|
-| OpenAI | ChatGPT, GPT-4 scaling |
 | Google DeepMind | PaLM-E, RT-2 development |
 | Boston Dynamics | Atlas, Spot, Stretch |
-| Other | Autonomous driving technologies |
+| Other | Autonomous driving, robotics technologies |
 
 ---
 
@@ -174,10 +184,13 @@ If GEN-0's claims are true:
 
 ## References
 
-- [Generalist AI - GEN-0](https://generalistai.com/blog/nov-04-2025-GEN-0)
-- [Generalist AI Website](https://generalistai.com/)
-- [Humanoids Daily Article](https://www.humanoidsdaily.com/feed/generalist-ai-unveils-gen-0-claims-scaling-laws-for-robotics-backed-by-270-000-hours-of-real-world-data)
-- [MarkTechPost Article](https://www.marktechpost.com/2025/11/05/generalist-ai-introduces-gen-%CE%B8/) (GEN-0)
+- [Generalist AI - GEN-0 Official Blog](https://generalistai.com/blog/nov-04-2025-GEN-0)
+- [Generalist AI Official Website](https://generalistai.com/)
+- [Humanoids Daily - GEN-0 Announcement](https://www.humanoidsdaily.com/feed/generalist-ai-unveils-gen-0-claims-scaling-laws-for-robotics-backed-by-270-000-hours-of-real-world-data)
+- [MarkTechPost - GEN-θ Introduction](https://www.marktechpost.com/2025/11/05/generalist-ai-introduces-gen-%CE%B8/)
+- [TechCrunch - Pete Florence Startup News](https://techcrunch.com/2025/03/19/a-key-deepmind-robotics-researcher-left-google-and-nvidia-has-already-backed-his-stealth-startup/)
+- [Pete Florence Official Page](https://www.peteflorence.com/)
+- [Andy Zeng Official Page](https://andyzeng.github.io/)
 
 ---
 

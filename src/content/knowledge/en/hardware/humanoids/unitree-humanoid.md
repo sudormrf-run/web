@@ -35,10 +35,10 @@ lastEditedAt: 2026-01-15
 | **Founder** | Wang Xingxing |
 | **Specialty** | Quadruped robots, Humanoid robots |
 | **Market Share** | 60-70% of global quadruped robot shipments [^1] |
-| **Valuation** | $1.4B+ (2025 Series C) [^2] |
+| **Valuation** | $1.7B (2025 Series C) [^2] |
 
 [^1]: [Unitree Robotics - Wikipedia](https://en.wikipedia.org/wiki/Unitree_Robotics)
-[^2]: Series C funding round, June 2025 - [Wikipedia](https://en.wikipedia.org/wiki/Unitree_Robotics)
+[^2]: Series C funding round, June 2025 - [Caproasia](https://www.caproasia.com/2025/07/20/china-unitree-robotics-starts-hong-kong-ipo-process-with-citic-securities-after-raising-series-c-funding-at-1-7-billion-valuation-founded-in-2016-by-wang-xingxing-unitree-g1-humanoid-robot-price-at/)
 
 ### Company History
 
@@ -48,9 +48,10 @@ Unitree Robotics originated when founder Wang Xingxing began quadruped robot res
 - **2017**: Laikago quadruped unveiled (named after Soviet space dog Laika)
 - **2021**: Go1 released - world's first consumer-grade quadruped robot ($2,700)
 - **2023**: Go2 released - equipped with 4D LiDAR and AI large models
-- **2024**: H1 humanoid unveiled, G1 mass production started
-- **2025**: R1 entry-level humanoid announced, H2 next-generation model unveiled
-- **2026**: R1 official shipment started
+- **2023**: H1 humanoid unveiled (World Robotics 2023, August)
+- **2024**: G1 unveiled (May) and mass production started (August)
+- **2025**: R1 entry-level humanoid announced (July), H2 next-generation model unveiled
+- **2026**: R1 official shipment started (January~)
 
 ---
 
@@ -62,12 +63,12 @@ The greatest significance of Unitree humanoids is their **Price-Performance Rati
 
 | Comparison | Price | Unitree Alternative | Savings |
 |------------|-------|---------------------|---------|
-| Boston Dynamics Atlas | Not for sale (research) | H1 (~$100,000) | - |
-| Figure 01 | $30,000-$150,000 (est.) | G1 ($16,000~) | ~50-90% |
+| Boston Dynamics Atlas | Not for sale (research) | H1 (~$90,000) | - |
+| Figure 01 | $30,000-$150,000 (est.) | G1 ($13,500~) | ~55-91% |
 | Tesla Optimus | $20,000-$30,000 (planned) | R1 ($5,900~) | ~70-80% |
 
 **Impact on Research Community:**
-1. **University Lab Accessibility**: $16,000 G1 is purchasable within most university research budgets
+1. **University Lab Accessibility**: $13,500 G1 is purchasable within most university research budgets
 2. **Repeated Experiments Possible**: Low price enables acquisition of multiple robots
 3. **Open Development Environment**: Easy customization with ROS2, Python, C++ support
 4. **Fast Parts Supply**: Excellent parts accessibility based on Chinese manufacturing
@@ -89,15 +90,15 @@ Unitree applies technology accumulated from Go1, Go2 quadruped robots to humanoi
 
 | Model | Price | Height | Weight | Body DoF | Max Speed | Target |
 |-------|-------|--------|--------|----------|-----------|--------|
-| **R1** | $5,900~ | 121cm | 25kg | 24 | - | Education, Entry |
-| **R1 EDU** | ~$16,000 | 121cm | 25kg | 26 | - | Research, Development |
-| **G1 Basic** | $16,000~ | 132cm | 35kg | 23 | 2 m/s | Consumer, Entry |
-| **G1 EDU Standard** | $42,000~ | 132cm | 35kg | 23 | 2 m/s | Research, Development |
-| **G1 EDU Plus** | $52,000~ | 132cm | 35kg | 29 | 2 m/s | Research, Development |
-| **G1 EDU Ultimate** | $64,000-$74,000 | 132cm | 35kg | 23 | 2 m/s | Research, Development |
-| **H1** | ~$100,000 | 180cm | 47kg | 19 | 3.3 m/s | Advanced Research |
-| **H1-2** | ~$129,000 | 152cm | 70kg | 27 | 1.5-5 m/s | Industrial, Research |
-| **H2** | $30,000~ | 182cm | 70kg | 31 | - | Industrial, Commercial |
+| **R1** | $5,900~ | 122cm | 25kg | 26 | - | Education, Entry |
+| **R1 EDU** | ~$16,000 | 122cm | 25kg | 26 | - | Research, Development |
+| **G1 Basic** | $13,500~ | 127cm | 35kg | 23 | 2 m/s | Consumer, Entry |
+| **G1 EDU Standard** | $43,500~ | 127cm | 35kg | 23 | 2 m/s | Research, Development |
+| **G1 EDU Plus** | $52,000~ | 127cm | 35kg | 29 | 2 m/s | Research, Development |
+| **G1 EDU Ultimate** | $64,000-$74,000 | 127cm | 35kg | 23 | 2 m/s | Research, Development |
+| **H1** | ~$90,000 | 180cm | 47kg | 19 | 3.3 m/s | Advanced Research |
+| **H1-2** | ~$129,000 | 178cm | 70kg | 27 | 1.5-5 m/s | Industrial, Research |
+| **H2** | $29,900~ | 182cm | 70kg | 31 | - | Industrial, Commercial |
 
 > **Hand DoF Reference**: Dex3-1 3-finger (6 DoF/hand, 12 DoF both hands), Inspire 5-finger (6 DoF/hand, 12 DoF both hands), Revo 2 Basic (6 DoF/hand, 12 DoF both hands)
 
@@ -110,8 +111,8 @@ Unitree applies technology accumulated from Go1, Go2 quadruped robots to humanoi
 | Item | R1 | R1 EDU |
 |------|-----|--------|
 | **Price** | $5,900~ | ~$16,000 |
-| **DoF** | 24 (legs 6x2, arms 5x2, waist 2) | 26 (head 2 added) |
-| **Size** | 1210 x 357 x 190 mm | Same |
+| **DoF** | 26 (legs 6x2, arms 5x2, waist 2, head 2) | 26 |
+| **Size** | 1220 x 357 x 190 mm | Same |
 | **Weight** | ~25 kg | ~25 kg |
 | **Computing** | 8-core CPU | NVIDIA Jetson Orin |
 | **Sensors** | Stereo camera, 4-mic array | Same |
@@ -120,6 +121,7 @@ Unitree applies technology accumulated from Go1, Go2 quadruped robots to humanoi
 | **Release** | January 2026 | January 2026 |
 
 **Features:**
+- Announced July 2025, $5,900 price makes it the most affordable full-size humanoid
 - Selected as TIME Magazine "Best Inventions of 2025" [^4]
 - Dynamic movements including side flips, handstands, spinning kicks possible
 - Voice/image interaction through large language model integration
@@ -138,7 +140,7 @@ Unitree applies technology accumulated from Go1, Go2 quadruped robots to humanoi
 
 | Item | G1 Basic | G1 EDU Standard | G1 EDU Plus | G1 EDU Ultimate |
 |------|----------|-----------------|-------------|-----------------|
-| **Price** | $16,000~ | $42,000~ | $52,000~ | $64,000-$74,000 |
+| **Price** | $13,500~ | $43,500~ | $52,000~ | $64,000-$74,000 |
 | **Body DoF** | 23 | 23 | 29 | 23 |
 | **Computing** | - | 100 TOPS | 100 TOPS | 100 TOPS |
 | **Hands** | None | None | None | Dex3-1/Inspire |
@@ -148,7 +150,7 @@ Unitree applies technology accumulated from Go1, Go2 quadruped robots to humanoi
 
 | Item | Spec |
 |------|------|
-| **Height** | 132 cm |
+| **Height** | 127 cm |
 | **Weight** | 35 kg |
 | **Max Speed** | 2 m/s |
 | **Joint Torque** | Up to 120 N.m |
@@ -179,16 +181,17 @@ Unitree applies technology accumulated from Go1, Go2 quadruped robots to humanoi
 
 | Item | H1 | H1-2 |
 |------|-----|------|
-| **Price** | ~$100,000 | ~$129,000 |
+| **Price** | ~$90,000 | ~$129,000 |
 | **DoF** | 19 | 27 (arms 7x2, legs 6x2, waist 1) |
-| **Height** | ~180 cm | 152 cm (1520 mm) |
+| **Height** | ~180 cm | ~178 cm |
 | **Weight** | ~47 kg | ~70 kg |
 | **Speed** | 3.3 m/s | 1.5-5 m/s |
 | **Torque** | - | 360 N.m (M107 motor) |
 | **Battery** | - | 864 Wh (quick-swap) |
 
 **H1 Series Features:**
-- Holds 2024 humanoid walking speed record (3.3 m/s) [^3]
+- Holds March 2024 Guinness record for fastest full-sized humanoid walking speed (3.3 m/s, H1 V3.0 Evolution) [^3]
+- World's first electrically-driven humanoid robot to complete a standing backflip
 - Full-size humanoid platform widely used in research community
 - Easy custom AI implementation with open development environment
 
@@ -207,7 +210,7 @@ Unitree applies technology accumulated from Go1, Go2 quadruped robots to humanoi
 
 | Item | Spec |
 |------|------|
-| **Price** | $30,000~ (base model) |
+| **Price** | $29,900~ (H2 Commercial) |
 | **DoF** | 31 |
 | **Size** | 1820 x 456 x 218 mm |
 | **Weight** | ~70 kg |
@@ -229,6 +232,8 @@ Unlike the H1 series, H2 is designed with **Industrial Deployment** as the goal:
 - Enclosed design
 - Turnkey solution oriented
 - Defined use cases for enterprise customers
+- H2 Commercial (single processor) vs H2 EDU (dual processor, secondary development support)
+- Expected shipment: April 2026~
 
 ---
 
@@ -282,8 +287,8 @@ Compatible with HuggingFace's LeRobot framework:
 
 | Manufacturer | Model | Price | Body DoF | Features |
 |--------------|-------|-------|----------|----------|
-| **Unitree** | G1 | $16,000~ | 23-29 | Value, research accessibility |
-| **Unitree** | H1 | ~$100,000 | 19-27 | Speed record holder |
+| **Unitree** | G1 | $13,500~ | 23-29 | Value, research accessibility |
+| **Unitree** | H1 | ~$90,000 | 19-27 | Speed record holder |
 | Tesla | Optimus | $20,000-$30,000 (planned) | - | Mass production goal |
 | Figure AI | Figure 02/03 | $30,000-$150,000 (est.) | - | Industrial deployment validation |
 | Boston Dynamics | Atlas (Electric) | Not for sale | - | Best dynamic movements |
@@ -317,10 +322,10 @@ Unitree is securing strong position in the low-price market and preempting the r
 |----------|------------------|--------|
 | Education/Entry | R1 | $5,900~ |
 | Hobby/Prototyping | R1 EDU | $16,000~ |
-| University Research Lab | G1 EDU Standard | $42,000~ |
+| University Research Lab | G1 EDU Standard | $43,500~ |
 | VLA/Manipulation Research | G1 EDU Ultimate | $64,000-$74,000 |
 | Full-size Humanoid Research | H1-2 | $129,000~ |
-| Industrial Pilot | H2 | $30,000~ |
+| Industrial Pilot | H2 | $29,900~ |
 
 ### Official Retailers
 

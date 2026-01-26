@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Profile
@@ -21,7 +21,7 @@ lastEditedAt: 2026-01-15
 | 현직 | UC Berkeley 부교수 |
 | 연구실 | RAIL Lab (Robotic AI & Learning Lab) |
 | 회사 | Physical Intelligence 공동창업자 |
-| 이전 | Google Brain (2016-2021) |
+| 이전 | Google Research (2016-2024, 겸임) |
 | PhD | Stanford University |
 
 ---
@@ -48,18 +48,18 @@ lastEditedAt: 2026-01-15
 | 2015 | End-to-End Visuomotor Policies | 이미지→액션 직접 학습 |
 | 2016 | Deep RL for Robotic Manipulation | 로봇 RL 실용화 |
 
-### Google Brain (2016-2021)
+### UC Berkeley + Google (2016-2024)
 
-**Google Robotics 연구**
+**UC Berkeley 교수 & Google 겸임 연구**
 
 | Year | Work | Impact |
 |------|------|--------|
-| 2017 | QT-Opt | 대규모 로봇 grasping |
+| 2018 | QT-Opt | 대규모 로봇 grasping |
 | 2018 | Soft Actor-Critic (SAC) | 가장 많이 쓰이는 off-policy RL |
 | 2020 | Offline RL Survey | 오프라인 RL 정립 |
-| 2021 | Decision Transformer | RL을 sequence modeling으로 |
+| 2021 | Trajectory Transformer | RL을 sequence modeling으로 |
 
-### UC Berkeley + Google (2021-2024)
+### RT 시리즈 & VLA (2022-2024)
 
 **RT 시리즈, 오픈소스 VLA**
 
@@ -82,7 +82,7 @@ Physical Intelligence 공동창업, π0 개발
 ### Reinforcement Learning
 - **SAC** (Soft Actor-Critic) - 가장 널리 쓰이는 off-policy RL
 - **CQL** (Conservative Q-Learning) - Offline RL 핵심 방법
-- **Decision Transformer** - RL as sequence modeling
+- **Trajectory Transformer** - RL as sequence modeling (Decision Transformer와 동시 발표)
 - **Offline RL Tutorial** - 분야 정립
 
 ### Robot Learning
@@ -146,19 +146,23 @@ J(π) = Σ E[r(st,at) + αH(π(·|st))]
 ## Students & Mentees
 
 Sergey Levine 연구실 출신:
-- Chelsea Finn (Stanford 교수)
-- Aviral Kumar (Google DeepMind)
-- Ilya Kostrikov (Google DeepMind)
+- Aviral Kumar (CMU 교수, Google DeepMind 연구원)
+- Justin Fu (Google DeepMind)
+- Michael Janner (UC Berkeley)
 - 다수의 로봇/RL 연구자
+
+주요 협력자:
+- Chelsea Finn (Stanford 교수, Physical Intelligence 공동창업자)
+- Pieter Abbeel (UC Berkeley 교수)
 
 ---
 
 ## Awards & Recognition
 
-- IEEE RAS Early Career Award
-- Sloan Research Fellowship
-- NSF CAREER Award
-- ICML Best Paper (multiple)
+- Presidential Early Career Award for Scientists and Engineers (PECASE)
+- Sloan Research Fellowship (2019)
+- CoRL Best Systems Paper (QT-Opt, 2018)
+- 다수의 학회 Best Paper Awards
 
 ---
 
@@ -167,7 +171,7 @@ Sergey Levine 연구실 출신:
 - [UC Berkeley Profile](https://people.eecs.berkeley.edu/~svlevine/)
 - [RAIL Lab](https://rail.eecs.berkeley.edu/)
 - [Google Scholar](https://scholar.google.com/citations?user=8R35rCwAAAAJ)
-- [Twitter/X](https://twitter.com/svaborisov)
+- [Twitter/X](https://twitter.com/svlevine)
 
 ---
 

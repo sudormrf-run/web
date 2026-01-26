@@ -13,7 +13,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Reachy Mini
@@ -65,7 +65,7 @@ At CES 2026, NVIDIA CEO Jensen Huang demonstrated connecting DGX Spark and Reach
 | Item | Content |
 |------|---------|
 | **Founded** | 2016, Bordeaux, France |
-| **Founders** | Matthieu Lapeyre, Alice Coucke, Pierre Rouanet (former Inria researchers) |
+| **Founders** | Matthieu Lapeyre, Pierre Rouanet (former Inria Flowers team researchers) |
 | **Mission** | Creating open, ethical, and accessible robots |
 | **Funding** | EUR 2.5M (~$2.8M) |
 | **Acquisition** | April 14, 2025, acquired by Hugging Face [[2]](#ref-techcrunch) |
@@ -85,7 +85,7 @@ With Hugging Face's acquisition, approximately 20 Pollen Robotics employees join
 
 | Item | Lite ($299) | Wireless ($449) |
 |------|-------------|-----------------|
-| **Compute** | External (Mac/Linux required) | Built-in Raspberry Pi 5 |
+| **Compute** | External (Mac/Linux required) | Built-in Raspberry Pi 4 |
 | **Connection** | USB wired only | WiFi + wired (Ethernet via USB-C adapter) |
 | **Power** | Wired power | Battery + wired |
 | **Microphones** | 4 | 4 |
@@ -273,7 +273,7 @@ At CES 2026, Jensen Huang demonstrated connecting Reachy Mini with NVIDIA DGX Sp
 
 | Item | Requirement |
 |------|-------------|
-| **Built-in Compute** | Raspberry Pi 5 |
+| **Built-in Compute** | Raspberry Pi 4 |
 | **Remote Access** | Web browser (any device) |
 | **Network** | WiFi or USB-C Ethernet adapter |
 

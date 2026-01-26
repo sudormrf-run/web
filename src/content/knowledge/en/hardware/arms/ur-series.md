@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Universal Robots Series
@@ -31,8 +31,8 @@ lastEditedAt: 2026-01-15
 | Founded | 2005 |
 | Type | Collaborative Robot (Cobot) |
 | Market | Industrial automation, Research |
-| Parent Company | Teradyne (acquired in 2015, USD 285M) |
-| Global Installations | Over 50,000 units (as of 2020) |
+| Parent Company | Teradyne (acquired in 2015, USD 285M + up to $65M performance bonus) |
+| Global Installations | Over 100,000 units (as of 2025) |
 
 ---
 
@@ -57,6 +57,10 @@ Universal Robots was founded in 2005 in Odense, Denmark by three co-founders: **
 | 2022 | UR20 announced (next-gen large payload model) |
 | 2023 | UR30 announced (maximum payload model) |
 | 2024 | New Odense headquarters opened with MiR (20,000 sqm) |
+| 2024 | UR+ ecosystem surpasses 500 certified products |
+| 2024 | UR20, UR30 payload update (25kg and 35kg support respectively) |
+| 2024 | Global cumulative installations exceed 90,000 |
+| 2025 | Global cumulative installations exceed 100,000 |
 
 ---
 
@@ -94,14 +98,15 @@ Universal Robots' current collaborative robot lineup is broadly divided into two
 
 | Model | Payload | Reach | Weight | Repeatability | Max TCP Speed | Max Power | Features |
 |-------|---------|-------|--------|---------------|---------------|-----------|----------|
-| **UR3e** | 3 kg (6.6 lb) | 500 mm (19.7 in) | 11.2 kg | ±0.03 mm | 1 m/s | 300 W | Tabletop, precision work |
-| **UR5e** | 5 kg (11 lb) | 850 mm (33.5 in) | 20.6 kg | ±0.03 mm | 1 m/s | 570 W | General purpose, balanced performance |
-| **UR10e** | 12.5 kg (27.5 lb) | 1300 mm (51.2 in) | 33.5 kg | ±0.05 mm | 1 m/s | 615 W | Large workspace |
-| **UR16e** | 16 kg (35.3 lb) | 900 mm (35.4 in) | 33.1 kg | ±0.05 mm | 1 m/s | 585 W | High payload, compact |
-| **UR20** | 20 kg (44.1 lb) | 1750 mm (68.9 in) | 64 kg | ±0.05 mm | 2 m/s | 750 W | Maximum reach, next-gen |
-| **UR30** | 30 kg (66.1 lb)* | 1300 mm (51.2 in) | 63.5 kg | ±0.1 mm | 2 m/s | 750 W | Maximum payload |
+| **UR3e** | 3 kg (6.6 lb) | 500 mm (19.7 in) | 11 kg (24.3 lb) | ±0.03 mm | 1 m/s | 300 W | Tabletop, precision work |
+| **UR5e** | 5 kg (11 lb) | 850 mm (33.5 in) | 20.6 kg (45.4 lb) | ±0.03 mm | 1 m/s | 570 W | General purpose, balanced performance |
+| **UR10e** | 12.5 kg (27.5 lb) | 1300 mm (51.2 in) | 33.5 kg (73.9 lb) | ±0.05 mm | 1 m/s | 615 W | Large workspace |
+| **UR16e** | 16 kg (35.3 lb) | 900 mm (35.4 in) | 33.1 kg (73 lb) | ±0.05 mm | 1 m/s | 585 W | High payload, compact |
+| **UR20** | 20 kg (44.1 lb)* | 1750 mm (68.9 in) | 64 kg (141.1 lb) | ±0.05 mm | 2 m/s | 750 W | Maximum reach, next-gen, IP65 |
+| **UR30** | 30 kg (66.1 lb)** | 1300 mm (51.2 in) | 63.5 kg (139.9 lb) | ±0.05 mm | 2 m/s | 750 W | Maximum payload, IP65 |
 
-*UR30 supports up to 35 kg (77.1 lb) when meeting manual conditions
+*UR20 supports up to 25 kg (55.1 lb) in top lift position (PolyScope 5.19+)
+**UR30 supports up to 35 kg (77.1 lb) in top lift position (PolyScope 5.19+)
 
 ### Common Specifications
 
@@ -110,7 +115,7 @@ Common specifications applicable to all UR collaborative robot series (e-Series 
 | Item | Specification | Notes |
 |------|---------------|-------|
 | Degrees of Freedom (DOF) | 6-axis rotary joints | Same for all models |
-| IP Rating | IP54 | Same for all models |
+| IP Rating | IP54 (e-Series), IP65 (UR20/UR30) | UR20/UR30 includes Cleanroom certification |
 | Operating Temperature | 0-50°C (32-122°F) | Same for all models |
 | Humidity | 90% RH | Same for all models |
 | Controller Frequency | 500 Hz | e-Series (4x improvement over CB3) |
@@ -157,16 +162,20 @@ Based on UR20 architecture, provides excellent motion control and lift capacity.
 
 ### Patented Safety System
 
-Universal Robots' patented safety system provides **8 adjustable safety functions**:
+Universal Robots' patented safety system provides **17 configurable safety functions**. Key functions include:
 
-1. **Joint Position** - Set allowable position range for each joint
-2. **Joint Speed** - Limit maximum speed for each joint
-3. **TCP Position** - Limit Tool Center Point work area
-4. **TCP Orientation** - Limit tool direction
-5. **TCP Speed** - Limit tool movement speed
-6. **TCP Force** - Limit maximum force on contact
-7. **Momentum** - Limit robot momentum
-8. **Power** - Limit total power consumption
+1. **Joint Position Limits** - Set allowable position range for each joint
+2. **Joint Speed Limits** - Limit maximum speed for each joint
+3. **Safety Planes** - Define spatial planes that limit robot position
+4. **Speed Limits** - Limit robot speed at elbow, tool flange, and tool center
+5. **Momentum Limits** - Limit robot momentum
+6. **TCP Position** - Limit Tool Center Point work area
+7. **TCP Orientation** - Limit tool direction
+8. **TCP Speed** - Limit tool movement speed
+9. **TCP Force** - Limit maximum force on contact
+10. **Power** - Limit total power consumption
+
+> Note: e-Series and UR20/UR30 are certified according to EN ISO 13849-1 (PLd category 3) and EN ISO 10218-1.
 
 ### Force Limiting and Collision Detection
 
@@ -191,9 +200,9 @@ Universal Robots' patented safety system provides **8 adjustable safety function
 
 ### Why Universal Robots is the Industry Standard
 
-1. **Market Share**: Leader in the collaborative robot market, pioneered the global cobot market
-2. **Proven Reliability**: Over 50,000 installations and 10+ years of industrial field operation experience
-3. **Ecosystem**: 300+ UR+ certified products, extensive third-party compatibility
+1. **Market Share**: Leader in the collaborative robot market with 40-50% global market share (as of 2022)
+2. **Proven Reliability**: Over 100,000 installations and 15+ years of industrial field operation experience
+3. **Ecosystem**: 500+ UR+ certified products (as of 2024), extensive third-party compatibility
 4. **Education Infrastructure**: Systematic training and certification programs through UR Academy
 5. **Standards Leadership**: Direct participation in establishing collaborative robot safety standards like ISO/TS 15066
 6. **Open Platform**: Research and development friendly with open programming interfaces

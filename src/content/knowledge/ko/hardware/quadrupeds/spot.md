@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## 핵심 의의
@@ -31,13 +31,13 @@ Spot의 Physical AI 분야에서의 의의를 정리하면 다음과 같습니�
 
 ## Overview
 
-Spot은 Boston Dynamics가 개발한 상업용 4족 보행 로봇입니다. 2020년 일반 판매를 시작한 이후, 건설, 에너지, 제조, 광업 등 다양한 산업에서 검사 및 데이터 수집 작업에 활용되고 있습니다.
+Spot은 Boston Dynamics가 개발한 상업용 4족 보행 로봇입니다. 2020년 6월 일반 판매를 시작한 이후, 건설, 에너지, 제조, 광업 등 다양한 산업에서 검사 및 데이터 수집 작업에 활용되고 있습니다.
 
 | 항목 | 내용 |
 |------|------|
 | 제조사 | Boston Dynamics (Hyundai Motor Group 자회사) |
 | 본사 | Waltham, Massachusetts, USA |
-| 출시 | 2020년 (일반 판매) |
+| 출시 | 2020년 6월 (일반 판매) |
 
 ---
 
@@ -50,11 +50,13 @@ Spot은 Boston Dynamics가 개발한 상업용 4족 보행 로봇입니다. 2020
 | 1992 | MIT Leg Laboratory에서 Marc Raibert가 스핀오프로 설립 | [Wikipedia](https://en.wikipedia.org/wiki/Boston_Dynamics) |
 | 2005 | DARPA 자금으로 BigDog 개발 시작 | [Wikipedia](https://en.wikipedia.org/wiki/Boston_Dynamics) |
 | 2013 | Google (Alphabet) 인수 | [Wikipedia](https://en.wikipedia.org/wiki/Boston_Dynamics) |
+| 2015.02 | Spot 최초 공개 (전기-유압식, 72.5kg) | [Boston Dynamics](https://bostondynamics.com/) |
+| 2016.06 | SpotMini 공개 (순수 전기식, 25kg) | [Boston Dynamics](https://bostondynamics.com/) |
 | 2017 | SoftBank 인수 | [SoftBank 공식 발표](https://group.softbank/en/news/press/20201211_0) |
-| 2019 | Spot 초기 버전 공개 | [Boston Dynamics](https://bostondynamics.com/) |
-| 2020 | Spot 상업 판매 시작 | [Boston Dynamics](https://bostondynamics.com/products/spot/) |
+| 2019 | Spot Early Adopter Program 시작 (리스 제공) | [Boston Dynamics](https://bostondynamics.com/) |
+| 2020.06 | Spot 일반 상업 판매 시작 ($74,500) | [Boston Dynamics](https://bostondynamics.com/products/spot/) |
 | 2021.06 | Hyundai Motor Group 인수 완료 | [Boston Dynamics 공식 발표](https://bostondynamics.com/news/hyundai-motor-group-completes-acquisition-of-boston-dynamics-from-softbank/) |
-| 2024 | 전기 Atlas 휴머노이드 공개 | [Wikipedia](https://en.wikipedia.org/wiki/Boston_Dynamics) |
+| 2024.04 | 전기 Atlas 휴머노이드 공개 | [Boston Dynamics](https://bostondynamics.com/blog/electric-new-era-for-atlas/) |
 
 ### 핵심 인물
 
@@ -74,7 +76,7 @@ Spot은 Boston Dynamics가 개발한 상업용 4족 보행 로봇입니다. 2020
 
 | 항목 | 스펙 |
 |------|------|
-| 무게 | 32.5 kg (71.7 lbs) |
+| 무게 | 31.7 kg (69.9 lbs) (배터리 포함) |
 | 크기 (LxWxH) | 1,100 x 500 x 840 mm (standing) |
 | 페이로드 | 14 kg (30 lbs) |
 | 배터리 | 605 Wh 리튬이온 |
@@ -94,7 +96,7 @@ Spot은 Boston Dynamics가 개발한 상업용 4족 보행 로봇입니다. 2020
 
 ### 센서 및 인식
 
-- 스테레오 카메라 5개 (360도 시야)
+- 스테레오 카메라 5쌍 (총 10개 카메라, 360도 시야)
 - LiDAR 옵션 (매핑 및 자율 탐색용)
 - IMU (관성 측정 장치)
 - 다양한 페이로드 센서 장착 가능
@@ -111,8 +113,8 @@ Spot에 장착 가능한 6-DoF 매니퓰레이터로, 모바일 매니퓰레이�
 |------|------|
 | 자유도 (DoF) | 6 + 그리퍼 |
 | 암 무게 | 8 kg |
-| 암 길이 | 985 mm (fully extended) |
-| 최대 높이 | 1,800 mm (로봇 기립 시) |
+| 암 길이 | 984 mm (fully extended) |
+| 최대 높이 | 1,820 mm (로봇 기립 시) |
 | 최대 리프트 | 11 kg (24.3 lbs) |
 | 연속 리프트 (0.5m) | 5 kg (11 lbs) |
 | 드래그 능력 | 최대 25 kg (카펫 위) |
@@ -325,7 +327,7 @@ Hyundai Motor Group은 Boston Dynamics 인수를 통해 로보틱스 분야로 �
 
 ## See Also
 
-- [하드웨어 목록](../index)
+- [하드웨어 목록](../)
 - [Unitree 쿼드러펫](unitree)
 - [ANYmal](anymal)
 

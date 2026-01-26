@@ -11,21 +11,36 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Overview
 
-Skild AI is a robotics AI startup founded by Carnegie Mellon University faculty, developing a general-purpose robot "brain." In 2024, they achieved a $1.5B valuation with a $300M Series A round.
+Skild AI is a robotics AI startup founded by Carnegie Mellon University faculty, developing a general-purpose robot "brain" called Skild Brain. In 2024, they achieved a $1.5B valuation with a $300M Series A round, and in January 2026, reached over $14B valuation with a $1.4B Series C round.
 
 | Item | Details |
 |------|---------|
-| Headquarters | Pittsburgh, PA |
+| Headquarters | Pittsburgh, PA (additional offices in SF Bay Area and Bengaluru) |
 | Founded | 2023 |
-| Co-Founders | Deepak Pathak, Abhinav Gupta |
-| Funding | $300M (Series A) |
-| Valuation | $1.5B (2024) |
-| Investors | Lightspeed, Coatue, SoftBank, Bezos |
+| Co-Founders | Deepak Pathak (CEO), Abhinav Gupta (President) |
+| Total Funding | $2.2B+ |
+| Valuation | $14B+ (January 2026) |
+| Key Investors | Lightspeed, Coatue, SoftBank Group, Bezos Expeditions, Sequoia, NVIDIA NVentures |
+
+---
+
+## Funding History
+
+| Round | Date | Amount | Valuation |
+|-------|------|--------|-----------|
+| Seed | 2023 | $14.5M | - |
+| Series A | July 2024 | $300M | $1.5B |
+| Series B | May 2025 | $500M | $4.7B |
+| Series C | January 2026 | $1.4B | $14B+ |
+
+Series A investors: Lightspeed Venture Partners, Coatue, SoftBank Group, Bezos Expeditions (Jeff Bezos), Felicis Ventures, Sequoia, Menlo Ventures, General Catalyst, CRV, Amazon, SV Angel, Carnegie Mellon University
+
+Series C investors: SoftBank Group (lead), NVIDIA NVentures, Macquarie Capital, Bezos Expeditions, Disruptive, 1789 Capital, Samsung, LG, Schneider Electric, CommonSpirit, Salesforce Ventures
 
 ---
 
@@ -33,58 +48,64 @@ Skild AI is a robotics AI startup founded by Carnegie Mellon University faculty,
 
 ### Deepak Pathak (CEO)
 
-- Carnegie Mellon Assistant Professor
+- Carnegie Mellon University Robotics Institute Professor
+- UC Berkeley AI PhD
 - Expert in self-supervised learning
-- Research on curiosity-driven reinforcement learning
+- Research on curiosity-driven reinforcement learning with 4,000+ citations
+- IIT Computer Science Gold Medalist (2014)
 
-### Abhinav Gupta (Chief Scientist)
+### Abhinav Gupta (President)
 
-- Carnegie Mellon Professor
+- Carnegie Mellon University Robotics Institute Full Professor (since 2015)
+- Founding member of Facebook AI Research (FAIR) Robotics
 - Expert in robotics and computer vision
-- DARPA, NSF research leader
+- 75,000+ academic citations
+- NSF, DARPA research funding recipient
 
 ---
 
-## Approach
+## Skild Brain
 
 ### General-Purpose Robot Brain
 
 ```
 ┌─────────────────────────────────────┐
-│         Skild Foundation Model      │
-│    "Any Robot, Any Task, Anywhere"  │
+│            Skild Brain              │
+│    "Any Robot, Any Task, One Brain" │
 └─────────────────────────────────────┘
           │
     ┌─────┴─────┐
     ▼           ▼
-┌───────┐   ┌───────┐   ┌───────┐
-│Robot A│   │Robot B│   │Robot C│
-└───────┘   └───────┘   └───────┘
+┌───────┐   ┌───────┐   ┌───────┐   ┌───────┐
+│Humanoid│   │Quadruped│   │Robot Arm│   │Mobile │
+└───────┘   └───────┘   └───────┘   └───────┘
 ```
 
-### Core Strategy
+### Key Features
 
-| Strategy | Description |
-|----------|-------------|
-| Large-scale Simulation | Pre-training in diverse environments |
-| Cross-embodiment | Support for various robot forms |
-| Foundation Model | Fast adaptation to new tasks |
-| General Purpose | No domain limitations |
+| Feature | Description |
+|---------|-------------|
+| Omni-bodied | Supports all robot forms without specific hardware |
+| Cross-embodiment | Humanoids, quadrupeds, robot arms, mobile manipulators |
+| Hardware Independent | Focus on software models without building proprietary robots |
+| Built-in Safety Constraints | Force output limits when interacting with humans |
 
 ---
 
-## Simulation-Based Learning
+## Training Methodology
 
-### Data Generation
+### Data Sources
 
-- Building large-scale simulation environments
-- Generating diverse physical scenarios
-- Applying Domain Randomization
+Multi-pronged approach to address the scarcity of robot data:
+
+1. **Internet Videos**: Learning physics from human behavior
+2. **Simulation**: Large-scale pre-training using NVIDIA Isaac Lab
+3. **World Model**: Leveraging NVIDIA Cosmos WFM
 
 ### Sim-to-Real Transfer
 
 ```
-[Simulation] ──Domain Randomization──→ [Robust Policy] ──Transfer──→ [Real Robot]
+[Internet Videos] + [Simulation] ──Pre-training──→ [Skild Brain] ──Transfer──→ [Real Robot]
 ```
 
 ---
@@ -105,14 +126,26 @@ Skild AI is a robotics AI startup founded by Carnegie Mellon University faculty,
 
 ---
 
-## Roadmap
+## Commercial Progress
 
-| Timeline | Milestone |
-|----------|-----------|
-| 2023 | Company founded |
-| 2024.07 | $300M Series A |
-| 2024-25 | Foundation Model development |
-| 2025+ | Partner robot integration |
+### Revenue Growth
+
+- Achieved $0 → $30M revenue within months in 2025
+- Continued growth in 2026
+
+### Application Areas
+
+- Security and facility inspection
+- Last-mile / point-to-point delivery
+- Warehouses
+- Manufacturing
+- Data centers
+- Construction
+
+### Partnerships
+
+- **LG CNS**: Partnership for industrial applications
+- **HPE**: Accelerating development with AI solutions
 
 ---
 
@@ -122,27 +155,35 @@ Skild AI is a robotics AI startup founded by Carnegie Mellon University faculty,
 
 | Factor | Skild AI | Physical Intelligence |
 |--------|----------|----------------------|
-| Background | CMU academia | Google/Stanford |
-| Approach | Simulation-centric | Real data-centric |
-| Funding | $300M | $400M+ |
+| Background | CMU academia | Google DeepMind/Stanford/Berkeley |
+| Founded | 2023 | 2024 |
+| Approach | Simulation + video-centric | Real data-centric |
+| Hardware | Software only | Software only |
+| Total Funding | $2.2B+ | $1.1B |
+| Valuation | $14B+ (2026.01) | $5.6B (2025.11) |
+| Core Model | Skild Brain | pi-0 (pi-zero) |
 
 ### Simulation vs Real Data Debate
 
 ```
-Skild: "Infinite data generation possible through simulation"
-      + Overcome Sim-to-Real gap with Domain Randomization
+Skild: "Scalable data generation through simulation + internet videos"
+      + Leveraging NVIDIA Cosmos/Isaac Lab
+      + Overcoming Sim-to-Real gap with Domain Randomization
 
 Physical Intelligence: "Real physical interaction is essential"
-                      + Simulation has its limitations
+                      + Open-sourced pi-0 model (Feb 2025)
 ```
 
 ---
 
 ## References
 
-- [Skild AI Website](https://www.skild.ai/)
+- [Skild AI Official Website](https://www.skild.ai/)
+- [Skild AI Series A Announcement](https://www.skild.ai/blogs/announcing-our-300m-series-a)
+- [Skild AI Series C Announcement](https://www.skild.ai/blogs/series-c)
 - [TechCrunch - $300M Funding](https://techcrunch.com/2024/07/17/skild-ai-raises-300m/)
-- [Forbes - AI Brain for Robots](https://www.forbes.com/sites/alexkonrad/2024/07/17/skild-ai-brain-robots-300-million/)
+- [Business Wire - $1.4B Funding](https://www.businesswire.com/news/home/20260114335623/en/Skild-AI-Raises-$1.4B-Now-Valued-Over-$14B)
+- [Contrary Research - Skild AI](https://research.contrary.com/company/skild-ai)
 
 ---
 
@@ -151,3 +192,4 @@ Physical Intelligence: "Real physical interaction is essential"
 - [Company List](./)
 - [Simulation & World Model](../essays/insights/simulation-world-model)
 - [Physical Intelligence](physical-intelligence)
+

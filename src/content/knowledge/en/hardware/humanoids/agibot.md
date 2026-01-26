@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Agibot (Zhiyuan Robotics)
@@ -32,7 +32,7 @@ lastEditedAt: 2026-01-15
 | Founded | February 2023 |
 | Founders | Peng Zhihui (彭志辉), Deng Taihua - Former Huawei "Top Minds" program |
 | Investors | Sequoia Capital China, Hillhouse Capital, BYD, JD.com |
-| Valuation | $1B+ (unicorn status achieved in 2024) |
+| Valuation | $6.4B (as of Oct 2025), Unicorn status achieved in 2024 |
 
 ---
 
@@ -40,33 +40,62 @@ lastEditedAt: 2026-01-15
 
 ### Main Model Lineup
 
+#### A Series (Bipedal Humanoid)
+
+| Model | Form | DoF | Height | Weight | Use |
+|-------|------|-----|--------|--------|-----|
+| A2 | Interactive Service Robot | 49+ | 175cm | 55kg | Customer Service/Guidance |
+| A2 Ultra | Premium (iF/Red Dot Award) | 49+ | 175cm | 55kg | General/Teleoperation |
+| A2 Lite | Entry-level | - | - | - | General/Teleoperation |
+| A2-W | Wheeled Manufacturing Robot | 22 | 163cm | 230kg | Industrial Flexible Manufacturing |
+| A2-Max | Heavy-Duty | - | - | - | High-Payload Industrial Tasks |
+| RAISE A1 | First Model (Aug 2023) | 49 | 175cm | 53-55kg | Industrial/R&D |
+
+#### G Series (Wheeled Humanoid)
+
+| Model | Form | DoF | Height | Weight | Runtime | Use |
+|-------|------|-----|--------|--------|---------|-----|
+| G1 | Wheeled Humanoid | 26 | Adjustable | - | - | General |
+| G2 | Industrial Wheeled Humanoid | 26 | Up to 180cm | 185kg | 4 hours | Manufacturing/Logistics/Services |
+
+#### X Series (Upper-body Humanoid)
+
 | Model | Form | DoF | Height | Weight | Price | Use |
 |-------|------|-----|--------|--------|-------|-----|
-| A2 | Bipedal Humanoid | 49 | 169cm | 55kg | - | General/Industrial |
-| A2 Ultra | Bipedal Humanoid (Premium) | 49 | 169cm | - | - | General/Teleoperation |
-| A2 Lite | Bipedal Humanoid (Entry) | - | - | - | - | General/Teleoperation |
-| A2 Youth | Bipedal Humanoid | 23 | - | - | ~$23K | Entertainment |
-| G1/G2 | Wheeled Humanoid | 26 | 130-180cm (adjustable) | 150kg | ~$60K | Industrial/Commercial |
-| X1 Lingxi | Upper-body Humanoid | 27 | 130cm | - | ~$14K | Interaction |
-| RAISE A1 | Bipedal Humanoid | 49 | 175cm | 53kg | - | Industrial |
+| X1 Lingxi | Open-Source Dev Kit | 34 | 130-133cm | 33-44kg | ~$19.5K | Research/Development |
+| X2 Lingxi | General-Purpose Upper-body | 28 | 130cm | 33.8kg | - | Security/Housekeeping/Cleaning |
 
-### G Series Detailed Specs (26 DoF)
+### A2 Series Detailed Specs
+
+| Item | Spec |
+|------|------|
+| Total DoF | 49+ |
+| Both Arms | 7 DoF x 2 = 14 DoF (force-position hybrid control) |
+| Dexterous Hand | 19 DoF (needle-threading precision) |
+| SkillHand | 12 active DoF + 5 passive DoF, built-in fingertip vision sensor |
+| Walking Speed | Up to 7km/h (3.3m/s) |
+| Runtime | 2 hours continuous operation |
+| Payload | 5kg per arm, 15kg total |
+| Peak Torque | 512Nm (integrated joints), PowerFlow 350Nm |
+| Cameras | Microphone array, LiDAR, RGB-D |
+| Computing | 200 TOPS (on-device AI) |
+| AI Accuracy | 96% intent understanding (noisy environments), 99% face recognition |
+| A2 Ultra Reliability | 1,300+ hours continuous walking, 21 months no falls in real environments |
+
+### G2 Series Detailed Specs (26 DoF)
 
 | Item | Spec |
 |------|------|
 | Total DoF | 26 |
-| Both Arms | 7 DoF x 2 = 14 DoF |
-| Waist | 3 DoF (bending/extension, rotation) |
-| Lower Body/Hip | 2 DoF (dynamic posture change) |
-| Head/Other | 7 DoF (including horizontal/vertical rotation, per official specs) |
-| Arms | 7 DoF force control (full-joint torque sensors), force control accuracy >0.5N |
+| Both Arms | 7 DoF x 2 = 14 DoF (full-joint torque sensors) |
+| Force Control Accuracy | >0.5N |
+| Height | Up to 180cm (adjustable) |
+| Weight | 185kg |
+| Runtime | 4 hours (hot-swappable batteries) |
 | Payload | 5kg per arm |
-| Gripper | Modular (standard gripper / 6 DoF dexterous hand) |
-| SkillHand | 12 active DoF + 5 passive DoF, built-in fingertip vision sensor |
-| Cameras | 8 high-resolution (3D perception), RGBD (front/rear) |
-| Sensors | LiDAR, 6-axis force sensors (both arms) |
-| Computing | 200 TOPS (on-device AI) |
-| Certification | IP42, -15°C ~ 50°C extreme environments, 130+ parts tested |
+| Sensors | LiDAR, RGB-D, multiple RGB cameras for 360° situational awareness |
+| Certification | IP42 indoor rating |
+| Environment | -15°C ~ 50°C extreme environments, 130+ parts tested |
 
 ---
 
@@ -93,8 +122,13 @@ Deployed in 8 key commercial areas:
 - Data Collection/Training
 - Research/Education
 
-### 3. China/USA/EU Certification (May 2025)
-Obtained certification in 3 major regions for global market expansion.
+### 3. World's First Triple-Region Certification (May 2025)
+- **AgiBot A2**: World's first humanoid robot with simultaneous China/USA/EU certification
+- China CR001 certification: Comprehensive evaluation of mechanical/electrical safety, EMC, functional safety, intelligent performance
+- A2 Ultra: 2025 iF Design Award, 2025 Red Dot Award winner
+
+### 4. Guinness World Record (Nov 2025)
+- AgiBot A2: **106.286km** continuous walking record achieved
 
 ---
 
@@ -107,17 +141,23 @@ Obtained certification in 3 major regions for global market expansion.
 A new architecture that maximizes generalization capability by effectively utilizing high-quality datasets and large-scale video data.
 
 ### Learning Method
-- Based on **AgiBot World dataset**: 1M+ real-world manipulation trajectories
+- Based on **AgiBot World dataset**:
+  - 1,003,672 trajectories (Beta version)
+  - 217 tasks, 87 skills
+  - 3,000+ objects, 100+ real-world scenarios
+  - Total duration: 2,976.4 hours
 - Learning from human video data
-- 100+ scenarios (40% home environment, 20% industrial environment)
+- 5 domains: Home, Retail, Industrial, Restaurant, Office
 
 ### Core Performance
 | Metric | Details |
 |--------|---------|
-| Success Rate Improvement | **+32%** compared to existing models |
+| Success Rate Improvement | **+32%** compared to existing models (46% → 78%) |
+| Complex Task Success Rate | 60%+ (long-horizon tasks) |
 | Generalization | Adapts to new tasks with minimal data (Zero-shot/Few-shot) |
 | Transfer Learning | "One-Brain-Multiple-Forms" - Transfer between various robot platforms |
 | Continuous Learning | Continuous improvement with real-world execution data |
+| Recognition | IROS 2025 Award Finalist |
 
 ### Key Tasks
 - Beverage delivery/pouring water
@@ -147,10 +187,11 @@ VR control system compatible with A2 Ultra/A2 Lite.
 
 ### AgiBot World Data Collection
 - **4,000+ m² dedicated facility**
-- 100 robots operating simultaneously
+- 100+ AgiBot G1 robots operating simultaneously
 - 3,000+ physical objects
-- Home/Industrial/Supermarket/Office environments recreated
+- 5 domain environments recreated: Home/Retail/Industrial/Restaurant/Office
 - **Generates tens of thousands of motion data points daily**
+- Open source: [GitHub](https://github.com/OpenDriveLab/AgiBot-World), [HuggingFace](https://huggingface.co/agibot-world)
 
 ---
 
@@ -175,10 +216,18 @@ Planned expansion to consumer electronics and automotive parts production.
 
 ### AimRT Middleware
 Self-developed middleware faster and more efficient than ROS (Robot Operating System).
+- Built on C++20, under 50,000 lines (lightweight vs ROS2's ~200,000 lines)
+- Up to 30% latency reduction in multi-node communication vs ROS2
+- Multi-protocol support: ROS2/HTTP/gRPC/MQTT/Zenoh
+- Plugin compatibility with ROS/ROS2 ecosystems
+- Open source
 
 ### Lingqu OS
-Embodied Intelligent Operating System released in **July 2025**.
-- Supports first industrial deployment and continuous field operations.
+Industry's first Embodied Intelligent Operating System released in **July 2025**.
+- Built on AimRT: distributed communication, real-time scheduling, hardware abstraction
+- Standardized Intelligent Agent service framework
+- Complete toolchain: development/debugging, simulation, data management, model deployment
+- Rolling out from Q4 under open co-development model
 
 ### On-device AI
 - 200 TOPS processing performance
@@ -192,9 +241,11 @@ Embodied Intelligent Operating System released in **July 2025**.
 
 | Partner | Details |
 |---------|---------|
-| Pepsi | "Fizzbot" custom A2 humanoid ambassador |
+| Pepsi | "Fizz Bot" branded humanoid (launched with David Beckham, served drinks at 2025 WAIC) |
 | Fulin Precision | ~100 units of A2-W wheeled humanoid ordered |
 | Longcheer Technology | Real-World RL pilot deployment |
+| BYD | Investment and industrial automation/logistics adoption |
+| SAIC Motor | Industrial automation/logistics adoption |
 | JD.com | Investment and e-commerce sales channel |
 
 ---
@@ -203,9 +254,12 @@ Embodied Intelligent Operating System released in **July 2025**.
 
 | Differentiator | Description |
 |----------------|-------------|
-| Mass Market Target | Diverse price range product lineup ($14K ~ $60K+) |
+| Global #1 | #1 in global humanoid shipments 2025, 39% market share (5,168 units) |
+| Mass Market Target | Diverse price range product lineup ($19.5K ~ $60K+) |
 | Direct Sales | Own e-commerce + JD.com channel |
-| Main Competitor | Unitree Robotics (targeting research/power users) |
+| Main Competitors | Unitree Robotics (32%), Tesla Optimus, Agility Robotics |
+| Global Certification | World's first with China/USA/EU triple certification (May 2025) |
+| Global Expansion | First overseas experience center in Malaysia, expanding to NA/Europe/Middle East/Japan/Korea/SE Asia |
 
 ---
 
@@ -216,12 +270,17 @@ Embodied Intelligent Operating System released in **July 2025**.
 - [AgiBot - Wikipedia](https://en.wikipedia.org/wiki/AgiBot)
 - [The Rise of AgiBot (Zhiyuan Shanghai Robotics) - Mike Kalil](https://mikekalil.com/blog/agibot-zhiyuan-robotics/)
 - [AgiBot World Dataset - Mike Kalil](https://mikekalil.com/blog/agibot-world/)
-- [GO-1 Foundation Model - AIBase](https://www.aibase.com/news/16123)
-- [AgiBot G2 Industrial Robot](https://humanoidroboticstechnology.com/industry-news/agibot-launches-g2-humanoid-robot-for-industrial-grade-automation/)
+- [GO-1 Foundation Model - GlobeNewswire](https://www.globenewswire.com/news-release/2025/03/11/3040608/0/en/AgiBot-GO-1-The-Evolution-of-Generalist-Embodied-Foundation-Model-from-VLA-to-ViLLA.html)
+- [AgiBot World GitHub](https://github.com/OpenDriveLab/AgiBot-World)
+- [AgiBot World HuggingFace](https://huggingface.co/agibot-world)
+- [AgiBot G2 Industrial Robot - Robots International](https://www.robotsinternational.com/Agibot-G2-General-Purpose-Wheeled-Humanoid-Robot.htm)
 - [AgiBot Real-World RL Deployment - PRNewswire](https://www.prnewswire.com/news-releases/agibot-achieves-first-real-world-deployment-of-reinforcement-learning-in-industrial-robotics-302601935.html)
+- [AgiBot 5,000 Units Production - PRNewswire](https://www.prnewswire.com/news-releases/agibot-announces-the-rollout-of-its-5-000th-mass-produced-humanoid-robot-302635127.html)
+- [AgiBot A2 China/USA/EU Certification - ECNS](http://www.ecns.cn/m/news/cns-wire/2025-05-30/detail-iherwsih6789577.shtml)
+- [AgiBot Global Market Share #1 - TechNode](https://technode.com/2026/01/09/chinas-agibot-leads-global-humanoid-robot-shipments-in-2025-omdia-says/)
 
 ---
 
 ## See Also
 
-- [Hardware List](../index)
+- [Hardware List](./)

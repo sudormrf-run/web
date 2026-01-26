@@ -11,17 +11,18 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Profile
 
 | 항목 | 내용 |
 |------|------|
-| 현직 | Stanford University 조교수 |
-| 이전 | Columbia University 조교수 (2019-2024) |
-| PhD | Princeton University |
-| 연구실 | Columbia Artificial Intelligence and Robotics Lab (CAIR) |
+| 현직 | Stanford University 조교수 (전기공학, 컴퓨터과학 겸임) |
+| 이전 | Columbia University 조교수 (2019-2023) |
+| PhD | Princeton University (2018) |
+| 학사 | Hong Kong University of Science and Technology (2013) |
+| 연구실 | REAL@Stanford (Robotics and Embodied AI Lab) |
 
 ---
 
@@ -30,7 +31,7 @@ lastEditedAt: 2026-01-15
 - **Diffusion Policy**: 로봇 액션 생성에 diffusion 적용, VLA 액션 생성의 새 패러다임
 - **3D Perception**: 로봇을 위한 3D 인식 연구
 - **UMI (Universal Manipulation Interface)**: 범용 데이터 수집 인터페이스
-- **Columbia → Stanford 이직**: 로봇 학습 연구 강화
+- **Columbia -> Stanford 이직 (2023)**: 로봇 학습 연구 강화
 
 ---
 
@@ -46,25 +47,26 @@ lastEditedAt: 2026-01-15
 | 2017 | Semantic Scene Completion | 3D 장면 이해 |
 | 2018 | PhD 졸업 | |
 
-### Columbia University (2019-2024)
+### Columbia University (2019-2023)
 
 **CAIR Lab 설립**
 
 | Year | Work | Impact |
 |------|------|--------|
 | 2019 | Columbia 교수 부임 | CAIR Lab 설립 |
-| 2021 | Transporter Networks 공동연구 | 물체 재배치 |
+| 2022 | Sloan Research Fellowship 수상 | |
 | 2023 | **Diffusion Policy** | 로봇 diffusion 선구적 연구 |
-| 2024 | **UMI** | 범용 조작 인터페이스 |
 
-### Stanford University (2024-present)
+### Stanford University (2023-present)
 
-**Stanford 이직**
+**REAL@Stanford 설립**
 
 | Year | Work | Impact |
 |------|------|--------|
-| 2024 | Stanford 교수 이직 | |
-| 2024- | 로봇 학습 연구 지속 | |
+| 2023 | Stanford 교수 이직 | REAL Lab 설립 |
+| 2024 | **UMI** | 범용 조작 인터페이스 (RSS Outstanding System Paper Finalist) |
+| 2024 | MIT Technology Review Innovators Under 35 | |
+| 2025 | IEEE RAS Early Academic Career Award | |
 
 ---
 
@@ -75,13 +77,12 @@ lastEditedAt: 2026-01-15
 - 3D Diffusion Policy (2024)
 
 ### 3D Perception
-- **3D ShapeNets** (CVPR 2015)
-- Semantic Scene Completion (CVPR 2017)
-- ScanNet (CVPR 2017)
+- **3D ShapeNets** (CVPR 2015) - Zhirong Wu, Shuran Song 외
+- **Semantic Scene Completion** (CVPR 2017) - Shuran Song, Fisher Yu 외
 
 ### Robot Manipulation
-- **UMI** (Universal Manipulation Interface, 2024)
-- Transporter Networks 관련 연구
+- **UMI** (Universal Manipulation Interface, RSS 2024) - Outstanding System Paper Finalist
+- TidyBot (Autonomous Robots 2023) - Andy Zeng 외 공동연구
 
 ---
 
@@ -132,23 +133,31 @@ lastEditedAt: 2026-01-15
 ## Key Collaborations
 
 - **Cheng Chi**: Diffusion Policy 제1저자, UMI 공동연구
-- **Toyota Research Institute**: Diffusion Policy 공동연구
-- **MIT**: Diffusion Policy 공동연구
+- **Toyota Research Institute**: Diffusion Policy 공동연구 (Benjamin Burchfiel)
+- **MIT**: Diffusion Policy 공동연구 (Russ Tedrake)
+- **Andy Zeng**: TidyBot 등 다수 공동연구
 
 ---
 
 ## Awards & Recognition
 
+- IEEE Robotics and Automation Society Early Academic Career Award (2025)
+- MIT Technology Review Innovators Under 35 (2024)
+- Samsung AI Researcher of the Year Award (2024)
+- Sloan Research Fellowship (2022)
 - NSF CAREER Award
-- Amazon Research Award
-- Google Research Scholar
+- Best Paper Awards: RSS 2022, T-RO 2020
+- Best System Paper Awards: CoRL 2021, RSS 2019
+- Research Awards: Microsoft, Toyota Research, Google, Amazon, JP Morgan
 
 ---
 
 ## Links
 
-- [Stanford Profile](https://shurans.github.io/)
-- [Google Scholar](https://scholar.google.com/citations?user=XXXXXXXXX)
+- [Personal Website](https://shurans.github.io/)
+- [REAL@Stanford Lab](https://real.stanford.edu/)
+- [Google Scholar](https://scholar.google.com/citations?user=5031vK4AAAAJ)
+- [X (Twitter)](https://x.com/SongShuran)
 
 ---
 

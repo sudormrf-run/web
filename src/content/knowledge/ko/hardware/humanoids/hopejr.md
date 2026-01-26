@@ -12,7 +12,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # HopeJR
@@ -107,6 +107,7 @@ HopeJR은 완전한 오픈소스 프로젝트로 설계되었다[^2].
 
 - 이족 보행 (bipedal walking)
 - 66 DoF를 활용한 자연스러운 동작[^1]
+- 2025년 5월 발표 당시 시뮬레이션에서 보행 구현 완료, 물리적 로봇으로의 전이(sim-to-real) 진행 중[^1]
 
 ### 원격 조작 (Teleoperation)
 
@@ -220,15 +221,15 @@ lerobot-calibrate \
 
 ### Reachy Mini
 
-HuggingFace가 함께 발표한 데스크탑 로봇으로, $250~$300에 출시 예정이다 (관세에 따라 변동 가능)[^1]. 머리 움직임, 음성 인식, AI 테스트 플랫폼으로 활용 가능하다.
+HuggingFace가 함께 발표한 데스크탑 로봇으로[^1], 2025년 7월 사전주문 개시되었다. Lite 버전($299)과 Wireless 버전($449, Raspberry Pi 5 탑재)이 있으며, 머리 움직임(6 DoF), 광각 카메라, 마이크, 스피커를 갖추고 있다. Python(향후 JavaScript, Scratch 지원 예정)으로 프로그래밍 가능하며, HuggingFace Hub의 170만+ AI 모델과 40만+ 데이터셋에 접근할 수 있다.
 
 ---
 
 ## See Also
 
-- [하드웨어 목록](../index)
+- [하드웨어 목록](../)
 - [LeRobot Arms](../arms/lerobot-arms)
-- [Reachy](reachy)
+- [Reachy](./reachy)
 - [SmolVLA](../../models/smolvla)
 
 ---

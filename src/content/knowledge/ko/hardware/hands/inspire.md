@@ -59,23 +59,36 @@ INSPIRE 덱스터러스 핸드는 **인간 손의 크기와 외관을 유지하�
 
 | 모델 | 특징 | 주요 용도 | 출처 |
 |------|------|----------|------|
-| **RH56BFX** | 고속 이동, 정밀 상호작용 ("The Pianist") | 정밀 조작, 악기 연주 시연 | [^1] |
-| **RH56DFX** | 강한 그립력, 적당한 속도, 통합 힘 센서 | 파지 작업, 의수 | [^1] |
+| **RH56BFX** | 고속 이동 (엄지 235°/s, 손가락 570°/s), 정밀 상호작용 ("The Pianist") | 피아노 연주, 제스처 상호작용 | [^1] |
+| **RH56DFX** | 강한 그립력 (엄지 15N), 적당한 속도, 통합 힘 센서 | 파지 작업, 의수 | [^1] |
+
+#### RH56BFX 상세 스펙
+
+| 항목 | 스펙 | 출처 |
+|------|------|------|
+| 엄지 그립력 | 6N | [^2] |
+| 손가락 그립력 | 4N | [^2] |
+| 엄지 회전 속도 | 235°/s | [^2] |
+| 엄지 굴곡 속도 | 150°/s | [^2] |
+| 손가락 굴곡 속도 | 570°/s | [^2] |
+| 힘 해상도 | 0.5N | [^2] |
+| 통신 | RS485 | [^2] |
 
 #### RH56DFX 상세 스펙
 
 | 항목 | 스펙 | 출처 |
 |------|------|------|
-| 엄지 그립력 | 15N | [^3] |
-| 손바닥 그립력 | 10N | [^3] |
-| 엄지 회전 | >65도 @ 107도/s | [^3] |
-| 엄지 굴곡 속도 | 70도/s | [^3] |
-| 손가락 굴곡 속도 | 260도/s | [^3] |
-| 무게 | 540g | [^2] |
+| 엄지 그립력 | 15N | [^2][^3] |
+| 손가락 그립력 | 10N | [^2][^3] |
+| 엄지 회전 | >65° @ 107°/s | [^2][^3] |
+| 엄지 굴곡 속도 | 70°/s | [^2][^3] |
+| 손가락 굴곡 속도 | 260°/s | [^2][^3] |
+| 무게 | 540g (기본형) / 790g (강화형) | [^7] |
 | 작동 전압 | DC24V ±10% | [^2] |
 | 정지 전류 | 0.2A | [^2] |
-| 최대 전류 | 2A | [^2] |
+| 최대 전류 | 2A (기본형) / 4A (강화형) | [^2][^7] |
 | 통신 | RS485 | [^2] |
+| 힘 해상도 | 0.5N | [^2] |
 
 ### F1 시리즈 (Advanced)
 
@@ -83,18 +96,32 @@ F1 시리즈는 풀메탈 바디와 통합 골격 설계로 구조적 강성을 
 
 | 항목 | 스펙 | 출처 |
 |------|------|------|
-| 통신 | 1kHz 고속 실시간 (EtherCAT + RS485) | [^1] |
-| 정적 수동 하중 | 30kg | [^1] |
-| 손끝 파지력 | 15N | [^1] |
-| 센서 | 24개 다차원 (촉각/힘/위치/온도) | [^1] |
+| 통신 | 1kHz 고속 실시간 (EtherCAT + RS485) | [^1][^8] |
+| 정적 수동 하중 | 30kg | [^1][^8] |
+| 엄지 그립력 | ≥15N | [^8] |
+| 손가락 그립력 | ≥10N | [^8] |
+| 힘 해상도 | 0.1N | [^8] |
+| 센서 | 24개 다차원 (촉각/힘/위치/온도) | [^1][^8] |
+| 촉각 센서 | 6개 (측정 범위 30N, 정확도 5% FS) | [^8] |
 | 자유도 | 6 DoF | [^1] |
 | 조인트 수 | 12개 | [^1] |
 | 무게 | 620 ± 10g | [^1] |
 | 작동 전압 | 24V - 48V | [^1] |
-| 정지 전류 (RS485) | 194 ± 10mA @ 24V | [^1] |
-| 정지 전류 (EtherCAT) | 210 ± 10mA @ 24V | [^1] |
-| 최대 전류 | 5A | [^1] |
+| 정지 전류 (RS485) | 194 ± 10mA @ 24V | [^1][^8] |
+| 정지 전류 (EtherCAT) | 210 ± 10mA @ 24V | [^1][^8] |
+| 최대 전류 | 5A @ 24V | [^1][^8] |
+| 손 닫힘 시간 | ≤0.8s | [^8] |
 | 품질 테스트 | 20가지 표준화 테스트 통과 | [^1] |
+
+#### F1 시리즈 동작 스펙
+
+| 항목 | 스펙 | 출처 |
+|------|------|------|
+| 엄지 측면 회전 범위 | 56° - 180° | [^8] |
+| 엄지 측면 회전 속도 | >155°/s | [^8] |
+| 엄지 굴곡 속도 | >37°/s | [^8] |
+| 손가락 굴곡 속도 | >107°/s | [^8] |
+| 손끝 반복 정밀도 | ±0.2mm | [^8] |
 
 #### F1 시리즈 핵심 특징
 
@@ -204,6 +231,8 @@ git clone https://github.com/unitreerobotics/DFX_inspire_service
 [^4]: Shadow Robot Company. "Shadow Dexterous Hand Technical Specification." https://www.shadowrobot.com/wp-content/uploads/2022/03/shadow_dexterous_hand_e_technical_specification.pdf
 [^5]: PSYONIC. "Ability Hand." https://www.psyonic.io/ability-hand
 [^6]: Unitree Robotics. "Dexterous Hand - H1 Developer Documentation." https://support.unitree.com/home/en/H1_developer/Dexterous_hand
+[^7]: Multiple Distributors. RH56DFX Specifications (540g/790g variants). https://rcdrone.top/products/inspire-robots-rh56dfx-dexterous-robot-hand
+[^8]: US Robot Store. "Inspire Robots RH56F1 - 5-Finger Robotic Dexterous Hand." https://www.usrobotstore.com/products/inspire-robots-rh56f1-5-finger-robotic-dexterous-hand
 
 ### 추가 참고 자료
 
@@ -214,6 +243,6 @@ git clone https://github.com/unitreerobotics/DFX_inspire_service
 
 ## See Also
 
-- [하드웨어 목록](../index)
-- [Ability Hand](ability)
-- [Shadow Dexterous Hand](shadow-hand)
+- [하드웨어 목록](../)
+- [Ability Hand](./ability)
+- [Shadow Dexterous Hand](./shadow-hand)

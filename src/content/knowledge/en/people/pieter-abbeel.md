@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Profile
@@ -19,7 +19,7 @@ lastEditedAt: 2026-01-15
 | Field | Details |
 |-------|---------|
 | Current Position | Professor, UC Berkeley |
-| Company | Covariant Co-founder & Chief Scientist |
+| Company | Covariant Co-founder & President (2017-2024), Amazon Scholar (2024-) |
 | Previous | OpenAI Research Scientist (2016-2017) |
 | PhD | Stanford University (Advisor: Andrew Ng) |
 | Nationality | Belgian |
@@ -30,7 +30,7 @@ lastEditedAt: 2026-01-15
 
 - **Robot Reinforcement Learning Pioneer**: Early pioneer in RL that works on real robots
 - **Inverse Reinforcement Learning**: Learning reward functions from demonstrations
-- **Covariant Founding**: AI-based robot picking company, $2B+ valuation
+- **Covariant Founding**: AI-based robot picking company (acquired by Amazon in 2024)
 - **OpenAI Early Member**: Led early robotics research
 - **Influential Mentees**: Chelsea Finn, Sergey Levine, and others
 
@@ -69,24 +69,23 @@ lastEditedAt: 2026-01-15
 | 2017 | One-Shot Imitation Learning | Few-shot robot learning |
 | 2017 | Domain Randomization | Core sim-to-real technique |
 
-### Covariant (2017-present)
+### Covariant (2017-2024)
 
 **AI Robot Picking Company Founding**
 
 | Year | Work | Impact |
 |------|------|--------|
-| 2017 | Covariant Founded | AI-based logistics robotics |
+| 2017 | Covariant Founded (formerly Embodied Intelligence) | AI-based logistics robotics |
 | 2020 | Covariant Brain | General-purpose robot AI platform |
 | 2023 | RFM-1 | Robotics Foundation Model |
-| 2024 | $2B+ valuation | Leading robot AI startup |
+| 2024 | Joined Amazon | Founders transitioned to Amazon |
 
 ---
 
 ## Major Publications
 
 ### Inverse Reinforcement Learning
-- **Apprenticeship Learning via IRL** (ICML 2004) - Early IRL research
-- Maximum Entropy IRL (AAAI 2008)
+- **Apprenticeship Learning via IRL** (ICML 2004) - Co-authored with Andrew Ng, early IRL research
 
 ### Deep Reinforcement Learning
 - **TRPO** (Trust Region Policy Optimization, 2015)
@@ -129,11 +128,11 @@ Simulation (various conditions) -> Real robot (zero-shot transfer)
 
 ## Covariant & RFM-1
 
-### Covariant (2017-)
+### Covariant (2017-2024)
 - **Mission**: General-purpose robot AI
 - **Product**: AI-based logistics picking robots
 - **Customers**: DHL, ABB, Knapp, and others
-- **Valuation**: $2B+ (2024)
+- **Outcome**: Amazon licensed technology and hired founders in August 2024
 
 ### RFM-1 (2023)
 - **Robotics Foundation Model**
@@ -158,10 +157,13 @@ Simulation (various conditions) -> Real robot (zero-shot transfer)
 ## Students & Mentees
 
 Pieter Abbeel lab alumni/collaborators:
-- **Chelsea Finn** (Stanford Professor)
-- **Sergey Levine** (UC Berkeley Professor)
-- **Rocky Duan** (Covariant)
-- **John Schulman** (OpenAI, PPO developer)
+- **John Schulman** (PhD student, OpenAI co-founder, PPO developer)
+- **Chelsea Finn** (PhD student, co-advised with Sergey Levine, Stanford Professor)
+- **Sergey Levine** (Postdoc 2014-2016, UC Berkeley Professor)
+- **Peter Chen** (PhD student, Covariant co-founder)
+- **Rocky Duan** (PhD student, Covariant co-founder)
+- **Aravind Srinivas** (Perplexity co-founder)
+- **Deepak Pathak** (Skild co-founder)
 - Numerous RL/robotics researchers
 
 ---
@@ -169,8 +171,10 @@ Pieter Abbeel lab alumni/collaborators:
 ## Awards & Recognition
 
 - ACM Prize in Computing (2021)
-- IEEE RAS Early Career Award
-- IJCAI Computers and Thought Award
+- IJCAI Computers and Thought Award (2017)
+- IEEE Fellow
+- PECASE (Presidential Early Career Award for Scientists and Engineers)
+- NSF CAREER Award
 - Sloan Research Fellowship
 - TR35 (MIT Technology Review 35 Under 35)
 
@@ -181,7 +185,7 @@ Pieter Abbeel lab alumni/collaborators:
 - [UC Berkeley Profile](https://people.eecs.berkeley.edu/~pabbeel/)
 - [Covariant](https://covariant.ai/)
 - [Google Scholar](https://scholar.google.com/citations?user=vtwH6GkAAAAJ)
-- [Twitter/X](https://twitter.com/paborisov)
+- [X (Twitter)](https://x.com/pabbeel)
 
 ---
 

@@ -39,7 +39,7 @@ Figure AI humanoids have significant importance in the Physical AI field:
 - **Vertical Integration AI Strategy**: Transitioned from OpenAI partnership to in-house Helix VLA development (February 2025) [^techcrunch]
 - **High-Performance Hardware-Software Integration**: Combination of Helix VLA capable of 200Hz full-body control with optimized hardware [^helix]
 - **Aggressive Cost Reduction Target**: Targeting 90% parts cost reduction in Figure 03, aiming for under $20,000 at mass production [^figure03]
-- **Large-Scale Production Infrastructure**: BotQ factory targeting 12,000 units annually (announced March 2025) [^wiki]
+- **Large-Scale Production Infrastructure**: BotQ factory targeting 12,000 units annually (announced March 15, 2025) [^botq]
 - **Proven Industrial Performance**: Contributed to production of over 30,000 X3s at BMW factory [^bmw]
 
 ---
@@ -49,17 +49,17 @@ Figure AI humanoids have significant importance in the Physical AI field:
 | Item | Figure 01 (2023) | Figure 02 (2024) | Figure 03 (2025) |
 |------|------------------|------------------|------------------|
 | **Purpose** | Prototype | Industrial pilot | Commercial mass production |
-| **Height** | ~170cm | ~170cm | 168cm (5'6") |
-| **Weight** | - | ~66kg | 60kg (-9%) |
-| **Hand DoF** | Basic gripper | 16 DoF | Improved design |
-| **Total DoF** | - | 35 DoF | 35+ DoF |
-| **Hand Payload** | - | 25kg | 25kg |
+| **Height** | 168cm (5'6") | 168cm (5'6") | 168cm (5'6") |
+| **Weight** | 60kg (132 lbs) | 70kg (154 lbs) | 60kg (-14%) |
+| **Hand DoF** | Basic gripper | 16 DoF (both hands) | Improved design |
+| **Total DoF** | 24 DoF | 35 DoF | 35+ DoF |
+| **Hand Payload** | 20kg | 20kg | 25kg |
 | **Cameras** | Basic | 6x RGB | 8x (including 2 palm) |
-| **Battery** | - | Integrated | 2.3 kWh (5 hours) |
+| **Battery** | Integrated (5 hours) | 2.25 kWh (5 hours) | 2.3 kWh (5 hours) |
 | **Charging** | Wired | Wired | Wireless induction (2kW) |
 | **Computing** | Basic | NVIDIA RTX dual | Dual GPU (S1/S2) |
 | **Manufacturing** | Handmade | CNC machining | Die-casting/injection molding |
-| **Target Price** | - | $100K+ | Under $20K (target) |
+| **Target Price** | - | ~$30K (estimated) | Under $20K (target) |
 
 *Source: Wikipedia, Figure AI official announcements*
 
@@ -67,7 +67,19 @@ Figure AI humanoids have significant importance in the Physical AI field:
 
 ## Figure 01
 
-Figure AI's first humanoid robot officially announced in March 2023. [^wiki]
+Figure AI's first humanoid robot officially announced on March 2, 2023. Took its first steps in May 2023. [^wiki]
+
+### Physical Specifications
+
+| Item | Spec |
+|------|------|
+| Height | 168cm (5'6") |
+| Weight | 60kg (132 lbs) |
+| Payload | Up to 20kg (44 lbs) |
+| Degrees of Freedom | 24 |
+| Operating Frequency | 200 Hz |
+| Operating Time | Up to 5 hours |
+| Walking Speed | 1.2 m/s |
 
 ### Key Features
 
@@ -75,12 +87,24 @@ Figure AI's first humanoid robot officially announced in March 2023. [^wiki]
 - **Basic Manipulation Capabilities**: Climbing stairs, lifting boxes, using tools
 - **OpenAI Integration**: Voice conversation and reasoning capabilities using large language models
 - **Human-Level Dexterity**: Capable of performing tasks requiring precision and coordination
+- **Torque-Controlled Walking**: Adapts to uneven terrain and external disturbances
 
 ---
 
 ## Figure 02
 
 2nd generation humanoid announced August 6, 2024, marking the serious stage for industrial deployment. [^wiki]
+
+### Physical Specifications
+
+| Item | Spec |
+|------|------|
+| Height | 168cm (5'6") |
+| Weight | 70kg (154 lbs) |
+| Payload | Up to 20kg |
+| Walking Speed | 1.2 m/s |
+| Battery | 2.25 kWh (custom) |
+| Operating Time | Over 5 hours |
 
 ### Key Features
 
@@ -89,30 +113,33 @@ Figure AI's first humanoid robot officially announced in March 2023. [^wiki]
 | Hand DoF | 16 (5-finger both hands) |
 | Total DoF | 35 |
 | Hand Payload | Up to 25kg |
+| Torque | Up to 150Nm |
+| Range of Motion | Up to 195 degrees |
 | Cameras | 6x RGB |
 | Computing | Dual NVIDIA RTX GPU (3x previous) |
 | Sensors | RGB cameras, IMU (Inertial Measurement Unit), gyroscope, force sensors, non-contact sensing, microphones, speakers |
 
 ### Major Improvements
 
-- Cable integrated design in limbs
-- Battery integrated in torso
+- Cable integrated design in limbs (sleek matte black exterior)
+- Battery integrated in torso (50% more energy than previous)
 - Onboard VLM (Vision Language Model)
 - Real-time perception, decision-making, execution capable
+- Speech-to-speech conversation via OpenAI models
 
 ---
 
 ## Figure 03
 
-3rd generation humanoid announced October 2025, mass production model targeting both home and commercial use. [^figure03]
+3rd generation humanoid announced October 9, 2025, mass production model targeting both home and commercial use. Initial partner deployments began the same day. [^figure03]
 
 ### Physical Specifications
 
 | Item | Spec |
 |------|------|
 | Height | 168cm (5'6") |
-| Weight | 60kg (Figure 02 -9%) |
-| Battery | 2.3 kWh (custom) |
+| Weight | 60kg (Figure 02 -14%) |
+| Battery | 2.3 kWh (custom, 78% cost reduction vs Figure 02) |
 | Operating Time | About 5 hours (300 minutes) |
 | Charging | Wireless induction 2kW (foot coils) |
 | Data Transfer | 10 Gbps mmWave |
@@ -198,6 +225,8 @@ According to Figure AI, this is the first commercial deployment of a general-pur
 - **Parts Processed**: Over 90,000 sheet metal parts loaded
 - **Production Contribution**: Contributed to over 30,000 BMW X3 production
 - **Task Description**: Pick sheet metal parts from racks/bins and place on welding equipment
+- **Total Distance Traveled**: Approximately 200 miles (322km)
+- **Accuracy**: Over 99%
 
 ### Performance Requirements
 
@@ -223,13 +252,13 @@ Key lessons from BMW deployment reflected in Figure 03 design:
 
 | Period | Round | Amount | Valuation | Key Investors |
 |--------|-------|--------|-----------|---------------|
-| 2023 | Series A | ~$70M | - | Early investors |
-| 2024.02 | Series B | $675M | $2.6B | Jeff Bezos, Microsoft, NVIDIA, Intel, Amazon, OpenAI |
-| 2025.09 | Series C | $1B | $39B | Intel, NVIDIA, Qualcomm, T-Mobile, Salesforce, Brookfield |
+| 2023.05 | Series A | ~$70M | - | Led by Parkway Venture Capital |
+| 2024.02 | Series B | $675M | $2.6B | Jeff Bezos, Microsoft, NVIDIA, Intel Capital, Amazon Industrial Innovation Fund, OpenAI Startup Fund, ARK Invest, Align Ventures |
+| 2025.09 | Series C | $1B+ | $39B | Led by Parkway Venture Capital, Brookfield, NVIDIA, Macquarie Capital, Intel Capital, Align Ventures, LG Technology Ventures, Salesforce, T-Mobile Ventures, Qualcomm Ventures |
 
 *Source: [Wikipedia](https://en.wikipedia.org/wiki/Figure_AI), [PRNewswire](https://www.prnewswire.com/news-releases/figure-raises-675m-at-2-6b-valuation-and-signs-collaboration-agreement-with-openai-302074897.html)*
 
-**Cumulative Funding**: Approximately $1.7B+ (Series A + B + C)
+**Cumulative Funding**: Approximately $2B (Series A + B + C)
 
 ### OpenAI Partnership
 
@@ -241,9 +270,10 @@ Key lessons from BMW deployment reflected in Figure 03 design:
 
 ## Future Plans
 
-- **BotQ Factory**: Announced March 2025, targeting 12,000 units annually [^wiki]
+- **BotQ Factory**: Announced March 15, 2025, targeting 12,000 units annually as the largest humanoid factory in the US [^botq]
 - **100,000 units within 4 years** plan (roadmap)
-- **Home Market Entry**: Figure 03's household helper role (laundry, cleaning, dishwasher, etc.) [^figure03]
+- **Home Market Entry**: Consumer market entry projected for 2026, Figure 03's household helper role (laundry, cleaning, dishwasher, etc.) [^figure03]
+- **Figure 02 Retirement**: Fleet-wide retirement of Figure 02 underway following Figure 03 release
 
 ---
 
@@ -268,6 +298,7 @@ Key lessons from BMW deployment reflected in Figure 03 design:
 [^bmwpress]: [BMW Official Press Release](https://www.press.bmwgroup.com/global/article/detail/T0444265EN/successful-test-of-humanoid-robots-at-bmw-group-plant-spartanburg)
 [^seriesb]: [Series B Funding Announcement](https://www.prnewswire.com/news-releases/figure-raises-675m-at-2-6b-valuation-and-signs-collaboration-agreement-with-openai-302074897.html)
 [^techcrunch]: [Figure drops OpenAI - TechCrunch](https://techcrunch.com/2025/02/04/figure-drops-openai-in-favor-of-in-house-models/)
+[^botq]: [BotQ Announcement](https://www.figure.ai/news/botq)
 
 **Additional References**:
 - [Figure AI Official Site](https://www.figure.ai/)

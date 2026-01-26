@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 <!-- Image pending: ![ANYmal - ANYbotics Industrial Inspection Robot](../../assets/hardware/quadrupeds/anymal.png) -->
@@ -35,7 +35,7 @@ ANYmal is an industrial autonomous inspection quadruped robot developed at ETH Z
 
 ### From ETH Zurich to ANYbotics
 
-ANYbotics was founded in 2016 as a spinoff company based on research achievements from ETH Zurich's Robotic Systems Lab.
+ANYbotics was founded in 2016 as a spinoff company based on research achievements from ETH Zurich's Robotic Systems Lab. ANYmal's origins trace back to 2009, when ETH Zurich researchers began developing a series of quadruped robots, with the first ANYmal version completed in 2016 marking the start of commercialization.
 
 **Founding Members:**
 - Marco Hutter (Professor, RSL Director)
@@ -52,10 +52,12 @@ ANYbotics was founded in 2016 as a spinoff company based on research achievement
 - European Research Council (ERC)
 
 **Company Growth (per press releases):**
-- December 2024: Raised over EUR 127 million total [[Source]](https://www.startuphub.ai/ai-news/funding-round/2025/anybotics-secures-over-e127-million-for-robotics-expansion/)
 - November 2024: San Francisco office established [[Source]](https://www.startuphub.ai/ai-news/funding-round/2025/anybotics-secures-over-e127-million-for-robotics-expansion/)
+- December 2024: EUR 57 million funding round
 - May 2025: Switzerland Global Enterprise export award [[Source]](https://www.startuphub.ai/ai-news/funding-round/2025/anybotics-secures-over-e127-million-for-robotics-expansion/)
-- September 2025: Climate Investment strategic investment [[Source]](https://www.climateinvestment.com/news/climate-investment-ci-joins-investment-in-anybotics-to-transform-oil-gas-inspection-through-autonomous-robotics)
+- September 2025: Climate Investment strategic investment (CHF 20 million)
+- 2025: Over $150 million (approx. EUR 127 million) total cumulative investment [[Source]](https://www.climateinvestment.com/news/climate-investment-ci-joins-investment-in-anybotics-to-transform-oil-gas-inspection-through-autonomous-robotics)
+- Early 2025: Approximately 200 employees, offices in Zurich and San Francisco
 
 ---
 
@@ -84,23 +86,24 @@ ANYmal C is the first commercial version optimized for industrial inspection, pr
 
 ANYmal D is the current flagship model providing improved autonomy and mobility. [[RobotsGuide details]](https://robotsguide.com/robots/anymal)
 
-**Physical Specifications** (per third-party sources [[RobotsGuide]](https://robotsguide.com/robots/anymal) [[Wevolver]](https://www.wevolver.com/specs/anymal)):
+**Physical Specifications** (per third-party sources [[RobotsGuide]](https://robotsguide.com/robots/anymal)):
 
 | Item | Value | Notes |
 |------|-------|-------|
-| Length | ~800 mm | Varies by posture |
-| Width | 400~600 mm | Walking stance basis |
-| Height | ~700 mm | Basic walking stance |
-| Weight | ~30 kg | Without payload |
-| Max Speed | 3.6 km/h (1 m/s) | Omnidirectional movement |
-| Payload | 10~15 kg | Varies by configuration |
+| Length | 930 mm | Same as ANYmal C |
+| Width | 530 mm | Basic walking stance |
+| Height (walking) | 890 mm | |
+| Weight | ~55 kg | Increases with inspection payload |
+| Max Speed | 4.68 km/h (1.3 m/s) | Omnidirectional movement |
+| Payload | Up to 10 kg | For additional sensor mounting |
 
 **Actuators** [[Source]](https://robotsguide.com/robots/anymal):
 - 12 electric series elastic actuators (ANYdrive)
-- Max output: 720W (per joint)
+- Max torque: 85 Nm (per joint)
 - 360-degree joint rotation possible
+- Precision torque control (torque resolution 8 mNm, position accuracy 0.025 degrees)
 - IP67 water/dust resistant
-- CAN bus independent control
+- Robust impact protection design
 
 **Mobility Capabilities** (performance varies by conditions):
 
@@ -108,37 +111,42 @@ ANYmal D is the current flagship model providing improved autonomy and mobility.
 |------------|-------|-------|
 | Max Slope | ~30 degrees | Varies by ground conditions |
 | Stair Angle | Up to 45 degrees | Standard stairs basis |
-| Step Height | Up to 35 cm | |
+| Step Height | Up to 250 mm | Industrial stair basis |
 | Obstacle Clearance | Up to 20 cm | |
 | Gap Crossing | 25~30 cm | |
 | Min Passage Width | 60 cm | |
 
 **Battery:**
-- Replaceable lithium-ion battery pack
-- Operating time: 2~4 hours (varies by activity)
-- Autonomous docking station charging
+- Lithium-ion battery pack (932.4 Wh, UN 38.3 certified)
+- Operating time: 90~120 minutes (varies by activity)
+- Autonomous docking station charging and swappable battery pack support
 
 **Computing:**
-- 3x Intel i7 processors
-  - For gait control
-  - For navigation
-  - For task applications
+- 2x Intel Core i7 (6-core) CPUs
+- 2x 8 GB RAM
+- 2x 240 GB SSD
+- 2.4/5 GHz 802.11ac Wi-Fi (optional: 4G LTE)
 - EtherCAT communication
 - Ubuntu Linux OS
 - Custom framework based on ROS
 - C++, Python API support
+- Gazebo 3D simulation environment provided
 
-### ANYmal X (Upcoming)
+### ANYmal X (For Explosive Environments)
 
-ANYmal X is a walking robot in development targeting ATEX Zone 1 certification, designed for operation in explosive atmospheres. [[Source]](https://www.startuphub.ai/ai-news/funding-round/2025/anybotics-secures-over-e127-million-for-robotics-expansion/)
+ANYmal X is the world's first walking robot to achieve IECEx and ATEX Zone 1 certification, designed for operation in explosive atmospheres. It was unveiled at OTC Asia in 2022 together with PETRONAS, and full customer deliveries begin in 2026. [[Source]](https://www.anybotics.com/robotics/anymal-x/)
 
 **Features:**
-- ATEX Zone 1 certification target (for explosive atmospheres)
-- Based on ANYmal D design
-- Customer delivery scheduled (see ANYbotics official announcements for timing)
-- Pilot programs underway with BASF, Equinor, etc. [[Source]](https://www.anybotics.com/news/anybotics-climate-investment-strategic-investor/)
+- IECEx and ATEX Zone 1 certified (world's first Ex-proof walking robot)
+- Maintains identical performance, functionality, speed, and mobility as ANYmal D
+- IP67 water/dust resistance rating
+- Equipped with gas detection sensors for methane, carbon monoxide, hydrogen sulfide, etc.
+- Thermal imaging and vibration analysis capabilities
 
-> **Note**: Check ANYbotics official channels for exact release schedule and certification status of ANYmal X.
+**Customers and Pilot Programs:**
+- PETRONAS (commercial agreement signed in 2022)
+- Equinor, Petrobras, Woodside, Shell, and others in onboarding program
+- Over 300 units planned for deployment in coming years [[Source]](https://jpt.spe.org/company-releases-four-legged-robot-for-explosive-environments)
 
 ---
 
@@ -150,15 +158,15 @@ Sensor specifications are compiled based on ANYbotics product pages and third-pa
 
 | Sensor | Specification | Notes |
 |--------|---------------|-------|
-| LiDAR | 360-degree | Up to 100m range |
-| Depth Cameras | 6 units | For terrain perception |
-| Remote Operation Cameras | 2 units | For teleoperation |
+| LiDAR | 360-degree (Velodyne Puck) | Up to 100m range |
+| Depth Cameras | 6 units (Intel RealSense) | For close-range environment perception |
+| Wide-angle Cameras | 2 units | Front/rear for teleoperation |
 | IMU | Built-in | Body and actuators |
 
 ### Inspection Payload
 
 **Optical System:**
-- 30x zoom camera
+- 20x optical zoom camera (4K video capture)
 - Active LED lighting
 - +/- 90 degrees vertical, +/- 165 degrees horizontal pan-tilt
 
@@ -313,15 +321,17 @@ ANYmal Research is an international community for advancing legged robot researc
 
 | Item | ANYmal C | ANYmal D |
 |------|----------|----------|
-| Weight | ~50 kg | ~30 kg |
-| Payload | Up to 10 kg | 10-15 kg |
-| Battery | ~2 hours | 2-4 hours |
+| Weight | ~50 kg | ~55 kg |
+| Payload | Up to 10 kg | Up to 10 kg |
+| Battery | ~2 hours | 90-120 min |
 | Water/Dust | IP67 | IP67 |
-| CPU | 2x i7 6-core | 3x i7 |
-| Actuators | 12 SEA | 12 SEA (720W) |
+| CPU | 2x i7 6-core | 2x i7 6-core |
+| RAM/Storage | 2x 8GB / 2x 240GB SSD | 2x 8GB / 2x 240GB SSD |
+| Actuators | 12 SEA | 12 SEA (85 Nm torque) |
+| Max Speed | 3.6 km/h (1 m/s) | 4.68 km/h (1.3 m/s) |
 | Max Slope | ~20 degrees | ~30 degrees |
-| Stairs | Up to 45 degrees | Up to 45 degrees |
-| Step Height | Up to 35 cm | Up to 35 cm |
+| Stairs | Up to 45 degrees | Up to 45 degrees (250mm step) |
+| LiDAR Range | 100m | 100m |
 
 ---
 

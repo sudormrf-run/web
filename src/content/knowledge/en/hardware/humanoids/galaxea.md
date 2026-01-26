@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Galaxea Humanoid
@@ -26,14 +26,14 @@ lastEditedAt: 2026-01-15
 
 | Item | Details |
 |------|---------|
-| Manufacturer | Galaxea AI (星海图, Beijing, China) |
+| Manufacturer | Galaxea AI (星海图, Suzhou, China) |
 | Type | Wheeled Dual-arm Humanoid |
 | Founded | September 2023 (team from Tsinghua/Stanford) |
 | Computing | NVIDIA Jetson AGX Orin 32GB |
-| Price Range | $27,500 ~ $40,000 (varies by model) |
-| Key Customers | Huawei, Volkswagen, Samsung, ByteDance, Stanford, MIT [^1] |
+| Price Range | $44,500 ~ $64,000 (varies by model) |
+| Key Customers | Huawei Cloud, Volkswagen, Haier, Samsung, ByteDance, Physical Intelligence, Stanford, MIT [^1] |
 
-> **Note**: Price and specification information is as of Q1 2025 and may change.
+> **Note**: Price and specification information is as of H2 2025 and may change.
 
 [^1]: [Forbes via Yahoo Finance - Galaxea AI Raises $100M](https://finance.yahoo.com/news/beijings-galaxea-ai-raises-100-000126844.html)
 
@@ -41,12 +41,12 @@ lastEditedAt: 2026-01-15
 
 ## Key Significance
 
-The Galaxea R1 series holds important significance as an **affordable research humanoid platform**.
+The Galaxea R1 series holds important significance as a **research and industrial humanoid platform**.
 
 ### Improved Research Accessibility
 
-- **Reasonable Price**: Starting at approximately $27,500 (199,000 RMB) for R1 Pro, significantly cheaper than Figure 02 ($100K+) or Unitree H1 ($90,000)
-- **Full Features**: Despite low price, offers full specs including 26 DoF, 7 HD cameras, LiDAR, force sensors
+- **Competitive Price**: R1 series priced at approximately $44,500~$64,000, competitive compared to Figure 02 ($100K+) or Unitree H1 ($90,000)
+- **Full Features**: Offers full specs including 26 DoF, 7 HD cameras, LiDAR, force sensors
 - **Various Teleoperation**: Easy data collection with Isomorphic and VR remote operation support
 
 ### Advantages of Wheel-Based Design
@@ -81,9 +81,9 @@ The Galaxea R1 series holds important significance as an **affordable research h
 | Voice Interaction | O | X | X |
 | VR Teleop | O | O | X |
 | Isomorphic Teleop | O | O | O |
-| Price | ~$27,500 | N/A | ~$40,000 |
+| Price | ~$44,500+ | N/A | ~$40,000 |
 
-> **Note**: R1 Lite is priced higher than R1 Pro because R1 Lite is sold as a fully assembled data collection-dedicated platform, while R1 Pro is the base price for research/development. Actual prices may vary by configuration.
+> **Note**: R1 series prices range from $44,500 to $64,000 depending on configuration and options. The company aims to ship approximately 1,000 units by end of 2025.
 
 ### R1 Pro Details
 
@@ -97,7 +97,7 @@ The Galaxea R1 series holds important significance as an **affordable research h
 | Computing | NVIDIA Jetson AGX Orin 32GB (200 TOPS) |
 | Chassis | 3-wheel vector steering |
 | Teleoperation | Isomorphic + VR |
-| Price | ~199,000 RMB (~$27,500) |
+| Price | ~$44,500+ (varies by configuration) |
 
 ### R1 Details
 
@@ -189,10 +189,10 @@ Analog stick-based standard controller also supported.
 | Item | Details |
 |------|---------|
 | Founded | September 2023 |
-| Headquarters | Beijing/Suzhou, China |
+| Headquarters | Suzhou, China |
 | Mission | "Serving 10 billion humans with 10 billion robots" |
-| Valuation | $700M (as of 2025) [^2] |
-| Total Investment | ~1.5 billion RMB (~$100M+) [^2] |
+| Valuation | $700M (as of August 2025) [^2] |
+| Total Investment | ~$210M (~1.5 billion RMB) [^2] |
 
 [^2]: [Benzinga - Galaxea AI Raises $100M at $700M Valuation](https://www.benzinga.com/news/topics/25/08/47431117/beijings-galaxea-ai-raises-100-million-at-700-million-valuation-says-humanoids-will-enter-homes-in-le)
 
@@ -216,10 +216,13 @@ Over 30 investors including Meituan, IDG Capital, Baidu Ventures participated. [
 
 ### AI Model
 
-**G0 Model** - Galaxea's self-developed AI model
-- Language understanding
-- Reasoning execution
-- Complex task execution (e.g., making bed)
+**G0 Model** - Galaxea's self-developed VLA (Vision-Language-Action) model [^4]
+- **G0-VLM**: Multimodal planner for high-level reasoning and subtask planning
+- **G0-VLA**: Real-time executor for precise low-level action control
+- **Galaxea Open-World Dataset**: 500 hours of high-quality data collected across 150+ tasks in 50 scenes
+- 3-stage curriculum learning: Cross-embodiment pre-training -> Single-embodiment pre-training -> Task-specific post-training
+
+[^4]: [Galaxea G0 - Open-World Dataset and Dual-System VLA Model](https://opengalaxea.github.io/G0/)
 
 ### Future Plans
 
@@ -255,10 +258,13 @@ Over 30 investors including Meituan, IDG Capital, Baidu Ventures participated. [
 
 | Robot | Manufacturer | Type | Price | DoF |
 |-------|--------------|------|-------|-----|
-| R1 Pro | Galaxea | Wheeled | ~$27,500 | 26 |
+| R1 Pro | Galaxea AI | Wheeled | ~$44,500+ | 26 |
+| Galbot G1 | Galbot (银河通用) | Wheeled | N/A | N/A |
 | G1 | Unitree | Walking | ~$16,000 | 23 |
 | H1 | Unitree | Walking | ~$90,000 | N/A |
 | Figure 02 | Figure AI | Walking | ~$100,000+ | N/A |
+
+> **Note**: Galbot (银河通用机器人 / Galaxy General Robot) is a separate Chinese robotics company from Galaxea AI (星海图). Galbot was founded by Wang He (He Wang), while Galaxea AI was founded by Jiyang Gao.
 
 ---
 
@@ -280,3 +286,5 @@ Over 30 investors including Meituan, IDG Capital, Baidu Ventures participated. [
 - [Isomorphic Teleop Tutorial](https://docs.galaxea-ai.com/Guide/R1Pro/isomorphic_teleop/R1Pro_Teleop_Usage_Tutorial/)
 - [Forbes: Galaxea AI Raises $100M](https://finance.yahoo.com/news/beijings-galaxea-ai-raises-100-000126844.html)
 - [Robotuo: R1 Series Announcement](https://robotuo.com/2025/01/05/galaxea-ai-announces-the-launch-of-the-r1-series-humanoid-robots/)
+- [Galaxea G0 VLA Model](https://opengalaxea.github.io/G0/)
+- [GitHub: OpenGalaxea/G0](https://github.com/OpenGalaxea/G0)

@@ -39,29 +39,39 @@ lastEditedAt: 2026-01-15
 
 ## Overview
 
-Tesla Optimus is a general-purpose humanoid robot under development by Tesla. First announced at AI Day 2021, it applies End-to-End neural network technology accumulated from Tesla's FSD (Full Self-Driving) to robotics. The biggest differentiator is the **low-price strategy through mass production**, targeting $20K-$30K compared to existing humanoid robots that cost $100K-$250K.
+Tesla Optimus is a general-purpose humanoid robot under development by Tesla. First announced on August 19, 2021 at AI Day (with an actor in a robot suit, no actual prototype), it applies End-to-End neural network technology accumulated from Tesla's FSD (Full Self-Driving) to robotics. The biggest differentiator is the **low-price strategy through mass production**, targeting $20K-$30K compared to existing humanoid robots that cost $100K-$250K.
 
-### Confirmed Specs (Gen 3 Basis)
+### Confirmed Specs (Gen 2 Basis)
 
-| Item | Spec | Source |
-|------|------|--------|
+| Item | Spec | Notes |
+|------|------|-------|
 | Manufacturer | Tesla | - |
-| Height | 5'8" (173cm) | [1] |
-| Weight | 125 lbs (57kg) | [1] |
-| Total DoF | 40+ | [2] |
-| Hand DoF | 22 (+ wrist/forearm 3) | [2] |
-| Hand Actuators | 17 linear actuators | [2] |
-| Lifting Capacity | 45 lbs (carry) | [1] |
-| Running Speed | ~8.4 km/h (5.2 mph) | [2] |
-| Battery Life | ~8 hours (estimated) | [1] |
-| Sensors | RGB camera, depth camera, IMU, force/torque sensors | [1] |
+| Height | 5'8" (173cm) ~ 5'11" (180cm) | Varies by source |
+| Weight | 104 lbs (47kg) | 10kg lighter than Gen 1, December 2023 |
+| Total DoF | 28 (body) + 11 (each hand) | 40+ electromechanical actuators total |
+| Hand DoF | 11 | Gen 2 (December 2023) |
+| Lifting Capacity | 45 lbs (20kg, carry) | Design target |
+| Walking Speed | ~5 mph (8 km/h) | Gen 2 basis |
+| Battery | 2.3 kWh (52V) | ~8 hours operation, 100W idle / 500W max walking |
+| Sensors | 8 autopilot cameras, IMU, force/torque sensors, foot pressure sensors | Tesla FSD-based vision system |
+
+### Enhanced Hand Specs (October 2024 "We, Robot" Event Demo)
+
+| Item | Spec | Notes |
+|------|------|-------|
+| Hand DoF | 22 (+ wrist/forearm 3) | Tendon drive system |
+| Hand Actuators | 17 linear actuators | Moved to forearm, reducing hand size |
+| Running Speed | ~6-8 mph (~10-13 km/h) | December 2, 2025 demo video (unofficial, flight phase confirmed) |
+
+*Note: 22 DoF hands first demonstrated at October 2024 We, Robot event. Gen 3 (V3) mass production officially started January 21, 2026*
 
 ### Target Specs (Based on Tesla Announcements)
 
 | Item | Target Value | Notes |
 |------|--------------|-------|
-| Target Price | $20,000 - $30,000 | Elon Musk announcement, at mass production [3] |
-| Initial Sales Price | $40,000 - $50,000 | Estimated before economies of scale [3] |
+| Target Price | $20,000 - $30,000 | Elon Musk announcement at We, Robot 2024, at mass production [3] |
+| Target COGS | $20,000 | Tesla's cost of goods sold target at scale |
+| General Sales | 2027 onwards | After initial factory/enterprise deployment |
 
 ---
 
@@ -76,9 +86,9 @@ The most significant aspect of Tesla Optimus is **demonstrating the possibility 
 2. **Vertical Integration**: Tesla is almost the only company that can produce batteries, electric motors, AI chips, and software all in-house. This vertical integration is the key to cost reduction.
 
 3. **Production Scale Targets** (Based on Tesla announcements): [3]
-   - 2025: 5,000 - 10,000 units (target, achievement unconfirmed)
-   - 2026: 50,000 - 100,000 units (target)
-   - 2027 onwards: Over 1 million units annually (long-term target)
+   - 2025: Target 5,000-10,000 units → Actual: hundreds of units (less than 1/10 of target)
+   - 2026: 50,000-100,000 units target, Gen 3 line at Fremont
+   - Long-term: Musk's vision of 1 million → 10 million units/year (Giga Texas facility planned)
 
 4. **Economic Impact**: Elon Musk forecasts that Optimus will account for 80% of Tesla's corporate value, even mentioning the possibility of Universal Basic Income (UBI) through labor replacement. [4]
 
@@ -86,21 +96,24 @@ The most significant aspect of Tesla Optimus is **demonstrating the possibility 
 
 ## Generation Comparison
 
-| Version | Period | Key Features | Hand DoF | Status |
-|---------|--------|--------------|----------|--------|
-| **Gen 1** | 2022 | Initial prototype, basic walking demonstration | 11 | Completed |
-| **Gen 2** | 2023 | Improved walking, weight reduction, improved hand dexterity | 11 | Completed |
-| **Gen 3** | 2024-25 | 22 DoF hands, tendon drive, flexible glove, running capable | 22 | Pilot deployment |
+| Version | Release Date | Key Features | Hand DoF | Status |
+|---------|--------------|--------------|----------|--------|
+| **Bumble-C** | Sept 2022 (AI Day) | First untethered walk, waving demo, some off-the-shelf parts | - | Completed |
+| **Optimus (Gen 1)** | Sept 2022 (AI Day) | Initial prototype, Tesla-designed parts, 2.3kWh battery | 11 | Completed |
+| **Gen 2** | Dec 13, 2023 | 30% faster walking (8 km/h), 10kg lighter (47kg), 2-DoF neck, egg handling demo | 11 | Completed |
+| **22 DoF Hands** | Oct 2024 (We, Robot) | 22 DoF tendon-driven hands, bartending/object handoff demo (teleoperated) | 22 | Demonstrated |
+| **Gen 3 (V3)** | Jan 21, 2026 | Mass production started, 22 DoF hands integrated, running capable, 10-12 km/h walking | 22 | In Production |
 
-*Source: Tesla AI Day announcements, [2]*
+*Source: Tesla AI Day announcements, We, Robot event, Q3 2025 earnings call [2]*
 
-### Gen 3 Major Improvements
+### 2024-2025 Major Improvements
 
-- **2x Hand Dexterity Increase**: Expanded from 11 DoF to 22 DoF [2]
-- **Tendon Drive System**: Implements human-like finger movements
+- **2x Hand Dexterity Increase**: Expanded from 11 DoF to 22 DoF (demonstrated at Oct 2024 We, Robot event)
+- **Tendon Drive System**: Actuators moved to forearm, achieving movements close to human hand (27 DoF)
 - **Flexible Glove**: Adaptive grip when grasping objects
-- **Running Capability**: True running at 5.2 mph (with flight phase) [2]
-- **Improved Manipulation**: Demonstration of delicate tasks like picking up eggs, folding shirts
+- **Running Capability**: Dec 2, 2025 video showed ~6-8 mph (10-13 km/h) running, flight phase confirmed
+- **Improved Manipulation**: Demonstration of delicate tasks like picking up eggs, pouring drinks, object handoff, playing catch
+- **Teleoperation**: We, Robot event bartending, conversations used remote control (Bloomberg report, Tesla engineer confirmed)
 
 ---
 
@@ -138,20 +151,25 @@ Tesla Optimus AI is based on **End-to-End neural network** approach validated in
 
 ### Current State (As of January 2026)
 
-| Period | Milestone | Status |
-|--------|-----------|--------|
-| 2024 | Started internal test deployment at Tesla factories | Completed |
-| 2025 | Gen 3 prototype revealed, factory pilot expansion | In progress |
-| 2026 Q1 | Gen 3 production-intent prototype reveal expected | Scheduled |
-| 2026 | Target deployment of thousands, limited commercial sales start | Goal |
+| Date | Milestone | Status |
+|------|-----------|--------|
+| Aug 19, 2021 | Optimus concept announced at AI Day (actor in robot suit) | Completed |
+| Sept 2022 | First prototypes unveiled at AI Day 2022 (Bumble-C, Optimus Gen 1) | Completed |
+| Dec 13, 2023 | Gen 2 revealed, 30% faster walking, egg handling demo | Completed |
+| July 2024 | Gen 2 publicly exhibited at Shanghai World AI Conference | Completed |
+| Oct 10, 2024 | "We, Robot" event: 22 DoF hands demo, 36+ units displayed, teleoperation used | Completed |
+| 2025 | Pilot deployment at Tesla factories (hundreds of units), December running demo released | Completed |
+| Jan 21, 2026 | Gen 3 (V3) mass production started at Fremont factory (Tesla official) | In Progress |
+| End of 2026 | Target thousands of units deployed, 1 million/year production line | Goal |
+| 2027 | General sales start, Giga Texas 10 million/year facility planned | Goal |
 
-*Note: Whether 2025 target production volume (5,000-10,000 units) was achieved is not officially confirmed [7]*
+*Note: 2025 target production (5,000-10,000 units) was not achieved. As of July 2025, actual production was only hundreds of units, less than 1/10 of target.*
 
 ### Production Infrastructure (Per Announcements)
 
-- **Giga Texas**: Optimus dedicated production line preparation (Tesla announcement)
-- **Fremont Factory**: Target 1 million units annually (long-term plan)
-- **Future Plans**: Target facilities capable of producing 10 million units annually by 2027 [3]
+- **Fremont Factory**: Pilot line operational, Gen 3 production line expansion in 2026, 1 million units/year target
+- **Giga Texas**: Construction started November 2025, 10 million units/year production facility planned (confirmed via drone footage)
+- **Long-term Vision**: At Tesla 2025 Shareholder Meeting, Musk announced "fastest production ramp of any large complex manufactured product ever"
 
 ### Initial Application Areas
 
@@ -169,9 +187,9 @@ Tesla Optimus AI is based on **End-to-End neural network** approach validated in
 |------|---------------|----------------------|--------------|---------------|
 | **Philosophy** | Mass production, practicality | Research, dynamic agility | Workplace automation | Logistics specialized |
 | **Drive** | Electric actuators | Electric (formerly hydraulic) | Electric | Electric |
-| **Weight** | 57kg | ~80kg (est.) | ~60kg (est.) | ~65kg |
-| **Price** | $20-30K (target) | $140-150K (est.) | $150-200K (est.) | ~$250K (est.) |
-| **Commercialization** | 2026 start (target) | 2026 Hyundai deployment | Pilot in progress | Pilot in progress |
+| **Weight** | ~47kg (Gen 2) | ~80kg (est.) | ~60kg (est.) | ~65kg |
+| **Price** | $20-30K (target) | Not for sale (research) | $100K+ (est.) | ~$250K (est.) |
+| **Commercialization** | 2026 production started | 2026 Hyundai deployment | Pilot in progress | Pilot in progress |
 | **Strength** | Price, production scale | Dynamic motion capability | General manipulation | Logistics validation |
 
 *Source: Combined industry analysis [7], [8]*
@@ -187,10 +205,11 @@ Tesla Optimus AI is based on **End-to-End neural network** approach validated in
 
 ## Limitations and Challenges
 
-1. **Dynamic Capabilities**: Insufficient dynamic movements like jumping, spinning compared to Atlas
-2. **Actual Deployment Delays**: Uncertainty about achieving 2025 target production
-3. **Versatility Validation**: Unverified task performance capability in actual diverse environments
-4. **Safety**: Safety regulations and certifications needed for human collaboration
+1. **Dynamic Capabilities**: Insufficient dynamic movements like jumping, spinning compared to Atlas (improving with December 2025 running demo)
+2. **Actual Deployment Delays**: 2025 target production (5,000-10,000 units) not achieved (actual: hundreds of units)
+3. **Autonomy Validation**: We, Robot event teleoperation controversy, fully autonomous task capability unverified
+4. **Versatility Validation**: Unverified task performance capability in actual diverse environments
+5. **Safety**: Safety regulations and certifications needed for human collaboration
 
 ---
 

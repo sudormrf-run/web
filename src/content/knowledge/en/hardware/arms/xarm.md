@@ -3,7 +3,7 @@ title: UFACTORY xArm Series
 description: Accessible research/education robot arms - Cost-effective alternative to Franka
 tags: [xarm, ufactory, cobot, research, arm, vla, open-x-embodiment, lerobot]
 category: hardware
-last_verified: 2025-01
+last_verified: 2026-01
 
 # Authorship
 createdBy:
@@ -33,13 +33,13 @@ lastEditedAt: 2026-01-15
 | Year Founded | 2013 [^1] |
 | Type | Collaborative Robot |
 | Features | Cost-effectiveness, Research accessibility, Open-source SDK |
-| Global Sales | 80+ countries (per official announcement) [^1] |
+| Global Sales | 100+ countries (per official announcement) [^1] |
 
 ---
 
 ## Company Introduction
 
-UFACTORY is a robot manufacturing startup founded in 2013 in Shenzhen, China [^1]. They gained recognition by launching **uArm**, the world's first desktop open-source robot arm, on Kickstarter, and the uArm Swift PRO raised over $1 million in crowdfunding platforms [^2].
+UFACTORY is a robot manufacturing startup founded in 2013 in Shenzhen, China [^1]. They gained recognition by launching **uArm**, the world's first desktop open-source robot arm, on Kickstarter, and the uArm Swift PRO achieved over 5,500% of its funding goal on Indiegogo, raising nearly $1 million [^2].
 
 Their core strategy is to leverage Shenzhen's manufacturing ecosystem to offer industrial-grade technology at accessible prices for the research/education market. Investors include **Tencent AI Accelerator** and **Sinovation Ventures** [^2].
 
@@ -79,11 +79,11 @@ Franka has advantages in hardware features like all-joint torque sensing, but xA
 
 | Model | Axes | Payload | Reach | Repeatability | Max Speed | Weight | Price (USD) |
 |-------|------|---------|-------|---------------|-----------|--------|-------------|
-| **Lite 6** | 6 | 600g | 440mm | 0.5mm | 500mm/s | ~7kg | $2,999~ [^6] |
-| **xArm 5** | 5 | 3kg | 700mm | 0.1mm | 330mm/s | ~11kg | $5,000~ [^3] |
-| **xArm 6** | 6 | 5kg | 700mm | 0.1mm | 1m/s | ~12kg | $8,000~ [^3] |
-| **xArm 7** | 7 | 3.5kg | 700mm | 0.1mm | 1m/s | ~14kg | $10,000~ [^3] |
-| **UFACTORY 850** | 6 | 5kg | 850mm | 0.02mm | 1m/s | ~20kg | $8,999~ [^7] |
+| **Lite 6** | 6 | 600g | 440mm | 0.5mm | 500mm/s | 7.2kg | $2,999~ [^6] |
+| **xArm 5** | 5 | 3kg | 700mm | 0.1mm | 1m/s | 11.2kg | $5,749~ [^3] |
+| **xArm 6** | 6 | 5kg | 700mm | 0.1mm | 1m/s | 12.2kg | $8,849~ [^3] |
+| **xArm 7** | 7 | 3.5kg | 700mm | 0.1mm | 1m/s | 13.7kg | $10,449~ [^3] |
+| **UFACTORY 850** | 6 | 5kg | 850mm | 0.02mm | 1m/s | 17kg | $9,849~ [^7] |
 
 ### Model-Specific Features
 
@@ -287,8 +287,8 @@ print(dataset)
 ## Footnotes
 
 [^1]: Based on UFACTORY official information and Crunchbase profile
-[^2]: Kickstarter campaigns and investment information (Tracxn, CBInsights)
-[^3]: Based on UFACTORY official site and distributors (RobotShop, Top3DShop) (verified January 2025). Prices may vary
+[^2]: Indiegogo campaign and investment information (Tracxn, CBInsights)
+[^3]: Based on UFACTORY official site and distributors (RobotShop, Top3DShop, Blue Sky Robotics) (verified January 2026). Prices may vary
 [^4]: UFACTORY official documentation (docs.ufactory.cc)
 [^5]: Franka Robotics official specifications
 [^6]: UFACTORY Lite 6 official product page

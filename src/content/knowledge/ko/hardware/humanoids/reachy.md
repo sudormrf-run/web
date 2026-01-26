@@ -12,7 +12,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Reachy 2
@@ -31,7 +31,7 @@ lastEditedAt: 2026-01-15
 |------|------|------|
 | 제조사 | Pollen Robotics (프랑스 보르도) | [공식 사이트](https://www.pollen-robotics.com/about-us/) |
 | 출시 | 2024년 10월 (보도 기준) | [The Robot Report](https://www.therobotreport.com/pollen-robotics-debuts-reachy-2-humanoid-at-ces-2025/) |
-| 총 DoF | 18 (7-DoF 암 x 2 + 3-DoF 목 + 1-DoF 안테나) | [공식 문서](https://docs.pollen-robotics.com/) |
+| 총 DoF | 21 (7-DoF 암 x 2 + 3-DoF 목 + 3-DoF 손목 x 2 + 1-DoF 안테나) | [공식 문서](https://docs.pollen-robotics.com/) |
 | 높이 | 136-166cm (조절 가능) | [Datasheet](https://www.pollen-robotics.com/wp-content/uploads/2025/02/Reachy2-Dual-arms-with-mobile-base-Datasheet-1.pdf) |
 | 무게 | 50kg | [Datasheet](https://www.pollen-robotics.com/wp-content/uploads/2025/02/Reachy2-Dual-arms-with-mobile-base-Datasheet-1.pdf) |
 | 암 페이로드 | 3kg (팔당) | [Datasheet](https://www.pollen-robotics.com/wp-content/uploads/2025/02/Reachy2-Dual-arms-with-mobile-base-Datasheet-1.pdf) |
@@ -83,7 +83,7 @@ Orbita는 Pollen Robotics가 자체 개발한 특허 기술로, Reachy의 자연
 | 항목 | 스펙 | 출처 |
 |------|------|------|
 | 자유도 | 3-DoF 병렬 메커니즘 | [공식 문서](https://docs.pollen-robotics.com/hardware-guide/specifications/motors-actuators/) |
-| 모터 | Maxon DC 브러시리스 (40W x 3) | [공식 문서](https://docs.pollen-robotics.com/hardware-guide/specifications/motors-actuators/) |
+| 모터 | Maxon DC 브러시리스 (90W), 공칭 속도 50rpm | [공식 문서](https://docs.pollen-robotics.com/hardware-guide/specifications/motors-actuators/) |
 | 제어 | FOC (Field Oriented Control) | [Pollen Forum](https://forum.pollen-robotics.com/t/orbita-presentation/20) |
 | 통신 | EtherCAT | [Pollen Forum](https://forum.pollen-robotics.com/t/orbita-presentation/20) |
 | 특징 | 쿼터니언 기반 제어 (오일러 각 대신) | [Pollen Forum](https://forum.pollen-robotics.com/t/orbita-presentation/20) |
@@ -144,7 +144,7 @@ Reachy 2는 4가지 구성으로 제공된다:
 
 ### ROS2 지원
 
-- **ROS2 Foxy** 기반 완전 통합 [^ros2-discourse]
+- **ROS2 Humble** 기반 완전 통합 [^ros2-discourse]
 - `reachy2_core`: URDF, 런치 파일, Gazebo 시뮬레이션 에셋
 - `reachy2_sdk_server`: gRPC-ROS2 브릿지 서버
 - Docker 원라인 설치 지원
@@ -162,7 +162,7 @@ reachy.head.look_at(x=0.5, y=0, z=0.4)
 ```
 
 - Windows/Mac/Linux 지원
-- Python >= 3.6
+- Python >= 3.10 (이전 버전은 타이핑 문법 호환성으로 인해 지원하지 않음)
 - Jupyter 노트북 예제 제공
 
 ### VR 텔레오퍼레이션
@@ -184,20 +184,20 @@ VR 텔레오퍼레이션은 원격 조작 연구와 AI 데이터 수집에 이�
 | 항목 | Reachy 1 (2020) | Reachy 2 (2024) |
 |------|-----------------|-----------------|
 | 무게 | 7kg | 50kg |
-| 암 페이로드 | ~1kg | 3kg |
+| 암 페이로드 | 500g | 3kg |
 | 모터 | DC 모터 | Maxon DC 브러시리스 (90-120W) |
 | 액추에이터 | 기본 서보 | Orbita 2D/3D 병렬 메커니즘 |
 | 비전 | 2 카메라 (매크로/광각) | IMX296 스테레오 + RGB-D + ToF |
 | 그리퍼 | 기본 그리퍼 | 토크 제어 평행 그리퍼 |
-| 소프트웨어 | ROS1 | ROS2 Foxy |
+| 소프트웨어 | ROS1 | ROS2 Humble |
 | 모바일 베이스 | 제한적 | AMR 옵션 (옴니휠, LiDAR) |
-| 수상 | ANA XPrize 2위 | - |
+| 수상 | ANA XPrize 2위 (2022) | - |
 
 *출처: [ROBOTS Guide](https://robotsguide.com/robots/reachy), [Pollen Robotics](https://www.pollen-robotics.com/reachy/)*
 
 ### 주요 개선점
 
-1. **강화된 페이로드**: 팔당 3kg으로 증가하여 실제 작업 수행 가능
+1. **강화된 페이로드**: 팔당 3kg으로 증가 (Reachy 1의 500g에서 6배 향상)하여 실제 작업 수행 가능
 2. **Orbita 액추에이터**: Maxon 모터 통합으로 더 자연스럽고 정밀한 움직임
 3. **향상된 센싱**: RGB-D, ToF 센서 추가로 깊이 인식 강화
 4. **모듈러 설계**: 대체 그리퍼 및 모바일 베이스 통합 용이
@@ -218,11 +218,12 @@ VR 텔레오퍼레이션은 원격 조작 연구와 AI 데이터 수집에 이�
 
 ### 연혁
 
-- **2016**: Pollen Robotics 설립
-- **2017**: Poppy (최초의 3D 프린팅 오픈소스 휴머노이드) 출시
-- **2020**: Reachy 1 출시, ANA XPrize 2위 수상
+- **2012**: Poppy 프로젝트가 Inria Bordeaux의 Flowers 연구실에서 시작 (Matthieu Lapeyre 박사 논문 연구)
+- **2016**: Pollen Robotics 설립 (5월)
+- **2020**: Reachy 1 출시, CES 2020에서 첫 공개
+- **2022**: ANA Avatar XPrize 2위 수상 ($2M 상금)
 - **2024**: Reachy 2 출시 (10월)
-- **2025**: CES 2025에서 Reachy 2 데뷔, Hugging Face에 인수 (4월, 보도 기준)
+- **2025**: CES 2025에서 Reachy 2 데뷔, Hugging Face에 인수 (4월)
 
 *출처: [Hugging Face Blog](https://huggingface.co/blog/hugging-face-pollen-robotics-acquisition), [PitchBook](https://pitchbook.com/profiles/company/472286-89)*
 

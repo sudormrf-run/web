@@ -21,7 +21,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Fourier Humanoid
@@ -94,7 +94,7 @@ China's first mass-produced humanoid robot. Unveiled at the Shanghai World Artif
 
 ### GR-2 (2024)
 
-Second-generation humanoid released in October 2024, with significantly improved hand dexterity and battery life.
+Second-generation humanoid released on September 30, 2024, with significantly improved hand dexterity and battery life.
 
 | Item | Spec |
 |------|------|
@@ -124,7 +124,17 @@ Latest model unveiled in August 2025, demonstrated at CES 2026 ([Interesting Eng
 | Height | 165cm |
 | Weight | 71kg (156 lb) |
 | Total DoF | 55 |
+| Hand DoF | 12 |
+| Single Arm Payload | 3 kg |
+| Battery | ~3 hours (hot-swappable) |
 | Positioning | Care-bot |
+
+**Key Features**:
+- **Full-Perception Multimodal Interaction System**: Integrated visual, audio, and tactile sensing
+- **31 Pressure Sensors**: Full-body touch detection and graded responses
+- **4-mic Array**: Echo cancellation, omnidirectional wake and beamforming
+- **RGB + Structured-light Module**: Facial recognition and dynamic tracking
+- **Morandi Warm-tone Palette**: Softens mechanical feel with warm colors
 
 ---
 
@@ -185,7 +195,11 @@ Fourier Smart Actuator (FSA) is Fourier's core competitive advantage. It integra
 
 - **Pre-optimized Modules**: Machine vision, path planning, force feedback control APIs provided
 - **NVIDIA Collaboration**: Simulation-based reinforcement learning using Isaac Gym
-- **Open Source**: Fourier N1 (released 2025) is China's first verified open-source humanoid ([Wikipedia](https://en.wikipedia.org/wiki/Fourier_(company)))
+- **Open Source**: Fourier N1 (released April 11, 2025) is China's first verified open-source humanoid ([Wikipedia](https://en.wikipedia.org/wiki/Fourier_(company)))
+  - Height 1.3m, weight 38kg, 23 DoF
+  - Max speed 3.5 m/s, continuous operation 2+ hours
+  - FSA 2.0 actuators, validated with 1,000+ hours of outdoor testing
+  - BOM, design drawings, assembly guides, and software code available on GitHub
 
 ---
 
@@ -220,15 +234,15 @@ Fourier's differentiator is its actual application experience in the medical fie
 
 | Item | GR-1 | GR-2 | GR-3 |
 |------|------|------|------|
-| Release | July 2023 | October 2024 | August 2025 |
+| Release | July 2023 | September 2024 | August 2025 |
 | Height | 165cm | 175cm | 165cm |
 | Weight | 55kg | 63kg | 71kg |
 | DoF (total) | 40 | 53 | 55 |
-| Hand DoF (both hands) | 11 | 24 | - |
+| Hand DoF | 11 | 24 | 12 |
 | Max Torque | 300 Nm | 380 Nm | - |
 | Actuator | FSA 1.0 | FSA 2.0 | - |
-| Tactile Sensors | X | O (6 arrays) | - |
-| Battery | Basic | 2x capacity, removable | - |
+| Tactile Sensors | X | O (6 arrays) | O (31 pressure sensors) |
+| Battery | Basic | 2x capacity, removable | ~3 hours, hot-swap |
 | Positioning | Research/Medical | General-purpose | Care-bot |
 
 ---
@@ -239,7 +253,7 @@ Fourier's differentiator is its actual application experience in the medical fie
 |------|--------------|------------|-----------|---------------|
 | **Background** | Medical/Rehabilitation | Quadruped | Startup | Automotive/AI |
 | **DoF (total)** | 53 | - | - | 40+ |
-| **Hand DoF (both hands)** | 24 | - | 48 | 44 |
+| **Hand DoF** | 24 | - | 48 | 44 |
 | **Height** | 175cm | 180cm | 165cm | 173cm |
 | **Price** | Not disclosed (GR-1: $150-170K est.) | ~$90K | $100K+ | $20-30K (target) |
 | **Strength** | Medical validation, FSA | Value | VLA (Helix) | Mass production |

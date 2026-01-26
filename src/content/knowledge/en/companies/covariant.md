@@ -11,18 +11,19 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-18
+lastEditedAt: 2026-01-26
 ---
 
 ## Overview
 
-Covariant is an AI robotics company founded in 2017 (originally as Embodied Intelligence), developing general-purpose AI for robots. The company focuses on logistics and warehouse automation, with deployments at major global retailers and logistics companies.
+Covariant is an AI robotics company founded in October 2017 (originally as Embodied Intelligence), developing general-purpose AI for robots. The company launched from stealth on January 29, 2020. It focuses on logistics and warehouse automation, with deployments at major global retailers and logistics companies across 15+ countries.
 
 | Item | Details |
 |------|---------|
 | Headquarters | Emeryville, California |
-| Founded | 2017 |
+| Founded | October 2017 |
 | Original Name | Embodied Intelligence |
+| Stealth Launch | January 29, 2020 |
 | Total Funding | $222M+ |
 | Key Customers | GXO Logistics, Otto Group, McKesson, Crate & Barrel |
 
@@ -39,7 +40,7 @@ Covariant is an AI robotics company founded in 2017 (originally as Embodied Inte
 | Rocky Duan | Former CTO | OpenAI, UC Berkeley |
 | Tianhao Zhang | Co-founder | UC Berkeley |
 
-*Note: In August 2024, Amazon hired Abbeel, Chen, and Duan. Ted Stinson currently serves as CEO.*
+*Note: In August 2024, Amazon hired Abbeel, Chen, Duan, and about 25% of the company's staff. Ted Stinson (former COO) now serves as CEO, with Tianhao Zhang as co-leader.*
 
 ---
 
@@ -86,7 +87,7 @@ Announced March 2024, an 8 billion parameter multimodal model:
 - Capacity
 - Radial
 
-**26+ customers** with active deployments
+**50+ customers and partners in 15 countries**, with hundreds of AI-powered robots deployed
 
 ---
 
@@ -94,18 +95,19 @@ Announced March 2024, an 8 billion parameter multimodal model:
 
 | Period | Round | Amount | Lead Investors |
 |--------|-------|--------|----------------|
-| 2017 | Seed | - | Lux Capital, Amplify Partners |
-| 2018 | Series A | - | Samsung NEXT |
-| 2020 | Series B | $40M | Index Ventures |
-| 2021 | Series C-1 | $80M | Index Ventures, Radical Ventures |
-| 2023 | Series C-2 | $75M | Radical Ventures, Index Ventures |
+| Nov 2017 | Seed | $7M | Amplify Partners, Lux Capital |
+| Jun 2018 | Series A | $20M | Samsung NEXT |
+| May 2020 | Series B | $40M | Index Ventures |
+| Jul 2021 | Series C-1 | $80M | Index Ventures |
+| Apr 2023 | Series C-2 | $75M | Radical Ventures, Index Ventures |
 
 **Total Funding**: $222M+
 
-### Amazon Deal (2024)
+### Amazon Deal (August 2024)
 
-- Technology licensing agreement: $380M + $20M additional
-- Key founders (Abbeel, Chen, Duan) joined Amazon
+- Technology licensing agreement: $380M + $20M additional (non-exclusive license)
+- Key founders (Abbeel, Chen, Duan) and about 25% of staff joined Amazon
+- Covariant continues operating independently under Ted Stinson (CEO) and Tianhao Zhang
 
 ---
 

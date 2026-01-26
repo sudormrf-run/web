@@ -18,7 +18,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Allegro Hand
@@ -39,17 +39,18 @@ lastEditedAt: 2026-01-15
 | 항목 | 스펙 |
 |------|------|
 | 제조사 | Wonik Robotics (원익로보틱스) |
-| 본사 위치 | 경기도 성남시 |
+| 본사 위치 | 경기도 성남시 분당구 판교로 255-20 |
 | DoF | 16 (4 손가락 x 4 관절) |
 | 손가락 | 4개 (엄지 포함) |
-| 무게 | 약 1.08 kg |
-| 페이로드 | 약 5 kg |
-| 최대 토크 | 0.70 Nm |
+| 무게 | 1.20 kg (손가락 0.17 kg x 3 + 엄지 0.19 kg) |
+| 파지 용량 | 최대 1.5 kg |
+| 최대 토크 | 0.17 Nm (오버드라이브: 0.70 Nm) |
 | 최대 관절 속도 | 0.11 s/60° |
 | 관절 센서 | 포텐셔미터 (해상도: 0.002°) |
 | 통신 방식 | CAN 버스 (1 Mbps) |
 | 제어 주파수 | 333 Hz |
-| 가격대 | $15,000 - $16,000 |
+| 전원 | 12-24V, 120W |
+| 가격대 | 약 $24,500 (V4 기준, 2024년) |
 
 ---
 
@@ -57,7 +58,7 @@ lastEditedAt: 2026-01-15
 
 Allegro Hand는 **덱스터러스 매니퓰레이션 연구의 표준 플랫폼**으로 자리매김했다:
 
-1. **접근성 있는 가격**: Shadow Hand ($100K+) 대비 약 1/6 가격으로 연구실 보급에 적합
+1. **접근성 있는 가격**: Shadow Hand (€110K+, 약 $120K) 대비 약 1/5 가격으로 연구실 보급에 적합
 2. **연구 친화적 설계**: 16 DoF 독립 토크 제어로 복잡한 그라스핑/매니퓰레이션 연구 가능
 3. **풍부한 생태계**: ROS 지원, 시뮬레이션 환경 (MuJoCo, Isaac Gym) 통합, 다양한 연구 논문
 4. **인간형 구조**: 엄지를 포함한 4손가락 구조로 인간 손 움직임 연구에 적합
@@ -142,9 +143,10 @@ Allegro Hand는 Vision-Language-Action (VLA) 및 학습 기반 매니퓰레이�
 
 ## 구매 정보
 
-- **가격 문의**: robotics.biz@wonik.com
-- **보증**: 90일 하드웨어 보증
-- **옵션**: 핑거팁 센서, AHRS 센서 별도 구매 가능
+- **가격 문의**: info@wonikrobotics.com
+- **보증**: 90일 하드웨어 보증 (일부 옵션에 따라 1년 보증 가능)
+- **옵션**: 핑거팁 센서 (XELA, BioTac 등), AHRS 센서 별도 구매 가능
+- **현재 상태**: 백오더 (재고에 따라 대기 필요)
 
 ---
 
@@ -161,6 +163,6 @@ Allegro Hand는 Vision-Language-Action (VLA) 및 학습 기반 매니퓰레이�
 
 ## See Also
 
-- [하드웨어 목록](../index)
-- [Shadow Hand](shadow-hand)
-- [LEAP Hand](leap-hand)
+- [하드웨어 목록](../)
+- [Shadow Hand](./shadow-hand)
+- [LEAP Hand](./leap-hand)

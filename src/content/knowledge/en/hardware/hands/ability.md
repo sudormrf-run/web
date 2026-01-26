@@ -31,17 +31,19 @@ lastEditedAt: 2026-01-15
 
 | Item | Spec |
 |------|------|
-| Manufacturer | PSYONIC (San Diego, California) |
-| Founder | Aadeel Akhtar, PhD (Neuroscience/Electrical Engineering) |
-| Year Founded | 2015 |
-| Weight | 490g (below average adult hand weight) |
+| Manufacturer | PSYONIC (HQ: San Diego, California; relocated from Champaign, IL in 2022) |
+| Founder | Aadeel Akhtar, PhD (PhD Neuroscience, MS Electrical & Computer Engineering - UIUC) |
+| Year Founded | 2015 (founded at University of Illinois at Urbana-Champaign) |
+| Weight | ~490g (approximately 20% lighter than average adult hand) |
 | Grip Strength | 66N (14.8 lbs) |
-| Finger Closure Time | 0.2 seconds (2x faster than competitors) |
-| Battery | 2200mAh LiPo |
+| Max Axial Lifting Load | 50 lbs recommended, 79 lbs max |
+| Finger Closure Time | 0.2 seconds (200ms, 2x+ faster than competitors) |
+| Battery | 7.4V 2200mAh LiPo, 6-8 hours depending on usage |
 | Charging | USB-C, approximately 1 hour for full charge |
-| IP Rating | IP64 (dust/splash protection) |
-| Grip Patterns | 32 (19 pre-defined) |
-| Construction | Carbon fiber case + 6 motors |
+| IP Rating | IP64 (complete dust protection, splash resistant - not submersible) |
+| Grip Patterns | 32 (19 pre-defined, additional customization available) |
+| Construction | Carbon fiber case + 6 brushless DC motors |
+| Consumer Price | $15,500 (manufacturing cost ~$1,800) |
 
 ---
 
@@ -57,7 +59,7 @@ PSYONIC Ability Hand is a prosthetic that commercialized multi-touch sensing fun
 
 Founder Dr. Aadeel Akhtar was inspired by an experience at age 7 when he met a girl in Pakistan who had lost her leg and was using a tree branch as a crutch. [^3] This experience led him to study neural engineering and develop a mission to create affordable, advanced prosthetics accessible to everyone.
 
-The first prototype was tested in Ecuador in 2014, and when fitted to Juan Suquillo, a former soldier who lost his hand in a landmine explosion in 1989, he said "part of me has returned."
+In the summer of 2014, Akhtar traveled to Quito, Ecuador with the Range of Motion Project (ROMP) as a graduate student to test the first 3D-printed prosthetic hand prototype. When fitted to Juan Suquillo, who lost his hand approximately 35 years earlier in the Ecuador-Peru war, he was able to pinch his thumb and index finger together for the first time, saying "part of me has returned."
 
 ---
 
@@ -101,7 +103,9 @@ The first prototype was tested in Ecuador in 2014, and when fitted to Juan Suqui
 
 | Category | Price (as of 2024) |
 |----------|-------------------|
-| Market Price | $25,000 - $50,000 |
+| Consumer Price | $15,500 |
+| Manufacturing Cost | ~$1,800 |
+| Expected After Insurance | $10,000 - $20,000 (varies by insurance terms) |
 | Competitor Premium Prosthetics | $50,000 - $150,000 |
 
 ### Insurance Coverage (US)
@@ -122,7 +126,7 @@ PSYONIC Ability Hand is actively utilized not only as a prosthetic but also in r
 
 ### NASA
 
-- **Valkyrie Humanoid Robot**: Research on International Space Station (ISS) console control
+- **Valkyrie Humanoid Robot**: Space-relevant manipulation research (e.g., ISS-style console controls)
 - Research on hands for humanoid astronaut robots
 
 ### Meta
@@ -134,19 +138,20 @@ PSYONIC Ability Hand is actively utilized not only as a prosthetic but also in r
 
 ### Apptronik
 
-- **Apollo Humanoid Robot**: Ability Hand integration demonstrated at 2023 IEEE Robotics and Automation Conference
-- Apollo specs: Height 1.7m (5'9"), Weight 73kg (160lbs)
+- **Apollo Humanoid Robot**: Ability Hand integration demonstrated at 2023 IEEE Robotics and Automation Conference; Apollo officially launched November 2023
+- Apollo specs: Height 1.7m (5'9"), Weight 73kg (160lbs), 25kg (55lbs) lifting capacity, ~4 hours operation on swappable battery
 - Exploring Ability Hand utilization in humanoid robot production lines
-- Apptronik history: Founded after collaboration with UT Austin roboticists on NASA DARPA Robotics Challenge
+- Apptronik history: Founded from UT Austin Human Centered Robotics Lab after NASA DARPA Robotics Challenge collaboration
 
 ### Research Product Release
 
 PSYONIC has released Ability Hand separately for robotics researchers worldwide. [^5]
 
-- **Open API**: Full system integration possible
+- **Open API**: Full system integration possible (BLE, I2C, UART, RS485 communication protocols)
 - **Fast Speed**: 200ms closure time
-- **Multi-Touch**: Suitable for tactile feedback research
+- **Multi-Touch**: 30 touch sensor values streaming, suitable for tactile feedback research
 - **Durability**: Suitable for repeated testing in research environments
+- **Research Institutions**: Currently used at Georgia Tech, UIUC, Northwestern, ETH Zurich, Shirley Ryan Ability Lab, and more
 
 ---
 
@@ -156,16 +161,18 @@ PSYONIC has released Ability Hand separately for robotics researchers worldwide.
 
 ### Shark Tank Investment (February 2024) [^6]
 
-- **Investment**: $1,000,000 (6% equity)
-- **Investors**: Lori Greiner, Daymond John, Kevin O'Leary
-- **Negotiated Valuation**: $50,000,000
+- **Original Ask**: $1,000,000 (2% equity, $50M valuation)
+- **Final Investment**: $1,000,000 (6% equity)
+- **Investors**: Lori Greiner, Daymond John, Kevin O'Leary (3-shark joint deal)
+- **Valuation Structure**: Combination of common and advisory shares, setting valuation at $50M [^6]
+- **Valuation as of June 2024**: ~$65M
 
 ### Growth Status (as of 2024)
 
-- **Employees**: Over 30 (engineers, physicians, social workers, public health experts)
-- **Facility**: 5,000 sq.ft. in San Diego (expansion plans announced)
-- **Production**: 1,000 units per year (targeting 10,000)
-- **Funding**: $4.1M seed funding in 2024
+- **Employees**: ~20-37 (engineers, physicians, social workers, public health experts)
+- **Facility**: 22,000 sq.ft. in San Diego (5x larger than previous facility)
+- **Production**: 500 units per year (2024, up from 100; targeting 1,000 annually)
+- **Funding**: $4.1M equity crowdfunding in January 2024 (StartEngine)
 
 ### Future Development Plans
 
@@ -184,7 +191,7 @@ PSYONIC has released Ability Hand separately for robotics researchers worldwide.
 
 ## See Also
 
-- [Hardware List](../index)
+- [Hardware List](./)
 - [Inspire Hand](inspire)
 
 ---
@@ -200,4 +207,4 @@ PSYONIC has released Ability Hand separately for robotics researchers worldwide.
 
 ---
 
-*Information in this document is as of January 2025. Please refer to the official website for the latest information.*
+*Information in this document was originally written as of January 2025 and fact-checked/updated in January 2026. Please refer to the official website for the latest information.*

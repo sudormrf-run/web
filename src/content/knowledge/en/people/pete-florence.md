@@ -1,7 +1,7 @@
 ---
 title: Pete Florence
-description: Google DeepMind to Physical Intelligence Co-founder
-tags: [pete-florence, google, deepmind, physical-intelligence, dense-descriptors]
+description: Google DeepMind to Generalist AI Co-founder
+tags: [pete-florence, google, deepmind, generalist-ai, dense-object-nets, robotics]
 category: people
 
 # Authorship
@@ -11,73 +11,77 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Profile
 
 | Field | Details |
 |-------|---------|
-| Current Position | Physical Intelligence Co-founder |
-| Previous | Google DeepMind Research Scientist |
-| PhD | MIT |
+| Current Position | Generalist AI Co-founder & CEO |
+| Previous | Google DeepMind Senior Research Scientist |
+| PhD | MIT (Computer Science) |
 | Advisor | Russ Tedrake |
 
 ---
 
 ## Key Contributions
 
-- **Dense Object Nets**: Learning dense visual descriptors for objects
-- **Implicit Representations for Robotics**: Applying NeRF and similar methods to robotics
-- **Physical Intelligence Founding**: Participated in pi0 development
-- **Google Robotics Research**: Visual representation learning research
+- **Dense Object Nets**: Learning dense visual descriptors for objects (CoRL 2018 Best Paper)
+- **PaLM-E**: Embodied Multimodal Language Model co-author
+- **RT-2**: Vision-Language-Action Models co-author
+- **Generalist AI Founding**: Established general-purpose robot intelligence startup (2024)
 
 ---
 
 ## Research Timeline
 
-### MIT PhD (2014-2019)
+### MIT PhD (Graduated 2019)
 
 **Advised by Russ Tedrake**
 
 | Year | Work | Impact |
 |------|------|--------|
-| 2018 | **Dense Object Nets** | Dense visual descriptors |
-| 2019 | PhD Graduation | |
+| 2018 | **Dense Object Nets** | CoRL 2018 Best Paper Award |
+| 2019 | PhD Thesis: "Dense Visual Learning for Robot Manipulation" | MIT Graduation |
 
-### Google Brain / DeepMind (2019-2024)
+### Google DeepMind (2019-2024)
 
-**Visual Representation + Robot Learning**
-
-| Year | Work | Impact |
-|------|------|--------|
-| 2019 | Joined Google | Google Brain Robotics |
-| 2020 | Implicit Representations | NeRF + Robotics |
-| 2021 | Transporter Networks related | Object rearrangement |
-| 2022 | Continued visual representation research | |
-
-### Physical Intelligence (2024-present)
+**Senior Research Scientist**
 
 | Year | Work | Impact |
 |------|------|--------|
-| 2024 | Co-founded Physical Intelligence | |
-| 2024 | **pi0** Development participation | |
+| 2020 | Self-Supervised Correspondence | IEEE RA-L Best Paper Award |
+| 2023 | **PaLM-E** | Embodied Multimodal Language Model |
+| 2023 | **RT-2** | Vision-Language-Action Models |
+| 2023 | Socratic Models | ICLR 2023 |
+
+### Generalist AI (2024-present)
+
+**Co-founder & CEO**
+
+| Year | Work | Impact |
+|------|------|--------|
+| 2024 | Co-founded Generalist AI | Founded with Andy Zeng, Andrew Barry |
+| 2025 | NVentures Investment | Nvidia backing |
 
 ---
 
 ## Major Publications
 
 ### Dense Descriptors
-- **Dense Object Nets** (CoRL 2018) - Most influential paper
-- Self-Supervised Correspondence (2019)
+- **Dense Object Nets** (CoRL 2018) - Best Paper Award
+- Self-Supervised Correspondence in Visuomotor Policy Learning (IEEE RA-L 2020) - Best Paper Award
 
-### Implicit Representations
-- NeRF for Manipulation (2021)
-- Implicit Behavioral Cloning (2021)
+### Large Language Models + Robotics
+- **PaLM-E: An Embodied Multimodal Language Model** (2023)
+- **RT-2: Vision-Language-Action Models** (2023)
+- Socratic Models: Composing Zero-Shot Multimodal Reasoning with Language (ICLR 2023)
+- Code as Policies: Language Model Programs for Embodied Control
 
-### Language + Vision + Action
-- CLIPort related research
-- Language-conditioned manipulation
+### Other Notable Works
+- DeepSDF (CVPR 2019 Best Paper Finalist)
+- Scaling Up and Distilling Down: Language-Guided Robot Skill Acquisition
 
 ---
 
@@ -99,64 +103,45 @@ Applications:
 ```
 
 **Impact:**
+- Won CoRL 2018 Best Paper Award
 - Core research in robot visual representation learning
-- Influenced Transporter Networks and others
-- Dense correspondence application to robotics
-
-### Implicit Representations for Robotics
-```
-Core: Utilizing implicit representations like NeRF for robot manipulation
-
-Advantages:
-- Continuous 3D representation
-- Novel view synthesis
-- Physical interaction prediction
-```
+- Pioneered dense correspondence application to robotics
 
 ---
 
-## Philosophy & Direction
+## Awards
 
-### Research Philosophy
-> "Good visual representation is the key to robot learning. What you see determines what you can do."
-
-### Research Direction Evolution
-1. **2014-2019**: Dense visual descriptors, self-supervised learning
-2. **2019-2022**: Implicit representations, NeRF + robotics
-3. **2022-2024**: Language-conditioned manipulation
-4. **2024-present**: Foundation models, Physical Intelligence
+- **CoRL 2018 Best Paper Award** - Dense Object Nets
+- **IEEE RA-L 2020 Best Paper Award** - Self-Supervised Correspondence
+- **CVPR 2019 Best Paper Finalist** - DeepSDF
 
 ---
 
-## MIT to Google to Physical Intelligence
+## Generalist AI
 
-### MIT Experience
-- Advised by Russ Tedrake (robot control expert)
-- Experience with Drake simulator
-- Theory + practical robotics combination
+In 2024, Florence left Google DeepMind to co-found Generalist AI with Andy Zeng and Andrew Barry.
 
-### Google Experience
-- Large-scale research infrastructure
-- Collaboration with RT series colleagues
-- Foundation model experience
+### Co-founders
+- **Pete Florence** (CEO) - formerly Google DeepMind
+- **Andy Zeng** (Chief Scientist) - formerly Google DeepMind
+- **Andrew Barry** (CTO) - formerly Boston Dynamics
 
-### Physical Intelligence Founding
-- From academic research to actual productization
-- Founded together with colleagues
+### Mission
+The company aims to make general-purpose robots a reality, taking a new approach at the intersection of data, models, and hardware.
 
 ---
 
 ## Links
 
 - [Personal Website](https://www.peteflorence.com/)
-- [Google Scholar](https://scholar.google.com/citations?user=XXXXXXXXX)
-- [Physical Intelligence](https://physicalintelligence.company/)
+- [Google Scholar](https://scholar.google.com/citations?user=YfPA4YsAAAAJ&hl=en)
+- [X (Twitter)](https://x.com/peteflorence)
+- [GitHub](https://github.com/peteflorence)
+- [Generalist AI](https://generalistai.com/)
 
 ---
 
 ## See Also
 
-- [pi0](../models/pi0)
-- [Physical Intelligence](../companies/physical-intelligence)
 - [Karol Hausman](karol-hausman)
 - [Sergey Levine](sergey-levine)

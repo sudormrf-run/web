@@ -11,16 +11,17 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## Profile
 
 | 항목 | 내용 |
 |------|------|
-| 현직 | Physical Intelligence 공동창업자 |
-| 이전 | Google DeepMind Staff Research Scientist |
-| PhD | USC (University of Southern California) |
+| 현직 | Physical Intelligence 공동창업자 & CEO |
+| 이전 | Google DeepMind Staff Research Scientist, Stanford 겸임교수 (2021-) |
+| PhD | USC (University of Southern California), 2013-2018, Gaurav Sukhatme 지도 |
+| M.Sc. | Technical University of Munich (2011-2013), Warsaw University of Technology (2007-2012) |
 | 국적 | 폴란드 |
 
 ---
@@ -36,22 +37,23 @@ lastEditedAt: 2026-01-15
 
 ## Research Timeline
 
-### PhD & Early Career (2012-2017)
+### PhD & Early Career (2013-2018)
 
-**USC - Stefan Schaal 지도**
+**USC - Gaurav Sukhatme 지도 (Stefan Schaal 그룹과 협업)**
 
 | Year | Work | Impact |
 |------|------|--------|
 | 2015 | Skill Learning | 로봇 스킬 학습 |
 | 2017 | Multi-Task Learning | 다중 태스크 로봇 학습 |
 
-### Google Brain / DeepMind (2017-2024)
+### Google Brain / DeepMind (2018-2024)
 
 **Google Robotics 핵심 연구**
 
 | Year | Work | Impact |
 |------|------|--------|
-| 2018 | 입사 | Google Brain Robotics |
+| 2017 | 인턴십 | Google Brain (PhD 중) |
+| 2018 | 정규직 입사 | Google Brain Robotics |
 | 2020 | Multi-Task RL | 다중 태스크 학습 |
 | 2022 | **SayCan** | LLM + 로봇 grounding |
 | 2022 | **RT-1** | Robotics Transformer |
@@ -126,8 +128,8 @@ RT-2: 단일 VLM이 이미지→액션 직접 출력
 > "로봇 AI의 핵심은 일반화. 특정 태스크가 아닌 범용 능력이 목표"
 
 ### 연구 방향 변화
-1. **2012-2017**: Skill learning, multi-task RL
-2. **2017-2022**: Large-scale robot learning at Google
+1. **2013-2018**: Skill learning, multi-task RL (PhD at USC)
+2. **2018-2022**: Large-scale robot learning at Google
 3. **2022-2023**: LLM + robotics, VLA models
 4. **2024-현재**: Foundation models, Physical Intelligence
 
@@ -149,9 +151,11 @@ RT-2: 단일 VLM이 이미지→액션 직접 출력
 
 ## Links
 
-- [Google Scholar](https://scholar.google.com/citations?user=XXXXXXXXX)
-- [Physical Intelligence](https://physicalintelligence.company/)
-- [Twitter/X](https://twitter.com/hauaborisov)
+- [Google Scholar](https://scholar.google.com/citations?user=yy0UFOwAAAAJ)
+- [Personal Website](https://karolhausman.github.io/)
+- [Physical Intelligence](https://www.physicalintelligence.company/)
+- [LinkedIn](https://www.linkedin.com/in/karolhausman/)
+- [Twitter/X](https://x.com/hausman_k)
 
 ---
 

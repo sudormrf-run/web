@@ -18,7 +18,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Allegro Hand
@@ -39,17 +39,18 @@ lastEditedAt: 2026-01-15
 | Item | Spec |
 |------|------|
 | Manufacturer | Wonik Robotics |
-| Headquarters | Seongnam, Gyeonggi Province, South Korea |
+| Headquarters | Bundang-gu, Seongnam-si, Gyeonggi Province, South Korea |
 | DoF | 16 (4 fingers x 4 joints) |
 | Fingers | 4 (including thumb) |
-| Weight | Approximately 1.08 kg |
-| Payload | Approximately 5 kg |
-| Max Torque | 0.70 Nm |
+| Weight | 1.20 kg (finger 0.17 kg x 3 + thumb 0.19 kg) |
+| Grasp Capacity | Up to 1.5 kg |
+| Max Torque | 0.17 Nm (overdrive: 0.70 Nm) |
 | Max Joint Speed | 0.11 s/60° |
 | Joint Sensor | Potentiometer (resolution: 0.002°) |
 | Communication | CAN bus (1 Mbps) |
 | Control Frequency | 333 Hz |
-| Price Range | $15,000 - $16,000 |
+| Power | 12-24V, 120W |
+| Price Range | Approx. $24,500 (V4, as of 2024) |
 
 ---
 
@@ -57,7 +58,7 @@ lastEditedAt: 2026-01-15
 
 Allegro Hand has established itself as a **standard platform for dexterous manipulation research**:
 
-1. **Accessible Pricing**: At approximately 1/6 the price of Shadow Hand ($100K+), suitable for research lab deployment
+1. **Accessible Pricing**: At approximately 1/5 the price of Shadow Hand (€110K+, ~$120K), suitable for research lab deployment
 2. **Research-Friendly Design**: 16 DoF independent torque control enables complex grasping/manipulation research
 3. **Rich Ecosystem**: ROS support, simulation environment integration (MuJoCo, Isaac Gym), various research papers
 4. **Anthropomorphic Structure**: 4-finger structure including thumb suitable for human hand movement research
@@ -142,9 +143,10 @@ Allegro Hand is widely used in Vision-Language-Action (VLA) and learning-based m
 
 ## Purchase Information
 
-- **Price Inquiry**: robotics.biz@wonik.com
-- **Warranty**: 90-day hardware warranty
-- **Options**: Fingertip sensors, AHRS sensors available separately
+- **Price Inquiry**: info@wonikrobotics.com
+- **Warranty**: 90-day hardware warranty (1-year warranty available with certain options)
+- **Options**: Fingertip sensors (XELA, BioTac, etc.), AHRS sensors available separately
+- **Availability**: Currently on backorder
 
 ---
 
@@ -161,6 +163,6 @@ Allegro Hand is widely used in Vision-Language-Action (VLA) and learning-based m
 
 ## See Also
 
-- [Hardware List](../index)
-- [Shadow Hand](shadow-hand)
-- [LEAP Hand](leap-hand)
+- [Hardware List](../)
+- [Shadow Hand](./shadow-hand)
+- [LEAP Hand](./leap-hand)

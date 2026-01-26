@@ -4,7 +4,7 @@ description: HuggingFace와 TheRobotStudio가 협력하여 개발한 오픈소�
 tags: [lerobot, so100, so101, low-cost, 3d-print, open-source, feetech, sts3215, smolvla, vla]
 category: hardware
 created: 2025-05-01
-updated: 2026-01-09
+updated: 2026-01-26
 
 # Authorship
 createdBy:
@@ -13,7 +13,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # LeRobot Arms (SO-100/SO-101)
@@ -35,7 +35,7 @@ LeRobot SO-100/SO-101은 **HuggingFace**와 **TheRobotStudio**가 공동 개발�
 | **유형** | 저가 3D 프린트 로봇 암 |
 | **DoF** | 6 (Base, Shoulder, Elbow, Wrist Flex, Wrist Roll, Gripper) |
 | **부품 비용** | ~$130 (단일 암) / ~$230 (Leader-Follower 쌍) |
-| **공개 시기** | SO-100: 2024, SO-101: 2025년 5월 |
+| **공개 시기** | SO-100: 2024년 10월, SO-101: 2025년 4월 |
 
 ---
 
@@ -58,7 +58,7 @@ LeRobot SO-100/SO-101의 가장 중요한 기여는 **로보틱스 연구의 진
 
 | 항목 | SO-100 | SO-101 |
 |------|--------|--------|
-| **출시** | 2024 | 2025년 5월 |
+| **출시** | 2024년 10월 | 2025년 4월 |
 | **상태** | Deprecated | 현재 권장 버전 |
 | **배선** | Joint 3에서 단선 문제 발생 | 개선된 배선으로 단선 방지 |
 | **조립** | 기어 제거 작업 필요 | 기어 제거 불필요, 조립 간소화 |
@@ -78,14 +78,14 @@ LeRobot SO-100/SO-101의 가장 중요한 기여는 **로보틱스 연구의 진
 
 ## 하드웨어 스펙
 
-> **출처 및 검증일**: 아래 사양은 [Feetech 공식 사양](https://www.seeedstudio.com/STS3215-19kg-cm-7-4V-Serial-Servo-p-6338.html) 및 [LeRobot SO-101 문서](https://huggingface.co/docs/lerobot/so101) 기준 (2025년 5월 검증). 최신 정보는 공식 문서 확인 권장.
+> **출처 및 검증일**: 아래 사양은 [Feetech 공식 사양](https://www.feetechrc.com/products.html?keyword=STS3215) 및 [LeRobot SO-101 문서](https://huggingface.co/docs/lerobot/so101) 기준 (2026년 1월 검증). 최신 정보는 공식 문서 확인 권장.
 
 ### STS3215 서보 모터 사양
 
 | 항목 | 7.4V 버전 | 12V 버전 |
 |------|-----------|----------|
-| **스톨 토크** | 16.5 kg.cm (6V) / 19.5 kg.cm (7.4V) | 30 kg.cm |
-| **정격 토크** | 5 kg.cm | - |
+| **스톨 토크** | 16.5 kg.cm (6V) | 30 kg.cm (12V) |
+| **정격 토크** | 5 kg.cm | 10 kg.cm |
 | **인코더** | 12-bit 자기 인코더 (0-4096) | 12-bit 자기 인코더 |
 | **회전 범위** | 360도 연속 회전, 멀티턴 지원 (±7회전) | 동일 |
 | **통신** | TTL Serial Bus (양방향) | TTL Serial Bus |
@@ -111,7 +111,7 @@ LeRobot SO-100/SO-101의 가장 중요한 기여는 **로보틱스 연구의 진
 
 ## Bill of Materials (BOM)
 
-> **가격 정보**: 아래 가격은 [SO-ARM100 GitHub BOM](https://github.com/TheRobotStudio/SO-ARM100) 및 [Seeed Studio](https://www.seeedstudio.com/) 기준 (2025년 5월 확인). 환율 및 공급 상황에 따라 변동될 수 있음.
+> **가격 정보**: 아래 가격은 [SO-ARM100 GitHub BOM](https://github.com/TheRobotStudio/SO-ARM100) 및 [Seeed Studio](https://www.seeedstudio.com/) 기준 (2026년 1월 확인). 환율 및 공급 상황에 따라 변동될 수 있음.
 
 ### Leader + Follower 쌍 (듀얼 암 구성)
 
@@ -280,7 +280,7 @@ python lerobot/scripts/train.py \
 
 SmolVLA의 커뮤니티 데이터셋 사전학습은 SO-100 실물 로봇 벤치마크에서 **성공률을 51.7%에서 78.3%로 향상**시켰다.
 
-> **출처**: [SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics](https://arxiv.org/abs/2506.01844) (arXiv:2506.01844, 2025년 6월). 해당 수치는 task-specific training만 적용 시 51.7%, 커뮤니티 데이터셋 사전학습 추가 시 78.3%의 성공률을 보고함.
+> **출처**: [SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics](https://arxiv.org/abs/2506.01844) (arXiv:2506.01844, 2025년 6월 2일). 해당 수치는 task-specific training만 적용 시 51.7%, 커뮤니티 데이터셋 사전학습 추가 시 78.3%의 성공률을 보고함. SmolVLA(450M)는 ACT(80M)의 48.3%와 π0(3.5B)의 61.7% 성공률을 크게 능가한다.
 
 ```python
 # SmolVLA 파인튜닝 예시
@@ -302,8 +302,8 @@ policy = SmolVLAPolicy.from_pretrained("lerobot/smolvla_base")
 | 구성요소 | 수량 | 용도 |
 |----------|------|------|
 | SO-101 암 | 2 | 양팔 매니퓰레이션 |
-| LeKiwi 베이스 | 1 | 이동 플랫폼 |
-| Anker 300Wh 배터리 | 1 | 전원 |
+| LeKiwi 베이스 | 1 | 이동 플랫폼 (~$300) |
+| 배터리 | 1 | 전원 |
 | 손목 RGB 카메라 | 2 | 시각 피드백 |
 | 헤드 뎁스 카메라 (2-DoF 넥) | 1 | 환경 인식 |
 | **총 비용** | - | **~$660** |

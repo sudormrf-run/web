@@ -11,7 +11,7 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 ## 핵심 의의
@@ -58,7 +58,7 @@ Mobile ALOHA는 Stanford IRIS Lab에서 개발한 저비용 전신 텔레오퍼�
 | 모터 | 150W 브러시리스 서보 x 2 |
 | 최대 속도 | 1.6 m/s (인간 보행 속도) |
 | 페이로드 | 100 kg |
-| 크기 (L x W x H) | 702 x 610 x 169 mm |
+| 크기 (L x W x H) | 660 x 516 x 163.5 mm |
 | 지상고 | 30 mm |
 | 장애물 통과 | 10 mm 높이, 8도 경사 |
 | 운용 시간 | 최대 4시간 (100kg 적재) |
@@ -112,6 +112,13 @@ Mobile ALOHA는 Stanford IRIS Lab에서 개발한 저비용 전신 텔레오퍼�
 | 무게 | 14 kg |
 | 위치 | 베이스 하단 (균형추 역할 겸용) |
 | 특징 | 무선 운용 (언테더드) |
+
+### 베이스 무게
+
+| 항목 | 스펙 |
+|------|------|
+| AgileX Tracer 무게 | 30 kg |
+| 배터리 무게 | 14 kg |
 
 ---
 
@@ -209,10 +216,10 @@ Mobile ALOHA: 16-DoF
 
 | 태스크 | 성공률 | 설명 |
 |--------|--------|------|
-| Wipe Wine | **95%** | 와인 흘림 닦기 |
+| Wipe Wine | **100%** | 와인 흘림 닦기 |
 | Call Elevator | **95%** | 엘리베이터 호출 및 탑승 |
 | Use Cabinet | **85%** | 벽 캐비닛 열고 냄비 수납 |
-| High Five | **85%** | 하이파이브 |
+| High Five | **85%** | 하이파이브 (20개 시연) |
 | Rinse Pan | **80%** | 주방 수도로 팬 헹구기 |
 | Push Chairs | **80%** | 의자 정리 |
 | Cook Shrimp | **40%** | 새우 볶기 (75초, 20개 시연만 사용) |
@@ -309,12 +316,14 @@ Mobile ALOHA: 16-DoF
 
 ## 후속 발전
 
-### ALOHA 2 (Google DeepMind, 2024)
+### ALOHA 2 (Google DeepMind, Stanford, Hoku Labs, 2024)
 
-Google DeepMind에서 개선된 하드웨어 버전 발표:
-- 향상된 강성 및 정밀도
-- 개선된 그리퍼 설계
-- 더 나은 케이블 관리
+Google DeepMind, Stanford, Hoku Labs 공동 개발 개선 버전:
+- **그리퍼 조작력 개선**: 리더 암 그리퍼 조작에 필요한 힘 14.68N → 0.84N (10배 감소)
+- **그리퍼 파지력 2배 증가**: 팔로워 그리퍼 최대 파지력 12.8N → 27.9N
+- **소재 업그레이드**: PLA/아크릴 → 3D 프린팅 탄소섬유 나일론
+- **수동 중력 보상**: 고무밴드 → 조절식 리트랙터로 변경, 조작 효율 42% 향상
+- **대규모 데이터 수집**: 로봇 1대당 하루 100s~1000s 시연 수집 가능
 
 ### 상업화
 
@@ -335,7 +344,7 @@ Trossen Robotics에서 ALOHA 키트 판매:
 
 ### 산업적 함의
 
-> "Mobile ALOHA has demonstrated something unique: relatively cheap robot hardware can solve really complex problems." - Lerrel Pinto, NYU
+> "Mobile ALOHA has demonstrated something unique: relatively cheap robot hardware can solve really complex problems." - Lerrel Pinto, NYU 컴퓨터공학 부교수
 
 - 가정용 로봇의 실현 가능성 시연
 - 저비용 하드웨어로도 복잡한 태스크 수행 가능

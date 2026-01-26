@@ -12,7 +12,7 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-26
 ---
 
 # Reachy 2
@@ -31,7 +31,7 @@ lastEditedAt: 2026-01-15
 |------|------|--------|
 | Manufacturer | Pollen Robotics (Bordeaux, France) | [Official Site](https://www.pollen-robotics.com/about-us/) |
 | Release | October 2024 (per reports) | [The Robot Report](https://www.therobotreport.com/pollen-robotics-debuts-reachy-2-humanoid-at-ces-2025/) |
-| Total DoF | 18 (7-DoF arm x 2 + 3-DoF neck + 1-DoF antenna) | [Official Documentation](https://docs.pollen-robotics.com/) |
+| Total DoF | 21 (7-DoF arm x 2 + 3-DoF neck + 3-DoF wrist x 2 + 1-DoF antenna) | [Official Documentation](https://docs.pollen-robotics.com/) |
 | Height | 136-166cm (adjustable) | [Datasheet](https://www.pollen-robotics.com/wp-content/uploads/2025/02/Reachy2-Dual-arms-with-mobile-base-Datasheet-1.pdf) |
 | Weight | 50kg | [Datasheet](https://www.pollen-robotics.com/wp-content/uploads/2025/02/Reachy2-Dual-arms-with-mobile-base-Datasheet-1.pdf) |
 | Arm Payload | 3kg (per arm) | [Datasheet](https://www.pollen-robotics.com/wp-content/uploads/2025/02/Reachy2-Dual-arms-with-mobile-base-Datasheet-1.pdf) |
@@ -83,7 +83,7 @@ Orbita is a patented technology self-developed by Pollen Robotics, the key compo
 | Item | Spec | Source |
 |------|------|--------|
 | DoF | 3-DoF parallel mechanism | [Official Documentation](https://docs.pollen-robotics.com/hardware-guide/specifications/motors-actuators/) |
-| Motors | Maxon DC brushless (40W x 3) | [Official Documentation](https://docs.pollen-robotics.com/hardware-guide/specifications/motors-actuators/) |
+| Motors | Maxon DC brushless (90W), nominal speed 50rpm | [Official Documentation](https://docs.pollen-robotics.com/hardware-guide/specifications/motors-actuators/) |
 | Control | FOC (Field Oriented Control) | [Pollen Forum](https://forum.pollen-robotics.com/t/orbita-presentation/20) |
 | Communication | EtherCAT | [Pollen Forum](https://forum.pollen-robotics.com/t/orbita-presentation/20) |
 | Feature | Quaternion-based control (instead of Euler angles) | [Pollen Forum](https://forum.pollen-robotics.com/t/orbita-presentation/20) |
@@ -144,7 +144,7 @@ The mobile base features 3 omniwheels and multiple sensors. [^pollen-reachy]
 
 ### ROS2 Support
 
-- **ROS2 Foxy** fully integrated [^ros2-discourse]
+- **ROS2 Humble** fully integrated [^ros2-discourse]
 - `reachy2_core`: URDF, launch files, Gazebo simulation assets
 - `reachy2_sdk_server`: gRPC-ROS2 bridge server
 - Docker one-line installation support
@@ -162,7 +162,7 @@ reachy.head.look_at(x=0.5, y=0, z=0.4)
 ```
 
 - Windows/Mac/Linux support
-- Python >= 3.6
+- Python >= 3.10 (older versions not supported due to typing syntax compatibility)
 - Jupyter notebook examples provided
 
 ### VR Teleoperation
@@ -184,20 +184,20 @@ VR teleoperation is ideal for remote manipulation research and AI data collectio
 | Item | Reachy 1 (2020) | Reachy 2 (2024) |
 |------|-----------------|-----------------|
 | Weight | 7kg | 50kg |
-| Arm Payload | ~1kg | 3kg |
+| Arm Payload | 500g | 3kg |
 | Motors | DC motors | Maxon DC brushless (90-120W) |
 | Actuators | Basic servos | Orbita 2D/3D parallel mechanism |
 | Vision | 2 cameras (macro/wide) | IMX296 stereo + RGB-D + ToF |
 | Gripper | Basic gripper | Torque-controlled parallel gripper |
-| Software | ROS1 | ROS2 Foxy |
+| Software | ROS1 | ROS2 Humble |
 | Mobile Base | Limited | AMR option (omniwheel, LiDAR) |
-| Awards | ANA XPrize 2nd place | - |
+| Awards | ANA XPrize 2nd place (2022) | - |
 
 *Source: [ROBOTS Guide](https://robotsguide.com/robots/reachy), [Pollen Robotics](https://www.pollen-robotics.com/reachy/)*
 
 ### Major Improvements
 
-1. **Enhanced Payload**: Increased to 3kg per arm for real task performance
+1. **Enhanced Payload**: Increased to 3kg per arm (6x improvement from Reachy 1's 500g) for real task performance
 2. **Orbita Actuators**: Maxon motor integration for more natural and precise movements
 3. **Enhanced Sensing**: RGB-D, ToF sensor additions for improved depth perception
 4. **Modular Design**: Easy alternative gripper and mobile base integration
@@ -218,11 +218,12 @@ VR teleoperation is ideal for remote manipulation research and AI data collectio
 
 ### History
 
-- **2016**: Pollen Robotics founded
-- **2017**: Poppy (first 3D-printed open-source humanoid) released
-- **2020**: Reachy 1 released, ANA XPrize 2nd place
+- **2012**: Poppy project started at Inria Bordeaux's Flowers lab (Matthieu Lapeyre's PhD research)
+- **2016**: Pollen Robotics founded (May)
+- **2020**: Reachy 1 released, debuted at CES 2020
+- **2022**: ANA Avatar XPrize 2nd place ($2M prize)
 - **2024**: Reachy 2 released (October)
-- **2025**: Reachy 2 debuted at CES 2025, acquired by Hugging Face (April, per reports)
+- **2025**: Reachy 2 debuted at CES 2025, acquired by Hugging Face (April)
 
 *Source: [Hugging Face Blog](https://huggingface.co/blog/hugging-face-pollen-robotics-acquisition), [PitchBook](https://pitchbook.com/profiles/company/472286-89)*
 

@@ -37,12 +37,12 @@ lastEditedAt: 2026-01-15
 | Item | Details |
 |------|---------|
 | Full Name | A Low-cost Open-source Hardware System for Bimanual Teleoperation |
-| Developer | Stanford IRIS Lab (Chelsea Finn) + Trossen Robotics |
-| Key Researchers | Tony Z. Zhao, Zipeng Fu, Chelsea Finn |
+| Developer | Stanford University, UC Berkeley, Meta; built with Interbotix arms (Trossen Robotics) |
+| Key Researchers | Tony Z. Zhao, Vikash Kumar, Sergey Levine, Chelsea Finn |
 | Publication | RSS 2023 |
-| Configuration | ViperX 300 arms x 2 (Follower) + WidowX 250 arms x 2 (Leader) |
-| Total Cost | Approximately $32,000 (including webcams, laptop) |
-| Size | L121.9 x W101.6 x H203.2 cm |
+| Configuration | Interbotix ViperX-300 (6DoF) x 2 (Follower) + Interbotix WidowX-250 (6DoF) x 2 (Leader) |
+| Total Cost | Roughly ~$20k–$32k depending on what’s included (leaders, cameras, compute) |
+| Size | Not standardized; depends on frame/table build (no single canonical dimension in paper) |
 | Applications | VLA data collection, bimanual manipulation research, imitation learning |
 
 ---
@@ -51,7 +51,7 @@ lastEditedAt: 2026-01-15
 
 ### 1. Standard Platform for VLA Research
 
-ALOHA is not just hardware, but has established itself as **core infrastructure for modern robot imitation learning research**. At a price of $32,000, it provides performance comparable to commercial bimanual robots ($200,000+), revolutionizing research accessibility.
+ALOHA is not just hardware, but has established itself as **core infrastructure for modern robot imitation learning research**. At a low five-figure cost (often quoted in the ~$20k–$30k+ range depending on what’s included), it provides performance comparable to commercial bimanual robots ($200,000+), revolutionizing research accessibility.
 
 ### 2. Original Platform for ACT (Action Chunking with Transformers)
 
@@ -92,38 +92,33 @@ Human bimanual manipulation demonstrates capabilities beyond the simple sum of t
 
 ### Complete Cost Breakdown
 
-| Component | Cost | Notes |
-|-----------|------|-------|
-| ViperX 300 x 2 + WidowX 250 x 2 | ~$9,680 | 2 followers + 2 leaders set |
-| Cameras, sensors, mounts | ~$5,000 | Wrist cameras + external views |
-| Laptop (with GPU) | ~$5,000 | Consumer-grade GPU |
-| Frame and other hardware | ~$12,320 | Aluminum extrusion, cables, power, etc. |
-| **Total** | **~$32,000** | Can reduce further with 3D printing |
+Costs vary substantially by SKU (e.g., 5DoF vs 6DoF), whether you count the leader station, and what compute/cameras you include. A typical build is in the low five-figure USD range.
 
 > **Note**: Costs based on [original paper](https://arxiv.org/abs/2304.13705) and [Trossen Robotics](https://www.trossenrobotics.com/viperx-aloha) pricing (2023). May vary by exchange rate and purchase timing.
 
-### ViperX 300 Specifications
+### ViperX 300 6DoF Specifications
 
 | Spec | Value |
 |------|-------|
-| Degrees of Freedom | 6 DoF |
+| Degrees of Freedom | 6 DoF (arm) + 1 DoF (gripper) |
 | Reach | 750mm |
-| Payload | 750g |
+| Payload | 750g (recommended at 50% extension) |
 | Motors | DYNAMIXEL X-Series |
-| Waist/Shoulder | XM540-W270 (4096 level feedback, ±0.1mm repeatability) |
-| Wrist/Gripper | XM430-W350 (enhanced thermal management) |
+| Waist/Shoulder/Elbow/Forearm Roll/Wrist Angle | XM540-W270 |
+| Wrist Rotate/Gripper | XM430-W350 |
+| Communication | RS485 (1Mbps), U2D2 interface |
 
 ### Camera System
 
 | Version | Camera | Features |
 |---------|--------|----------|
-| ALOHA (Original) | Consumer webcams | RGB, multiple viewpoints |
-| ALOHA 2 | Intel RealSense D405 | Wide FOV, depth, global shutter |
+| ALOHA (Original) | Logitech C922x webcams x 4 | RGB 480x640 @ 50Hz, 2 stationary + 2 wrist-mounted |
+| ALOHA 2 | Intel RealSense D405 x 4 | RGB + Depth, global shutter, wide FOV, left/right wrist + top/bottom views |
 
 ### Gripper
 
-- **Follower**: Parallel gripper with enhanced grip tape
-- **Leader (ALOHA 2)**: Replaced with XC430-W150-T motor (low-friction metal gears)
+- **ALOHA (Original)**: Scissor-head gripper, XL430-W250-T motor
+- **ALOHA 2**: Low-friction rail design, XC430-W150-T motor (10x lower opening/closing force, plastic gears replaced with low-friction metal gears)
 
 ---
 
@@ -162,10 +157,12 @@ User → Physical manipulation of leader arm → Read joint positions → Synchr
 | Item | ALOHA (Original) | ALOHA 2 |
 |------|------------------|---------|
 | Release | 2023 (RSS) | 2024 |
-| Gripper | High friction | Low-friction rail design |
-| Gravity Compensation | Rubber bands | Passive kinematic mechanism |
-| Camera | Webcam | Intel RealSense D405 |
-| Frame | Basic | 20x20mm aluminum extrusion |
+| Developers | Stanford, UC Berkeley, Meta | Google, Stanford, Hoku Labs |
+| Gripper | Scissor-head, high friction (XL430-W250-T) | Low-friction rail design (XC430-W150-T) |
+| Gravity Compensation | Rubber bands | Passive kinematic mechanism (off-the-shelf components) |
+| Camera | Logitech C922x webcams x 4 | Intel RealSense D405 x 4 |
+| Frame | Basic | 48" x 30" table + aluminum cage |
+| Software | ROS | ROS 2 (50Hz logging) |
 | Durability | Moderate | Enhanced |
 
 ---
@@ -176,10 +173,12 @@ Mobile ALOHA is an extended version with ALOHA mounted on a **mobile base (Agile
 
 | Item | Details |
 |------|---------|
-| Base | AgileX Tracer AGV (~$7,000) |
-| Movement Method | User physically connected to system, backdrivin wheels |
+| Base | AgileX Tracer AGV (~$7,000) - differential drive, max speed 1.6m/s, max payload 100kg |
+| Total Cost | ~$32,000 (including onboard power and compute) |
+| Dimensions | 90cm x 135cm, weight 75kg |
+| Movement Method | User physically connected to system, backdriving wheels |
 | Data | Base velocity + arm puppeteering recorded simultaneously |
-| Learning | Autonomous execution possible with 50 demonstrations |
+| Learning | Autonomous execution possible with 50 demonstrations (co-training boosts success rate up to 90%) |
 
 ### Mobile ALOHA Training Task Examples
 
@@ -205,7 +204,7 @@ ALOHA is a key evaluation/training platform for various VLA (Vision-Language-Act
 | Core Idea | Predict **action sequences (chunks)** instead of single actions |
 | Architecture | Conditional VAE + Transformer Encoder/Decoder |
 | Problem Solved | Reduces compounding error by factor of k (k = chunk length) |
-| Performance | 80-90% success rate with 10-minute demonstration |
+| Performance | Reports ~80–90% on some tasks with ~10 minutes of demonstrations (task/data-regime dependent) |
 | Tasks | Fine-grained bimanual manipulation like opening transparent cups, battery insertion |
 
 ### OpenVLA
