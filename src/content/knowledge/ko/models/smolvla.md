@@ -104,7 +104,30 @@ SmolVLA = **SmolVLM2-500M** + **Flow Matching Action Expert (~100M)**
 
 ## Reproducible Recipe
 
-SmolVLA는 pretraining부터 fine-tuning까지 전체 학습 과정을 재현할 수 있도록 recipe를 공개합니다.
+SmolVLA는 pretraining부터 fine-tuning까지 전체 학습 과정을 재현할 수 있도록 recipe를 공개합니다. 핵심은 각 단계의 모델이 순차적으로 쌓여 만들어진다는 점입니다:
+
+<div style="display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 150px; text-align: center;">
+    <img src="/assets/models/smolvla/smollm2.png" alt="SmolLM2" style="width: 100%; border-radius: 8px;" />
+    <p><em>1. SmolLM2 — LLM</em></p>
+  </div>
+  <div style="flex: 1; min-width: 150px; text-align: center;">
+    <img src="/assets/models/smolvla/smolvlm2.png" alt="SmolVLM2" style="width: 100%; border-radius: 8px;" />
+    <p><em>2. SmolVLM2 — VLM</em></p>
+  </div>
+  <div style="flex: 1; min-width: 150px; text-align: center;">
+    <img src="/assets/models/smolvla/smolvla.png" alt="SmolVLA" style="width: 100%; border-radius: 8px;" />
+    <p><em>3. SmolVLA — VLA</em></p>
+  </div>
+</div>
+
+**1단계 — SmolLM2**: 경량 언어 모델. 텍스트 이해와 생성을 담당하는 기반 LLM으로, SmolVLA의 모든 것이 여기서 시작됩니다.
+
+**2단계 — SmolVLM2**: SmolLM2에 SigLIP 비전 인코더를 결합한 Vision-Language Model. 이미지와 비디오를 이해하는 능력이 추가됩니다.
+
+**3단계 — SmolVLA**: SmolVLM2에 Flow Matching Action Expert를 붙여 로봇 액션을 출력하는 VLA. 보고 이해하는 것을 넘어 실제로 행동하는 모델이 됩니다.
+
+각 단계의 학습 recipe가 모두 공개되어 있어, 누구나 처음부터 끝까지 재현할 수 있습니다.
 
 > **공식 리소스**:
 > - [VLAb](https://github.com/huggingface/VLAb) - SmolVLA pretraining 공식 재현 키트

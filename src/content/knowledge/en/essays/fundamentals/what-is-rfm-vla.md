@@ -49,6 +49,23 @@ LLM → VLM → VLA
 Language → Language + Vision → Language + Vision + Action
 ```
 
+HuggingFace's Smol series illustrates this evolution exactly:
+
+<div style="display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 150px; text-align: center;">
+    <img src="/assets/models/smolvla/smollm2.png" alt="SmolLM2" style="width: 100%; border-radius: 8px;" />
+    <p><em>1. SmolLM2 — LLM</em></p>
+  </div>
+  <div style="flex: 1; min-width: 150px; text-align: center;">
+    <img src="/assets/models/smolvla/smolvlm2.png" alt="SmolVLM2" style="width: 100%; border-radius: 8px;" />
+    <p><em>2. SmolVLM2 — VLM</em></p>
+  </div>
+  <div style="flex: 1; min-width: 150px; text-align: center;">
+    <img src="/assets/models/smolvla/smolvla.png" alt="SmolVLA" style="width: 100%; border-radius: 8px;" />
+    <p><em>3. <a href="../../models/smolvla">SmolVLA</a> — VLA</em></p>
+  </div>
+</div>
+
 Everyone knows LLMs are smart. Now that intelligence can be used to control robots. This has created expectations that robots will be able to do things that were impossible before.
 
 ---

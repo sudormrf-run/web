@@ -26,11 +26,27 @@ Robot Foundation Model, Large Behavior Model, VLA... 비슷하면서도 다른 �
 
 ## VLA: LLM에서 VLA로의 진화
 
+
+<div style="display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 150px; text-align: center;">
+    <img src="/assets/models/smolvla/smollm2.png" alt="SmolLM2" style="width: 100%; border-radius: 8px;" />
+    <p><em>1. SmolLM2 — LLM</em></p>
+  </div>
+  <div style="flex: 1; min-width: 150px; text-align: center;">
+    <img src="/assets/models/smolvla/smolvlm2.png" alt="SmolVLM2" style="width: 100%; border-radius: 8px;" />
+    <p><em>2. SmolVLM2 — VLM</em></p>
+  </div>
+  <div style="flex: 1; min-width: 150px; text-align: center;">
+    <img src="/assets/models/smolvla/smolvla.png" alt="SmolVLA" style="width: 100%; border-radius: 8px;" />
+    <p><em>3. <a href="../../models/smolvla">SmolVLA</a> — VLA</em></p>
+  </div>
+</div>
+
 ### LLM (Large Language Model)
 
 우리 세상을 바꾸고 있는 LLM부터 따라가야 합니다.
 
-GPT로 가장 유명한 LLM, Large Language Model은 말 그대로 언어 모델입니다. 글이 들어가면 글이 나오는 모델이죠. 우리는 보통 ChatGPT, 대화의 형태로 사용합니다.
+GPT로 가장 유명한 LLM, Large Language Model은 말 그대로 언어 모델입니다. 글이 들어가면 글이 나오는 모델이죠. 보통 ChatGPT 와 같은 대화의 형태로 사용합니다.
 
 ### VLM (Vision Language Model)
 
@@ -46,10 +62,13 @@ GPT로 가장 유명한 LLM, Large Language Model은 말 그대로 언어 모델
 
 ```
 LLM → VLM → VLA
-언어 → 언어 + 시각 → 언어 + 시각 + 행동
+언어 → + 시각 → + 행동
 ```
 
-LLM이 똑똑한 거 이제 누구나 다 압니다. 그 똑똑한 지능을 활용해서 로봇을 제어할 수 있게 된 거죠. 과거엔 안 되던 일들을 로봇이 할 수 있겠다는 기대가 생긴 겁니다.
+최근에는 촉각 (Tactile) 까지 추가되어, VTLA (Vision Tactile Language Action) 모델까지 나오고 있습니다.
+
+LLM은 지능이 뛰어나다는 것을 모든 세상 사람이 다 관찰하고 있습니다. 그 똑똑한 지능을 활용해서 로봇을 제어할 수 있게 된 거죠. 과거엔 안 되던 일들을 로봇이 할 수 있겠다는 기대가 생기고 있는 것이죠.
+
 
 ---
 
@@ -69,8 +88,9 @@ VLA의 Action을 "Behavior(행동)"라고 부를 수 있기 때문에, LBM(Large
 
 LLM이 너무 똑똑해지고 모달리티도 확장되어서 다양한 일들을 할 수 있게 되었습니다. 정신 상담도 해주고, 구글링도 해주고, 코딩도 해줍니다. 그래서 **Foundation Model**이라고 부릅니다.
 
-RFM은 이걸 로봇에 그대로 붙인 겁니다. VLA를 기반으로 동작하는 로봇이 다양한 일들을 인간 대신 해줄 것이라는 기대를 투영한 용어죠.
+RFM은 이걸 로봇에 그대로 붙인 겁니다. VLA를 기반으로 동작하는 로봇이 다양한 일들을 인간 대신 해줄 것이라는 기대를 투영한 용어죠. 그러나 범용적인 로봇 모델이 꼭 VLA 로만 구현 되리란 법은 없습니다. World Model 혹은 Video Generaation Model을 기반으로 구현하는 것도 가능합니다. 보다 넓은 의미라고 볼 수 있습니다.  
 
+현재는 VLA 가 RFM의 가장 유력한 수단으로 손꼽히고 있습니다. 
 이런 기대를 보여주듯 2025년에만 수많은 VLA들이 나왔습니다: [π0](../../models/pi0), [OpenVLA](../../models/openvla), [SmolVLA](../../models/smolvla), [GR00T](../../models/groot) 등.
 
 ---
@@ -78,25 +98,11 @@ RFM은 이걸 로봇에 그대로 붙인 겁니다. VLA를 기반으로 동작�
 ## Classical Robotics: Specialist의 한계
 
 VLA가 기대를 받는 것은 알겠습니다. **그런데 정말 잘 될까요? 도대체 뭘 잘 할까요?**
-
 그럼 과거에 무엇을 못했는지부터 알아야겠죠.
-
-### 과거의 로봇은 Specialist
-
-과거의 로봇들은 **Specialist**입니다. 딱 하나의 일만 잘 합니다.
-
-**예시 1: 커피 로봇**
-
-카페에서 볼 수 있는 바리스타 로봇이 있습니다. 아주 잘 합니다. 그런데, 이 로봇은 스타벅스에 가도 커피를 만들 수 있을까요? 아니죠. 이 카페에서도 신메뉴를 더 지원하려면 어렵습니다. 로봇을 구동하는 프로그램 혹은 모델을 업데이트해야 합니다.
-
-**예시 2: 체스 로봇**
-
-체스 로봇이 있습니다. 카메라로 체스판을 인식하고, CNN 기반 딥러닝 모델이 들어가 있겠죠. 로봇이 체스를 잘 둡니다.
-
-그런데, 과연 체스판 사이즈가 바뀌고 말 모양이 바뀌어도 잘 둘까요? 아니죠. **Specialist**거든요. 이 체스판에 이 체스말에서만 동작합니다.
 
 ### Specialist로는 안 되는 것들
 
+과거의 로봇들은 **Specialist**입니다. 딱 하나의 일만 잘 합니다.
 우리 세상엔 Specialist로는 커버가 불가능한 노동이 너무나 많습니다.
 
 **대표적 예시: 빨래 개기**

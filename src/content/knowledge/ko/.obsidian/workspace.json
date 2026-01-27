@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essays/fundamentals/specialist-to-generalist.md",
+                "file": "essays/fundamentals/what-is-rfm-vla.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "specialist-to-generalist"
+              "title": "what-is-rfm-vla"
             }
           }
         ]
@@ -185,6 +185,8 @@
   },
   "active": "5ae9a1430a1df75f",
   "lastOpenFiles": [
+    "essays/fundamentals/specialist-to-generalist.md",
+    "essays/fundamentals/what-is-rfm-vla.md",
     "essays/fundamentals/evaluation-problem.md",
     "essays/fundamentals/scaling-problem.md",
     "essays/fundamentals/definition.md",
@@ -204,8 +206,6 @@
     "essays/insights/teleoperation.md",
     "essays/insights/2026-01-vla-scaling.md",
     "essays/what-is-rfm-vla.md",
-    "essays/fundamentals/specialist-to-generalist.md",
-    "essays/fundamentals/what-is-rfm-vla.md",
     "essays/insights",
     "essays/fundamentals"
   ]
