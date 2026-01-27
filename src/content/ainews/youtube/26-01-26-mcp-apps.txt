@@ -1,0 +1,37 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [01/26] Anthropic, MCP Apps 스펙 발표 및 Claude.ai 공식 지원 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Anthropic가 MCP Apps 스펙을 발표
+• Claude.ai, MCP Apps UI를 공식 지원
+• Qwen3-Max-Thinking 등 추론 모델 출시
+• vLLM, ‘day-0’ 지원 비용 논쟁
+• llama.cpp, GLM-4.7-Flash 최적화
+
+📋 목차:
+1. 헤드라인: Anthropic, MCP Apps 스펙 발표 및 Claude.ai 공식 지원
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+5. 원문 메타 링크(검증용)
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/26-01-26-mcp-apps/
+
+#Anthropic #Claude #MCP #OpenAI #vLLM
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI뉴스, 머신러닝, 인공지능, AI, MCP, Claude, Anthropic, OpenAI, 테크뉴스, vLLM
+
+Date: 2026-01-26
+==================================================
