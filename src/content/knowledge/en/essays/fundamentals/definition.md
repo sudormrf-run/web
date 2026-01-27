@@ -113,7 +113,7 @@ Laundry has been called the "holy grail" of robot manipulation.
 - Figure's Helix: "First autonomous laundry folding based on end-to-end neural network" ([Figure AI](https://www.figure.ai/news/helix-learns-to-fold-laundry))
 
 <video width="100%" controls>
-  <source src="/videos/dyna-cloth.mp4" type="video/mp4">
+  <source src="/assets/videos/dyna/dyna-cloth.mp4" type="video/mp4">
 </video>
 
 *Dyna Robotics laundry folding robot demo. Filmed at CoRL 2025, September 2025 — Jong Hyun Park*

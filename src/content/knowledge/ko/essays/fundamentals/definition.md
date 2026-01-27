@@ -113,7 +113,7 @@ Physical AI가 단순한 마케팅 용어가 아닌 이유는, **실제로 불�
 - Figure의 Helix: "최초의 end-to-end 신경망 기반 자율 빨래 접기" ([Figure AI](https://www.figure.ai/news/helix-learns-to-fold-laundry))
 
 <video width="100%" controls>
-  <source src="/videos/dyna-cloth.mp4" type="video/mp4">
+  <source src="/assets/videos/dyna/dyna-cloth.mp4" type="video/mp4">
 </video>
 
 *Dyna Robotics의 빨래 접기 로봇 시연. 2025.09 CoRL 2025에서 촬영 — 박종현*

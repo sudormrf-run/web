@@ -18,9 +18,22 @@ lastEditedBy:
 lastEditedAt: 2026-01-21
 ---
 
-> Specialist에서 Generalist로의 전환에 대한 기본 개념은 [RFM & VLA란 무엇인가](what-is-rfm-vla)를 참조하세요.
+## Specialist vs Generalist
+
+Vision Task를 예시로 생각해보겠습니다.  
+기존에는 Image Classification에 쓰는 모델 (ex. VGGNet), Object Detection 에 쓰는 모델 (ex. YOLO), Image Segmentation에 쓰는 모델 (UNet) 이 따로따로 존재했습니다, Specialist 죠.  
+이제는 ChatGPT 와 같은 서비스에서 모두 가능합니다, VLM (ex. GPT with vision) 이 General한 능력을 가지고 있기 때문입니다.
+
+![비전 AI에서의 Specialist vs Generalist — VGGNet, YOLO, UNet 같은 특화 모델에서 VLM 기반 범용 모델로의 전환](/assets/essays/specialist-to-generalist/special_vs_general_2.png)
+
+로봇도 마찬가지 입니다.  
+특정한 Task, 특정한 Embodiment 에는 하나의 모델 (혹은 Rule based logic) 이 있었습니다. 이제는 하나의 General 한 모델, Robot Foundation Model 이 모든 일, 모든 몸체를 처리하고자 합니다. 
+
+![비전 AI에서의 Specialist vs Generalist — VGGNet, YOLO, UNet 같은 특화 모델에서 VLM 기반 범용 모델로의 전환](/assets/essays/specialist-to-generalist/special_vs_general.png)
 
 ---
+
+
 
 ## Specialist의 정의
 
@@ -31,6 +44,8 @@ lastEditedAt: 2026-01-21
 - 환경 변화에 취약 (조명, 배경, 물체 위치)
 - 새로운 태스크 지원에 재학습 필요
 - 높은 성능이지만 좁은 적용 범위
+
+
 
 ---
 
@@ -76,7 +91,7 @@ LLM에서 증명된 Scaling Law가 VLA에도 적용될 것이라는 기대:
 
 ---
 
-## 현재 VLA들의 Generalist 수준
+## 현재 VLA들의 Generalization 수준
 
 ### π0.5: Open-World Generalization
 
@@ -85,6 +100,12 @@ Physical Intelligence의 [π0.5](../../models/pi0-5)는 학습하지 않은 완�
 - 새로운 가정 환경
 - 새로운 물체
 - 새로운 배치
+
+<video width="100%" controls>
+  <source src="/assets/models/pi0-5/pi0_5_demo.mp4" type="video/mp4">
+</video>
+
+*π0.5의 Open-World Generalization 시연 — April 22, 2025*
 
 ### GR00T: Cross-Embodiment
 

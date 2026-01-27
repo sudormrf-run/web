@@ -18,6 +18,8 @@ lastEditedBy:
 lastEditedAt: 2026-01-21
 ---
 
+![Specialist vs Generalist in vision AI — From specialized models like VGGNet, YOLO, UNet to general-purpose VLM-based models](/assets/essays/specialist-to-generalist/special_vs_general.png)
+
 > For basic concepts about the transition from Specialist to Generalist, see [What are RFM & VLA?](what-is-rfm-vla).
 
 ---
@@ -85,6 +87,12 @@ Physical Intelligence's [Pi0.5](../../models/pi0-5) demonstrated operation in co
 - New home environments
 - New objects
 - New arrangements
+
+<video width="100%" controls>
+  <source src="/assets/models/pi0-5/pi0_5_demo.mp4" type="video/mp4">
+</video>
+
+*π0.5 Open-World Generalization demo — April 22, 2025*
 
 ### GR00T: Cross-Embodiment
 
