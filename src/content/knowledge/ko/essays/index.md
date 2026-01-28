@@ -61,4 +61,4 @@ Physical AI가 처음이시라면 아래 순서대로 읽어보세요.
 
 ### 블로그
 
-- **[VLA는 Scaling & Evaluation이 어렵다](insights/2026-01-vla-scaling)** - Physical AI의 핵심 도전과제
+- **[Action Data Scaling 문제](fundamentals/scaling-problem)** - VLA가 LLM처럼 쉽게 스케일링되지 않는 이유

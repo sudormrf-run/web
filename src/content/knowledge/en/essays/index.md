@@ -61,4 +61,4 @@ After completing the fundamentals, explore topics that interest you.
 
 ### Blog
 
-- **[VLA Scaling & Evaluation is Difficult](insights/2026-01-vla-scaling)** - Core challenges of Physical AI
+- **[Action Data Scaling Problem](fundamentals/scaling-problem)** - Why VLA doesn't scale as easily as LLM
