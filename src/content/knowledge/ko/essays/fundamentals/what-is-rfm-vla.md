@@ -113,9 +113,13 @@ VLA가 기대를 받는 것은 알겠습니다. **그런데 정말 잘 될까요
 
 기존의 방법들로는 구현이 불가능한 너무나 어려운 태스크입니다.
 
-**VLA로는요? 됩니다.**
+> **VLA로는요? 됩니다.**
 
-수많은 Physical AI를 노리는 회사들이 빨래 개기를 데모로 보여줍니다. 왜냐고요? 이게 **VLA의 증명**이거든요. 과거에 안되던 일. 그런데 앞으로는 될 것 같은 일. 그 대표적인 예시라서 보여주는 겁니다.
+수 많은 Physical AI를 노리는 회사들이 빨래 개기를 데모로 보여줍니다. 왜냐고요? 이게 **VLA의 증명**이거든요. 과거에 안되던 일. 그런데 앞으로는 될 것 같은 일. 그 대표적인 예시라서 보여주는 겁니다.
+
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/L0uxfZMlkag?start=436" title="LeRobot - Open-source robot folding laundry with VLA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*LeRobot 발표 세션 — 오픈소스 로봇과 VLA로 빨래를 개는 모습 (7:16~)*
 
 ### Deformable Objects
 
@@ -123,7 +127,12 @@ Figure AI의 물류 예시를 보면 컨베이어 벨트에 오는 다양한 오
 
 택배에는 비닐로 포장된 물체들이 있는데, 이게 과거에 참 어려웠습니다. 적당한 힘으로 잘 집는 게 어렵습니다.
 
-흐물흐물한 빨래나 비닐 물체를 **Deformable한 물체**라고 합니다. 대표적으로 과거에 못하던 일입니다. 안에 들어있는 물건에 따라 다양한 경우의 수를 다 잘 수행해야만 처리가 가능해요. **지능이 필요한 작업**입니다. 사람은 너무나 잘하죠.
+흐물흐물한 빨래나 비닐 물체를 **Deformable한 물체**라고 합니다. 대표적으로 과거에 못하던 일입니다. 안에 들어있는 물건에 따라 다양한 경우의 수를 다 잘 수행해야만 처리가 가능해요. **지능이 필요한 작업**입니다. 사람은 너무나 잘하죠.  
+무엇보다 사실적인 시뮬레이션이 어렵습니다. 
+
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/lkc2y0yb89U" title="Figure AI - Logistics demo (1 hour)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Figure AI의 물류 작업 1시간 데모 — Deformable 물체를 포함한 다양한 택배 처리*
 
 ---
 
@@ -133,8 +142,8 @@ Figure AI의 물류 예시를 보면 컨베이어 벨트에 오는 다양한 오
 
 Physical AI가 뜨는 이유입니다. **현재 대체가 불가능한 사람의 노동을 상당 부분 대체할 것 같거든요.**
 
-Generalist가 가능할 것 같다고 생각하는 낙관적인 예측이 현재 지배적입니다. 과연 그럴까요? 왜 사람들은 낙관적으로 Physical AI가 올 것이라고 생각하고 투자를 하는 것일까요?
-
+>Generalist가 가능할 것 같다고 생각하는 낙관적인 예측이 현재 지배적입니다.
+과연 그럴까요? 왜 사람들은 낙관적으로 Physical AI가 올 것이라고 생각하고 투자를 하는 것일까요?  
 **그건 바로 우리가 LLM의 발전 과정을 목격했기 때문입니다.**
 
 ---
@@ -146,7 +155,7 @@ Generalist가 가능할 것 같다고 생각하는 낙관적인 예측이 현재
 차이점은 LLM의 등장으로 언어는 이미 Generalist가 되었습니다.
 
 - 번역, 요약, 글쓰기 → LLM
-- 이미지 인식, 생성 → VLM
+- 이미지 인식, 생성 → VLM or Diffusion
 - **로봇 제어 → VLA** (기대 중)
 
 ### Pre-training Scaling
@@ -169,7 +178,7 @@ LLM이 똑똑한 이유 중 가장 중요한 것 하나는 바로 **Scaling**입
 - 물은 끓이면 증발한다
 - 인간이라면 당연히 알고 있는 상식
 
-**LLM은 상식이 있습니다. 그러니까 VLA도 상식이 있습니다.**
+> **LLM은 상식이 있습니다. 그러니까 VLA도 상식이 있습니다.**
 
 딱 이 카페에서만, 정해진 메뉴만 만들 수 있는 게 아니라, 다른 카페에 가도, 신메뉴가 나와도 일을 할 수 있습니다. 다양한 모양의 택배가 와도 정리할 수 있고, 다양한 디자인의 옷이 와도 정리가 가능합니다.
 
@@ -183,12 +192,11 @@ LLM이 똑똑한 이유 중 가장 중요한 것 하나는 바로 **Scaling**입
 
 **현실은 그렇게 호락호락하지 않습니다.**
 
-VLA가 성공할지 말지, 여기엔 가장 큰 문제가 하나 있습니다.
-
-**바로 데이터입니다.**
+> VLA가 성공할지 말지, 여기엔 가장 큰 문제, 데이터 문제가 있습니다.
 
 - [왜 Scaling이 어려운가](scaling-problem) - 로봇 데이터 수집의 근본적 어려움
 - [Evaluation이 어려운 이유](evaluation-problem) - VLA 성능 측정의 문제
+- [VLM 백본의 한계](../insights/vlm-limits-world-model) - World 모델이 해결책이 될 수 있을까
 
 ---
 

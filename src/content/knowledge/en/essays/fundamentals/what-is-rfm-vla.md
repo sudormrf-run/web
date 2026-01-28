@@ -128,6 +128,10 @@ This is an extremely difficult task that was impossible with existing methods.
 
 Many companies targeting Physical AI demonstrate laundry folding. Why? Because this is **proof of VLA**. Something that didn't work before. But seems like it will work now. That's why they show this representative example.
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/L0uxfZMlkag?start=436" title="LeRobot - Open-source robot folding laundry with VLA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*LeRobot presentation session — Open-source robot folding laundry with VLA (7:16~)*
+
 ### Deformable Objects
 
 Looking at Figure AI's logistics example, they handle various objects coming on conveyor belts. They pick them up and orient them correctly.
@@ -135,6 +139,10 @@ Looking at Figure AI's logistics example, they handle various objects coming on 
 Packages include items wrapped in plastic, which was very difficult in the past. It's hard to grip with just the right amount of force.
 
 Floppy laundry or plastic-wrapped items are called **Deformable objects**. These represent things that weren't possible before. They require handling many different scenarios depending on what's inside. **It's work that requires intelligence.** Humans do it effortlessly.
+
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/lkc2y0yb89U" title="Figure AI - Logistics demo (1 hour)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Figure AI 1-hour logistics demo — Handling various packages including deformable objects*
 
 ---
 
@@ -200,6 +208,7 @@ Whether VLA succeeds or not, there's one biggest problem.
 
 - [Why Scaling is Difficult](scaling-problem) - Fundamental difficulties in robot data collection
 - [Why Evaluation is Difficult](evaluation-problem) - Problems measuring VLA performance
+- [Limitations of VLM Backbone](../insights/vlm-limits-world-model) - Can World Models be the solution?
 
 ---
 
