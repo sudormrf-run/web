@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [01/27] MoonshotAI, Kimi K2.5 공개: 멀티모달 MoE와 Agent Swarm | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• MoonshotAI가 Kimi K2.5를 공개
+• K2.5 Agent Swarm이 100 서브에이전트 지원
+• Trinity Large(400B MoE) 프리뷰 공개
+• OpenAI Prism이 GPT-5.2로 무료 출시
+• DeepSeek-OCR 2, 토큰 압축과 읽기순서 학습
+
+📋 목차:
+1. 헤드라인: MoonshotAI, Kimi K2.5 공개: 멀티모달 MoE와 Agent Swarm
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/26-01-27-kimi-k25/
+
+#MoonshotAI #Kimi #OpenAI #DeepSeek #HuggingFace
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: HuggingFace, Kimi, DeepSeek, 인공지능, OpenAI, 테크뉴스, MoonshotAI, AI뉴스, AI, 머신러닝
+
+Date: 2026-01-27
+==================================================
