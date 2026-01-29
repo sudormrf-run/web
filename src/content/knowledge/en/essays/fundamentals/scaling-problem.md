@@ -19,6 +19,13 @@ lastEditedBy:
 lastEditedAt: 2026-01-29
 ---
 
+<video controls width="100%" style="border-radius: 8px; margin-bottom: 0.5rem;">
+  <source src="/assets/essays/scaling-problem/action_data_example.mp4" type="video/mp4" />
+</video>
+*Example of action data in LeRobot Dataset format*
+
+---
+
 ## The Core Problem
 
 Physical AI is receiving significant attention in the media today. This is because it seems possible to extend LLMs to implement VLA, which could impact a massive labor market.
