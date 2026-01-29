@@ -45,9 +45,6 @@ Generalist 로봇을 구현하는 핵심 기술, VLA(Vision-Language-Action) 모
 ### 4. [Action Data Scaling 문제](./essays/fundamentals/scaling-problem)
 VLA가 LLM처럼 쉽게 성공할 수 없는 이유: 데이터
 
-### 5. [Evaluation의 어려움](./essays/fundamentals/evaluation-problem)
-로봇 성능을 평가하는 것은 왜 어려운가?
-
 ---
 
 ## 더 깊이 탐색하기
@@ -55,6 +52,7 @@ VLA가 LLM처럼 쉽게 성공할 수 없는 이유: 데이터
 입문 가이드를 마친 후, 관심 있는 주제를 자유롭게 탐색해보세요.
 
 ### 인사이트 에세이
+- [VLA & RFM 발전 과정](./essays/insights/vla-rfm-progress) - VLA와 RFM의 진행 중인 발전
 - [Teleoperation](./essays/insights/teleoperation) - 사람이 로봇을 조종하며 데이터 수집
 - [Non-Teleop 데이터](./essays/insights/non-teleop-data) - 다른 방식의 데이터 수집
 - [시뮬레이션 & World Model](./essays/insights/simulation-world-model) - 가상 환경 활용

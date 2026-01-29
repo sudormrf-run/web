@@ -207,7 +207,6 @@ Whether VLA succeeds or not, there's one biggest problem.
 **It's the data.**
 
 - [Why Scaling is Difficult](scaling-problem) - Fundamental difficulties in robot data collection
-- [Why Evaluation is Difficult](evaluation-problem) - Problems measuring VLA performance
 - [Limitations of VLM Backbone](../insights/vlm-limits-world-model) - Can World Models be the solution?
 
 ---

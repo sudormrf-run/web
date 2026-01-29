@@ -5,7 +5,6 @@ tags: [simulation, world-model, nvidia, cosmos, omniverse]
 category: essays
 related:
   - ../fundamentals/scaling-problem.md
-  - ../fundamentals/evaluation-problem.md
   - ../../companies/nvidia.md
 
 # Authorship
@@ -68,6 +67,5 @@ Evaluation 자동화를 위한 World Model 활용
 
 - [Teleoperation 방식](teleoperation)
 - [Action Data Scaling 문제](../fundamentals/scaling-problem)
-- [Evaluation의 어려움](../fundamentals/evaluation-problem)
 - [NVIDIA](../../companies/nvidia)
 

@@ -5,7 +5,6 @@ tags: [scaling, action-data, challenge]
 category: essays
 order: 4
 related:
-  - evaluation-problem.md
   - ../insights/teleoperation.md
   - ../insights/simulation-world-model.md
 
@@ -62,6 +61,7 @@ LLM을 확장해서 VLA가 구현 가능할 것 같고, 그렇다면 아주 거�
 <video controls width="100%" style="border-radius: 8px; margin-bottom: 0.5rem;">
   <source src="/assets/essays/scaling-problem/1957_teleop.mp4" type="video/mp4" />
 </video>
+
 *1957년 텔레오퍼레이션 시스템*
 
 ### ALOHA
@@ -69,6 +69,8 @@ LLM을 확장해서 VLA가 구현 가능할 것 같고, 그렇다면 아주 거�
 <video controls width="100%" style="border-radius: 8px; margin-bottom: 0.5rem;">
   <source src="/assets/essays/scaling-problem/aloha_teleop.mp4" type="video/mp4" />
 </video>
+
+*ALOHA 오픈소스 양팔 텔레오퍼레이션 시스템*
 
 [ALOHA](https://tonyzhaozh.github.io/aloha/)는 Stanford에서 개발한 저비용 텔레오퍼레이션 시스템입니다. ACT(Action Chunking with Transformers) 논문에서 사용되었으며, 하드웨어 설계와 소프트웨어가 모두 오픈소스로 공개되어 있어 연구자들이 쉽게 재현할 수 있습니다.
 
@@ -79,9 +81,10 @@ LLM을 확장해서 VLA가 구현 가능할 것 같고, 그렇다면 아주 거�
 <video controls width="100%" style="border-radius: 8px; margin-bottom: 0.5rem;">
   <source src="/assets/essays/scaling-problem/tesla_teleop.mp4" type="video/mp4" />
 </video>
-*Tesla 텔레오퍼레이션 시스템*
+  
+  *Tesla 텔레오퍼레이션 데이터 수집 팀*
 
-Tesla는 휴머노이드 로봇 Optimus의 텔레오퍼레이터에게 [시간당 48달러를 지급](https://interestingengineering.com/culture/teslapaying-to-train-optimus-robot)하며 Action 데이터를 수집하고 있습니다. 지원 조건으로는 5'7″~5'11″(약 170~180cm) 신장, 하루 7시간 이상 걷기와 최대 30파운드(약 13.6kg) 하중 운반이 가능한 체력이 요구됩니다.
+Tesla는 휴머노이드 로봇 Optimus의 텔레오퍼레이터에게 [시간당 48달러를 지급](https://interestingengineering.com/culture/teslapaying-to-train-optimus-robot)하며 Action 데이터를 수집하고 있습니다. 지원 조건으로는 5'7″ ~ 5'11″ (약 170~180cm) 신장, 하루 7시간 이상 걷기와 최대 30파운드(약 13.6kg) 하중 운반이 가능한 체력이 요구됩니다.
 
 ## UMI Style 데이터 수집
 
@@ -98,6 +101,7 @@ Tesla는 휴머노이드 로봇 Optimus의 텔레오퍼레이터에게 [시간�
 <video controls width="100%" style="border-radius: 8px; margin-bottom: 0.5rem;">
   <source src="/assets/essays/scaling-problem/nvidia_blueprint.mp4" type="video/mp4" />
 </video>
+
 *NVIDIA Isaac GR00T Synthetic Manipulation*
 
 [NVIDIA Isaac GR00T Synthetic Manipulation](https://build.nvidia.com/nvidia/isaac-gr00t-synthetic-manipulation)은 시뮬레이션 환경에서 합성 데이터를 생성하여 로봇 조작 학습에 활용하는 Blueprint입니다. 실제 로봇 데이터 수집 없이도 다양한 시나리오의 학습 데이터를 대량 생산할 수 있습니다.
@@ -117,9 +121,12 @@ HuggingFace의 성공 공식
 <video controls width="100%" style="border-radius: 8px; margin-bottom: 0.5rem;">
   <source src="/assets/essays/scaling-problem/1x_world_model.mp4" type="video/mp4" />
 </video>
+
 *1X World Model Self-Learning*
 
 [1X](https://www.1x.tech/discover/world-model-self-learning)는 World Model과 IDM (Inverse Dynamics Model)을 활용하여 라벨링 없는 비디오 데이터로부터 로봇이 스스로 학습할 수 있는 방법을 연구하고 있습니다. 이 접근법은 Action 라벨 없이도 대규모 비디오 데이터를 활용할 수 있는 가능성을 보여줍니다.
+
+보다 자세한 내용은 [VLM 백본의 한계와 World Model](../insights/vlm-limits-world-model)을 참조하세요.
 
 
 
@@ -144,8 +151,17 @@ HuggingFace의 성공 공식
 
 ---
 
-## 다음 문서
+## 입문 가이드 완료
 
-데이터 수집만큼이나 어려운 문제가 있습니다. 바로 평가(Evaluation)입니다.
+여기까지 Physical AI 입문 가이드를 마쳤습니다.
 
-**다음: [Evaluation의 어려움](evaluation-problem)**
+더 깊이 탐색하고 싶다면 [Physical AI 입문 가이드](../../physical-ai/)로 돌아가거나, 아래 인사이트 에세이를 살펴보세요.
+
+### 다음으로 읽어볼 문서들
+
+- [Physical vs Cognitive Intelligence](../insights/physical-vs-cognitive) - 물리적 지능에 대한 고찰
+- [VLA & RFM 발전 과정](../insights/vla-rfm-progress) - VLA와 RFM의 진행 중인 발전 과정
+- [휴머노이드 디자인](../insights/humanoid-design) - 휴머노이드의 디자인 문제
+- [촉각 센싱](../insights/tactile-sensing) - 촉각은 과연 필요할까?
+- [Teleoperation 방식](../insights/teleoperation) - 텔레오퍼레이션으로 데이터 수집
+- [시뮬레이션 & World Model](../insights/simulation-world-model) - 합성 데이터와 월드 모델

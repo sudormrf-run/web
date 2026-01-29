@@ -45,9 +45,6 @@ The core technology for implementing Generalist robots: VLA (Vision-Language-Act
 ### 4. [The Action Data Scaling Problem](./essays/fundamentals/scaling-problem)
 Why VLA can't easily succeed like LLMs: Data
 
-### 5. [The Challenge of Evaluation](./essays/fundamentals/evaluation-problem)
-Why is it so difficult to evaluate robot performance?
-
 ---
 
 ## Explore Further
@@ -55,6 +52,7 @@ Why is it so difficult to evaluate robot performance?
 After completing the introduction guide, feel free to explore topics that interest you.
 
 ### Insight Essays
+- [VLA & RFM Progress](./essays/insights/vla-rfm-progress) - Ongoing development of VLA and RFM
 - [Teleoperation](./essays/insights/teleoperation) - Collecting data by controlling robots
 - [Non-Teleop Data](./essays/insights/non-teleop-data) - Other data collection methods
 - [Simulation & World Model](./essays/insights/simulation-world-model) - Using virtual environments

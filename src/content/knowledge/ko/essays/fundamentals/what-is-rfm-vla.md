@@ -195,7 +195,6 @@ LLM이 똑똑한 이유 중 가장 중요한 것 하나는 바로 **Scaling**입
 > VLA가 성공할지 말지, 여기엔 가장 큰 문제, 데이터 문제가 있습니다.
 
 - [왜 Scaling이 어려운가](scaling-problem) - 로봇 데이터 수집의 근본적 어려움
-- [Evaluation이 어려운 이유](evaluation-problem) - VLA 성능 측정의 문제
 - [VLM 백본의 한계](../insights/vlm-limits-world-model) - World 모델이 해결책이 될 수 있을까
 
 ---

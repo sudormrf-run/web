@@ -5,7 +5,6 @@ tags: [scaling, action-data, challenge]
 category: essays
 order: 4
 related:
-  - evaluation-problem.md
   - ../insights/teleoperation.md
   - ../insights/simulation-world-model.md
 
@@ -142,6 +141,8 @@ HuggingFace's success formula:
 
 [1X](https://www.1x.tech/discover/world-model-self-learning) is researching methods for robots to learn from unlabeled video data using World Models and IDM (Inverse Dynamics Model). This approach shows the potential to leverage large-scale video data without Action labels.
 
+For more details, see [VLM Backbone Limitations and World Models](../insights/vlm-limits-world-model).
+
 ---
 
 ## Personal Reflections
@@ -154,8 +155,17 @@ In these confusing times, I believe there are many opportunities and would like 
 
 ---
 
-## Next Document
+## Intro Guide Complete
 
-Another challenge as difficult as data collection exists: Evaluation.
+You've completed the Physical AI Introduction Guide.
 
-**Next: [The Challenge of Evaluation](evaluation-problem)**
+To explore further, return to the [Physical AI Introduction Guide](../../physical-ai/) or read the insight essays below.
+
+### Recommended Next Reads
+
+- [Physical vs Cognitive Intelligence](../insights/physical-vs-cognitive) - Reflections on physical intelligence
+- [VLA & RFM Progress](../insights/vla-rfm-progress) - Ongoing development of VLA and RFM
+- [Humanoid Design](../insights/humanoid-design) - Design challenges of humanoids
+- [Tactile Sensing](../insights/tactile-sensing) - Is tactile sensing necessary?
+- [Teleoperation](../insights/teleoperation) - Data collection through teleoperation
+- [Simulation & World Models](../insights/simulation-world-model) - Synthetic data and world models

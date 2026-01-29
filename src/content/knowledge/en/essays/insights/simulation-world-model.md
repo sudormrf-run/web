@@ -5,7 +5,6 @@ tags: [simulation, world-model, nvidia, cosmos, omniverse]
 category: essays
 related:
   - ../fundamentals/scaling-problem.md
-  - ../fundamentals/evaluation-problem.md
   - ../../companies/nvidia.md
 
 # Authorship
@@ -68,5 +67,4 @@ Leveraging World Models for evaluation automation
 
 - [Teleoperation Approach](teleoperation)
 - [Action Data Scaling Problem](../fundamentals/scaling-problem)
-- [The Challenge of Evaluation](../fundamentals/evaluation-problem)
 - [NVIDIA](../../companies/nvidia)
