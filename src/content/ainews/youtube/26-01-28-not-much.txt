@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [01/28] DeepMind, AlphaGenome 모델·가중치 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• DeepMind가 AlphaGenome 모델·가중치 공개
+• Kimi K2.5가 오픈 모델 화제로 부상
+• Chrome이 Gemini 3 Auto Browse 프리뷰 공개
+• NVIDIA가 NVFP4 Nemotron 3 Nano 발표
+• 에이전트 evals·하네스·추적 논의 확대
+
+📋 목차:
+1. 헤드라인: DeepMind, AlphaGenome 모델·가중치 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/26-01-28-not-much/
+
+#OpenAI #Codex #DeepMind #Kimi #Gemini
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 테크뉴스, OpenAI, DeepMind, AI뉴스, Gemini, 인공지능, 머신러닝, Kimi, AI, Codex
+
+Date: 2026-01-28
+==================================================
