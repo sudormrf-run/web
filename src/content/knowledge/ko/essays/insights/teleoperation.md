@@ -18,6 +18,9 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
+
+
+
 ## 개요
 
 Tesla, Google, Physical Intelligence, Galaxea 등 주요 AI robotics 업계는 Teleoperation으로 데이터를 직접 모으고 있습니다.
@@ -43,6 +46,14 @@ Tesla, Google, Physical Intelligence, Galaxea 등 주요 AI robotics 업계는 T
 ---
 
 ## 주요 사례
+
+
+
+### ROBOTIS OMY
+
+<iframe width="315" height="400" src="https://www.youtube.com/embed/MGH44s5suK0" frameborder="0" allowfullscreen style="border-radius: 8px; margin-bottom: 0.5rem;"></iframe>
+Leader - Follower 구조의 가장 직관적인 텔레오퍼레이션 예시
+
 
 ### Tesla
 

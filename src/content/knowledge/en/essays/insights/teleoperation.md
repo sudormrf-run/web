@@ -44,6 +44,11 @@ Major AI robotics players including Tesla, Google, Physical Intelligence, and Ga
 
 ## Key Examples
 
+### ROBOTIS OMY
+
+<iframe width="315" height="400" src="https://www.youtube.com/embed/MGH44s5suK0" frameborder="0" allowfullscreen style="border-radius: 8px; margin-bottom: 0.5rem;"></iframe>
+The most intuitive example of Leader-Follower teleoperation structure.
+
 ### Tesla
 
 ...
