@@ -17,6 +17,9 @@ lastEditedBy:
 lastEditedAt: 2026-01-15
 ---
 
+
+https://learnsomatics.ie/how-your-brain-sees-your-body/
+
 ## 촉각은 필요할까?
 
 ...
