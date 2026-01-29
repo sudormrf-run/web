@@ -65,6 +65,85 @@ To solve these problems, various companies and research groups are trying differ
 
 ---
 
+## Teleoperation
+
+## Old Days
+
+<video controls width="100%" style="border-radius: 8px; margin-bottom: 0.5rem;">
+  <source src="/assets/essays/scaling-problem/1957_teleop.mp4" type="video/mp4" />
+</video>
+*1957 teleoperation system*
+
+### ALOHA
+
+<video controls width="100%" style="border-radius: 8px; margin-bottom: 0.5rem;">
+  <source src="/assets/essays/scaling-problem/aloha_teleop.mp4" type="video/mp4" />
+</video>
+*ALOHA teleoperation system*
+
+[ALOHA](https://tonyzhaozh.github.io/aloha/) is a low-cost teleoperation system developed at Stanford. It was used in the ACT (Action Chunking with Transformers) paper, and both the hardware design and software are fully open-source, making it easy for researchers to replicate.
+
+### ROBOTIS OMY
+
+<iframe width="315" height="560" src="https://www.youtube.com/embed/MGH44s5suK0" frameborder="0" allowfullscreen style="border-radius: 8px; margin-bottom: 0.5rem;"></iframe>
+
+### TESLA
+
+<video controls width="100%" style="border-radius: 8px; margin-bottom: 0.5rem;">
+  <source src="/assets/essays/scaling-problem/tesla_teleop.mp4" type="video/mp4" />
+</video>
+*Tesla teleoperation system*
+
+Tesla is collecting Action data by [paying $48 per hour](https://interestingengineering.com/culture/teslapaying-to-train-optimus-robot) to teleoperators for their humanoid robot Optimus. Requirements include height between 5'7″~5'11″ (170~180cm), ability to walk 7+ hours per day, and carry loads up to 30 pounds (13.6kg).
+
+---
+
+## UMI Style Data Collection
+
+<video controls width="100%" style="border-radius: 8px; margin-bottom: 0.5rem;">
+  <source src="/assets/essays/scaling-problem/umi_demo.mp4" type="video/mp4" />
+</video>
+*UMI data collection system*
+
+[UMI (Universal Manipulation Interface)](https://umi-gripper.github.io/) is a system that enables manipulation data collection without robots using a handheld gripper. It records human manipulation actions without teleoperation equipment and can transfer the learned skills to various robots.
+
+---
+
+## Simulation
+
+### NVIDIA Isaac GR00T
+
+<video controls width="100%" style="border-radius: 8px; margin-bottom: 0.5rem;">
+  <source src="/assets/essays/scaling-problem/nvidia_blueprint.mp4" type="video/mp4" />
+</video>
+*NVIDIA Isaac GR00T Synthetic Manipulation*
+
+[NVIDIA Isaac GR00T Synthetic Manipulation](https://build.nvidia.com/nvidia/isaac-gr00t-synthetic-manipulation) is a Blueprint that generates synthetic data in simulation environments for robot manipulation learning. It enables mass production of training data across various scenarios without collecting real robot data.
+
+---
+
+## Community
+
+HuggingFace's success formula:
+1. Open Source HW, SW
+2. Data & Model Hub
+3. Tutorial & Hackathon
+
+[smolVLA](https://huggingface.co/lerobot/smolvla_base) - a VLA built using community-collected data.
+
+---
+
+## World Model + IDM
+
+<video controls width="100%" style="border-radius: 8px; margin-bottom: 0.5rem;">
+  <source src="/assets/essays/scaling-problem/1x_world_model.mp4" type="video/mp4" />
+</video>
+*1X World Model Self-Learning*
+
+[1X](https://www.1x.tech/discover/world-model-self-learning) is researching methods for robots to learn from unlabeled video data using World Models and IDM (Inverse Dynamics Model). This approach shows the potential to leverage large-scale video data without Action labels.
+
+---
+
 ## Personal Reflections
 
 Last summer, while hosting HuggingFace's LeRobot hackathon in Seoul, I felt both hope and challenges for the community-driven approach.
