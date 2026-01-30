@@ -50,9 +50,13 @@ VLA와 RFM의 발전 과정을 시간 역순으로 정리합니다. 최신 모�
 
 > 이전 VLA들이 주로 테이블탑 매니퓰레이션에 집중했다면, Helix 02는 **보행과 조작을 통합**한 첫 사례입니다. 휴머노이드가 실제로 공간을 이동하면서 복잡한 작업을 수행하는 모습은 로보틱스의 새로운 장을 열었다고 봅니다.
 
-### Sharpa - 촉각 기반 VLA의 시작
+### Sharpa - 촉각 기반 VLA 데뷔
 
-2026년 초, Sharpa가 촉각 센싱을 VLA에 통합한 모델을 발표하면서 새로운 연구 방향이 열렸습니다.
+<div class="video-embed">
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/W7q-qlj4EFc?start=82" title="Sharpa CES 2026 Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+2026년 초, Sharpa가 촉각 센싱을 VLA에 통합한 [CraftNet](../../models/craftnet) 모델을 발표하면서 새로운 연구 방향이 열렸습니다.
 
 기존 VLA들이 주로 시각 정보에 의존했다면, 촉각을 추가함으로써 더욱 섬세한 조작이 가능해질 것으로 기대됩니다.
 

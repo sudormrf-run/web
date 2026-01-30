@@ -52,7 +52,11 @@ A chronological overview of VLA and RFM development, presented in reverse chrono
 
 ### Sharpa - The Beginning of Tactile-Based VLA
 
-In early 2026, Sharpa announced a model that integrates tactile sensing into VLA, opening new research directions.
+<div class="video-embed">
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/W7q-qlj4EFc?start=82" title="Sharpa CES 2026 Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+In early 2026, Sharpa announced [CraftNet](../../models/craftnet), a model that integrates tactile sensing into VLA, opening new research directions.
 
 While existing VLAs relied primarily on visual information, adding tactile sensing is expected to enable more delicate manipulation.
 
