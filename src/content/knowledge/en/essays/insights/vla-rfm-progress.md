@@ -81,7 +81,7 @@ A dual-system structure inspired by Daniel Kahneman's "Thinking, Fast and Slow" 
 
 | Model | Release | System 2 | System 1 | Frequency |
 |-------|---------|----------|----------|-----------|
-| [GR00T N1](../../models/groot-n1) | 2025.03 | Eagle VLM (10Hz) | DiT (120Hz) | 120Hz |
+| [GR00T N1.6](../../models/groot-n1-6) | 2025.09 | Cosmos-Reason-2B VLM | DiT 32 layers (120Hz) | 120Hz |
 | [Figure Helix](../../models/figure-helix) | 2025.02 | High-level planning (7-9Hz) | Low-level control (200Hz) | 200Hz |
 | [Gemini Robotics](../../models/gemini-robotics) | 2025.03 | Cloud inference | On-Device control | - |
 

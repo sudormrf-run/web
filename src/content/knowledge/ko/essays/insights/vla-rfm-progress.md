@@ -78,11 +78,11 @@ Daniel Kahneman의 "Thinking, Fast and Slow"에서 영감을 받은 듀얼 시�
 
 **이 구조를 채택한 주요 모델들:**
 
-| 모델                                              | 발표      | System 2         | System 1       | 주파수   |
-| ----------------------------------------------- | ------- | ---------------- | -------------- | ----- |
-| [GR00T N1](../../models/groot-n1)               | 2025.03 | Eagle VLM (10Hz) | DiT (120Hz)    | 120Hz |
-| [Figure Helix](../../models/figure-helix)       | 2025.02 | 고수준 계획 (7-9Hz)   | 저수준 제어 (200Hz) | 200Hz |
-| [Gemini Robotics](../../models/gemini-robotics) | 2025.03 | 클라우드 추론          | On-Device 제어   | -     |
+| 모델                                              | 발표      | System 2                | System 1            | 주파수   |
+| ----------------------------------------------- | ------- | ----------------------- | ------------------- | ----- |
+| [GR00T N1.6](../../models/groot-n1-6)           | 2025.09 | Cosmos-Reason-2B VLM    | DiT 32층 (120Hz)     | 120Hz |
+| [Figure Helix](../../models/figure-helix)       | 2025.02 | 고수준 계획 (7-9Hz)          | 저수준 제어 (200Hz)      | 200Hz |
+| [Gemini Robotics](../../models/gemini-robotics) | 2025.03 | 클라우드 추론                 | On-Device 제어        | -     |
 
 > **왜 이런 구조가 필요한가?**
 >
