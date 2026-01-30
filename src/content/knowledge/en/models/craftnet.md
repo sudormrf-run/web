@@ -32,6 +32,11 @@ lastEditedAt: 2026-01-30
 - **Synthetic Tactile Data**: Enriches simulation, teleoperation, and internet video with tactile information
 - **SharpaWave Integration**: Combined with tactile hand featuring 1,000+ tactile pixels and 0.005N sensitivity
 
+<div class="video-embed">
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/W7q-qlj4EFc" title="Sharpa CES 2026 Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p align="center"><em>Sharpa CES 2026 Demo - North Humanoid with CraftNet</em></p>
+
 ---
 
 ## Overview
@@ -51,6 +56,9 @@ CraftNet is a hierarchical Vision-Tactile-Language-Action (VTLA) model developed
 ## Architecture: System 0/1/2
 
 CraftNet is a hierarchical system operating across three frequency bands.
+
+![CraftNet Architecture](/assets/models/craftnet/craftnet.webp)
+<p align="center"><em>CraftNet Architecture: System 0/1/2 Hierarchical Structure</em></p>
 
 ### System 2 (Reasoning Brain) - ~1 Hz
 

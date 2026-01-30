@@ -32,6 +32,11 @@ lastEditedAt: 2026-01-30
 - **합성 촉각 데이터**: 시뮬레이션, 텔레오퍼레이션, 인터넷 비디오에 촉각 정보 합성
 - **SharpaWave 통합**: 1,000+ 촉각 픽셀, 0.005N 민감도의 촉각 손과 결합
 
+<div class="video-embed">
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/W7q-qlj4EFc" title="Sharpa CES 2026 Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p align="center"><em>Sharpa CES 2026 데모 - North 휴머노이드와 CraftNet</em></p>
+
 ---
 
 ## Overview
@@ -51,6 +56,9 @@ CraftNet은 Sharpa가 개발한 계층적 Vision-Tactile-Language-Action (VTLA) 
 ## Architecture: System 0/1/2
 
 CraftNet은 세 가지 주파수 대역에서 동작하는 계층적 시스템입니다.
+
+![CraftNet Architecture](/assets/models/craftnet/craftnet.webp)
+<p align="center"><em>CraftNet 아키텍처: System 0/1/2 계층 구조</em></p>
 
 ### System 2 (Reasoning Brain) - ~1 Hz
 
