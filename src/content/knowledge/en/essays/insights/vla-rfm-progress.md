@@ -85,19 +85,19 @@ A dual-system structure inspired by Daniel Kahneman's "Thinking, Fast and Slow" 
 | [Figure Helix](../../models/figure-helix) | 2025.02 | High-level planning (7-9Hz) | Low-level control (200Hz) | 200Hz |
 | [Gemini Robotics](../../models/gemini-robotics) | 2025.03 | Cloud inference | On-Device control | - |
 
-<div style="display: flex; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap;">
-  <div style="flex: 1; min-width: 250px;">
-    <img src="/assets/models/groot/groot-n1.6-model-architecture.png" alt="GR00T N1.6 Architecture" style="width: 100%; border-radius: 8px;">
-    <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>GR00T N1.6 (NVIDIA)</em></p>
-  </div>
-  <div style="flex: 1; min-width: 250px;">
-    <img src="/assets/models/figure-helix/helix_architecture.png" alt="Figure Helix Architecture" style="width: 100%; border-radius: 8px;">
-    <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>Figure Helix (Figure AI)</em></p>
-  </div>
-  <div style="flex: 1; min-width: 250px;">
-    <img src="/assets/models/gemini-robotics/Gemini-robotics-overview.png" alt="Gemini Robotics Architecture" style="width: 100%; border-radius: 8px;">
-    <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>Gemini Robotics (Google DeepMind)</em></p>
-  </div>
+<div style="margin: 1.5rem 0;">
+  <img src="/assets/models/groot/groot-n1.6-model-architecture.png" alt="GR00T N1.6 Architecture" style="width: 100%; border-radius: 8px;">
+  <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>GR00T N1.6 (NVIDIA)</em></p>
+</div>
+
+<div style="margin: 1.5rem 0;">
+  <img src="/assets/models/figure-helix/helix_architecture.png" alt="Figure Helix Architecture" style="width: 100%; border-radius: 8px;">
+  <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>Figure Helix (Figure AI)</em></p>
+</div>
+
+<div style="margin: 1.5rem 0;">
+  <img src="/assets/models/gemini-robotics/Gemini-robotics-overview.png" alt="Gemini Robotics Architecture" style="width: 100%; border-radius: 8px;">
+  <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>Gemini Robotics (Google DeepMind)</em></p>
 </div>
 
 > **Why is this structure necessary?**
@@ -108,15 +108,43 @@ A dual-system structure inspired by Daniel Kahneman's "Thinking, Fast and Slow" 
 
 The "Action as Language" paradigm introduced by RT-2 represented actions as tokens. However, major models in 2025 adopted new approaches for **continuous action spaces**.
 
+#### Discrete vs Continuous Action Token
+
+**Discrete Action Token** (RT-1, RT-2, ACT, OpenVLA, etc.) represents robot actions as discrete tokens like LLMs:
+- **Pros**: Leverages LLM's language understanding directly, autoregressive structure transfers VLM pretraining benefits
+- **Cons**: Token explosion at high-frequency control (50Hz+), precision loss in dexterous manipulation tasks
+
+**Continuous Action Token** (π0, GR00T N1, SmolVLA, etc.) directly generates continuous values via Flow Matching or Diffusion:
+- **Pros**: Precise continuous control, efficient at high frequencies, handles multimodal actions naturally
+- **Cons**: Requires multiple denoising steps at inference, relatively limited in leveraging LLM's language capabilities
+
+> For detailed analysis of these trade-offs, see the [FAST Tokenizer](../../models/fast) document. FAST overcomes discrete token limitations with DCT+BPE compression, achieving 5x faster training.
+
+#### 2025 Major Models' Choices
+
 | Model | Action Generation | Features |
 |-------|------------------|----------|
-| [π0](../../models/pi0), [π0.5](../../models/pi0-5) | Flow Matching | Efficient alternative to Diffusion |
-| [GR00T N1](../../models/groot-n1) | Diffusion Transformer | Generate actions from noise |
-| [Diffusion Policy](../../models/diffusion-policy) | Diffusion | Pioneer of visuomotor policies |
-| [SmolVLA](../../models/smolvla) | Flow Matching | 450M lightweight model |
-| [LBM](../../models/lbm-atlas) | Diffusion Transformer | Whole-body single model control |
+| [π0](../../models/pi0), [π0.5](../../models/pi0-5) | Flow Matching | Efficient alternative to Diffusion, 50Hz control |
+| [GR00T N1](../../models/groot-n1) | Diffusion Transformer | Generate actions from noise, dual-system |
+| [SmolVLA](../../models/smolvla) | Flow Matching | 450M lightweight model, runs on MacBook |
+| [LBM](../../models/lbm-atlas) | Diffusion Transformer | Whole-body single model control, 48 timesteps |
 
-> Robot joint control is inherently continuous. Representing it with discrete tokens causes precision loss and token explosion at high frequencies (50Hz+). The convergence on continuous action generation is a natural solution to this problem.
+<div style="margin: 1.5rem 0;">
+  <img src="/assets/models/pi0/pi0.png" alt="π0 Architecture" style="width: 100%; border-radius: 8px;">
+  <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>π0: PaliGemma VLM + Flow Matching Action Expert (Physical Intelligence)</em></p>
+</div>
+
+<div style="margin: 1.5rem 0;">
+  <img src="/assets/models/groot/groot_n1_architecture.png" alt="GR00T N1 Architecture" style="width: 100%; border-radius: 8px;">
+  <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>GR00T N1: Eagle VLM + Diffusion Transformer (NVIDIA)</em></p>
+</div>
+
+<div style="margin: 1.5rem 0;">
+  <img src="/assets/models/smolvla/smolvla_overview.png" alt="SmolVLA Architecture" style="width: 100%; border-radius: 8px;">
+  <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>SmolVLA: SmolVLM + Flow Matching (HuggingFace)</em></p>
+</div>
+
+> Robot joint control is inherently continuous. Representing it with discrete tokens causes precision loss and token explosion at high frequencies (50Hz+). The convergence of 2025 major models on Flow Matching/Diffusion is a natural solution to this problem.
 
 ### Major Model Timeline (2025)
 

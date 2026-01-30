@@ -84,19 +84,19 @@ Daniel Kahneman의 "Thinking, Fast and Slow"에서 영감을 받은 듀얼 시�
 | [Figure Helix](../../models/figure-helix)       | 2025.02 | 고수준 계획 (7-9Hz)          | 저수준 제어 (200Hz)      | 200Hz |
 | [Gemini Robotics](../../models/gemini-robotics) | 2025.03 | 클라우드 추론                 | On-Device 제어        | -     |
 
-<div style="display: flex; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap;">
-  <div style="flex: 1; min-width: 250px;">
-    <img src="/assets/models/groot/groot-n1.6-model-architecture.png" alt="GR00T N1.6 Architecture" style="width: 100%; border-radius: 8px;">
-    <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>GR00T N1.6 (NVIDIA)</em></p>
-  </div>
-  <div style="flex: 1; min-width: 250px;">
-    <img src="/assets/models/figure-helix/helix_architecture.png" alt="Figure Helix Architecture" style="width: 100%; border-radius: 8px;">
-    <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>Figure Helix (Figure AI)</em></p>
-  </div>
-  <div style="flex: 1; min-width: 250px;">
-    <img src="/assets/models/gemini-robotics/Gemini-robotics-overview.png" alt="Gemini Robotics Architecture" style="width: 100%; border-radius: 8px;">
-    <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>Gemini Robotics (Google DeepMind)</em></p>
-  </div>
+<div style="margin: 1.5rem 0;">
+  <img src="/assets/models/groot/groot-n1.6-model-architecture.png" alt="GR00T N1.6 Architecture" style="width: 100%; border-radius: 8px;">
+  <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>GR00T N1.6 (NVIDIA)</em></p>
+</div>
+
+<div style="margin: 1.5rem 0;">
+  <img src="/assets/models/figure-helix/helix_architecture.png" alt="Figure Helix Architecture" style="width: 100%; border-radius: 8px;">
+  <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>Figure Helix (Figure AI)</em></p>
+</div>
+
+<div style="margin: 1.5rem 0;">
+  <img src="/assets/models/gemini-robotics/Gemini-robotics-overview.png" alt="Gemini Robotics Architecture" style="width: 100%; border-radius: 8px;">
+  <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>Gemini Robotics (Google DeepMind)</em></p>
 </div>
 
 > **왜 이런 구조가 필요한가?**
@@ -107,15 +107,43 @@ Daniel Kahneman의 "Thinking, Fast and Slow"에서 영감을 받은 듀얼 시�
 
 RT-2가 제시한 "Action as Language" 패러다임은 액션을 토큰으로 표현했습니다. 하지만 2025년의 주요 모델들은 **연속적인 액션 공간**을 위해 새로운 접근을 채택했습니다.
 
+#### Discrete vs Continuous Action Token
+
+**Discrete Action Token** (RT-1, RT-2, ACT, OpenVLA 등)은 로봇 액션을 LLM처럼 이산 토큰으로 표현합니다:
+- **장점**: LLM의 언어 이해 능력을 그대로 활용, Autoregressive 구조로 VLM 사전학습 효과 전이
+- **단점**: 고주파 제어(50Hz+)에서 토큰 수 폭발, 정밀 조작(Dexterous) 태스크에서 정밀도 손실
+
+**Continuous Action Token** (π0, GR00T N1, SmolVLA 등)은 Flow Matching이나 Diffusion으로 연속 값을 직접 생성합니다:
+- **장점**: 정밀한 연속 제어, 고주파에서도 효율적, Multimodal Action 자연스럽게 처리
+- **단점**: 추론 시 여러 번의 denoising step 필요, LLM의 언어 능력 활용이 상대적으로 제한적
+
+> 두 접근의 trade-off에 대한 자세한 분석은 [FAST 토크나이저](../../models/fast) 문서를 참조하세요. FAST는 DCT+BPE 압축으로 discrete token의 단점을 극복하여 5배 빠른 학습을 달성했습니다.
+
+#### 2025년 주요 모델들의 선택
+
 | 모델 | 액션 생성 방식 | 특징 |
 |------|-------------|------|
-| [π0](../../models/pi0), [π0.5](../../models/pi0-5) | Flow Matching | Diffusion의 효율적 대안 |
-| [GR00T N1](../../models/groot-n1) | Diffusion Transformer | 노이즈에서 액션 생성 |
-| [Diffusion Policy](../../models/diffusion-policy) | Diffusion | Visuomotor 정책의 시초 |
-| [SmolVLA](../../models/smolvla) | Flow Matching | 450M 경량 모델 |
-| [LBM](../../models/lbm-atlas) | Diffusion Transformer | 전신 단일 모델 제어 |
+| [π0](../../models/pi0), [π0.5](../../models/pi0-5) | Flow Matching | Diffusion의 효율적 대안, 50Hz 제어 |
+| [GR00T N1](../../models/groot-n1) | Diffusion Transformer | 노이즈에서 액션 생성, 듀얼 시스템 |
+| [SmolVLA](../../models/smolvla) | Flow Matching | 450M 경량 모델, MacBook 실행 |
+| [LBM](../../models/lbm-atlas) | Diffusion Transformer | 전신 단일 모델 제어, 48 타임스텝 |
 
-> 로봇의 관절 제어는 본질적으로 연속적입니다. 이산 토큰으로 표현하면 정밀도 손실이 발생하고, 고주파 제어(50Hz+)에서 토큰 수가 폭발합니다. 연속 액션 생성 방식의 수렴은 이 문제에 대한 자연스러운 해결책입니다.
+<div style="margin: 1.5rem 0;">
+  <img src="/assets/models/pi0/pi0.png" alt="π0 Architecture" style="width: 100%; border-radius: 8px;">
+  <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>π0: PaliGemma VLM + Flow Matching Action Expert (Physical Intelligence)</em></p>
+</div>
+
+<div style="margin: 1.5rem 0;">
+  <img src="/assets/models/groot/groot_n1_architecture.png" alt="GR00T N1 Architecture" style="width: 100%; border-radius: 8px;">
+  <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>GR00T N1: Eagle VLM + Diffusion Transformer (NVIDIA)</em></p>
+</div>
+
+<div style="margin: 1.5rem 0;">
+  <img src="/assets/models/smolvla/smolvla_overview.png" alt="SmolVLA Architecture" style="width: 100%; border-radius: 8px;">
+  <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>SmolVLA: SmolVLM + Flow Matching (HuggingFace)</em></p>
+</div>
+
+> 로봇의 관절 제어는 본질적으로 연속적입니다. 이산 토큰으로 표현하면 정밀도 손실이 발생하고, 고주파 제어(50Hz+)에서 토큰 수가 폭발합니다. 2025년 주요 모델들이 Flow Matching/Diffusion으로 수렴한 것은 이 문제에 대한 자연스러운 해결책입니다.
 
 ### 주요 모델 타임라인 (2025)
 
