@@ -84,6 +84,21 @@ Daniel Kahneman의 "Thinking, Fast and Slow"에서 영감을 받은 듀얼 시�
 | [Figure Helix](../../models/figure-helix)       | 2025.02 | 고수준 계획 (7-9Hz)          | 저수준 제어 (200Hz)      | 200Hz |
 | [Gemini Robotics](../../models/gemini-robotics) | 2025.03 | 클라우드 추론                 | On-Device 제어        | -     |
 
+<div style="display: flex; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 250px;">
+    <img src="/knowledge/ko/assets/models/groot/groot-n1.6-model-architecture.png" alt="GR00T N1.6 Architecture" style="width: 100%; border-radius: 8px;">
+    <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>GR00T N1.6 (NVIDIA)</em></p>
+  </div>
+  <div style="flex: 1; min-width: 250px;">
+    <img src="/assets/models/figure-helix/helix_architecture.png" alt="Figure Helix Architecture" style="width: 100%; border-radius: 8px;">
+    <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>Figure Helix (Figure AI)</em></p>
+  </div>
+  <div style="flex: 1; min-width: 250px;">
+    <img src="/knowledge/ko/assets/models/gemini-robotics/Gemini-robotics-overview.png" alt="Gemini Robotics Architecture" style="width: 100%; border-radius: 8px;">
+    <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>Gemini Robotics (Google DeepMind)</em></p>
+  </div>
+</div>
+
 > **왜 이런 구조가 필요한가?**
 >
 > [Physical vs Cognitive Intelligence](physical-vs-cognitive) 문서에서 다룬 것처럼, 물리적 동작은 ms 단위의 빠른 피드백이 필요합니다. 반면 언어 이해와 계획은 상대적으로 느립니다. 이 두 가지를 하나의 모델로 처리하려면 계층적 구조가 불가피합니다.

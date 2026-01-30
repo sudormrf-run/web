@@ -143,6 +143,9 @@ Helix 02는 3단계 계층적 아키텍처를 사용합니다.
 
 ## Helix (2025.02) - 초기 버전
 
+![Helix Architecture](/assets/models/figure-helix/helix_architecture.png)
+<p align="center"><em>Helix 아키텍처: System 1 (200Hz 저수준 제어) + System 2 (7-9Hz 고수준 계획)</em></p>
+
 ### 핵심 특징
 
 - 최초의 휴머노이드 전신 고속 제어 VLA

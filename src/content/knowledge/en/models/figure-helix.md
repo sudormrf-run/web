@@ -143,6 +143,9 @@ Handles real-time balance and contact management.
 
 ## Helix (2025.02) - Initial Version
 
+![Helix Architecture](/assets/models/figure-helix/helix_architecture.png)
+<p align="center"><em>Helix Architecture: System 1 (200Hz low-level control) + System 2 (7-9Hz high-level planning)</em></p>
+
 ### Key Features
 
 - First full-body high-speed control VLA for humanoids

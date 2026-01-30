@@ -85,6 +85,21 @@ A dual-system structure inspired by Daniel Kahneman's "Thinking, Fast and Slow" 
 | [Figure Helix](../../models/figure-helix) | 2025.02 | High-level planning (7-9Hz) | Low-level control (200Hz) | 200Hz |
 | [Gemini Robotics](../../models/gemini-robotics) | 2025.03 | Cloud inference | On-Device control | - |
 
+<div style="display: flex; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 250px;">
+    <img src="/knowledge/en/assets/models/groot/groot-n1.6-model-architecture.png" alt="GR00T N1.6 Architecture" style="width: 100%; border-radius: 8px;">
+    <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>GR00T N1.6 (NVIDIA)</em></p>
+  </div>
+  <div style="flex: 1; min-width: 250px;">
+    <img src="/assets/models/figure-helix/helix_architecture.png" alt="Figure Helix Architecture" style="width: 100%; border-radius: 8px;">
+    <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>Figure Helix (Figure AI)</em></p>
+  </div>
+  <div style="flex: 1; min-width: 250px;">
+    <img src="/knowledge/en/assets/models/gemini-robotics/Gemini-robotics-overview.png" alt="Gemini Robotics Architecture" style="width: 100%; border-radius: 8px;">
+    <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>Gemini Robotics (Google DeepMind)</em></p>
+  </div>
+</div>
+
 > **Why is this structure necessary?**
 >
 > As discussed in [Physical vs Cognitive Intelligence](physical-vs-cognitive), physical actions require fast feedback at the millisecond level. Language understanding and planning, however, are relatively slow. Processing both with a single model inevitably requires a hierarchical structure.
