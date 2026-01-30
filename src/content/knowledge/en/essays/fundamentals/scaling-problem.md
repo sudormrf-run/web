@@ -95,6 +95,12 @@ To solve these problems, various companies and research groups are trying differ
 
 Tesla is collecting Action data by [paying $48 per hour](https://interestingengineering.com/culture/teslapaying-to-train-optimus-robot) to teleoperators for their humanoid robot Optimus. Requirements include height between 5'7″~5'11″ (170~180cm), ability to walk 7+ hours per day, and carry loads up to 30 pounds (13.6kg).
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/guP1HM2iTW0?start=7725" title="Tesla Optimus Teleoperation Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Tesla Optimus teleoperation demonstration*
+
+When you actually try teleoperation with VR equipment, sustaining it for extended periods is extremely difficult. The weight of the VR headset, restricted field of view, and repetitive motions while gripping controllers cause severe fatigue after just a few hours. This is one of the fundamental bottlenecks of teleoperation-based data collection.
+
 ---
 
 ## UMI Style Data Collection

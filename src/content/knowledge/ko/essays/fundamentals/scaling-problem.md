@@ -86,6 +86,12 @@ LLM을 확장해서 VLA가 구현 가능할 것 같고, 그렇다면 아주 거�
 
 Tesla는 휴머노이드 로봇 Optimus의 텔레오퍼레이터에게 [시간당 48달러를 지급](https://interestingengineering.com/culture/teslapaying-to-train-optimus-robot)하며 Action 데이터를 수집하고 있습니다. 지원 조건으로는 5'7″ ~ 5'11″ (약 170~180cm) 신장, 하루 7시간 이상 걷기와 최대 30파운드(약 13.6kg) 하중 운반이 가능한 체력이 요구됩니다.
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/guP1HM2iTW0?start=7725" title="Tesla Optimus Teleoperation Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Tesla Optimus 텔레오퍼레이션 시연*
+
+실제로 VR 기기를 착용하고 텔레오퍼레이션을 수행해보면, 장시간 지속하는 것이 매우 어렵습니다. VR 헤드셋의 무게와 시야 제한, 컨트롤러를 쥔 상태에서의 반복 동작은 몇 시간만 지나도 심각한 피로를 유발합니다. 이것이 텔레오퍼레이션 기반 데이터 수집의 근본적인 병목 중 하나입니다.
+
 ## UMI Style 데이터 수집
 
 <video controls width="100%" style="border-radius: 8px; margin-bottom: 0.5rem;">
