@@ -103,6 +103,9 @@ Daniel Kahneman의 "Thinking, Fast and Slow"에서 영감을 받은 듀얼 시�
 >
 > [Physical vs Cognitive Intelligence](physical-vs-cognitive) 문서에서 다룬 것처럼, 물리적 동작은 ms 단위의 빠른 피드백이 필요합니다. 반면 언어 이해와 계획은 상대적으로 느립니다. 이 두 가지를 하나의 모델로 처리하려면 계층적 구조가 불가피합니다.
 
+
+---
+
 ### 수렴 2: 연속 액션 생성 (Continuous Action)
 
 RT-2가 제시한 "Action as Language" 패러다임은 액션을 토큰으로 표현했습니다. 하지만 2025년의 주요 모델들은 **연속적인 액션 공간**을 위해 새로운 접근을 채택했습니다.
@@ -116,6 +119,9 @@ RT-2가 제시한 "Action as Language" 패러다임은 액션을 토큰으로 �
 **Continuous Action Token** (π0, GR00T N1, SmolVLA 등)은 Flow Matching이나 Diffusion으로 연속 값을 직접 생성합니다:
 - **장점**: 정밀한 연속 제어, 고주파에서도 효율적, Multimodal Action 자연스럽게 처리
 - **단점**: 추론 시 여러 번의 denoising step 필요, LLM의 언어 능력 활용이 상대적으로 제한적
+
+<video src="/assets/models/diffusion-policy/diffusion_policy_highlight.mp4" controls width="100%" muted autoplay loop style="border-radius: 8px; margin: 1rem 0;"></video>
+<p align="center" style="font-size: 0.85em;"><em>Continuous Action 생성 예시: 노이즈에서 액션 시퀀스를 점진적으로 생성 (출처: <a href="../../models/diffusion-policy">Diffusion Policy</a>)</em></p>
 
 > 두 접근의 trade-off에 대한 자세한 분석은 [FAST 토크나이저](../../models/fast) 문서를 참조하세요. FAST는 DCT+BPE 압축으로 discrete token의 단점을 극복하여 5배 빠른 학습을 달성했습니다.
 

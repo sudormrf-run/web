@@ -118,6 +118,9 @@ The "Action as Language" paradigm introduced by RT-2 represented actions as toke
 - **Pros**: Precise continuous control, efficient at high frequencies, handles multimodal actions naturally
 - **Cons**: Requires multiple denoising steps at inference, relatively limited in leveraging LLM's language capabilities
 
+<video src="/assets/models/diffusion-policy/diffusion_policy_highlight.mp4" controls width="100%" muted autoplay loop style="border-radius: 8px; margin: 1rem 0;"></video>
+<p align="center" style="font-size: 0.85em;"><em>Continuous Action Example: Gradually generating action sequence from noise (Source: <a href="../../models/diffusion-policy">Diffusion Policy</a>)</em></p>
+
 > For detailed analysis of these trade-offs, see the [FAST Tokenizer](../../models/fast) document. FAST overcomes discrete token limitations with DCT+BPE compression, achieving 5x faster training.
 
 #### 2025 Major Models' Choices
