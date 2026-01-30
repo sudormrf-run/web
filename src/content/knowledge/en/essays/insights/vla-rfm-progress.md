@@ -87,15 +87,15 @@ A dual-system structure inspired by Daniel Kahneman's "Thinking, Fast and Slow" 
 
 <div style="display: flex; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px;">
-    <img src="/knowledge/en/assets/models/groot/groot-n1.6-model-architecture.png" alt="GR00T N1.6 Architecture" style="width: 100%; border-radius: 8px;">
+    <img src="../../assets/models/groot/groot-n1.6-model-architecture.png" alt="GR00T N1.6 Architecture" style="width: 100%; border-radius: 8px;">
     <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>GR00T N1.6 (NVIDIA)</em></p>
   </div>
   <div style="flex: 1; min-width: 250px;">
-    <img src="/assets/models/figure-helix/helix_architecture.png" alt="Figure Helix Architecture" style="width: 100%; border-radius: 8px;">
+    <img src="../../assets/models/figure-helix/helix_architecture.png" alt="Figure Helix Architecture" style="width: 100%; border-radius: 8px;">
     <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>Figure Helix (Figure AI)</em></p>
   </div>
   <div style="flex: 1; min-width: 250px;">
-    <img src="/knowledge/en/assets/models/gemini-robotics/Gemini-robotics-overview.png" alt="Gemini Robotics Architecture" style="width: 100%; border-radius: 8px;">
+    <img src="../../assets/models/gemini-robotics/Gemini-robotics-overview.png" alt="Gemini Robotics Architecture" style="width: 100%; border-radius: 8px;">
     <p align="center" style="font-size: 0.85em; margin-top: 0.5rem;"><em>Gemini Robotics (Google DeepMind)</em></p>
   </div>
 </div>
