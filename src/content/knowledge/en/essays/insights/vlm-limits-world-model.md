@@ -3,7 +3,7 @@ title: Limitations of VLM Backbone, Can World Models Be the Solution?
 description: Structural limitations of VLM backbones in VLA and the potential of World Model approaches
 tags: [vlm, world-model, vla, limitations, architecture]
 category: essays
-order: 6
+order: 7
 related:
   - simulation-world-model.md
   - ../fundamentals/what-is-rfm-vla.md

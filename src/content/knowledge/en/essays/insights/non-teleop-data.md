@@ -3,7 +3,7 @@ title: Non-Teleop Data Collection
 description: New data collection approaches by UMI, Sunday Robotics, and Generalist
 tags: [umi, non-teleop, data-collection, sunday-robotics, generalist]
 category: essays
-order: 8
+order: 9
 related:
   - teleoperation.md
   - ../fundamentals/scaling-problem.md

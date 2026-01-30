@@ -3,7 +3,7 @@ title: 시뮬레이션 & World Model
 description: NVIDIA Omniverse, Cosmos 등을 통한 데이터 생성과 평가
 tags: [simulation, world-model, nvidia, cosmos, omniverse]
 category: essays
-order: 7
+order: 8
 related:
   - ../fundamentals/scaling-problem.md
   - ../../companies/nvidia.md

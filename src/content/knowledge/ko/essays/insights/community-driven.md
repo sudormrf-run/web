@@ -3,7 +3,7 @@ title: 커뮤니티 드리븐 접근
 description: HuggingFace LeRobot, OXE, RoboArena 등 오픈소스 커뮤니티의 노력
 tags: [community, open-source, huggingface, lerobot, oxe, roboarena]
 category: essays
-order: 9
+order: 10
 related:
   - non-teleop-data.md
 

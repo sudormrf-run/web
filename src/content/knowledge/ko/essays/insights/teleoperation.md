@@ -3,7 +3,7 @@ title: Teleoperation 방식
 description: 원격 조종을 통한 Action 데이터 수집
 tags: [teleoperation, data-collection, solution]
 category: essays
-order: 5
+order: 6
 related:
   - ../fundamentals/scaling-problem.md
   - non-teleop-data.md

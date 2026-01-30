@@ -3,7 +3,7 @@ title: Teleoperation Approach
 description: Action data collection through remote operation
 tags: [teleoperation, data-collection, solution]
 category: essays
-order: 5
+order: 6
 related:
   - ../fundamentals/scaling-problem.md
   - non-teleop-data.md

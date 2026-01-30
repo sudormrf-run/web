@@ -3,7 +3,7 @@ title: Non-Teleop 데이터 수집
 description: UMI, Sunday Robotics, Generalist의 새로운 데이터 수집 접근법
 tags: [umi, non-teleop, data-collection, sunday-robotics, generalist]
 category: essays
-order: 8
+order: 9
 related:
   - teleoperation.md
   - ../fundamentals/scaling-problem.md
