@@ -46,11 +46,10 @@ VLA와 RFM의 발전 과정을 시간 역순으로 정리합니다. 최신 모�
 | --------------------- | --------------------------------------------- |
 | **Full Body 제어**      | 손목, 몸통, 머리, 개별 손가락까지 상체 전체를 200Hz로 제어         |
 | **Loco-Manipulation** | 130+ 피트 이동하면서 21개 물체 조작 (Table-to-Dishwasher) |
-| **듀얼 로봇**             | 두 대의 Figure 02가 공유된 장기 조작 태스크를 동시에 해결         |
 
 > 이전 VLA들이 주로 테이블탑 매니퓰레이션에 집중했다면, Helix 02는 **보행과 조작을 통합**한 첫 사례입니다. 휴머노이드가 실제로 공간을 이동하면서 복잡한 작업을 수행하는 모습은 로보틱스의 새로운 장을 열었다고 봅니다.
 
-### Sharpa - 촉각 기반 VLA 데뷔
+### Sharpa - VTLA (촉각이 추가된 VLA) 데뷔
 
 <div class="video-embed">
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/W7q-qlj4EFc?start=82" title="Sharpa CES 2026 Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -79,11 +78,11 @@ Daniel Kahneman의 "Thinking, Fast and Slow"에서 영감을 받은 듀얼 시�
 
 **이 구조를 채택한 주요 모델들:**
 
-| 모델 | 발표 | System 2 | System 1 | 주파수 |
-|------|------|----------|----------|--------|
-| [GR00T N1](../../models/groot-n1) | 2025.03 | Eagle VLM (10Hz) | DiT (120Hz) | 120Hz |
-| [Figure Helix](../../models/figure-helix) | 2025.02 | 고수준 계획 (7-9Hz) | 저수준 제어 (200Hz) | 200Hz |
-| [Gemini Robotics](../../models/gemini-robotics) | 2025.03 | 클라우드 추론 | On-Device 제어 | - |
+| 모델                                              | 발표      | System 2         | System 1       | 주파수   |
+| ----------------------------------------------- | ------- | ---------------- | -------------- | ----- |
+| [GR00T N1](../../models/groot-n1)               | 2025.03 | Eagle VLM (10Hz) | DiT (120Hz)    | 120Hz |
+| [Figure Helix](../../models/figure-helix)       | 2025.02 | 고수준 계획 (7-9Hz)   | 저수준 제어 (200Hz) | 200Hz |
+| [Gemini Robotics](../../models/gemini-robotics) | 2025.03 | 클라우드 추론          | On-Device 제어   | -     |
 
 > **왜 이런 구조가 필요한가?**
 >
@@ -93,11 +92,13 @@ Daniel Kahneman의 "Thinking, Fast and Slow"에서 영감을 받은 듀얼 시�
 
 RT-2가 제시한 "Action as Language" 패러다임은 액션을 토큰으로 표현했습니다. 하지만 2025년의 주요 모델들은 **연속적인 액션 공간**을 위해 새로운 접근을 채택했습니다.
 
-| 방식 | 설명 | 채택 모델 |
-|------|------|----------|
-| **Flow Matching** | Diffusion의 효율적 대안, 연속 분포 모델링 | [π0](../../models/pi0), [π0.5](../../models/pi0-5) |
-| **Diffusion Transformer** | 노이즈에서 액션 생성 | [GR00T N1](../../models/groot-n1), [Diffusion Policy](../../models/diffusion-policy) |
-| **FAST Tokenizer** | DCT+BPE로 연속 액션 압축 | [π0-FAST](../../models/fast) |
+| 모델 | 액션 생성 방식 | 특징 |
+|------|-------------|------|
+| [π0](../../models/pi0), [π0.5](../../models/pi0-5) | Flow Matching | Diffusion의 효율적 대안 |
+| [GR00T N1](../../models/groot-n1) | Diffusion Transformer | 노이즈에서 액션 생성 |
+| [Diffusion Policy](../../models/diffusion-policy) | Diffusion | Visuomotor 정책의 시초 |
+| [SmolVLA](../../models/smolvla) | Flow Matching | 450M 경량 모델 |
+| [LBM](../../models/lbm-atlas) | Diffusion Transformer | 전신 단일 모델 제어 |
 
 > 로봇의 관절 제어는 본질적으로 연속적입니다. 이산 토큰으로 표현하면 정밀도 손실이 발생하고, 고주파 제어(50Hz+)에서 토큰 수가 폭발합니다. 연속 액션 생성 방식의 수렴은 이 문제에 대한 자연스러운 해결책입니다.
 
@@ -105,11 +106,12 @@ RT-2가 제시한 "Action as Language" 패러다임은 액션을 토큰으로 �
 
 | 날짜 | 모델 | 회사 | 핵심 기여 |
 |------|------|------|----------|
-| 2025.01 | [FAST](../../models/fast) | Physical Intelligence | 10배 압축, 5배 빠른 학습 |
 | 2025.02 | [Figure Helix](../../models/figure-helix) | Figure AI | 첫 휴머노이드 전신 VLA |
 | 2025.03 | [GR00T N1](../../models/groot-n1) | NVIDIA | 첫 오픈소스 휴머노이드 VLA |
 | 2025.03 | [Gemini Robotics](../../models/gemini-robotics) | Google DeepMind | Gemini 2.0 기반, Cross-embodiment |
 | 2025.04 | [π0.5](../../models/pi0-5) | Physical Intelligence | Open-world 일반화 |
+| 2025.05 | [SmolVLA](../../models/smolvla) | HuggingFace | 450M 경량 VLA, MacBook 실행 |
+| 2025.08 | [LBM](../../models/lbm-atlas) | Boston Dynamics + TRI | 전신 단일 모델 제어 |
 | 2025.11 | [π*0.6](../../models/pi0-6-star) | Physical Intelligence | RL 자가 개선 (RECAP) |
 
 ---

@@ -93,11 +93,13 @@ A dual-system structure inspired by Daniel Kahneman's "Thinking, Fast and Slow" 
 
 The "Action as Language" paradigm introduced by RT-2 represented actions as tokens. However, major models in 2025 adopted new approaches for **continuous action spaces**.
 
-| Method | Description | Adopted Models |
-|--------|-------------|----------------|
-| **Flow Matching** | Efficient alternative to Diffusion, continuous distribution modeling | [π0](../../models/pi0), [π0.5](../../models/pi0-5) |
-| **Diffusion Transformer** | Generate actions from noise | [GR00T N1](../../models/groot-n1), [Diffusion Policy](../../models/diffusion-policy) |
-| **FAST Tokenizer** | Compress continuous actions via DCT+BPE | [π0-FAST](../../models/fast) |
+| Model | Action Generation | Features |
+|-------|------------------|----------|
+| [π0](../../models/pi0), [π0.5](../../models/pi0-5) | Flow Matching | Efficient alternative to Diffusion |
+| [GR00T N1](../../models/groot-n1) | Diffusion Transformer | Generate actions from noise |
+| [Diffusion Policy](../../models/diffusion-policy) | Diffusion | Pioneer of visuomotor policies |
+| [SmolVLA](../../models/smolvla) | Flow Matching | 450M lightweight model |
+| [LBM](../../models/lbm-atlas) | Diffusion Transformer | Whole-body single model control |
 
 > Robot joint control is inherently continuous. Representing it with discrete tokens causes precision loss and token explosion at high frequencies (50Hz+). The convergence on continuous action generation is a natural solution to this problem.
 
@@ -105,11 +107,12 @@ The "Action as Language" paradigm introduced by RT-2 represented actions as toke
 
 | Date | Model | Company | Key Contribution |
 |------|-------|---------|------------------|
-| 2025.01 | [FAST](../../models/fast) | Physical Intelligence | 10x compression, 5x faster training |
 | 2025.02 | [Figure Helix](../../models/figure-helix) | Figure AI | First full-body humanoid VLA |
 | 2025.03 | [GR00T N1](../../models/groot-n1) | NVIDIA | First open-source humanoid VLA |
 | 2025.03 | [Gemini Robotics](../../models/gemini-robotics) | Google DeepMind | Gemini 2.0-based, Cross-embodiment |
 | 2025.04 | [π0.5](../../models/pi0-5) | Physical Intelligence | Open-world generalization |
+| 2025.05 | [SmolVLA](../../models/smolvla) | HuggingFace | 450M lightweight VLA, runs on MacBook |
+| 2025.08 | [LBM](../../models/lbm-atlas) | Boston Dynamics + TRI | Whole-body single model control |
 | 2025.11 | [π*0.6](../../models/pi0-6-star) | Physical Intelligence | RL self-improvement (RECAP) |
 
 ---
