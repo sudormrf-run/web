@@ -88,7 +88,7 @@ Tesla는 휴머노이드 로봇 Optimus의 텔레오퍼레이터에게 [시간�
 
 <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/guP1HM2iTW0?start=7725" title="Tesla Optimus Teleoperation Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-*Tesla Optimus 텔레오퍼레이션 시연*
+*VR 텔레오퍼레이션 시연*
 
 실제로 VR 기기를 착용하고 텔레오퍼레이션을 수행해보면, 장시간 지속하는 것이 매우 어렵습니다. VR 헤드셋의 무게와 시야 제한, 컨트롤러를 쥔 상태에서의 반복 동작은 몇 시간만 지나도 심각한 피로를 유발합니다. 이것이 텔레오퍼레이션 기반 데이터 수집의 근본적인 병목 중 하나입니다.
 

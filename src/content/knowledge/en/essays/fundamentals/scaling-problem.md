@@ -97,7 +97,7 @@ Tesla is collecting Action data by [paying $48 per hour](https://interestingengi
 
 <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/guP1HM2iTW0?start=7725" title="Tesla Optimus Teleoperation Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-*Tesla Optimus teleoperation demonstration*
+*VR teleoperation demonstration*
 
 When you actually try teleoperation with VR equipment, sustaining it for extended periods is extremely difficult. The weight of the VR headset, restricted field of view, and repetitive motions while gripping controllers cause severe fatigue after just a few hours. This is one of the fundamental bottlenecks of teleoperation-based data collection.
 
