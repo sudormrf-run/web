@@ -1,7 +1,7 @@
 ---
 title: Figure Helix
 description: Figure AI's VLA Model for Humanoid Robots
-tags: [figure-helix, figure-ai, humanoid, vla, figure-02]
+tags: [figure-helix, figure-ai, humanoid, vla, figure-02, figure-03, helix-02]
 category: models
 
 # Authorship
@@ -11,97 +11,145 @@ createdBy:
 lastEditedBy:
   name: Jong Hyun Park
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-15
+lastEditedAt: 2026-01-30
 ---
 
 <div class="author-note">
 
 ### Author's Note
 
-- Impressive that they released a 1-hour continuous operation video, proving real-world VLA capability rather than just cherry-picked demos.
-- Looking forward to Figure AI's continued hardware and model announcements.
+- Helix 02 is the first humanoid VLA to control the full body with a single neural network.
+- Performing 61 sequential actions over 4 minutes without resets proves real-world capability, not cherry-picked demos.
+- Impressive that they've pushed control frequency to 1kHz with the three-layer System 0/1/2 architecture.
 
 </div>
 
 ## Key Significance
 
-- **First Full-Body High-Speed Control VLA for Humanoids**: First VLA to continuously control entire upper body at high speed including wrists, torso, head, and individual fingers
-- **Ultra-High Control Frequency**: System 1 (low-level control) operates at 200Hz for precise real-time manipulation
-- **Dual Robot Simultaneous Control**: Two Figure 02 robots simultaneously solving shared long-horizon manipulation tasks
-- **Most Complex Autonomous Task**: In Table-to-Dishwasher, traveled 130+ feet, 33 interactions, handling 21 objects (including delicate dishes)
-- **Commercial Deployment Stage**: Deployed on Figure 02 currently being tested at BMW factory
-- **Major Investment Raised**: $675M funding from Jeff Bezos, Microsoft, NVIDIA, OpenAI, etc. (valuation $2.6B)
-- **System 1/2 Architecture**: Efficient architecture separating high-level planning (7-9Hz) and low-level control (200Hz)
+- **First Full-Body Autonomous Humanoid**: Single neural system that controls the full body directly from pixels
+- **Longest Autonomous Task**: 4-minute continuous operation with 61 sequential loco-manipulation actions, no resets or human intervention
+- **Three-Layer Architecture**: System 0 (1kHz) + System 1 (200Hz) + System 2 (semantic reasoning)
+- **New Sensors**: Palm cameras and tactile sensors detecting forces as small as 3g
+- **Replaces 100K Lines**: 10-million parameter neural network replaces 109,504 lines of hand-engineered C++ code
 
 <div class="video-embed">
-<iframe width="100%" height="400" src="https://www.youtube.com/embed/lkc2y0yb89U" title="Figure Helix - Official Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/lQsvTrRTBRs" title="Figure Helix 02 - Official Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<p align="center"><em>Figure Helix Official Demo Video</em></p>
+<p align="center"><em>Figure Helix 02 Official Demo Video (2026.01)</em></p>
 
 ---
 
 ## Overview
 
-Helix is a generalist VLA model announced by Figure AI in February 2025, integrating perception, language understanding, and learned control to solve several longstanding challenges in robotics. It is the first VLA to continuously control a humanoid's full body at high speed.
+| Item | Details |
+|------|---------|
+| Latest Version | Helix 02 (January 2026) |
+| Company | Figure AI |
+| Blog | [figure.ai/news/helix-02](https://www.figure.ai/news/helix-02) |
+| Robot | Figure 02 |
+
+---
+
+## Helix 02 (2026.01)
+
+### Key Advancements
+
+Helix 02 is the first humanoid with **"a single neural system that controls the full body directly from pixels."**
+
+| Feature | Helix (2025.02) | Helix 02 (2026.01) |
+|---------|-----------------|---------------------|
+| Control Range | Upper body focused | Full body (locomotion + manipulation integrated) |
+| Architecture | System 1/2 | System 0/1/2 |
+| Max Frequency | 200Hz | 1kHz |
+| Tactile Sensors | None | Detects 3g forces |
+| Palm Cameras | None | Yes |
+
+### 4-Minute Continuous Autonomous Task
+
+Dishwasher loading/unloading across an entire kitchen:
+
+| Item | Value |
+|------|-------|
+| Continuous Operation Time | 4 minutes |
+| Sequential Loco-manipulation Actions | 61 |
+| Resets/Human Intervention | None |
+
+### Dexterity Demonstrations
+
+- Unscrewing bottle caps with torque control
+- Extracting individual pills from organizers despite occlusion
+- Dispensing precisely 5ml from syringes
+- Singulating small metal pieces from cluttered bins
+
+---
+
+## Architecture: System 0/1/2
+
+Helix 02 uses a three-layer hierarchical architecture.
+
+<video src="/assets/models/figure-helix/helix_02.mp4" controls width="100%" style="border-radius: 8px; margin: 1rem 0;"></video>
+<p align="center"><em>Helix 02 System 0/1/2 Architecture Explanation</em></p>
+
+### System 0 (S0) - Physical Execution Layer
 
 | Item | Details |
 |------|---------|
-| Announced | February 2025 |
-| Company | Figure AI |
-| Blog | [figure.ai/news/helix](https://www.figure.ai/news/helix) |
-| Robot | Figure 02 (Helix version) |
+| Frequency | 1 kHz |
+| Parameters | 10 million |
+| Training Data | 1,000+ hours of human motion data |
+| Simulation | 200,000+ parallel environments with domain randomization |
+| Replaced Code | 109,504 lines of hand-engineered C++ |
+
+Handles real-time balance and contact management.
+
+### System 1 (S1) - Visuomotor Control
+
+| Item | Details |
+|------|---------|
+| Frequency | 200 Hz |
+| Architecture | Transformer conditioned on System 2 latents |
+| Structure | "Pixels-to-whole-body" (all sensors → all actuators) |
+
+**Sensor Inputs:**
+- Head cameras
+- Palm cameras
+- Fingertip tactile sensors
+- Proprioception
+
+**Actuator Outputs:**
+- Complete joint control: legs, torso, head, arms, wrists, individual fingers
+
+### System 2 (S2) - Semantic Reasoning
+
+- Processes visual scenes and language commands
+- Sequences high-level behaviors ("Walk to dishwasher and open it")
+- Generates latent goals without specifying low-level coordination
 
 ---
 
-## Key Innovations
+## New Hardware Capabilities
 
-### First Full-Body High-Speed Control VLA
+### Palm Cameras
 
-Helix is the **first VLA** to continuously control the entire humanoid upper body at high speed:
-- Wrists
-- Torso
-- Head
-- Individual fingers
+- Cameras mounted on palms
+- Enable in-hand visual feedback when objects are occluded from head perspective
 
-### Dual Robot Simultaneous Control
+### Tactile Sensors
 
-Two robots operate **simultaneously**:
-- Solving shared long-horizon manipulation tasks
-- Handling previously unseen objects
+- **Sensitivity**: Detects forces as small as 3g ("sensitive enough to feel a paperclip")
+- Force-modulated grasping across five-fingered hands
 
 ---
 
-## Architecture
+## Helix (2025.02) - Initial Version
 
-**System 1 / System 2 Structure** (Dual-system)
+### Key Features
 
-![Helix Architecture](/assets/models/figure-helix/helix_architecture.png)
-<p align="center"><em>Helix Architecture: System 1 (200Hz low-level control) + System 2 (7-9Hz high-level planning)</em></p>
-
-| System | Role | Frequency |
-|--------|------|-----------|
-| System 2 | High-level planning | 7-9 Hz |
-| System 1 | Low-level control | 200 Hz |
-
----
-
-## Hardware: Figure 02 (Helix)
-
-| Item | Spec |
-|------|------|
-| DoF | 35 DoF |
-| Hands | Human-like wrists, hands, fingers |
-| Computing | NVIDIA RTX GPU (3x previous) |
-| Cameras | 6x RGB |
-| Hand Payload | Up to 25kg |
-
----
-
-## Performance
+- First full-body high-speed control VLA for humanoids
+- Controls upper body (wrists, torso, head, individual fingers) at 200Hz
+- Dual robot simultaneous control
 
 ### Table-to-Dishwasher Task
-
-"The most complex task autonomously performed by a robot":
 
 | Item | Value |
 |------|-------|
@@ -109,28 +157,86 @@ Two robots operate **simultaneously**:
 | Unique Interactions | 33 |
 | Number of Objects | 21 (including delicate dishes) |
 
-### Dexterous Manipulation
+---
 
-- Two wine glasses in one hand (without breaking)
-- Wine glass insertion into dishwasher
-- Picking up 2 utensils with one hand
+## Hardware: Figure 02
+
+| Item | Spec |
+|------|------|
+| DoF | 35 DoF |
+| Hands | Human-like wrists, hands, fingers |
+| Computing | NVIDIA RTX GPU (3x previous) |
+| Cameras | Head 6x RGB + Palm cameras (Helix 02) |
+| Tactile Sensors | Fingertips (Helix 02) |
+| Hand Payload | Up to 25kg |
+
+---
+
+## Hardware: Figure 03 (2025.10)
+
+Figure 03 is the third-generation humanoid robot designed for home environments.
+
+### Figure 02 vs Figure 03
+
+| Feature | Figure 02 | Figure 03 |
+|---------|-----------|-----------|
+| Target Environment | Industrial (BMW factory) | Home |
+| Weight | Baseline | 9% lighter |
+| Exterior | Hard machined parts | Soft textiles + multi-density foam |
+| Battery | - | 5-hour runtime, 2kW wireless charging |
+| Data Transfer | - | 10 Gbps mmWave |
+
+### Vision System
+
+| Item | Spec |
+|------|------|
+| Total Cameras | 8 (Head 6 + Palm 2) |
+| Frame Rate | 2x improved |
+| Latency | Reduced to 1/4 |
+| Field of View | 60% wider |
+
+### Tactile Sensors
+
+- Fingertip sensors: Detect forces as small as 3g (paperclip weight)
+- Custom-developed first-generation tactile sensors
+
+### Battery & Charging
+
+| Item | Spec |
+|------|------|
+| Model | F.03 Battery |
+| Runtime | ~5 hours |
+| Charging | 2kW wireless inductive charging (foot coils) |
+| Certification | UN38.3, targeting UL standard |
+| Data Offload | 10 Gbps mmWave (for fleet learning) |
+
+### Safety Design
+
+- Covered in soft textiles (washable, tool-free removal)
+- Multi-density foam eliminates pinch points
+- Optional: Cut-resistant garments
+- Customizable side screens (fleet branding)
+
+### Manufacturing: BotQ
+
+| Item | Details |
+|------|---------|
+| Current Capacity | 12,000 units/year |
+| 4-Year Goal | 100,000 total units |
+| Manufacturing | Shift from CNC to die-casting, injection molding, stamping |
+| Expected Price | ~$20,000 |
 
 ---
 
 ## Figure AI History
 
-### Figure 01 (2022)
-- First prototype
-- Bipedal robot
-- Targeting logistics/warehousing
-
-### Figure 02 (2024.08)
-- Industrial deployment stage
-- BMW factory testing (South Carolina)
-
-### Helix Announcement (2025.02)
-- Figure 02 + Helix VLA
-- Performing household tasks
+| Date | Event |
+|------|-------|
+| 2022 | Figure 01 - First prototype, bipedal, targeting logistics/warehousing |
+| 2024.08 | Figure 02 - Industrial deployment, BMW factory testing |
+| 2025.02 | Helix - First full-body humanoid VLA |
+| 2025.10 | Figure 03 - Home humanoid, soft design |
+| 2026.01 | Helix 02 - Full-body autonomy, System 0/1/2 architecture |
 
 ---
 
@@ -146,10 +252,11 @@ Two robots operate **simultaneously**:
 
 ## References
 
+- [Figure AI - Helix 02](https://www.figure.ai/news/helix-02)
+- [Figure AI - Figure 03](https://www.figure.ai/news/introducing-figure-03)
 - [Figure AI - Helix](https://www.figure.ai/news/helix)
 - [Helix Logistics](https://www.figure.ai/news/helix-logistics)
 - [Figure AI Wikipedia](https://en.wikipedia.org/wiki/Figure_AI)
-- [The Robot Report](https://www.therobotreport.com/figure-humanoid-robots-demonstrate-helix-model-household-chores/)
 
 ---
 

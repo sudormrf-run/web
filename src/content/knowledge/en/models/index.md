@@ -76,6 +76,7 @@ VLA models have evolved rapidly since RT-1 in 2022.
 | Model | Description |
 |-------|-------------|
 | [Figure Helix](./figure-helix) | Figure AI's humanoid VLA. First full-body high-speed control (200Hz), dual robot simultaneous control |
+| [CraftNet](./craftnet) | Sharpa's VTLA model. Tactile integration, System 0/1/2 hierarchy, 100Hz fine manipulation |
 | [Redwood AI](./redwood-ai) | 1X Technologies' VLA for NEO. 160M parameters, on-board execution, World Model integration |
 | [Generalist GEN-0](./generalist-gen0) | Claims discovery of robotics scaling laws with 270,000 hours of real data. Harmonic Reasoning architecture |
 | [Sunday ACT-1](./sunday-act1) | Zero Robot Data approach. 10M+ episodes collected from 500+ homes using $200 gloves |
