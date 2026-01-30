@@ -21,7 +21,7 @@ lastEditedBy:
 lastEditedAt: 2026-01-31
 ---
 
-## 1. Intro: LLM AGI, 그리고 Physical AI
+## 1. LLM, AGI, 그리고 Physical AI
 
 LLM을 시작으로 한 AGI race는 인간 혹은 인간 이상의 지능을 구현하는 여정입니다.  
 2026년 현재, 조만간 달성이 가능할 것으로 보입니다.
@@ -35,9 +35,9 @@ ChatGPT가 세상을 바꾸었듯이, **Physical AI가 물리적 노동의 세�
 
 ---
 
-## 2. 최신 데모 살펴보기 (2025-2026)
+## 2. 최신 데모 살펴보기 (2026.01)
 
-### CES 2026: 
+### CES 2026
 
 ### Boston Dynamics Atlas + LBM
 
@@ -48,6 +48,7 @@ ChatGPT가 세상을 바꾸었듯이, **Physical AI가 물리적 노동의 세�
 
 > 과연 이 데모에는 "지능" 이 있을까?
 
+---
 
 
 <div class="video-embed">
@@ -70,7 +71,7 @@ Sharpa CraftNet
 
 [Sharpa](../../companies/sharpa)가 [CraftNet](../../models/craftnet)과 North 휴머노이드를 공개했습니다.
 - **VTLA (Vision-Tactile-Language-Action)**: 촉각을 VLA에 통합한 최초의 상용 모델
-- 완전 자율 탁구 랠리 시연
+- 바람개비 접기, 트럼프 카드 다루기 등 촉각이 필요한 데모를 선보임
 - CES 2026 Innovation Award 수상
 
 

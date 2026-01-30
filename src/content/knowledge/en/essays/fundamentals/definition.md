@@ -122,6 +122,10 @@ Laundry has been called the "holy grail" of robot manipulation.
 
 Plastic-wrapped logistics packages, flexible cables, food ingredients — tasks previously impossible with rule-based approaches are becoming possible through VLA.
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/lkc2y0yb89U" title="Figure AI - Logistics demo (1 hour)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Figure AI's 1-hour continuous logistics demo — handling various deformable objects including plastic-wrapped packages*
+
 ### 3. Inheriting LLM's World Knowledge
 
 What makes VLA special is that it **inherits the "common sense about the world" from LLM/VLM**.

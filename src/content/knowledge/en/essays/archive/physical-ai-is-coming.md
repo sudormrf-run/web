@@ -21,7 +21,7 @@ lastEditedBy:
 lastEditedAt: 2026-01-31
 ---
 
-## 1. Intro: LLM AGI, and Physical AI
+## 1. LLM, AGI, and Physical AI
 
 The AGI race, starting with LLMs, is a journey to achieve human-level or beyond intelligence. As of 2026, it seems achievable in the near future.
 
@@ -34,9 +34,9 @@ Just as ChatGPT changed the world, there's an expectation that **Physical AI wil
 
 ---
 
-## 2. Latest Demos (2025-2026)
+## 2. Latest Demos (2026.01)
 
-### CES 2026:
+### CES 2026
 
 ### Boston Dynamics Atlas + LBM
 
@@ -47,6 +47,7 @@ The star of this CES, Boston Dynamics' ATLAS
 
 > Does this demo have "intelligence"?
 
+---
 
 
 <div class="video-embed">
@@ -69,7 +70,7 @@ Sharpa CraftNet
 
 [Sharpa](../../companies/sharpa) unveiled [CraftNet](../../models/craftnet) and the North humanoid.
 - **VTLA (Vision-Tactile-Language-Action)**: First commercial model integrating tactile sensing into VLA
-- Fully autonomous table tennis rally demonstration
+- Pinwheel folding, playing card handling, and other demos requiring tactile sensing
 - CES 2026 Innovation Award winner
 
 

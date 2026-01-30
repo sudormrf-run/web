@@ -122,6 +122,10 @@ Physical AI가 단순한 마케팅 용어가 아닌 이유는, **실제로 불�
 
 플라스틱 포장된 물류 패키지, 유연한 케이블, 음식 재료 등 — 기존 rule-based 방식으로는 불가능했던 작업들이 VLA를 통해 가능해지고 있습니다.
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/lkc2y0yb89U" title="Figure AI - Logistics demo (1 hour)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+*Figure AI의 물류 작업 1시간 연속 데모 — 비닐 포장된 택배를 포함한 다양한 Deformable 물체 처리*
+
 ### 3. LLM의 World Knowledge를 계승한다
 
 VLA가 특별한 이유는 **LLM/VLM의 "세상에 대한 상식"을 물려받기 때문**입니다.
