@@ -3,6 +3,7 @@ title: Physical vs Cognitive Intelligence
 description: The fundamental differences between physical and cognitive intelligence
 tags: [physical-intelligence, cognitive-intelligence, philosophy, moravec-paradox]
 category: essays
+order: 1
 related:
   - ../fundamentals/what-is-rfm-vla.md
   - tactile-sensing.md

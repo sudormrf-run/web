@@ -3,6 +3,7 @@ title: VLA & RFM 발전 과정
 description: Vision-Language-Action 모델과 Robot Foundation Model의 발전 현황
 tags: [vla, rfm, progress, timeline, convergent-evolution]
 category: essays
+order: 2
 related:
   - ../fundamentals/what-is-rfm-vla.md
   - ../fundamentals/scaling-problem.md

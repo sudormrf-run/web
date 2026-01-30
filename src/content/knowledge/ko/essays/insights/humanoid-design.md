@@ -3,6 +3,7 @@ title: 휴머노이드 디자인
 description: 2족 보행과 5지 손가락에 대한 고찰
 tags: [humanoid, bipedal, dexterous, hardware, deep-dive]
 category: essays
+order: 3
 related:
   - tactile-sensing.md
   - physical-vs-cognitive.md

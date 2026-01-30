@@ -3,6 +3,7 @@ title: VLM 백본의 한계, World 모델이 해결책이 될 수 있을까
 description: VLA의 VLM 백본이 가진 구조적 한계와 World Model 기반 접근법의 가능성
 tags: [vlm, world-model, vla, limitations, architecture]
 category: essays
+order: 6
 related:
   - simulation-world-model.md
   - ../fundamentals/what-is-rfm-vla.md

@@ -3,6 +3,7 @@ title: Physical vs Cognitive Intelligence
 description: 물리적 지능과 인지적 지능의 본질적 차이
 tags: [physical-intelligence, cognitive-intelligence, philosophy, moravec-paradox]
 category: essays
+order: 1
 related:
   - ../fundamentals/what-is-rfm-vla.md
   - tactile-sensing.md

@@ -3,6 +3,7 @@ title: The Need for Tactile Sensing
 description: Why robots need tactile sensing and the challenges of implementation
 tags: [tactile, sensing, hardware, deep-dive]
 category: essays
+order: 4
 related:
   - physical-vs-cognitive.md
   - humanoid-design.md

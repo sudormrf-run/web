@@ -3,6 +3,7 @@ title: Community-Driven Approach
 description: Open-source community efforts including HuggingFace LeRobot, OXE, and RoboArena
 tags: [community, open-source, huggingface, lerobot, oxe, roboarena]
 category: essays
+order: 9
 related:
   - non-teleop-data.md
 

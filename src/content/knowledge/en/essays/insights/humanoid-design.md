@@ -3,6 +3,7 @@ title: Humanoid Design
 description: Considerations on bipedal locomotion and five-fingered hands
 tags: [humanoid, bipedal, dexterous, hardware, deep-dive]
 category: essays
+order: 3
 related:
   - tactile-sensing.md
   - physical-vs-cognitive.md

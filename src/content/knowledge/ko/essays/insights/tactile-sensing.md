@@ -3,6 +3,7 @@ title: 촉각의 필요성
 description: 로봇에게 촉각 센싱이 필요한 이유와 구현의 어려움
 tags: [tactile, sensing, hardware, deep-dive]
 category: essays
+order: 4
 related:
   - physical-vs-cognitive.md
   - humanoid-design.md
