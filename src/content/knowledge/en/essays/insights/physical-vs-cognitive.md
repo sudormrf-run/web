@@ -47,26 +47,27 @@ AI that could beat chess champions was created in 1997, but taking keys out of a
 We don't usually call these physical, natural actions "intelligence," but when you think about it carefully, they're extremely difficult tasks.
 
 
-## 0.7 Seconds to Grab a Fruit
+## The Process of Picking Up Objects
 
+<video src="/assets/essays/physical-vs-cognitive/grasp_chess.mov" loop muted playsinline controls width="100%" style="border-radius: 8px; margin: 1rem 0;"></video>
 
-Prof. Sangbae Kim, Professor of Mechanical Engineering at MIT and Director of the Biomimetic Robotics Lab, shares a fascinating experiment in his TEDxMIT talk. He filmed his hand grabbing a fruit (a pear) with a camera—the entire process took only about 0.7 seconds.
+I tried a similar experiment shown in MIT Prof. Sangbae Kim's talk below.
 
-When analyzed in slow motion, **5-6 decision points** occurred during that brief moment:
+> Try to predict which chess piece I will pick up before playing the video.
 
-1. Initial attempt to grab the pear
-2. Failed to grasp it
-3. While failing, the hand touched 5 different pears
-4. Selected one of them (surprisingly, the one at the bottom)
+When analyzed in slow motion, **5 decision points** occurred during that brief moment:
+
+1. Felt the floor texture and paused
+2. Attempted to grab the highest priority piece but failed
+3. While failing, the hand touched N other pieces
+4. Selected one of them (the piece between thumb and index finger)
 5. Successfully grabbed it
 
-He had no conscious memory of any of this. He wasn't even looking at the pear, didn't plan his finger joint trajectories. It all happened completely unconsciously, automatically.
+I had no conscious memory of any of this. I wasn't even looking at the piece, didn't plan my finger joint trajectories. It all happened completely unconsciously, automatically.
 
----
+Humans perform all this instantaneous information processing and decision-making within 1 second.
 
-## What Your Tongue Does
-
-Prof. Kim provides another example.
+Here's another example.
 
 > "Everybody ate something during lunch? Have you ever thought about the eating process?"
 
