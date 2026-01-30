@@ -75,9 +75,11 @@ const hardwareSubcategories = isKorean ? [
 const essaysSubcategories = isKorean ? [
   { id: 'fundamentals', name: '입문 가이드' },
   { id: 'insights', name: '인사이트' },
+  { id: 'archive', name: '아카이브' },
 ] : [
   { id: 'fundamentals', name: 'Fundamentals' },
   { id: 'insights', name: 'Insights' },
+  { id: 'archive', name: 'Archive' },
 ];
 
 // Group content by category
@@ -106,8 +108,8 @@ const groupedContent = categories.map(category => {
         return slugParts.length >= 4 && slugParts[2] === sub.id;
       });
 
-      // Sort fundamentals and insights by order
-      if (sub.id === 'fundamentals' || sub.id === 'insights') {
+      // Sort fundamentals, insights, and archive by order
+      if (sub.id === 'fundamentals' || sub.id === 'insights' || sub.id === 'archive') {
         subItems.sort((a, b) => (a.data.order || 999) - (b.data.order || 999));
       }
 

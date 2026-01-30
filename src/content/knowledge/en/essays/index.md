@@ -62,3 +62,11 @@ After completing the fundamentals, explore topics that interest you.
 ### Blog
 
 - **[Action Data Scaling Problem](fundamentals/scaling-problem)** - Why VLA doesn't scale as easily as LLM
+
+---
+
+## Archive
+
+Presentation materials and comprehensive guides.
+
+- **[Physical AI: The Age of Physical Intelligence is Coming](archive/physical-ai-is-coming)** - Podcast presentation material

@@ -62,3 +62,11 @@ Physical AI가 처음이시라면 아래 순서대로 읽어보세요.
 ### 블로그
 
 - **[Action Data Scaling 문제](fundamentals/scaling-problem)** - VLA가 LLM처럼 쉽게 스케일링되지 않는 이유
+
+---
+
+## 아카이브
+
+발표 자료 및 종합 가이드 문서입니다.
+
+- **[Physical AI, 물리적 지능도 곧 온다](archive/physical-ai-is-coming)** - 팟캐스트 발표 자료
