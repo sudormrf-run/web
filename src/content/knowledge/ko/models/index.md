@@ -76,6 +76,7 @@ VLA(Vision-Language-Action) 모델은 시각 정보와 언어 지시를 받아 �
 | 모델 | 설명 |
 |------|------|
 | [Figure Helix](./figure-helix) | Figure AI의 휴머노이드 VLA. 최초 전신 고속 제어 (200Hz), 듀얼 로봇 동시 제어 |
+| [LBM (Large Behavior Model)](./lbm-atlas) | Boston Dynamics + TRI의 Atlas용 VLA. 450M Diffusion Transformer, 전신 단일 모델 제어 |
 | [CraftNet](./craftnet) | Sharpa의 VTLA 모델. 촉각 통합, System 0/1/2 계층 구조, 100Hz 정밀 조작 |
 | [Redwood AI](./redwood-ai) | 1X Technologies의 NEO용 VLA. 160M 파라미터, 온보드 실행, World Model 통합 |
 | [Generalist GEN-0](./generalist-gen0) | 270,000시간 실제 데이터로 로보틱스 스케일링 법칙 발견 주장. Harmonic Reasoning 아키텍처 |
