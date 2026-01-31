@@ -18,7 +18,7 @@ lastEditedAt: 2026-01-15
 
 Figure AI는 2022년 Brett Adcock가 설립한 미국의 로보틱스 기업으로, AI 기반 범용 휴머노이드 로봇 개발에 집중하고 있습니다. Archer Aviation과 Vettery를 창업한 연쇄 창업가 Adcock이 이끄는 Figure AI는 빠른 속도로 휴머노이드 시장의 선두 주자로 부상했습니다. [^wiki]
 
-<!-- Image pending: ![Figure 02](../../assets/hardware/humanoids/figure.png) -->
+<!-- Image pending: ![Figure 02](/assets/hardware/humanoids/figure.png) -->
 
 | 항목 | 내용 |
 |------|------|
@@ -308,8 +308,8 @@ BMW 배포에서 얻은 주요 교훈이 Figure 03 설계에 반영되었습니�
 
 ## See Also
 
-- [하드웨어 목록](../index)
-- [Figure AI](../../companies/figure)
-- [Figure Helix](../../models/figure-helix)
+- [하드웨어 목록](/knowledge/hardware/)
+- [Figure AI](/knowledge/companies/figure)
+- [Figure Helix](/knowledge/models/figure-helix)
 - [Tesla Optimus](optimus)
 

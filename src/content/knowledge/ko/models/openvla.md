@@ -24,7 +24,7 @@ lastEditedAt: 2026-01-15
 - **학술 협력의 결과물**: Stanford, UC Berkeley, TRI, Google DeepMind, MIT 5개 기관 공동 개발
 - **오픈소스 VLA 생태계 시작점**: 이후 SmolVLA, MiniVLA 등 경량 오픈소스 VLA 연구의 기반이 됨
 
-![OpenVLA Architecture](../assets/models/openvla/openvla_model_architecture.jpg)
+![OpenVLA Architecture](/assets/models/openvla/openvla_model_architecture.jpg)
 <p align="center"><em>OpenVLA 아키텍처: Prismatic VLM (SigLIP + DinoV2) + Llama 2 7B 기반</em></p>
 
 ---
@@ -183,12 +183,12 @@ OpenVLA의 핵심 장점 중 하나는 **효율적인 파인튜닝**입니다.
 
 ## See Also
 
-- [모델 목록](./)
+- [모델 목록](/knowledge/models/)
 - [Octo](octo)
 - [RT](rt)
 - [SmolVLA](smolvla)
 
 ### 관련 인물
-- [Sergey Levine](../people/sergey-levine) - 공동 저자
-- [Chelsea Finn](../people/chelsea-finn) - Stanford 연구실
+- [Sergey Levine](/knowledge/people/sergey-levine) - 공동 저자
+- [Chelsea Finn](/knowledge/people/chelsea-finn) - Stanford 연구실
 

@@ -41,4 +41,4 @@ lastEditedAt: 2026-01-29
 ## See Also
 
 - [Simulation & World Model](simulation-world-model)
-- [What are RFM & VLA?](../fundamentals/what-is-rfm-vla)
+- [What are RFM & VLA?](/knowledge/essays/fundamentals/what-is-rfm-vla)

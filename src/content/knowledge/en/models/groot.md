@@ -30,7 +30,7 @@ lastEditedAt: 2026-01-20
 |------|---------|
 | Initial Announcement | March 2024 (GTC 2024) |
 | N1 Open-Source Release | March 2025 (GTC 2025) |
-| Company | [NVIDIA](../companies/nvidia) |
+| Company | [NVIDIA](/knowledge/companies/nvidia) |
 | GitHub | [NVIDIA/Isaac-GR00T](https://github.com/NVIDIA/Isaac-GR00T) |
 | License | Apache 2.0 |
 
@@ -51,7 +51,7 @@ lastEditedAt: 2026-01-20
 
 ## Dual-System Architecture
 
-![GR00T N1 Architecture](../assets/models/groot/groot_n1_architecture.png)
+![GR00T N1 Architecture](/assets/models/groot/groot_n1_architecture.png)
 <p align="center"><em>GR00T N1 Architecture: System 2 (VLM) + System 1 (DiT) Dual-System Structure</em></p>
 
 Inspired by human cognition principles (Kahneman, 2011):
@@ -84,5 +84,5 @@ Inspired by human cognition principles (Kahneman, 2011):
 - [DreamGen](dreamgen) - Synthetic Data Generation
 
 ### Related People
-- [Yuke Zhu](../people/yuke-zhu) - NVIDIA GEAR Lab Co-Lead
-- [Jim Fan](../people/jim-fan) - NVIDIA GEAR Lab Co-Lead
+- [Yuke Zhu](/knowledge/people/yuke-zhu) - NVIDIA GEAR Lab Co-Lead
+- [Jim Fan](/knowledge/people/jim-fan) - NVIDIA GEAR Lab Co-Lead

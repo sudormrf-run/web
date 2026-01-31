@@ -145,6 +145,6 @@ World Labs' Spatial Intelligence is directly relevant to robotics:
 
 ## See Also
 
-- [Company List](./)
-- [Fei-Fei Li](../people/fei-fei-li)
-- [Simulation & World Model](../essays/insights/simulation-world-model)
+- [Company List](/knowledge/companies/)
+- [Fei-Fei Li](/knowledge/people/fei-fei-li)
+- [Simulation & World Model](/knowledge/essays/insights/simulation-world-model)

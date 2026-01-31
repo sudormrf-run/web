@@ -15,7 +15,7 @@ lastEditedAt: 2026-01-15
 ---
 
 <!-- Image file needed: assets/hardware/arms/kinova.png -->
-<!-- Image pending: ![Kinova Gen3](../../assets/hardware/arms/kinova.png) -->
+<!-- Image pending: ![Kinova Gen3](/assets/hardware/arms/kinova.png) -->
 
 ## Overview
 
@@ -182,6 +182,6 @@ Kinova Gen3 is being used as a core platform for VLA (Vision-Language-Action) mo
 
 ## See Also
 
-- [Hardware List](./)
-- [Franka Panda](./franka-panda)
-- [UR Series](./ur-series)
+- [Hardware List](/knowledge/hardware/arms/)
+- [Franka Panda](/knowledge/hardware/arms/franka-panda)
+- [UR Series](/knowledge/hardware/arms/ur-series)

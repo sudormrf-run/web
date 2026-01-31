@@ -19,7 +19,7 @@ lastEditedAt: 2026-01-15
 > Home > Hardware > Hands > GEX
 
 <!-- TODO: Add image -->
-<!-- Image pending: ![GEX Hand](../../assets/hardware/hands/gex.png) -->
+<!-- Image pending: ![GEX Hand](/assets/hardware/hands/gex.png) -->
 
 ---
 
@@ -221,7 +221,7 @@ GX11 is used in combination with EX12 exoskeleton glove:
 
 ## See Also
 
-- [Hardware List](../index)
+- [Hardware List](/knowledge/hardware/)
 - [LEAP Hand](leap-hand) - Similar low-cost design
 - [Shadow Hand](shadow-hand) - High-performance benchmark
 - [Allegro Hand](allegro) - Mid-range alternative

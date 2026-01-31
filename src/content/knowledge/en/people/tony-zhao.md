@@ -159,5 +159,5 @@ Features:
 
 ## See Also
 
-- [ACT](../models/act)
+- [ACT](/knowledge/models/act)
 - [Chelsea Finn](chelsea-finn)

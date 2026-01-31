@@ -48,7 +48,7 @@ LLM 분야에서 **Scaling Law**는 모델 크기, 데이터 양, 컴퓨트를 �
 
 ### Generalist AI의 주장
 
-[Generalist GEN-0](../../models/generalist-gen0)는 **270,000시간**의 실제 물리적 상호작용 데이터로 로보틱스 스케일링 법칙을 발견했다고 주장합니다.
+[Generalist GEN-0](/knowledge/models/generalist-gen0)는 **270,000시간**의 실제 물리적 상호작용 데이터로 로보틱스 스케일링 법칙을 발견했다고 주장합니다.
 
 ![GEN-0 Scaling Law](/assets/models/generalist-gen0/scaling_law_vla.png)
 <p align="center"><em>GEN-0 스케일링 법칙: 데이터/컴퓨트 증가에 따른 예측 가능한 성능 향상 (출처: Generalist AI)</em></p>
@@ -67,7 +67,7 @@ LLM 분야에서 **Scaling Law**는 모델 크기, 데이터 양, 컴퓨트를 �
 
 ### NVIDIA GR00T의 합성 데이터 실험
 
-[GR00T N1](../../models/groot-n1)은 합성 데이터의 스케일링 효과를 체계적으로 검증했습니다.
+[GR00T N1](/knowledge/models/groot-n1)은 합성 데이터의 스케일링 효과를 체계적으로 검증했습니다.
 
 | 데이터 유형 | 규모 | 생성 시간 |
 |------------|------|----------|
@@ -82,7 +82,7 @@ LLM 분야에서 **Scaling Law**는 모델 크기, 데이터 양, 컴퓨트를 �
 
 ### Physical Intelligence π 시리즈
 
-[π0](../../models/pi0)는 10,000+ 시간의 텔레오퍼레이션 데이터를 8개 로봇 플랫폼에서 수집하여 범용 정책의 가능성을 입증했습니다.
+[π0](/knowledge/models/pi0)는 10,000+ 시간의 텔레오퍼레이션 데이터를 8개 로봇 플랫폼에서 수집하여 범용 정책의 가능성을 입증했습니다.
 
 ---
 
@@ -99,7 +99,7 @@ LLM 분야에서 **Scaling Law**는 모델 크기, 데이터 양, 컴퓨트를 �
 
 ### Action Data Scaling Problem
 
-[Action Data Scaling 문제](../fundamentals/scaling-problem)에서 다룬 것처럼, 로봇 액션 데이터 수집은 본질적으로 어렵습니다:
+[Action Data Scaling 문제](/knowledge/essays/fundamentals/scaling-problem)에서 다룬 것처럼, 로봇 액션 데이터 수집은 본질적으로 어렵습니다:
 
 1. **물리적 제약**: 로봇이 실제로 움직여야 함
 2. **시간 비용**: 1시간 데이터 = 1시간 이상 소요
@@ -154,10 +154,10 @@ Generalist AI의 접근법:
 
 | 모델 | 데이터 규모 | 데이터 유형 |
 |------|-----------|------------|
-| [Generalist GEN-0](../../models/generalist-gen0) | 270,000시간 | 실제 로봇 |
-| [π0](../../models/pi0) | 10,000+시간 | 텔레오퍼레이션 |
-| [GR00T N1](../../models/groot-n1) | 88시간 + 780K 합성 | 실제 + 합성 |
-| [Sunday ACT-1](../../models/sunday-act1) | 10M+ 에피소드 | 글러브 (인간 동작) |
+| [Generalist GEN-0](/knowledge/models/generalist-gen0) | 270,000시간 | 실제 로봇 |
+| [π0](/knowledge/models/pi0) | 10,000+시간 | 텔레오퍼레이션 |
+| [GR00T N1](/knowledge/models/groot-n1) | 88시간 + 780K 합성 | 실제 + 합성 |
+| [Sunday ACT-1](/knowledge/models/sunday-act1) | 10M+ 에피소드 | 글러브 (인간 동작) |
 
 ---
 
@@ -182,8 +182,8 @@ Generalist AI의 접근법:
 
 ## See Also
 
-- [Action Data Scaling 문제](../fundamentals/scaling-problem) - 데이터 수집의 근본적 어려움
-- [Generalist GEN-0](../../models/generalist-gen0) - 스케일링 법칙 발견 주장
-- [GR00T N1](../../models/groot-n1) - 합성 데이터 효과 검증
-- [π0](../../models/pi0) - 대규모 텔레오퍼레이션 데이터 학습
+- [Action Data Scaling 문제](/knowledge/essays/fundamentals/scaling-problem) - 데이터 수집의 근본적 어려움
+- [Generalist GEN-0](/knowledge/models/generalist-gen0) - 스케일링 법칙 발견 주장
+- [GR00T N1](/knowledge/models/groot-n1) - 합성 데이터 효과 검증
+- [π0](/knowledge/models/pi0) - 대규모 텔레오퍼레이션 데이터 학습
 - [Teleoperation 방식](teleoperation) - 데이터 수집 방법

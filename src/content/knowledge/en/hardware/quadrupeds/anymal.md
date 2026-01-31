@@ -14,7 +14,7 @@ lastEditedBy:
 lastEditedAt: 2026-01-26
 ---
 
-<!-- Image pending: ![ANYmal - ANYbotics Industrial Inspection Robot](../../assets/hardware/quadrupeds/anymal.png) -->
+<!-- Image pending: ![ANYmal - ANYbotics Industrial Inspection Robot](/assets/hardware/quadrupeds/anymal.png) -->
 *Image: ANYbotics ANYmal quadruped robot - See [ANYbotics official page](https://www.anybotics.com/robotics/anymal/)*
 
 ## Overview
@@ -374,7 +374,7 @@ ANYmal Research is an international community for advancing legged robot researc
 
 ## See Also
 
-- [Hardware List](../index)
+- [Hardware List](/knowledge/hardware/)
 - [[Boston Dynamics Spot]]
 - [[Unitree Robots]]
 - [[Legged Robot Control]]

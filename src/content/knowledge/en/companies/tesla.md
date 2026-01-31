@@ -115,6 +115,6 @@ Tesla operates **teleoperation-based data collection** (based on reports):
 
 ## See Also
 
-- [Company List](./)
-- [Teleoperation Methods](../essays/insights/teleoperation)
-- [Humanoid Design](../essays/insights/humanoid-design)
+- [Company List](/knowledge/companies/)
+- [Teleoperation Methods](/knowledge/essays/insights/teleoperation)
+- [Humanoid Design](/knowledge/essays/insights/humanoid-design)

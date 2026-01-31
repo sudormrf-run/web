@@ -18,7 +18,7 @@ lastEditedAt: 2026-01-15
 
 > Home > Hardware > Humanoids > Digit
 
-<!-- Image pending: ![Digit](../../assets/hardware/humanoids/digit.png) -->
+<!-- Image pending: ![Digit](/assets/hardware/humanoids/digit.png) -->
 
 ---
 
@@ -317,6 +317,6 @@ The logistics industry faces increasing volumes and persistent labor shortages, 
 
 ## See Also
 
-- [Hardware List](./)
-- [Figure Humanoid](./figure)
-- [Tesla Optimus](./optimus)
+- [Hardware List](/knowledge/hardware/humanoids/)
+- [Figure Humanoid](/knowledge/hardware/humanoids/figure)
+- [Tesla Optimus](/knowledge/hardware/humanoids/optimus)

@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-15
 > Home > Hardware > Hands > Inspire Hand
 
 <!-- 이미지 플레이스홀더: 실제 이미지 파일을 assets 폴더에 추가 필요 -->
-<!-- Image pending: ![Inspire Hand](../../assets/hardware/hands/inspire-hand.png) -->
+<!-- Image pending: ![Inspire Hand](/assets/hardware/hands/inspire-hand.png) -->
 
 ---
 
@@ -243,6 +243,6 @@ git clone https://github.com/unitreerobotics/DFX_inspire_service
 
 ## See Also
 
-- [하드웨어 목록](../)
-- [Ability Hand](./ability)
-- [Shadow Dexterous Hand](./shadow-hand)
+- [하드웨어 목록](/knowledge/hardware/)
+- [Ability Hand](/knowledge/hardware/hands/ability)
+- [Shadow Dexterous Hand](/knowledge/hardware/hands/shadow-hand)

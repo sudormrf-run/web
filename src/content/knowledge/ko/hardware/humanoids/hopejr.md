@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-26
 > Home > Hardware > Humanoids > HopeJR
 
 <!-- 이미지 플레이스홀더: 실제 이미지 파일이 없으면 이 줄을 제거하거나 이미지를 추가하세요 -->
-<!-- Image pending: ![HopeJR](../../assets/hardware/humanoids/hopejr.png) -->
+<!-- Image pending: ![HopeJR](/assets/hardware/humanoids/hopejr.png) -->
 
 ---
 
@@ -227,10 +227,10 @@ HuggingFace가 함께 발표한 데스크탑 로봇으로[^1], 2025년 7월 사�
 
 ## See Also
 
-- [하드웨어 목록](../)
-- [LeRobot Arms](../arms/lerobot-arms)
-- [Reachy](./reachy)
-- [SmolVLA](../../models/smolvla)
+- [하드웨어 목록](/knowledge/hardware/)
+- [LeRobot Arms](/knowledge/hardware/arms/lerobot-arms)
+- [Reachy](/knowledge/hardware/humanoids/reachy)
+- [SmolVLA](/knowledge/models/smolvla)
 
 ---
 

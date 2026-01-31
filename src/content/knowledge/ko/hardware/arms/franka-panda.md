@@ -21,7 +21,7 @@ lastEditedAt: 2026-01-15
 
 > Home > Hardware > Arms > Franka Panda
 
-<!-- Image pending: ![Franka Panda](../../assets/hardware/arms/franka-panda.png) -->
+<!-- Image pending: ![Franka Panda](/assets/hardware/arms/franka-panda.png) -->
 
 ---
 
@@ -284,6 +284,6 @@ Franka Panda는 VLA(Vision-Language-Action) 모델 연구에서 가장 널리 �
 
 ## See Also
 
-- [하드웨어 목록](../index)
+- [하드웨어 목록](/knowledge/hardware/)
 - [Franka Research 3](franka-research3)
-- [OpenVLA](../../models/openvla)
+- [OpenVLA](/knowledge/models/openvla)

@@ -21,7 +21,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Arms > Franka Research 3
 
-<!-- Image pending: ![Franka Research 3](../../assets/hardware/arms/franka-research3.png) -->
+<!-- Image pending: ![Franka Research 3](/assets/hardware/arms/franka-research3.png) -->
 <!-- 이미지 파일이 없는 경우 공식 이미지 참조: https://franka.de/franka-research-3 -->
 
 ---
@@ -406,6 +406,6 @@ FR3는 VLA(Vision-Language-Action) 모델 연구에서 가장 널리 사용되�
 
 ## See Also
 
-- [하드웨어 목록](../index)
+- [하드웨어 목록](/knowledge/hardware/)
 - [Franka Panda](franka-panda)
-- [OpenVLA](../../models/openvla)
+- [OpenVLA](/knowledge/models/openvla)

@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-15
 
 > Home > Hardware > Humanoids > NEO
 
-<!-- Image pending: ![1X NEO](../../assets/hardware/humanoids/neo.png) -->
+<!-- Image pending: ![1X NEO](/assets/hardware/humanoids/neo.png) -->
 
 ---
 
@@ -198,9 +198,9 @@ Redwood의 가장 큰 기술적 차별점은 **보행과 조작의 통합 제어
 
 ## See Also
 
-- [하드웨어 목록](../)
-- [1X Technologies](../../companies/1x)
-- [Redwood AI](../../models/redwood-ai)
+- [하드웨어 목록](/knowledge/hardware/)
+- [1X Technologies](/knowledge/companies/1x)
+- [Redwood AI](/knowledge/models/redwood-ai)
 
 ---
 

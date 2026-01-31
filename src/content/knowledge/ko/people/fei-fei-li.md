@@ -214,5 +214,5 @@ ImageNet (현재): 1400만+ 이미지, 21,841 카테고리, Amazon Mechanical Tu
 
 ## See Also
 
-- [World Labs](../companies/world-labs)
+- [World Labs](/knowledge/companies/world-labs)
 - [Stanford HAI](https://hai.stanford.edu/)

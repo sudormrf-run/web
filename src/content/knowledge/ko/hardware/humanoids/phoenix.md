@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-26
 > Home > Hardware > Humanoids > Phoenix
 
 <!-- TODO: 이미지 추가 필요 -->
-<!-- Image pending: ![Phoenix](../../assets/hardware/humanoids/phoenix.png) -->
+<!-- Image pending: ![Phoenix](/assets/hardware/humanoids/phoenix.png) -->
 
 ---
 
@@ -262,7 +262,7 @@ Sanctuary AI는 12개 이상 산업에서 수백 개 작업을 시연했다 (202
 
 ## See Also
 
-- [하드웨어 목록](../)
-- [Figure 휴머노이드](./figure)
-- [Tesla Optimus](./optimus)
-- [Apollo (Apptronik)](./apollo)
+- [하드웨어 목록](/knowledge/hardware/)
+- [Figure 휴머노이드](/knowledge/hardware/humanoids/figure)
+- [Tesla Optimus](/knowledge/hardware/humanoids/optimus)
+- [Apollo (Apptronik)](/knowledge/hardware/humanoids/apollo)

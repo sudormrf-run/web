@@ -268,6 +268,6 @@ NVIDIA는 로보틱스 AI의 **인프라 레이어**를 장악하는 전략. 2M+
 
 ## See Also
 
-- [회사 목록](./)
-- [GR00T](../models/groot)
-- [시뮬레이션 & World Model](../essays/insights/simulation-world-model)
+- [회사 목록](/knowledge/companies/)
+- [GR00T](/knowledge/models/groot)
+- [시뮬레이션 & World Model](/knowledge/essays/insights/simulation-world-model)

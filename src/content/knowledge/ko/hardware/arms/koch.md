@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Arms > Koch
 
-<!-- Image pending: ![Koch](../../assets/hardware/arms/koch.png) -->
+<!-- Image pending: ![Koch](/assets/hardware/arms/koch.png) -->
 
 ---
 
@@ -527,8 +527,8 @@ Koch의 저가 구조는 분산된 커뮤니티 데이터 수집을 가능하게
 
 ## See Also
 
-- [하드웨어 목록](../index)
+- [하드웨어 목록](/knowledge/hardware/)
 - [LeRobot Arms (SO-100/SO-101)](lerobot-arms)
-- [SmolVLA](../../models/smolvla)
-- [ACT Policy](../../models/act)
-- [Diffusion Policy](../../models/diffusion-policy)
+- [SmolVLA](/knowledge/models/smolvla)
+- [ACT Policy](/knowledge/models/act)
+- [Diffusion Policy](/knowledge/models/diffusion-policy)

@@ -193,4 +193,4 @@ Pieter Abbeel 연구실 출신/협력:
 
 - [Chelsea Finn](chelsea-finn)
 - [Sergey Levine](sergey-levine)
-- [Covariant](../companies/covariant)
+- [Covariant](/knowledge/companies/covariant)

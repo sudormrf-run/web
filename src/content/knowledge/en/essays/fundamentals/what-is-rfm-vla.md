@@ -88,7 +88,7 @@ LLMs became so smart and expanded in modality that they can do various things. T
 
 RFM is applying this directly to robots. It's a term projecting the expectation that VLA-based robots will do various tasks for humans.
 
-Reflecting this expectation, numerous VLAs were released in 2025 alone: [Pi0](../../models/pi0), [OpenVLA](../../models/openvla), [SmolVLA](../../models/smolvla), [GR00T](../../models/groot), etc.
+Reflecting this expectation, numerous VLAs were released in 2025 alone: [Pi0](/knowledge/models/pi0), [OpenVLA](/knowledge/models/openvla), [SmolVLA](/knowledge/models/smolvla), [GR00T](/knowledge/models/groot), etc.
 
 ---
 
@@ -207,7 +207,7 @@ Whether VLA succeeds or not, there's one biggest problem.
 **It's the data.**
 
 - [Why Scaling is Difficult](scaling-problem) - Fundamental difficulties in robot data collection
-- [Limitations of VLM Backbone](../insights/vlm-limits-world-model) - Can World Models be the solution?
+- [Limitations of VLM Backbone](/knowledge/essays/insights/vlm-limits-world-model) - Can World Models be the solution?
 
 ---
 

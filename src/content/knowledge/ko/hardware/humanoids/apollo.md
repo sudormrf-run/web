@@ -28,7 +28,7 @@ lastEditedAt: 2026-01-15
 
 > Home > Hardware > Humanoids > Apollo
 
-<!-- Image pending: ![Apollo](../../assets/hardware/humanoids/apollo.png) -->
+<!-- Image pending: ![Apollo](/assets/hardware/humanoids/apollo.png) -->
 
 ---
 
@@ -249,7 +249,7 @@ CEO Jeff Cardenas: "경제성이 맞는 지점에 도달했다. 공장과 창고
 
 ## See Also
 
-- [하드웨어 목록](../index)
+- [하드웨어 목록](/knowledge/hardware/)
 - [Tesla Optimus](optimus)
 - [Figure 휴머노이드](figure)
 - [Agility Digit](digit)

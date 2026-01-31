@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-26
 > Home > Hardware > Arms > WidowX
 
 <!-- Image placeholder: actual image file needs to be added to assets folder -->
-<!-- Image pending: ![WidowX Arms](../../assets/hardware/arms/widowx.png) -->
+<!-- Image pending: ![WidowX Arms](/assets/hardware/arms/widowx.png) -->
 
 ---
 
@@ -287,7 +287,7 @@ Released OpenPI framework as open-source in February 2025, fully integrated with
 
 ## See Also
 
-- [Hardware List](../index)
+- [Hardware List](/knowledge/hardware/)
 - [ALOHA](aloha)
 
 ---

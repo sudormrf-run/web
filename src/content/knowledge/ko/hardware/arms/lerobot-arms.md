@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Arms > LeRobot Arms
 
-<!-- Image pending: ![LeRobot SO101](../../assets/hardware/arms/lerobot-so101.png) -->
+<!-- Image pending: ![LeRobot SO101](/assets/hardware/arms/lerobot-so101.png) -->
 
 ---
 
@@ -396,7 +396,7 @@ lerobot-find-port
 
 ## See Also
 
-- [하드웨어 목록](../index)
-- [SmolVLA](../../models/smolvla)
+- [하드웨어 목록](/knowledge/hardware/)
+- [SmolVLA](/knowledge/models/smolvla)
 - [Koch](koch)
-- [ACT Policy](../../models/act)
+- [ACT Policy](/knowledge/models/act)

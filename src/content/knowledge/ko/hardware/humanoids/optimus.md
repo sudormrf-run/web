@@ -31,7 +31,7 @@ lastEditedAt: 2026-01-15
 
 > Home > Hardware > Humanoids > Optimus
 
-<!-- Image pending: ![Tesla Optimus](../../assets/hardware/humanoids/optimus.png) -->
+<!-- Image pending: ![Tesla Optimus](/assets/hardware/humanoids/optimus.png) -->
 
 *이 문서의 정보는 2026년 1월 기준이며, 스펙 및 계획은 Tesla 발표와 업계 분석을 기반으로 한다.*
 
@@ -235,7 +235,7 @@ Tesla Optimus의 AI는 FSD(Full Self-Driving)에서 검증된 **End-to-End 신�
 
 ## See Also
 
-- [하드웨어 목록](../index)
-- [Tesla](../../companies/tesla)
+- [하드웨어 목록](/knowledge/hardware/)
+- [Tesla](/knowledge/companies/tesla)
 - [Boston Dynamics Atlas](atlas)
 - [Figure 휴머노이드](figure)

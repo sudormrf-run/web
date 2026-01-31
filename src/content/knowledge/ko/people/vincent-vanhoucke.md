@@ -136,7 +136,7 @@ lastEditedAt: 2026-01-26
 
 ## See Also
 
-- [RT](../models/rt)
-- [Gemini Robotics](../models/gemini-robotics)
-- [Google DeepMind](../companies/google-deepmind)
+- [RT](/knowledge/models/rt)
+- [Gemini Robotics](/knowledge/models/gemini-robotics)
+- [Google DeepMind](/knowledge/companies/google-deepmind)
 - [Karol Hausman](karol-hausman)

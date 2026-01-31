@@ -23,7 +23,7 @@ lastEditedAt: 2026-01-15
   권장 이미지: PSYONIC 공식 제품 이미지 또는 CC 라이선스 이미지 사용
   이미지가 없을 경우 아래 라인을 주석 처리하거나 삭제하세요.
 -->
-<!-- Image pending: ![Ability Hand](../../assets/hardware/hands/ability-hand.png) -->
+<!-- Image pending: ![Ability Hand](/assets/hardware/hands/ability-hand.png) -->
 
 ---
 
@@ -191,7 +191,7 @@ PSYONIC은 전 세계 로보틱스 연구자들을 위해 Ability Hand를 연구
 
 ## See Also
 
-- [하드웨어 목록](./)
+- [하드웨어 목록](/knowledge/hardware/hands/)
 - [Inspire Hand](inspire)
 
 ---

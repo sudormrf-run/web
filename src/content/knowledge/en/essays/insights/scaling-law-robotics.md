@@ -48,7 +48,7 @@ This law justified **investment** in large-scale models like GPT-3 and GPT-4. If
 
 ### Generalist AI's Claims
 
-[Generalist GEN-0](../../models/generalist-gen0) claims to have discovered robotics scaling laws with **270,000 hours** of real physical interaction data.
+[Generalist GEN-0](/knowledge/models/generalist-gen0) claims to have discovered robotics scaling laws with **270,000 hours** of real physical interaction data.
 
 ![GEN-0 Scaling Law](/assets/models/generalist-gen0/scaling_law_vla.png)
 <p align="center"><em>GEN-0 Scaling Law: Predictable performance improvement with data/compute increase (Source: Generalist AI)</em></p>
@@ -67,7 +67,7 @@ This law justified **investment** in large-scale models like GPT-3 and GPT-4. If
 
 ### NVIDIA GR00T's Synthetic Data Experiment
 
-[GR00T N1](../../models/groot-n1) systematically validated the scaling effect of synthetic data.
+[GR00T N1](/knowledge/models/groot-n1) systematically validated the scaling effect of synthetic data.
 
 | Data Type | Scale | Generation Time |
 |-----------|-------|-----------------|
@@ -82,7 +82,7 @@ This law justified **investment** in large-scale models like GPT-3 and GPT-4. If
 
 ### Physical Intelligence π Series
 
-[π0](../../models/pi0) demonstrated the possibility of generalist policies by collecting 10,000+ hours of teleoperation data across 8 robot platforms.
+[π0](/knowledge/models/pi0) demonstrated the possibility of generalist policies by collecting 10,000+ hours of teleoperation data across 8 robot platforms.
 
 ---
 
@@ -99,7 +99,7 @@ This law justified **investment** in large-scale models like GPT-3 and GPT-4. If
 
 ### Action Data Scaling Problem
 
-As discussed in [The Action Data Scaling Problem](../fundamentals/scaling-problem), collecting robot action data is inherently difficult:
+As discussed in [The Action Data Scaling Problem](/knowledge/essays/fundamentals/scaling-problem), collecting robot action data is inherently difficult:
 
 1. **Physical Constraints**: Robot must physically move
 2. **Time Cost**: 1 hour of data = 1+ hours of work
@@ -154,10 +154,10 @@ Generalist AI's approach:
 
 | Model | Data Scale | Data Type |
 |-------|-----------|-----------|
-| [Generalist GEN-0](../../models/generalist-gen0) | 270,000 hours | Real robot |
-| [π0](../../models/pi0) | 10,000+ hours | Teleoperation |
-| [GR00T N1](../../models/groot-n1) | 88 hours + 780K synthetic | Real + Synthetic |
-| [Sunday ACT-1](../../models/sunday-act1) | 10M+ episodes | Gloves (human motion) |
+| [Generalist GEN-0](/knowledge/models/generalist-gen0) | 270,000 hours | Real robot |
+| [π0](/knowledge/models/pi0) | 10,000+ hours | Teleoperation |
+| [GR00T N1](/knowledge/models/groot-n1) | 88 hours + 780K synthetic | Real + Synthetic |
+| [Sunday ACT-1](/knowledge/models/sunday-act1) | 10M+ episodes | Gloves (human motion) |
 
 ---
 
@@ -182,8 +182,8 @@ Generalist AI's approach:
 
 ## See Also
 
-- [The Action Data Scaling Problem](../fundamentals/scaling-problem) - Fundamental difficulties of data collection
-- [Generalist GEN-0](../../models/generalist-gen0) - Claims of scaling law discovery
-- [GR00T N1](../../models/groot-n1) - Synthetic data effect validation
-- [π0](../../models/pi0) - Large-scale teleoperation data learning
+- [The Action Data Scaling Problem](/knowledge/essays/fundamentals/scaling-problem) - Fundamental difficulties of data collection
+- [Generalist GEN-0](/knowledge/models/generalist-gen0) - Claims of scaling law discovery
+- [GR00T N1](/knowledge/models/groot-n1) - Synthetic data effect validation
+- [π0](/knowledge/models/pi0) - Large-scale teleoperation data learning
 - [Teleoperation Approach](teleoperation) - Data collection methods

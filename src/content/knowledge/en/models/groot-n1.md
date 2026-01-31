@@ -32,7 +32,7 @@ lastEditedAt: 2026-01-20
 - **Cross-Embodiment Support**: Single model supports various robot platforms
 - **Fully Open Source**: Model, code, and evaluation scenarios all released under Apache 2.0 license
 
-![GR00T N1 Architecture](../assets/models/groot/groot_n1_architecture.png)
+![GR00T N1 Architecture](/assets/models/groot/groot_n1_architecture.png)
 <p align="center"><em>GR00T N1 Architecture: System 2 (VLM) + System 1 (Diffusion Transformer) Dual-System Structure</em></p>
 
 ---
@@ -108,7 +108,7 @@ GR00T N1 addresses the "data island" problem by organizing heterogeneous data so
 
 ### Data Pyramid
 
-![GR00T N1 Data Pyramid](../assets/models/groot/groot-n1-data-pyramid.png)
+![GR00T N1 Data Pyramid](/assets/models/groot/groot-n1-data-pyramid.png)
 <p align="center"><em>GR00T N1 Data Pyramid: Hierarchical structure of real data, synthetic data, and web-scale data</em></p>
 
 #### Data Composition by Layer
@@ -383,13 +383,13 @@ Robot platforms actually tested in the GR00T N1 paper:
 
 | Platform | Type | Task Type |
 |----------|------|-----------|
-| [Fourier GR-1](../hardware/humanoids/fourier) | Humanoid | Language-conditioned bimanual manipulation (primary real-world testing) |
+| [Fourier GR-1](/knowledge/hardware/humanoids/fourier) | Humanoid | Language-conditioned bimanual manipulation (primary real-world testing) |
 
 ### Simulation Benchmarks
 
 | Platform | Benchmark | Task Type |
 |----------|-----------|-----------|
-| [Franka Emika Panda](../hardware/arms/franka-panda) | RoboCasa | Tabletop manipulation (24 atomic tasks) |
+| [Franka Emika Panda](/knowledge/hardware/arms/franka-panda) | RoboCasa | Tabletop manipulation (24 atomic tasks) |
 | Bimanual Panda Arms | DexMimicGen | Bimanual manipulation (parallel-jaw grippers) |
 | Bimanual Panda Arms + Dexterous Hands | DexMimicGen | Bimanual + dexterous manipulation |
 | GR-1 Humanoid | GR-1 Tabletop | Humanoid tabletop manipulation |
@@ -404,9 +404,9 @@ Per [NVIDIA official announcement](https://nvidianews.nvidia.com/news/nvidia-isa
 
 | Company | Robot/Platform | Note |
 |---------|----------------|------|
-| [1X Technologies](../companies/1x) | [NEO](../hardware/humanoids/neo) | Autonomous home tidying demo at GTC 2025 keynote |
-| Agility Robotics | [Digit](../hardware/humanoids/digit) | |
-| Boston Dynamics | [Atlas](../hardware/humanoids/atlas) | |
+| [1X Technologies](/knowledge/companies/1x) | [NEO](/knowledge/hardware/humanoids/neo) | Autonomous home tidying demo at GTC 2025 keynote |
+| Agility Robotics | [Digit](/knowledge/hardware/humanoids/digit) | |
+| Boston Dynamics | [Atlas](/knowledge/hardware/humanoids/atlas) | |
 | Mentee Robotics | MenteeBot | |
 | NEURA Robotics | 4NE-1 | |
 
@@ -415,8 +415,8 @@ Per [NVIDIA official announcement](https://nvidianews.nvidia.com/news/nvidia-isa
 ## Authors
 
 **Project Leads:**
-- [Linxi "Jim" Fan](../people/jim-fan) - NVIDIA GEAR Lab Co-Lead
-- [Yuke Zhu](../people/yuke-zhu) - NVIDIA GEAR Lab Co-Lead, UT Austin Associate Professor
+- [Linxi "Jim" Fan](/knowledge/people/jim-fan) - NVIDIA GEAR Lab Co-Lead
+- [Yuke Zhu](/knowledge/people/yuke-zhu) - NVIDIA GEAR Lab Co-Lead, UT Austin Associate Professor
 
 **Core Authors (partial):**
 - Dieter Fox - NVIDIA, University of Washington
@@ -479,4 +479,4 @@ pip install --no-build-isolation flash-attn==2.7.1.post4
 - [DreamGen](dreamgen) - Synthetic Data Generation Pipeline
 
 ### Related People
-- [Jim Fan](../people/jim-fan) - NVIDIA GEAR Lab, GR00T Research Lead
+- [Jim Fan](/knowledge/people/jim-fan) - NVIDIA GEAR Lab, GR00T Research Lead

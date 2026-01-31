@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Hands > Clone Hand
 
-<!-- Image pending: ![Clone Hand](../../assets/hardware/hands/clone-hand.png) -->
+<!-- Image pending: ![Clone Hand](/assets/hardware/hands/clone-hand.png) -->
 
 ---
 
@@ -167,6 +167,6 @@ Kozlik began his interest in artificial muscles in 2014, and posted the first pr
 
 ## See Also
 
-- [Hardware List](../)
-- [Shadow Hand](./shadow-hand)
-- [Allegro Hand](./allegro)
+- [Hardware List](/knowledge/hardware/)
+- [Shadow Hand](/knowledge/hardware/hands/shadow-hand)
+- [Allegro Hand](/knowledge/hardware/hands/allegro)

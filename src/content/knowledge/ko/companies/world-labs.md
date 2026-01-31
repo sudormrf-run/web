@@ -145,6 +145,6 @@ World Labs의 Spatial Intelligence는 로보틱스와 직접적인 관련이 있
 
 ## See Also
 
-- [회사 목록](./)
-- [Fei-Fei Li](../people/fei-fei-li)
-- [시뮬레이션 & World Model](../essays/insights/simulation-world-model)
+- [회사 목록](/knowledge/companies/)
+- [Fei-Fei Li](/knowledge/people/fei-fei-li)
+- [시뮬레이션 & World Model](/knowledge/essays/insights/simulation-world-model)

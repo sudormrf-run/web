@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Arms > Koch
 
-<!-- Image pending: ![Koch](../../assets/hardware/arms/koch.png) -->
+<!-- Image pending: ![Koch](/assets/hardware/arms/koch.png) -->
 
 ---
 
@@ -527,8 +527,8 @@ Koch's low-cost structure enables distributed community data collection:
 
 ## See Also
 
-- [Hardware List](../index)
+- [Hardware List](/knowledge/hardware/)
 - [LeRobot Arms (SO-100/SO-101)](lerobot-arms)
-- [SmolVLA](../../models/smolvla)
-- [ACT Policy](../../models/act)
-- [Diffusion Policy](../../models/diffusion-policy)
+- [SmolVLA](/knowledge/models/smolvla)
+- [ACT Policy](/knowledge/models/act)
+- [Diffusion Policy](/knowledge/models/diffusion-policy)

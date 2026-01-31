@@ -24,7 +24,7 @@ lastEditedAt: 2026-01-15
 - **Result of Academic Collaboration**: Jointly developed by 5 institutions - Stanford, UC Berkeley, TRI, Google DeepMind, MIT
 - **Starting Point for Open-Source VLA Ecosystem**: Foundation for subsequent lightweight open-source VLA research like SmolVLA, MiniVLA
 
-![OpenVLA Architecture](../assets/models/openvla/openvla_model_architecture.jpg)
+![OpenVLA Architecture](/assets/models/openvla/openvla_model_architecture.jpg)
 <p align="center"><em>OpenVLA Architecture: Based on Prismatic VLM (SigLIP + DinoV2) + Llama 2 7B</em></p>
 
 ---
@@ -183,11 +183,11 @@ One of OpenVLA's key strengths is **efficient fine-tuning**.
 
 ## See Also
 
-- [Model List](./)
+- [Model List](/knowledge/models/)
 - [Octo](octo)
 - [RT](rt)
 - [SmolVLA](smolvla)
 
 ### Related People
-- [Sergey Levine](../people/sergey-levine) - Co-author
-- [Chelsea Finn](../people/chelsea-finn) - Stanford Lab
+- [Sergey Levine](/knowledge/people/sergey-levine) - Co-author
+- [Chelsea Finn](/knowledge/people/chelsea-finn) - Stanford Lab

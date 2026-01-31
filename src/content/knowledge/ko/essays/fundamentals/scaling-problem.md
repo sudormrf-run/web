@@ -132,7 +132,7 @@ HuggingFace의 성공 공식
 
 [1X](https://www.1x.tech/discover/world-model-self-learning)는 World Model과 IDM (Inverse Dynamics Model)을 활용하여 라벨링 없는 비디오 데이터로부터 로봇이 스스로 학습할 수 있는 방법을 연구하고 있습니다. 이 접근법은 Action 라벨 없이도 대규모 비디오 데이터를 활용할 수 있는 가능성을 보여줍니다.
 
-보다 자세한 내용은 [VLM 백본의 한계와 World Model](../insights/vlm-limits-world-model)을 참조하세요.
+보다 자세한 내용은 [VLM 백본의 한계와 World Model](/knowledge/essays/insights/vlm-limits-world-model)을 참조하세요.
 
 
 
@@ -141,10 +141,10 @@ HuggingFace의 성공 공식
 
 | 접근법                                         | 주체                                            | 설명                                                        |
 | ------------------------------------------- | --------------------------------------------- | --------------------------------------------------------- |
-| [Teleoperation](../insights/teleoperation)  | Tesla, Google, Physical Intelligence, Galaxea | 직접 데이터를 수집                                                |
-| [Non-Teleop](../insights/non-teleop-data)   | UMI, Generalist, Sunday Robotics              | Non-Teleop 데이터로 학습 시도                                     |
-| [시뮬레이션](../insights/simulation-world-model) | NVIDIA                                        | 물리 시뮬레이션(Omniverse)과 World Model(Cosmos)로 데이터를 생산, 증강, 평가 |
-| [커뮤니티](../insights/community-driven)        | HuggingFace                                   | 오픈소스 정신으로 커뮤니티 드리븐 데이터 수집                                 |
+| [Teleoperation](/knowledge/essays/insights/teleoperation)  | Tesla, Google, Physical Intelligence, Galaxea | 직접 데이터를 수집                                                |
+| [Non-Teleop](/knowledge/essays/insights/non-teleop-data)   | UMI, Generalist, Sunday Robotics              | Non-Teleop 데이터로 학습 시도                                     |
+| [시뮬레이션](/knowledge/essays/insights/simulation-world-model) | NVIDIA                                        | 물리 시뮬레이션(Omniverse)과 World Model(Cosmos)로 데이터를 생산, 증강, 평가 |
+| [커뮤니티](/knowledge/essays/insights/community-driven)        | HuggingFace                                   | 오픈소스 정신으로 커뮤니티 드리븐 데이터 수집                                 |
 | World Model                                 | 1X, NVIDIA                                    | Evaluation 자동화, VLA 백본 교체, 월드 모델로 합성 데이터 생성               |
 | 분산 평가                                       | 학계                                            | OXE, RoboArena 등                                          |
 | 기타                                          | 다양함                                           | 휴먼 비디오에서 Action 추출, 에고센트릭 데이터 수집 장비 등                     |
@@ -161,13 +161,13 @@ HuggingFace의 성공 공식
 
 여기까지 Physical AI 입문 가이드를 마쳤습니다.
 
-더 깊이 탐색하고 싶다면 [Physical AI 입문 가이드](../../physical-ai/)로 돌아가거나, 아래 인사이트 에세이를 살펴보세요.
+더 깊이 탐색하고 싶다면 [Physical AI 입문 가이드](/knowledge/physical-ai/)로 돌아가거나, 아래 인사이트 에세이를 살펴보세요.
 
 ### 다음으로 읽어볼 문서들
 
-- [Physical vs Cognitive Intelligence](../insights/physical-vs-cognitive) - 물리적 지능에 대한 고찰
-- [VLA & RFM 발전 과정](../insights/vla-rfm-progress) - VLA와 RFM의 진행 중인 발전 과정
-- [휴머노이드 디자인](../insights/humanoid-design) - 휴머노이드의 디자인 문제
-- [촉각 센싱](../insights/tactile-sensing) - 촉각은 과연 필요할까?
-- [Teleoperation 방식](../insights/teleoperation) - 텔레오퍼레이션으로 데이터 수집
-- [시뮬레이션 & World Model](../insights/simulation-world-model) - 합성 데이터와 월드 모델
+- [Physical vs Cognitive Intelligence](/knowledge/essays/insights/physical-vs-cognitive) - 물리적 지능에 대한 고찰
+- [VLA & RFM 발전 과정](/knowledge/essays/insights/vla-rfm-progress) - VLA와 RFM의 진행 중인 발전 과정
+- [휴머노이드 디자인](/knowledge/essays/insights/humanoid-design) - 휴머노이드의 디자인 문제
+- [촉각 센싱](/knowledge/essays/insights/tactile-sensing) - 촉각은 과연 필요할까?
+- [Teleoperation 방식](/knowledge/essays/insights/teleoperation) - 텔레오퍼레이션으로 데이터 수집
+- [시뮬레이션 & World Model](/knowledge/essays/insights/simulation-world-model) - 합성 데이터와 월드 모델

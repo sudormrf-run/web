@@ -41,7 +41,7 @@ VLA와 RFM의 발전 과정을 시간 역순으로 정리합니다. 최신 모�
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/lQsvTrRTBRs" title="Figure Helix - Official Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-[Figure Helix](../../models/figure-helix)는 휴머노이드 전신을 고속 제어하는 최초의 VLA입니다.
+[Figure Helix](/knowledge/models/figure-helix)는 휴머노이드 전신을 고속 제어하는 최초의 VLA입니다.
 
 | 특징                    | 의의                                            |
 | --------------------- | --------------------------------------------- |
@@ -56,11 +56,11 @@ VLA와 RFM의 발전 과정을 시간 역순으로 정리합니다. 최신 모�
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/W7q-qlj4EFc?start=82" title="Sharpa CES 2026 Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-2026년 초, Sharpa가 촉각 센싱을 VLA에 통합한 [CraftNet](../../models/craftnet) 모델을 발표하면서 새로운 연구 방향이 열렸습니다.
+2026년 초, Sharpa가 촉각 센싱을 VLA에 통합한 [CraftNet](/knowledge/models/craftnet) 모델을 발표하면서 새로운 연구 방향이 열렸습니다.
 
 기존 VLA들이 주로 시각 정보에 의존했다면, 촉각을 추가함으로써 더욱 섬세한 조작이 가능해질 것으로 기대됩니다.
 
-> 촉각 센싱의 필요성과 어려움에 대해서는 [촉각의 필요성](tactile-sensing) 문서를 참조하세요.
+> 촉각 센싱의 필요성과 어려움에 대해서는 [촉각의 필요성](/knowledge/essays/insights/tactile-sensing) 문서를 참조하세요.
 
 ---
 
@@ -81,9 +81,9 @@ Daniel Kahneman의 "Thinking, Fast and Slow"에서 영감을 받은 듀얼 시�
 
 | 모델                                              | 발표      | System 2                | System 1            | 주파수   |
 | ----------------------------------------------- | ------- | ----------------------- | ------------------- | ----- |
-| [GR00T N1.6](../../models/groot-n1-6)           | 2025.09 | Cosmos-Reason-2B VLM    | DiT 32층 (120Hz)     | 120Hz |
-| [Figure Helix](../../models/figure-helix)       | 2025.02 | 고수준 계획 (7-9Hz)          | 저수준 제어 (200Hz)      | 200Hz |
-| [Gemini Robotics](../../models/gemini-robotics) | 2025.03 | 클라우드 추론                 | On-Device 제어        | -     |
+| [GR00T N1.6](/knowledge/models/groot-n1-6)           | 2025.09 | Cosmos-Reason-2B VLM    | DiT 32층 (120Hz)     | 120Hz |
+| [Figure Helix](/knowledge/models/figure-helix)       | 2025.02 | 고수준 계획 (7-9Hz)          | 저수준 제어 (200Hz)      | 200Hz |
+| [Gemini Robotics](/knowledge/models/gemini-robotics) | 2025.03 | 클라우드 추론                 | On-Device 제어        | -     |
 
 <div style="margin: 1.5rem 0;">
   <img src="/assets/models/groot/groot-n1.6-model-architecture.png" alt="GR00T N1.6 Architecture" style="width: 100%; border-radius: 8px;">
@@ -102,7 +102,7 @@ Daniel Kahneman의 "Thinking, Fast and Slow"에서 영감을 받은 듀얼 시�
 
 > **왜 이런 구조가 필요한가?**
 >
-> [Physical vs Cognitive Intelligence](physical-vs-cognitive) 문서에서 다룬 것처럼, 물리적 동작은 ms 단위의 빠른 피드백이 필요합니다. 반면 언어 이해와 계획은 상대적으로 느립니다. 이 두 가지를 하나의 모델로 처리하려면 계층적 구조가 불가피합니다.
+> [Physical vs Cognitive Intelligence](/knowledge/essays/insights/physical-vs-cognitive) 문서에서 다룬 것처럼, 물리적 동작은 ms 단위의 빠른 피드백이 필요합니다. 반면 언어 이해와 계획은 상대적으로 느립니다. 이 두 가지를 하나의 모델로 처리하려면 계층적 구조가 불가피합니다.
 
 
 ---
@@ -122,18 +122,18 @@ RT-2가 제시한 "Action as Language" 패러다임은 액션을 토큰으로 �
 - **단점**: 추론 시 여러 번의 denoising step 필요, LLM의 언어 능력 활용이 상대적으로 제한적
 
 <video src="/assets/models/diffusion-policy/diffusion_policy_highlight.mp4" controls width="100%" muted autoplay loop style="border-radius: 8px; margin: 1rem 0;"></video>
-<p align="center" style="font-size: 0.85em;"><em>Continuous Action 생성 예시: 노이즈에서 액션 시퀀스를 점진적으로 생성 (출처: <a href="../../models/diffusion-policy">Diffusion Policy</a>)</em></p>
+<p align="center" style="font-size: 0.85em;"><em>Continuous Action 생성 예시: 노이즈에서 액션 시퀀스를 점진적으로 생성 (출처: <a href="/knowledge/models/diffusion-policy">Diffusion Policy</a>)</em></p>
 
-> 두 접근의 trade-off에 대한 자세한 분석은 [FAST 토크나이저](../../models/fast) 문서를 참조하세요. FAST는 DCT+BPE 압축으로 discrete token의 단점을 극복하여 5배 빠른 학습을 달성했습니다.
+> 두 접근의 trade-off에 대한 자세한 분석은 [FAST 토크나이저](/knowledge/models/fast) 문서를 참조하세요. FAST는 DCT+BPE 압축으로 discrete token의 단점을 극복하여 5배 빠른 학습을 달성했습니다.
 
 #### 2025년 주요 모델들의 선택
 
 | 모델 | 액션 생성 방식 | 특징 |
 |------|-------------|------|
-| [π0](../../models/pi0), [π0.5](../../models/pi0-5) | Flow Matching | Diffusion의 효율적 대안, 50Hz 제어 |
-| [GR00T N1](../../models/groot-n1) | Diffusion Transformer | 노이즈에서 액션 생성, 듀얼 시스템 |
-| [SmolVLA](../../models/smolvla) | Flow Matching | 450M 경량 모델, MacBook 실행 |
-| [LBM](../../models/lbm-atlas) | Diffusion Transformer | 전신 단일 모델 제어, 48 타임스텝 |
+| [π0](/knowledge/models/pi0), [π0.5](/knowledge/models/pi0-5) | Flow Matching | Diffusion의 효율적 대안, 50Hz 제어 |
+| [GR00T N1](/knowledge/models/groot-n1) | Diffusion Transformer | 노이즈에서 액션 생성, 듀얼 시스템 |
+| [SmolVLA](/knowledge/models/smolvla) | Flow Matching | 450M 경량 모델, MacBook 실행 |
+| [LBM](/knowledge/models/lbm-atlas) | Diffusion Transformer | 전신 단일 모델 제어, 48 타임스텝 |
 
 <div style="margin: 1.5rem 0;">
   <img src="/assets/models/pi0/pi0.png" alt="π0 Architecture" style="width: 100%; border-radius: 8px;">
@@ -156,13 +156,13 @@ RT-2가 제시한 "Action as Language" 패러다임은 액션을 토큰으로 �
 
 | 날짜 | 모델 | 회사 | 핵심 기여 |
 |------|------|------|----------|
-| 2025.02 | [Figure Helix](../../models/figure-helix) | Figure AI | 첫 휴머노이드 전신 VLA |
-| 2025.03 | [GR00T N1](../../models/groot-n1) | NVIDIA | 첫 오픈소스 휴머노이드 VLA |
-| 2025.03 | [Gemini Robotics](../../models/gemini-robotics) | Google DeepMind | Gemini 2.0 기반, Cross-embodiment |
-| 2025.04 | [π0.5](../../models/pi0-5) | Physical Intelligence | Open-world 일반화 |
-| 2025.05 | [SmolVLA](../../models/smolvla) | HuggingFace | 450M 경량 VLA, MacBook 실행 |
-| 2025.08 | [LBM](../../models/lbm-atlas) | Boston Dynamics + TRI | 전신 단일 모델 제어 |
-| 2025.11 | [π*0.6](../../models/pi0-6-star) | Physical Intelligence | RL 자가 개선 (RECAP) |
+| 2025.02 | [Figure Helix](/knowledge/models/figure-helix) | Figure AI | 첫 휴머노이드 전신 VLA |
+| 2025.03 | [GR00T N1](/knowledge/models/groot-n1) | NVIDIA | 첫 오픈소스 휴머노이드 VLA |
+| 2025.03 | [Gemini Robotics](/knowledge/models/gemini-robotics) | Google DeepMind | Gemini 2.0 기반, Cross-embodiment |
+| 2025.04 | [π0.5](/knowledge/models/pi0-5) | Physical Intelligence | Open-world 일반화 |
+| 2025.05 | [SmolVLA](/knowledge/models/smolvla) | HuggingFace | 450M 경량 VLA, MacBook 실행 |
+| 2025.08 | [LBM](/knowledge/models/lbm-atlas) | Boston Dynamics + TRI | 전신 단일 모델 제어 |
+| 2025.11 | [π*0.6](/knowledge/models/pi0-6-star) | Physical Intelligence | RL 자가 개선 (RECAP) |
 
 ---
 
@@ -174,12 +174,12 @@ RT-2가 제시한 "Action as Language" 패러다임은 액션을 토큰으로 �
 
 | 발표 | 모델 | 의의 |
 |------|------|------|
-| 2024.06 | [OpenVLA](../../models/openvla) | 첫 대규모 오픈소스 VLA (7B), 55B RT-2-X와 대등한 성능 |
-| 2024.10 | [π0](../../models/pi0) | Flow Matching VLA, General Robot Policy의 시초 |
+| 2024.06 | [OpenVLA](/knowledge/models/openvla) | 첫 대규모 오픈소스 VLA (7B), 55B RT-2-X와 대등한 성능 |
+| 2024.10 | [π0](/knowledge/models/pi0) | Flow Matching VLA, General Robot Policy의 시초 |
 
 ### OpenVLA - 오픈소스 VLA의 시작
 
-[OpenVLA](../../models/openvla)는 Stanford, UC Berkeley, TRI, Google DeepMind, MIT가 공동 개발한 7B 파라미터 오픈소스 VLA입니다.
+[OpenVLA](/knowledge/models/openvla)는 Stanford, UC Berkeley, TRI, Google DeepMind, MIT가 공동 개발한 7B 파라미터 오픈소스 VLA입니다.
 
 | 특징 | 내용 |
 |------|------|
@@ -192,7 +192,7 @@ RT-2가 제시한 "Action as Language" 패러다임은 액션을 토큰으로 �
 
 ### π0 - General Robot Policy의 시초
 
-[π0](../../models/pi0)는 Physical Intelligence가 발표한 첫 번째 범용 로봇 파운데이션 모델입니다.
+[π0](/knowledge/models/pi0)는 Physical Intelligence가 발표한 첫 번째 범용 로봇 파운데이션 모델입니다.
 
 | 특징 | 내용 |
 |------|------|
@@ -219,7 +219,7 @@ RT-2가 제시한 "Action as Language" 패러다임은 액션을 토큰으로 �
 
 ### RT-2 (2023.07) - Action as Language
 
-[RT 시리즈](../../models/rt)의 RT-2는 **"Action as Language"** 패러다임을 제시했습니다.
+[RT 시리즈](/knowledge/models/rt)의 RT-2는 **"Action as Language"** 패러다임을 제시했습니다.
 
 | 핵심 아이디어 | 설명 |
 |---------------|------|
@@ -241,7 +241,7 @@ VLA 이전에 로봇 학습의 기초를 닦은 연구들입니다.
 
 ### Diffusion Policy (2023.03)
 
-[Diffusion Policy](../../models/diffusion-policy)는 이미지 생성에서 성공한 diffusion을 로봇 액션 생성에 최초로 적용했습니다.
+[Diffusion Policy](/knowledge/models/diffusion-policy)는 이미지 생성에서 성공한 diffusion을 로봇 액션 생성에 최초로 적용했습니다.
 
 | 기여 | 설명 |
 |------|------|
@@ -251,7 +251,7 @@ VLA 이전에 로봇 학습의 기초를 닦은 연구들입니다.
 
 ### ACT (2023.04)
 
-[ACT](../../models/act)는 Action Chunking 개념으로 효율적인 imitation learning을 가능하게 했습니다.
+[ACT](/knowledge/models/act)는 Action Chunking 개념으로 효율적인 imitation learning을 가능하게 했습니다.
 
 | 기여 | 설명 |
 |------|------|
@@ -285,15 +285,15 @@ VLA 이전에 로봇 학습의 기초를 닦은 연구들입니다.
 
 ## See Also
 
-- [RFM & VLA란 무엇인가](../fundamentals/what-is-rfm-vla)
-- [Action Data Scaling 문제](../fundamentals/scaling-problem)
-- [Physical vs Cognitive Intelligence](physical-vs-cognitive)
-- [촉각의 필요성](tactile-sensing)
+- [RFM & VLA란 무엇인가](/knowledge/essays/fundamentals/what-is-rfm-vla)
+- [Action Data Scaling 문제](/knowledge/essays/fundamentals/scaling-problem)
+- [Physical vs Cognitive Intelligence](/knowledge/essays/insights/physical-vs-cognitive)
+- [촉각의 필요성](/knowledge/essays/insights/tactile-sensing)
 
 ### 주요 모델 문서
 
-- [RT Series](../../models/rt) - VLA의 시초
-- [π Series](../../models/pi-series) - Physical Intelligence 모델 시리즈
-- [GR00T N1](../../models/groot-n1) - NVIDIA 오픈소스 휴머노이드 VLA
-- [Figure Helix](../../models/figure-helix) - Figure AI의 휴머노이드 VLA
-- [Gemini Robotics](../../models/gemini-robotics) - Google DeepMind의 VLA
+- [RT Series](/knowledge/models/rt) - VLA의 시초
+- [π Series](/knowledge/models/pi-series) - Physical Intelligence 모델 시리즈
+- [GR00T N1](/knowledge/models/groot-n1) - NVIDIA 오픈소스 휴머노이드 VLA
+- [Figure Helix](/knowledge/models/figure-helix) - Figure AI의 휴머노이드 VLA
+- [Gemini Robotics](/knowledge/models/gemini-robotics) - Google DeepMind의 VLA

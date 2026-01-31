@@ -236,7 +236,7 @@ Sim2Real Transfer (1B frames 수렴)
 
 ## See Also
 
-- [회사 목록](./)
-- [Physical Intelligence](./physical-intelligence)
-- [pi0](../models/pi0) - 비교 대상 VLA
-- [Diffusion Policy](../models/diffusion-policy)
+- [회사 목록](/knowledge/companies/)
+- [Physical Intelligence](/knowledge/companies/physical-intelligence)
+- [pi0](/knowledge/models/pi0) - 비교 대상 VLA
+- [Diffusion Policy](/knowledge/models/diffusion-policy)

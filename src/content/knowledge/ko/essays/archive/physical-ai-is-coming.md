@@ -55,12 +55,12 @@ ChatGPT가 세상을 바꾸었듯이, **Physical AI가 물리적 노동의 세�
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/HYwekersccY" title="Boston Dynamics Atlas - Large Behavior Models" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-Classical Robotics의 대표 주자 [Boston Dynamics](../../companies/boston-dynamics)도 Physical AI로 전환 중입니다.
+Classical Robotics의 대표 주자 [Boston Dynamics](/knowledge/companies/boston-dynamics)도 Physical AI로 전환 중입니다.
 - **450M Diffusion Transformer**: Toyota Research Institute(TRI)와 공동 개발
 - 전신 단일 모델 제어: 보행 + 조작 통합
 - 로프 묶기, 천 펼치기 같은 deformable 물체 조작
 
-**→ 상세: [LBM (Large Behavior Model)](../../models/lbm-atlas)**
+**→ 상세: [LBM (Large Behavior Model)](/knowledge/models/lbm-atlas)**
 
 
 Sharpa CraftNet
@@ -69,7 +69,7 @@ Sharpa CraftNet
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/W7q-qlj4EFc?start=82" title="Sharpa CES 2026 Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-[Sharpa](../../companies/sharpa)가 [CraftNet](../../models/craftnet)과 North 휴머노이드를 공개했습니다.
+[Sharpa](/knowledge/companies/sharpa)가 [CraftNet](/knowledge/models/craftnet)과 North 휴머노이드를 공개했습니다.
 - **VTLA (Vision-Tactile-Language-Action)**: 촉각을 VLA에 통합한 최초의 상용 모델
 - 바람개비 접기, 트럼프 카드 다루기 등 촉각이 필요한 데모를 선보임
 - CES 2026 Innovation Award 수상
@@ -81,7 +81,7 @@ Sharpa CraftNet
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/lQsvTrRTBRs" title="Figure Helix 02 - Official Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-[Figure AI](../../companies/figure)의 [Helix 02](../../models/figure-helix)는 최초의 전신 자율 휴머노이드입니다.
+[Figure AI](/knowledge/companies/figure)의 [Helix 02](/knowledge/models/figure-helix)는 최초의 전신 자율 휴머노이드입니다.
 - **4분간 61개 연속 동작**: 리셋 없이, 인간 개입 없이
 - **System 0/1/2 아키텍처**: 1kHz까지 고속 제어
 - 109,504줄의 C++ 코드를 1천만 파라미터 신경망으로 대체
@@ -111,7 +111,7 @@ Sharpa CraftNet
 | **일반화** | 훈련 환경에 종속 | Zero-shot 일반화 가능 |
 | **지식** | 도메인 특화 | World Knowledge 계승 (LLM/VLM) |
 
-**→ 상세: [Physical AI의 정의](../fundamentals/definition)**
+**→ 상세: [Physical AI의 정의](/knowledge/essays/fundamentals/definition)**
 
 ---
 
@@ -138,7 +138,7 @@ LLM → VLM → VLA
 - 다른 카페에 가도, 신메뉴가 나와도 일을 할 수 있음
 - 다양한 모양의 택배가 와도, 다양한 디자인의 옷이 와도 처리 가능
 
-**→ 상세: [RFM & VLA란 무엇인가](../fundamentals/what-is-rfm-vla)**
+**→ 상세: [RFM & VLA란 무엇인가](/knowledge/essays/fundamentals/what-is-rfm-vla)**
 
 ---
 
@@ -158,12 +158,12 @@ VLA가 LLM의 성공 공식을 그대로 따라가기 어려운 이유가 있습
 
 | 접근법 | 주체 | 설명 |
 |--------|------|------|
-| [Teleoperation](../insights/teleoperation) | Tesla, Google, PI | 직접 데이터 수집 |
-| [시뮬레이션](../insights/simulation-world-model) | NVIDIA | Omniverse + Cosmos |
-| [커뮤니티](../insights/community-driven) | HuggingFace | 오픈소스 협력 |
+| [Teleoperation](/knowledge/essays/insights/teleoperation) | Tesla, Google, PI | 직접 데이터 수집 |
+| [시뮬레이션](/knowledge/essays/insights/simulation-world-model) | NVIDIA | Omniverse + Cosmos |
+| [커뮤니티](/knowledge/essays/insights/community-driven) | HuggingFace | 오픈소스 협력 |
 | World Model | 1X, NVIDIA | 합성 데이터 생성 |
 
-**→ 상세: [Action Data Scaling 문제](../fundamentals/scaling-problem)**
+**→ 상세: [Action Data Scaling 문제](/knowledge/essays/fundamentals/scaling-problem)**
 
 ---
 
@@ -189,11 +189,11 @@ RT-2의 "Action as Language" (이산 토큰) → **Flow Matching / Diffusion** (
 
 | 모델 | 방식 | 특징 |
 |------|------|------|
-| [π0](../../models/pi0) | Flow Matching | 50Hz 제어 |
-| [GR00T N1](../../models/groot-n1) | Diffusion Transformer | 듀얼 시스템 |
-| [SmolVLA](../../models/smolvla) | Flow Matching | 450M 경량 |
+| [π0](/knowledge/models/pi0) | Flow Matching | 50Hz 제어 |
+| [GR00T N1](/knowledge/models/groot-n1) | Diffusion Transformer | 듀얼 시스템 |
+| [SmolVLA](/knowledge/models/smolvla) | Flow Matching | 450M 경량 |
 
-**→ 상세: [VLA & RFM 발전 과정](../insights/vla-rfm-progress)**
+**→ 상세: [VLA & RFM 발전 과정](/knowledge/essays/insights/vla-rfm-progress)**
 
 ---
 
@@ -217,7 +217,7 @@ RT-2의 "Action as Language" (이산 토큰) → **Flow Matching / Diffusion** (
 2. **차원의 문제**: 텍스트는 추상화된 저차원, 물리 세계는 고차원 + 실시간 상호작용
 3. **학습 방식의 차이**: 사람은 경험으로 배움, VLA는 주로 모방 학습
 
-**→ 상세: [Physical vs Cognitive Intelligence](../insights/physical-vs-cognitive)**
+**→ 상세: [Physical vs Cognitive Intelligence](/knowledge/essays/insights/physical-vs-cognitive)**
 
 ---
 
@@ -238,21 +238,21 @@ RT-2의 "Action as Language" (이산 토큰) → **Flow Matching / Diffusion** (
 
 ### 입문 가이드
 
-1. [Physical AI의 정의](../fundamentals/definition)
-2. [RFM & VLA란 무엇인가](../fundamentals/what-is-rfm-vla)
-3. [Action Data Scaling 문제](../fundamentals/scaling-problem)
+1. [Physical AI의 정의](/knowledge/essays/fundamentals/definition)
+2. [RFM & VLA란 무엇인가](/knowledge/essays/fundamentals/what-is-rfm-vla)
+3. [Action Data Scaling 문제](/knowledge/essays/fundamentals/scaling-problem)
 
 ### 인사이트
 
-- [Physical vs Cognitive Intelligence](../insights/physical-vs-cognitive)
-- [VLA & RFM 발전 과정](../insights/vla-rfm-progress)
-- [휴머노이드 디자인](../insights/humanoid-design)
-- [촉각의 필요성](../insights/tactile-sensing)
+- [Physical vs Cognitive Intelligence](/knowledge/essays/insights/physical-vs-cognitive)
+- [VLA & RFM 발전 과정](/knowledge/essays/insights/vla-rfm-progress)
+- [휴머노이드 디자인](/knowledge/essays/insights/humanoid-design)
+- [촉각의 필요성](/knowledge/essays/insights/tactile-sensing)
 
 ### 주요 모델
 
-- [π0 / π0.5](../../models/pi0) - Physical Intelligence
-- [GR00T N1](../../models/groot-n1) - NVIDIA
-- [Figure Helix](../../models/figure-helix) - Figure AI
-- [LBM](../../models/lbm-atlas) - Boston Dynamics + TRI
-- [CraftNet](../../models/craftnet) - Sharpa
+- [π0 / π0.5](/knowledge/models/pi0) - Physical Intelligence
+- [GR00T N1](/knowledge/models/groot-n1) - NVIDIA
+- [Figure Helix](/knowledge/models/figure-helix) - Figure AI
+- [LBM](/knowledge/models/lbm-atlas) - Boston Dynamics + TRI
+- [CraftNet](/knowledge/models/craftnet) - Sharpa

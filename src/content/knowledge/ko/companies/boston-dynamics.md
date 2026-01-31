@@ -115,5 +115,5 @@ Boston Dynamics는 완전한 end-to-end(pixels-to-torques)는 채택하지 않�
 
 ## See Also
 
-- [회사 목록](./)
-- [Physical AI의 정의](../essays/fundamentals/definition)
+- [회사 목록](/knowledge/companies/)
+- [Physical AI의 정의](/knowledge/essays/fundamentals/definition)

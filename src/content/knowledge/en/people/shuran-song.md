@@ -163,6 +163,6 @@ Features:
 
 ## See Also
 
-- [Diffusion Policy](../models/diffusion-policy)
+- [Diffusion Policy](/knowledge/models/diffusion-policy)
 - [Cheng Chi](cheng-chi)
-- [ACT](../models/act)
+- [ACT](/knowledge/models/act)

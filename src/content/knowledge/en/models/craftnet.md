@@ -213,6 +213,6 @@ Sharpa's humanoid robot equipped with CraftNet.
 
 ## See Also
 
-- [Model List](./)
+- [Model List](/knowledge/models/)
 - [Figure Helix](figure-helix) - Another hierarchical VLA
-- [The Need for Tactile Sensing](../essays/insights/tactile-sensing)
+- [The Need for Tactile Sensing](/knowledge/essays/insights/tactile-sensing)

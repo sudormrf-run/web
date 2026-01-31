@@ -22,7 +22,7 @@ lastEditedAt: 2026-01-26
 - **Open-Source Ecosystem**: Complete disclosure of hardware design, software, 3D printing files, assembly tutorials
 - **Practical Household Robot Research**: Demonstrated potential for general household robots through real-life task demonstrations like cooking, cleaning, elevator calling
 
-<!-- Image pending: ![Mobile ALOHA](../../assets/hardware/mobile/mobile-aloha.png) -->
+<!-- Image pending: ![Mobile ALOHA](/assets/hardware/mobile/mobile-aloha.png) -->
 
 ---
 
@@ -253,7 +253,7 @@ Static data: 14-DoF actions (base velocity padded with 0)
 
 | Algorithm | Description |
 |-----------|-------------|
-| [ACT](../../models/act) | Action Chunking Transformer |
+| [ACT](/knowledge/models/act) | Action Chunking Transformer |
 | Diffusion Policy | Diffusion-based action generation |
 | VINN | Visual Imitation through Nearest Neighbors |
 
@@ -303,8 +303,8 @@ Static data: 14-DoF actions (base velocity padded with 0)
 | Name | Role |
 |------|------|
 | [Zipeng Fu](https://zipengfu.github.io/) | Co-first author |
-| [Tony Z. Zhao](../../people/tony-zhao) | Co-first author |
-| [Chelsea Finn](../../people/chelsea-finn) | Advisor |
+| [Tony Z. Zhao](/knowledge/people/tony-zhao) | Co-first author |
+| [Chelsea Finn](/knowledge/people/chelsea-finn) | Advisor |
 
 ### Support
 
@@ -380,8 +380,8 @@ Trossen Robotics sells ALOHA kits:
 
 ## See Also
 
-- [Hardware List](../index)
-- [ALOHA (Static)](../arms/aloha)
-- [ACT](../../models/act)
-- [Tony Zhao](../../people/tony-zhao)
-- [Chelsea Finn](../../people/chelsea-finn)
+- [Hardware List](/knowledge/hardware/)
+- [ALOHA (Static)](/knowledge/hardware/arms/aloha)
+- [ACT](/knowledge/models/act)
+- [Tony Zhao](/knowledge/people/tony-zhao)
+- [Chelsea Finn](/knowledge/people/chelsea-finn)

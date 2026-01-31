@@ -336,10 +336,10 @@ GR00T N1.6 (VLA 학습)
 
 ## See Also
 
-- [모델 목록](./)
+- [모델 목록](/knowledge/models/)
 - [GR00T](groot) - NVIDIA 휴머노이드 로봇 파운데이션 모델
-- [NVIDIA](../companies/nvidia)
-- [시뮬레이션 & World Model](../essays/insights/simulation-world-model)
+- [NVIDIA](/knowledge/companies/nvidia)
+- [시뮬레이션 & World Model](/knowledge/essays/insights/simulation-world-model)
 
 ### 관련 인물
-- [Jim Fan](../people/jim-fan) - NVIDIA GEAR Lab, Physical AI 연구 리드
+- [Jim Fan](/knowledge/people/jim-fan) - NVIDIA GEAR Lab, Physical AI 연구 리드

@@ -142,7 +142,7 @@ In-house developed Vision-Language-Action model after ending OpenAI partnership 
 
 ## See Also
 
-- [Company List](./)
-- [Figure Humanoid](../hardware/humanoids/figure)
-- [Figure Helix](../models/figure-helix)
+- [Company List](/knowledge/companies/)
+- [Figure Humanoid](/knowledge/hardware/humanoids/figure)
+- [Figure Helix](/knowledge/models/figure-helix)
 - [Tesla](tesla)

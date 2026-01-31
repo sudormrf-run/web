@@ -30,7 +30,7 @@ lastEditedAt: 2026-01-20
 |------|------|
 | 최초 발표 | 2024년 3월 (GTC 2024) |
 | N1 오픈소스 공개 | 2025년 3월 (GTC 2025) |
-| 회사 | [NVIDIA](../companies/nvidia) |
+| 회사 | [NVIDIA](/knowledge/companies/nvidia) |
 | GitHub | [NVIDIA/Isaac-GR00T](https://github.com/NVIDIA/Isaac-GR00T) |
 | 라이선스 | Apache 2.0 |
 
@@ -51,7 +51,7 @@ lastEditedAt: 2026-01-20
 
 ## Dual-System Architecture
 
-![GR00T N1 Architecture](../assets/models/groot/groot_n1_architecture.png)
+![GR00T N1 Architecture](/assets/models/groot/groot_n1_architecture.png)
 <p align="center"><em>GR00T N1 아키텍처: System 2 (VLM) + System 1 (DiT) Dual-System 구조</em></p>
 
 인간 인지 원리(Kahneman, 2011)에서 영감받은 구조:
@@ -84,5 +84,5 @@ lastEditedAt: 2026-01-20
 - [DreamGen](dreamgen) - 합성 데이터 생성
 
 ### 관련 인물
-- [Yuke Zhu](../people/yuke-zhu) - NVIDIA GEAR Lab 공동 리드
-- [Jim Fan](../people/jim-fan) - NVIDIA GEAR Lab 공동 리드
+- [Yuke Zhu](/knowledge/people/yuke-zhu) - NVIDIA GEAR Lab 공동 리드
+- [Jim Fan](/knowledge/people/jim-fan) - NVIDIA GEAR Lab 공동 리드

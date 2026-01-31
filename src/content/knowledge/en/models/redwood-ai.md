@@ -334,8 +334,8 @@ Single Redwood model supports both platforms
 
 ## See Also
 
-- [Model List](./)
-- [1X Technologies](../companies/1x)
+- [Model List](/knowledge/models/)
+- [1X Technologies](/knowledge/companies/1x)
 - [GR00T](groot)
 - [Figure Helix](figure-helix)
-- [World Model](../essays/insights/simulation-world-model)
+- [World Model](/knowledge/essays/insights/simulation-world-model)

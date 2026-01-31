@@ -33,7 +33,7 @@ lastEditedAt: 2026-01-21
 - **24-Hour Continuous Operation**: Espresso making 5:30am-11:30pm, folding 50 laundry items continuously
 - **Factory Deployment**: 59 chocolate packaging box assembly demonstrated
 
-![Pi*0.6 Overview](../assets/models/pi0/pi06star.png)
+![Pi*0.6 Overview](/assets/models/pi0/pi06star.png)
 <p align="center"><em>Pi*0.6: RECAP - Reinforcement Learning from Experience and Coaching</em></p>
 
 ---
@@ -82,7 +82,7 @@ Pi*0.6 is an RL-based self-improving VLA announced by Physical Intelligence in N
 <video src="/assets/models/pi0/intervention_example.mp4" controls width="100%"></video>
 <p align="center"><em>Coaching Example: Expert intervenes and corrects during failure</em></p>
 
-![Pi*0.6 Components](../assets/models/pi0/pistar06-components.png)
+![Pi*0.6 Components](/assets/models/pi0/pistar06-components.png)
 <p align="center"><em>Pi*0.6 Components: Policy, Value Function, Advantage Conditioning</em></p>
 
 ### Value Function
@@ -168,10 +168,10 @@ Advantage = V(s') - V(s)
 - [Pi Series](pi-series)
 - [Pi0](pi0)
 - [Pi0.5](pi0-5)
-- [Physical Intelligence](../companies/physical-intelligence)
+- [Physical Intelligence](/knowledge/companies/physical-intelligence)
 
 ### Related People
-- [Karol Hausman](../people/karol-hausman) - Physical Intelligence Co-founder
-- [Chelsea Finn](../people/chelsea-finn) - Physical Intelligence Co-founder
-- [Sergey Levine](../people/sergey-levine) - Physical Intelligence Co-founder
-- [Pete Florence](../people/pete-florence) - Physical Intelligence Co-founder
+- [Karol Hausman](/knowledge/people/karol-hausman) - Physical Intelligence Co-founder
+- [Chelsea Finn](/knowledge/people/chelsea-finn) - Physical Intelligence Co-founder
+- [Sergey Levine](/knowledge/people/sergey-levine) - Physical Intelligence Co-founder
+- [Pete Florence](/knowledge/people/pete-florence) - Physical Intelligence Co-founder

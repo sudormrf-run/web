@@ -48,7 +48,7 @@ ACT(Action Chunking with Transformers)는 Stanford에서 개발한 imitation lea
 | 항목 | 내용 |
 |------|------|
 | 발표 | 2023년 4월 (RSS 2023) |
-| 저자 | [Tony Zhao](../people/tony-zhao), Vikash Kumar, [Sergey Levine](../people/sergey-levine), [Chelsea Finn](../people/chelsea-finn) |
+| 저자 | [Tony Zhao](/knowledge/people/tony-zhao), Vikash Kumar, [Sergey Levine](/knowledge/people/sergey-levine), [Chelsea Finn](/knowledge/people/chelsea-finn) |
 | 소속 | Stanford University |
 | 논문 | [arXiv:2304.13705](https://arxiv.org/abs/2304.13705) |
 | 프로젝트 | [tonyzhaozh.github.io/aloha](https://tonyzhaozh.github.io/aloha/) |
@@ -173,11 +173,11 @@ ACT는 다음과 같은 이유로 널리 채택되고 있습니다:
 
 ## See Also
 
-- [모델 목록](./)
+- [모델 목록](/knowledge/models/)
 - [Diffusion Policy](diffusion-policy)
 - [SmolVLA](smolvla)
 
 ### 관련 인물
-- [Tony Zhao](../people/tony-zhao) - 제1저자
-- [Chelsea Finn](../people/chelsea-finn) - 지도교수
-- [Sergey Levine](../people/sergey-levine) - 공동 저자
+- [Tony Zhao](/knowledge/people/tony-zhao) - 제1저자
+- [Chelsea Finn](/knowledge/people/chelsea-finn) - 지도교수
+- [Sergey Levine](/knowledge/people/sergey-levine) - 공동 저자

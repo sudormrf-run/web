@@ -24,7 +24,7 @@ lastEditedAt: 2026-01-26
 - **Wheeled-Legged Hybrid**: Leading wheel+leg hybrid locomotion with Go2-W, B2-W
 - **Major Platform for RL Locomotion Research**: Widely used for sim-to-real research due to affordable price and open SDK
 
-<!-- Image pending: ![Unitree Go2](../../assets/hardware/quadrupeds/unitree.png) -->
+<!-- Image pending: ![Unitree Go2](/assets/hardware/quadrupeds/unitree.png) -->
 
 *Unitree Go2: The most popular quadruped platform for research*
 
@@ -670,8 +670,8 @@ Unitree quadrupeds are widely adopted by universities and research institutions 
 
 ## See Also
 
-- [Hardware List](../index)
+- [Hardware List](/knowledge/hardware/)
 - [Boston Dynamics Spot](spot)
 - [ANYbotics ANYmal](anymal)
-- [Unitree Humanoids](../humanoids/unitree-humanoid)
-- [GR00T](../../models/groot)
+- [Unitree Humanoids](/knowledge/hardware/humanoids/unitree-humanoid)
+- [GR00T](/knowledge/models/groot)

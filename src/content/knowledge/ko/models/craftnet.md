@@ -213,6 +213,6 @@ CraftNet이 탑재된 Sharpa의 휴머노이드 로봇입니다.
 
 ## See Also
 
-- [모델 목록](./)
+- [모델 목록](/knowledge/models/)
 - [Figure Helix](figure-helix) - 또 다른 계층적 VLA
-- [촉각의 필요성](../essays/insights/tactile-sensing)
+- [촉각의 필요성](/knowledge/essays/insights/tactile-sensing)

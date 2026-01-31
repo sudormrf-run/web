@@ -156,7 +156,7 @@ End-to-end neural network, same approach as FSD for autonomous driving
 
 Interestingly, **even the leading players in Classical Robotics are transitioning to the Physical AI era**.
 
-### [Boston Dynamics](/knowledge/companies/boston-dynamics)' Transition
+### Boston Dynamics' Transition
 
 Boston Dynamics has long been known for its **modular approach** (perception → planning → control) and **Model Predictive Control (MPC)**. Atlas's backflips and Spot's stable locomotion were products of this approach.
 
@@ -212,4 +212,4 @@ Boston Dynamics is also moving toward end-to-end models. Even BD, the leader of 
 
 Let's learn why the "Generalist robots" that Physical AI pursues are now possible, and how they differ from past "Specialist robots."
 
-**Next: [From Specialist to Generalist](specialist-to-generalist)**
+**Next: [From Specialist to Generalist](/knowledge/essays/fundamentals/specialist-to-generalist)**

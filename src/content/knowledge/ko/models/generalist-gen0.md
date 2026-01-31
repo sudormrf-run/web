@@ -39,7 +39,7 @@ lastEditedAt: 2026-01-15
 - **실제 데이터 우위 주장**: 시뮬레이션 vs 실제 데이터 논쟁에서 실제 데이터의 중요성 강조
 - **팀 배경**: OpenAI(GPT-4), DeepMind(RT-2), Boston Dynamics(Atlas) 출신으로 구성
 
-![GEN-0 Scaling Law](../assets/models/generalist-gen0/scaling_law_vla.png)
+![GEN-0 Scaling Law](/assets/models/generalist-gen0/scaling_law_vla.png)
 <p align="center"><em>GEN-0 스케일링 법칙: 데이터/컴퓨트 증가에 따른 예측 가능한 성능 향상</em></p>
 
 ---
@@ -68,7 +68,7 @@ GEN-0는 Generalist AI가 2025년 11월 발표한 embodied foundation model로, 
 | 환경 | 가정, 베이커리, 세탁소, 창고, 공장 등 |
 | 태스크 | 감자 깎기부터 볼트 조이기까지 |
 
-![GEN-0 Data Size Comparison](../assets/models/generalist-gen0/data_size.png)
+![GEN-0 Data Size Comparison](/assets/models/generalist-gen0/data_size.png)
 <p align="center"><em>GEN-0 데이터 규모: 기존 VLA 대비 압도적인 실제 데이터 양</em></p>
 
 ---
@@ -143,7 +143,7 @@ GEN-0의 주장이 사실이라면:
 
 ## See Also
 
-- [모델 목록](./)
-- [Generalist](../companies/generalist)
-- [Non-Teleop 데이터 수집](../essays/insights/non-teleop-data)
+- [모델 목록](/knowledge/models/)
+- [Generalist](/knowledge/companies/generalist)
+- [Non-Teleop 데이터 수집](/knowledge/essays/insights/non-teleop-data)
 

@@ -68,4 +68,4 @@ The most intuitive example of Leader-Follower teleoperation structure.
 
 - [Non-Teleop Data Collection](non-teleop-data)
 - [Simulation & World Models](simulation-world-model)
-- [Action Data Scaling Problem](../fundamentals/scaling-problem)
+- [Action Data Scaling Problem](/knowledge/essays/fundamentals/scaling-problem)

@@ -143,7 +143,7 @@ theta* = theta - alpha*grad_theta(L(f_theta'))  where theta' = theta - beta*grad
 
 ## See Also
 
-- [ACT](../models/act)
-- [Sergey Levine](./sergey-levine)
-- [Physical Intelligence](../companies/physical-intelligence)
-- [pi0](../models/pi0)
+- [ACT](/knowledge/models/act)
+- [Sergey Levine](/knowledge/people/sergey-levine)
+- [Physical Intelligence](/knowledge/companies/physical-intelligence)
+- [pi0](/knowledge/models/pi0)

@@ -265,6 +265,6 @@ Figure 03 is the third-generation humanoid robot designed for home environments.
 
 ## See Also
 
-- [Model List](./)
+- [Model List](/knowledge/models/)
 - [GR00T](groot)
 - [pi0](pi0)

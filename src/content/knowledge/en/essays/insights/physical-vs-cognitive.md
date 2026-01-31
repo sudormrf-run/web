@@ -119,7 +119,7 @@ This is called Reporting Bias—obvious information that doesn't exist in the te
 
 Real-time interaction is required for physical actions like maintaining balance or adjusting force. Tasks like grabbing a plastic bag without knowing what's inside require very fast feedback and interaction at the millisecond level, but current smart frontier LLMs can't operate this fast.
 
-This aligns with why recent VLAs are adopting hierarchical structures for fast response times. For details, see the convergent evolution section in [VLA & RFM Progress](vla-rfm-progress).
+This aligns with why recent VLAs are adopting hierarchical structures for fast response times. For details, see the convergent evolution section in [VLA & RFM Progress](/knowledge/essays/insights/vla-rfm-progress).
 
 ---
 
@@ -131,7 +131,7 @@ Notably, since continual learning doesn't work, the learning process and memory 
 The same applies to physical intelligence. How do people learn to play soccer well, slice onions well, or play piano well?
 They watch others perform, try it themselves, have a coach physically guide their body during exercise, and do mental training (imagination). Physical performance skills are best learned through direct experience and self-feedback.
 
-Current VLAs mostly learn based on Imitation Learning. They learn from behavioral data someone has recorded. This is very different from humans who learn through experience. Current reinforcement learning techniques are limited to specific movements (mostly locomotion). Research that emerged in this context is [Physical Intelligence](../../companies/physical-intelligence)'s [π*0.6](../../models/pi0-6-star). It still seems to be at the research stage.
+Current VLAs mostly learn based on Imitation Learning. They learn from behavioral data someone has recorded. This is very different from humans who learn through experience. Current reinforcement learning techniques are limited to specific movements (mostly locomotion). Research that emerged in this context is [Physical Intelligence](/knowledge/companies/physical-intelligence)'s [π*0.6](/knowledge/models/pi0-6-star). It still seems to be at the research stage.
 
 ---
 
@@ -153,10 +153,10 @@ I don't know exactly how it will be implemented. Physical intelligence is a diff
 ---
 ## See Also
 
-- [What are RFM & VLA](../fundamentals/what-is-rfm-vla)
-- [VLA & RFM Progress](vla-rfm-progress)
-- [The Need for Tactile Sensing](tactile-sensing)
-- [Humanoid Design](humanoid-design)
+- [What are RFM & VLA](/knowledge/essays/fundamentals/what-is-rfm-vla)
+- [VLA & RFM Progress](/knowledge/essays/insights/vla-rfm-progress)
+- [The Need for Tactile Sensing](/knowledge/essays/insights/tactile-sensing)
+- [Humanoid Design](/knowledge/essays/insights/humanoid-design)
 
 ## References
 

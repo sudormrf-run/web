@@ -24,7 +24,7 @@ lastEditedAt: 2026-01-26
 - **Wheeled-Legged 하이브리드**: Go2-W, B2-W로 바퀴+다리 복합 이동 방식 선도
 - **RL 로코모션 연구의 주요 플랫폼**: 저렴한 가격과 오픈 SDK로 sim-to-real 연구에 널리 사용
 
-<!-- Image pending: ![Unitree Go2](../../assets/hardware/quadrupeds/unitree.png) -->
+<!-- Image pending: ![Unitree Go2](/assets/hardware/quadrupeds/unitree.png) -->
 
 *Unitree Go2: 연구용으로 가장 인기 있는 쿼드러펫 플랫폼*
 
@@ -670,8 +670,8 @@ Unitree 쿼드러펫은 저렴한 가격과 개방적인 SDK로 인해 전 세�
 
 ## See Also
 
-- [하드웨어 목록](../index)
+- [하드웨어 목록](/knowledge/hardware/)
 - [Boston Dynamics Spot](spot)
 - [ANYbotics ANYmal](anymal)
-- [Unitree 휴머노이드](../humanoids/unitree-humanoid)
-- [GR00T](../../models/groot)
+- [Unitree 휴머노이드](/knowledge/hardware/humanoids/unitree-humanoid)
+- [GR00T](/knowledge/models/groot)

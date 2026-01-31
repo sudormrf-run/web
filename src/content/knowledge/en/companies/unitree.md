@@ -231,6 +231,6 @@ Unitree R1:          ~$5,900  <- Most affordable
 
 ## See Also
 
-- [Company List](./)
-- [Humanoid Design](../essays/insights/humanoid-design)
+- [Company List](/knowledge/companies/)
+- [Humanoid Design](/knowledge/essays/insights/humanoid-design)
 - [Tesla](tesla)

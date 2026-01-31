@@ -39,7 +39,7 @@ lastEditedAt: 2026-01-15
 - **Expanded Data vs RT Series**: Training data scale significantly expanded compared to RT-1/2, though specific numbers undisclosed
 - **Industry Partnerships**: Major humanoid companies like Boston Dynamics, Agility Robotics participating as trusted testers
 
-![Gemini Robotics Overview](../assets/models/gemini-robotics/Gemini-robotics-overview.png)
+![Gemini Robotics Overview](/assets/models/gemini-robotics/Gemini-robotics-overview.png)
 <p align="center"><em>Gemini Robotics: Gemini 2.0-based VLA Model Family</em></p>
 
 ---
@@ -160,6 +160,6 @@ Single model supports various robot forms:
 
 ## See Also
 
-- [Model List](./)
+- [Model List](/knowledge/models/)
 - [RT](rt)
-- [Google DeepMind](../companies/google-deepmind)
+- [Google DeepMind](/knowledge/companies/google-deepmind)

@@ -28,7 +28,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Humanoids > Fourier
 
-<!-- Image pending: ![Fourier GR-2](../../assets/hardware/humanoids/fourier.png) -->
+<!-- Image pending: ![Fourier GR-2](/assets/hardware/humanoids/fourier.png) -->
 
 ---
 
@@ -303,7 +303,7 @@ Fourier's differentiator is its actual application experience in the medical fie
 
 ## See Also
 
-- [Hardware List](../index)
+- [Hardware List](/knowledge/hardware/)
 - [Unitree Humanoid](unitree-humanoid)
 - [Tesla Optimus](optimus)
 - [Figure Humanoid](figure)

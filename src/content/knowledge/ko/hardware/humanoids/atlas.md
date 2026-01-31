@@ -18,7 +18,7 @@ lastEditedAt: 2026-01-26
 
 Atlas는 Boston Dynamics가 개발한 첨단 휴머노이드 로봇입니다. 2013년 DARPA 로보틱스 챌린지를 위해 처음 개발되었으며, 여러 세대를 거쳐 진화했고 2024년에는 유압식에서 완전 전기식 시스템으로 전환했습니다.
 
-<!-- Image pending: ![Atlas](../../assets/hardware/humanoids/atlas.png) -->
+<!-- Image pending: ![Atlas](/assets/hardware/humanoids/atlas.png) -->
 
 | 항목 | 내용 |
 |------|------|
@@ -147,7 +147,7 @@ Atlas는 Boston Dynamics가 개발한 첨단 휴머노이드 로봇입니다. 20
 
 ## See Also
 
-- [하드웨어 목록](../index)
+- [하드웨어 목록](/knowledge/hardware/)
 - [Tesla Optimus](optimus)
 - [Figure 휴머노이드](figure)
 - [Agility Digit](digit)

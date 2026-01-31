@@ -168,7 +168,7 @@ N1.5에 새롭게 추가된 학습 목표(objective)입니다.
 
 HuggingFace에 공개된 GR00T-N1.5-3B 모델의 사전학습 데이터 구성입니다.
 
-![N1.5 Pretraining Data Distribution](../assets/models/groot/groot-n1.5-pretrain-data-distribution.svg)
+![N1.5 Pretraining Data Distribution](/assets/models/groot/groot-n1.5-pretrain-data-distribution.svg)
 <p align="center"><em>GR00T N1.5 사전학습 데이터 분포 (출처: <a href="https://research.nvidia.com/labs/gear/gr00t-n1_5/">NVIDIA Research</a>)</em></p>
 
 #### 사전학습 데이터 구성
@@ -371,4 +371,4 @@ N1.5의 핵심 아키텍처 변경은 **사전학습과 미세조정 모두에�
 - [DreamGen](dreamgen) - GR00T-Dreams 합성 데이터 파이프라인
 
 ### 관련 인물
-- [Jim Fan](../people/jim-fan) - NVIDIA GEAR Lab, GR00T 연구 리드
+- [Jim Fan](/knowledge/people/jim-fan) - NVIDIA GEAR Lab, GR00T 연구 리드

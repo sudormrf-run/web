@@ -28,7 +28,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Humanoids > Fourier
 
-<!-- Image pending: ![Fourier GR-2](../../assets/hardware/humanoids/fourier.png) -->
+<!-- Image pending: ![Fourier GR-2](/assets/hardware/humanoids/fourier.png) -->
 
 ---
 
@@ -303,7 +303,7 @@ Fourier의 차별점은 의료 분야에서의 실제 적용 경험이다.
 
 ## See Also
 
-- [하드웨어 목록](../index)
+- [하드웨어 목록](/knowledge/hardware/)
 - [Unitree 휴머노이드](unitree-humanoid)
 - [Tesla Optimus](optimus)
 - [Figure 휴머노이드](figure)

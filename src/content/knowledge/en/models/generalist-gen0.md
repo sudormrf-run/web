@@ -39,7 +39,7 @@ lastEditedAt: 2026-01-15
 - **Real Data Superiority Claim**: Emphasizes importance of real data in simulation vs real data debate
 - **Team Background**: Composed of alumni from OpenAI (GPT-4), DeepMind (RT-2), Boston Dynamics (Atlas)
 
-![GEN-0 Scaling Law](../assets/models/generalist-gen0/scaling_law_vla.png)
+![GEN-0 Scaling Law](/assets/models/generalist-gen0/scaling_law_vla.png)
 <p align="center"><em>GEN-0 Scaling Law: Predictable performance improvement with data/compute increase</em></p>
 
 ---
@@ -68,7 +68,7 @@ Largest real manipulation dataset ever:
 | Environments | Homes, bakeries, laundromats, warehouses, factories, etc. |
 | Tasks | From potato peeling to bolt tightening |
 
-![GEN-0 Data Size Comparison](../assets/models/generalist-gen0/data_size.png)
+![GEN-0 Data Size Comparison](/assets/models/generalist-gen0/data_size.png)
 <p align="center"><em>GEN-0 Data Scale: Overwhelming amount of real data compared to existing VLAs</em></p>
 
 ---
@@ -143,6 +143,6 @@ If GEN-0's claims are true:
 
 ## See Also
 
-- [Model List](./)
-- [Generalist](../companies/generalist)
-- [Non-Teleop Data Collection](../essays/insights/non-teleop-data)
+- [Model List](/knowledge/models/)
+- [Generalist](/knowledge/companies/generalist)
+- [Non-Teleop Data Collection](/knowledge/essays/insights/non-teleop-data)

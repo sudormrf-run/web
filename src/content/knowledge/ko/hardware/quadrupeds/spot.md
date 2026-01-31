@@ -24,7 +24,7 @@ Spot의 Physical AI 분야에서의 의의를 정리하면 다음과 같습니�
 - **연구 플랫폼으로의 확장**: SDK 공개와 RL Researcher Kit로 학술 연구 생태계 지원
 - **Physical AI 데이터 수집**: 다양한 실환경 데이터 수집 플랫폼으로의 활용 가능성
 
-<!-- Image pending: ![Spot](../../assets/hardware/quadrupeds/spot.png) -->
+<!-- Image pending: ![Spot](/assets/hardware/quadrupeds/spot.png) -->
 <p align="center"><em>Boston Dynamics Spot - 산업용 4족 보행 로봇</em></p>
 
 ---
@@ -327,14 +327,14 @@ Hyundai Motor Group은 Boston Dynamics 인수를 통해 로보틱스 분야로 �
 
 ## See Also
 
-- [하드웨어 목록](../)
+- [하드웨어 목록](/knowledge/hardware/)
 - [Unitree 쿼드러펫](unitree)
 - [ANYmal](anymal)
 
 ### 관련 하드웨어
-- [Mobile ALOHA](../mobile/mobile-aloha)
+- [Mobile ALOHA](/knowledge/hardware/mobile/mobile-aloha)
 
 ### 관련 회사
-- [NVIDIA](../../companies/nvidia) - Isaac Lab, RL Researcher Kit 협력
-- [Unitree](../../companies/unitree) - 경쟁 쿼드러펫 제조사
+- [NVIDIA](/knowledge/companies/nvidia) - Isaac Lab, RL Researcher Kit 협력
+- [Unitree](/knowledge/companies/unitree) - 경쟁 쿼드러펫 제조사
 

@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-15
 > Home > Hardware > Hands > Inspire Hand
 
 <!-- Image placeholder: actual image file needs to be added to assets folder -->
-<!-- Image pending: ![Inspire Hand](../../assets/hardware/hands/inspire-hand.png) -->
+<!-- Image pending: ![Inspire Hand](/assets/hardware/hands/inspire-hand.png) -->
 
 ---
 
@@ -243,6 +243,6 @@ git clone https://github.com/unitreerobotics/DFX_inspire_service
 
 ## See Also
 
-- [Hardware List](../)
-- [Ability Hand](./ability)
-- [Shadow Dexterous Hand](./shadow-hand)
+- [Hardware List](/knowledge/hardware/)
+- [Ability Hand](/knowledge/hardware/hands/ability)
+- [Shadow Dexterous Hand](/knowledge/hardware/hands/shadow-hand)

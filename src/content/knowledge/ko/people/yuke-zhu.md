@@ -284,5 +284,5 @@ MimicGen: 소량 시연에서 대규모 학습 데이터 자동 생성
 
 - [Jim Fan](jim-fan) - GEAR Lab 공동 리드
 - [Fei-Fei Li](fei-fei-li) - Stanford 지도교수
-- [GR00T](../models/groot) - 휴머노이드 파운데이션 모델
-- [NVIDIA](../companies/nvidia) - 소속 기업
+- [GR00T](/knowledge/models/groot) - 휴머노이드 파운데이션 모델
+- [NVIDIA](/knowledge/companies/nvidia) - 소속 기업

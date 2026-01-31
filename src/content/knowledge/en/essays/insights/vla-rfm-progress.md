@@ -41,7 +41,7 @@ A chronological overview of VLA and RFM development, presented in reverse chrono
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/lQsvTrRTBRs" title="Figure Helix - Official Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-[Figure Helix](../../models/figure-helix) is the first VLA to achieve high-speed control of a full humanoid body.
+[Figure Helix](/knowledge/models/figure-helix) is the first VLA to achieve high-speed control of a full humanoid body.
 
 | Feature | Significance |
 |---------|-------------|
@@ -57,7 +57,7 @@ A chronological overview of VLA and RFM development, presented in reverse chrono
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/W7q-qlj4EFc?start=82" title="Sharpa CES 2026 Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-In early 2026, Sharpa announced [CraftNet](../../models/craftnet), a model that integrates tactile sensing into VLA, opening new research directions.
+In early 2026, Sharpa announced [CraftNet](/knowledge/models/craftnet), a model that integrates tactile sensing into VLA, opening new research directions.
 
 While existing VLAs relied primarily on visual information, adding tactile sensing is expected to enable more delicate manipulation.
 
@@ -82,9 +82,9 @@ A dual-system structure inspired by Daniel Kahneman's "Thinking, Fast and Slow" 
 
 | Model | Release | System 2 | System 1 | Frequency |
 |-------|---------|----------|----------|-----------|
-| [GR00T N1.6](../../models/groot-n1-6) | 2025.09 | Cosmos-Reason-2B VLM | DiT 32 layers (120Hz) | 120Hz |
-| [Figure Helix](../../models/figure-helix) | 2025.02 | High-level planning (7-9Hz) | Low-level control (200Hz) | 200Hz |
-| [Gemini Robotics](../../models/gemini-robotics) | 2025.03 | Cloud inference | On-Device control | - |
+| [GR00T N1.6](/knowledge/models/groot-n1-6) | 2025.09 | Cosmos-Reason-2B VLM | DiT 32 layers (120Hz) | 120Hz |
+| [Figure Helix](/knowledge/models/figure-helix) | 2025.02 | High-level planning (7-9Hz) | Low-level control (200Hz) | 200Hz |
+| [Gemini Robotics](/knowledge/models/gemini-robotics) | 2025.03 | Cloud inference | On-Device control | - |
 
 <div style="margin: 1.5rem 0;">
   <img src="/assets/models/groot/groot-n1.6-model-architecture.png" alt="GR00T N1.6 Architecture" style="width: 100%; border-radius: 8px;">
@@ -122,16 +122,16 @@ The "Action as Language" paradigm introduced by RT-2 represented actions as toke
 <video src="/assets/models/diffusion-policy/diffusion_policy_highlight.mp4" controls width="100%" muted autoplay loop style="border-radius: 8px; margin: 1rem 0;"></video>
 <p align="center" style="font-size: 0.85em;"><em>Continuous Action Example: Gradually generating action sequence from noise (Source: <a href="../../models/diffusion-policy">Diffusion Policy</a>)</em></p>
 
-> For detailed analysis of these trade-offs, see the [FAST Tokenizer](../../models/fast) document. FAST overcomes discrete token limitations with DCT+BPE compression, achieving 5x faster training.
+> For detailed analysis of these trade-offs, see the [FAST Tokenizer](/knowledge/models/fast) document. FAST overcomes discrete token limitations with DCT+BPE compression, achieving 5x faster training.
 
 #### 2025 Major Models' Choices
 
 | Model | Action Generation | Features |
 |-------|------------------|----------|
-| [π0](../../models/pi0), [π0.5](../../models/pi0-5) | Flow Matching | Efficient alternative to Diffusion, 50Hz control |
-| [GR00T N1](../../models/groot-n1) | Diffusion Transformer | Generate actions from noise, dual-system |
-| [SmolVLA](../../models/smolvla) | Flow Matching | 450M lightweight model, runs on MacBook |
-| [LBM](../../models/lbm-atlas) | Diffusion Transformer | Whole-body single model control, 48 timesteps |
+| [π0](/knowledge/models/pi0), [π0.5](/knowledge/models/pi0-5) | Flow Matching | Efficient alternative to Diffusion, 50Hz control |
+| [GR00T N1](/knowledge/models/groot-n1) | Diffusion Transformer | Generate actions from noise, dual-system |
+| [SmolVLA](/knowledge/models/smolvla) | Flow Matching | 450M lightweight model, runs on MacBook |
+| [LBM](/knowledge/models/lbm-atlas) | Diffusion Transformer | Whole-body single model control, 48 timesteps |
 
 <div style="margin: 1.5rem 0;">
   <img src="/assets/models/pi0/pi0.png" alt="π0 Architecture" style="width: 100%; border-radius: 8px;">
@@ -154,13 +154,13 @@ The "Action as Language" paradigm introduced by RT-2 represented actions as toke
 
 | Date | Model | Company | Key Contribution |
 |------|-------|---------|------------------|
-| 2025.02 | [Figure Helix](../../models/figure-helix) | Figure AI | First full-body humanoid VLA |
-| 2025.03 | [GR00T N1](../../models/groot-n1) | NVIDIA | First open-source humanoid VLA |
-| 2025.03 | [Gemini Robotics](../../models/gemini-robotics) | Google DeepMind | Gemini 2.0-based, Cross-embodiment |
-| 2025.04 | [π0.5](../../models/pi0-5) | Physical Intelligence | Open-world generalization |
-| 2025.05 | [SmolVLA](../../models/smolvla) | HuggingFace | 450M lightweight VLA, runs on MacBook |
-| 2025.08 | [LBM](../../models/lbm-atlas) | Boston Dynamics + TRI | Whole-body single model control |
-| 2025.11 | [π*0.6](../../models/pi0-6-star) | Physical Intelligence | RL self-improvement (RECAP) |
+| 2025.02 | [Figure Helix](/knowledge/models/figure-helix) | Figure AI | First full-body humanoid VLA |
+| 2025.03 | [GR00T N1](/knowledge/models/groot-n1) | NVIDIA | First open-source humanoid VLA |
+| 2025.03 | [Gemini Robotics](/knowledge/models/gemini-robotics) | Google DeepMind | Gemini 2.0-based, Cross-embodiment |
+| 2025.04 | [π0.5](/knowledge/models/pi0-5) | Physical Intelligence | Open-world generalization |
+| 2025.05 | [SmolVLA](/knowledge/models/smolvla) | HuggingFace | 450M lightweight VLA, runs on MacBook |
+| 2025.08 | [LBM](/knowledge/models/lbm-atlas) | Boston Dynamics + TRI | Whole-body single model control |
+| 2025.11 | [π*0.6](/knowledge/models/pi0-6-star) | Physical Intelligence | RL self-improvement (RECAP) |
 
 ---
 
@@ -172,12 +172,12 @@ The "Action as Language" paradigm introduced by RT-2 represented actions as toke
 
 | Release | Model | Significance |
 |---------|-------|--------------|
-| 2024.06 | [OpenVLA](../../models/openvla) | First large-scale open-source VLA (7B), matching 55B RT-2-X |
-| 2024.10 | [π0](../../models/pi0) | Flow Matching VLA, origin of General Robot Policy |
+| 2024.06 | [OpenVLA](/knowledge/models/openvla) | First large-scale open-source VLA (7B), matching 55B RT-2-X |
+| 2024.10 | [π0](/knowledge/models/pi0) | Flow Matching VLA, origin of General Robot Policy |
 
 ### OpenVLA - The Start of Open-Source VLA
 
-[OpenVLA](../../models/openvla) is a 7B parameter open-source VLA jointly developed by Stanford, UC Berkeley, TRI, Google DeepMind, and MIT.
+[OpenVLA](/knowledge/models/openvla) is a 7B parameter open-source VLA jointly developed by Stanford, UC Berkeley, TRI, Google DeepMind, and MIT.
 
 | Feature | Details |
 |---------|---------|
@@ -190,7 +190,7 @@ The "Action as Language" paradigm introduced by RT-2 represented actions as toke
 
 ### π0 - The Origin of General Robot Policy
 
-[π0](../../models/pi0) is the first general-purpose robot foundation model released by Physical Intelligence.
+[π0](/knowledge/models/pi0) is the first general-purpose robot foundation model released by Physical Intelligence.
 
 | Feature | Details |
 |---------|---------|
@@ -217,7 +217,7 @@ The starting point for all VLA research is Google DeepMind's RT (Robotics Transf
 
 ### RT-2 (2023.07) - Action as Language
 
-RT-2 from the [RT Series](../../models/rt) introduced the **"Action as Language"** paradigm.
+RT-2 from the [RT Series](/knowledge/models/rt) introduced the **"Action as Language"** paradigm.
 
 | Key Idea | Description |
 |----------|-------------|
@@ -239,7 +239,7 @@ Research that laid the foundation for robot learning before VLA.
 
 ### Diffusion Policy (2023.03)
 
-[Diffusion Policy](../../models/diffusion-policy) was the first to successfully apply diffusion, successful in image generation, to robot action generation.
+[Diffusion Policy](/knowledge/models/diffusion-policy) was the first to successfully apply diffusion, successful in image generation, to robot action generation.
 
 | Contribution | Description |
 |--------------|-------------|
@@ -249,7 +249,7 @@ Research that laid the foundation for robot learning before VLA.
 
 ### ACT (2023.04)
 
-[ACT](../../models/act) enabled efficient imitation learning through the Action Chunking concept.
+[ACT](/knowledge/models/act) enabled efficient imitation learning through the Action Chunking concept.
 
 | Contribution | Description |
 |--------------|-------------|
@@ -283,15 +283,15 @@ Research that laid the foundation for robot learning before VLA.
 
 ## See Also
 
-- [What are RFM & VLA?](../fundamentals/what-is-rfm-vla)
-- [The Action Data Scaling Problem](../fundamentals/scaling-problem)
+- [What are RFM & VLA?](/knowledge/essays/fundamentals/what-is-rfm-vla)
+- [The Action Data Scaling Problem](/knowledge/essays/fundamentals/scaling-problem)
 - [Physical vs Cognitive Intelligence](physical-vs-cognitive)
 - [The Need for Tactile Sensing](tactile-sensing)
 
 ### Key Model Documents
 
-- [RT Series](../../models/rt) - The origin of VLA
-- [π Series](../../models/pi-series) - Physical Intelligence model series
-- [GR00T N1](../../models/groot-n1) - NVIDIA open-source humanoid VLA
-- [Figure Helix](../../models/figure-helix) - Figure AI's humanoid VLA
-- [Gemini Robotics](../../models/gemini-robotics) - Google DeepMind's VLA
+- [RT Series](/knowledge/models/rt) - The origin of VLA
+- [π Series](/knowledge/models/pi-series) - Physical Intelligence model series
+- [GR00T N1](/knowledge/models/groot-n1) - NVIDIA open-source humanoid VLA
+- [Figure Helix](/knowledge/models/figure-helix) - Figure AI's humanoid VLA
+- [Gemini Robotics](/knowledge/models/gemini-robotics) - Google DeepMind's VLA

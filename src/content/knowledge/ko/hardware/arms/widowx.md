@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-26
 > Home > Hardware > Arms > WidowX
 
 <!-- 이미지 placeholder: 실제 이미지 파일이 assets 폴더에 추가되어야 함 -->
-<!-- Image pending: ![WidowX Arms](../../assets/hardware/arms/widowx.png) -->
+<!-- Image pending: ![WidowX Arms](/assets/hardware/arms/widowx.png) -->
 
 ---
 
@@ -287,7 +287,7 @@ Physical Intelligence에서 개발한 범용 로봇 제어를 위한 VLA 플로�
 
 ## See Also
 
-- [하드웨어 목록](../index)
+- [하드웨어 목록](/knowledge/hardware/)
 - [ALOHA](aloha)
 
 ---

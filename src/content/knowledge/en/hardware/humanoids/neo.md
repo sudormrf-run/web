@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-15
 
 > Home > Hardware > Humanoids > NEO
 
-<!-- Image pending: ![1X NEO](../../assets/hardware/humanoids/neo.png) -->
+<!-- Image pending: ![1X NEO](/assets/hardware/humanoids/neo.png) -->
 
 ---
 
@@ -198,9 +198,9 @@ Actions made possible:
 
 ## See Also
 
-- [Hardware List](../)
-- [1X Technologies](../../companies/1x)
-- [Redwood AI](../../models/redwood-ai)
+- [Hardware List](/knowledge/hardware/)
+- [1X Technologies](/knowledge/companies/1x)
+- [Redwood AI](/knowledge/models/redwood-ai)
 
 ---
 

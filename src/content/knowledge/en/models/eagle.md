@@ -221,7 +221,7 @@ Eagle VLM serves as the **System 2 (The Thinker)** in NVIDIA's GR00T robot found
 
 ### Role in System 1, 2 Structure
 
-![GR00T N1 Architecture](../assets/models/groot/groot_n1_architecture.png)
+![GR00T N1 Architecture](/assets/models/groot/groot_n1_architecture.png)
 <p align="center"><em>GR00T N1 Architecture: Eagle VLM serves as System 2</em></p>
 
 - **System 2 (Eagle)**: Environment perception, language instruction understanding, action planning
@@ -273,9 +273,9 @@ Eagle VLM serves as the **System 2 (The Thinker)** in NVIDIA's GR00T robot found
 
 ## See Also
 
-- [Model Index](./)
+- [Model Index](/knowledge/models/)
 - [GR00T](groot) - Humanoid robot foundation model using Eagle as VLM
-- [NVIDIA](../companies/nvidia)
+- [NVIDIA](/knowledge/companies/nvidia)
 
 ### Related Technologies
 - [SigLIP](https://arxiv.org/abs/2303.15343) - Google's Vision-Language encoder

@@ -19,7 +19,7 @@ lastEditedAt: 2026-01-26
 > Home > Hardware > Humanoids > Agibot
 
 <!-- 이미지 placeholder - 실제 이미지 추가 필요 -->
-<!-- Image pending: ![Agibot](../../assets/hardware/humanoids/agibot.png) -->
+<!-- Image pending: ![Agibot](/assets/hardware/humanoids/agibot.png) -->
 
 ---
 
@@ -283,4 +283,4 @@ ROS(Robot Operating System)보다 빠르고 효율적인 자체 개발 미들웨
 
 ## See Also
 
-- [하드웨어 목록](./)
+- [하드웨어 목록](/knowledge/hardware/humanoids/)

@@ -19,7 +19,7 @@ lastEditedAt: 2026-01-15
 > Home > Hardware > Hands > GEX
 
 <!-- TODO: Add image -->
-<!-- Image pending: ![GEX Hand](../../assets/hardware/hands/gex.png) -->
+<!-- Image pending: ![GEX Hand](/assets/hardware/hands/gex.png) -->
 
 ---
 
@@ -221,7 +221,7 @@ GX11은 EX12 엑소스켈레톤 글러브와 결합하여 사용:
 
 ## See Also
 
-- [하드웨어 목록](../index)
+- [하드웨어 목록](/knowledge/hardware/)
 - [LEAP Hand](leap-hand) - 유사한 저가형 설계
 - [Shadow Hand](shadow-hand) - 고성능 벤치마크
 - [Allegro Hand](allegro) - 중간 가격대 대안

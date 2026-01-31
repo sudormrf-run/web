@@ -19,7 +19,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Humanoids > Reachy 2
 
-<!-- Image pending: ![Reachy 2](../../assets/hardware/humanoids/reachy.png) -->
+<!-- Image pending: ![Reachy 2](/assets/hardware/humanoids/reachy.png) -->
 
 ---
 
@@ -291,5 +291,5 @@ According to Hugging Face blog, the Reachy platform has been deployed and used i
 
 ## See Also
 
-- [Hardware List](../index)
-- [Reachy Mini](../misc/reachy-mini)
+- [Hardware List](/knowledge/hardware/)
+- [Reachy Mini](/knowledge/hardware/misc/reachy-mini)

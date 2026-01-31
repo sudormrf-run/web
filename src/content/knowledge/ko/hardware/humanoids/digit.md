@@ -18,7 +18,7 @@ lastEditedAt: 2026-01-15
 
 > Home > Hardware > Humanoids > Digit
 
-<!-- Image pending: ![Digit](../../assets/hardware/humanoids/digit.png) -->
+<!-- Image pending: ![Digit](/assets/hardware/humanoids/digit.png) -->
 
 ---
 
@@ -317,6 +317,6 @@ Digit은 **10만 개 이상의 토트 이동**을 달성하며 다음을 증명�
 
 ## See Also
 
-- [하드웨어 목록](./)
-- [Figure 휴머노이드](./figure)
-- [Tesla Optimus](./optimus)
+- [하드웨어 목록](/knowledge/hardware/humanoids/)
+- [Figure 휴머노이드](/knowledge/hardware/humanoids/figure)
+- [Tesla Optimus](/knowledge/hardware/humanoids/optimus)

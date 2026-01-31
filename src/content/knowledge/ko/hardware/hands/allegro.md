@@ -25,7 +25,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Hands > Allegro Hand
 
-<!-- Image pending: ![Allegro Hand](../../assets/hardware/hands/allegro.png) -->
+<!-- Image pending: ![Allegro Hand](/assets/hardware/hands/allegro.png) -->
 <!-- TODO: 이미지 파일 추가 필요 -->
 
 ---
@@ -163,6 +163,6 @@ Allegro Hand는 Vision-Language-Action (VLA) 및 학습 기반 매니퓰레이�
 
 ## See Also
 
-- [하드웨어 목록](../)
-- [Shadow Hand](./shadow-hand)
-- [LEAP Hand](./leap-hand)
+- [하드웨어 목록](/knowledge/hardware/)
+- [Shadow Hand](/knowledge/hardware/hands/shadow-hand)
+- [LEAP Hand](/knowledge/hardware/hands/leap-hand)

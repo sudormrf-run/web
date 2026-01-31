@@ -119,6 +119,6 @@ Google DeepMind is a pioneer in robotics AI, leading key advancements in VLA mod
 
 ## See Also
 
-- [Company List](./)
-- [RT Series](../models/rt)
-- [Gemini Robotics](../models/gemini-robotics)
+- [Company List](/knowledge/companies/)
+- [RT Series](/knowledge/models/rt)
+- [Gemini Robotics](/knowledge/models/gemini-robotics)

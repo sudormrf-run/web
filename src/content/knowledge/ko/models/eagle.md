@@ -221,7 +221,7 @@ Eagle VLM은 NVIDIA GR00T 로봇 파운데이션 모델의 **System 2 (The Think
 
 ### System 1, 2 구조에서의 역할
 
-![GR00T N1 Architecture](../assets/models/groot/groot_n1_architecture.png)
+![GR00T N1 Architecture](/assets/models/groot/groot_n1_architecture.png)
 <p align="center"><em>GR00T N1 아키텍처: Eagle VLM이 System 2 역할 담당</em></p>
 
 - **System 2 (Eagle)**: 환경 인식, 언어 지시 이해, 행동 계획
@@ -273,9 +273,9 @@ Eagle VLM은 NVIDIA GR00T 로봇 파운데이션 모델의 **System 2 (The Think
 
 ## See Also
 
-- [모델 목록](./)
+- [모델 목록](/knowledge/models/)
 - [GR00T](groot) - Eagle을 VLM으로 사용하는 휴머노이드 로봇 파운데이션 모델
-- [NVIDIA](../companies/nvidia)
+- [NVIDIA](/knowledge/companies/nvidia)
 
 ### 관련 기술
 - [SigLIP](https://arxiv.org/abs/2303.15343) - Google의 Vision-Language 인코더

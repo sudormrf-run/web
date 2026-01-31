@@ -19,7 +19,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Humanoids > Reachy 2
 
-<!-- Image pending: ![Reachy 2](../../assets/hardware/humanoids/reachy.png) -->
+<!-- Image pending: ![Reachy 2](/assets/hardware/humanoids/reachy.png) -->
 
 ---
 
@@ -291,5 +291,5 @@ Hugging Face 블로그에 따르면 Reachy 플랫폼은 전 세계 20개국 이�
 
 ## See Also
 
-- [하드웨어 목록](../index)
-- [Reachy Mini](../misc/reachy-mini)
+- [하드웨어 목록](/knowledge/hardware/)
+- [Reachy Mini](/knowledge/hardware/misc/reachy-mini)

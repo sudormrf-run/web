@@ -228,6 +228,6 @@ GR00T N1 스펙:
 
 ## See Also
 
-- [GR00T](../models/groot)
-- [NVIDIA](../companies/nvidia)
+- [GR00T](/knowledge/models/groot)
+- [NVIDIA](/knowledge/companies/nvidia)
 - [Fei-Fei Li](fei-fei-li)

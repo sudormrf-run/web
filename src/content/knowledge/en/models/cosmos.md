@@ -336,10 +336,10 @@ GR00T N1.6 (VLA Training)
 
 ## See Also
 
-- [Model Index](./)
+- [Model Index](/knowledge/models/)
 - [GR00T](groot) - NVIDIA Humanoid Robot Foundation Model
-- [NVIDIA](../companies/nvidia)
-- [Simulation & World Model](../essays/insights/simulation-world-model)
+- [NVIDIA](/knowledge/companies/nvidia)
+- [Simulation & World Model](/knowledge/essays/insights/simulation-world-model)
 
 ### Related People
-- [Jim Fan](../people/jim-fan) - NVIDIA GEAR Lab, Physical AI Research Lead
+- [Jim Fan](/knowledge/people/jim-fan) - NVIDIA GEAR Lab, Physical AI Research Lead

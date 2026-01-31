@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-26
 > Home > Hardware > Humanoids > HopeJR
 
 <!-- Image placeholder: Remove this line if no actual image file or add image -->
-<!-- Image pending: ![HopeJR](../../assets/hardware/humanoids/hopejr.png) -->
+<!-- Image pending: ![HopeJR](/assets/hardware/humanoids/hopejr.png) -->
 
 ---
 
@@ -227,10 +227,10 @@ Desktop robot announced alongside by HuggingFace[^1], with preorders opening in 
 
 ## See Also
 
-- [Hardware List](../)
-- [LeRobot Arms](../arms/lerobot-arms)
-- [Reachy](./reachy)
-- [SmolVLA](../../models/smolvla)
+- [Hardware List](/knowledge/hardware/)
+- [LeRobot Arms](/knowledge/hardware/arms/lerobot-arms)
+- [Reachy](/knowledge/hardware/humanoids/reachy)
+- [SmolVLA](/knowledge/models/smolvla)
 
 ---
 

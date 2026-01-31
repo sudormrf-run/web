@@ -18,7 +18,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Humanoids > Noetix Bumi
 
-<!-- Image pending: ![Noetix Bumi](../../assets/hardware/humanoids/noetix-bumi.png) -->
+<!-- Image pending: ![Noetix Bumi](/assets/hardware/humanoids/noetix-bumi.png) -->
 
 ---
 
@@ -224,5 +224,5 @@ As a result of this achievement, Noetix reportedly received **over 1,000 orders 
 
 ## See Also
 
-- [Hardware List](../index)
+- [Hardware List](/knowledge/hardware/)
 - [Unitree Humanoids](unitree-humanoid)

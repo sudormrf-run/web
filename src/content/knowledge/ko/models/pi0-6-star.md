@@ -33,7 +33,7 @@ lastEditedAt: 2026-01-21
 - **24시간 연속 운영**: 에스프레소 5:30am~11:30pm, 50개 빨래 연속 접기
 - **공장 배포 실증**: 59개 초콜릿 포장 박스 조립
 
-![π*0.6 Overview](../assets/models/pi0/pi06star.png)
+![π*0.6 Overview](/assets/models/pi0/pi06star.png)
 <p align="center"><em>π*0.6: RECAP - 경험과 코칭에서 학습하는 강화학습</em></p>
 
 ---
@@ -82,7 +82,7 @@ lastEditedAt: 2026-01-21
 <video src="/assets/models/pi0/intervention_example.mp4" controls width="100%"></video>
 <p align="center"><em>Coaching 예시: 실패 상황에서 전문가가 개입하여 교정</em></p>
 
-![π*0.6 Components](../assets/models/pi0/pistar06-components.png)
+![π*0.6 Components](/assets/models/pi0/pistar06-components.png)
 <p align="center"><em>π*0.6 구성 요소: Policy, Value Function, Advantage Conditioning</em></p>
 
 ### Value Function
@@ -168,10 +168,10 @@ Advantage = V(s') - V(s)
 - [π Series](pi-series)
 - [π0](pi0)
 - [π0.5](pi0-5)
-- [Physical Intelligence](../companies/physical-intelligence)
+- [Physical Intelligence](/knowledge/companies/physical-intelligence)
 
 ### 관련 인물
-- [Karol Hausman](../people/karol-hausman) - Physical Intelligence 공동창업자
-- [Chelsea Finn](../people/chelsea-finn) - Physical Intelligence 공동창업자
-- [Sergey Levine](../people/sergey-levine) - Physical Intelligence 공동창업자
-- [Pete Florence](../people/pete-florence) - Physical Intelligence 공동창업자
+- [Karol Hausman](/knowledge/people/karol-hausman) - Physical Intelligence 공동창업자
+- [Chelsea Finn](/knowledge/people/chelsea-finn) - Physical Intelligence 공동창업자
+- [Sergey Levine](/knowledge/people/sergey-levine) - Physical Intelligence 공동창업자
+- [Pete Florence](/knowledge/people/pete-florence) - Physical Intelligence 공동창업자

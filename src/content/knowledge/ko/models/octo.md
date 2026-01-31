@@ -24,7 +24,7 @@ lastEditedAt: 2026-01-15
 - **Open X-Embodiment 활용**: 800K 에피소드, 25개 데이터셋으로 사전학습
 - **빠른 적응의 표준**: 새로운 로봇 플랫폼에 빠르게 적응해야 할 때 기준점으로 사용
 
-![Octo Architecture](../assets/models/octo/octo_architecture.jpg)
+![Octo Architecture](/assets/models/octo/octo_architecture.jpg)
 <p align="center"><em>Octo 아키텍처: Transformer 인코더 + Diffusion 디코더 구조</em></p>
 
 ---
@@ -188,7 +188,7 @@ Octo의 핵심 강점은 **빠른 적응**입니다.
 
 ## See Also
 
-- [모델 목록](./)
+- [모델 목록](/knowledge/models/)
 - [OpenVLA](openvla)
 - [RT](rt)
 

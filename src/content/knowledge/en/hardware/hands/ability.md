@@ -23,7 +23,7 @@ lastEditedAt: 2026-01-15
   Recommended: Use PSYONIC official product image or CC-licensed image
   If no image available, comment out or delete the line below
 -->
-<!-- Image pending: ![Ability Hand](../../assets/hardware/hands/ability-hand.png) -->
+<!-- Image pending: ![Ability Hand](/assets/hardware/hands/ability-hand.png) -->
 
 ---
 
@@ -191,7 +191,7 @@ PSYONIC has released Ability Hand separately for robotics researchers worldwide.
 
 ## See Also
 
-- [Hardware List](./)
+- [Hardware List](/knowledge/hardware/hands/)
 - [Inspire Hand](inspire)
 
 ---

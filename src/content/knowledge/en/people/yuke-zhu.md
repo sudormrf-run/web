@@ -284,5 +284,5 @@ Impact:
 
 - [Jim Fan](jim-fan) - GEAR Lab Co-Lead
 - [Fei-Fei Li](fei-fei-li) - Stanford Advisor
-- [GR00T](../models/groot) - Humanoid Foundation Model
-- [NVIDIA](../companies/nvidia) - Affiliated Company
+- [GR00T](/knowledge/models/groot) - Humanoid Foundation Model
+- [NVIDIA](/knowledge/companies/nvidia) - Affiliated Company

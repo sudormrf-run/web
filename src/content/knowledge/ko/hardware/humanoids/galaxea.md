@@ -18,7 +18,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Humanoids > Galaxea
 
-<!-- Image pending: ![Galaxea R1](../../assets/hardware/humanoids/galaxea.png) -->
+<!-- Image pending: ![Galaxea R1](/assets/hardware/humanoids/galaxea.png) -->
 
 ---
 
@@ -270,8 +270,8 @@ Meituan, IDG Capital, Baidu Ventures 등 30개 이상 투자사 참여. [^2]
 
 ## See Also
 
-- [하드웨어 목록](../index)
-- [Galaxea Arms](../arms/galaxea-arms)
+- [하드웨어 목록](/knowledge/hardware/)
+- [Galaxea Arms](/knowledge/hardware/arms/galaxea-arms)
 - [Unitree 휴머노이드](unitree-humanoid)
 
 ---

@@ -22,7 +22,7 @@ lastEditedAt: 2026-01-26
 - **오픈소스 생태계**: 하드웨어 설계, 소프트웨어, 3D 프린팅 파일, 조립 튜토리얼 전체 공개
 - **실용적 가사 로봇 연구**: 요리, 청소, 엘리베이터 호출 등 실제 생활 태스크 시연으로 범용 가정용 로봇의 가능성 입증
 
-<!-- Image pending: ![Mobile ALOHA](../../assets/hardware/mobile/mobile-aloha.png) -->
+<!-- Image pending: ![Mobile ALOHA](/assets/hardware/mobile/mobile-aloha.png) -->
 
 ---
 
@@ -253,7 +253,7 @@ Mobile ALOHA: 16-DoF
 
 | 알고리즘 | 설명 |
 |----------|------|
-| [ACT](../../models/act) | Action Chunking Transformer |
+| [ACT](/knowledge/models/act) | Action Chunking Transformer |
 | Diffusion Policy | Diffusion 기반 행동 생성 |
 | VINN | Visual Imitation through Nearest Neighbors |
 
@@ -303,8 +303,8 @@ Mobile ALOHA: 16-DoF
 | 이름 | 역할 |
 |------|------|
 | [Zipeng Fu](https://zipengfu.github.io/) | 공동 제1저자 |
-| [Tony Z. Zhao](../../people/tony-zhao) | 공동 제1저자 |
-| [Chelsea Finn](../../people/chelsea-finn) | 지도교수 |
+| [Tony Z. Zhao](/knowledge/people/tony-zhao) | 공동 제1저자 |
+| [Chelsea Finn](/knowledge/people/chelsea-finn) | 지도교수 |
 
 ### 지원
 
@@ -380,8 +380,8 @@ Trossen Robotics에서 ALOHA 키트 판매:
 
 ## See Also
 
-- [하드웨어 목록](../index)
-- [ALOHA (정적)](../arms/aloha)
-- [ACT](../../models/act)
-- [Tony Zhao](../../people/tony-zhao)
-- [Chelsea Finn](../../people/chelsea-finn)
+- [하드웨어 목록](/knowledge/hardware/)
+- [ALOHA (정적)](/knowledge/hardware/arms/aloha)
+- [ACT](/knowledge/models/act)
+- [Tony Zhao](/knowledge/people/tony-zhao)
+- [Chelsea Finn](/knowledge/people/chelsea-finn)

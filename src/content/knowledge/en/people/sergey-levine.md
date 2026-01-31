@@ -177,8 +177,8 @@ Key collaborators:
 
 ## See Also
 
-- [RT](../models/rt)
-- [OpenVLA](../models/openvla)
-- [Octo](../models/octo)
+- [RT](/knowledge/models/rt)
+- [OpenVLA](/knowledge/models/openvla)
+- [Octo](/knowledge/models/octo)
 - [Chelsea Finn](chelsea-finn)
-- [Physical Intelligence](../companies/physical-intelligence)
+- [Physical Intelligence](/knowledge/companies/physical-intelligence)

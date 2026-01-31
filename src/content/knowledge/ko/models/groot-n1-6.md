@@ -97,7 +97,7 @@ N1.6은 **절대 관절 각도나 EEF 위치 대신 상태 상대적 액션 청�
 
 ## Architecture
 
-![GR00T N1.6 Model Architecture](../assets/models/groot/groot-n1.6-model-architecture.png)
+![GR00T N1.6 Model Architecture](/assets/models/groot/groot-n1.6-model-architecture.png)
 <p align="center"><em>GR00T N1.6 모델 아키텍처 (출처: <a href="https://research.nvidia.com/labs/gear/gr00t-n1_6/">NVIDIA Research</a>)</em></p>
 
 ### 주요 아키텍처 변경 사항 (N1.5 → N1.6)
@@ -157,7 +157,7 @@ NVIDIA Research 페이지에 따르면:
 
 <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
 
-![GR00T N1.6 Pretraining Data Distribution](../assets/models/groot/training_data_distribution_v3.svg)
+![GR00T N1.6 Pretraining Data Distribution](/assets/models/groot/training_data_distribution_v3.svg)
 
 </div>
 <p align="center"><em>GR00T N1.6 사전학습 데이터 분포 (출처: <a href="https://research.nvidia.com/labs/gear/gr00t-n1_6/">NVIDIA Research</a>)</em></p>
@@ -169,9 +169,9 @@ N1.6은 N1.5 대비 **수천 시간의 새로운 텔레오퍼레이션 데이터
 | 데이터 소스 | 플랫폼 타입 | 설명 |
 |------------|-----------|------|
 | **양팔 YAM 아암** | 양팔 조작기 | 정밀한 양팔 조작 작업 데이터 |
-| **[AGIBot](../hardware/humanoids/agibot) Genie1** | 세미-휴머노이드 | 다양한 조작 작업 데이터 |
+| **[AGIBot](/knowledge/hardware/humanoids/agibot) Genie1** | 세미-휴머노이드 | 다양한 조작 작업 데이터 |
 | **시뮬레이션 Galaxea R1 Pro** | 휴머노이드 | BEHAVIOR 스위트 기반 합성 데이터 |
-| **[Unitree](../hardware/humanoids/unitree-humanoid) G1** | 휴머노이드 | 전신 로코-매니퓰레이션 데이터 |
+| **[Unitree](/knowledge/hardware/humanoids/unitree-humanoid) G1** | 휴머노이드 | 전신 로코-매니퓰레이션 데이터 |
 
 ---
 
@@ -205,8 +205,8 @@ N1.6에서 검증된 로봇 플랫폼:
 | 플랫폼 | 타입 | 문서 |
 |--------|------|------|
 | 양팔 YAM 로봇 | 양팔 조작기 | - |
-| [AGIBot](../hardware/humanoids/agibot) Genie-1 | 세미-휴머노이드 | [AGIBot](../hardware/humanoids/agibot) |
-| [Unitree](../companies/unitree) G1 | 휴머노이드 | [Unitree Humanoid](../hardware/humanoids/unitree-humanoid) |
+| [AGIBot](/knowledge/hardware/humanoids/agibot) Genie-1 | 세미-휴머노이드 | [AGIBot](/knowledge/hardware/humanoids/agibot) |
+| [Unitree](/knowledge/companies/unitree) G1 | 휴머노이드 | [Unitree Humanoid](/knowledge/hardware/humanoids/unitree-humanoid) |
 | Fourier GR-1 | 휴머노이드 | - |
 
 ---
@@ -278,4 +278,4 @@ NVIDIA 개발자 블로그에서 소개된 sim-to-real 워크플로우는 세 �
 - [DreamGen](dreamgen) - 합성 데이터 생성 파이프라인
 
 ### 관련 인물
-- [Jim Fan](../people/jim-fan) - NVIDIA GEAR Lab, GR00T 연구 리드
+- [Jim Fan](/knowledge/people/jim-fan) - NVIDIA GEAR Lab, GR00T 연구 리드

@@ -21,7 +21,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Arms > Franka Research 3
 
-<!-- Image pending: ![Franka Research 3](../../assets/hardware/arms/franka-research3.png) -->
+<!-- Image pending: ![Franka Research 3](/assets/hardware/arms/franka-research3.png) -->
 <!-- If image file is unavailable, refer to official image: https://franka.de/franka-research-3 -->
 
 ---
@@ -407,6 +407,6 @@ FR3 is one of the most widely used robot platforms in VLA (Vision-Language-Actio
 
 ## See Also
 
-- [Hardware List](../index)
+- [Hardware List](/knowledge/hardware/)
 - [Franka Panda](franka-panda)
-- [OpenVLA](../../models/openvla)
+- [OpenVLA](/knowledge/models/openvla)

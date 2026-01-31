@@ -18,7 +18,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Hands > Shadow Hand
 
-<!-- Image pending: ![Shadow Hand](../../assets/hardware/hands/shadow-hand.png) -->
+<!-- Image pending: ![Shadow Hand](/assets/hardware/hands/shadow-hand.png) -->
 
 ---
 
@@ -214,10 +214,10 @@ DEX-EE was developed over 5 years at Google DeepMind's request, a **next-generat
 
 ## See Also
 
-- [Hardware List](../)
-- [LEAP Hand](./leap-hand) - Low-cost open-source alternative to Shadow Hand
-- [Allegro Hand](./allegro)
-- [GEX Series](./gex)
+- [Hardware List](/knowledge/hardware/)
+- [LEAP Hand](/knowledge/hardware/hands/leap-hand) - Low-cost open-source alternative to Shadow Hand
+- [Allegro Hand](/knowledge/hardware/hands/allegro)
+- [GEX Series](/knowledge/hardware/hands/gex)
 
 ---
 

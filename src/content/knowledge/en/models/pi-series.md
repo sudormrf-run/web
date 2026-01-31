@@ -40,7 +40,7 @@ lastEditedAt: 2026-01-21
 
 ## Overview
 
-Pi Series is a Vision-Language-Action model series announced by [Physical Intelligence](../companies/physical-intelligence) starting October 2024.
+Pi Series is a Vision-Language-Action model series announced by [Physical Intelligence](/knowledge/companies/physical-intelligence) starting October 2024.
 
 | Item | Details |
 |------|---------|
@@ -163,4 +163,4 @@ RL with Experience & Corrections via Advantage-conditioned Policies. Self-improv
 - [Pi0.5](pi0-5)
 - [Pi*0.6](pi0-6-star)
 - [FAST](fast)
-- [Physical Intelligence](../companies/physical-intelligence)
+- [Physical Intelligence](/knowledge/companies/physical-intelligence)

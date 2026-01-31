@@ -18,7 +18,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Arms > Galaxea Arms
 
-<!-- Image pending: ![Galaxea A1](../../assets/hardware/arms/galaxea-arm.png) -->
+<!-- Image pending: ![Galaxea A1](/assets/hardware/arms/galaxea-arm.png) -->
 <!-- Image placeholder: Add galaxea-arm.png to assets/hardware/arms/ -->
 
 ---
@@ -361,7 +361,7 @@ Galaxea has open-sourced its self-developed **G0 VLA model**.
 
 ## See Also
 
-- [Hardware List](../index)
-- [Galaxea Humanoid](../humanoids/galaxea)
+- [Hardware List](/knowledge/hardware/)
+- [Galaxea Humanoid](/knowledge/hardware/humanoids/galaxea)
 - [xArm Series](xarm)
 - [Franka Research 3](franka-research3)

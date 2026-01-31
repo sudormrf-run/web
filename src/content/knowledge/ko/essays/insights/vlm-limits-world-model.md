@@ -41,4 +41,4 @@ lastEditedAt: 2026-01-29
 ## See Also
 
 - [시뮬레이션 & World Model](simulation-world-model)
-- [RFM & VLA란 무엇인가](../fundamentals/what-is-rfm-vla)
+- [RFM & VLA란 무엇인가](/knowledge/essays/fundamentals/what-is-rfm-vla)

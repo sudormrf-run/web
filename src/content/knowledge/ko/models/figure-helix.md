@@ -265,6 +265,6 @@ Figure 03은 가정용으로 설계된 3세대 휴머노이드 로봇입니다.
 
 ## See Also
 
-- [모델 목록](./)
+- [모델 목록](/knowledge/models/)
 - [GR00T](groot)
 - [pi0](pi0)

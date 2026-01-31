@@ -19,7 +19,7 @@ lastEditedAt: 2026-01-15
 
 > Home > Hardware > Arms > xArm
 
-<!-- Image pending: ![xArm](../../assets/hardware/arms/xarm.png) -->
+<!-- Image pending: ![xArm](/assets/hardware/arms/xarm.png) -->
 
 > **Note**: 가격 및 사양은 지역과 시점에 따라 변동될 수 있습니다. 최신 정보는 [UFACTORY 공식 사이트](https://www.ufactory.us/)를 참조하세요.
 
@@ -301,6 +301,6 @@ print(dataset)
 
 ## See Also
 
-- [하드웨어 목록](../index)
+- [하드웨어 목록](/knowledge/hardware/)
 - [Franka Emika](franka-panda)
 - [WidowX](widowx)

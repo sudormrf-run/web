@@ -142,7 +142,7 @@ Figure AI는 2022년 Brett Adcock이 설립한 미국 로보틱스 회사로, AI
 
 ## See Also
 
-- [회사 목록](./)
-- [Figure 휴머노이드](../hardware/humanoids/figure)
-- [Figure Helix](../models/figure-helix)
+- [회사 목록](/knowledge/companies/)
+- [Figure 휴머노이드](/knowledge/hardware/humanoids/figure)
+- [Figure Helix](/knowledge/models/figure-helix)
 - [Tesla](tesla)

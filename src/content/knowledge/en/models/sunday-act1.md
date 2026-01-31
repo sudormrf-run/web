@@ -141,6 +141,6 @@ If Sunday's approach succeeds:
 
 ## See Also
 
-- [Model List](./)
-- [Sunday Robotics](../companies/sunday-robotics)
-- [Non-Teleop Data Collection](../essays/insights/non-teleop-data)
+- [Model List](/knowledge/models/)
+- [Sunday Robotics](/knowledge/companies/sunday-robotics)
+- [Non-Teleop Data Collection](/knowledge/essays/insights/non-teleop-data)

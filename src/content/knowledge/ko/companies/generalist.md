@@ -196,7 +196,7 @@ GEN-0의 주장이 사실이라면:
 
 ## See Also
 
-- [회사 목록](./)
-- [GEN-0 모델](../models/generalist-gen0)
-- [Action Data Scaling 문제](../essays/fundamentals/scaling-problem)
+- [회사 목록](/knowledge/companies/)
+- [GEN-0 모델](/knowledge/models/generalist-gen0)
+- [Action Data Scaling 문제](/knowledge/essays/fundamentals/scaling-problem)
 

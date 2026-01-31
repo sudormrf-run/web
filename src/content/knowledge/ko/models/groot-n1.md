@@ -32,7 +32,7 @@ lastEditedAt: 2026-01-20
 - **Cross-Embodiment 지원**: 단일 모델로 다양한 로봇 플랫폼 지원
 - **완전 오픈소스**: Apache 2.0 라이선스로 모델, 코드, 평가 시나리오 모두 공개
 
-![GR00T N1 Architecture](../assets/models/groot/groot_n1_architecture.png)
+![GR00T N1 Architecture](/assets/models/groot/groot_n1_architecture.png)
 <p align="center"><em>GR00T N1 아키텍처: System 2 (VLM) + System 1 (Diffusion Transformer) Dual-System 구조</em></p>
 
 ---
@@ -108,7 +108,7 @@ GR00T N1은 "데이터 고립(data island)" 문제를 해결하기 위해 이질
 
 ### Data Pyramid (데이터 피라미드)
 
-![GR00T N1 Data Pyramid](../assets/models/groot/groot-n1-data-pyramid.png)
+![GR00T N1 Data Pyramid](/assets/models/groot/groot-n1-data-pyramid.png)
 <p align="center"><em>GR00T N1 데이터 피라미드: 실제 데이터, 합성 데이터, 웹 스케일 데이터의 계층 구조</em></p>
 
 #### 계층별 데이터 구성
@@ -383,13 +383,13 @@ GR00T N1 논문에서 실제 테스트된 로봇 플랫폼:
 
 | 플랫폼 | 타입 | 작업 유형 |
 |--------|------|-----------|
-| [Fourier GR-1](../hardware/humanoids/fourier) | 휴머노이드 | 언어 조건부 양팔 조작 (실제 환경 주력 테스트) |
+| [Fourier GR-1](/knowledge/hardware/humanoids/fourier) | 휴머노이드 | 언어 조건부 양팔 조작 (실제 환경 주력 테스트) |
 
 ### 시뮬레이션 벤치마크
 
 | 플랫폼 | 벤치마크 | 작업 유형 |
 |--------|----------|-----------|
-| [Franka Emika Panda](../hardware/arms/franka-panda) | RoboCasa | 테이블탑 조작 (24개 원자 태스크) |
+| [Franka Emika Panda](/knowledge/hardware/arms/franka-panda) | RoboCasa | 테이블탑 조작 (24개 원자 태스크) |
 | Bimanual Panda Arms | DexMimicGen | 양팔 조작 (평행 조 그리퍼) |
 | Bimanual Panda Arms + Dexterous Hands | DexMimicGen | 양팔 + 손재주 조작 |
 | GR-1 Humanoid | GR-1 Tabletop | 휴머노이드 테이블탑 조작 |
@@ -404,9 +404,9 @@ GR00T N1 논문에서 실제 테스트된 로봇 플랫폼:
 
 | 회사 | 로봇/플랫폼 | 비고 |
 |------|-------------|------|
-| [1X Technologies](../companies/1x) | [NEO](../hardware/humanoids/neo) | GTC 2025 키노트에서 자율 가정 정리 시연 |
-| Agility Robotics | [Digit](../hardware/humanoids/digit) | |
-| Boston Dynamics | [Atlas](../hardware/humanoids/atlas) | |
+| [1X Technologies](/knowledge/companies/1x) | [NEO](/knowledge/hardware/humanoids/neo) | GTC 2025 키노트에서 자율 가정 정리 시연 |
+| Agility Robotics | [Digit](/knowledge/hardware/humanoids/digit) | |
+| Boston Dynamics | [Atlas](/knowledge/hardware/humanoids/atlas) | |
 | Mentee Robotics | MenteeBot | |
 | NEURA Robotics | 4NE-1 | |
 
@@ -415,8 +415,8 @@ GR00T N1 논문에서 실제 테스트된 로봇 플랫폼:
 ## Authors
 
 **Project Leads:**
-- [Linxi "Jim" Fan](../people/jim-fan) - NVIDIA GEAR Lab 공동 리드
-- [Yuke Zhu](../people/yuke-zhu) - NVIDIA GEAR Lab 공동 리드, UT Austin 부교수
+- [Linxi "Jim" Fan](/knowledge/people/jim-fan) - NVIDIA GEAR Lab 공동 리드
+- [Yuke Zhu](/knowledge/people/yuke-zhu) - NVIDIA GEAR Lab 공동 리드, UT Austin 부교수
 
 **핵심 저자 (일부):**
 - Dieter Fox - NVIDIA, University of Washington
@@ -479,4 +479,4 @@ pip install --no-build-isolation flash-attn==2.7.1.post4
 - [DreamGen](dreamgen) - 합성 데이터 생성 파이프라인
 
 ### 관련 인물
-- [Jim Fan](../people/jim-fan) - NVIDIA GEAR Lab, GR00T 연구 리드
+- [Jim Fan](/knowledge/people/jim-fan) - NVIDIA GEAR Lab, GR00T 연구 리드

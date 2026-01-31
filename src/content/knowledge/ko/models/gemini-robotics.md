@@ -39,7 +39,7 @@ lastEditedAt: 2026-01-15
 - **RT 시리즈 대비 데이터 확대**: 학습 데이터 규모가 RT-1/2보다 크게 확대되었으나 구체적 수치는 비공개
 - **산업 파트너십**: Boston Dynamics, Agility Robotics 등 주요 휴머노이드 회사들이 신뢰 테스터로 참여
 
-![Gemini Robotics Overview](../assets/models/gemini-robotics/Gemini-robotics-overview.png)
+![Gemini Robotics Overview](/assets/models/gemini-robotics/Gemini-robotics-overview.png)
 <p align="center"><em>Gemini Robotics: Gemini 2.0 기반 VLA 모델 패밀리</em></p>
 
 ---
@@ -160,7 +160,7 @@ Gemini 2.0에 물리적 액션 출력을 추가한 VLA 모델.
 
 ## See Also
 
-- [모델 목록](./)
+- [모델 목록](/knowledge/models/)
 - [RT](rt)
-- [Google DeepMind](../companies/google-deepmind)
+- [Google DeepMind](/knowledge/companies/google-deepmind)
 

@@ -70,7 +70,7 @@ Existing VLA models (OpenVLA, RT-2, etc.) tokenized robot actions using **per-di
 
 ## Technical Architecture
 
-![FAST Tokenizer Pipeline](../assets/models/pi0/pi-fast-tokenizer.png)
+![FAST Tokenizer Pipeline](/assets/models/pi0/pi-fast-tokenizer.png)
 <p align="center"><em>FAST Tokenizer: DCT → Quantize → Flatten → BPE Compression Process</em></p>
 
 ### 5-Stage Compression Pipeline
@@ -185,8 +185,8 @@ Variant model applying FAST to [Pi0](pi0):
 | Suraj Nair | Physical Intelligence |
 | Quan Vuong | Physical Intelligence |
 | Oier Mees | Physical Intelligence |
-| [Chelsea Finn](../people/chelsea-finn) | Physical Intelligence |
-| [Sergey Levine](../people/sergey-levine) | Physical Intelligence |
+| [Chelsea Finn](/knowledge/people/chelsea-finn) | Physical Intelligence |
+| [Sergey Levine](/knowledge/people/sergey-levine) | Physical Intelligence |
 
 ### Scaling
 
@@ -212,10 +212,10 @@ Variant model applying FAST to [Pi0](pi0):
 - [Pi0](pi0) - Flow Matching based model (base for Pi0-FAST)
 - [Pi Series](pi-series) - Physical Intelligence model series
 - [Pi0.5](pi0-5) - Open-world generalization version
-- [Physical Intelligence](../companies/physical-intelligence) - Company information
+- [Physical Intelligence](/knowledge/companies/physical-intelligence) - Company information
 - [Diffusion Policy](diffusion-policy) - Comparison: Diffusion-based policy
 
 ### Related People
 
-- [Chelsea Finn](../people/chelsea-finn) - Physical Intelligence Co-founder
-- [Sergey Levine](../people/sergey-levine) - Physical Intelligence Co-founder
+- [Chelsea Finn](/knowledge/people/chelsea-finn) - Physical Intelligence Co-founder
+- [Sergey Levine](/knowledge/people/sergey-levine) - Physical Intelligence Co-founder

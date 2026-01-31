@@ -156,7 +156,7 @@ end-to-end neural network, 자율 주행 FSD 도 같은 방식으로 접근
 
 흥미로운 점은, **기존 Classical Robotics의 대표 주자들도 Physical AI 시대에 맞게 전환하고 있다**는 것입니다.
 
-### [Boston Dynamics](/knowledge/companies/boston-dynamics)의 전환
+### Boston Dynamics의 전환
 
 Boston Dynamics는 오랫동안 **모듈 분리 방식**(인식 → 계획 → 제어)과 **Model Predictive Control(MPC)**로 유명했습니다. Atlas의 백플립, Spot의 안정적인 보행은 이 접근법의 결과물이었습니다.
 
@@ -212,4 +212,4 @@ Boston Dynamics도 end-to-end 모델을 기반으로 옮겨 가고 있습니다.
 
 Physical AI가 추구하는 "범용 로봇(Generalist)"이 왜 가능해졌는지, 과거의 "전문 로봇(Specialist)"과 무엇이 다른지 알아봅시다.
 
-**다음: [Specialist에서 Generalist로](specialist-to-generalist)**
+**다음: [Specialist에서 Generalist로](/knowledge/essays/fundamentals/specialist-to-generalist)**

@@ -18,7 +18,7 @@ lastEditedAt: 2026-01-26
 
 | Field | Details |
 |-------|---------|
-| Current Position | Co-founder & CTO, [Sunday Robotics](../companies/sunday-robotics) |
+| Current Position | Co-founder & CTO, [Sunday Robotics](/knowledge/companies/sunday-robotics) |
 | Previous | Columbia University PhD, Stanford SNF |
 | Advisor | Shuran Song |
 
@@ -156,7 +156,7 @@ Advantages:
 
 ## See Also
 
-- [Diffusion Policy](../models/diffusion-policy)
+- [Diffusion Policy](/knowledge/models/diffusion-policy)
 - [Shuran Song](shuran-song)
-- [Sunday Robotics](../companies/sunday-robotics)
-- [ACT](../models/act)
+- [Sunday Robotics](/knowledge/companies/sunday-robotics)
+- [ACT](/knowledge/models/act)

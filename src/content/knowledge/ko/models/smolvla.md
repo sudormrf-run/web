@@ -25,7 +25,7 @@ lastEditedAt: 2026-01-21
 
 </div>
 
-![SmolVLA Overview](../assets/models/smolvla/smolvla_overview.png)
+![SmolVLA Overview](/assets/models/smolvla/smolvla_overview.png)
 <p align="center"><em>SmolVLA: 450M 파라미터로 대형 VLA 수준 성능 달성</em></p>
 
 ## 핵심 의의

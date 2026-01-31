@@ -18,7 +18,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Arms > UR Series
 
-<!-- Image pending: ![Universal Robots](../../assets/hardware/arms/ur-series.png) -->
+<!-- Image pending: ![Universal Robots](/assets/hardware/arms/ur-series.png) -->
 <!-- 이미지 자산 추가 필요: assets/hardware/arms/ur-series.png -->
 
 ---
@@ -296,4 +296,4 @@ Universal Robots 협동 로봇은 VLA 연구에서 다음과 같은 장점을 �
 
 ## See Also
 
-- [하드웨어 목록](../index)
+- [하드웨어 목록](/knowledge/hardware/)

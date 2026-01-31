@@ -168,7 +168,7 @@ Task: Pick up a specific fruit specified by language command from two fruits and
 
 Pretraining data composition for the GR00T-N1.5-3B model released on HuggingFace.
 
-![N1.5 Pretraining Data Distribution](../assets/models/groot/groot-n1.5-pretrain-data-distribution.svg)
+![N1.5 Pretraining Data Distribution](/assets/models/groot/groot-n1.5-pretrain-data-distribution.svg)
 <p align="center"><em>GR00T N1.5 Pretraining Data Distribution (Source: <a href="https://research.nvidia.com/labs/gear/gr00t-n1_5/">NVIDIA Research</a>)</em></p>
 
 #### Pretraining Data Composition
@@ -318,4 +318,4 @@ FLARE's key contribution is enabling **learning from human egocentric videos wit
 - [DreamGen](dreamgen) - GR00T-Dreams Synthetic Data Pipeline
 
 ### Related People
-- [Jim Fan](../people/jim-fan) - NVIDIA GEAR Lab, GR00T Research Lead
+- [Jim Fan](/knowledge/people/jim-fan) - NVIDIA GEAR Lab, GR00T Research Lead

@@ -18,7 +18,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Hands > Shadow Hand
 
-<!-- Image pending: ![Shadow Hand](../../assets/hardware/hands/shadow-hand.png) -->
+<!-- Image pending: ![Shadow Hand](/assets/hardware/hands/shadow-hand.png) -->
 
 ---
 
@@ -214,10 +214,10 @@ DEX-EE는 Google DeepMind의 요청으로 5년간 개발된, **강화학습 실�
 
 ## See Also
 
-- [하드웨어 목록](../)
-- [LEAP Hand](./leap-hand) - Shadow Hand 대비 저렴한 오픈소스 대안
-- [Allegro Hand](./allegro)
-- [GEX 시리즈](./gex)
+- [하드웨어 목록](/knowledge/hardware/)
+- [LEAP Hand](/knowledge/hardware/hands/leap-hand) - Shadow Hand 대비 저렴한 오픈소스 대안
+- [Allegro Hand](/knowledge/hardware/hands/allegro)
+- [GEX 시리즈](/knowledge/hardware/hands/gex)
 
 ---
 

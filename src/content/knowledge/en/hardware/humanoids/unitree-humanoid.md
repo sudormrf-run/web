@@ -19,7 +19,7 @@ lastEditedAt: 2026-01-15
 
 > Home > Hardware > Humanoids > Unitree
 
-<!-- Image pending: ![Unitree G1](../../assets/hardware/humanoids/unitree-humanoid.png) -->
+<!-- Image pending: ![Unitree G1](/assets/hardware/humanoids/unitree-humanoid.png) -->
 
 ---
 
@@ -359,8 +359,8 @@ Unitree is securing strong position in the low-price market and preempting the r
 
 ## See Also
 
-- [Hardware List](../index)
-- [Unitree Quadrupeds](../quadrupeds/unitree)
-- [GR00T Model](../../models/groot)
+- [Hardware List](/knowledge/hardware/)
+- [Unitree Quadrupeds](/knowledge/hardware/quadrupeds/unitree)
+- [GR00T Model](/knowledge/models/groot)
 - [Figure Humanoid](figure)
 - [Tesla Optimus](optimus)

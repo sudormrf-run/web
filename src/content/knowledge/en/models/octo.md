@@ -24,7 +24,7 @@ lastEditedAt: 2026-01-15
 - **Open X-Embodiment Utilization**: Pretrained on 800K episodes from 25 datasets
 - **Standard for Fast Adaptation**: Used as benchmark when needing to quickly adapt to new robot platforms
 
-![Octo Architecture](../assets/models/octo/octo_architecture.jpg)
+![Octo Architecture](/assets/models/octo/octo_architecture.jpg)
 <p align="center"><em>Octo Architecture: Transformer Encoder + Diffusion Decoder Structure</em></p>
 
 ---
@@ -188,6 +188,6 @@ Octo's key strength is **fast adaptation**.
 
 ## See Also
 
-- [Model List](./)
+- [Model List](/knowledge/models/)
 - [OpenVLA](openvla)
 - [RT](rt)

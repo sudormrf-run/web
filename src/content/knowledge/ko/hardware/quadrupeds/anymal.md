@@ -14,7 +14,7 @@ lastEditedBy:
 lastEditedAt: 2026-01-26
 ---
 
-<!-- 이미지 준비 중: <!-- Image pending: ![ANYmal - ANYbotics 산업용 검사 로봇](../../assets/hardware/quadrupeds/anymal.png) --> -->
+<!-- 이미지 준비 중: <!-- Image pending: ![ANYmal - ANYbotics 산업용 검사 로봇](/assets/hardware/quadrupeds/anymal.png) --> -->
 *이미지: ANYbotics ANYmal 쿼드러펫 로봇 - [ANYbotics 공식 페이지](https://www.anybotics.com/robotics/anymal/)에서 확인*
 
 ## Overview
@@ -374,7 +374,7 @@ ANYmal Research는 보행 로봇 연구 발전을 위한 국제 커뮤니티로,
 
 ## See Also
 
-- [하드웨어 목록](../index)
+- [하드웨어 목록](/knowledge/hardware/)
 - [[Boston Dynamics Spot]]
 - [[Unitree 로봇]]
 - [[보행 로봇 제어]]

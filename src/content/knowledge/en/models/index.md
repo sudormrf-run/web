@@ -41,46 +41,46 @@ VLA models have evolved rapidly since RT-1 in 2022.
 
 | Model | Description |
 |-------|-------------|
-| [RT (Robotics Transformer)](./rt) | Pioneer of VLA. Started with RT-1, established "Action as Language" paradigm in RT-2, built Open X-Embodiment dataset with RT-X |
-| [Gemini Robotics](./gemini-robotics) | Gemini 2.0-based VLA. Cross-Embodiment support, System 1/2 architecture, On-Device version available |
+| [RT (Robotics Transformer)](/knowledge/models/rt) | Pioneer of VLA. Started with RT-1, established "Action as Language" paradigm in RT-2, built Open X-Embodiment dataset with RT-X |
+| [Gemini Robotics](/knowledge/models/gemini-robotics) | Gemini 2.0-based VLA. Cross-Embodiment support, System 1/2 architecture, On-Device version available |
 
 ### Physical Intelligence (π Series)
 
 | Model | Description |
 |-------|-------------|
-| [π Series](./pi-series) | Physical Intelligence VLA model series overview |
-| [π0](./pi0) | First Generalist Policy with Flow Matching. PaliGemma VLM + 50Hz high-speed control |
-| [π0.5](./pi0-5) | Open-World generalization. Works in new home environments, Web data Co-training |
-| [π*0.6](./pi0-6-star) | RL-based self-improvement. RECAP methodology achieving 90%+ success rate |
-| [FAST](./fast) | DCT + BPE action tokenizer. 10x compression, 5x faster VLA training |
+| [π Series](/knowledge/models/pi-series) | Physical Intelligence VLA model series overview |
+| [π0](/knowledge/models/pi0) | First Generalist Policy with Flow Matching. PaliGemma VLM + 50Hz high-speed control |
+| [π0.5](/knowledge/models/pi0-5) | Open-World generalization. Works in new home environments, Web data Co-training |
+| [π*0.6](/knowledge/models/pi0-6-star) | RL-based self-improvement. RECAP methodology achieving 90%+ success rate |
+| [FAST](/knowledge/models/fast) | DCT + BPE action tokenizer. 10x compression, 5x faster VLA training |
 
 ### NVIDIA (GR00T Series)
 
 | Model | Description |
 |-------|-------------|
-| [GR00T](./groot) | NVIDIA humanoid foundation model series overview. Dual-System architecture |
-| [GR00T N1](./groot-n1) | World's first open-source humanoid VLA. Proved 40% performance gain with synthetic data |
-| [GR00T N1.5](./groot-n1-5) | Frozen VLM + FLARE Loss. 2x improvement in language instruction following (46.6% → 93.3%) |
-| [GR00T N1.6](./groot-n1-6) | 2x DiT scale-up, Cosmos VLM, Relative Action Space. Loco-manipulation support |
+| [GR00T](/knowledge/models/groot) | NVIDIA humanoid foundation model series overview. Dual-System architecture |
+| [GR00T N1](/knowledge/models/groot-n1) | World's first open-source humanoid VLA. Proved 40% performance gain with synthetic data |
+| [GR00T N1.5](/knowledge/models/groot-n1-5) | Frozen VLM + FLARE Loss. 2x improvement in language instruction following (46.6% → 93.3%) |
+| [GR00T N1.6](/knowledge/models/groot-n1-6) | 2x DiT scale-up, Cosmos VLM, Relative Action Space. Loco-manipulation support |
 
 ### Open-Source VLA
 
 | Model | Description |
 |-------|-------------|
-| [OpenVLA](./openvla) | First large-scale open-source VLA (7B). Performance on par with 55B RT-2-X, efficient fine-tuning with LoRA |
-| [Octo](./octo) | 93M lightweight model. Transformer + Diffusion combination, fine-tuning possible on consumer GPU |
-| [SmolVLA](./smolvla) | π0-level performance with 450M. Runs on MacBook, trained on LeRobot community data |
+| [OpenVLA](/knowledge/models/openvla) | First large-scale open-source VLA (7B). Performance on par with 55B RT-2-X, efficient fine-tuning with LoRA |
+| [Octo](/knowledge/models/octo) | 93M lightweight model. Transformer + Diffusion combination, fine-tuning possible on consumer GPU |
+| [SmolVLA](/knowledge/models/smolvla) | π0-level performance with 450M. Runs on MacBook, trained on LeRobot community data |
 
 ### Corporate VLA
 
 | Model | Description |
 |-------|-------------|
-| [Figure Helix](./figure-helix) | Figure AI's humanoid VLA. First full-body high-speed control (200Hz), dual robot simultaneous control |
-| [LBM (Large Behavior Model)](./lbm-atlas) | Boston Dynamics + TRI's VLA for Atlas. 450M Diffusion Transformer, whole-body single model control |
-| [CraftNet](./craftnet) | Sharpa's VTLA model. Tactile integration, System 0/1/2 hierarchy, 100Hz fine manipulation |
-| [Redwood AI](./redwood-ai) | 1X Technologies' VLA for NEO. 160M parameters, on-board execution, World Model integration |
-| [Generalist GEN-0](./generalist-gen0) | Claims discovery of robotics scaling laws with 270,000 hours of real data. Harmonic Reasoning architecture |
-| [Sunday ACT-1](./sunday-act1) | Zero Robot Data approach. 10M+ episodes collected from 500+ homes using $200 gloves |
+| [Figure Helix](/knowledge/models/figure-helix) | Figure AI's humanoid VLA. First full-body high-speed control (200Hz), dual robot simultaneous control |
+| [LBM (Large Behavior Model)](/knowledge/models/lbm-atlas) | Boston Dynamics + TRI's VLA for Atlas. 450M Diffusion Transformer, whole-body single model control |
+| [CraftNet](/knowledge/models/craftnet) | Sharpa's VTLA model. Tactile integration, System 0/1/2 hierarchy, 100Hz fine manipulation |
+| [Redwood AI](/knowledge/models/redwood-ai) | 1X Technologies' VLA for NEO. 160M parameters, on-board execution, World Model integration |
+| [Generalist GEN-0](/knowledge/models/generalist-gen0) | Claims discovery of robotics scaling laws with 270,000 hours of real data. Harmonic Reasoning architecture |
+| [Sunday ACT-1](/knowledge/models/sunday-act1) | Zero Robot Data approach. 10M+ episodes collected from 500+ homes using $200 gloves |
 
 ---
 
@@ -88,8 +88,8 @@ VLA models have evolved rapidly since RT-1 in 2022.
 
 | Model | Description |
 |-------|-------------|
-| [ACT](./act) | Stanford's Action Chunking policy. 80-90% success rate with 10 minutes of demonstration, released with ALOHA hardware |
-| [Diffusion Policy](./diffusion-policy) | Diffusion-based visuomotor policy. Natural handling of multimodal actions, 46.9% performance improvement |
+| [ACT](/knowledge/models/act) | Stanford's Action Chunking policy. 80-90% success rate with 10 minutes of demonstration, released with ALOHA hardware |
+| [Diffusion Policy](/knowledge/models/diffusion-policy) | Diffusion-based visuomotor policy. Natural handling of multimodal actions, 46.9% performance improvement |
 
 ---
 
@@ -97,8 +97,8 @@ VLA models have evolved rapidly since RT-1 in 2022.
 
 | Model | Description |
 |-------|-------------|
-| [Eagle](./eagle) | NVIDIA's Mixture of Encoders VLM. Serves as visual brain for GR00T N1/N1.5 |
-| [Cosmos](./cosmos) | NVIDIA's World Foundation Model platform. Provides Tokenizer, Predict, Transfer, Reason models |
+| [Eagle](/knowledge/models/eagle) | NVIDIA's Mixture of Encoders VLM. Serves as visual brain for GR00T N1/N1.5 |
+| [Cosmos](/knowledge/models/cosmos) | NVIDIA's World Foundation Model platform. Provides Tokenizer, Predict, Transfer, Reason models |
 
 ---
 
@@ -106,7 +106,7 @@ VLA models have evolved rapidly since RT-1 in 2022.
 
 | Model | Description |
 |-------|-------------|
-| [DreamGen](./dreamgen) | NVIDIA's Neural Trajectory generation pipeline. Generates GR00T training data in 36 hours using World Foundation Model |
+| [DreamGen](/knowledge/models/dreamgen) | NVIDIA's Neural Trajectory generation pipeline. Generates GR00T training data in 36 hours using World Foundation Model |
 
 ---
 
@@ -116,20 +116,20 @@ VLA models have evolved rapidly since RT-1 in 2022.
 
 | Model | Parameters | Open Source | Features |
 |-------|------------|-------------|----------|
-| [π0](./pi0) | 3.3B | O | Flow Matching, 50Hz |
-| [GR00T N1](./groot-n1) | 2.2B | O | Dual-System, Humanoid |
-| [OpenVLA](./openvla) | 7B | O | Prismatic VLM, LoRA |
-| [SmolVLA](./smolvla) | 450M | O | Runs on MacBook |
-| [Octo](./octo) | 93M | O | Diffusion decoder |
-| [Gemini Robotics](./gemini-robotics) | - | X | Gemini 2.0 based |
-| [Figure Helix](./figure-helix) | - | X | 200Hz high-speed control |
+| [π0](/knowledge/models/pi0) | 3.3B | O | Flow Matching, 50Hz |
+| [GR00T N1](/knowledge/models/groot-n1) | 2.2B | O | Dual-System, Humanoid |
+| [OpenVLA](/knowledge/models/openvla) | 7B | O | Prismatic VLM, LoRA |
+| [SmolVLA](/knowledge/models/smolvla) | 450M | O | Runs on MacBook |
+| [Octo](/knowledge/models/octo) | 93M | O | Diffusion decoder |
+| [Gemini Robotics](/knowledge/models/gemini-robotics) | - | X | Gemini 2.0 based |
+| [Figure Helix](/knowledge/models/figure-helix) | - | X | 200Hz high-speed control |
 
 ### Training Data Scale
 
 | Model | Data Scale | Data Type |
 |-------|-----------|-----------|
-| [Generalist GEN-0](./generalist-gen0) | 270,000 hours | Real robot |
-| [π0](./pi0) | 10,000+ hours | Teleoperation |
-| [Sunday ACT-1](./sunday-act1) | 10M+ episodes | Gloves (human motion) |
-| [GR00T N1](./groot-n1) | 780K synthetic + real | Simulation + Teleoperation |
-| [SmolVLA](./smolvla) | 10.6M frames | Community data |
+| [Generalist GEN-0](/knowledge/models/generalist-gen0) | 270,000 hours | Real robot |
+| [π0](/knowledge/models/pi0) | 10,000+ hours | Teleoperation |
+| [Sunday ACT-1](/knowledge/models/sunday-act1) | 10M+ episodes | Gloves (human motion) |
+| [GR00T N1](/knowledge/models/groot-n1) | 780K synthetic + real | Simulation + Teleoperation |
+| [SmolVLA](/knowledge/models/smolvla) | 10.6M frames | Community data |

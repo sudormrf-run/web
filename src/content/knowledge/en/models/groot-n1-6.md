@@ -97,7 +97,7 @@ N1.6 **predicts state-relative action chunks instead of absolute joint angles or
 
 ## Architecture
 
-![GR00T N1.6 Model Architecture](../assets/models/groot/groot-n1.6-model-architecture.png)
+![GR00T N1.6 Model Architecture](/assets/models/groot/groot-n1.6-model-architecture.png)
 <p align="center"><em>GR00T N1.6 Model Architecture (Source: <a href="https://research.nvidia.com/labs/gear/gr00t-n1_6/">NVIDIA Research</a>)</em></p>
 
 ### Key Architecture Changes (N1.5 → N1.6)
@@ -157,7 +157,7 @@ According to NVIDIA Research page:
 
 <div style="background: white; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
 
-![GR00T N1.6 Pretraining Data Distribution](../assets/models/groot/training_data_distribution_v3.svg)
+![GR00T N1.6 Pretraining Data Distribution](/assets/models/groot/training_data_distribution_v3.svg)
 
 </div>
 <p align="center"><em>GR00T N1.6 Pretraining Data Distribution (Source: <a href="https://research.nvidia.com/labs/gear/gr00t-n1_6/">NVIDIA Research</a>)</em></p>
@@ -169,9 +169,9 @@ N1.6 was trained with **thousands of hours of new teleoperation data** compared 
 | Data Source | Platform Type | Description |
 |-------------|---------------|-------------|
 | **Bimanual YAM Arms** | Bimanual manipulator | Precise bimanual manipulation task data |
-| **[AGIBot](../hardware/humanoids/agibot) Genie1** | Semi-humanoid | Various manipulation task data |
+| **[AGIBot](/knowledge/hardware/humanoids/agibot) Genie1** | Semi-humanoid | Various manipulation task data |
 | **Simulated Galaxea R1 Pro** | Humanoid | Synthetic data based on BEHAVIOR suite |
-| **[Unitree](../hardware/humanoids/unitree-humanoid) G1** | Humanoid | Whole-body loco-manipulation data |
+| **[Unitree](/knowledge/hardware/humanoids/unitree-humanoid) G1** | Humanoid | Whole-body loco-manipulation data |
 
 ---
 
@@ -205,8 +205,8 @@ Robot platforms validated on N1.6:
 | Platform | Type | Documentation |
 |----------|------|---------------|
 | Bimanual YAM robot | Bimanual manipulator | - |
-| [AGIBot](../hardware/humanoids/agibot) Genie-1 | Semi-humanoid | [AGIBot](../hardware/humanoids/agibot) |
-| [Unitree](../companies/unitree) G1 | Humanoid | [Unitree Humanoid](../hardware/humanoids/unitree-humanoid) |
+| [AGIBot](/knowledge/hardware/humanoids/agibot) Genie-1 | Semi-humanoid | [AGIBot](/knowledge/hardware/humanoids/agibot) |
+| [Unitree](/knowledge/companies/unitree) G1 | Humanoid | [Unitree Humanoid](/knowledge/hardware/humanoids/unitree-humanoid) |
 | Fourier GR-1 | Humanoid | - |
 
 ---
@@ -275,4 +275,4 @@ The sim-to-real workflow introduced in NVIDIA's developer blog includes three co
 - [DreamGen](dreamgen) - Synthetic Data Generation Pipeline
 
 ### Related People
-- [Jim Fan](../people/jim-fan) - NVIDIA GEAR Lab, GR00T Research Lead
+- [Jim Fan](/knowledge/people/jim-fan) - NVIDIA GEAR Lab, GR00T Research Lead

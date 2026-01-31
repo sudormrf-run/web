@@ -24,7 +24,7 @@ Summary of Spot's significance in the Physical AI field:
 - **Extension as Research Platform**: Supports academic research ecosystem with SDK release and RL Researcher Kit
 - **Physical AI Data Collection**: Potential for use as a platform for collecting diverse real-world data
 
-<!-- Image pending: ![Spot](../../assets/hardware/quadrupeds/spot.png) -->
+<!-- Image pending: ![Spot](/assets/hardware/quadrupeds/spot.png) -->
 <p align="center"><em>Boston Dynamics Spot - Industrial 4-legged walking robot</em></p>
 
 ---
@@ -327,13 +327,13 @@ Hyundai Motor Group is expanding into the robotics field through the Boston Dyna
 
 ## See Also
 
-- [Hardware List](../)
+- [Hardware List](/knowledge/hardware/)
 - [Unitree Quadrupeds](unitree)
 - [ANYmal](anymal)
 
 ### Related Hardware
-- [Mobile ALOHA](../mobile/mobile-aloha)
+- [Mobile ALOHA](/knowledge/hardware/mobile/mobile-aloha)
 
 ### Related Companies
-- [NVIDIA](../../companies/nvidia) - Isaac Lab, RL Researcher Kit collaboration
-- [Unitree](../../companies/unitree) - Competing quadruped manufacturer
+- [NVIDIA](/knowledge/companies/nvidia) - Isaac Lab, RL Researcher Kit collaboration
+- [Unitree](/knowledge/companies/unitree) - Competing quadruped manufacturer

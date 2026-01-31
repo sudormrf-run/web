@@ -119,7 +119,7 @@ LLM에게 "사과는 빨갛다"는 텍스트일 뿐입니다. 하지만 PI에게
 
 균형을 잡거나, 힘을 조절 하거나 실제 물리적 동작에서는 실시간 상호작용이 필요합니다. 무엇이 들어있는지 모르는 비닐 포장을 잡는다거나... 하는 태스크는 매우 빠른 ms 단위의 피드백, 상호작용이 필요한데, 현재의 똑똑한 프론티어 LLM 은 이렇게 빠르게 동작하지 못합니다.
 
-빠른 반응 속도를 위해 요즘의 VLA 들이 hierarchical 구조를 가져가는 맥락과 일치합니다. 자세한 내용은 [VLA & RFM 발전 과정](vla-rfm-progress) 문서의 수렴 진화 섹션을 참조하세요.
+빠른 반응 속도를 위해 요즘의 VLA 들이 hierarchical 구조를 가져가는 맥락과 일치합니다. 자세한 내용은 [VLA & RFM 발전 과정](/knowledge/essays/insights/vla-rfm-progress) 문서의 수렴 진화 섹션을 참조하세요.
 
 ---
 
@@ -131,7 +131,7 @@ LLM에도 Jagged Intelligence 문제가 있습니다. 수학이나 코딩 같은
 물리적 지능도 마찬가지 입니다. 사람은 축구를 잘하기 위해, 양파를 잘 썰기 위해, 피아노를 잘 치기위해 어떻게 학습을 하나요.
 남이 행동하는 것을 눈으로 보기도 하고, 직접 해보기도 하고, 코치가 운동을 할때 몸을 잡아주기도 하고, 이미지 트레이닝 (상상) 을 하기도 합니다. 물리적인 수행 능력은 아무래도 직접 해보면서 경험과 셀프 피드백을 통해 배우는 것이 가장 주요한 학습 방법이겠죠.
 
-현재의 VLA 는 대부분 Imitation Learning 을 기반으로 학습합니다. 누군가 기록해둔 행동 데이터를 배우는 것이죠. 경험을 통해 배우는 사람과는 거리가 많이 멀죠. 현재 강화 학습 기법은 특정한 움직임 (대부분 보행) 에 국한되어 있습니다. 이러한 맥락에서 나온 연구가 [Physical Intelligence](../../companies/physical-intelligence)사의 [π*0.6](../../models/pi0-6-star)입니다. 아직은 연구 단계에 그친 것 같습니다.
+현재의 VLA 는 대부분 Imitation Learning 을 기반으로 학습합니다. 누군가 기록해둔 행동 데이터를 배우는 것이죠. 경험을 통해 배우는 사람과는 거리가 많이 멀죠. 현재 강화 학습 기법은 특정한 움직임 (대부분 보행) 에 국한되어 있습니다. 이러한 맥락에서 나온 연구가 [Physical Intelligence](/knowledge/companies/physical-intelligence)사의 [π*0.6](/knowledge/models/pi0-6-star)입니다. 아직은 연구 단계에 그친 것 같습니다.
 
 ---
 
@@ -153,10 +153,10 @@ LLM에도 Jagged Intelligence 문제가 있습니다. 수학이나 코딩 같은
 ---
 ## See Also
 
-- [RFM & VLA란 무엇인가](../fundamentals/what-is-rfm-vla)
-- [VLA & RFM 발전 과정](vla-rfm-progress)
-- [촉각의 필요성](tactile-sensing)
-- [휴머노이드 디자인](humanoid-design)
+- [RFM & VLA란 무엇인가](/knowledge/essays/fundamentals/what-is-rfm-vla)
+- [VLA & RFM 발전 과정](/knowledge/essays/insights/vla-rfm-progress)
+- [촉각의 필요성](/knowledge/essays/insights/tactile-sensing)
+- [휴머노이드 디자인](/knowledge/essays/insights/humanoid-design)
 
 ## References
 

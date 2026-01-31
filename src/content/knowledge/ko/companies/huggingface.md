@@ -64,7 +64,7 @@ LeRobot은 로보틱스 AI를 민주화하기 위한 오픈소스 프로젝트�
 
 ### 개요
 
-2025년 6월 발표된 **450M 파라미터** [VLA](../essays/fundamentals/what-is-rfm-vla):
+2025년 6월 발표된 **450M 파라미터** [VLA](/knowledge/essays/fundamentals/what-is-rfm-vla):
 
 | 항목 | 내용 |
 |------|------|
@@ -156,7 +156,7 @@ LLM 민주화 (HuggingFace 성공)
 |------|----------|
 | 2024 | LeRobot 프로젝트 시작 |
 | 2024-25 | 커뮤니티 데이터셋 성장 |
-| 2025.06 | [SmolVLA](../models/smolvla) 발표 |
+| 2025.06 | [SmolVLA](/knowledge/models/smolvla) 발표 |
 | 2025+ | 더 효율적인 모델, 더 많은 하드웨어 지원 (예상) |
 
 ---
@@ -172,8 +172,8 @@ LLM 민주화 (HuggingFace 성공)
 
 ## See Also
 
-- [회사 목록](./)
-- [SmolVLA](../models/smolvla)
-- [커뮤니티 드리븐 접근](../essays/insights/community-driven)
-- [ACT](../models/act)
+- [회사 목록](/knowledge/companies/)
+- [SmolVLA](/knowledge/models/smolvla)
+- [커뮤니티 드리븐 접근](/knowledge/essays/insights/community-driven)
+- [ACT](/knowledge/models/act)
 

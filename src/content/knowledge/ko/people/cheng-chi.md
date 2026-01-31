@@ -18,7 +18,7 @@ lastEditedAt: 2026-01-26
 
 | 항목 | 내용 |
 |------|------|
-| 현직 | Co-founder & CTO, [Sunday Robotics](../companies/sunday-robotics) |
+| 현직 | Co-founder & CTO, [Sunday Robotics](/knowledge/companies/sunday-robotics) |
 | 이전 | Columbia University PhD, Stanford SNF |
 | 지도교수 | Shuran Song |
 
@@ -156,7 +156,7 @@ p(a|o) = ∫ p(aK) ∏ p(ak-1|ak, o) dak:K
 
 ## See Also
 
-- [Diffusion Policy](../models/diffusion-policy)
+- [Diffusion Policy](/knowledge/models/diffusion-policy)
 - [Shuran Song](shuran-song)
-- [Sunday Robotics](../companies/sunday-robotics)
-- [ACT](../models/act)
+- [Sunday Robotics](/knowledge/companies/sunday-robotics)
+- [ACT](/knowledge/models/act)

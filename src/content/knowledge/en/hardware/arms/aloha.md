@@ -27,7 +27,7 @@ lastEditedAt: 2026-01-15
 
 > Home > Hardware > Arms > ALOHA
 
-<!-- Image pending: ![ALOHA](../../assets/hardware/arms/aloha.png) -->
+<!-- Image pending: ![ALOHA](/assets/hardware/arms/aloha.png) -->
 <!-- TODO: Image file needs to be added -->
 
 ---
@@ -189,7 +189,7 @@ Mobile ALOHA is an extended version with ALOHA mounted on a **mobile base (Agile
 - Cleaning wine spill
 - High-five
 
-See [Mobile ALOHA](../mobile/mobile-aloha) for details.
+See [Mobile ALOHA](/knowledge/hardware/mobile/mobile-aloha) for details.
 
 ---
 
@@ -278,8 +278,8 @@ Achieves **high-frequency language-based control** with 7B VLA policy on ALOHA. 
 
 ## See Also
 
-- [Hardware List](../index)
-- [Mobile ALOHA](../mobile/mobile-aloha)
-- [ACT](../../models/act)
+- [Hardware List](/knowledge/hardware/)
+- [Mobile ALOHA](/knowledge/hardware/mobile/mobile-aloha)
+- [ACT](/knowledge/models/act)
 - [WidowX / Interbotix](widowx)
-- [OpenVLA](../../models/openvla)
+- [OpenVLA](/knowledge/models/openvla)

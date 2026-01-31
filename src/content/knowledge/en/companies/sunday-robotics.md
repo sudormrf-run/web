@@ -162,8 +162,8 @@ If Sunday's approach succeeds:
 
 ## See Also
 
-- [Company List](./)
-- [Sunday ACT-1](../models/sunday-act1)
-- [Non-Teleop Data Collection](../essays/insights/non-teleop-data)
-- [ACT](../models/act)
-- [Diffusion Policy](../models/diffusion-policy)
+- [Company List](/knowledge/companies/)
+- [Sunday ACT-1](/knowledge/models/sunday-act1)
+- [Non-Teleop Data Collection](/knowledge/essays/insights/non-teleop-data)
+- [ACT](/knowledge/models/act)
+- [Diffusion Policy](/knowledge/models/diffusion-policy)

@@ -74,5 +74,5 @@ Leader - Follower 구조의 가장 직관적인 텔레오퍼레이션 예시
 
 - [Non-Teleop 데이터 수집](non-teleop-data)
 - [시뮬레이션 & World Model](simulation-world-model)
-- [Action Data Scaling 문제](../fundamentals/scaling-problem)
+- [Action Data Scaling 문제](/knowledge/essays/fundamentals/scaling-problem)
 

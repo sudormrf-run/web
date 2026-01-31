@@ -25,7 +25,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Hands > Allegro Hand
 
-<!-- Image pending: ![Allegro Hand](../../assets/hardware/hands/allegro.png) -->
+<!-- Image pending: ![Allegro Hand](/assets/hardware/hands/allegro.png) -->
 <!-- TODO: Image file needs to be added -->
 
 ---
@@ -163,6 +163,6 @@ Allegro Hand is widely used in Vision-Language-Action (VLA) and learning-based m
 
 ## See Also
 
-- [Hardware List](../)
-- [Shadow Hand](./shadow-hand)
-- [LEAP Hand](./leap-hand)
+- [Hardware List](/knowledge/hardware/)
+- [Shadow Hand](/knowledge/hardware/hands/shadow-hand)
+- [LEAP Hand](/knowledge/hardware/hands/leap-hand)

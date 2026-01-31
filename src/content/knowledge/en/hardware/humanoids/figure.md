@@ -18,7 +18,7 @@ lastEditedAt: 2026-01-15
 
 Figure AI is a US robotics company founded in 2022 by Brett Adcock, focused on developing AI-powered general-purpose humanoid robots. Led by serial entrepreneur Adcock, who founded Archer Aviation and Vettery, Figure AI has rapidly emerged as a leader in the humanoid market. [^wiki]
 
-<!-- Image pending: ![Figure 02](../../assets/hardware/humanoids/figure.png) -->
+<!-- Image pending: ![Figure 02](/assets/hardware/humanoids/figure.png) -->
 
 | Item | Content |
 |------|---------|
@@ -308,7 +308,7 @@ Key lessons from BMW deployment reflected in Figure 03 design:
 
 ## See Also
 
-- [Hardware List](../index)
-- [Figure AI](../../companies/figure)
-- [Figure Helix](../../models/figure-helix)
+- [Hardware List](/knowledge/hardware/)
+- [Figure AI](/knowledge/companies/figure)
+- [Figure Helix](/knowledge/models/figure-helix)
 - [Tesla Optimus](optimus)

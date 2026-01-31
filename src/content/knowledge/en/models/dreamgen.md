@@ -328,4 +328,4 @@ Benchmark for evaluating quality of generated videos.
 - [Eagle](eagle) - Vision-Language Model
 
 ### Related People
-- [Jim Fan](../people/jim-fan) - NVIDIA GEAR Lab, GR00T Research Lead
+- [Jim Fan](/knowledge/people/jim-fan) - NVIDIA GEAR Lab, GR00T Research Lead

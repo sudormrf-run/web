@@ -25,7 +25,7 @@ lastEditedAt: 2026-01-21
 
 </div>
 
-![SmolVLA Overview](../assets/models/smolvla/smolvla_overview.png)
+![SmolVLA Overview](/assets/models/smolvla/smolvla_overview.png)
 <p align="center"><em>SmolVLA: Achieving large VLA-level performance with 450M parameters</em></p>
 
 ## Key Significance

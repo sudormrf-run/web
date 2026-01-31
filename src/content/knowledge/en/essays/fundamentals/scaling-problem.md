@@ -54,10 +54,10 @@ To solve these problems, various companies and research groups are trying differ
 
 | Approach | Organization | Description |
 |----------|--------------|-------------|
-| [Simulation](../insights/simulation-world-model) | NVIDIA | Produce, augment, and evaluate data with physics simulation (Omniverse) and World Model (Cosmos) |
-| [Teleoperation](../insights/teleoperation) | Tesla, Google, Physical Intelligence, Galaxea | Direct data collection |
-| [Non-Teleop](../insights/non-teleop-data) | UMI, Generalist, Sunday Robotics | Learning from Non-Teleop data |
-| [Community](../insights/community-driven) | HuggingFace | Community-driven data collection with open-source spirit |
+| [Simulation](/knowledge/essays/insights/simulation-world-model) | NVIDIA | Produce, augment, and evaluate data with physics simulation (Omniverse) and World Model (Cosmos) |
+| [Teleoperation](/knowledge/essays/insights/teleoperation) | Tesla, Google, Physical Intelligence, Galaxea | Direct data collection |
+| [Non-Teleop](/knowledge/essays/insights/non-teleop-data) | UMI, Generalist, Sunday Robotics | Learning from Non-Teleop data |
+| [Community](/knowledge/essays/insights/community-driven) | HuggingFace | Community-driven data collection with open-source spirit |
 | World Model | 1X | Evaluation automation |
 | Distributed Evaluation | Academia | OXE, RoboArena, etc. |
 | Other | Various | Action extraction from human videos, egocentric data collection equipment, etc. |
@@ -147,7 +147,7 @@ HuggingFace's success formula:
 
 [1X](https://www.1x.tech/discover/world-model-self-learning) is researching methods for robots to learn from unlabeled video data using World Models and IDM (Inverse Dynamics Model). This approach shows the potential to leverage large-scale video data without Action labels.
 
-For more details, see [VLM Backbone Limitations and World Models](../insights/vlm-limits-world-model).
+For more details, see [VLM Backbone Limitations and World Models](/knowledge/essays/insights/vlm-limits-world-model).
 
 ---
 
@@ -165,13 +165,13 @@ In these confusing times, I believe there are many opportunities and would like 
 
 You've completed the Physical AI Introduction Guide.
 
-To explore further, return to the [Physical AI Introduction Guide](../../physical-ai/) or read the insight essays below.
+To explore further, return to the [Physical AI Introduction Guide](/knowledge/physical-ai/) or read the insight essays below.
 
 ### Recommended Next Reads
 
-- [Physical vs Cognitive Intelligence](../insights/physical-vs-cognitive) - Reflections on physical intelligence
-- [VLA & RFM Progress](../insights/vla-rfm-progress) - Ongoing development of VLA and RFM
-- [Humanoid Design](../insights/humanoid-design) - Design challenges of humanoids
-- [Tactile Sensing](../insights/tactile-sensing) - Is tactile sensing necessary?
-- [Teleoperation](../insights/teleoperation) - Data collection through teleoperation
-- [Simulation & World Models](../insights/simulation-world-model) - Synthetic data and world models
+- [Physical vs Cognitive Intelligence](/knowledge/essays/insights/physical-vs-cognitive) - Reflections on physical intelligence
+- [VLA & RFM Progress](/knowledge/essays/insights/vla-rfm-progress) - Ongoing development of VLA and RFM
+- [Humanoid Design](/knowledge/essays/insights/humanoid-design) - Design challenges of humanoids
+- [Tactile Sensing](/knowledge/essays/insights/tactile-sensing) - Is tactile sensing necessary?
+- [Teleoperation](/knowledge/essays/insights/teleoperation) - Data collection through teleoperation
+- [Simulation & World Models](/knowledge/essays/insights/simulation-world-model) - Synthetic data and world models

@@ -143,7 +143,7 @@ Physical Intelligence 공동창업, π0 개발 참여
 
 ## See Also
 
-- [ACT](../models/act)
-- [Sergey Levine](./sergey-levine)
-- [Physical Intelligence](../companies/physical-intelligence)
-- [π0](../models/pi0)
+- [ACT](/knowledge/models/act)
+- [Sergey Levine](/knowledge/people/sergey-levine)
+- [Physical Intelligence](/knowledge/companies/physical-intelligence)
+- [π0](/knowledge/models/pi0)

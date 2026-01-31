@@ -136,7 +136,7 @@ In 2024, Vincent Vanhoucke left Google after 17 years to join Waymo. In his Medi
 
 ## See Also
 
-- [RT](../models/rt)
-- [Gemini Robotics](../models/gemini-robotics)
-- [Google DeepMind](../companies/google-deepmind)
+- [RT](/knowledge/models/rt)
+- [Gemini Robotics](/knowledge/models/gemini-robotics)
+- [Google DeepMind](/knowledge/companies/google-deepmind)
 - [Karol Hausman](karol-hausman)

@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-15
 > Home > Hardware > Hands > LEAP Hand
 
 <!-- Image needed: Download from LEAP Hand official site and add -->
-<!-- Image pending: ![LEAP Hand](../../assets/hardware/hands/leap-hand.png) -->
+<!-- Image pending: ![LEAP Hand](/assets/hardware/hands/leap-hand.png) -->
 
 ---
 
@@ -271,6 +271,6 @@ LEAP Hand is not just hardware, but a **platform designed for robot learning res
 
 ## See Also
 
-- [Hardware List](../)
-- [GEX Series](./gex)
-- [Shadow Hand](./shadow-hand)
+- [Hardware List](/knowledge/hardware/)
+- [GEX Series](/knowledge/hardware/hands/gex)
+- [Shadow Hand](/knowledge/hardware/hands/shadow-hand)

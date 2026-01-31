@@ -15,7 +15,7 @@ lastEditedAt: 2026-01-15
 ---
 
 <!-- 이미지 파일 추가 필요: assets/hardware/arms/kinova.png -->
-<!-- Image pending: ![Kinova Gen3](../../assets/hardware/arms/kinova.png) -->
+<!-- Image pending: ![Kinova Gen3](/assets/hardware/arms/kinova.png) -->
 
 ## Overview
 
@@ -182,6 +182,6 @@ Kinova Gen3는 VLA(Vision-Language-Action) 모델 연구의 핵심 플랫폼으�
 
 ## See Also
 
-- [하드웨어 목록](./)
-- [Franka Panda](./franka-panda)
-- [UR Series](./ur-series)
+- [하드웨어 목록](/knowledge/hardware/arms/)
+- [Franka Panda](/knowledge/hardware/arms/franka-panda)
+- [UR Series](/knowledge/hardware/arms/ur-series)

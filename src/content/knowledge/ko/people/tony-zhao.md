@@ -159,5 +159,5 @@ ACT: 관측 → 다음 k개 액션 시퀀스
 
 ## See Also
 
-- [ACT](../models/act)
+- [ACT](/knowledge/models/act)
 - [Chelsea Finn](chelsea-finn)

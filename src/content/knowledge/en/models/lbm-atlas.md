@@ -204,6 +204,6 @@ Multi-task batching enables shared policy improvements.
 
 ## See Also
 
-- [Model List](./)
+- [Model List](/knowledge/models/)
 - [Figure Helix](figure-helix) - Another whole-body VLA
 - [GR00T N1](groot-n1) - NVIDIA humanoid VLA

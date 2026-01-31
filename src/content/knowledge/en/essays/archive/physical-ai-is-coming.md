@@ -54,12 +54,12 @@ The star of this CES, Boston Dynamics' ATLAS
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/HYwekersccY" title="Boston Dynamics Atlas - Large Behavior Models" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-[Boston Dynamics](../../companies/boston-dynamics), the pioneer of Classical Robotics, is also transitioning to Physical AI.
+[Boston Dynamics](/knowledge/companies/boston-dynamics), the pioneer of Classical Robotics, is also transitioning to Physical AI.
 - **450M Diffusion Transformer**: Co-developed with Toyota Research Institute (TRI)
 - Whole-body single model control: Walking + manipulation integrated
 - Deformable object manipulation like rope tying, cloth unfolding
 
-**→ Details: [LBM (Large Behavior Model)](../../models/lbm-atlas)**
+**→ Details: [LBM (Large Behavior Model)](/knowledge/models/lbm-atlas)**
 
 
 Sharpa CraftNet
@@ -68,7 +68,7 @@ Sharpa CraftNet
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/W7q-qlj4EFc?start=82" title="Sharpa CES 2026 Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-[Sharpa](../../companies/sharpa) unveiled [CraftNet](../../models/craftnet) and the North humanoid.
+[Sharpa](/knowledge/companies/sharpa) unveiled [CraftNet](/knowledge/models/craftnet) and the North humanoid.
 - **VTLA (Vision-Tactile-Language-Action)**: First commercial model integrating tactile sensing into VLA
 - Pinwheel folding, playing card handling, and other demos requiring tactile sensing
 - CES 2026 Innovation Award winner
@@ -80,7 +80,7 @@ Sharpa CraftNet
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/lQsvTrRTBRs" title="Figure Helix 02 - Official Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-[Figure AI](../../companies/figure)'s [Helix 02](../../models/figure-helix) is the first fully autonomous whole-body humanoid.
+[Figure AI](/knowledge/companies/figure)'s [Helix 02](/knowledge/models/figure-helix) is the first fully autonomous whole-body humanoid.
 - **61 consecutive actions over 4 minutes**: No resets, no human intervention
 - **System 0/1/2 architecture**: High-speed control up to 1kHz
 - Replaced 109,504 lines of C++ code with a 10M parameter neural network
@@ -110,7 +110,7 @@ Sharpa CraftNet
 | **Generalization** | Bound to training environment | Zero-shot generalization |
 | **Knowledge** | Domain-specific | Inherits World Knowledge (LLM/VLM) |
 
-**→ Details: [Definition of Physical AI](../fundamentals/definition)**
+**→ Details: [Definition of Physical AI](/knowledge/essays/fundamentals/definition)**
 
 ---
 
@@ -137,7 +137,7 @@ Language → + Vision → + Action
 - Can work at a different cafe, with new menu items
 - Can handle packages of various shapes, clothes of various designs
 
-**→ Details: [What are RFM & VLA?](../fundamentals/what-is-rfm-vla)**
+**→ Details: [What are RFM & VLA?](/knowledge/essays/fundamentals/what-is-rfm-vla)**
 
 ---
 
@@ -157,12 +157,12 @@ There are reasons why VLA can't simply follow LLM's success formula.
 
 | Approach | By | Description |
 |----------|-----|-------------|
-| [Teleoperation](../insights/teleoperation) | Tesla, Google, PI | Direct data collection |
-| [Simulation](../insights/simulation-world-model) | NVIDIA | Omniverse + Cosmos |
-| [Community](../insights/community-driven) | HuggingFace | Open-source collaboration |
+| [Teleoperation](/knowledge/essays/insights/teleoperation) | Tesla, Google, PI | Direct data collection |
+| [Simulation](/knowledge/essays/insights/simulation-world-model) | NVIDIA | Omniverse + Cosmos |
+| [Community](/knowledge/essays/insights/community-driven) | HuggingFace | Open-source collaboration |
 | World Model | 1X, NVIDIA | Synthetic data generation |
 
-**→ Details: [Action Data Scaling Problem](../fundamentals/scaling-problem)**
+**→ Details: [Action Data Scaling Problem](/knowledge/essays/fundamentals/scaling-problem)**
 
 ---
 
@@ -188,11 +188,11 @@ RT-2's "Action as Language" (discrete tokens) → **Flow Matching / Diffusion** 
 
 | Model | Method | Features |
 |-------|--------|----------|
-| [π0](../../models/pi0) | Flow Matching | 50Hz control |
-| [GR00T N1](../../models/groot-n1) | Diffusion Transformer | Dual system |
-| [SmolVLA](../../models/smolvla) | Flow Matching | 450M lightweight |
+| [π0](/knowledge/models/pi0) | Flow Matching | 50Hz control |
+| [GR00T N1](/knowledge/models/groot-n1) | Diffusion Transformer | Dual system |
+| [SmolVLA](/knowledge/models/smolvla) | Flow Matching | 450M lightweight |
 
-**→ Details: [VLA & RFM Progress](../insights/vla-rfm-progress)**
+**→ Details: [VLA & RFM Progress](/knowledge/essays/insights/vla-rfm-progress)**
 
 ---
 
@@ -216,7 +216,7 @@ AI that beats chess champions was created in 1997, but **taking keys out of a po
 2. **Dimensionality problem**: Text is abstracted low-dimension, physical world is high-dimension + real-time interaction
 3. **Learning difference**: Humans learn through experience, VLAs mainly through imitation learning
 
-**→ Details: [Physical vs Cognitive Intelligence](../insights/physical-vs-cognitive)**
+**→ Details: [Physical vs Cognitive Intelligence](/knowledge/essays/insights/physical-vs-cognitive)**
 
 ---
 
@@ -237,21 +237,21 @@ AI that beats chess champions was created in 1997, but **taking keys out of a po
 
 ### Fundamentals Guide
 
-1. [Definition of Physical AI](../fundamentals/definition)
-2. [What are RFM & VLA?](../fundamentals/what-is-rfm-vla)
-3. [Action Data Scaling Problem](../fundamentals/scaling-problem)
+1. [Definition of Physical AI](/knowledge/essays/fundamentals/definition)
+2. [What are RFM & VLA?](/knowledge/essays/fundamentals/what-is-rfm-vla)
+3. [Action Data Scaling Problem](/knowledge/essays/fundamentals/scaling-problem)
 
 ### Insights
 
-- [Physical vs Cognitive Intelligence](../insights/physical-vs-cognitive)
-- [VLA & RFM Progress](../insights/vla-rfm-progress)
-- [Humanoid Design](../insights/humanoid-design)
-- [The Need for Tactile Sensing](../insights/tactile-sensing)
+- [Physical vs Cognitive Intelligence](/knowledge/essays/insights/physical-vs-cognitive)
+- [VLA & RFM Progress](/knowledge/essays/insights/vla-rfm-progress)
+- [Humanoid Design](/knowledge/essays/insights/humanoid-design)
+- [The Need for Tactile Sensing](/knowledge/essays/insights/tactile-sensing)
 
 ### Key Models
 
-- [π0 / π0.5](../../models/pi0) - Physical Intelligence
-- [GR00T N1](../../models/groot-n1) - NVIDIA
-- [Figure Helix](../../models/figure-helix) - Figure AI
-- [LBM](../../models/lbm-atlas) - Boston Dynamics + TRI
-- [CraftNet](../../models/craftnet) - Sharpa
+- [π0 / π0.5](/knowledge/models/pi0) - Physical Intelligence
+- [GR00T N1](/knowledge/models/groot-n1) - NVIDIA
+- [Figure Helix](/knowledge/models/figure-helix) - Figure AI
+- [LBM](/knowledge/models/lbm-atlas) - Boston Dynamics + TRI
+- [CraftNet](/knowledge/models/craftnet) - Sharpa

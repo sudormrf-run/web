@@ -33,7 +33,7 @@ lastEditedAt: 2026-01-15
 - **OpenVLA/Octo 압도**: 복잡한 dexterous 태스크에서 기존 오픈소스 VLA 대비 압도적 성능
 - **오픈소스 공개**: openpi로 가중치, 학습 코드, JAX/PyTorch 구현 전체 공개
 
-![π0 Overview](../assets/models/pi0/pi0.png)
+![π0 Overview](/assets/models/pi0/pi0.png)
 <p align="center"><em>π0 아키텍처: PaliGemma VLM + Flow Matching Action Expert</em></p>
 
 ---
@@ -131,7 +131,7 @@ Physical Intelligence가 직접 수집한 dexterous manipulation 데이터:
 
 ## Performance
 
-![π0 Zero-shot 성능 비교](../assets/models/pi0/pi0-results.png)
+![π0 Zero-shot 성능 비교](/assets/models/pi0/pi0-results.png)
 <p align="center"><em>π0 Zero-shot 성능: OpenVLA/Octo 대비 복잡한 Dexterous 태스크 성능</em></p>
 
 ### vs OpenVLA, Octo (Zero-shot)
@@ -260,12 +260,12 @@ FAST 토크나이저를 적용한 autoregressive 버전:
 - [π Series](pi-series)
 - [π0.5](pi0-5)
 - [π*0.6](pi0-6-star)
-- [Physical Intelligence](../companies/physical-intelligence)
+- [Physical Intelligence](/knowledge/companies/physical-intelligence)
 - [Diffusion Policy](diffusion-policy)
 
 ### 관련 인물
-- [Karol Hausman](../people/karol-hausman) - Physical Intelligence 공동창업자
-- [Chelsea Finn](../people/chelsea-finn) - Physical Intelligence 공동창업자
-- [Sergey Levine](../people/sergey-levine) - Physical Intelligence 공동창업자
-- [Pete Florence](../people/pete-florence) - Physical Intelligence 공동창업자
+- [Karol Hausman](/knowledge/people/karol-hausman) - Physical Intelligence 공동창업자
+- [Chelsea Finn](/knowledge/people/chelsea-finn) - Physical Intelligence 공동창업자
+- [Sergey Levine](/knowledge/people/sergey-levine) - Physical Intelligence 공동창업자
+- [Pete Florence](/knowledge/people/pete-florence) - Physical Intelligence 공동창업자
 

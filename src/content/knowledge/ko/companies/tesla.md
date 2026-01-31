@@ -115,7 +115,7 @@ Tesla는 **teleoperation 기반 데이터 수집**을 운영 (보도 기반):
 
 ## See Also
 
-- [회사 목록](./)
-- [Teleoperation 방식](../essays/insights/teleoperation)
-- [휴머노이드 설계](../essays/insights/humanoid-design)
+- [회사 목록](/knowledge/companies/)
+- [Teleoperation 방식](/knowledge/essays/insights/teleoperation)
+- [휴머노이드 설계](/knowledge/essays/insights/humanoid-design)
 

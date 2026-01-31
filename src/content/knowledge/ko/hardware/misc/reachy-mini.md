@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Misc > Reachy Mini
 
-<!-- Image pending: ![Reachy Mini](../../assets/hardware/misc/reachy-mini.png) -->
+<!-- Image pending: ![Reachy Mini](/assets/hardware/misc/reachy-mini.png) -->
 <!-- TODO: 이미지 에셋 추가 필요 -->
 
 ---
@@ -306,7 +306,7 @@ CES 2026에서 Jensen Huang은 Reachy Mini와 NVIDIA DGX Spark를 연결한 데�
 
 ## See Also
 
-- [하드웨어 목록](../index)
-- [Reachy 2](../humanoids/reachy)
-- [LeRobot Arms](../arms/lerobot-arms)
-- [SmolVLA](../../models/smolvla)
+- [하드웨어 목록](/knowledge/hardware/)
+- [Reachy 2](/knowledge/hardware/humanoids/reachy)
+- [LeRobot Arms](/knowledge/hardware/arms/lerobot-arms)
+- [SmolVLA](/knowledge/models/smolvla)

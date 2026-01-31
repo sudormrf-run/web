@@ -18,7 +18,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Arms > Galaxea Arms
 
-<!-- Image pending: ![Galaxea A1](../../assets/hardware/arms/galaxea-arm.png) -->
+<!-- Image pending: ![Galaxea A1](/assets/hardware/arms/galaxea-arm.png) -->
 <!-- Image placeholder: Add galaxea-arm.png to assets/hardware/arms/ -->
 
 ---
@@ -361,7 +361,7 @@ Galaxea는 자체 개발한 **G0 VLA 모델**을 오픈소스로 공개했다.
 
 ## See Also
 
-- [하드웨어 목록](../index)
-- [Galaxea 휴머노이드](../humanoids/galaxea)
+- [하드웨어 목록](/knowledge/hardware/)
+- [Galaxea 휴머노이드](/knowledge/hardware/humanoids/galaxea)
 - [xArm 시리즈](xarm)
 - [Franka Research 3](franka-research3)

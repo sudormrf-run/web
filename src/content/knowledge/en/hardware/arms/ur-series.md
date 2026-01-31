@@ -18,7 +18,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Arms > UR Series
 
-<!-- Image pending: ![Universal Robots](../../assets/hardware/arms/ur-series.png) -->
+<!-- Image pending: ![Universal Robots](/assets/hardware/arms/ur-series.png) -->
 <!-- Image asset needed: assets/hardware/arms/ur-series.png -->
 
 ---
@@ -296,4 +296,4 @@ Universal Robots collaborative robots provide the following advantages for VLA r
 
 ## See Also
 
-- [Hardware List](../index)
+- [Hardware List](/knowledge/hardware/)

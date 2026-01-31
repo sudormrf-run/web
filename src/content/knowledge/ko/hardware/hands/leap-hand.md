@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-15
 > Home > Hardware > Hands > LEAP Hand
 
 <!-- 이미지 준비 필요: LEAP Hand 공식 사이트에서 다운로드 후 추가 -->
-<!-- Image pending: ![LEAP Hand](../../assets/hardware/hands/leap-hand.png) -->
+<!-- Image pending: ![LEAP Hand](/assets/hardware/hands/leap-hand.png) -->
 
 ---
 
@@ -271,6 +271,6 @@ LEAP Hand는 단순한 하드웨어가 아닌, **로봇 학습 연구를 위해 
 
 ## See Also
 
-- [하드웨어 목록](../)
-- [GEX 시리즈](./gex)
-- [Shadow Hand](./shadow-hand)
+- [하드웨어 목록](/knowledge/hardware/)
+- [GEX 시리즈](/knowledge/hardware/hands/gex)
+- [Shadow Hand](/knowledge/hardware/hands/shadow-hand)

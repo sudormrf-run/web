@@ -18,7 +18,7 @@ lastEditedAt: 2026-01-26
 
 Atlas is an advanced humanoid robot developed by Boston Dynamics. Originally created for the DARPA Robotics Challenge in 2013, Atlas has evolved through multiple generations and transitioned from hydraulic to fully electric systems in 2024.
 
-<!-- Image pending: ![Atlas](../../assets/hardware/humanoids/atlas.png) -->
+<!-- Image pending: ![Atlas](/assets/hardware/humanoids/atlas.png) -->
 
 | Item | Details |
 |------|---------|
@@ -147,7 +147,7 @@ Atlas is an advanced humanoid robot developed by Boston Dynamics. Originally cre
 
 ## See Also
 
-- [Hardware List](../index)
+- [Hardware List](/knowledge/hardware/)
 - [Tesla Optimus](optimus)
 - [Figure Humanoid](figure)
 - [Agility Digit](digit)

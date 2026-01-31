@@ -82,7 +82,7 @@ Expectations that Scaling Law proven in LLMs will apply to VLAs:
 
 ### Pi0.5: Open-World Generalization
 
-Physical Intelligence's [Pi0.5](../../models/pi0-5) demonstrated operation in completely new homes not seen during training.
+Physical Intelligence's [Pi0.5](/knowledge/models/pi0-5) demonstrated operation in completely new homes not seen during training.
 
 - New home environments
 - New objects
@@ -96,11 +96,11 @@ Physical Intelligence's [Pi0.5](../../models/pi0-5) demonstrated operation in co
 
 ### GR00T: Cross-Embodiment
 
-NVIDIA's [GR00T](../../models/groot) series aims for generalization across various robot hardware.
+NVIDIA's [GR00T](/knowledge/models/groot) series aims for generalization across various robot hardware.
 
 ### SmolVLA: Efficient Generalist
 
-HuggingFace's [SmolVLA](../../models/smolvla) shows that Generalist-level performance is possible with just 450M parameters.
+HuggingFace's [SmolVLA](/knowledge/models/smolvla) shows that Generalist-level performance is possible with just 450M parameters.
 
 ---
 

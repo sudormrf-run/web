@@ -204,6 +204,6 @@ LBM은 여러 로봇 플랫폼에서 공유 학습합니다:
 
 ## See Also
 
-- [모델 목록](./)
+- [모델 목록](/knowledge/models/)
 - [Figure Helix](figure-helix) - 또 다른 전신 VLA
 - [GR00T N1](groot-n1) - NVIDIA 휴머노이드 VLA

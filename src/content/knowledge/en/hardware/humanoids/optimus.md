@@ -31,7 +31,7 @@ lastEditedAt: 2026-01-15
 
 > Home > Hardware > Humanoids > Optimus
 
-<!-- Image pending: ![Tesla Optimus](../../assets/hardware/humanoids/optimus.png) -->
+<!-- Image pending: ![Tesla Optimus](/assets/hardware/humanoids/optimus.png) -->
 
 *Information in this document is as of January 2026; specs and plans are based on Tesla announcements and industry analysis.*
 
@@ -235,7 +235,7 @@ Tesla Optimus AI is based on **End-to-End neural network** approach validated in
 
 ## See Also
 
-- [Hardware List](../index)
-- [Tesla](../../companies/tesla)
+- [Hardware List](/knowledge/hardware/)
+- [Tesla](/knowledge/companies/tesla)
 - [Boston Dynamics Atlas](atlas)
 - [Figure Humanoid](figure)

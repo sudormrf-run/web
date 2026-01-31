@@ -236,7 +236,7 @@ Sim2Real Transfer (1B frames convergence)
 
 ## See Also
 
-- [Company List](./)
-- [Physical Intelligence](./physical-intelligence)
-- [pi0](../models/pi0) - Comparison VLA model
-- [Diffusion Policy](../models/diffusion-policy)
+- [Company List](/knowledge/companies/)
+- [Physical Intelligence](/knowledge/companies/physical-intelligence)
+- [pi0](/knowledge/models/pi0) - Comparison VLA model
+- [Diffusion Policy](/knowledge/models/diffusion-policy)

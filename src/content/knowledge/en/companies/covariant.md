@@ -138,6 +138,6 @@ Announced March 2024, an 8 billion parameter multimodal model:
 
 ## See Also
 
-- [Company List](./)
-- [Pieter Abbeel](../people/pieter-abbeel)
-- [Non-Teleop Data Collection](../essays/insights/non-teleop-data)
+- [Company List](/knowledge/companies/)
+- [Pieter Abbeel](/knowledge/people/pieter-abbeel)
+- [Non-Teleop Data Collection](/knowledge/essays/insights/non-teleop-data)

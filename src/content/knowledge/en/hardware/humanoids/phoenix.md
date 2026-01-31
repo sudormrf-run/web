@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-26
 > Home > Hardware > Humanoids > Phoenix
 
 <!-- TODO: Image needs to be added -->
-<!-- Image pending: ![Phoenix](../../assets/hardware/humanoids/phoenix.png) -->
+<!-- Image pending: ![Phoenix](/assets/hardware/humanoids/phoenix.png) -->
 
 ---
 
@@ -262,7 +262,7 @@ Sanctuary AI has demonstrated hundreds of tasks across more than 12 industries (
 
 ## See Also
 
-- [Hardware List](../)
-- [Figure Humanoid](./figure)
-- [Tesla Optimus](./optimus)
-- [Apollo (Apptronik)](./apollo)
+- [Hardware List](/knowledge/hardware/)
+- [Figure Humanoid](/knowledge/hardware/humanoids/figure)
+- [Tesla Optimus](/knowledge/hardware/humanoids/optimus)
+- [Apollo (Apptronik)](/knowledge/hardware/humanoids/apollo)

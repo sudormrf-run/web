@@ -19,7 +19,7 @@ lastEditedAt: 2026-01-15
 
 > Home > Hardware > Arms > xArm
 
-<!-- Image pending: ![xArm](../../assets/hardware/arms/xarm.png) -->
+<!-- Image pending: ![xArm](/assets/hardware/arms/xarm.png) -->
 
 > **Note**: Prices and specifications may vary by region and time. Please refer to the [UFACTORY official site](https://www.ufactory.us/) for the latest information.
 
@@ -301,6 +301,6 @@ print(dataset)
 
 ## See Also
 
-- [Hardware List](../index)
+- [Hardware List](/knowledge/hardware/)
 - [Franka Emika](franka-panda)
 - [WidowX](widowx)

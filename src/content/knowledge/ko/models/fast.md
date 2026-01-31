@@ -70,7 +70,7 @@ FAST(Frequency-space Action Sequence Tokenization)는 Physical Intelligence가 2
 
 ## 기술적 구조
 
-![FAST Tokenizer 파이프라인](../assets/models/pi0/pi-fast-tokenizer.png)
+![FAST Tokenizer 파이프라인](/assets/models/pi0/pi-fast-tokenizer.png)
 <p align="center"><em>FAST 토크나이저: DCT → Quantize → Flatten → BPE 압축 과정</em></p>
 
 ### 5단계 압축 파이프라인
@@ -185,8 +185,8 @@ FAST로 학습한 정책이 성공적으로 수행한 복잡한 조작 태스크
 | Suraj Nair | Physical Intelligence |
 | Quan Vuong | Physical Intelligence |
 | Oier Mees | Physical Intelligence |
-| [Chelsea Finn](../people/chelsea-finn) | Physical Intelligence |
-| [Sergey Levine](../people/sergey-levine) | Physical Intelligence |
+| [Chelsea Finn](/knowledge/people/chelsea-finn) | Physical Intelligence |
+| [Sergey Levine](/knowledge/people/sergey-levine) | Physical Intelligence |
 
 ### 스케일링
 
@@ -212,10 +212,10 @@ FAST로 학습한 정책이 성공적으로 수행한 복잡한 조작 태스크
 - [π0](pi0) - Flow Matching 기반 모델 (π0-FAST의 기반)
 - [π Series](pi-series) - Physical Intelligence 모델 시리즈
 - [π0.5](pi0-5) - Open-world 일반화 버전
-- [Physical Intelligence](../companies/physical-intelligence) - 회사 정보
+- [Physical Intelligence](/knowledge/companies/physical-intelligence) - 회사 정보
 - [Diffusion Policy](diffusion-policy) - 비교 대상: Diffusion 기반 정책
 
 ### 관련 인물
 
-- [Chelsea Finn](../people/chelsea-finn) - Physical Intelligence 공동창업자
-- [Sergey Levine](../people/sergey-levine) - Physical Intelligence 공동창업자
+- [Chelsea Finn](/knowledge/people/chelsea-finn) - Physical Intelligence 공동창업자
+- [Sergey Levine](/knowledge/people/sergey-levine) - Physical Intelligence 공동창업자

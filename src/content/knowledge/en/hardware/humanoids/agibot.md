@@ -19,7 +19,7 @@ lastEditedAt: 2026-01-26
 > Home > Hardware > Humanoids > Agibot
 
 <!-- Image placeholder - actual image needs to be added -->
-<!-- Image pending: ![Agibot](../../assets/hardware/humanoids/agibot.png) -->
+<!-- Image pending: ![Agibot](/assets/hardware/humanoids/agibot.png) -->
 
 ---
 
@@ -283,4 +283,4 @@ Industry's first Embodied Intelligent Operating System released in **July 2025**
 
 ## See Also
 
-- [Hardware List](./)
+- [Hardware List](/knowledge/hardware/humanoids/)

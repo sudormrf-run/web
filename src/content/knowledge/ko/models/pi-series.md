@@ -40,7 +40,7 @@ lastEditedAt: 2026-01-21
 
 ## Overview
 
-π Series는 [Physical Intelligence](../companies/physical-intelligence)가 2024년 10월부터 발표한 Vision-Language-Action 모델 시리즈입니다.
+π Series는 [Physical Intelligence](/knowledge/companies/physical-intelligence)가 2024년 10월부터 발표한 Vision-Language-Action 모델 시리즈입니다.
 
 | 항목 | 내용 |
 |------|------|
@@ -163,4 +163,4 @@ RL with Experience & Corrections via Advantage-conditioned Policies. 시연 + �
 - [π0.5](pi0-5)
 - [π*0.6](pi0-6-star)
 - [FAST](fast)
-- [Physical Intelligence](../companies/physical-intelligence)
+- [Physical Intelligence](/knowledge/companies/physical-intelligence)

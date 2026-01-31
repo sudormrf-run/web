@@ -18,7 +18,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Humanoids > Noetix Bumi
 
-<!-- Image pending: ![Noetix Bumi](../../assets/hardware/humanoids/noetix-bumi.png) -->
+<!-- Image pending: ![Noetix Bumi](/assets/hardware/humanoids/noetix-bumi.png) -->
 
 ---
 
@@ -224,5 +224,5 @@ Noetix의 대형 휴머노이드 로봇 N2 정보 [7]:
 
 ## See Also
 
-- [하드웨어 목록](../index)
+- [하드웨어 목록](/knowledge/hardware/)
 - [Unitree 휴머노이드](unitree-humanoid)

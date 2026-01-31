@@ -33,7 +33,7 @@ lastEditedAt: 2026-01-15
 - **Dominates OpenVLA/Octo**: Overwhelming performance advantage over existing open-source VLAs in complex dexterous tasks
 - **Open-Source Release**: Complete release of weights, training code, JAX/PyTorch implementation via openpi
 
-![Pi0 Overview](../assets/models/pi0/pi0.png)
+![Pi0 Overview](/assets/models/pi0/pi0.png)
 <p align="center"><em>Pi0 Architecture: PaliGemma VLM + Flow Matching Action Expert</em></p>
 
 ---
@@ -131,7 +131,7 @@ Dexterous manipulation data directly collected by Physical Intelligence:
 
 ## Performance
 
-![Pi0 Zero-shot Performance Comparison](../assets/models/pi0/pi0-results.png)
+![Pi0 Zero-shot Performance Comparison](/assets/models/pi0/pi0-results.png)
 <p align="center"><em>Pi0 Zero-shot Performance vs OpenVLA/Octo on Complex Dexterous Tasks</em></p>
 
 ### vs OpenVLA, Octo (Zero-shot)
@@ -260,11 +260,11 @@ Full series overview: [Pi Series](pi-series)
 - [Pi Series](pi-series)
 - [Pi0.5](pi0-5)
 - [Pi*0.6](pi0-6-star)
-- [Physical Intelligence](../companies/physical-intelligence)
+- [Physical Intelligence](/knowledge/companies/physical-intelligence)
 - [Diffusion Policy](diffusion-policy)
 
 ### Related People
-- [Karol Hausman](../people/karol-hausman) - Physical Intelligence Co-founder
-- [Chelsea Finn](../people/chelsea-finn) - Physical Intelligence Co-founder
-- [Sergey Levine](../people/sergey-levine) - Physical Intelligence Co-founder
-- [Pete Florence](../people/pete-florence) - Physical Intelligence Co-founder
+- [Karol Hausman](/knowledge/people/karol-hausman) - Physical Intelligence Co-founder
+- [Chelsea Finn](/knowledge/people/chelsea-finn) - Physical Intelligence Co-founder
+- [Sergey Levine](/knowledge/people/sergey-levine) - Physical Intelligence Co-founder
+- [Pete Florence](/knowledge/people/pete-florence) - Physical Intelligence Co-founder

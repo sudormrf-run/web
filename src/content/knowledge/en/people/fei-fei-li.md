@@ -214,5 +214,5 @@ Goals:
 
 ## See Also
 
-- [World Labs](../companies/world-labs)
+- [World Labs](/knowledge/companies/world-labs)
 - [Stanford HAI](https://hai.stanford.edu/)

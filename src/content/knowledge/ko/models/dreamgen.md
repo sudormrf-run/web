@@ -328,4 +328,4 @@ GR00T-Dreams는 다양한 로봇 플랫폼을 지원합니다:
 - [Eagle](eagle) - Vision-Language Model
 
 ### 관련 인물
-- [Jim Fan](../people/jim-fan) - NVIDIA GEAR Lab, GR00T 연구 리드
+- [Jim Fan](/knowledge/people/jim-fan) - NVIDIA GEAR Lab, GR00T 연구 리드

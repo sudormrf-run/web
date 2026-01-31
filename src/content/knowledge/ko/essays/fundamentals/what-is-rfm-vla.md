@@ -91,7 +91,7 @@ LLM이 너무 똑똑해지고 모달리티도 확장되어서 다양한 일들�
 RFM은 이걸 로봇에 그대로 붙인 겁니다. VLA를 기반으로 동작하는 로봇이 다양한 일들을 인간 대신 해줄 것이라는 기대를 투영한 용어죠. 그러나 범용적인 로봇 모델이 꼭 VLA 로만 구현 되리란 법은 없습니다. World Model 혹은 Video Generaation Model을 기반으로 구현하는 것도 가능합니다. 보다 넓은 의미라고 볼 수 있습니다.  
 
 현재는 VLA 가 RFM의 가장 유력한 수단으로 손꼽히고 있습니다. 
-이런 기대를 보여주듯 2025년에만 수많은 VLA들이 나왔습니다: [π0](../../models/pi0), [OpenVLA](../../models/openvla), [SmolVLA](../../models/smolvla), [GR00T](../../models/groot) 등.
+이런 기대를 보여주듯 2025년에만 수많은 VLA들이 나왔습니다: [π0](/knowledge/models/pi0), [OpenVLA](/knowledge/models/openvla), [SmolVLA](/knowledge/models/smolvla), [GR00T](/knowledge/models/groot) 등.
 
 ---
 
@@ -195,7 +195,7 @@ LLM이 똑똑한 이유 중 가장 중요한 것 하나는 바로 **Scaling**입
 > VLA가 성공할지 말지, 여기엔 가장 큰 문제, 데이터 문제가 있습니다.
 
 - [왜 Scaling이 어려운가](scaling-problem) - 로봇 데이터 수집의 근본적 어려움
-- [VLM 백본의 한계](../insights/vlm-limits-world-model) - World 모델이 해결책이 될 수 있을까
+- [VLM 백본의 한계](/knowledge/essays/insights/vlm-limits-world-model) - World 모델이 해결책이 될 수 있을까
 
 ---
 

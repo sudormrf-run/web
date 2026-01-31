@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "essays/archive/physical-ai-is-coming.md",
+                "file": "essays/fundamentals/scaling-problem.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "physical-ai-is-coming"
+              "title": "scaling-problem"
             }
           },
           {
@@ -199,8 +199,8 @@
   },
   "active": "5ae9a1430a1df75f",
   "lastOpenFiles": [
-    "essays/archive/index.md",
     "essays/archive/physical-ai-is-coming.md",
+    "essays/archive/index.md",
     "essays/insights/vla-rfm-progress.md",
     "essays/archive",
     "essays/insights/scaling-law-robotics.md",

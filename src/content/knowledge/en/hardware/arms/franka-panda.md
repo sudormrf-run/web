@@ -21,7 +21,7 @@ lastEditedAt: 2026-01-15
 
 > Home > Hardware > Arms > Franka Panda
 
-<!-- Image pending: ![Franka Panda](../../assets/hardware/arms/franka-panda.png) -->
+<!-- Image pending: ![Franka Panda](/assets/hardware/arms/franka-panda.png) -->
 
 ---
 
@@ -284,6 +284,6 @@ Franka Panda is one of the most widely used robot platforms in VLA (Vision-Langu
 
 ## See Also
 
-- [Hardware List](../index)
+- [Hardware List](/knowledge/hardware/)
 - [Franka Research 3](franka-research3)
-- [OpenVLA](../../models/openvla)
+- [OpenVLA](/knowledge/models/openvla)

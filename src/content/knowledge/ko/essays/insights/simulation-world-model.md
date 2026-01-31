@@ -67,6 +67,6 @@ Evaluation 자동화를 위한 World Model 활용
 ## See Also
 
 - [Teleoperation 방식](teleoperation)
-- [Action Data Scaling 문제](../fundamentals/scaling-problem)
-- [NVIDIA](../../companies/nvidia)
+- [Action Data Scaling 문제](/knowledge/essays/fundamentals/scaling-problem)
+- [NVIDIA](/knowledge/companies/nvidia)
 

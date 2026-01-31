@@ -20,7 +20,7 @@ lastEditedAt: 2026-01-26
 
 > Home > Hardware > Hands > Clone Hand
 
-<!-- Image pending: ![Clone Hand](../../assets/hardware/hands/clone-hand.png) -->
+<!-- Image pending: ![Clone Hand](/assets/hardware/hands/clone-hand.png) -->
 
 ---
 
@@ -167,6 +167,6 @@ Koźlik은 2014년 인공 근육에 관심을 갖기 시작했으며, 2019년 �
 
 ## See Also
 
-- [하드웨어 목록](../)
-- [Shadow Hand](./shadow-hand)
-- [Allegro Hand](./allegro)
+- [하드웨어 목록](/knowledge/hardware/)
+- [Shadow Hand](/knowledge/hardware/hands/shadow-hand)
+- [Allegro Hand](/knowledge/hardware/hands/allegro)

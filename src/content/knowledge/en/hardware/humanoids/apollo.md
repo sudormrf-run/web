@@ -28,7 +28,7 @@ lastEditedAt: 2026-01-15
 
 > Home > Hardware > Humanoids > Apollo
 
-<!-- Image pending: ![Apollo](../../assets/hardware/humanoids/apollo.png) -->
+<!-- Image pending: ![Apollo](/assets/hardware/humanoids/apollo.png) -->
 
 ---
 
@@ -249,7 +249,7 @@ CEO Jeff Cardenas: "We've reached the point where the economics work. Factories 
 
 ## See Also
 
-- [Hardware List](../index)
+- [Hardware List](/knowledge/hardware/)
 - [Tesla Optimus](optimus)
 - [Figure Humanoid](figure)
 - [Agility Digit](digit)
