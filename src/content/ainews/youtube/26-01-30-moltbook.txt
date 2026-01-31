@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [01/30] Moltbook·OpenClaw, ‘에이전트-에이전트’ 소셜 네트워크 확산 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Moltbook·OpenClaw 에이전트 포럼 급부상
+• Anthropic 연구: AI 코딩은 학습 저하 가능
+• Moonshot Kimi K2.5, Agent Swarm·PARL 공개
+• Google Genie 3 공개, 게임 vs 비디오 논쟁
+• Windsurf Arena Mode, IDE 내 모델 대결 도입
+
+📋 목차:
+1. 헤드라인: Moltbook·OpenClaw, ‘에이전트-에이전트’ 소셜 네트워크 확산
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/26-01-30-moltbook/
+
+#Moltbook #OpenClaw #OpenAI #Anthropic #Kimi
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 테크뉴스, OpenAI, AI뉴스, 머신러닝, Anthropic, 인공지능, Google, OpenClaw, Kimi, Moltbook, AI
+
+Date: 2026-01-30
+==================================================
