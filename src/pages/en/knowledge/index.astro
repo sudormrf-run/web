@@ -70,6 +70,20 @@ const { t } = useTranslations(locale);
               <p class="card-description">An introduction to the definition, core concepts, and challenges of Physical AI</p>
             </div>
           </a>
+          <a href="/en/knowledge/essays/archive/physical-ai-is-coming" class="card card-video">
+            <div class="card-visual card-visual-video">
+              <div class="visual-bg-video"></div>
+              <div class="play-button">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Physical AI is Coming</h3>
+              <p class="card-description">Physical AI trend analysis with presentation materials</p>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -373,6 +387,70 @@ const { t } = useTranslations(locale);
 
   .card-overview:hover .card-title {
     color: var(--color-accent);
+  }
+
+  .card-video {
+    width: 320px;
+    min-height: auto;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .card-visual-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  }
+
+  .visual-bg-video {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255, 0, 0, 0.1) 0%, transparent 70%);
+  }
+
+  .play-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    background: rgba(255, 0, 0, 0.9);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
+  }
+
+  .play-button svg {
+    color: white;
+    margin-left: 4px;
+  }
+
+  .card-video:hover .play-button {
+    transform: scale(1.1);
+    background: rgba(255, 0, 0, 1);
+    box-shadow: 0 6px 30px rgba(255, 0, 0, 0.5);
+  }
+
+  .card-video:hover {
+    border-color: rgba(255, 0, 0, 0.5);
+  }
+
+  .card-video:hover .card-title {
+    color: #ff4444;
+  }
+
+  .card-video .card-body {
+    padding: 1rem 1.25rem 1.25rem;
+  }
+
+  .card-video .card-title {
+    margin-bottom: 0.25rem;
+  }
+
+  .card-video .card-description {
+    margin: 0;
   }
 
   .card-link:hover {
