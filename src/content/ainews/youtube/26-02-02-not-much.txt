@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [02/02] OpenAI, macOS용 Codex 앱 출시 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI, macOS용 Codex 앱 출시
+• StepFun Step-3.5-Flash 오픈 공개
+• Kimi K2.5, Code Arena 1위 오픈
+• 1M 컨텍스트, 메모리 장벽이 핵심 부상
+• LM Studio, Claude Code 호환 API 추가
+
+📋 목차:
+1. 헤드라인: OpenAI, macOS용 Codex 앱 출시
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/26-02-02-not-much/
+
+#OpenAI #Codex #에이전트
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 에이전트, AI, OpenAI, Codex, AI뉴스, 머신러닝, 테크뉴스, 인공지능
+
+Date: 2026-02-02
+==================================================
