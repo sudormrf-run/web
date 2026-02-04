@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [02/02] OpenAI, GPT‑5.2·GPT‑5.2‑Codex 40% 가속 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI, GPT‑5.2·GPT‑5.2‑Codex 40% 가속
+• Alibaba, Qwen3‑Coder‑Next 80B@3B 공개
+• Zhipu, GLM‑OCR 0.9B 출시와 day‑0 지원
+• Anthropic, Claude Agent SDK의 Xcode 통합
+• LangChain, 에이전트 트레이스·평가 가이드 제시
+
+📋 목차:
+1. 헤드라인: OpenAI, GPT‑5.2·GPT‑5.2‑Codex 40% 가속
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/26-02-03-not-much/
+
+#OpenAI #Codex #Qwen #vLLM #LangChain
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Qwen, Codex, AI뉴스, LangChain, vLLM, 인공지능, AI, 테크뉴스, 머신러닝, OpenAI
+
+Date: 2026-02-02
+==================================================
