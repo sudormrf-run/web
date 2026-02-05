@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [02/04] Cerebras, $1B 투자 유치로 $23B 평가 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Cerebras가 $1B 투자로 $23B 평가
+• VS Code가 Agent Sessions로 에이전트 통합
+• METR, GPT-5.2 High 6.6시간 성과 보고
+• Qwen3-Coder-Next 80B MoE 모델 공개
+• ACE-Step-1.5, MIT 오픈 음악 생성 모델 출시
+
+📋 목차:
+1. 헤드라인: Cerebras, $1B 투자 유치로 $23B 평가
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/26-02-04-elevenlabs-cerebras/
+
+#OpenAI #Cerebras #Gemini #VS Code #METR
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: OpenAI, 인공지능, 테크뉴스, 머신러닝, METR, AI뉴스, Gemini, VS Code, AI, Cerebras
+
+Date: 2026-02-04
+==================================================
