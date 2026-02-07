@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [02/06] GPT-5.3-Codex·Claude Opus 4.6 A/B 확산 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• GPT-5.3-Codex·Claude Opus 4.6 A/B 확산
+• Waymo, Genie 3 기반 월드 모델 공개
+• Hugging Face, Community Evals 출시
+• InfMem·LatentMem, 장문 메모리 제어
+• 에이전트 스웜, ‘팀 설계’로 수렴
+
+📋 목차:
+1. 헤드라인: GPT-5.3-Codex·Claude Opus 4.6 A/B 확산
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/26-02-06-not-much/
+
+#OpenAI #Codex #Claude #Waymo #Hugging Face
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 머신러닝, Waymo, OpenAI, Hugging Face, 인공지능, AI뉴스, 테크뉴스, Claude, Codex, AI
+
+Date: 2026-02-06
+==================================================
