@@ -21,6 +21,10 @@ lastEditedBy:
 lastEditedAt: 2026-01-31
 ---
 
+<div class="video-embed">
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/MZdhBBvUmvU" title="Physical AI is Coming" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## 1. LLM, AGI, 그리고 Physical AI
 
 LLM을 시작으로 한 AGI race는 인간 혹은 인간 이상의 지능을 구현하는 여정입니다.  

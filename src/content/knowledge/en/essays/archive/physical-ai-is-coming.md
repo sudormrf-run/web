@@ -21,6 +21,10 @@ lastEditedBy:
 lastEditedAt: 2026-01-31
 ---
 
+<div class="video-embed">
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/MZdhBBvUmvU" title="Physical AI is Coming" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## 1. LLM, AGI, and Physical AI
 
 The AGI race, starting with LLMs, is a journey to achieve human-level or beyond intelligence. As of 2026, it seems achievable in the near future.
