@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [02/10] 알리바바, Qwen‑Image‑2.0 공개… 7B 통합 생성·편집 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• 알리바바 Qwen‑Image‑2.0 7B 공개
+• ByteDance Seedance 2.0, T2V 도약
+• OpenAI Responses API 장기 작업 강화
+• Kimi Agent Swarm, 100 서브에이전트
+• Isomorphic Labs, IsoDDE 성능 향상 주장
+
+📋 목차:
+1. 헤드라인: 알리바바, Qwen‑Image‑2.0 공개… 7B 통합 생성·편집
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/2026-02-10-qwenimage-seedance-2/
+
+#Qwen #Alibaba #ByteDance #OpenAI #Kimi
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Isomorphic Labs, Kimi, 머신러닝, OpenAI, 인공지능, AI뉴스, Qwen, Alibaba, ByteDance, AI, 테크뉴스
+
+Date: 2026-02-10
+==================================================
