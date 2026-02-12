@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [02/11] Zhipu AI, MIT 라이선스 오픈 웨이트 GLM-5 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Zhipu AI가 MIT 라이선스 GLM-5 공개
+• DeepSeek 1M 컨텍스트 루머와 DPA 개선
+• SeeDance v2.0 품질·가격 논의 확산
+• 에이전트 워크플로우: Codex, MCP, DeepWiki
+• 오픈 벤치마크 $3M 지원과 에이전트 보안 논쟁
+
+📋 목차:
+1. 헤드라인: Zhipu AI, MIT 라이선스 오픈 웨이트 GLM-5 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/2026-02-11-glm-5/
+
+#GLM-5 #Zhipu AI #DeepSeek #MiniMax #OpenAI
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: GLM-5, AI뉴스, Zhipu AI, MiniMax, OpenAI, 테크뉴스, AI, 인공지능, DeepSeek, 머신러닝
+
+Date: 2026-02-11
+==================================================
