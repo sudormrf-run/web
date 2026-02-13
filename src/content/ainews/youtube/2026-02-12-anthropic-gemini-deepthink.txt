@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [02/12] Google DeepMind, Gemini 3 Deep Think V2 공개…ARC-AGI-2 84.6% 달성 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Gemini 3 Deep Think V2, ARC-AGI-2 SOTA
+• OpenAI, GPT-5.3-Codex-Spark 프리뷰 공개
+• MiniMax M2.5·GLM-5, 오픈 코딩 경쟁 가속
+• A2A·KV-cache, 에이전트 인프라 논쟁 확대
+• QED-Nano·LeJEPA 등 연구 업데이트
+
+📋 목차:
+1. 헤드라인: Google DeepMind, Gemini 3 Deep Think V2 공개…ARC-AGI-2 84.6% 달성
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/2026-02-12-anthropic-gemini-deepthink/
+
+#Google DeepMind #Gemini #OpenAI #Anthropic #Agents
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Google DeepMind, AI, Anthropic, AI뉴스, 머신러닝, Gemini, Agents, OpenAI, 인공지능, 테크뉴스
+
+Date: 2026-02-12
+==================================================
