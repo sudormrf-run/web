@@ -86,6 +86,8 @@ With the emergence of large-scale multi-robot datasets like [Open X-Embodiment](
 | DROID | 7 | 500+ | 76K |
 | BridgeData V2 | 1 | 13 | 60K |
 
+*Table: Comparison of representative Cross-Embodiment datasets — number of robots, tasks, and episode scale*
+
 By training on data from multiple robots together, knowledge learned on one robot can transfer to others. This significantly reduces the burden on individual robot manufacturers to collect data separately.
 
 ### Application of Scaling Law
@@ -141,6 +143,8 @@ Both approaches have their strengths and weaknesses, with the appropriate choice
 | Deployment cost | High per task | Low (one for many tasks) |
 | Training cost | Low | High |
 | Maintenance | Per-task management | Unified management |
+
+*Table: Trade-off comparison between Specialist and Generalist models*
 
 In practice, rather than choosing one approach exclusively, combining them according to the situation is more effective. For example, fine-tuning a generalist model for specific tasks is becoming increasingly common.
 

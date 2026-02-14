@@ -46,6 +46,8 @@ This document focuses on the **action data scarcity problem** and the various ap
 | Collection Cost | Low | High |
 | Evaluation | Can be automated | Requires physical robot operation |
 
+*Table: Comparison of data collection and evaluation between LLM and VLA — the fundamental reason why VLA scaling is difficult*
+
 LLMs were able to leverage the vast text data accumulated on the internet for training, and the quality of generated text can be automatically evaluated. In contrast, VLAs require moving actual robots to collect data, and the success of actions must be physically verified. This is the fundamental bottleneck of VLA scaling.
 
 ---
@@ -163,6 +165,8 @@ For more details, see [VLM Backbone Limitations and World Models](/knowledge/ess
 | World Model | 1X, NVIDIA | Evaluation automation, VLA backbone replacement, synthetic data generation with world models |
 | Distributed Evaluation | Academia | OXE, RoboArena, etc. |
 | Other | Various | Action extraction from human videos, egocentric data collection equipment, etc. |
+
+*Table: Major approaches and organizations addressing the VLA scaling problem*
 
 Each approach has its own pros and cons, and it's not yet clear which method is best. We need to keep watching the developments in this field.
 

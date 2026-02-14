@@ -196,6 +196,8 @@ Boston Dynamics도 end-to-end 모델을 기반으로 옮겨 가고 있습니다.
 | **대표 사례** | Boston Dynamics Spot (2015~), 산업용 로봇 팔 | π0, OpenVLA, GR00T, Gemini Robotics (2023~) |
 | **한계** | 새로운 환경/물체에 취약 | 데이터 수집 비용, 안전성 검증 |
 
+*표: Classical Robotics와 Physical AI(VLA)의 핵심 차이점 비교*
+
 ---
 
 ### 정리: Physical AI의 경계
