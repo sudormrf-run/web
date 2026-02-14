@@ -82,6 +82,8 @@ Various terms related to Physical AI are often used interchangeably. Let's clari
 | **LBM** | Large Behavior Model | Action expressed as Behavior. Essentially the same as VLA |
 | **RFM** | Robot Foundation Model | Foundation Model for robots, like how LLM became a Foundation Model |
 
+*Table: Key Physical AI terminology — meanings and relationships of VLA, LBM, and RFM*
+
 ### LBM (Large Behavior Model)
 
 Since VLA's "Action" can also be expressed as "Behavior," the term LBM (Large Behavior Model) is also used. It's essentially the same concept as VLA, just expressed from a different perspective.

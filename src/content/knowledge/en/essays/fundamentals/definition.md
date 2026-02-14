@@ -188,6 +188,8 @@ Boston Dynamics is also moving toward end-to-end models. Even BD, the leader of 
 | **Examples** | Boston Dynamics Spot (2015~), industrial robot arms | π0, OpenVLA, GR00T, Gemini Robotics (2023~) |
 | **Limitations** | Vulnerable to new environments/objects | Data collection cost, safety verification |
 
+*Table: Key differences between Classical Robotics and Physical AI (VLA)*
+
 ---
 
 ### Summary: The Boundaries of Physical AI
