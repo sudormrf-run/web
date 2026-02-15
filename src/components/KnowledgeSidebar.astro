@@ -238,6 +238,17 @@ const browseText = isKorean ? '색인' : 'Index';
         </div>
       )
     ))}
+
+    {/* Glossary link at the bottom */}
+    <a
+      href={`${urlPrefix}/knowledge/glossary/`}
+      class={`glossary-link ${currentCategory === 'glossary' ? 'active' : ''}`}
+    >
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+      </svg>
+      {isKorean ? '용어집' : 'Glossary'}
+    </a>
   </nav>
 </aside>
 
@@ -477,6 +488,36 @@ const browseText = isKorean ? '색인' : 'Index';
   }
 
   .browse-link svg {
+    flex-shrink: 0;
+  }
+
+  /* Glossary Link (bottom of sidebar) */
+  .glossary-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    border-top: 1px solid var(--color-border);
+    margin-top: 0.5rem;
+    transition: all 0.15s;
+  }
+
+  .glossary-link:hover {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+  }
+
+  .glossary-link.active {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    border-left: 2px solid var(--color-text-primary);
+  }
+
+  .glossary-link svg {
     flex-shrink: 0;
   }
 

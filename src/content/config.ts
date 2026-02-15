@@ -18,6 +18,7 @@ const knowledgeCategoryEnum = z.enum([
   'hardware',      // Robot hardware
   'essays',        // Essays and opinions
   'people',        // Key people in the field
+  'glossary',      // Physical AI glossary
 ]);
 
 // Knowledge collection schema
