@@ -33,16 +33,16 @@ Just as ChatGPT transformed the world of knowledge work, there's growing expecta
 
 If you want to systematically understand Physical AI, read the documents below in order.
 
-### 1. [Defining Physical AI](/knowledge/physical-ai/essays/fundamentals/definition)
+### 1. [Defining Physical AI](/en/knowledge/essays/fundamentals/definition)
 What is Physical AI? The origin of the term and scope definition
 
-### 2. [From Specialist to Generalist](/knowledge/physical-ai/essays/fundamentals/specialist-to-generalist)
+### 2. [From Specialist to Generalist](/en/knowledge/essays/fundamentals/specialist-to-generalist)
 Past robots were Specialists. Physical AI aims for Generalists.
 
-### 3. [What are RFM & VLA?](/knowledge/physical-ai/essays/fundamentals/what-is-rfm-vla)
+### 3. [What are RFM & VLA?](/en/knowledge/essays/fundamentals/what-is-rfm-vla)
 The core technology for implementing Generalist robots: VLA (Vision-Language-Action) models
 
-### 4. [The Action Data Scaling Problem](/knowledge/physical-ai/essays/fundamentals/scaling-problem)
+### 4. [The Action Data Scaling Problem](/en/knowledge/essays/fundamentals/scaling-problem)
 Why VLA can't easily succeed like LLMs: Data
 
 ---
