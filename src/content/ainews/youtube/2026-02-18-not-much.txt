@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [02/18] OpenAI, EVMbench로 스마트컨트랙트 보안 평가 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Claude 4.6, 지표 상승·토큰비용 급증
+• OpenAI, EVMbench 보안 벤치 공개
+• Google Lyria 3, Gemini에 음악 생성
+• Cursor, 과거 대화 컨텍스트(context) 추가
+• Qwen3.5 FP8 가중치 공개 확산
+
+📋 목차:
+1. 헤드라인: OpenAI, EVMbench로 스마트컨트랙트 보안 평가
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/2026-02-18-not-much/
+
+#OpenAI #Anthropic #Google #MCP #벤치마크
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Anthropic, Google, 벤치마크, MCP, AI, AI뉴스, 테크뉴스, 인공지능, 머신러닝, OpenAI
+
+Date: 2026-02-18
+==================================================
