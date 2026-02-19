@@ -33,16 +33,16 @@ ChatGPT가 지식 노동의 세계를 바꿨듯이, 이제 AI가 물리적 세�
 
 Physical AI를 체계적으로 이해하고 싶다면, 아래 문서를 순서대로 읽어보세요.
 
-### 1. [Physical AI의 정의](/knowledge/physical-ai/essays/fundamentals/definition)
+### 1. [Physical AI의 정의](/knowledge/essays/fundamentals/definition)
 Physical AI란 무엇인가? 용어의 등장 배경과 범주 정의
 
-### 2. [Specialist에서 Generalist로](/knowledge/physical-ai/essays/fundamentals/specialist-to-generalist)
+### 2. [Specialist에서 Generalist로](/knowledge/essays/fundamentals/specialist-to-generalist)
 과거 로봇은 Specialist였습니다. Physical AI가 추구하는 것은 Generalist입니다.
 
-### 3. [RFM & VLA란 무엇인가](/knowledge/physical-ai/essays/fundamentals/what-is-rfm-vla)
+### 3. [RFM & VLA란 무엇인가](/knowledge/essays/fundamentals/what-is-rfm-vla)
 Generalist 로봇을 구현하는 핵심 기술, VLA(Vision-Language-Action) 모델
 
-### 4. [Action Data Scaling 문제](/knowledge/physical-ai/essays/fundamentals/scaling-problem)
+### 4. [Action Data Scaling 문제](/knowledge/essays/fundamentals/scaling-problem)
 VLA가 LLM처럼 쉽게 성공할 수 없는 이유: 데이터
 
 ---
