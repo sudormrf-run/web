@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [02/19] 구글, Gemini 3.1 Pro 공개...ARC-AGI-2 77.1% | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• 구글이 Gemini 3.1 Pro를 공개
+• ARC-AGI-2 77.1%로 추론 도약
+• AA·Arena서 상위권 성능 재확인
+• 에이전트 툴링·비용 논쟁이 커뮤니티로 확산
+• Discord선 OpenRouter 장애도 논의
+
+📋 목차:
+1. 헤드라인: 구글, Gemini 3.1 Pro 공개...ARC-AGI-2 77.1%
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/2026-02-19-gemini31/
+
+#Google #Gemini #OpenRouter #Anthropic #OpenAI
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 테크뉴스, AI뉴스, 머신러닝, Anthropic, Google, OpenAI, Gemini, AI, OpenRouter, 인공지능
+
+Date: 2026-02-19
+==================================================
