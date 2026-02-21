@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [02/20] ggml.ai/llama.cpp가 Hugging Face에 합류 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• ggml.ai/llama.cpp가 Hugging Face에 합류
+• Anthropic이 Claude Code Security를 공개
+• Taalas ASIC, 16k–17k tok/s 데모 주장
+• METR, Opus 4.6 time-horizon을 ~14.5h로 추정
+• Gemini 3.1 Pro의 비용·토큰 효율 논쟁
+
+📋 목차:
+1. 헤드라인: ggml.ai/llama.cpp가 Hugging Face에 합류
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/2026-02-20-not-much/
+
+#HuggingFace #llama.cpp #Anthropic #Gemini #보안
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Anthropic, 테크뉴스, AI, AI뉴스, 보안, HuggingFace, 머신러닝, 인공지능, Gemini, llama.cpp
+
+Date: 2026-02-20
+==================================================
