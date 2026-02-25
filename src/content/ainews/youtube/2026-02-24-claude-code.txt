@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [02/24] OpenAI, Responses API에 GPT-5.3-Codex 출시 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI가 GPT-5.3-Codex를 출시
+• Qwen 3.5 Medium 시리즈 공개
+• Anthropic, Claude Code 원격 제어 도입
+• Cursor, “demos not diffs”로 전환
+• Mercury 2, ~1,000토큰/초 강조
+
+📋 목차:
+1. 헤드라인: OpenAI, Responses API에 GPT-5.3-Codex 출시
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/2026-02-24-claude-code/
+
+#OpenAI #Qwen #Claude
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 인공지능, Qwen, 머신러닝, Claude, 테크뉴스, AI뉴스, OpenAI, AI
+
+Date: 2026-02-24
+==================================================
