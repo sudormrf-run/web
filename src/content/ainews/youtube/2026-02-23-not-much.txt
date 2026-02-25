@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [02/23] Anthropic, DeepSeek·Moonshot·MiniMax의 Claude 대규모 distillation 공격 의혹 제기 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Anthropic이 Claude 증류 공격을 주장
+• OpenAI가 SWE-Bench Verified를 폐기
+• Responses API에 WebSockets가 추가됨
+• LMArena에서 GPT-5.2-chat-latest 급상승
+• OpenAI가 BCG·McKinsey와 협력 확대
+
+📋 목차:
+1. 헤드라인: Anthropic, DeepSeek·Moonshot·MiniMax의 Claude 대규모 distillation 공격 의혹 제기
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/2026-02-23-not-much/
+
+#Anthropic #OpenAI #Claude #SWE-Bench #WebSockets
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Claude, 머신러닝, AI뉴스, AI, WebSockets, 인공지능, Anthropic, SWE-Bench, OpenAI, 테크뉴스
+
+Date: 2026-02-23
+==================================================
