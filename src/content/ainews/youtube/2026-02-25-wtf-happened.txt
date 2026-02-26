@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [02/25] Perplexity, 오케스트레이션 우선 에이전트 ‘Computer’ 출시 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Perplexity, 에이전트 ‘Computer’ 출시
+• Karpathy, 코딩 에이전트 상전이 언급
+• OpenAI, GPT‑5.3‑Codex API 공개
+• Qwen3.5 Medium, 로컬 배포 속도전
+• Anthropic, Vercept 인수·RSP v3 전환
+
+📋 목차:
+1. 헤드라인: Perplexity, 오케스트레이션 우선 에이전트 ‘Computer’ 출시
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/2026-02-25-wtf-happened/
+
+#Perplexity #OpenAI #Qwen #Anthropic #Agents
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Anthropic, 테크뉴스, Agents, 인공지능, 머신러닝, Perplexity, Qwen, AI뉴스, AI, OpenAI
+
+Date: 2026-02-25
+==================================================
