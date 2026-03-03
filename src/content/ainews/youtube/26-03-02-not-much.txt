@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [03/02] Alibaba가 Qwen 3.5 Small 오픈 모델 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Alibaba가 Qwen 3.5 Small 오픈 모델 공개
+• Claude 장애로 ‘가용성’ 논의 확산
+• Apple Neural Engine 역공학 학습 주목
+• ByteDance CUDA Agent, 커널 RL 성과
+• DoW 계약 수정안, 감시 금지 조항 논쟁
+
+📋 목차:
+1. 헤드라인: Alibaba가 Qwen 3.5 Small 오픈 모델 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/26-03-02-not-much/
+
+#Qwen #OpenAI #Codex #인프라 #정책
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 인공지능, Codex, AI, 인프라, 테크뉴스, Qwen, AI뉴스, 머신러닝, OpenAI, 정책
+
+Date: 2026-03-02
+==================================================
