@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [03/03] OpenAI가 GPT‑5.3 Instant를 전면 배포 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI가 GPT‑5.3 Instant를 전면 배포
+• Google이 Gemini 3.1 Flash‑Lite 공개
+• Alibaba Qwen 리더십 이탈로 OSS 불안
+• Together가 5M 컨텍스트 학습 메모리 87% 절감
+• Cursor가 MCP Apps로 대화형 UI를 채팅에 통합
+
+📋 목차:
+1. 헤드라인: OpenAI가 GPT‑5.3 Instant를 전면 배포
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://news.smol.ai/issues/26-03-03-not-much/
+
+#OpenAI #Codex #Gemini #Qwen #MCP
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Gemini, AI뉴스, Qwen, 테크뉴스, 인공지능, MCP, Codex, AI, OpenAI, 머신러닝
+
+Date: 2026-03-03
+==================================================
