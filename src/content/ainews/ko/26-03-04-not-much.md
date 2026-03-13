@@ -7,7 +7,7 @@ summary:
   - "SSD 추론, vLLM/SGLang 대비 최대 2배"
   - "VS Code, 에이전트 기능 강화·주간 출시"
 date: 2026-03-04
-originalUrl: "https://news.smol.ai/issues/26-03-04-not-much/"
+originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-03-04-not-much.md"
 hasHeadline: false
 headline: "OpenAI, Windows용 Codex 앱과 오픈소스 샌드박스 공개"
 tags:
