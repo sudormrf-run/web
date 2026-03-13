@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [03/12] Google, Gemini 기반 'Ask Maps' 포함 Maps 대규모 업데이트 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Google Maps가 Gemini로 10년 만에 대개편
+• Claude가 채팅에서 인터랙티브 차트 생성
+• CursorBench로 코딩 에이전트 평가가 고도화
+• Gemini Embedding 2로 멀티모달 검색 경쟁 격화
+• Nemotron 3 Super, 오픈웨이트 120B 모델 공개
+
+📋 목차:
+1. 헤드라인: Google, Gemini 기반 'Ask Maps' 포함 Maps 대규모 업데이트
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-03-12-not-much.md
+
+#Google #OpenAI #Claude #MCP #NVIDIA
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 테크뉴스, AI, NVIDIA, AI뉴스, Claude, MCP, 머신러닝, Google, 인공지능, OpenAI
+
+Date: 2026-03-12
+==================================================
