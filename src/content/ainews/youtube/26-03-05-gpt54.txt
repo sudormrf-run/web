@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [03/05] OpenAI, GPT-5.4 Thinking·Pro를 ChatGPT·API·Codex에 출시 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI가 GPT-5.4 Thinking·Pro 출시
+• FlashAttention-4, Blackwell에서 가속
+• AI2, OLMo Hybrid 7B 오픈 공개
+• Databricks, RL 기반 에이전트 KARL 발표
+• 장문 컨텍스트, ‘context rot’ 경고 확산
+
+📋 목차:
+1. 헤드라인: OpenAI, GPT-5.4 Thinking·Pro를 ChatGPT·API·Codex에 출시
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-03-05-gpt54.md
+
+#OpenAI #GPT-5.4 #FlashAttention-4 #OLMo #Cursor
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI, 인공지능, GPT-5.4, 머신러닝, AI뉴스, OLMo, FlashAttention-4, Cursor, OpenAI, 테크뉴스
+
+Date: 2026-03-05
+==================================================
