@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [03/04] OpenAI, Windows용 Codex 앱과 오픈소스 샌드박스 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI, Windows용 Codex 앱 공개
+• Alibaba Qwen, 조직 개편·컴퓨트 논란
+• Gemini 3.1 Flash-Lite, 속도·비용 강조
+• SSD 추론, vLLM/SGLang 대비 최대 2배
+• VS Code, 에이전트 기능 강화·주간 출시
+
+📋 목차:
+1. 헤드라인: OpenAI, Windows용 Codex 앱과 오픈소스 샌드박스 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-03-04-not-much.md
+
+#OpenAI #Anthropic #Google #Qwen #vLLM
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 인공지능, 머신러닝, Google, OpenAI, vLLM, 테크뉴스, Anthropic, AI뉴스, Qwen, AI
+
+Date: 2026-03-04
+==================================================
