@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [03/09] LLM이 더 작은 LLM을 완전 자율로 학습시키기 시작 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• LLM이 더 작은 LLM을 자율 학습하기 시작
+• Claude Code가 멀티에이전트 PR 리뷰를 공개했다
+• OpenAI가 Promptfoo 인수로 보안 eval을 강화했다
+• vLLM이 Jetson에서 로컬 어시스턴트를 시연했다
+• Figure Helix 02가 거실 정리 자율 데모를 공개했다
+
+📋 목차:
+1. 헤드라인: LLM이 더 작은 LLM을 완전 자율로 학습시키기 시작
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-03-09-autoresearch.md
+
+#OpenAI #Claude #에이전트 #vLLM #로보틱스
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 에이전트, 테크뉴스, 인공지능, vLLM, 머신러닝, OpenAI, 로보틱스, AI, Claude, AI뉴스
+
+Date: 2026-03-09
+==================================================
