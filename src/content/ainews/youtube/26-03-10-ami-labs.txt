@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [12/24] LeCun, AMI Labs 출범…세계 모델 위해 $1.03B 시드 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• AMI Labs, $1.03B 시드로 출범
+• LeCun, JEPA로 세계 모델 전략 강조
+• 에이전트=모델+하네스(harness) 확산
+• Gemini Embedding 2, 멀티모달 임베딩 공개
+• Hugging Face, $8/TB 스토리지 버킷 출시
+
+📋 목차:
+1. 헤드라인: LeCun, AMI Labs 출범…세계 모델 위해 $1.03B 시드
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-03-10-ami-labs.md
+
+#AMI Labs #World Models #JEPA
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: JEPA, AMI Labs, World Models, AI, 테크뉴스, 인공지능, AI뉴스, 머신러닝
+
+Date: 2025-12-24
+==================================================
