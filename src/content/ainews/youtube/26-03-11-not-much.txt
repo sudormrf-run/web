@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [03/11] NVIDIA가 Nemotron 3 Super를 공개했다 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• NVIDIA가 Nemotron 3 Super를 공개했다
+• Perplexity가 Personal Computer를 출시했다
+• Anthropic이 The Anthropic Institute를 출범했다
+• Yann LeCun의 AMI Labs가 $1.03B를 유치했다
+• Fish Audio가 S2 TTS 모델을 공개했다
+
+📋 목차:
+1. 헤드라인: NVIDIA가 Nemotron 3 Super를 공개했다
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-03-11-not-much.md
+
+#NVIDIA #Nemotron #Perplexity #Anthropic #Agents
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: NVIDIA, AI, Agents, 인공지능, AI뉴스, 머신러닝, Perplexity, Anthropic, 테크뉴스, Nemotron
+
+Date: 2026-03-11
+==================================================
