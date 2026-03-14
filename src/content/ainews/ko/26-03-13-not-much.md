@@ -7,7 +7,7 @@ summary:
   - "OmniCoder-9B, 262K 컨텍스트 오픈 웨이트 공개"
   - "OpenFold3 preview 2, 학습셋·설정까지 공개"
 date: 2026-03-13
-originalUrl: "https://news.smol.ai/issues/26-03-13-a-quiet-day/"
+originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-03-13-not-much.md"
 hasHeadline: false
 headline: "Anthropic, Opus 4.6 1M 컨텍스트 기본 제공"
 tags:
@@ -18,8 +18,6 @@ tags:
   - Qwen
 isFeatured: false
 ---
-
-```
 
 ## 헤드라인: Anthropic, Opus 4.6 1M 컨텍스트 기본 제공
 
