@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [03/06] OpenAI GPT‑5.4, AA 지수 공동 1위 복귀 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI GPT‑5.4, AA 지수 공동 1위 복귀
+• Codex Security와 OSS 지원 프로그램 공개
+• Claude Opus 4.6, Firefox 고위험 취약점 다수 발견
+• vLLM v0.17과 Triton attention 백엔드 출시
+• KernelAgent·AMD 대회로 커널 최적화 경쟁 가속
+
+📋 목차:
+1. 헤드라인: OpenAI GPT‑5.4, AA 지수 공동 1위 복귀
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-03-06-not-much.md
+
+#OpenAI #GPT-5.4 #보안 #Anthropic #vLLM
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Anthropic, GPT-5.4, vLLM, 머신러닝, AI, OpenAI, 보안, AI뉴스, 인공지능, 테크뉴스
+
+Date: 2026-03-06
+==================================================
