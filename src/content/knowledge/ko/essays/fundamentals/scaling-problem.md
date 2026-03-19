@@ -15,20 +15,22 @@ createdBy:
 lastEditedBy:
   name: 박종현
   email: jhpark@sudormrf.run
-lastEditedAt: 2026-01-29
+lastEditedAt: 2026-03-19
 ---
 
 <video controls width="100%" style="border-radius: 8px; margin-bottom: 0.5rem;">
   <source src="/assets/essays/scaling-problem/action_data_example.mp4" type="video/mp4" />
 </video>
 
-*LeRobot Dataset 형식의 액션 데이터(Action Data) 예시.* 각 관절의 상태(state) 값들이 기록되어 있으나, 인터넷에는 이러한 데이터가 존재하지 않습니다.
+*LeRobot Dataset 형식의 액션 데이터(Action Data) 예시.* 각 관절의 상태(state) 값들이 기록되어 있지만, 인터넷에는 이런 데이터가 자연스럽게 축적되어 있지 않습니다.
 
 ---
 
 ## 핵심 문제
 
-LLM을 확장해서 VLA가 구현 가능할 것 같고, 그렇다면 아주 거대한 노동 시장에 영향을 줄 것 같습니다. 그러나 VLA가 LLM의 성공 공식을 그대로 따라가기 어려운 근본적인 장벽들이 있습니다:
+앞선 문서들에서 살펴봤듯이, 많은 사람은 Physical AI와 VLA의 미래를 낙관적으로 바라봅니다. 하지만 아직 해결되지 않은 큰 문제가 있습니다. **바로 데이터 문제입니다.**
+
+LLM을 확장해서 VLA가 구현될 수 있을 것 같고, 그렇다면 아주 거대한 노동 시장에 영향을 줄 수도 있습니다. 그러나 VLA가 LLM의 성공 공식을 그대로 따라가기 어려운 근본적인 장벽들이 있습니다:
 
 - **액션 데이터(Action Data)는 인터넷에 존재하지 않습니다.** LLM은 인터넷의 방대한 텍스트 데이터를 활용해 스케일링(scaling)할 수 있었지만, 로봇의 동작 데이터는 인터넷 어디에도 기록되어 있지 않아 바로 스케일링하는 것이 불가능합니다.
 - **평가(Evaluation)는 실물 로봇을 구동해야 합니다.** 하드웨어 고장의 위험이나 환경 파괴(예를 들어 접시를 깨뜨리는 것) 위험이 너무 커서, LLM처럼 자동화된 벤치마크를 구축하기 어렵습니다.
@@ -68,6 +70,8 @@ LLM은 인터넷에 축적된 방대한 텍스트 데이터를 학습에 활용�
 
 *1957년 텔레오퍼레이션 시스템.* 원격 조종 로봇의 역사는 생각보다 깁니다.
 
+원격 조종 자체는 오래된 개념입니다. 다만 Physical AI 시대의 텔레오퍼레이션은 단순히 "원격으로 움직인다"는 의미를 넘어, 로봇의 행동 궤적을 학습 가능한 액션 데이터로 수집한다는 점에서 의미가 다릅니다.
+
 #### ALOHA
 
 <video controls width="100%" style="border-radius: 8px; margin-bottom: 0.5rem;">
@@ -86,13 +90,13 @@ LLM은 인터넷에 축적된 방대한 텍스트 데이터를 학습에 활용�
 
 *Tesla 텔레오퍼레이션 데이터 수집 팀*
 
-Tesla는 휴머노이드 로봇 Optimus의 텔레오퍼레이터에게 [시간당 48달러를 지급](https://interestingengineering.com/culture/teslapaying-to-train-optimus-robot)하며 액션 데이터를 수집하고 있습니다. 지원 조건으로는 5'7″ ~ 5'11″ (약 170~180cm) 신장, 하루 7시간 이상 걷기와 최대 30파운드(약 13.6kg) 하중 운반이 가능한 체력이 요구됩니다. 이는 텔레오퍼레이터의 동작이 실제 로봇에 그대로 반영되기 때문입니다.
+Tesla는 휴머노이드 로봇 Optimus의 텔레오퍼레이터를 [시급 48달러 수준으로 모집한 바 있습니다](https://interestingengineering.com/culture/teslapaying-to-train-optimus-robot). 채용 공고에는 5'7″ ~ 5'11″ (약 170~180cm) 신장, 하루 7시간 이상 걷기, 최대 30파운드(약 13.6kg) 하중 운반 가능 같은 조건이 명시됐습니다. 텔레오퍼레이터의 동작이 실제 로봇 데이터에 직접 반영되기 때문에, 생각보다 훨씬 고된 노동이 요구됩니다.
 
 <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/guP1HM2iTW0?start=7725" title="Tesla Optimus Teleoperation Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 *VR 텔레오퍼레이션 시연*
 
-실제로 VR 기기를 착용하고 텔레오퍼레이션을 수행해보면, 장시간 지속하는 것이 매우 어렵습니다. VR 헤드셋의 무게와 시야 제한, 컨트롤러를 쥔 상태에서의 반복 동작은 몇 시간만 지나도 심각한 피로를 유발합니다. 이것이 텔레오퍼레이션 기반 데이터 수집의 근본적인 병목 중 하나입니다.
+실제로 VR 기기를 착용하고 텔레오퍼레이션을 수행해보면, 장시간 지속하는 것이 매우 어렵습니다. VR 헤드셋의 무게와 시야 제한, 컨트롤러를 쥔 상태에서의 반복 동작은 몇 시간만 지나도 심각한 피로와 멀미를 유발합니다. 이것이 텔레오퍼레이션 기반 데이터 수집의 근본적인 병목 중 하나입니다.
 
 ---
 
@@ -106,7 +110,7 @@ Tesla는 휴머노이드 로봇 Optimus의 텔레오퍼레이터에게 [시간�
 
 [UMI (Universal Manipulation Interface)](https://umi-gripper.github.io/)는 휴대용 그리퍼를 사용하여 로봇 없이도 조작 데이터를 수집할 수 있는 시스템입니다. 텔레오퍼레이션 장비 없이 사람이 직접 물체를 조작하는 동작을 기록하고, 이를 다양한 로봇에 전이(transfer)할 수 있습니다.
 
-이 접근법의 장점은 로봇 하드웨어 없이도 데이터를 수집할 수 있어, 데이터 수집의 확장성이 크게 향상된다는 점입니다.
+이 접근법의 장점은 로봇 하드웨어 없이도 데이터를 수집할 수 있어 확장성이 크게 높아진다는 점입니다. 실제로는 텔레오퍼레이션보다 더 짧은 시간 안에 더 많은 시도를 기록할 수 있다는 점에서 매력적입니다.
 
 ---
 
@@ -120,7 +124,7 @@ Tesla는 휴머노이드 로봇 Optimus의 텔레오퍼레이터에게 [시간�
 
 *NVIDIA Isaac GR00T Synthetic Manipulation*
 
-[NVIDIA Isaac GR00T Synthetic Manipulation](https://build.nvidia.com/nvidia/isaac-gr00t-synthetic-manipulation)은 시뮬레이션 환경에서 합성 데이터(synthetic data)를 생성하여 로봇 조작 학습에 활용하는 Blueprint입니다. 실제 로봇 데이터 수집 없이도 다양한 시나리오의 학습 데이터를 대량 생산할 수 있습니다.
+[NVIDIA Isaac GR00T Synthetic Manipulation](https://build.nvidia.com/nvidia/isaac-gr00t-synthetic-manipulation)은 시뮬레이션 환경에서 합성 데이터(synthetic data)를 생성해 로봇 조작 학습에 활용하는 Blueprint입니다. 실제 로봇 데이터 수집 없이도 다양한 시나리오의 학습 데이터를 대량 생산할 수 있습니다.
 
 시뮬레이션 기반 접근법은 데이터 수집 비용을 크게 낮출 수 있지만, 시뮬레이션과 현실 사이의 격차(sim-to-real gap)를 극복하는 것이 핵심 과제입니다.
 
@@ -128,13 +132,15 @@ Tesla는 휴머노이드 로봇 Optimus의 텔레오퍼레이터에게 [시간�
 
 ### HuggingFace 커뮤니티
 
-HuggingFace는 오픈소스 생태계를 통해 커뮤니티 기반 데이터 수집을 추진하고 있습니다. 성공 공식은 다음과 같습니다:
+HuggingFace는 오픈소스 생태계를 통해 커뮤니티 기반 데이터 수집을 추진하고 있습니다. HuggingFace는 LLM 시대의 GitHub처럼 데이터와 모델이 모이는 허브 역할을 하고 있고, 이 성공 공식을 Physical AI에도 그대로 적용하려 하고 있습니다.
+
+핵심은 다음과 같습니다:
 
 - **Open Source HW, SW**: 하드웨어와 소프트웨어 설계를 공개하여 누구나 참여 가능
 - **Data & Model Hub**: 데이터셋과 모델을 공유할 수 있는 중앙 허브 제공
 - **Tutorial & Hackathon**: 교육 자료와 해커톤으로 커뮤니티 참여 유도
 
-커뮤니티 데이터를 활용해 학습한 VLA인 [smolVLA](https://huggingface.co/lerobot/smolvla_base)는 이 접근법의 성과를 보여줍니다.
+이렇게 허브에 모인 데이터를 활용해 학습한 VLA인 [smolVLA](https://huggingface.co/lerobot/smolvla_base)는 이 접근법의 가능성을 보여주는 사례입니다.
 
 ---
 
