@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [03/19] MiniMax, 효율·‘자기 진화’ 내세운 MiniMax 2.7 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• MiniMax가 효율형 오픈 모델 2.7 공개
+• OpenAI, 16MB LM Parameter Golf 공개
+• Anthropic, 1주 8만명 Claude 인터뷰
+• Unsloth Studio, 로컬 LLM 학습·실행 UI
+• Runway, 100ms 이하 실시간 HD 영상 시연
+
+📋 목차:
+1. 헤드라인: MiniMax, 효율·‘자기 진화’ 내세운 MiniMax 2.7 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-03-18-not-much.md
+
+#MiniMax #OpenAI #Anthropic #MCP #LLM
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: MCP, AI, OpenAI, MiniMax, 테크뉴스, LLM, 인공지능, 머신러닝, Anthropic, AI뉴스
+
+Date: 2026-03-19
+==================================================
