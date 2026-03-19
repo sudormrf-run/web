@@ -2,7 +2,7 @@
 YouTube Template
 ==================================================
 
-Title: [03/16] OpenAI, GPT-5.4 mini/nano 출시 | AI 뉴스
+Title: [03/17] OpenAI, GPT-5.4 mini/nano 출시 | AI 뉴스
 
 Description:
 ------------------------------
@@ -32,5 +32,5 @@ Reviewed by Claude Opus
 
 Tags: 오픈소스, OpenAI, AI뉴스, Codex, 테크뉴스, 인공지능, 아키텍처, AI, 에이전트, 머신러닝
 
-Date: 2026-03-16
+Date: 2026-03-17
 ==================================================

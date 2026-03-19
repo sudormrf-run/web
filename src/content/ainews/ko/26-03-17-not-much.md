@@ -6,7 +6,7 @@ summary:
   - "LangChain, Sandboxes와 Open SWE 공개"
   - "Mamba-3·Attention Residuals 논의 확산"
   - "Unsloth Studio, 로컬 학습·추론 UI 출시"
-date: 2026-03-16
+date: 2026-03-17
 originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-03-17-not-much.md"
 hasHeadline: false
 headline: "OpenAI, GPT-5.4 mini/nano 출시"
