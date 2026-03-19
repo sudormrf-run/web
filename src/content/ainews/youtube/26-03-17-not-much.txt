@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [03/17] OpenAI, GPT-5.4 mini/nano 출시 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI가 GPT-5.4 mini/nano를 출시
+• 미니 모델, 코딩·서브에이전트 최적화
+• LangChain, Sandboxes와 Open SWE 공개
+• Mamba-3·Attention Residuals 논의 확산
+• Unsloth Studio, 로컬 학습·추론 UI 출시
+
+📋 목차:
+1. 헤드라인: OpenAI, GPT-5.4 mini/nano 출시
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-03-17-not-much.md
+
+#OpenAI #Codex #에이전트 #오픈소스 #아키텍처
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 오픈소스, OpenAI, AI뉴스, Codex, 테크뉴스, 인공지능, 아키텍처, AI, 에이전트, 머신러닝
+
+Date: 2026-03-17
+==================================================
