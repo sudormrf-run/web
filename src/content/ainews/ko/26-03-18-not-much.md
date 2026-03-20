@@ -6,7 +6,7 @@ summary:
   - "Anthropic, 1주 8만명 Claude 인터뷰"
   - "Unsloth Studio, 로컬 LLM 학습·실행 UI"
   - "Runway, 100ms 이하 실시간 HD 영상 시연"
-date: 2026-03-19
+date: 2026-03-18
 originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-03-18-not-much.md"
 hasHeadline: true
 headline: "MiniMax, 효율·‘자기 진화’ 내세운 MiniMax 2.7 공개"
