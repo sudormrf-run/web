@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [03/20] Cursor Composer 2, Kimi K2.5 기반 논란 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Cursor Composer 2, Kimi K2.5 기반 논란
+• NVIDIA Nemotron-Cascade 2 공개, 30B MoE
+• OpenAI, Codex for Students로 $100 크레딧
+• Mistral Small 4, 멀티모달·추론 모드 추가
+• FAIR V-JEPA 2.1, 비디오 이해 성능 강화
+
+📋 목차:
+1. 헤드라인: Cursor Composer 2, Kimi K2.5 기반 논란
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-03-20-not-much.md
+
+#Cursor #Kimi #NVIDIA #OpenAI #Codex
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: OpenAI, NVIDIA, Cursor, AI뉴스, Kimi, 머신러닝, AI, 인공지능, LangChain, 테크뉴스, Codex
+
+Date: 2026-03-20
+==================================================
