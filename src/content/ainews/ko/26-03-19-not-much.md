@@ -6,7 +6,7 @@ summary:
   - "LangChain, LangSmith Fleet 엔터프라이즈 출시"
   - "MiniMax M2.7, 에이전트 지향 모델 강조"
   - "Qwen 3.5 Max, late-interaction 검색 성과"
-date: 2026-03-16
+date: 2026-03-19
 originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-03-19-not-much.md"
 hasHeadline: false
 headline: "Cursor가 Composer 2 코딩 모델 공개"
