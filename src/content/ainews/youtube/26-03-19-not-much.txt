@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [03/16] Cursor가 Composer 2 코딩 모델 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Cursor가 Composer 2 코딩 모델 공개
+• OpenAI, Astral 팀을 Codex에 합류
+• LangChain, LangSmith Fleet 엔터프라이즈 출시
+• MiniMax M2.7, 에이전트 지향 모델 강조
+• Qwen 3.5 Max, late-interaction 검색 성과
+
+📋 목차:
+1. 헤드라인: Cursor가 Composer 2 코딩 모델 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-03-19-not-much.md
+
+#OpenAI #Cursor #Anthropic #LangChain #MiniMax
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Anthropic, 인공지능, OpenAI, 머신러닝, Cursor, MiniMax, 테크뉴스, LangChain, AI, AI뉴스
+
+Date: 2026-03-16
+==================================================
