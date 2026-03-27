@@ -6,7 +6,7 @@ summary:
   - "Cohere Transcribe, 첫 오디오 모델 공개"
   - "OpenAI GPT-5.4 mini/nano 성능·비용 경쟁"
   - "Cline Kanban, 멀티 에이전트 워크트리 지원"
-date: 2026-03-24
+date: 2026-03-26
 originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-03-26-not-much.md"
 hasHeadline: false
 headline: "OpenAI GPT-5.4 mini/nano 성능·비용 경쟁"
