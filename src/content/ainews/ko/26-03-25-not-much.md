@@ -6,7 +6,7 @@ summary:
   - "Google, Lyria 3 Pro로 3분 음악 생성 확장"
   - "LiteLLM PyPI 1.82.7/1.82.8 공급망 공격 경고"
   - "Intel Arc Pro B70 32GB, $949 로컬 추론 주목"
-date: 2026-03-24
+date: 2026-03-25
 originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-03-25-not-much.md"
 hasHeadline: false
 headline: "ARC-AGI-3 공개, 인간 100%·모델 <1%"
