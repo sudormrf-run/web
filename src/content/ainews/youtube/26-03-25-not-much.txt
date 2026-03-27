@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [03/25] ARC-AGI-3 공개, 인간 100%·모델 <1% | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• ARC-AGI-3 벤치마크 공개, 인간 100%·모델 <1%
+• LangChain, Fleet 공유 스킬 레지스트리 출시
+• Google, Lyria 3 Pro로 3분 음악 생성 확장
+• LiteLLM PyPI 1.82.7/1.82.8 공급망 공격 경고
+• Intel Arc Pro B70 32GB, $949 로컬 추론 주목
+
+📋 목차:
+1. 헤드라인: ARC-AGI-3 공개, 인간 100%·모델 <1%
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-03-25-not-much.md
+
+#OpenAI #Codex #ARC-AGI-3 #에이전트 #LangChain
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: OpenAI, LangChain, 하드웨어, ARC-AGI-3, AI, Claude Code, 에이전트, 테크뉴스, Codex, 머신러닝, AI뉴스, 인공지능
+
+Date: 2026-03-24
+==================================================
