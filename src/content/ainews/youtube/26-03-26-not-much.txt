@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [03/24] OpenAI GPT-5.4 mini/nano 성능·비용 경쟁 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Google, Gemini 3.1 Flash Live 공개
+• Mistral Voxtral TTS 오픈웨이트 출시
+• Cohere Transcribe, 첫 오디오 모델 공개
+• OpenAI GPT-5.4 mini/nano 성능·비용 경쟁
+• Cline Kanban, 멀티 에이전트 워크트리 지원
+
+📋 목차:
+1. 헤드라인: OpenAI GPT-5.4 mini/nano 성능·비용 경쟁
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-03-26-not-much.md
+
+#OpenAI #GPT-5.4 #Gemini
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: GPT-5.4, AI, 테크뉴스, 인공지능, AI뉴스, OpenAI, Gemini, 머신러닝
+
+Date: 2026-03-24
+==================================================
