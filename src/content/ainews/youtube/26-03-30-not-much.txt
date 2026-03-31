@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [03/30] Anthropic, Claude Code에 컴퓨터 사용 도입 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Anthropic, Claude Code에 컴퓨터 사용 도입
+• OpenAI, Claude Code용 Codex 플러그인 공개
+• Alibaba, Qwen3.5-Omni 멀티모달 모델 출시
+• Nous, Hermes Agent 업데이트로 오픈 에이전트 확산
+• llama.cpp, GitHub 10만 ★ 돌파로 로컬 열기
+
+📋 목차:
+1. 헤드라인: Anthropic, Claude Code에 컴퓨터 사용 도입
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-03-30-not-much.md
+
+#OpenAI #Codex #Anthropic #Claude Code #에이전트
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Claude Code, Anthropic, Codex, 머신러닝, OpenAI, 테크뉴스, 에이전트, AI뉴스, AI, 인공지능
+
+Date: 2026-03-30
+==================================================
