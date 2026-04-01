@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [03/24] Claude Code 소스 유출, 하네스 설계가 드러남 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Claude Code 소스 유출, 하네스 설계가 드러남
+• 가중치 아닌 오케스트레이션 로직 노출
+• Bonsai 1-bit 모델, 초소형 효율 강조
+• OpenAI, $122B 커밋 자본·$852B 가치
+• TRL v1.0, RL 툴링 대폭 확장
+
+📋 목차:
+1. 헤드라인: Claude Code 소스 유출, 하네스 설계가 드러남
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-03-31-claude-code-leak.md
+
+#Anthropic #Claude Code #OpenAI #Codex #보안
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI, Anthropic, AI뉴스, 테크뉴스, 머신러닝, OpenAI, Codex, 보안, 인공지능, Claude Code
+
+Date: 2026-03-24
+==================================================
