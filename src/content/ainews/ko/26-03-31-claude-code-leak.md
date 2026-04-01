@@ -6,7 +6,7 @@ summary:
   - "Bonsai 1-bit 모델, 초소형 효율 강조"
   - "OpenAI, $122B 커밋 자본·$852B 가치"
   - "TRL v1.0, RL 툴링 대폭 확장"
-date: 2026-03-24
+date: 2026-03-31
 originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-03-31-claude-code-leak.md"
 hasHeadline: false
 headline: "Claude Code 소스 유출, 하네스 설계가 드러남"
