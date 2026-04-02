@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [03/24] Claude Code 소스 유출로 DMCA 논란 확산 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Arcee Trinity-Large-Thinking 오픈 웨이트 출시
+• Z.ai, GLM-5V-Turbo 비전 코딩 모델 발표
+• Claude Code 소스 유출로 DMCA 논란 확산
+• OpenAI, Codex 사용량 한도를 전 플랜 리셋
+• PrismML 1-bit Bonsai로 로컬 LLM 효율↑
+
+📋 목차:
+1. 헤드라인: Claude Code 소스 유출로 DMCA 논란 확산
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-04-01-not-much.md
+
+#OpenAI #Codex #Anthropic
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 인공지능, Anthropic, AI뉴스, OpenAI, AI, 테크뉴스, 머신러닝, Codex
+
+Date: 2026-03-24
+==================================================
