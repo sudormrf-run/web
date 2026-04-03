@@ -6,7 +6,7 @@ summary:
   - "Claude Code 소스 유출로 DMCA 논란 확산"
   - "OpenAI, Codex 사용량 한도를 전 플랜 리셋"
   - "PrismML 1-bit Bonsai로 로컬 LLM 효율↑"
-date: 2026-03-24
+date: 2026-04-01
 originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-04-01-not-much.md"
 hasHeadline: false
 headline: "Claude Code 소스 유출로 DMCA 논란 확산"
