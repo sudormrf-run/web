@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [04/02] 구글 딥마인드, Gemma 4 오픈웨이트 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• 구글 딥마인드, Gemma 4 오픈웨이트 공개
+• Gemma 4, 256K 컨텍스트·멀티모달 지원
+• 생태계가 llama.cpp·vLLM 등 즉시 지원
+• Anthropic이 Claude 내부 감정 벡터 연구 공개
+• OpenAI가 CarPlay 음성모드와 Codex 과금 변경
+
+📋 목차:
+1. 헤드라인: 구글 딥마인드, Gemma 4 오픈웨이트 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-04-02-gemma-4.md
+
+#Google #Gemma #OpenAI #Codex #Anthropic
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Google, Gemma, Codex, Anthropic, 머신러닝, 테크뉴스, OpenAI, AI뉴스, 인공지능, AI, Qwen
+
+Date: 2026-04-02
+==================================================
