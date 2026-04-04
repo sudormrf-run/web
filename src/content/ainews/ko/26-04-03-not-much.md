@@ -6,7 +6,7 @@ summary:
   - "Hermes Agent가 오픈 하네스(harness)로 부상"
   - "Codex 확산 vs Claude Code 레이트 리밋 논쟁"
   - "Anthropic, Claude의 171 감정 벡터 연구 공개"
-date: 2026-04-04
+date: 2026-04-03
 originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-04-03-not-much.md"
 hasHeadline: false
 headline: "Google이 Apache 2.0으로 Gemma 4 공개"
