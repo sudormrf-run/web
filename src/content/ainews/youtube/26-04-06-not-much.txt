@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [04/06] Hermes, Manim 영상 생성 스킬 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Hermes가 Manim 영상 생성 스킬 공개
+• Claude Code 제한 강화로 대안 에이전트 확산
+• Gemma 4 수요 급증, 생태계 통합 확대
+• TurboQuant-GPU로 KV 캐시 5.02x 압축
+• 뉴요커, 샘 알트만 의혹 조사 보도 공개
+
+📋 목차:
+1. 헤드라인: Hermes, Manim 영상 생성 스킬 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-04-06-not-much.md
+
+#OpenAI #Codex #Hermes #Claude Code #Gemma 4
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 머신러닝, Codex, AI뉴스, 테크뉴스, Claude Code, Gemma 4, Hermes, OpenAI, AI, 인공지능
+
+Date: 2026-04-06
+==================================================
