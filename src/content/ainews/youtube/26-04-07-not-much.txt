@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [04/06] Gemma 4, 아이폰 17 Pro에서 40 tok/s 온디바이스 구동 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Gemma 4가 로컬·온디바이스 붐을 촉발
+• Hermes Agent, 자기개선 에이전트 루프 확산
+• OpenAI, ‘Industrial Policy’로 정책 신호
+• Anthropic, 2027 TPU·$30B 런레이트 공개
+• RL·라우팅·MoE 등 연구·시스템 업데이트
+
+📋 목차:
+1. 헤드라인: Gemma 4, 아이폰 17 Pro에서 40 tok/s 온디바이스 구동
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-04-07-not-much.md
+
+#Gemma #OpenAI #Anthropic #에이전트 #시스템
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 시스템, OpenAI, AI뉴스, Gemma, Anthropic, 에이전트, AI, 머신러닝, 테크뉴스, 인공지능
+
+Date: 2026-04-06
+==================================================
