@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [04/08] Meta, MSL 첫 모델 Muse Spark 정식 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Meta, MSL 첫 모델 Muse Spark 정식 공개
+• Zhipu AI GLM-5.1, 오픈 웨이트 선두
+• Anthropic, 장기 실행용 Managed Agents 공개
+• Qwen3.6-Plus 지표 개선, 가중치 미공개
+• APEX-Agents-AA, 롱호라이즌 한계 확인
+
+📋 목차:
+1. 헤드라인: Meta, MSL 첫 모델 Muse Spark 정식 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-04-08-not-much.md
+
+#Meta #Muse Spark #Anthropic #GLM-5.1 #Agents
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: GLM-5.1, Muse Spark, AI, Agents, Meta, 테크뉴스, 인공지능, AI뉴스, Anthropic, OpenAI, 머신러닝, Codex
+
+Date: 2026-04-08
+==================================================
