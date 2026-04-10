@@ -6,7 +6,7 @@ summary:
   - "OpenAI, ‘Industrial Policy’로 정책 신호"
   - "Anthropic, 2027 TPU·$30B 런레이트 공개"
   - "RL·라우팅·MoE 등 연구·시스템 업데이트"
-date: 2026-04-06
+date: 2026-04-07
 originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-04-07-not-much.md"
 hasHeadline: false
 headline: "Gemma 4, 아이폰 17 Pro에서 40 tok/s 온디바이스 구동"
