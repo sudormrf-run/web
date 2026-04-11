@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [04/10] GLM-5.1, Code Arena 코딩 3위 등극 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• GLM-5.1, Code Arena 코딩 3위 등극
+• ‘저렴한 실행자+비싼 어드바이저’ 확산
+• Hermes Agent 생태계 확장, 50k★ 달성
+• ClawBench, 실전 웹 과제 성공률 6.5%
+• Gemma 4, llama.cpp 안정화와 템플릿 배포
+
+📋 목차:
+1. 헤드라인: GLM-5.1, Code Arena 코딩 3위 등극
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-04-10-not-much.md
+
+#GLM-5.1 #Anthropic #LangChain #Hermes #llama.cpp
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Anthropic, Hermes, llama.cpp, LangChain, GLM-5.1, 테크뉴스, AI뉴스, 머신러닝, AI, 인공지능
+
+Date: 2026-04-10
+==================================================
