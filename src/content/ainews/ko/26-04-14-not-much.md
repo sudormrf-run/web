@@ -6,7 +6,7 @@ summary:
   - "OpenAI GPT-5.4-Cyber 접근 확대"
   - "Hugging Face, Hub에 Kernels 출시"
   - "OpenRouter Elephant Alpha, 100B 공개"
-date: 2026-04-04
+date: 2026-04-14
 originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-04-14-not-much.md"
 hasHeadline: false
 headline: "Google Chrome 'Skills'로 1클릭 워크플로"
