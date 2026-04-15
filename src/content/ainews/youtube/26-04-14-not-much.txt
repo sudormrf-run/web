@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [04/04] Google Chrome 'Skills'로 1클릭 워크플로 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Chrome에 Skills로 1클릭 실행 추가
+• Gemini Robotics-ER 1.6 API 공개
+• OpenAI GPT-5.4-Cyber 접근 확대
+• Hugging Face, Hub에 Kernels 출시
+• OpenRouter Elephant Alpha, 100B 공개
+
+📋 목차:
+1. 헤드라인: Google Chrome 'Skills'로 1클릭 워크플로
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-04-14-not-much.md
+
+#OpenAI #Codex #Google #Gemini #OpenRouter
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Gemini, 테크뉴스, Codex, OpenAI, 머신러닝, AI뉴스, 인공지능, OpenRouter, Google, AI
+
+Date: 2026-04-04
+==================================================
