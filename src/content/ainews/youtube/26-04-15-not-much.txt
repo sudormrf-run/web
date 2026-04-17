@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [04/15] OpenAI, Agents SDK 하네스 분리와 샌드박스 확장 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI, Agents SDK 하네스 분리와 샌드박스 확장
+• Cloudflare, Project Think와 Agent Lee 공개
+• Google, Mac용 Gemini 앱 출시 및 기능 확장
+• Gemini 3.1 Flash TTS, 제어형 음성 기능 강화
+• GPT-5.4 Pro의 Erdős 문제 #1196 증명 논의 확산
+
+📋 목차:
+1. 헤드라인: OpenAI, Agents SDK 하네스 분리와 샌드박스 확장
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-04-15-not-much.md
+
+#OpenAI #Codex #Cloudflare #Gemini #Agents
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Codex, AI, AI뉴스, 머신러닝, 테크뉴스, Gemini, Cloudflare, 인공지능, OpenAI, Agents
+
+Date: 2026-04-15
+==================================================
