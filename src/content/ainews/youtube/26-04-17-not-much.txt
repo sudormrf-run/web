@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [04/17] Anthropic, Claude Design·Opus 4.7 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Anthropic, Claude Design·Opus 4.7 공개
+• Codex Computer Use, 기업용 UX로 부상
+• 간단한 하네스(harness)가 신뢰성 좌우
+• Qwen3.6, 로컬 추론(inference) 효율 개선
+• Stargate, 2029년 9+GW 전력 수요 전망
+
+📋 목차:
+1. 헤드라인: Anthropic, Claude Design·Opus 4.7 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-04-17-not-much.md
+
+#Anthropic #Claude #OpenAI #Codex #Qwen
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Codex, Anthropic, Qwen, Claude, 머신러닝, 인공지능, AI, OpenAI, 테크뉴스, AI뉴스, 에이전트
+
+Date: 2026-04-17
+==================================================
