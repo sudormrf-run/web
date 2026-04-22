@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [04/21] OpenAI, GPT-Image-2로 ChatGPT Images 2.0 출시 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI, GPT-Image-2로 이미지 기능 강화
+• Hugging Face, `ml-intern` 에이전트 공개
+• Moonshot, Kimi K2.6·FlashKDA 인프라 공개
+• Google, Gemini API에 Deep Research Max 추가
+• LightOn·vLLM, 검색·배포 실무 지원 강화
+
+📋 목차:
+1. 헤드라인: OpenAI, GPT-Image-2로 ChatGPT Images 2.0 출시
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-04-21-image-2.md
+
+#OpenAI #GPT-Image-2 #Hugging Face #Kimi #Gemini
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI, GPT-Image-2, Hugging Face, 머신러닝, Kimi, AI뉴스, OpenAI, Gemini, vLLM, 인공지능, 테크뉴스
+
+Date: 2026-04-21
+==================================================
