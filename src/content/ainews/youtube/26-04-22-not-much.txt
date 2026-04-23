@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [04/22] Qwen3.6-27B, 로컬 코딩 모델로 급부상 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Qwen3.6-27B, 로컬 코딩 성능 급상승
+• OpenAI Privacy Filter, PII 마스킹 공개
+• Google, TPU 8t/8i와 에이전트 플랫폼 발표
+• 팀용 워크스페이스 에이전트, Slack 연동 확산
+• Anthropic, Claude Code 티어 변경 테스트 논란
+
+📋 목차:
+1. 헤드라인: Qwen3.6-27B, 로컬 코딩 모델로 급부상
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-04-22-not-much.md
+
+#OpenAI #Codex #Qwen #Google #Anthropic
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 인공지능, Qwen, Codex, Google, 머신러닝, AI, OpenAI, 테크뉴스, Anthropic, AI뉴스
+
+Date: 2026-04-22
+==================================================
