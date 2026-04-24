@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [04/23] OpenAI, GPT-5.5 출시·API는 지연 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI, GPT-5.5 출시·API는 지연
+• Codex 기능 번들: 브라우저·Sheets·Slides 지원
+• Artificial Analysis, 환각 86% 등 위험도 지적
+• Qwen3.6-27B, 로컬 코딩·추론 성능 호평
+• Anthropic, Claude Code 회귀 원인·대응 공개
+
+📋 목차:
+1. 헤드라인: OpenAI, GPT-5.5 출시·API는 지연
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-04-23-gpt-55.md
+
+#OpenAI #GPT-5.5 #Codex #Qwen #Anthropic
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.2)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI뉴스, 인공지능, AI, 테크뉴스, GPT-5.5, 머신러닝, OpenAI, Anthropic, Codex, Qwen
+
+Date: 2026-04-23
+==================================================
