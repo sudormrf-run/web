@@ -2,6 +2,8 @@
 
 sudoremove.com 디자인 시스템
 
+> Last checked against code: 2026-04-27. 실제 token source는 `src/styles/global.css`입니다.
+
 ## Design Principles
 
 1. **다크 테마 우선**: 기술 커뮤니티 특성에 맞는 다크 모드 기본
@@ -16,25 +18,28 @@ sudoremove.com 디자인 시스템
 ```css
 :root {
   /* Background */
-  --bg-primary: #0a0a0f;      /* 메인 배경 */
-  --bg-secondary: #12121a;    /* 카드, 사이드바 */
-  --bg-tertiary: #1a1a24;     /* 호버, 강조 영역 */
+  --color-bg-primary: #0d030f;      /* 메인 배경 */
+  --color-bg-secondary: #110811;    /* 카드, 사이드바 */
+  --color-bg-tertiary: #1a0f1c;     /* 호버, 강조 영역 */
+  --color-surface: #1e1219;         /* 카드/코드 표면 */
 
   /* Text */
-  --text-primary: #f5f5f7;    /* 주요 텍스트 */
-  --text-secondary: #a1a1aa;  /* 보조 텍스트 */
-  --text-muted: #71717a;      /* 비활성 텍스트 */
+  --color-text-primary: #fafafa;    /* 주요 텍스트 */
+  --color-text-secondary: #e5e5e5;  /* 보조 텍스트 */
+  --color-text-muted: #a1a1aa;      /* 비활성 텍스트 */
 
   /* Accent */
-  --accent-primary: #3b82f6;  /* 파랑 - 링크, 버튼 */
-  --accent-secondary: #8b5cf6; /* 보라 - 강조 */
-  --accent-success: #22c55e;  /* 초록 - 성공 */
-  --accent-warning: #f59e0b;  /* 주황 - 경고 */
-  --accent-error: #ef4444;    /* 빨강 - 에러 */
+  --color-accent: #fd7318;       /* 주황 - 링크, 버튼 */
+  --color-accent-hover: #ff8a3d; /* 주황 hover */
+  --color-success: #43d6a8;     /* 초록 - 성공 */
+  --color-info: #5fadfe;        /* 파랑 - 정보 */
+  --color-warning: #fde471;     /* 노랑 - 경고 */
+  --color-error: #c21829;       /* 빨강 - 에러 */
 
   /* Border */
-  --border-default: #27272a;
-  --border-hover: #3f3f46;
+  --color-border: rgba(253, 115, 24, 0.2);
+  --color-border-light: rgba(253, 115, 24, 0.1);
+  --color-border-hover: rgba(253, 115, 24, 0.4);
 }
 ```
 
@@ -62,7 +67,7 @@ sudoremove.com 디자인 시스템
 ```css
 :root {
   /* 본문 */
-  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont,
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont,
                'Segoe UI', Roboto, sans-serif;
 
   /* 코드 */
@@ -159,14 +164,14 @@ body {
 }
 
 .btn-primary {
-  background: var(--accent-primary);
+  background: var(--color-accent);
   color: white;
 }
 
 .btn-secondary {
-  background: var(--bg-tertiary);
-  color: var(--text-primary);
-  border: 1px solid var(--border-default);
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
 }
 ```
 
@@ -174,15 +179,15 @@ body {
 
 ```css
 .card {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-default);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
   border-radius: 0.75rem;
   padding: 1.5rem;
   transition: border-color 0.2s;
 }
 
 .card:hover {
-  border-color: var(--border-hover);
+  border-color: var(--color-border-hover);
 }
 ```
 
@@ -191,17 +196,17 @@ body {
 ```css
 .nav-item {
   padding: 0.5rem 1rem;
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   border-radius: 0.375rem;
 }
 
 .nav-item:hover {
-  background: var(--bg-tertiary);
-  color: var(--text-primary);
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
 }
 
 .nav-item.active {
-  background: var(--accent-primary);
+  background: var(--color-accent);
   color: white;
 }
 ```
@@ -217,14 +222,14 @@ body {
 .table th,
 .table td {
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--color-border);
   text-align: left;
 }
 
 .table th {
   font-weight: 600;
-  color: var(--text-secondary);
-  background: var(--bg-tertiary);
+  color: var(--color-text-secondary);
+  background: var(--color-bg-tertiary);
 }
 ```
 
@@ -232,8 +237,8 @@ body {
 
 ```css
 .code-block {
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-default);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
   border-radius: 0.5rem;
   padding: 1rem;
   overflow-x: auto;

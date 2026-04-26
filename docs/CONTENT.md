@@ -1,55 +1,83 @@
 # Content Guide
 
-콘텐츠 작성 및 관리 가이드
+콘텐츠 작성 및 관리 가이드입니다. 이 문서는 현재 `src/content/config.ts`와 실제 라우트 구현을 기준으로 합니다.
+
+> Last checked against code: 2026-04-27
 
 ## Content Structure
 
 ### Knowledge Base
 
-Physical AI 관련 콘텐츠 저장소
+Physical AI 관련 장기 지식 저장소입니다.
 
-```
+```text
 src/content/knowledge/
 ├── ko/                    # 한국어
+│   ├── physical-ai/       # Physical AI overview
 │   ├── models/            # VLA/로봇 모델
-│   │   ├── pi0.md
-│   │   ├── openvla.md
-│   │   └── ...
 │   ├── companies/         # 회사 프로필
-│   │   ├── physical-intelligence.md
-│   │   └── ...
 │   ├── people/            # 인물 프로필
-│   │   ├── chelsea-finn.md
-│   │   └── ...
-│   ├── hardware/          # 하드웨어 (로봇, 센서)
+│   ├── hardware/          # 하드웨어
 │   │   ├── humanoids/
+│   │   ├── quadrupeds/
 │   │   ├── arms/
-│   │   └── ...
-│   └── essays/            # 에세이, 분석
-│       └── ...
-└── en/                    # 영어 (동일 구조)
+│   │   ├── hands/
+│   │   ├── mobile/
+│   │   └── misc/
+│   ├── essays/            # 에세이/분석
+│   │   ├── archive/
+│   │   ├── fundamentals/
+│   │   └── insights/
+│   └── glossary/          # 용어집
+└── en/                    # 영어 (가능한 한 동일 slug 구조 유지)
     └── ...
-```
-
-### Projects
-
-```
-src/content/projects/
-├── ko/
-│   └── lerobot-tutorial.md
-└── en/
-    └── lerobot-tutorial.md
 ```
 
 ### Events
 
-```
+현재 schema와 route는 `events` collection을 사용합니다. 실제 콘텐츠는 현재 `ko/` 아래에 있습니다.
+
+```text
 src/content/events/
-├── ko/
-│   └── 2024-01-meetup.md
-└── en/
-    └── 2024-01-meetup.md
+└── ko/
+    └── YYYY-MM-event-slug.md
 ```
+
+영어 route(`/en/events`)도 현재 같은 `ko/` events collection을 사용합니다.
+
+### Archive
+
+영상 노트 archive입니다.
+
+```text
+src/content/archive/
+└── ko/
+    └── archive-slug.md
+```
+
+영어 route(`/en/archive`)도 현재 같은 `ko/` archive collection을 사용합니다.
+
+### AI News
+
+AI news 한국어 요약/번역 콘텐츠와 원문 텍스트 자료입니다.
+
+```text
+src/content/ainews/
+├── ko/
+│   └── issue-slug.md
+└── youtube/
+    └── issue-slug.txt
+```
+
+현재 `/news` route는 한국어만 구현되어 있습니다.
+
+### Auxiliary Draft/Book Materials
+
+```text
+src/content/knowledge_to_book/
+```
+
+현재 `src/content/config.ts`에 collection으로 정의되어 있지 않아 build 시 Astro auto-generation deprecation warning이 발생합니다. 실제 사이트 콘텐츠로 다루려면 collection 정의를 추가하거나 `src/content` 바깥으로 이동하는 정책을 정해야 합니다.
 
 ## Frontmatter Schema
 
@@ -57,45 +85,36 @@ src/content/events/
 
 ```yaml
 ---
-# 필수
 title: "π0 (pi-zero)"
 description: "Physical Intelligence의 첫 번째 Generalist Policy"
-category: "models"  # models | companies | people | hardware | essays
+category: "models"  # physical-ai | models | companies | hardware | essays | people | glossary
 
 # 선택
+subcategory: "fundamentals"
 tags: [pi0, physical-intelligence, vla, foundation-model]
-publishedAt: 2024-10-31
-updatedAt: 2025-01-09
-
-# 관련 문서 (slug)
+order: 10
 related:
   - models/openvla
   - companies/physical-intelligence
   - people/karol-hausman
 
-# 외부 링크
-links:
-  paper: "https://arxiv.org/abs/..."
-  github: "https://github.com/..."
-  website: "https://..."
+author: "작성자"
+date: 2025-01-09
+createdBy:
+  name: "작성자"
+  email: "author@example.com"
+lastEditedBy:
+  name: "편집자"
+lastEditedAt: 2025-01-10
+
+isDraft: false
+isFeatured: false
+icon: "robot"
+thumbnail: "/images/example.png"
 ---
 ```
 
-### Projects
-
-```yaml
----
-title: "LeRobot 튜토리얼"
-description: "HuggingFace LeRobot으로 로봇 제어 시작하기"
-status: "active"  # active | completed | planned
-
-# 선택
-github: "https://github.com/..."
-demo: "https://..."
-thumbnail: "/images/projects/lerobot.png"
-tags: [lerobot, tutorial, robotics]
----
-```
+현재 schema에는 `publishedAt`, `updatedAt`, `links` 필드가 없습니다. 날짜/수정 이력은 `date`, `lastEditedAt`, `createdBy`, `lastEditedBy`를 사용합니다.
 
 ### Events
 
@@ -103,17 +122,83 @@ tags: [lerobot, tutorial, robotics]
 ---
 title: "Physical AI 밋업 #1"
 description: "첫 번째 오프라인 모임"
-date: 2024-02-15
-endDate: 2024-02-15  # 다일간 행사시
-location: "서울 강남"
-status: "upcoming"  # upcoming | ongoing | past
+date: 2025-08-01
+location: "서울"
 
 # 선택
+endDate: 2025-08-02
+time: "14:00"
+status: "upcoming"  # upcoming | ongoing | past | cancelled
+thumbnail: "/images/events/example.png"
+poster: "/events/2025/example-poster.png"
 registrationUrl: "https://..."
-maxAttendees: 50
+youtubeUrl: "https://..."
+blogUrl: "https://..."
 tags: [meetup, offline]
+hosts: [sudoremove]
+sponsors: [Sponsor]
+speakers:
+  - name: "Speaker Name"
+    title: "Researcher"
+    affiliation: "Organization"
+    topic: "Talk title"
+gallery: ["YOUTUBE_VIDEO_ID"]
+maxAttendees: 50
+isFeatured: false
 ---
 ```
+
+`status`는 schema상 optional이지만 홈 이벤트 섹션은 `upcoming`/`ongoing` 상태를 기준으로 표시하므로 명시하는 것을 권장합니다.
+
+### Archive
+
+```yaml
+---
+title: "영상 노트 제목"
+description: |
+  첫 번째 요약 줄
+  두 번째 요약 줄
+  세 번째 요약 줄
+date: 2025-01-01
+videoId: "UPLOADED_YOUTUBE_VIDEO_ID"
+
+# 선택
+originalVideoId: "ORIGINAL_VIDEO_ID"
+duration: "01:23:45"
+thumbnail: "/images/archive/example.jpg"
+chapters:
+  - title: "Introduction"
+    startTime: "00:00"
+    endTime: "05:00"
+tags: [robotics, ai]
+source: "Conference / Channel"
+isFeatured: false
+---
+```
+
+Archive 상세 페이지는 `[MM:SS]` 또는 `[HH:MM:SS]` 형식의 본문 timestamp를 클릭 가능한 seek link로 변환합니다.
+
+### AI News
+
+```yaml
+---
+title: "AI News 제목"
+summary:
+  - "요약 1"
+  - "요약 2"
+  - "요약 3"
+  - "요약 4"
+  - "요약 5"
+date: 2026-04-24
+originalUrl: "https://..."
+hasHeadline: true
+headline: "헤드라인"
+tags: [ai-news]
+isFeatured: false
+---
+```
+
+`summary`는 정확히 5개 항목이어야 합니다.
 
 ## Writing Guidelines
 
@@ -121,9 +206,10 @@ tags: [meetup, offline]
 
 Knowledge Base 문서(models, companies, hardware 등)에 필자의 개인적 견해를 추가할 때 사용합니다.
 
-**위치:** 문서 **맨 위** (frontmatter 바로 다음, `## 핵심 의의`나 다른 모든 섹션보다 **반드시 앞**에 위치)
+**위치:** 문서 맨 위(frontmatter 바로 다음, `## 핵심 의의`나 다른 모든 섹션보다 앞)
 
 **형식:**
+
 ```markdown
 <div class="author-note">
 
@@ -136,56 +222,18 @@ Knowledge Base 문서(models, companies, hardware 등)에 필자의 개인적 �
 </div>
 ```
 
-**작성 원칙:**
-- **간결함**: 2-4개의 bullet point로 제한
-- **구어체 허용**: 딱딱한 논문체보다 자연스러운 어투
-- **개인 경험 환영**: "~해봤는데", "~에서 봤는데" 등 실제 경험 기반 의견
-- **핵심만 전달**: 상세한 설명은 본문에, 여기선 인사이트만
+영어 버전은 `### Author's Note`를 사용합니다.
 
-**예시 (ACT 문서):**
-```markdown
-<div class="author-note">
+### 제목/설명
 
-### 필자의 의견
-
-- 수 많은 데모들의 구세주. 누구나 쉽게 teleop data 수 십개 수집하고, ACT 학습 시켜서 데모를 가능하게 해줍니다.
-- 2025년 방문한 수 많은 전시/학회 데모 부스에 가보면 ACT 로 만들었다고 하는 경우가 대부분입니다.
-
-</div>
-```
-
-**영어 버전:**
-```markdown
-<div class="author-note">
-
-### Author's Note
-
-- Key insight 1
-- Key insight 2
-
-</div>
-```
-
----
-
-### 제목 (Title)
-
-- 명확하고 검색 가능하게
-- 영문 고유명사는 원문 유지 (π0, OpenVLA 등)
-- 한글 제목에 영문 병기 가능: `"π0 (파이-제로)"`
-
-### 설명 (Description)
-
-- 1-2문장으로 핵심 요약
-- 검색 결과, 카드에 표시됨
-- 150자 이내 권장
+- 제목은 명확하고 검색 가능하게 작성합니다.
+- 영문 고유명사는 원문 유지가 가능합니다.
+- `description`은 검색 결과/카드/그래프 패널에 표시되므로 1-2문장, 150자 이내를 권장합니다.
 
 ### 본문 구조
 
 ```markdown
-# 제목 (H1은 frontmatter title과 중복되므로 보통 생략)
-
-> 한 줄 요약 (blockquote)
+> 한 줄 요약 (선택)
 
 ---
 
@@ -194,16 +242,11 @@ Knowledge Base 문서(models, companies, hardware 등)에 필자의 개인적 �
 
 ---
 
-## 주요 섹션 1
+## 주요 섹션
 내용
 
 ### 하위 섹션
 세부 내용
-
----
-
-## 주요 섹션 2
-...
 
 ---
 
@@ -213,29 +256,8 @@ Knowledge Base 문서(models, companies, hardware 등)에 필자의 개인적 �
 ---
 
 ## See Also
-- [관련 문서 1](../path/to/doc.md)
-- [관련 문서 2](../path/to/doc.md)
-```
-
-### 테이블 사용
-
-복잡한 정보는 테이블로:
-
-```markdown
-| 항목 | 값 | 설명 |
-|------|-----|------|
-| 파라미터 | 3.3B | VLM + Action Expert |
-| 아키텍처 | PaliGemma + Flow | 2024년 10월 발표 |
-```
-
-### 코드 블록
-
-```markdown
-​```python
-# 언어 지정 필수
-def example():
-    pass
-​```
+- [관련 문서 1](../path/to/doc)
+- [관련 문서 2](../path/to/doc)
 ```
 
 ### 이미지
@@ -245,136 +267,122 @@ def example():
 <p align="center"><em>이미지 캡션</em></p>
 ```
 
-이미지 파일 위치:
-- 문서별 이미지: `src/content/knowledge/ko/assets/`
-- 공용 이미지: `public/images/`
+이미지 위치는 현재 문서/컬렉션 구조에 맞춰 선택합니다.
+
+- Knowledge 문서용 asset: `src/content/knowledge/{ko|en}/assets/`
+- 공개 정적 이미지: `public/images/`, `public/assets/`
 
 ## i18n (다국어)
 
 ### 파일 구조
 
-같은 slug로 언어별 파일 생성:
+Knowledge Base는 가능한 한 같은 slug로 언어별 파일을 유지합니다.
 
-```
+```text
 knowledge/
-├── ko/models/pi0.md    # 한국어 버전
-└── en/models/pi0.md    # 영어 버전
+├── ko/models/pi0.md
+└── en/models/pi0.md
 ```
-
-### 번역 우선순위
-
-1. **핵심 문서**: 양쪽 언어 모두 작성
-2. **상세 문서**: 한국어 우선, 영어는 점진적 추가
-3. **용어**: 고유명사는 원문 유지, 일반 용어만 번역
 
 ### UI 문자열
 
-`src/i18n/` 폴더의 JSON 파일:
+`src/i18n/ko.json`, `src/i18n/en.json`은 중첩 JSON 구조입니다.
 
 ```json
-// ko.json
 {
-  "nav.home": "홈",
-  "nav.knowledge": "Knowledge Base",
-  "nav.projects": "프로젝트",
-  "nav.media": "미디어",
-  "nav.events": "행사",
-  "nav.about": "소개",
-  "common.readMore": "더 보기",
-  "common.lastUpdated": "최종 수정"
+  "nav": {
+    "home": "홈",
+    "knowledge": "지식 창고",
+    "projects": "프로젝트"
+  }
 }
 ```
 
-```json
-// en.json
-{
-  "nav.home": "Home",
-  "nav.knowledge": "Knowledge Base",
-  "nav.projects": "Projects",
-  "nav.media": "Media",
-  "nav.events": "Events",
-  "nav.about": "About",
-  "common.readMore": "Read more",
-  "common.lastUpdated": "Last updated"
-}
+사용 예:
+
+```ts
+const { t } = useTranslations(locale);
+t('nav.projects');
 ```
+
+존재하지 않는 key는 build/runtime 중 `Translation key not found: ...` warning을 출력하고 key 문자열 자체를 반환합니다.
 
 ## Adding New Content
 
 ### 1. Knowledge Base 문서 추가
 
 ```bash
-# 한국어 버전 생성
+# 한국어
 touch src/content/knowledge/ko/models/new-model.md
 
-# 영어 버전 (선택)
+# 영어
 touch src/content/knowledge/en/models/new-model.md
 ```
 
-### 2. 프로젝트 추가
+새 문서를 추가하면 관련 카테고리 `index.md`와 `related`/본문 링크도 함께 정리합니다.
+
+### 2. Events 추가
 
 ```bash
-touch src/content/projects/ko/new-project.md
+touch src/content/events/ko/2026-01-event.md
 ```
 
-### 3. 이벤트 추가
+현재 영어 route도 ko events collection을 쓰므로 영어 전용 이벤트 콘텐츠 위치/정책은 아직 분리되어 있지 않습니다.
+
+### 3. Archive 추가
 
 ```bash
-touch src/content/events/ko/2024-03-event.md
+touch src/content/archive/ko/new-archive-note.md
 ```
 
-## Media (YouTube) Integration
+`videoId`는 업로드된 YouTube 영상 ID입니다. `chapters`를 넣으면 상세 페이지 사이드바 버튼으로 렌더링됩니다.
 
-YouTube 콘텐츠는 빌드 시점에 API로 가져옴.
+### 4. AI News 추가
 
-### 설정
-
-```typescript
-// src/lib/youtube.ts
-export const YOUTUBE_CHANNEL_ID = 'YOUR_CHANNEL_ID';
-export const YOUTUBE_PLAYLIST_IDS = {
-  podcast: 'PLAYLIST_ID_1',
-  tutorial: 'PLAYLIST_ID_2',
-};
+```bash
+touch src/content/ainews/ko/26-04-24-example.md
+touch src/content/ainews/youtube/26-04-24-example.txt
 ```
 
-### 수동 추가 (API 없이)
+## Graph Index
 
-```yaml
-# src/content/media/videos.yaml
-- id: "VIDEO_ID"
-  title: "영상 제목"
-  thumbnail: "/images/youtube/thumbnail.jpg"
-  publishedAt: 2024-01-01
-  category: "podcast"
-```
+`/knowledge/physical-ai/browse`와 `/en/knowledge/physical-ai/browse`의 그래프는 `src/utils/graphData.ts`가 생성합니다.
+
+1. Markdown 본문 링크 파싱
+2. frontmatter `related` 읽기
+3. 문서를 node로 만들고 link를 생성
+4. page layer에서 description/tags를 node에 추가
+
+그래프 카테고리 색상은 현재 코드상 다음 다섯 카테고리에 명시되어 있습니다.
+
+- essays: `#eab308`
+- models: `#3b82f6`
+- companies: `#10b981`
+- hardware: `#a78bfa`
+- people: `#f472b6`
+
+`physical-ai`, `glossary`는 schema상 허용되지만 graph/category color map에서는 fallback 색상을 사용할 수 있습니다.
 
 ## Content Workflow
 
 ### 새 문서 작성
 
 1. 적절한 경로에 `.md` 파일 생성
-2. Frontmatter 작성 (위 스키마 참조)
+2. Frontmatter 작성
 3. 본문 작성
-4. 로컬에서 확인: `npm run dev`
-5. 커밋 & 푸시 → 자동 배포
+4. 관련 index/related/link 갱신
+5. 로컬에서 확인: `npm run dev`
+6. 빌드 확인: `npm run build`
 
 ### 기존 문서 수정
 
 1. 파일 수정
-2. `updatedAt` 날짜 업데이트
-3. 커밋 & 푸시
+2. 필요하면 `lastEditedBy`, `lastEditedAt` 갱신
+3. 한국어/영어 대응 문서 동기화
+4. `npm run build` 확인
 
-### tmp 콘텐츠 마이그레이션
+## Current Notes
 
-기존 `tmp/PhysicalAI/` 콘텐츠를 새 구조로 이동:
-
-```bash
-# 예시: models 이동
-cp tmp/PhysicalAI/models/*.md src/content/knowledge/ko/models/
-
-# 이미지 이동
-cp -r tmp/PhysicalAI/assets/* src/content/knowledge/ko/assets/
-```
-
-이동 후 frontmatter 형식 확인 및 수정 필요.
+- Projects collection은 현재 코드에 정의되어 있지 않습니다. `/projects`는 준비 중 페이지입니다.
+- Media content collection이나 YouTube API integration helper는 현재 코드에 없습니다. `/media`는 정적 페이지입니다.
+- `knowledge_to_book`은 현재 보조 자료로 보이며 collection schema가 없으므로 build warning 대상입니다.

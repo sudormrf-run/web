@@ -15,6 +15,8 @@ Knowledge Base는 다음과 같은 페이지로 구성됩니다:
 /knowledge/{category}/{slug}    → 개별 문서
 ```
 
+영어 페이지는 동일 구조에 `/en` prefix가 붙습니다.
+
 ### 사이드바 구조
 
 좌측 사이드바는 `KnowledgeSidebar.astro` 컴포넌트에서 관리됩니다.
@@ -51,6 +53,8 @@ Knowledge Base는 다음과 같은 페이지로 구성됩니다:
 └── 📂 인물 (people)
     ├── 📋 인물 목록      → /knowledge/people/
     └── 문서들...        (서브카테고리 없음, 플랫 구조)
+
+※ `physical-ai`와 `glossary`도 content schema에서 허용되는 카테고리입니다. 현재 사이드바에서는 `physical-ai`를 상단 Overview/색인으로 다루고, `glossary`는 별도 링크로 다룹니다.
 ```
 
 ### 서브카테고리가 있는 카테고리
@@ -67,6 +71,7 @@ Knowledge Base는 다음과 같은 페이지로 구성됩니다:
 | models | 플랫 (모든 파일이 `models/` 직접 하위) |
 | companies | 플랫 |
 | people | 플랫 |
+| glossary | 플랫 |
 
 ---
 
@@ -97,6 +102,8 @@ src/content/knowledge/
 │   └── people/
 │       ├── index.md            # ✅ 카테고리 인덱스
 │       └── *.md
+│   └── glossary/
+│       └── index.md            # ✅ 용어집
 └── en/                         # 영어 (동일 구조)
     └── ...
 ```
@@ -157,6 +164,7 @@ src/content/knowledge/
 - `ko/people/index.md` - 인물 목록
 - `ko/hardware/index.md` - 하드웨어 목록
 - `ko/essays/index.md` - 에세이 (⚠️ 사이드바에 미표시, Overview가 역할)
+- `ko/glossary/index.md` - 용어집
 
 ### ⚠️ 인덱스 업데이트 규칙
 
@@ -238,6 +246,13 @@ related:
   - companies: 초록색 (#10b981)
   - hardware: 보라색 (#a78bfa)
   - people: 분홍색 (#f472b6)
+  - physical-ai/glossary: 현재 graph color map에는 명시 색상이 없어 fallback 색상을 사용할 수 있음
+
+### 현재 구현상 주의점
+
+- 그래프 링크 해석은 `src/utils/graphData.ts`에서 build 시점에 수행됩니다.
+- graph node 색상/카테고리 label은 schema, sidebar, document page, graph 관련 컴포넌트에 일부 중복되어 있습니다. 새 카테고리를 추가할 때는 `src/content/config.ts`뿐 아니라 표시 로직도 함께 확인해야 합니다.
+- `knowledge/[...slug].astro`는 현재 일부 index 문서(`physical-ai/index.md`, `essays/index.md`)와 explicit route가 겹쳐 build warning을 낼 수 있습니다.
 
 ---
 
@@ -259,7 +274,7 @@ touch src/content/knowledge/en/{category}/{filename}.md
 ---
 title: "문서 제목"
 description: "간단한 설명 (150자 이내)"
-category: "models"  # essays | models | companies | hardware | people
+category: "models"  # physical-ai | essays | models | companies | hardware | people | glossary
 tags: [tag1, tag2]
 related:
   - category/related-doc-1
