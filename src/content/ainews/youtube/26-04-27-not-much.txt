@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [04/27] OpenAI, Microsoft 독점 완화로 모든 클라우드 배포 허용 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI가 Azure 독점성을 완화
+• GPT-5.5 벤치마크가 공개
+• Copilot이 사용량 과금으로 전환
+• Xiaomi가 MiMo-V2.5를 공개
+• Sakana가 7B Conductor를 발표
+
+📋 목차:
+1. 헤드라인: OpenAI, Microsoft 독점 완화로 모든 클라우드 배포 허용
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-04-27-not-much.md
+
+#OpenAI #Microsoft #GPT-5.5 #Xiaomi #Agents
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI, OpenAI, 머신러닝, Xiaomi, GPT-5.5, Agents, AI뉴스, Microsoft, 테크뉴스, 인공지능
+
+Date: 2026-04-27
+==================================================
