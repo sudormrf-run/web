@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [04/28] NVIDIA Nemotron 3 Nano Omni 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• NVIDIA가 오픈 옴니 모델을 공개
+• vLLM 0.20이 메모리 효율을 개선
+• Poolside가 Laguna XS.2를 출시
+• Mistral이 Workflows 프리뷰를 공개
+• ChatGPT가 Erdős 문제 풀이에 기여
+
+📋 목차:
+1. 헤드라인: NVIDIA Nemotron 3 Nano Omni 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-04-28-not-much.md
+
+#NVIDIA #vLLM #Poolside #Mistral #ChatGPT
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Mistral, AI뉴스, 머신러닝, Poolside, vLLM, NVIDIA, 인공지능, ChatGPT, 테크뉴스, AI
+
+Date: 2026-04-28
+==================================================
