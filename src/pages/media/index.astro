@@ -202,7 +202,7 @@ const presentations = [
         </section>
       )}
 
-      <!-- Podcast & AI News Section -->
+      <!-- AI News Playlist Section -->
       <section class="media-section">
         <div class="section-header">
           <div class="section-title-wrapper">
@@ -213,40 +213,15 @@ const presentations = [
               </svg>
             </span>
             <div>
-              <h2 class="section-title">팟캐스트 라이브러리 & AI 뉴스</h2>
-              <p class="section-description">영상별 요약·챕터·참고자료로 다시 찾는 팟캐스트</p>
+              <h2 class="section-title">AI 뉴스</h2>
+              <p class="section-description">AI와 로보틱스 최신 소식을 영상으로 확인하세요</p>
             </div>
           </div>
-          <a href="/podcasts/" class="view-all-link podcast-view-all">
-            팟캐스트 전체 보기 →
+          <a href="https://www.youtube.com/playlist?list=PLLYXs4EFjbmkqbBE7mskK9Uq7DwaCl8KL" target="_blank" rel="noopener noreferrer" class="view-all-link podcast-view-all">
+            AI 뉴스 재생목록 보기 →
           </a>
         </div>
-        <div class="podcast-grid">
-          <a href="/podcasts/" class="podcast-library-card">
-            <div class="podcast-library-hero">
-              <span class="library-kicker">Research Library</span>
-              <h3>팟캐스트를 자료처럼 탐색하기</h3>
-              <p>각 에피소드의 요약, 태그, 챕터, 참고 링크를 한 페이지에서 확인하세요.</p>
-              <div class="library-stats">
-                <span>{sortedPodcasts.length} episodes</span>
-                <span>{[...new Set(sortedPodcasts.flatMap((item) => item.data.tags ?? []))].length} tags</span>
-              </div>
-            </div>
-            <div class="featured-podcast-list">
-              {latestPodcasts.map((item) => {
-                return (
-                  <div class="featured-podcast-card">
-                    <span class="featured-podcast-meta">
-                      {item.data.episodeNumber ? `EP.${item.data.episodeNumber}` : 'Podcast'} · {item.data.date.toISOString().split('T')[0]}
-                    </span>
-                    <strong>{item.data.title}</strong>
-                  </div>
-                );
-              })}
-            </div>
-          </a>
-
-          <!-- AI 최신 뉴스 카드 -->
+        <div class="podcast-grid ai-news-only-grid">
           <a href="https://www.youtube.com/playlist?list=PLLYXs4EFjbmkqbBE7mskK9Uq7DwaCl8KL" target="_blank" rel="noopener noreferrer" class="podcast-embed-card news">
             <div class="podcast-embed-wrapper">
               <iframe
@@ -958,6 +933,10 @@ const presentations = [
     .podcast-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+  }
+
+  .ai-news-only-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 
 
