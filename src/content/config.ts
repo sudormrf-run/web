@@ -139,16 +139,78 @@ const ainewsCollection = defineCollection({
   }),
 });
 
+
+// ============================================
+// Podcasts Collection (수도리무브 팟캐스트)
+// ============================================
+
+const podcastGuestSchema = z.object({
+  name: z.string(),
+  affiliation: z.string().optional(),
+  role: z.string().optional(),
+});
+
+const linkSchema = z.object({
+  title: z.string(),
+  url: z.string().url(),
+});
+
+// Shared chapter schema for YouTube timestamp navigation
+const chapterSchema = z.object({
+  title: z.string(),
+  startTime: z.string(),
+  endTime: z.string().optional(),
+});
+
+// Canonical podcast transcript source: YouTube captions only.
+// rawText preserves mechanically joined caption evidence; text is reader-facing cleanup.
+const transcriptSegmentSchema = z.object({
+  startTime: z.string(),
+  startSeconds: z.number().int().nonnegative(),
+  endTime: z.string().optional(),
+  endSeconds: z.number().int().nonnegative().optional(),
+  rawText: z.string(),
+  text: z.string(),
+  speaker: z.string().optional(),
+  title: z.string().optional(),
+});
+
+// Podcast collection schema
+const podcastsCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    // Required fields
+    title: z.string(),
+    description: z.string(),
+    date: z.coerce.date(),
+    videoId: z.string(),
+
+    // Optional episode metadata
+    duration: z.string().optional(),
+    episodeNumber: z.number().optional(),
+    hosts: z.array(z.string()).optional(),
+    guests: z.array(podcastGuestSchema).optional(),
+    tags: z.array(z.string()).optional(),
+    thumbnail: z.string().optional(),
+
+    // Research-library enrichment
+    summary: z.array(z.string()).optional(),
+    takeaways: z.array(z.string()).optional(),
+    chapters: z.array(chapterSchema).optional(),
+    resources: z.array(linkSchema).optional(),
+    relatedLinks: z.array(linkSchema).optional(),
+    relatedKnowledge: z.array(z.string()).optional(),
+    transcriptSegments: z.array(transcriptSegmentSchema).optional(),
+
+    // Status
+    isFeatured: z.boolean().default(false),
+    isDraft: z.boolean().default(false),
+  }),
+});
+
 // ============================================
 // Archive Collection (자료 창고 - Video Notes)
 // ============================================
-
-// Chapter schema for video notes
-const chapterSchema = z.object({
-  title: z.string(),
-  startTime: z.string(), // "MM:SS" format
-  endTime: z.string().optional(),
-});
 
 // Archive collection schema
 const archiveCollection = defineCollection({
@@ -182,4 +244,5 @@ export const collections = {
   knowledge: knowledgeCollection,
   archive: archiveCollection,
   ainews: ainewsCollection,
+  podcasts: podcastsCollection,
 };

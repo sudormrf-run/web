@@ -1,0 +1,509 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const podcastItems = await getCollection('podcasts', ({ slug, data }) =>
+    slug.startsWith('ko/') && !data.isDraft
+  );
+
+  return podcastItems.map((item) => ({
+    params: { slug: item.slug.replace('ko/', '') },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+const locale = 'ko';
+const summary = item.data.summary ?? [item.data.description];
+const takeaways = item.data.takeaways ?? [];
+const resources = [...(item.data.resources ?? []), ...(item.data.relatedLinks ?? [])];
+const transcriptSegments = item.data.transcriptSegments ?? [];
+const people = [
+  ...(item.data.hosts?.map((name) => ({ label: 'Host', name })) ?? []),
+  ...(item.data.guests?.map((guest) => ({ label: guest.role ?? 'Guest', name: guest.affiliation ? `${guest.name} · ${guest.affiliation}` : guest.name })) ?? []),
+];
+
+function timestampToSeconds(timestamp: string): number {
+  const parts = timestamp.split(':').map(Number);
+  if (parts.length === 2) return parts[0] * 60 + parts[1];
+  if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+  return 0;
+}
+---
+
+<Layout
+  title={item.data.title}
+  description={item.data.description}
+  locale={locale}
+  languagePaths={{ ko: `/podcasts/${item.slug.replace('ko/', '')}/`, en: '/en/media/' }}
+>
+  <div class="podcast-detail-page">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/podcasts/">팟캐스트 라이브러리</a>
+        <span>/</span>
+        <span>{item.data.title}</span>
+      </nav>
+
+      <section class="video-hero">
+        <div class="video-frame">
+          <iframe
+            src={`https://www.youtube.com/embed/${item.data.videoId}`}
+            title={item.data.title}
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="hero-card">
+          <div class="episode-meta">
+            {item.data.episodeNumber && <span>EP.{item.data.episodeNumber}</span>}
+            <time datetime={item.data.date.toISOString()}>{item.data.date.toISOString().split('T')[0]}</time>
+            {item.data.duration && <span>{item.data.duration}</span>}
+          </div>
+          <h1>{item.data.title}</h1>
+          <p>{item.data.description}</p>
+          {item.data.tags && item.data.tags.length > 0 && (
+            <div class="tag-row">
+              {item.data.tags.map((tag) => <span>#{tag}</span>)}
+            </div>
+          )}
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <main class="episode-main">
+          <section class="info-panel summary-panel">
+            <h2>요약</h2>
+            <ul>
+              {summary.map((line) => <li>{line}</li>)}
+            </ul>
+          </section>
+
+          {takeaways.length > 0 && (
+            <section class="info-panel takeaway-panel">
+              <h2>핵심 인사이트</h2>
+              <ul>
+                {takeaways.map((line) => <li>{line}</li>)}
+              </ul>
+            </section>
+          )}
+
+          <article class="episode-notes">
+            <Content />
+          </article>
+
+          {transcriptSegments.length > 0 && (
+            <section class="transcript-panel" aria-labelledby="transcript-heading">
+              <div class="transcript-header">
+                <p class="eyebrow">YouTube captions</p>
+                <h2 id="transcript-heading">전체 Transcription</h2>
+                <p>원문 캡션을 보존한 구조화 transcriptSegments에서 읽기용 문장만 렌더링합니다.</p>
+              </div>
+              <div class="transcript-list">
+                {transcriptSegments.map((segment) => (
+                  <article class="transcript-segment">
+                    <a
+                      href={`https://www.youtube.com/watch?v=${item.data.videoId}&t=${segment.startSeconds}s`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="transcript-time"
+                    >
+                      {segment.startTime}{segment.endTime ? `–${segment.endTime}` : ''} ↗
+                    </a>
+                    <div class="transcript-body">
+                      {(segment.title || segment.speaker) && (
+                        <div class="transcript-meta">
+                          {segment.title && <h3>{segment.title}</h3>}
+                          {segment.speaker && <span>{segment.speaker}</span>}
+                        </div>
+                      )}
+                      <p>{segment.text}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
+        </main>
+
+        <aside class="episode-sidebar">
+          {people.length > 0 && (
+            <section class="side-card">
+              <h2>출연</h2>
+              <ul class="people-list">
+                {people.map((person) => (
+                  <li>
+                    <span>{person.label}</span>
+                    <strong>{person.name}</strong>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {item.data.chapters && item.data.chapters.length > 0 && (
+            <section class="side-card">
+              <h2>챕터</h2>
+              <div class="chapter-list">
+                {item.data.chapters.map((chapter) => (
+                  <a href={`https://www.youtube.com/watch?v=${item.data.videoId}&t=${timestampToSeconds(chapter.startTime)}s`} target="_blank" rel="noopener noreferrer" class="chapter-link">
+                    <span>{chapter.startTime}</span>
+                    <strong>{chapter.title}</strong>
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {resources.length > 0 && (
+            <section class="side-card">
+              <h2>참고 자료</h2>
+              <div class="resource-list">
+                {resources.map((link) => (
+                  <a href={link.url} target="_blank" rel="noopener noreferrer">
+                    {link.title}
+                    <span>↗</span>
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
+
+          <section class="side-card back-card">
+            <h2>더 보기</h2>
+            <a href="/podcasts/" class="back-link">전체 에피소드로 돌아가기 →</a>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .podcast-detail-page {
+    padding: 1.5rem 0 4rem;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+
+  .breadcrumb a {
+    color: var(--color-green);
+  }
+
+  .breadcrumb span:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .video-hero {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .video-frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid rgba(67, 214, 168, 0.25);
+    border-radius: var(--radius-xl);
+    background: var(--color-bg-secondary);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+  }
+
+  .video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-card,
+  .info-panel,
+  .side-card,
+  .episode-notes,
+  .transcript-panel {
+    border: 1px solid rgba(253, 115, 24, 0.18);
+    border-radius: var(--radius-xl);
+    background: var(--color-surface);
+  }
+
+  .hero-card {
+    padding: 1.5rem;
+  }
+
+  .episode-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-card h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-card p {
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+  }
+
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 1rem;
+  }
+
+  .tag-row span {
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(67, 214, 168, 0.12);
+    color: var(--color-green);
+    font-size: 0.8rem;
+  }
+
+  .content-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .content-grid {
+      grid-template-columns: minmax(0, 1fr) 320px;
+      align-items: start;
+    }
+
+    .episode-sidebar {
+      position: sticky;
+      top: 92px;
+    }
+  }
+
+  .episode-main,
+  .episode-sidebar {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .info-panel,
+  .episode-notes,
+  .side-card,
+  .transcript-panel {
+    padding: 1.25rem;
+  }
+
+  .info-panel h2,
+  .side-card h2,
+  .transcript-header h2 {
+    color: var(--color-green);
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .info-panel ul {
+    display: grid;
+    gap: 0.65rem;
+    padding-left: 1.2rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  .takeaway-panel h2 {
+    color: var(--color-yellow);
+  }
+
+  .episode-notes {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+  }
+
+  .episode-notes :global(h2) {
+    color: var(--color-text-primary);
+    font-size: 1.45rem;
+    margin: 1.6rem 0 0.75rem;
+  }
+
+  .episode-notes :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .episode-notes :global(p),
+  .episode-notes :global(ul) {
+    margin: 0.75rem 0;
+  }
+
+  .episode-notes :global(ul) {
+    padding-left: 1.25rem;
+  }
+
+  .transcript-panel {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .transcript-header {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .transcript-header .eyebrow {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .transcript-header h2 {
+    margin: 0;
+  }
+
+  .transcript-header p:last-child {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .transcript-list {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .transcript-segment {
+    display: grid;
+    gap: 0.75rem;
+    padding: 0.85rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-secondary);
+  }
+
+  .transcript-time {
+    color: var(--color-green);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    text-decoration: none;
+  }
+
+  .transcript-time:hover {
+    color: var(--color-yellow);
+  }
+
+  .transcript-body {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .transcript-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .transcript-meta h3 {
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .transcript-meta span {
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+  }
+
+  .transcript-body p {
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+    margin: 0;
+    white-space: pre-wrap;
+  }
+
+  @media (min-width: 720px) {
+    .transcript-segment {
+      grid-template-columns: 7.5rem minmax(0, 1fr);
+      align-items: start;
+    }
+  }
+
+  .people-list {
+    display: grid;
+    gap: 0.8rem;
+    list-style: none;
+  }
+
+  .people-list span {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .people-list strong {
+    color: var(--color-text-primary);
+    font-size: 0.95rem;
+  }
+
+  .chapter-list,
+  .resource-list {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .chapter-link,
+  .resource-list a,
+  .back-link {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.65rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-secondary);
+    text-decoration: none;
+  }
+
+  .chapter-link span {
+    flex-shrink: 0;
+    color: var(--color-green);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+  }
+
+  .chapter-link strong,
+  .resource-list a,
+  .back-link {
+    color: var(--color-text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .chapter-link:hover,
+  .resource-list a:hover,
+  .back-link:hover {
+    border-color: var(--color-green);
+    color: var(--color-green);
+  }
+
+  .back-card {
+    border-color: rgba(67, 214, 168, 0.22);
+  }
+</style>

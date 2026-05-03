@@ -5,11 +5,16 @@ import { useTranslations } from '../../i18n/utils';
 
 interface Props {
   locale: Locale;
+  languagePaths?: Partial<Record<Locale, string>>;
+  hideLanguageSwitcher?: boolean;
 }
 
-const { locale } = Astro.props;
+const { locale, languagePaths, hideLanguageSwitcher = false } = Astro.props;
 const { t } = useTranslations(locale);
 const currentPath = Astro.url.pathname;
+const pathWithoutLocale = getPathWithoutLocale(currentPath);
+const getLanguagePath = (loc: Locale) => languagePaths?.[loc] ?? getLocalizedPath(pathWithoutLocale, loc);
+const isPodcastPath = currentPath.startsWith('/podcasts');
 
 const navItems = [
   { href: '/knowledge', label: t('nav.knowledge'), section: 'knowledge' },
@@ -41,7 +46,7 @@ const navItems = [
       <div class="nav-desktop">
         {navItems.map(({ href, label, section }) => {
           const localizedHref = getLocalizedPath(href, locale);
-          const isActive = currentPath.startsWith(localizedHref) && localizedHref !== getLocalizedPath('/', locale);
+          const isActive = (section === 'media' && isPodcastPath) || (currentPath.startsWith(localizedHref) && localizedHref !== getLocalizedPath('/', locale));
           return (
             <a
               href={localizedHref}
@@ -53,20 +58,22 @@ const navItems = [
         })}
 
         <!-- Language Switcher -->
-        <div class="lang-switcher">
-          {locales.map((loc) => {
-            const isCurrentLocale = loc === locale;
-            const targetPath = getLocalizedPath(getPathWithoutLocale(currentPath), loc);
-            return (
-              <a
-                href={targetPath}
-                class:list={['lang-link', { active: isCurrentLocale }]}
-              >
-                {localeNames[loc]}
-              </a>
-            );
-          })}
-        </div>
+        {!hideLanguageSwitcher && (
+          <div class="lang-switcher">
+            {locales.map((loc) => {
+              const isCurrentLocale = loc === locale;
+              const targetPath = getLanguagePath(loc);
+              return (
+                <a
+                  href={targetPath}
+                  class:list={['lang-link', { active: isCurrentLocale }]}
+                >
+                  {localeNames[loc]}
+                </a>
+              );
+            })}
+          </div>
+        )}
       </div>
 
       <!-- Mobile Menu Button -->
@@ -81,7 +88,7 @@ const navItems = [
     <div id="mobile-menu" class="nav-mobile">
       {navItems.map(({ href, label, section }) => {
         const localizedHref = getLocalizedPath(href, locale);
-        const isActive = currentPath.startsWith(localizedHref) && localizedHref !== getLocalizedPath('/', locale);
+        const isActive = (section === 'media' && isPodcastPath) || (currentPath.startsWith(localizedHref) && localizedHref !== getLocalizedPath('/', locale));
         return (
           <a
             href={localizedHref}
@@ -93,20 +100,22 @@ const navItems = [
       })}
 
       <!-- Mobile Language Switcher -->
-      <div class="lang-switcher-mobile">
-        {locales.map((loc) => {
-          const isCurrentLocale = loc === locale;
-          const targetPath = getLocalizedPath(getPathWithoutLocale(currentPath), loc);
-          return (
-            <a
-              href={targetPath}
-              class:list={['lang-link', { active: isCurrentLocale }]}
-            >
-              {localeNames[loc]}
-            </a>
-          );
-        })}
-      </div>
+      {!hideLanguageSwitcher && (
+        <div class="lang-switcher-mobile">
+          {locales.map((loc) => {
+            const isCurrentLocale = loc === locale;
+            const targetPath = getLanguagePath(loc);
+            return (
+              <a
+                href={targetPath}
+                class:list={['lang-link', { active: isCurrentLocale }]}
+              >
+                {localeNames[loc]}
+              </a>
+            );
+          })}
+        </div>
+      )}
     </div>
   </div>
 </header>

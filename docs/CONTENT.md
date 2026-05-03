@@ -2,7 +2,7 @@
 
 콘텐츠 작성 및 관리 가이드입니다. 이 문서는 현재 `src/content/config.ts`와 실제 라우트 구현을 기준으로 합니다.
 
-> Last checked against code: 2026-04-27
+> Last checked against code: 2026-05-03
 
 ## Content Structure
 
@@ -56,6 +56,23 @@ src/content/archive/
 ```
 
 영어 route(`/en/archive`)도 현재 같은 `ko/` archive collection을 사용합니다.
+
+### Podcasts
+
+수도리무브 팟캐스트 에피소드별 연구 자료입니다. 현재 v1은 한국어 route/content만 구현되어 있습니다.
+
+```text
+src/content/podcasts/
+└── ko/
+    └── episode-slug.md
+```
+
+생성 route:
+
+- 목록: `/podcasts/`
+- 상세: `/podcasts/{slug}/`
+
+영어 podcast route는 아직 없으며, `/podcasts/**`의 언어 전환 fallback은 `/en/media/`입니다.
 
 ### AI News
 
@@ -177,6 +194,76 @@ isFeatured: false
 ```
 
 Archive 상세 페이지는 `[MM:SS]` 또는 `[HH:MM:SS]` 형식의 본문 timestamp를 클릭 가능한 seek link로 변환합니다.
+
+### Podcasts
+
+```yaml
+---
+title: "에피소드 제목"
+description: "검색과 카드에 표시될 1-2문장 설명"
+date: 2026-04-26
+videoId: "YOUTUBE_VIDEO_ID"
+
+# 선택
+duration: "42:18"
+episodeNumber: 3
+hosts:
+  - "sudo remove"
+guests:
+  - name: "Guest Name"
+    affiliation: "Organization"
+    role: "Guest"
+tags: [Physical AI, 월드모델]
+summary:
+  - "핵심 요약"
+takeaways:
+  - "실행 가능한 인사이트"
+chapters:
+  - title: "소개"
+    startTime: "00:00"
+    endTime: "05:00"
+resources:
+  - title: "참고 자료"
+    url: "https://..."
+relatedLinks:
+  - title: "관련 링크"
+    url: "https://..."
+relatedKnowledge:
+  - "knowledge/ko/models/openvla"
+transcriptSegments:
+  - startTime: "00:00"
+    startSeconds: 0
+    endTime: "01:20"
+    endSeconds: 80
+    title: "도입"
+    speaker: "Host"
+    rawText: >-
+      YouTube caption text joined with only mechanical cleanup.
+    text: >-
+      읽기 쉽게 다듬은 한국어 문장입니다. rawText에 없는 새 의미를 추가하지 않습니다.
+thumbnail: "https://..."
+isFeatured: false
+isDraft: false
+---
+```
+
+필수 필드는 `title`, `description`, `date`, `videoId`입니다. 목록 페이지는 `ko/` slug이면서 `isDraft: false`인 항목만 보여주고, `episodeNumber` 내림차순 후 `date` 내림차순으로 정렬합니다. `thumbnail`이 없으면 YouTube 기본 썸네일(`https://img.youtube.com/vi/{videoId}/mqdefault.jpg`)을 사용합니다.
+
+`transcriptSegments`는 팟캐스트 transcript의 canonical 저장 위치입니다. Markdown 본문에는 에피소드 노트, 해설, 요약만 작성하고 전체 transcript를 중복해서 붙여 넣지 않습니다. 각 segment는 `startTime`, `startSeconds`, `rawText`, `text`를 반드시 포함하고, 필요하면 `endTime`, `endSeconds`, `speaker`, `title`을 추가합니다.
+
+#### Podcast YouTube-link episode agent rules
+
+미래 에피소드 작성/보강 agent는 아래 정책을 따라야 합니다.
+
+- Transcript source는 YouTube captions만 허용합니다.
+- Manual captions를 우선 사용하고, manual captions가 없을 때만 YouTube auto captions를 사용할 수 있습니다.
+- Whisper, faster-whisper, 로컬 STT, 업로드된 오디오 파일, 블로그/기사/댓글 등 비-YouTube transcript fallback은 금지합니다.
+- YouTube captions가 없거나 접근할 수 없으면 transcript-derived `summary`, `takeaways`, `chapters`, `resources`, `relatedLinks`, `transcriptSegments`를 새로 만들지 말고 blocked/draft 상태로 보고합니다.
+- `rawText`는 YouTube caption source를 이어 붙인 증거 텍스트이며, 줄바꿈/공백/중복 토큰 정리 같은 기계적 cleanup만 허용합니다.
+- `text`는 독자를 위한 한국어 cleanup이며, `rawText`에 없는 새 주장/해석/고유명사를 추가하지 않습니다.
+- Segment는 topic/speaker 변화 기준으로 나누고, 명확한 변화가 없으면 대략 60-120초 단위로 나눕니다.
+- 작업 보고에는 caption source evidence를 남깁니다: videoId, caption kind(manual/auto), language, fetched command/tool, fetched time, unavailable/block reason.
+- 참고자료 보강은 transcript 또는 YouTube 설명에 등장한 entity의 official/source-backed 링크로 제한합니다.
 
 ### AI News
 
@@ -384,5 +471,8 @@ touch src/content/ainews/youtube/26-04-24-example.txt
 ## Current Notes
 
 - Projects collection은 현재 코드에 정의되어 있지 않습니다. `/projects`는 준비 중 페이지입니다.
-- Media content collection이나 YouTube API integration helper는 현재 코드에 없습니다. `/media`는 정적 페이지입니다.
+- Podcast content collection은 `src/content/podcasts/ko/*.md`에 정의되어 있고 `/podcasts/` 및 `/podcasts/{slug}/`에서 사용합니다.
+- YouTube API integration/helper는 현재 코드에 없습니다. podcast episode import/sync는 수동 Markdown 작성 방식입니다.
+- `/media`는 `podcasts`, `ainews`, `archive` collection 일부를 읽고, `/en/media`는 아직 podcast collection을 사용하지 않습니다. 상세 구조는 `docs/MEDIA.md`를 참조하세요.
+- 홈 미디어 프리뷰(`src/components/home/HomeMediaSection.astro`)는 한국어에서 `/podcasts/` CTA를, 영어에서 기존 playlist IDs/social links를 사용합니다.
 - `knowledge_to_book`은 현재 보조 자료로 보이며 collection schema가 없으므로 build warning 대상입니다.

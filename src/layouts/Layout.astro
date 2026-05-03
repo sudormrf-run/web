@@ -9,12 +9,16 @@ interface Props {
   title: string;
   description?: string;
   locale?: Locale;
+  languagePaths?: Partial<Record<Locale, string>>;
+  hideLanguageSwitcher?: boolean;
 }
 
 const {
   title,
   description = 'AI와 로보틱스의 미래를 함께 만들어갑니다',
-  locale = defaultLocale
+  locale = defaultLocale,
+  languagePaths,
+  hideLanguageSwitcher = false
 } = Astro.props;
 
 const siteName = 'sudoremove';
@@ -46,7 +50,7 @@ const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
     <meta name="twitter:description" content={description} />
   </head>
   <body class="flex min-h-screen flex-col">
-    <Header locale={locale} />
+    <Header locale={locale} languagePaths={languagePaths} hideLanguageSwitcher={hideLanguageSwitcher} />
     <main class="flex-1">
       <slot />
     </main>

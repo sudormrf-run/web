@@ -1,0 +1,478 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const locale = 'ko';
+const podcastItems = await getCollection('podcasts', ({ slug, data }) =>
+  slug.startsWith('ko/') && !data.isDraft
+);
+
+const sortedPodcasts = podcastItems.sort((a, b) => {
+  const episodeDiff = (b.data.episodeNumber ?? 0) - (a.data.episodeNumber ?? 0);
+  if (episodeDiff !== 0) return episodeDiff;
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+
+const allTags = [...new Set(sortedPodcasts.flatMap((item) => item.data.tags ?? []))].sort((a, b) =>
+  a.localeCompare(b, 'ko')
+);
+
+const totalChapters = sortedPodcasts.reduce((sum, item) => sum + (item.data.chapters?.length ?? 0), 0);
+const totalResources = sortedPodcasts.reduce(
+  (sum, item) => sum + (item.data.resources?.length ?? 0) + (item.data.relatedLinks?.length ?? 0),
+  0
+);
+
+const getPodcastSlug = (slug: string) => slug.replace('ko/', '');
+const getThumbnail = (item: (typeof sortedPodcasts)[number]) =>
+  item.data.thumbnail ?? `https://img.youtube.com/vi/${item.data.videoId}/mqdefault.jpg`;
+const getPeopleLine = (item: (typeof sortedPodcasts)[number]) => {
+  const hosts = item.data.hosts?.join(', ');
+  const guests = item.data.guests?.map((guest) => guest.name).join(', ');
+  if (hosts && guests) return `${hosts} · ${guests}`;
+  return hosts ?? guests ?? 'sudo remove';
+};
+---
+
+<Layout
+  title="팟캐스트 라이브러리"
+  description="수도리무브 팟캐스트를 에피소드별 요약, 챕터, 참고자료, 태그로 탐색합니다."
+  locale={locale}
+  languagePaths={{ ko: '/podcasts/', en: '/en/media/' }}
+>
+  <div class="podcasts-page">
+    <div class="container">
+      <header class="hero">
+        <div class="eyebrow">SUDO REMOVE PODCAST</div>
+        <h1><span class="gradient-text">팟캐스트 라이브러리</span></h1>
+        <p class="hero-subtitle">
+          YouTube 재생목록을 넘어서, 각 에피소드를 요약·챕터·참고자료·태그로 다시 찾을 수 있는
+          AI 연구 자료 라이브러리로 정리합니다.
+        </p>
+        <div class="hero-stats" aria-label="팟캐스트 라이브러리 통계">
+          <div><strong>{sortedPodcasts.length}</strong><span>episodes</span></div>
+          <div><strong>{allTags.length}</strong><span>tags</span></div>
+          <div><strong>{totalChapters}</strong><span>chapters</span></div>
+          <div><strong>{totalResources}</strong><span>resources</span></div>
+        </div>
+      </header>
+
+      <section class="library-controls" aria-label="팟캐스트 검색과 태그 필터">
+        <label class="search-label" for="podcast-search">검색</label>
+        <div class="search-row">
+          <input
+            id="podcast-search"
+            class="search-input"
+            type="search"
+            placeholder="제목, 요약, 태그로 검색하세요"
+            autocomplete="off"
+          />
+          <button class="clear-button" type="button" data-clear-search>초기화</button>
+        </div>
+        {allTags.length > 0 && (
+          <div class="tag-filter" aria-label="태그 필터">
+            <button class="tag-button active" type="button" data-tag-filter="all">전체</button>
+            {allTags.map((tag) => (
+              <button class="tag-button" type="button" data-tag-filter={tag}>#{tag}</button>
+            ))}
+          </div>
+        )}
+        <p class="result-count" data-result-count>{sortedPodcasts.length}개 에피소드</p>
+      </section>
+
+      <section class="podcast-list" aria-label="팟캐스트 에피소드 목록">
+        {sortedPodcasts.map((item) => {
+          const slug = getPodcastSlug(item.slug);
+          const summaryText = [...(item.data.summary ?? []), ...(item.data.takeaways ?? []), item.data.description].join(' ');
+          const searchableText = [item.data.title, item.data.description, summaryText, ...(item.data.tags ?? [])].join(' ');
+          const firstSummary = item.data.summary?.[0] ?? item.data.description;
+          return (
+            <article
+              class="podcast-card"
+              data-podcast-card
+              data-title={item.data.title.toLocaleLowerCase('ko-KR')}
+              data-tags={(item.data.tags ?? []).join(' ').toLocaleLowerCase('ko-KR')}
+              data-tag-values={(item.data.tags ?? []).map((tag) => `|${tag.toLocaleLowerCase('ko-KR')}|`).join('')}
+              data-summary={searchableText.toLocaleLowerCase('ko-KR')}
+            >
+              <a href={`/podcasts/${slug}/`} class="podcast-card-link">
+                <div class="thumbnail-wrap">
+                  <img src={getThumbnail(item)} alt={`${item.data.title} 썸네일`} loading="lazy" />
+                  {item.data.duration && <span class="duration">{item.data.duration}</span>}
+                  <span class="play-badge" aria-hidden="true">▶</span>
+                </div>
+                <div class="podcast-card-content">
+                  <div class="card-meta">
+                    {item.data.episodeNumber && <span>EP.{item.data.episodeNumber}</span>}
+                    <time datetime={item.data.date.toISOString()}>{item.data.date.toISOString().split('T')[0]}</time>
+                    {item.data.isFeatured && <span class="featured">Featured</span>}
+                  </div>
+                  <h2>{item.data.title}</h2>
+                  <p class="people-line">{getPeopleLine(item)}</p>
+                  <p class="summary-line">{firstSummary}</p>
+                  {item.data.tags && item.data.tags.length > 0 && (
+                    <div class="card-tags">
+                      {item.data.tags.slice(0, 5).map((tag) => <span>#{tag}</span>)}
+                    </div>
+                  )}
+                  <div class="card-footer">
+                    <span>{item.data.chapters?.length ?? 0} chapters</span>
+                    <span>{(item.data.resources?.length ?? 0) + (item.data.relatedLinks?.length ?? 0)} links</span>
+                    <strong>노트 보기 →</strong>
+                  </div>
+                </div>
+              </a>
+            </article>
+          );
+        })}
+      </section>
+
+      <div class="empty-state" data-empty-state hidden>
+        <h2>검색 결과가 없습니다</h2>
+        <p>다른 키워드를 입력하거나 태그 필터를 전체로 돌려보세요.</p>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .podcasts-page {
+    padding: 2rem 0 4rem;
+  }
+
+  .hero {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    margin-bottom: 0.75rem;
+    padding: 0.25rem 0.65rem;
+    border: 1px solid rgba(255, 0, 0, 0.35);
+    border-radius: 999px;
+    color: #ff6b6b;
+    background: rgba(255, 0, 0, 0.08);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.25rem, 6vw, 4rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    max-width: 760px;
+    margin: 0 auto;
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    max-width: 720px;
+    margin: 1.5rem auto 0;
+  }
+
+  @media (min-width: 768px) {
+    .hero-stats {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .hero-stats div {
+    padding: 1rem;
+    border: 1px solid rgba(253, 115, 24, 0.18);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, rgba(30, 18, 25, 0.95), rgba(17, 8, 17, 0.95));
+  }
+
+  .hero-stats strong {
+    display: block;
+    color: var(--color-green);
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .hero-stats span {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+
+  .library-controls {
+    position: sticky;
+    top: 82px;
+    z-index: 20;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid rgba(253, 115, 24, 0.2);
+    border-radius: var(--radius-xl);
+    background: rgba(17, 8, 17, 0.92);
+    backdrop-filter: blur(12px);
+  }
+
+  .search-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .search-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .search-input {
+    flex: 1;
+    min-width: 220px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    padding: 0.75rem 0.9rem;
+    font: inherit;
+  }
+
+  .clear-button,
+  .tag-button {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    padding: 0.65rem 0.85rem;
+    font: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .clear-button:hover,
+  .tag-button:hover,
+  .tag-button.active {
+    border-color: var(--color-green);
+    color: var(--color-green);
+    background: rgba(67, 214, 168, 0.12);
+  }
+
+  .tag-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.9rem;
+  }
+
+  .result-count {
+    margin-top: 0.75rem;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+
+  .podcast-list {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .podcast-card {
+    border: 1px solid rgba(67, 214, 168, 0.18);
+    border-radius: var(--radius-xl);
+    background: var(--color-surface);
+    overflow: hidden;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .podcast-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-green);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25), 0 0 18px rgba(67, 214, 168, 0.16);
+  }
+
+  .podcast-card.is-hidden {
+    display: none;
+  }
+
+  .podcast-card-link {
+    display: grid;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  @media (min-width: 800px) {
+    .podcast-card-link {
+      grid-template-columns: 320px 1fr;
+    }
+  }
+
+  .thumbnail-wrap {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--color-bg-secondary);
+    overflow: hidden;
+  }
+
+  .thumbnail-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+  }
+
+  .podcast-card:hover .thumbnail-wrap img {
+    transform: scale(1.04);
+  }
+
+  .duration,
+  .play-badge {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+  }
+
+  .duration {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    padding: 0.2rem 0.45rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
+  .play-badge {
+    left: 0.75rem;
+    bottom: 0.75rem;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: var(--color-green);
+  }
+
+  .podcast-card-content {
+    padding: 1.25rem;
+  }
+
+  .card-meta,
+  .card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+  }
+
+  .featured {
+    color: var(--color-yellow);
+  }
+
+  .podcast-card h2 {
+    margin: 0.45rem 0 0.35rem;
+    color: var(--color-text-primary);
+    font-size: clamp(1.2rem, 3vw, 1.55rem);
+  }
+
+  .people-line {
+    color: var(--color-green);
+    font-size: 0.9rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .summary-line {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 1rem 0;
+  }
+
+  .card-tags span {
+    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(253, 115, 24, 0.12);
+    color: var(--color-accent-hover);
+    font-size: 0.78rem;
+  }
+
+  .card-footer {
+    justify-content: space-between;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--color-border-light);
+  }
+
+  .card-footer strong {
+    color: var(--color-green);
+    margin-left: auto;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-xl);
+    color: var(--color-text-muted);
+  }
+
+  .empty-state h2 {
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+  }
+</style>
+
+<script>
+  const searchInput = document.querySelector<HTMLInputElement>('#podcast-search');
+  const clearButton = document.querySelector<HTMLButtonElement>('[data-clear-search]');
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-podcast-card]'));
+  const tagButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-tag-filter]'));
+  const count = document.querySelector<HTMLElement>('[data-result-count]');
+  const emptyState = document.querySelector<HTMLElement>('[data-empty-state]');
+  let activeTag = 'all';
+
+  const normalize = (value: string) => value.trim().toLocaleLowerCase('ko-KR');
+
+  function applyFilters() {
+    const query = normalize(searchInput?.value ?? '');
+    let visible = 0;
+
+    cards.forEach((card) => {
+      const haystack = [card.dataset.title, card.dataset.tags, card.dataset.summary].join(' ');
+      const matchesQuery = !query || haystack.includes(query);
+      const matchesTag = activeTag === 'all' || (card.dataset.tagValues ?? '').includes(`|${normalize(activeTag)}|`);
+      const shouldShow = matchesQuery && matchesTag;
+      card.classList.toggle('is-hidden', !shouldShow);
+      if (shouldShow) visible += 1;
+    });
+
+    if (count) count.textContent = `${visible}개 에피소드`;
+    if (emptyState) emptyState.hidden = visible !== 0;
+  }
+
+  searchInput?.addEventListener('input', applyFilters);
+  clearButton?.addEventListener('click', () => {
+    if (searchInput) searchInput.value = '';
+    activeTag = 'all';
+    tagButtons.forEach((button) => button.classList.toggle('active', button.dataset.tagFilter === 'all'));
+    applyFilters();
+    searchInput?.focus();
+  });
+
+  tagButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      activeTag = button.dataset.tagFilter ?? 'all';
+      tagButtons.forEach((candidate) => candidate.classList.toggle('active', candidate === button));
+      applyFilters();
+    });
+  });
+</script>
