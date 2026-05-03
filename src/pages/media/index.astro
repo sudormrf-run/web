@@ -33,6 +33,17 @@ const sortedPodcasts = podcastItems.sort((a, b) => {
 });
 const featuredPodcasts = sortedPodcasts.filter((item) => item.data.isFeatured).slice(0, 2);
 const latestPodcasts = (featuredPodcasts.length > 0 ? featuredPodcasts : sortedPodcasts).slice(0, 2);
+const leadPodcast = latestPodcasts[0];
+const secondaryPodcasts = sortedPodcasts.filter((item) => item.id !== leadPodcast?.id).slice(0, 2);
+const podcastTags = [...new Set(sortedPodcasts.flatMap((item) => item.data.tags ?? []))].slice(0, 8);
+const podcastChapterCount = sortedPodcasts.reduce((sum, item) => sum + (item.data.chapters?.length ?? 0), 0);
+const podcastResourceCount = sortedPodcasts.reduce(
+  (sum, item) => sum + (item.data.resources?.length ?? 0) + (item.data.relatedLinks?.length ?? 0),
+  0
+);
+const getPodcastSlug = (slug: string) => slug.replace('ko/', '');
+const getPodcastThumbnail = (item: (typeof sortedPodcasts)[number]) =>
+  item.data.thumbnail ?? `https://img.youtube.com/vi/${item.data.videoId}/hqdefault.jpg`;
 
 // YouTube & Social Links
 const youtubeChannel = 'https://www.youtube.com/@sudoremove';
@@ -122,6 +133,74 @@ const presentations = [
           </a>
         </div>
       </header>
+
+      <!-- Featured Podcast Hero -->
+      {leadPodcast && (
+        <section class="featured-podcast-hero" aria-labelledby="featured-podcast-hero-title">
+          <div class="featured-podcast-copy">
+            <div class="hero-kicker">SUDO REMOVE PODCAST</div>
+            <h2 id="featured-podcast-hero-title">
+              AI와 로보틱스를 영상 단위로 다시 찾는
+              <span>연구 라이브러리</span>
+            </h2>
+            <p>
+              팟캐스트를 단순 재생목록이 아니라 요약, 챕터, 참고자료, 태그로 연결된
+              지식 아카이브로 정리합니다. 궁금한 주제를 검색하고, 관련 링크를 따라가며,
+              에피소드별 맥락을 빠르게 복습하세요.
+            </p>
+
+            <div class="podcast-hero-actions">
+              <a href="/podcasts/" class="primary-podcast-cta">팟캐스트 라이브러리 열기</a>
+              <a href={`/podcasts/${getPodcastSlug(leadPodcast.slug)}/`} class="secondary-podcast-cta">최신 에피소드 보기</a>
+            </div>
+
+            <div class="podcast-hero-metrics" aria-label="팟캐스트 라이브러리 통계">
+              <div><strong>{sortedPodcasts.length}</strong><span>Episodes</span></div>
+              <div><strong>{podcastTags.length}</strong><span>Tags</span></div>
+              <div><strong>{podcastChapterCount}</strong><span>Chapters</span></div>
+              <div><strong>{podcastResourceCount}</strong><span>References</span></div>
+            </div>
+
+            {podcastTags.length > 0 && (
+              <div class="podcast-hero-tags" aria-label="대표 팟캐스트 태그">
+                {podcastTags.map((tag) => <span>#{tag}</span>)}
+              </div>
+            )}
+          </div>
+
+          <div class="featured-podcast-panel">
+            <a href={`/podcasts/${getPodcastSlug(leadPodcast.slug)}/`} class="featured-episode-hero-card">
+              <div class="featured-episode-thumbnail">
+                <img src={getPodcastThumbnail(leadPodcast)} alt={`${leadPodcast.data.title} 썸네일`} loading="eager" />
+                {leadPodcast.data.duration && <span>{leadPodcast.data.duration}</span>}
+              </div>
+              <div class="featured-episode-content">
+                <span class="featured-episode-label">Featured Episode</span>
+                <div class="featured-episode-meta">
+                  {leadPodcast.data.episodeNumber && <span>EP.{leadPodcast.data.episodeNumber}</span>}
+                  <time datetime={leadPodcast.data.date.toISOString()}>
+                    {leadPodcast.data.date.toISOString().split('T')[0]}
+                  </time>
+                </div>
+                <h3>{leadPodcast.data.title}</h3>
+                <p>{leadPodcast.data.summary?.[0] ?? leadPodcast.data.description}</p>
+              </div>
+            </a>
+
+            {secondaryPodcasts.length > 0 && (
+              <div class="recent-podcast-hero-list">
+                <div class="recent-podcast-title">최근 에피소드</div>
+                {secondaryPodcasts.map((item) => (
+                  <a href={`/podcasts/${getPodcastSlug(item.slug)}/`} class="recent-podcast-hero-link">
+                    <span>{item.data.episodeNumber ? `EP.${item.data.episodeNumber}` : 'Podcast'}</span>
+                    <strong>{item.data.title}</strong>
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       <!-- Podcast & AI News Section -->
       <section class="media-section">
@@ -514,6 +593,296 @@ const presentations = [
   .instagram-btn-sub {
     font-size: 0.7rem;
     opacity: 0.9;
+  }
+
+  .featured-podcast-hero {
+    position: relative;
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid rgba(67, 214, 168, 0.28);
+    border-radius: var(--radius-xl);
+    background:
+      radial-gradient(circle at 12% 18%, rgba(67, 214, 168, 0.22), transparent 28%),
+      radial-gradient(circle at 86% 8%, rgba(253, 115, 24, 0.14), transparent 24%),
+      linear-gradient(135deg, rgba(17, 8, 17, 0.98), rgba(12, 18, 18, 0.96));
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  }
+
+  .featured-podcast-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(67, 214, 168, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(67, 214, 168, 0.05) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: linear-gradient(135deg, black, transparent 72%);
+    pointer-events: none;
+  }
+
+  @media (min-width: 980px) {
+    .featured-podcast-hero {
+      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.8fr);
+      align-items: center;
+    }
+  }
+
+  .featured-podcast-copy,
+  .featured-podcast-panel {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-kicker {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid rgba(67, 214, 168, 0.35);
+    border-radius: 999px;
+    background: rgba(67, 214, 168, 0.1);
+    color: var(--color-green);
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.1em;
+  }
+
+  .featured-podcast-copy h2 {
+    max-width: 760px;
+    color: var(--color-text-primary);
+    font-size: clamp(2rem, 5vw, 4.4rem);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    margin-bottom: 1rem;
+  }
+
+  .featured-podcast-copy h2 span {
+    display: block;
+    color: var(--color-green);
+    text-shadow: 0 0 26px rgba(67, 214, 168, 0.22);
+  }
+
+  .featured-podcast-copy > p {
+    max-width: 680px;
+    color: var(--color-text-secondary);
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+
+  .podcast-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+
+  .primary-podcast-cta,
+  .secondary-podcast-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0.78rem 1rem;
+    border-radius: var(--radius-md);
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .primary-podcast-cta {
+    background: linear-gradient(135deg, var(--color-green), #2fbf95);
+    color: #06110f;
+    box-shadow: 0 10px 28px rgba(67, 214, 168, 0.22);
+  }
+
+  .secondary-podcast-cta {
+    border: 1px solid rgba(67, 214, 168, 0.35);
+    background: rgba(67, 214, 168, 0.08);
+    color: var(--color-green);
+  }
+
+  .primary-podcast-cta:hover,
+  .secondary-podcast-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(67, 214, 168, 0.18);
+  }
+
+  .podcast-hero-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    max-width: 620px;
+  }
+
+  @media (min-width: 640px) {
+    .podcast-hero-metrics {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .podcast-hero-metrics div {
+    padding: 0.9rem;
+    border: 1px solid rgba(67, 214, 168, 0.18);
+    border-radius: var(--radius-lg);
+    background: rgba(7, 16, 16, 0.68);
+  }
+
+  .podcast-hero-metrics strong {
+    display: block;
+    color: var(--color-green);
+    font-family: var(--font-mono);
+    font-size: 1.35rem;
+    line-height: 1;
+  }
+
+  .podcast-hero-metrics span {
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .podcast-hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 1rem;
+  }
+
+  .podcast-hero-tags span {
+    padding: 0.24rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(253, 115, 24, 0.1);
+    color: var(--color-accent-hover);
+    font-size: 0.78rem;
+  }
+
+  .featured-podcast-panel {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .featured-episode-hero-card {
+    display: block;
+    border: 1px solid rgba(67, 214, 168, 0.3);
+    border-radius: var(--radius-xl);
+    background: rgba(17, 8, 17, 0.78);
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  }
+
+  .featured-episode-hero-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-green);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.32), 0 0 24px rgba(67, 214, 168, 0.18);
+  }
+
+  .featured-episode-thumbnail {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--color-bg-secondary);
+    overflow: hidden;
+  }
+
+  .featured-episode-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.22s ease;
+  }
+
+  .featured-episode-hero-card:hover .featured-episode-thumbnail img {
+    transform: scale(1.035);
+  }
+
+  .featured-episode-thumbnail span {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    padding: 0.2rem 0.45rem;
+    border-radius: var(--radius-sm);
+    background: rgba(0, 0, 0, 0.76);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
+  .featured-episode-content {
+    padding: 1.15rem;
+  }
+
+  .featured-episode-label {
+    color: var(--color-green);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .featured-episode-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 0.55rem 0;
+    color: var(--color-text-muted);
+    font-size: 0.78rem;
+  }
+
+  .featured-episode-content h3 {
+    color: var(--color-text-primary);
+    font-size: clamp(1.2rem, 3vw, 1.55rem);
+    line-height: 1.35;
+    margin-bottom: 0.55rem;
+  }
+
+  .featured-episode-content p {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .recent-podcast-hero-list {
+    display: grid;
+    gap: 0.55rem;
+    padding: 1rem;
+    border: 1px solid rgba(67, 214, 168, 0.18);
+    border-radius: var(--radius-xl);
+    background: rgba(7, 16, 16, 0.58);
+  }
+
+  .recent-podcast-title {
+    color: var(--color-text-muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .recent-podcast-hero-link {
+    display: grid;
+    gap: 0.2rem;
+    padding: 0.65rem;
+    border-radius: var(--radius-md);
+    color: inherit;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .recent-podcast-hero-link:hover {
+    background: rgba(67, 214, 168, 0.08);
+  }
+
+  .recent-podcast-hero-link span {
+    color: var(--color-green);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+  }
+
+  .recent-podcast-hero-link strong {
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+    line-height: 1.35;
   }
 
   /* Media Sections */
