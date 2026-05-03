@@ -2,7 +2,7 @@
 
 콘텐츠 작성 및 관리 가이드입니다. 이 문서는 현재 `src/content/config.ts`와 실제 라우트 구현을 기준으로 합니다.
 
-> Last checked against code: 2026-04-27
+> Last checked against code: 2026-05-03
 
 ## Content Structure
 
@@ -56,6 +56,23 @@ src/content/archive/
 ```
 
 영어 route(`/en/archive`)도 현재 같은 `ko/` archive collection을 사용합니다.
+
+### Podcasts
+
+수도리무브 팟캐스트 에피소드별 연구 자료입니다. 현재 v1은 한국어 route/content만 구현되어 있습니다.
+
+```text
+src/content/podcasts/
+└── ko/
+    └── episode-slug.md
+```
+
+생성 route:
+
+- 목록: `/podcasts/`
+- 상세: `/podcasts/{slug}/`
+
+영어 podcast route는 아직 없으며, `/podcasts/**`의 언어 전환 fallback은 `/en/media/`입니다.
 
 ### AI News
 
@@ -177,6 +194,49 @@ isFeatured: false
 ```
 
 Archive 상세 페이지는 `[MM:SS]` 또는 `[HH:MM:SS]` 형식의 본문 timestamp를 클릭 가능한 seek link로 변환합니다.
+
+### Podcasts
+
+```yaml
+---
+title: "에피소드 제목"
+description: "검색과 카드에 표시될 1-2문장 설명"
+date: 2026-04-26
+videoId: "YOUTUBE_VIDEO_ID"
+
+# 선택
+duration: "42:18"
+episodeNumber: 3
+hosts:
+  - "sudo remove"
+guests:
+  - name: "Guest Name"
+    affiliation: "Organization"
+    role: "Guest"
+tags: [Physical AI, 월드모델]
+summary:
+  - "핵심 요약"
+takeaways:
+  - "실행 가능한 인사이트"
+chapters:
+  - title: "소개"
+    startTime: "00:00"
+    endTime: "05:00"
+resources:
+  - title: "참고 자료"
+    url: "https://..."
+relatedLinks:
+  - title: "관련 링크"
+    url: "https://..."
+relatedKnowledge:
+  - "knowledge/ko/models/openvla"
+thumbnail: "https://..."
+isFeatured: false
+isDraft: false
+---
+```
+
+필수 필드는 `title`, `description`, `date`, `videoId`입니다. 목록 페이지는 `ko/` slug이면서 `isDraft: false`인 항목만 보여주고, `episodeNumber` 내림차순 후 `date` 내림차순으로 정렬합니다. `thumbnail`이 없으면 YouTube 기본 썸네일(`https://img.youtube.com/vi/{videoId}/mqdefault.jpg`)을 사용합니다.
 
 ### AI News
 
@@ -384,5 +444,8 @@ touch src/content/ainews/youtube/26-04-24-example.txt
 ## Current Notes
 
 - Projects collection은 현재 코드에 정의되어 있지 않습니다. `/projects`는 준비 중 페이지입니다.
-- Media content collection이나 YouTube API integration helper는 현재 코드에 없습니다. `/media`는 정적 페이지입니다.
+- Podcast content collection은 `src/content/podcasts/ko/*.md`에 정의되어 있고 `/podcasts/` 및 `/podcasts/{slug}/`에서 사용합니다.
+- YouTube API integration/helper는 현재 코드에 없습니다. podcast episode import/sync는 수동 Markdown 작성 방식입니다.
+- `/media`는 `podcasts`, `ainews`, `archive` collection 일부를 읽고, `/en/media`는 아직 podcast collection을 사용하지 않습니다. 상세 구조는 `docs/MEDIA.md`를 참조하세요.
+- 홈 미디어 프리뷰(`src/components/home/HomeMediaSection.astro`)는 한국어에서 `/podcasts/` CTA를, 영어에서 기존 playlist IDs/social links를 사용합니다.
 - `knowledge_to_book`은 현재 보조 자료로 보이며 collection schema가 없으므로 build warning 대상입니다.

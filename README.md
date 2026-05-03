@@ -14,7 +14,8 @@ AI와 로보틱스 분야의 지식 공유, 자료 아카이브, 미디어, 행�
 | **Knowledge Base** | `/knowledge` | `/en/knowledge` | Physical AI 자료, 그래프 탐색, 카테고리/문서 페이지 |
 | **Archive** | `/archive` | `/en/archive` | 영상 노트 아카이브. 영어 경로는 현재 한국어 archive 콘텐츠를 사용 |
 | **News** | `/news` | - | AI news 번역/요약 콘텐츠. 현재 한국어 경로만 구현 |
-| **Media** | `/media` | `/en/media` | 정적 미디어 소개/링크 페이지 |
+| **Media** | `/media` | `/en/media` | 미디어 허브. 한국어는 podcast library preview 포함 |
+| **Podcasts** | `/podcasts` | - | 한국어 팟캐스트 에피소드별 요약/챕터/참고자료 라이브러리 |
 | **Events** | `/events` | `/en/events` | 행사 목록/상세. 영어 경로는 현재 한국어 events 콘텐츠를 사용 |
 | **Projects** | `/projects` | `/en/projects` | 준비 중(TBD) 페이지 |
 | **About** | `/about` | `/en/about` | 소개 페이지 |
@@ -67,11 +68,12 @@ web/
     │   ├── home/
     │   └── layout/
     ├── content/            # Astro Content Collections
-    │   ├── config.ts       # events, knowledge, archive, ainews schemas
+    │   ├── config.ts       # events, knowledge, archive, ainews, podcasts schemas
     │   ├── ainews/         # 한국어 AI news + youtube 원문 텍스트
     │   ├── archive/        # 영상 노트 archive (현재 ko 콘텐츠)
     │   ├── events/         # 행사 콘텐츠 (현재 ko 콘텐츠)
     │   ├── knowledge/      # ko/en Physical AI knowledge base
+    │   ├── podcasts/       # 한국어 팟캐스트 에피소드 노트
     │   └── knowledge_to_book/ # 보조 원고/샘플 자료. 현재 collection 미정의
     ├── i18n/               # locale config, translation JSON, t() helper
     ├── layouts/            # Layout.astro
@@ -85,6 +87,7 @@ web/
 - [ARCHITECTURE.md](./docs/ARCHITECTURE.md) - 현재 구현 기준 기술 아키텍처
 - [CONTENT.md](./docs/CONTENT.md) - 콘텐츠 컬렉션/작성 가이드
 - [DESIGN.md](./docs/DESIGN.md) - 디자인 시스템
+- [MEDIA.md](./docs/MEDIA.md) - 미디어 페이지 구조와 팟캐스트 카드 확장 지점
 - [KNOWLEDGE-GUIDE.md](./docs/KNOWLEDGE-GUIDE.md) - Knowledge Base 작성 규칙
 - [KNOWLEDGE-REVISION-GUIDE.md](./docs/KNOWLEDGE-REVISION-GUIDE.md) - Knowledge Base 퇴고 규칙
 
@@ -95,6 +98,8 @@ web/
   - 일부 knowledge index 문서와 explicit route 충돌 경고
   - `projects.title` translation key 누락 경고
 - `GraphView.astro`는 현재 런타임에서 CDN(`esm.sh`)으로 graph 관련 모듈을 import합니다. `package.json`의 `force-graph` dependency와 버전/번들링 정책이 완전히 일치하지 않습니다.
+- 팟캐스트는 `src/content/podcasts/ko/*.md`와 `/podcasts/` route로 관리합니다. YouTube 자동 동기화는 없으며 Markdown frontmatter를 수동 작성합니다. 상세 구조는 `docs/MEDIA.md`를 확인하세요.
+- AI 뉴스/영어 podcast fallback cards와 일부 홈 미디어 cards는 여전히 YouTube playlist iframe과 하드코딩된 playlist/social link 상수를 사용합니다.
 - `.github/workflows`는 현재 저장소에 없습니다. 자동 배포를 쓰려면 workflow를 별도로 추가해야 합니다.
 
 ## License

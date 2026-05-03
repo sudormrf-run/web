@@ -29,7 +29,7 @@ const labels = {
     subtitle: '팟캐스트와 AI 뉴스',
     viewAll: '전체 보기',
     podcast: '팟캐스트',
-    podcastDesc: '편집된 팟캐스트 클립 모음',
+    podcastDesc: '요약·챕터·참고자료로 정리한 에피소드 라이브러리',
     news: 'AI 뉴스',
     newsDesc: 'AI 최신 뉴스 쇼츠',
     subscribe: 'YouTube',
@@ -79,22 +79,36 @@ const t = labels[locale];
 
     <!-- Media Grid -->
     <div class="media-grid">
-      <!-- Podcast Card (Horizontal) -->
-      <a href={`https://www.youtube.com/playlist?list=${podcastPlaylistId}`} target="_blank" rel="noopener noreferrer" class="media-card podcast-card">
-        <div class="embed-wrapper horizontal">
-          <iframe
-            src={`https://www.youtube.com/embed/videoseries?list=${podcastPlaylistId}`}
-            title={t.podcast}
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="media-info">
-          <h3 class="media-title">{t.podcast}</h3>
-          <p class="media-desc">{t.podcastDesc}</p>
-        </div>
-      </a>
+      <!-- Podcast Card (Korean library, English playlist fallback) -->
+      {locale === 'ko' ? (
+        <a href="/podcasts/" class="media-card podcast-card podcast-library-preview">
+          <div class="library-preview">
+            <span class="library-label">Research Library</span>
+            <strong>에피소드별 노트 보기</strong>
+            <p>요약, 챕터, 참고자료, 태그로 팟캐스트를 다시 탐색하세요.</p>
+          </div>
+          <div class="media-info">
+            <h3 class="media-title">{t.podcast}</h3>
+            <p class="media-desc">{t.podcastDesc}</p>
+          </div>
+        </a>
+      ) : (
+        <a href={`https://www.youtube.com/playlist?list=${podcastPlaylistId}`} target="_blank" rel="noopener noreferrer" class="media-card podcast-card">
+          <div class="embed-wrapper horizontal">
+            <iframe
+              src={`https://www.youtube.com/embed/videoseries?list=${podcastPlaylistId}`}
+              title={t.podcast}
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="media-info">
+            <h3 class="media-title">{t.podcast}</h3>
+            <p class="media-desc">{t.podcastDesc}</p>
+          </div>
+        </a>
+      )}
 
       <!-- News Shorts Card (Vertical) -->
       <a href={`https://www.youtube.com/playlist?list=${newsPlaylistId}`} target="_blank" rel="noopener noreferrer" class="media-card news-card">
@@ -286,6 +300,51 @@ const t = labels[locale];
 
   .media-card:hover .embed-wrapper iframe {
     pointer-events: auto;
+  }
+
+
+  .library-preview {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.65rem;
+    min-height: 200px;
+    padding: 1.25rem;
+    background:
+      radial-gradient(circle at top left, rgba(67, 214, 168, 0.2), transparent 36%),
+      linear-gradient(135deg, var(--color-surface), var(--color-bg-secondary));
+  }
+
+  .library-label {
+    color: var(--color-green);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .library-preview strong {
+    color: var(--color-text-primary);
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+
+  .library-preview p {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .podcast-library-preview {
+    border-color: rgba(67, 214, 168, 0.32);
+  }
+
+  .podcast-library-preview:hover {
+    border-color: var(--color-green);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(67, 214, 168, 0.22);
   }
 
   .media-info {

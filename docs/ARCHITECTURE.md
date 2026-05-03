@@ -2,7 +2,7 @@
 
 sudoremove.com의 현재 코드 구현 기준 기술 아키텍처 문서입니다.
 
-> Last checked against code: 2026-04-27
+> Last checked against code: 2026-05-03
 
 ## Tech Stack
 
@@ -56,6 +56,8 @@ src/
 │   ├── knowledge/physical-ai/browse.astro
 │   ├── media/index.astro
 │   ├── news/index.astro
+│   ├── podcasts/index.astro
+│   ├── podcasts/[...slug].astro
 │   ├── news/[...slug].astro
 │   ├── projects.astro
 │   └── en/                       # 영어 페이지 트리
@@ -73,6 +75,7 @@ src/
 │   │   ├── ko/                   # AI news 한국어 콘텐츠
 │   │   └── youtube/              # 원문/스크립트 텍스트 자료
 │   ├── archive/ko/               # 영상 노트 archive 콘텐츠
+│   ├── podcasts/ko/              # 팟캐스트 에피소드 노트
 │   ├── events/ko/                # 행사 콘텐츠
 │   ├── knowledge/
 │   │   ├── ko/                   # 한국어 Knowledge Base
@@ -106,6 +109,7 @@ src/
 | Archive | `/archive/`, `/archive/{slug}` | `/en/archive/`, `/en/archive/{slug}` | 영어 route는 현재 `archive` collection의 `ko/` 콘텐츠를 사용 |
 | Events | `/events/`, `/events/{slug}` | `/en/events/`, `/en/events/{slug}` | 영어 route는 현재 `events` collection의 `ko/` 콘텐츠를 사용 |
 | News | `/news/`, `/news/{slug}` | - | 현재 한국어 route만 구현 |
+| Podcasts | `/podcasts/`, `/podcasts/{slug}` | - | 현재 한국어 route만 구현. language switch fallback은 `/en/media/` |
 | Media | `/media/` | `/en/media/` | 정적 Astro 페이지 |
 | Projects | `/projects/` | `/en/projects/` | 준비 중 페이지 |
 
@@ -123,7 +127,7 @@ Request URL
 
 ## Content Collections
 
-`src/content/config.ts`에서 네 개 collection을 정의합니다.
+`src/content/config.ts`에서 다섯 개 collection을 정의합니다.
 
 ### `knowledge`
 
@@ -184,6 +188,18 @@ Required:
 Optional:
 - `originalVideoId`, `duration`, `thumbnail`, `chapters`, `tags`, `source`, `isFeatured`
 
+### `podcasts`
+
+수도리무브 팟캐스트 에피소드별 자료입니다. 현재 한국어 v1만 구현되어 있습니다.
+
+Required:
+- `title`, `description`, `date`, `videoId`
+
+Optional:
+- `duration`, `episodeNumber`, `hosts`, `guests`, `tags`, `thumbnail`
+- `summary`, `takeaways`, `chapters`, `resources`, `relatedLinks`, `relatedKnowledge`
+- `isFeatured`, `isDraft`
+
 ## Data Flow
 
 ### Knowledge document page
@@ -230,9 +246,45 @@ Optional:
 
 영어 archive route도 현재 같은 ko archive collection을 기반으로 route를 생성합니다.
 
-### Media page
+### Media and podcast pages
 
-현재 media pages는 정적 Astro 페이지입니다. 별도 YouTube API fetch helper나 `src/lib/youtube.ts`는 현재 코드에 없습니다.
+현재 media pages는 정적 Astro 페이지입니다. 별도 YouTube API fetch helper나 `src/lib/youtube.ts`는 현재 코드에 없습니다. 상세 구현 지도는 `docs/MEDIA.md`를 참조합니다.
+
+```text
+/podcasts/index.astro
+  1. podcasts collection에서 ko non-draft entries 조회
+  2. episodeNumber/date 기준 정렬
+  3. dependency-free text search + tag filter client script 렌더링
+  4. Header languagePaths로 영어 fallback을 /en/media/로 지정
+
+/podcasts/[...slug].astro
+  1. podcasts collection의 ko non-draft entries로 static paths 생성
+  2. YouTube iframe, metadata, summary/takeaways, chapters, resources 렌더링
+  3. Markdown body render
+  4. Header languagePaths로 영어 fallback을 /en/media/로 지정
+
+/media/index.astro
+  1. locale='ko'로 Layout/useTranslations 사용
+  2. archive collection에서 ko entries 최신 3개 조회
+  3. ainews collection에서 ko entries 최신 3개 조회
+  4. podcasts collection에서 ko non-draft entries 조회 후 featured/latest preview 렌더링
+  5. 파일 내부 상수로 YouTube/Instagram/playlists/essays/presentations 정의
+  6. Podcast Library CTA, AI Daily News, Presentations, Archive, Essays sections 렌더링
+
+/en/media/index.astro
+  1. locale='en'로 Layout/useTranslations 사용
+  2. archive collection은 현재 ko entries 최신 3개를 재사용
+  3. 파일 내부 상수로 영어 essay/presentation/playlists 정의
+  4. 기존 Podcast & AI News iframe, Essays, Presentations, Video Archive, Auto News TBD 렌더링
+
+HomeMediaSection.astro
+  1. ko/en label 객체를 component 내부에 보유
+  2. 한국어 podcast card는 /podcasts/ CTA로 연결
+  3. 영어 podcast/news cards는 기존 playlist iframe을 유지
+  4. social links를 component 내부 상수로 보유
+```
+
+주의: `/podcasts/**`는 한국어 v1 전용이므로 `/en/podcasts` 링크가 생성되지 않아야 합니다. `Layout`과 `Header`는 `languagePaths` prop을 받아 route별 language switch target을 override할 수 있습니다.
 
 ## Build & Deploy
 
@@ -283,5 +335,6 @@ npm run build → dist/
 ## Known Architecture Debt
 
 - locale별 route/page duplication이 많습니다.
+- media page와 home media preview의 YouTube/social 데이터가 공유 모듈 없이 중복되어 있습니다. 한국어 podcast episode data는 `podcasts` collection으로 이동했습니다.
 - taxonomy/category metadata가 schema, sidebar, graph, document page에 분산되어 있습니다.
-- architecture/docs와 코드가 쉽게 drift될 수 있으므로, category/route/content collection 변경 시 이 문서를 함께 업데이트해야 합니다.
+- architecture/docs와 코드가 쉽게 drift될 수 있으므로, category/route/content collection/media data ownership 변경 시 이 문서를 함께 업데이트해야 합니다.

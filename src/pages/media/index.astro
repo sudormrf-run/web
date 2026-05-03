@@ -1,7 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { useTranslations } from '../../i18n/utils';
-import { getLocalizedPath } from '../../i18n/config';
 import { getCollection } from 'astro:content';
 
 const locale = 'ko';
@@ -23,17 +22,21 @@ const sortedNews = ainewsItems.sort((a, b) =>
   b.data.date.getTime() - a.data.date.getTime()
 ).slice(0, 3); // Show only 3 latest items
 
+// Fetch podcast episodes (팟캐스트 라이브러리)
+const podcastItems = await getCollection('podcasts', ({ slug, data }) =>
+  slug.startsWith('ko/') && !data.isDraft
+);
+const sortedPodcasts = podcastItems.sort((a, b) => {
+  const episodeDiff = (b.data.episodeNumber ?? 0) - (a.data.episodeNumber ?? 0);
+  if (episodeDiff !== 0) return episodeDiff;
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+const featuredPodcasts = sortedPodcasts.filter((item) => item.data.isFeatured).slice(0, 2);
+const latestPodcasts = (featuredPodcasts.length > 0 ? featuredPodcasts : sortedPodcasts).slice(0, 2);
+
 // YouTube & Social Links
 const youtubeChannel = 'https://www.youtube.com/@sudoremove';
 const instagramUrl = 'https://www.instagram.com/sudo.remove/';
-
-// Playlist URLs
-const playlists = {
-  live: 'https://www.youtube.com/playlist?list=PLLYXs4EFjbmmQ3zg8XAhcRJgz66VWoV6e',
-  clips: 'https://www.youtube.com/playlist?list=PLLYXs4EFjbmlC86qaN9FXSK7ib0y3h3jN',
-  physicalAI: 'https://www.youtube.com/playlist?list=PLLYXs4EFjbmkJRxJkkzv_oQXNJTZ8Z1nS',
-};
-
 
 // Essays & Columns data
 const essays = [
@@ -131,26 +134,36 @@ const presentations = [
               </svg>
             </span>
             <div>
-              <h2 class="section-title">팟캐스트 & AI 뉴스</h2>
-              <p class="section-description">매주 진행하는 팟캐스트와 AI 최신 소식</p>
+              <h2 class="section-title">팟캐스트 라이브러리 & AI 뉴스</h2>
+              <p class="section-description">영상별 요약·챕터·참고자료로 다시 찾는 팟캐스트</p>
             </div>
           </div>
+          <a href="/podcasts/" class="view-all-link podcast-view-all">
+            팟캐스트 전체 보기 →
+          </a>
         </div>
         <div class="podcast-grid">
-          <!-- 팟캐스트 카드 (임베드) -->
-          <a href={playlists.clips} target="_blank" rel="noopener noreferrer" class="podcast-embed-card">
-            <div class="podcast-embed-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/videoseries?list=PLLYXs4EFjbmlC86qaN9FXSK7ib0y3h3jN"
-                title="팟캐스트 재생목록"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
+          <a href="/podcasts/" class="podcast-library-card">
+            <div class="podcast-library-hero">
+              <span class="library-kicker">Research Library</span>
+              <h3>팟캐스트를 자료처럼 탐색하기</h3>
+              <p>각 에피소드의 요약, 태그, 챕터, 참고 링크를 한 페이지에서 확인하세요.</p>
+              <div class="library-stats">
+                <span>{sortedPodcasts.length} episodes</span>
+                <span>{[...new Set(sortedPodcasts.flatMap((item) => item.data.tags ?? []))].length} tags</span>
+              </div>
             </div>
-            <div class="podcast-embed-info">
-              <h3 class="podcast-embed-title">팟캐스트</h3>
-              <p class="podcast-embed-description">편집된 팟캐스트 클립 모음</p>
+            <div class="featured-podcast-list">
+              {latestPodcasts.map((item) => {
+                return (
+                  <div class="featured-podcast-card">
+                    <span class="featured-podcast-meta">
+                      {item.data.episodeNumber ? `EP.${item.data.episodeNumber}` : 'Podcast'} · {item.data.date.toISOString().split('T')[0]}
+                    </span>
+                    <strong>{item.data.title}</strong>
+                  </div>
+                );
+              })}
             </div>
           </a>
 
@@ -576,6 +589,89 @@ const presentations = [
     .podcast-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+  }
+
+
+  .podcast-library-card {
+    display: grid;
+    gap: 1rem;
+    min-height: 100%;
+    padding: 1.25rem;
+    background:
+      radial-gradient(circle at top left, rgba(67, 214, 168, 0.18), transparent 34%),
+      var(--color-surface);
+    border: 1px solid rgba(67, 214, 168, 0.28);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .podcast-library-card:hover {
+    border-color: var(--color-green);
+    transform: translateY(-4px);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(67, 214, 168, 0.22);
+  }
+
+  .library-kicker {
+    color: var(--color-green);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .podcast-library-hero h3 {
+    color: var(--color-text-primary);
+    font-size: 1.35rem;
+    margin: 0.4rem 0 0.5rem;
+  }
+
+  .podcast-library-hero p {
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+    font-size: 0.92rem;
+  }
+
+  .library-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .library-stats span {
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(67, 214, 168, 0.12);
+    color: var(--color-green);
+    font-size: 0.78rem;
+  }
+
+  .featured-podcast-list {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .featured-podcast-card {
+    padding: 0.75rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    background: rgba(17, 8, 17, 0.72);
+  }
+
+  .featured-podcast-meta {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .featured-podcast-card strong {
+    color: var(--color-text-primary);
+    font-size: 0.92rem;
+    line-height: 1.4;
   }
 
   /* Podcast Embed Card - 빨간색 테마 (팟캐스트 아이콘과 통일) */
