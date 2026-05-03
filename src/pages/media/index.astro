@@ -202,44 +202,6 @@ const presentations = [
         </section>
       )}
 
-      <!-- AI News Playlist Section -->
-      <section class="media-section">
-        <div class="section-header">
-          <div class="section-title-wrapper">
-            <span class="section-icon podcast-icon">
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2H3v2a9 9 0 0 0 8 8.94V23h2v-2.06A9 9 0 0 0 21 12v-2h-2z"/>
-              </svg>
-            </span>
-            <div>
-              <h2 class="section-title">AI 뉴스</h2>
-              <p class="section-description">AI와 로보틱스 최신 소식을 영상으로 확인하세요</p>
-            </div>
-          </div>
-          <a href="https://www.youtube.com/playlist?list=PLLYXs4EFjbmkqbBE7mskK9Uq7DwaCl8KL" target="_blank" rel="noopener noreferrer" class="view-all-link podcast-view-all">
-            AI 뉴스 재생목록 보기 →
-          </a>
-        </div>
-        <div class="podcast-grid ai-news-only-grid">
-          <a href="https://www.youtube.com/playlist?list=PLLYXs4EFjbmkqbBE7mskK9Uq7DwaCl8KL" target="_blank" rel="noopener noreferrer" class="podcast-embed-card news">
-            <div class="podcast-embed-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/videoseries?list=PLLYXs4EFjbmkqbBE7mskK9Uq7DwaCl8KL"
-                title="AI 최신 뉴스 재생목록"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <div class="podcast-embed-info">
-              <h3 class="podcast-embed-title">AI 최신 뉴스</h3>
-              <p class="podcast-embed-description">AI와 로보틱스 최신 소식</p>
-            </div>
-          </a>
-        </div>
-      </section>
-
       <!-- AI 데일리 뉴스 Section -->
       <section class="media-section">
         <div class="section-header">
@@ -429,6 +391,45 @@ const presentations = [
           ))}
         </div>
       </section>
+
+      <!-- AI News Playlist Section -->
+      <section class="media-section">
+        <div class="section-header">
+          <div class="section-title-wrapper">
+            <span class="section-icon podcast-icon">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2H3v2a9 9 0 0 0 8 8.94V23h2v-2.06A9 9 0 0 0 21 12v-2h-2z"/>
+              </svg>
+            </span>
+            <div>
+              <h2 class="section-title">AI 뉴스</h2>
+              <p class="section-description">AI와 로보틱스 최신 소식을 영상으로 확인하세요</p>
+            </div>
+          </div>
+          <a href="https://www.youtube.com/playlist?list=PLLYXs4EFjbmkqbBE7mskK9Uq7DwaCl8KL" target="_blank" rel="noopener noreferrer" class="view-all-link podcast-view-all">
+            AI 뉴스 재생목록 보기 →
+          </a>
+        </div>
+        <div class="podcast-grid ai-news-only-grid">
+          <a href="https://www.youtube.com/playlist?list=PLLYXs4EFjbmkqbBE7mskK9Uq7DwaCl8KL" target="_blank" rel="noopener noreferrer" class="podcast-embed-card news">
+            <div class="podcast-embed-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/videoseries?list=PLLYXs4EFjbmkqbBE7mskK9Uq7DwaCl8KL"
+                title="AI 최신 뉴스 재생목록"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="podcast-embed-info">
+              <h3 class="podcast-embed-title">AI 최신 뉴스</h3>
+              <p class="podcast-embed-description">AI와 로보틱스 최신 소식</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
     </div>
   </div>
 </Layout>
@@ -936,7 +937,13 @@ const presentations = [
   }
 
   .ai-news-only-grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 720px);
+    justify-content: start;
+  }
+
+  .ai-news-only-grid .podcast-embed-wrapper {
+    height: clamp(180px, 24vw, 280px);
+    padding-bottom: 0;
   }
 
 
