@@ -1,33 +1,38 @@
 ---
-title: "AMI Labs와 World Labs의 월드모델 기술 분석"
-description: "월드모델이 로보틱스와 공간지능 연구에서 왜 중요한지, AMI Labs와 World Labs의 접근을 중심으로 정리합니다."
-date: 2026-04-26
+title: "AMI Labs, World Labs의 월드모델 기술 분석"
+description: "액션 조건부 월드모델과 다른 길을 택한 AMI Labs의 JEPA 기반 latent world model, World Labs의 3D spatial world model을 비교합니다."
+date: 2026-04-10
 videoId: "-EMWudhi3lI"
-duration: "42:18"
+duration: "28:56"
 episodeNumber: 3
 hosts:
   - "sudo remove"
 tags:
   - "월드모델"
-  - "Physical AI"
+  - "JEPA"
+  - "World Labs"
   - "로보틱스"
-  - "공간지능"
 summary:
-  - "월드모델은 로봇이 행동하기 전에 환경 변화를 예측하는 핵심 표현 학습 문제로 다뤄진다."
-  - "AMI Labs와 World Labs의 방향은 영상 생성 그 자체보다 물리적 세계를 조작 가능한 내부 모델로 만드는 데 초점이 있다."
-  - "Physical AI 관점에서는 데이터 수집, 시뮬레이션, 장기 예측, 행동 계획이 하나의 스택으로 연결된다."
+  - "로보틱스에서 말하는 월드모델은 현재 상태와 에이전트의 액션을 조건으로 다음 상태를 예측해 폴리시나 VLA 모델을 학습시키는 수단으로 설명된다."
+  - "AMI Labs는 Yann LeCun의 JEPA 철학을 바탕으로 픽셀을 직접 생성하기보다 임베딩 공간에서 미래 상태를 예측하는 latent world model 방향을 택한다."
+  - "World Labs는 Fei-Fei Li와 Justin Johnson이 이끄는 3D spatial world model 회사로, Marble 같은 제품과 디지털 트윈·VR·게임·로봇 시뮬레이션 응용이 더 명확하게 보인다."
 takeaways:
-  - "월드모델 자료를 볼 때는 생성 품질보다 행동 계획에 쓸 수 있는 상태 표현인지 확인한다."
-  - "로보틱스 적용 가능성은 모델이 3D 일관성, 상호작용, 시간적 안정성을 얼마나 유지하는지에 달려 있다."
+  - "월드모델을 비교할 때는 픽셀 비디오 생성, latent embedding prediction, 3D 공간 재구성이 서로 다른 문제 정의라는 점을 먼저 구분해야 한다."
+  - "JEPA 기반 접근은 좋은 인코더를 만들겠다는 낭만과 잠재력이 있지만, 목표 이미지 필요성, 액션 샘플링, 큰 자유도에서의 실용성 문제가 남아 있다."
+  - "World Labs식 공간 월드모델은 시간과 액션 조건부 예측보다는 정적인 공간 생성에 가깝지만, 디지털 트윈과 시뮬레이션 데이터 생성에는 즉각적인 용처가 있다."
 chapters:
-  - title: "월드모델이 다시 중요해진 이유"
+  - title: "액션 조건부 월드모델 복습"
     startTime: "00:00"
-  - title: "AMI Labs 접근법"
-    startTime: "08:15"
-  - title: "World Labs와 공간지능"
-    startTime: "18:40"
-  - title: "로보틱스 연구자가 봐야 할 포인트"
-    startTime: "31:10"
+  - title: "비디오 기반 월드모델의 기대와 한계"
+    startTime: "03:49"
+  - title: "AMI Labs와 JEPA 기반 latent world model"
+    startTime: "07:28"
+  - title: "JEPA의 플래닝 방식과 실용성 논쟁"
+    startTime: "15:49"
+  - title: "World Labs의 3D spatial world model"
+    startTime: "24:40"
+  - title: "두 스타트업의 월드모델 정의 정리"
+    startTime: "28:00"
 resources:
   - title: "World Labs"
     url: "https://www.worldlabs.ai/"
@@ -42,14 +47,16 @@ isDraft: false
 
 ## 왜 이 영상을 봐야 하나
 
-월드모델은 Physical AI에서 단순한 비디오 생성 모델이 아니라, 로봇이 세계를 이해하고 다음 상태를 예측하기 위한 기반 표현으로 볼 수 있습니다. 이 에피소드는 월드모델 담론을 로보틱스 연구자의 관점에서 다시 읽는 데 초점을 둡니다.
+같은 "월드모델"이라는 이름을 쓰더라도 실제로는 서로 다른 목표를 가질 수 있습니다. 이 에피소드는 로보틱스에서 자주 말하는 액션 조건부 월드모델을 기준점으로 삼고, AMI Labs의 JEPA 기반 latent world model과 World Labs의 3D spatial world model이 무엇을 다르게 정의하는지 분해합니다.
 
 ## 주요 메모
 
-- 월드모델의 핵심 질문은 “그럴듯한 영상을 만들 수 있는가”보다 “행동의 결과를 예측할 수 있는가”입니다.
-- 공간지능 모델은 2D 이미지 이해, 3D 구조, 시간적 변화, 물리적 상호작용을 동시에 다루어야 합니다.
-- 로봇 연구에서 중요한 평가는 장기 예측 안정성, 조작 가능성, 실제 센서 데이터와의 연결입니다.
+- 로보틱스 맥락의 월드모델은 시뮬레이터를 뉴럴넷으로 대체해, 현재 관측과 액션이 주어졌을 때 다음 상태를 예측하고 에이전트나 폴리시 학습에 쓰려는 접근입니다.
+- 비디오 생성 기반 월드모델은 유체, 머리카락, 옷처럼 시뮬레이션으로 만들기 까다로운 물리 현상과 코너 케이스를 생성할 수 있다는 기대가 있지만, 네비게이션 중심이거나 액션 스페이스가 작고 속도가 느린 한계가 있습니다.
+- AMI Labs는 Yann LeCun의 LLM 비판과 JEPA 철학 위에서, 픽셀을 생성하는 대신 좋은 임베딩 공간을 학습하고 그 공간에서 미래 상태를 예측하는 방향을 제시합니다.
+- JEPA 기반 플래닝은 목표 이미지가 있다고 가정하고 여러 액션을 샘플링한 뒤 목표 임베딩에 가까운 후보를 좁혀 가는 방식으로 설명됩니다. 작은 자유도에서는 가능성을 보일 수 있지만, 복잡한 태스크나 큰 액션 스페이스에서는 실용성 의문이 남습니다.
+- World Labs는 액션 조건부 예측보다는 NeRF나 3D Gaussian Splatting 계열의 공간 생성·재구성에 가까운 회사로 소개됩니다. Marble처럼 사용자가 공간을 돌아다닐 수 있는 제품과 디지털 트윈, VR, 게임, 로봇 시뮬레이션 데이터 생성이 핵심 응용으로 언급됩니다.
 
 ## 검색 키워드
 
-월드모델, 공간지능, Physical AI, 로보틱스, World Labs, AMI Labs
+월드모델, JEPA, Latent World Model, World Labs, 3D Spatial World Model, 로보틱스, 디지털 트윈
