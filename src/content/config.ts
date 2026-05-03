@@ -162,6 +162,19 @@ const chapterSchema = z.object({
   endTime: z.string().optional(),
 });
 
+// Canonical podcast transcript source: YouTube captions only.
+// rawText preserves mechanically joined caption evidence; text is reader-facing cleanup.
+const transcriptSegmentSchema = z.object({
+  startTime: z.string(),
+  startSeconds: z.number().int().nonnegative(),
+  endTime: z.string().optional(),
+  endSeconds: z.number().int().nonnegative().optional(),
+  rawText: z.string(),
+  text: z.string(),
+  speaker: z.string().optional(),
+  title: z.string().optional(),
+});
+
 // Podcast collection schema
 const podcastsCollection = defineCollection({
   type: 'content',
@@ -187,6 +200,7 @@ const podcastsCollection = defineCollection({
     resources: z.array(linkSchema).optional(),
     relatedLinks: z.array(linkSchema).optional(),
     relatedKnowledge: z.array(z.string()).optional(),
+    transcriptSegments: z.array(transcriptSegmentSchema).optional(),
 
     // Status
     isFeatured: z.boolean().default(false),

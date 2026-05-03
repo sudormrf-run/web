@@ -230,6 +230,17 @@ relatedLinks:
     url: "https://..."
 relatedKnowledge:
   - "knowledge/ko/models/openvla"
+transcriptSegments:
+  - startTime: "00:00"
+    startSeconds: 0
+    endTime: "01:20"
+    endSeconds: 80
+    title: "도입"
+    speaker: "Host"
+    rawText: >-
+      YouTube caption text joined with only mechanical cleanup.
+    text: >-
+      읽기 쉽게 다듬은 한국어 문장입니다. rawText에 없는 새 의미를 추가하지 않습니다.
 thumbnail: "https://..."
 isFeatured: false
 isDraft: false
@@ -237,6 +248,22 @@ isDraft: false
 ```
 
 필수 필드는 `title`, `description`, `date`, `videoId`입니다. 목록 페이지는 `ko/` slug이면서 `isDraft: false`인 항목만 보여주고, `episodeNumber` 내림차순 후 `date` 내림차순으로 정렬합니다. `thumbnail`이 없으면 YouTube 기본 썸네일(`https://img.youtube.com/vi/{videoId}/mqdefault.jpg`)을 사용합니다.
+
+`transcriptSegments`는 팟캐스트 transcript의 canonical 저장 위치입니다. Markdown 본문에는 에피소드 노트, 해설, 요약만 작성하고 전체 transcript를 중복해서 붙여 넣지 않습니다. 각 segment는 `startTime`, `startSeconds`, `rawText`, `text`를 반드시 포함하고, 필요하면 `endTime`, `endSeconds`, `speaker`, `title`을 추가합니다.
+
+#### Podcast YouTube-link episode agent rules
+
+미래 에피소드 작성/보강 agent는 아래 정책을 따라야 합니다.
+
+- Transcript source는 YouTube captions만 허용합니다.
+- Manual captions를 우선 사용하고, manual captions가 없을 때만 YouTube auto captions를 사용할 수 있습니다.
+- Whisper, faster-whisper, 로컬 STT, 업로드된 오디오 파일, 블로그/기사/댓글 등 비-YouTube transcript fallback은 금지합니다.
+- YouTube captions가 없거나 접근할 수 없으면 transcript-derived `summary`, `takeaways`, `chapters`, `resources`, `relatedLinks`, `transcriptSegments`를 새로 만들지 말고 blocked/draft 상태로 보고합니다.
+- `rawText`는 YouTube caption source를 이어 붙인 증거 텍스트이며, 줄바꿈/공백/중복 토큰 정리 같은 기계적 cleanup만 허용합니다.
+- `text`는 독자를 위한 한국어 cleanup이며, `rawText`에 없는 새 주장/해석/고유명사를 추가하지 않습니다.
+- Segment는 topic/speaker 변화 기준으로 나누고, 명확한 변화가 없으면 대략 60-120초 단위로 나눕니다.
+- 작업 보고에는 caption source evidence를 남깁니다: videoId, caption kind(manual/auto), language, fetched command/tool, fetched time, unavailable/block reason.
+- 참고자료 보강은 transcript 또는 YouTube 설명에 등장한 entity의 official/source-backed 링크로 제한합니다.
 
 ### AI News
 
