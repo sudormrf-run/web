@@ -31,18 +31,8 @@ const sortedPodcasts = podcastItems.sort((a, b) => {
   if (episodeDiff !== 0) return episodeDiff;
   return b.data.date.getTime() - a.data.date.getTime();
 });
-const featuredPodcasts = sortedPodcasts.filter((item) => item.data.isFeatured);
-const leadPodcast = featuredPodcasts[0] ?? sortedPodcasts[0];
-const secondaryPodcasts = sortedPodcasts.filter((item) => item.id !== leadPodcast?.id).slice(0, 3);
-const podcastTags = [...new Set(sortedPodcasts.flatMap((item) => item.data.tags ?? []))].slice(0, 8);
-const podcastChapterCount = sortedPodcasts.reduce((sum, item) => sum + (item.data.chapters?.length ?? 0), 0);
-const podcastResourceCount = sortedPodcasts.reduce(
-  (sum, item) => sum + (item.data.resources?.length ?? 0) + (item.data.relatedLinks?.length ?? 0),
-  0
-);
-const getPodcastSlug = (slug: string) => slug.replace('ko/', '');
-const getPodcastThumbnail = (item: (typeof sortedPodcasts)[number]) =>
-  item.data.thumbnail ?? `https://img.youtube.com/vi/${item.data.videoId}/hqdefault.jpg`;
+const featuredPodcasts = sortedPodcasts.filter((item) => item.data.isFeatured).slice(0, 2);
+const latestPodcasts = (featuredPodcasts.length > 0 ? featuredPodcasts : sortedPodcasts).slice(0, 2);
 
 // YouTube & Social Links
 const youtubeChannel = 'https://www.youtube.com/@sudoremove';
@@ -101,88 +91,100 @@ const presentations = [
           {t('media.subtitle')}
         </p>
 
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href={youtubeChannel} target="_blank" rel="noopener noreferrer" class="social-btn youtube">
+            <div class="youtube-btn-content">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" />
+                <path fill="var(--color-bg-primary)" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+              <span class="youtube-btn-text">
+                <span class="youtube-btn-main">{t('media.subscribe')}</span>
+                <span class="youtube-btn-sub">매주 일요일 라이브 진행</span>
+              </span>
+            </div>
+            <span class="live-indicator">
+              <span class="live-dot"></span>
+              LIVE
+            </span>
+          </a>
+          <a href={instagramUrl} target="_blank" rel="noopener noreferrer" class="social-btn instagram">
+            <div class="instagram-btn-content">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <span class="instagram-btn-text">
+                <span class="instagram-btn-main">{t('media.follow')}</span>
+                <span class="instagram-btn-sub">최신 AI 뉴스 릴스</span>
+              </span>
+            </div>
+          </a>
+        </div>
       </header>
 
-      <!-- Podcast Hero Section -->
-      <section class="podcast-hero-section" aria-labelledby="podcast-hero-title">
-        <div class="podcast-hero-copy">
-          <div class="hero-kicker">SUDO REMOVE PODCAST</div>
-          <h2 id="podcast-hero-title">
-            AI와 로보틱스를 영상 단위로 다시 찾는
-            <span>연구 라이브러리</span>
-          </h2>
-          <p>
-            팟캐스트를 단순 재생목록이 아니라 요약, 챕터, 참고자료, 태그로 연결된
-            지식 아카이브로 정리합니다. 궁금한 주제를 검색하고, 관련 링크를 따라가며,
-            에피소드별 맥락을 빠르게 복습하세요.
-          </p>
-
-          <div class="podcast-actions">
-            <a href="/podcasts/" class="primary-podcast-cta">팟캐스트 라이브러리 열기</a>
-            {leadPodcast && (
-              <a href={`/podcasts/${getPodcastSlug(leadPodcast.slug)}/`} class="secondary-podcast-cta">최신 에피소드 보기</a>
-            )}
-          </div>
-
-          <div class="podcast-metrics" aria-label="팟캐스트 라이브러리 통계">
-            <div><strong>{sortedPodcasts.length}</strong><span>Episodes</span></div>
-            <div><strong>{podcastTags.length}</strong><span>Tags</span></div>
-            <div><strong>{podcastChapterCount}</strong><span>Chapters</span></div>
-            <div><strong>{podcastResourceCount}</strong><span>References</span></div>
-          </div>
-
-          {podcastTags.length > 0 && (
-            <div class="podcast-tag-preview" aria-label="대표 팟캐스트 태그">
-              {podcastTags.map((tag) => <span>#{tag}</span>)}
+      <!-- Podcast & AI News Section -->
+      <section class="media-section">
+        <div class="section-header">
+          <div class="section-title-wrapper">
+            <span class="section-icon podcast-icon">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2H3v2a9 9 0 0 0 8 8.94V23h2v-2.06A9 9 0 0 0 21 12v-2h-2z"/>
+              </svg>
+            </span>
+            <div>
+              <h2 class="section-title">팟캐스트 라이브러리 & AI 뉴스</h2>
+              <p class="section-description">영상별 요약·챕터·참고자료로 다시 찾는 팟캐스트</p>
             </div>
-          )}
-        </div>
-
-        {leadPodcast && (
-          <div class="podcast-feature-panel">
-            <a href={`/podcasts/${getPodcastSlug(leadPodcast.slug)}/`} class="featured-episode-card">
-              <div class="featured-thumbnail">
-                <img src={getPodcastThumbnail(leadPodcast)} alt={`${leadPodcast.data.title} 썸네일`} loading="eager" />
-                {leadPodcast.data.duration && <span class="featured-duration">{leadPodcast.data.duration}</span>}
-              </div>
-              <div class="featured-content">
-                <span class="featured-label">Featured Episode</span>
-                <div class="featured-meta">
-                  {leadPodcast.data.episodeNumber && <span>EP.{leadPodcast.data.episodeNumber}</span>}
-                  <time datetime={leadPodcast.data.date.toISOString()}>
-                    {leadPodcast.data.date.toISOString().split('T')[0]}
-                  </time>
-                </div>
-                <h3>{leadPodcast.data.title}</h3>
-                <p>{leadPodcast.data.summary?.[0] ?? leadPodcast.data.description}</p>
-              </div>
-            </a>
-
-            {secondaryPodcasts.length > 0 && (
-              <div class="recent-episode-list">
-                <div class="recent-title">최근 에피소드</div>
-                {secondaryPodcasts.map((item) => (
-                  <a href={`/podcasts/${getPodcastSlug(item.slug)}/`} class="recent-episode-link">
-                    <span>{item.data.episodeNumber ? `EP.${item.data.episodeNumber}` : 'Podcast'}</span>
-                    <strong>{item.data.title}</strong>
-                  </a>
-                ))}
-              </div>
-            )}
           </div>
-        )}
-      </section>
+          <a href="/podcasts/" class="view-all-link podcast-view-all">
+            팟캐스트 전체 보기 →
+          </a>
+        </div>
+        <div class="podcast-grid">
+          <a href="/podcasts/" class="podcast-library-card">
+            <div class="podcast-library-hero">
+              <span class="library-kicker">Research Library</span>
+              <h3>팟캐스트를 자료처럼 탐색하기</h3>
+              <p>각 에피소드의 요약, 태그, 챕터, 참고 링크를 한 페이지에서 확인하세요.</p>
+              <div class="library-stats">
+                <span>{sortedPodcasts.length} episodes</span>
+                <span>{[...new Set(sortedPodcasts.flatMap((item) => item.data.tags ?? []))].length} tags</span>
+              </div>
+            </div>
+            <div class="featured-podcast-list">
+              {latestPodcasts.map((item) => {
+                return (
+                  <div class="featured-podcast-card">
+                    <span class="featured-podcast-meta">
+                      {item.data.episodeNumber ? `EP.${item.data.episodeNumber}` : 'Podcast'} · {item.data.date.toISOString().split('T')[0]}
+                    </span>
+                    <strong>{item.data.title}</strong>
+                  </div>
+                );
+              })}
+            </div>
+          </a>
 
-      <div class="channel-strip" aria-label="소셜 채널 링크">
-        <a href={youtubeChannel} target="_blank" rel="noopener noreferrer" class="channel-link">
-          YouTube 채널 구독
-          <span>매주 일요일 라이브</span>
-        </a>
-        <a href={instagramUrl} target="_blank" rel="noopener noreferrer" class="channel-link">
-          Instagram 팔로우
-          <span>최신 AI 뉴스 릴스</span>
-        </a>
-      </div>
+          <!-- AI 최신 뉴스 카드 -->
+          <a href="https://www.youtube.com/playlist?list=PLLYXs4EFjbmkqbBE7mskK9Uq7DwaCl8KL" target="_blank" rel="noopener noreferrer" class="podcast-embed-card news">
+            <div class="podcast-embed-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/videoseries?list=PLLYXs4EFjbmkqbBE7mskK9Uq7DwaCl8KL"
+                title="AI 최신 뉴스 재생목록"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="podcast-embed-info">
+              <h3 class="podcast-embed-title">AI 최신 뉴스</h3>
+              <p class="podcast-embed-description">AI와 로보틱스 최신 소식</p>
+            </div>
+          </a>
+        </div>
+      </section>
 
       <!-- AI 데일리 뉴스 Section -->
       <section class="media-section">
@@ -400,334 +402,334 @@ const presentations = [
     margin: 0 auto 1.5rem;
   }
 
-  .podcast-hero-section {
-    position: relative;
-    display: grid;
-    gap: 2rem;
-    margin-bottom: 1rem;
-    padding: clamp(1.5rem, 4vw, 2.5rem);
-    border: 1px solid rgba(67, 214, 168, 0.28);
-    border-radius: var(--radius-xl);
-    background:
-      radial-gradient(circle at 12% 18%, rgba(67, 214, 168, 0.22), transparent 28%),
-      radial-gradient(circle at 86% 8%, rgba(253, 115, 24, 0.14), transparent 24%),
-      linear-gradient(135deg, rgba(17, 8, 17, 0.98), rgba(12, 18, 18, 0.96));
-    overflow: hidden;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
-  }
-
-  .podcast-hero-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(67, 214, 168, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(67, 214, 168, 0.05) 1px, transparent 1px);
-    background-size: 42px 42px;
-    mask-image: linear-gradient(135deg, black, transparent 72%);
-    pointer-events: none;
-  }
-
-  @media (min-width: 980px) {
-    .podcast-hero-section {
-      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.8fr);
-      align-items: center;
-    }
-  }
-
-  .podcast-hero-copy,
-  .podcast-feature-panel {
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-kicker {
-    display: inline-flex;
-    margin-bottom: 1rem;
-    padding: 0.3rem 0.7rem;
-    border: 1px solid rgba(67, 214, 168, 0.35);
-    border-radius: 999px;
-    background: rgba(67, 214, 168, 0.1);
-    color: var(--color-green);
-    font-family: var(--font-mono);
-    font-size: 0.76rem;
-    letter-spacing: 0.1em;
-  }
-
-  .podcast-hero-copy h2 {
-    max-width: 760px;
-    color: var(--color-text-primary);
-    font-size: clamp(2rem, 5vw, 4.4rem);
-    line-height: 1.08;
-    letter-spacing: -0.04em;
-    margin-bottom: 1rem;
-  }
-
-  .podcast-hero-copy h2 span {
-    display: block;
-    color: var(--color-green);
-    text-shadow: 0 0 26px rgba(67, 214, 168, 0.22);
-  }
-
-  .podcast-hero-copy > p {
-    max-width: 680px;
-    color: var(--color-text-secondary);
-    font-size: 1.02rem;
-    line-height: 1.85;
-  }
-
-  .podcast-actions {
+  /* Social Links */
+  .social-links {
     display: flex;
+    gap: 1rem;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 0.75rem;
-    margin: 1.5rem 0;
   }
 
-  .primary-podcast-cta,
-  .secondary-podcast-cta {
+  .social-btn {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    min-height: 46px;
-    padding: 0.78rem 1rem;
-    border-radius: var(--radius-md);
-    font-weight: 800;
-    text-decoration: none;
-    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .primary-podcast-cta {
-    background: linear-gradient(135deg, var(--color-green), #2fbf95);
-    color: #06110f;
-    box-shadow: 0 10px 28px rgba(67, 214, 168, 0.22);
-  }
-
-  .secondary-podcast-cta {
-    border: 1px solid rgba(67, 214, 168, 0.35);
-    background: rgba(67, 214, 168, 0.08);
-    color: var(--color-green);
-  }
-
-  .primary-podcast-cta:hover,
-  .secondary-podcast-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(67, 214, 168, 0.18);
-  }
-
-  .podcast-metrics {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem;
-    max-width: 620px;
-  }
-
-  @media (min-width: 640px) {
-    .podcast-metrics {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-  }
-
-  .podcast-metrics div {
-    padding: 0.9rem;
-    border: 1px solid rgba(67, 214, 168, 0.18);
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
     border-radius: var(--radius-lg);
-    background: rgba(7, 16, 16, 0.68);
-  }
-
-  .podcast-metrics strong {
-    display: block;
-    color: var(--color-green);
-    font-family: var(--font-mono);
-    font-size: 1.35rem;
-    line-height: 1;
-  }
-
-  .podcast-metrics span {
-    color: var(--color-text-muted);
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .podcast-tag-preview {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem;
-    margin-top: 1rem;
-  }
-
-  .podcast-tag-preview span {
-    padding: 0.24rem 0.55rem;
-    border-radius: 999px;
-    background: rgba(253, 115, 24, 0.1);
-    color: var(--color-accent-hover);
-    font-size: 0.78rem;
-  }
-
-  .podcast-feature-panel {
-    display: grid;
-    gap: 0.9rem;
-  }
-
-  .featured-episode-card {
-    display: block;
-    border: 1px solid rgba(67, 214, 168, 0.3);
-    border-radius: var(--radius-xl);
-    background: rgba(17, 8, 17, 0.78);
-    overflow: hidden;
-    text-decoration: none;
-    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
-  }
-
-  .featured-episode-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--color-green);
-    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.32), 0 0 24px rgba(67, 214, 168, 0.18);
-  }
-
-  .featured-thumbnail {
-    position: relative;
-    aspect-ratio: 16 / 9;
-    background: var(--color-bg-secondary);
-    overflow: hidden;
-  }
-
-  .featured-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.22s ease;
-  }
-
-  .featured-episode-card:hover .featured-thumbnail img {
-    transform: scale(1.035);
-  }
-
-  .featured-duration {
-    position: absolute;
-    right: 0.75rem;
-    bottom: 0.75rem;
-    padding: 0.2rem 0.45rem;
-    border-radius: var(--radius-sm);
-    background: rgba(0, 0, 0, 0.76);
-    color: white;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-  }
-
-  .featured-content {
-    padding: 1.15rem;
-  }
-
-  .featured-label {
-    color: var(--color-green);
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .featured-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.55rem;
-    margin: 0.55rem 0;
-    color: var(--color-text-muted);
-    font-size: 0.78rem;
-  }
-
-  .featured-content h3 {
-    color: var(--color-text-primary);
-    font-size: clamp(1.2rem, 3vw, 1.55rem);
-    line-height: 1.35;
-    margin-bottom: 0.55rem;
-  }
-
-  .featured-content p {
-    color: var(--color-text-secondary);
+    font-weight: 600;
     font-size: 0.9rem;
-    line-height: 1.65;
+    transition: all 0.3s ease;
+    text-decoration: none;
   }
 
-  .recent-episode-list {
-    display: grid;
-    gap: 0.55rem;
-    padding: 1rem;
-    border: 1px solid rgba(67, 214, 168, 0.18);
-    border-radius: var(--radius-xl);
-    background: rgba(7, 16, 16, 0.58);
+  .social-btn.youtube {
+    background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    gap: 0.75rem;
   }
 
-  .recent-title {
-    color: var(--color-text-muted);
-    font-size: 0.78rem;
+  .social-btn.youtube:hover {
+    background: linear-gradient(135deg, #cc0000 0%, #aa0000 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(255, 0, 0, 0.5);
+  }
+
+  .youtube-btn-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .youtube-btn-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+  }
+
+  .youtube-btn-main {
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .youtube-btn-sub {
+    font-size: 0.7rem;
+    opacity: 0.9;
+  }
+
+  .live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.65rem;
     font-weight: 700;
   }
 
-  .recent-episode-link {
-    display: grid;
-    gap: 0.2rem;
-    padding: 0.65rem;
-    border-radius: var(--radius-md);
-    color: inherit;
-    text-decoration: none;
-    transition: background 0.2s ease;
+  .live-dot {
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
   }
 
-  .recent-episode-link:hover {
-    background: rgba(67, 214, 168, 0.08);
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
   }
 
-  .recent-episode-link span {
-    color: var(--color-green);
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
+  .social-btn.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    padding: 0.5rem 1rem;
   }
 
-  .recent-episode-link strong {
-    color: var(--color-text-primary);
+  .social-btn.instagram:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(225, 48, 108, 0.5);
+  }
+
+  .instagram-btn-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .instagram-btn-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+  }
+
+  .instagram-btn-main {
+    font-weight: 700;
     font-size: 0.9rem;
-    line-height: 1.35;
   }
 
-  .channel-strip {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
+  .instagram-btn-sub {
+    font-size: 0.7rem;
+    opacity: 0.9;
+  }
+
+  /* Media Sections */
+  .media-section {
     margin-bottom: 4rem;
   }
 
-  @media (min-width: 640px) {
-    .channel-strip {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .section-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+  }
+
+  .podcast-icon {
+    background: rgba(255, 0, 0, 0.15);
+    color: #ff0000;
+  }
+
+  .essays-icon {
+    background: rgba(168, 85, 247, 0.15);
+    color: #a855f7;
+  }
+
+  .presentations-icon {
+    background: rgba(95, 173, 254, 0.15);
+    color: var(--color-blue);
+  }
+
+  .news-icon {
+    background: rgba(67, 214, 168, 0.15);
+    color: var(--color-green);
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .section-description {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  /* Podcast Grid */
+  .podcast-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 768px) {
+    .podcast-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  .channel-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+  .podcast-library-card {
+    display: grid;
     gap: 1rem;
-    padding: 0.85rem 1rem;
-    border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-lg);
-    background: rgba(17, 8, 17, 0.7);
-    color: var(--color-text-primary);
-    font-weight: 700;
+    min-height: 100%;
+    padding: 1.25rem;
+    background:
+      radial-gradient(circle at top left, rgba(67, 214, 168, 0.18), transparent 34%),
+      var(--color-surface);
+    border: 1px solid rgba(67, 214, 168, 0.28);
+    border-radius: var(--radius-xl);
     text-decoration: none;
-    transition: border-color 0.2s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
   }
 
-  .channel-link:hover {
-    transform: translateY(-2px);
+  .podcast-library-card:hover {
     border-color: var(--color-green);
+    transform: translateY(-4px);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(67, 214, 168, 0.22);
   }
 
-  .channel-link span {
-    color: var(--color-text-muted);
-    font-size: 0.78rem;
-    font-weight: 500;
+  .library-kicker {
+    color: var(--color-green);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
+
+  .podcast-library-hero h3 {
+    color: var(--color-text-primary);
+    font-size: 1.35rem;
+    margin: 0.4rem 0 0.5rem;
+  }
+
+  .podcast-library-hero p {
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+    font-size: 0.92rem;
+  }
+
+  .library-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .library-stats span {
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(67, 214, 168, 0.12);
+    color: var(--color-green);
+    font-size: 0.78rem;
+  }
+
+  .featured-podcast-list {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .featured-podcast-card {
+    padding: 0.75rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    background: rgba(17, 8, 17, 0.72);
+  }
+
+  .featured-podcast-meta {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .featured-podcast-card strong {
+    color: var(--color-text-primary);
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+
+  /* Podcast Embed Card - 빨간색 테마 (팟캐스트 아이콘과 통일) */
+  .podcast-embed-card {
+    display: block;
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .podcast-embed-card:hover {
+    border-color: #ff0000;
+    transform: translateY(-4px);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(255, 0, 0, 0.4);
+  }
+
+  .podcast-embed-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    background: var(--color-bg-secondary);
+  }
+
+  .podcast-embed-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .podcast-embed-card:hover .podcast-embed-wrapper iframe {
+    pointer-events: auto;
+  }
+
+  .podcast-embed-info {
+    padding: 1rem 1.25rem;
+  }
+
+  .podcast-embed-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .podcast-embed-description {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  /* news 카드도 같은 빨간색 테마 유지 (팟캐스트 섹션 통일) */
 
   /* Essays Grid */
   .essays-grid {
