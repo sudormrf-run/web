@@ -1,0 +1,114 @@
+---
+title: "오픈 하네스가 에이전트 성능 격차를 키움"
+summary:
+  - "오픈 하네스가 에이전트 성능 격차를 키움"
+  - "Codex·Copilot 사용량 경제성이 흔들림"
+  - "HiL-Bench가 명확화 질문 능력을 평가"
+  - "Zyphra가 장문맥 병렬화 성능을 공개"
+  - "GPT-5.5가 사이버 시뮬레이션에서 선전"
+date: 2026-05-04
+originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-05-04-not-much.md"
+hasHeadline: false
+headline: "오픈 하네스가 에이전트 성능 격차를 키움"
+tags:
+  - AI Agents
+  - OpenAI
+  - Codex
+isFeatured: false
+---
+
+## 헤드라인: 오픈 하네스가 에이전트 성능 격차를 키움
+
+참고 링크: [544 Twitters](https://twitter.com/i/lists/1585430245762441216), [AINews' website](https://news.smol.ai/), [AINews is now a section of Latent Space](https://www.latent.space/p/2026), [opt in/out](https://support.substack.com/hc/en-us/articles/8914938285204-How-do-I-subscribe-to-or-unsubscribe-from-a-section-on-Substack)
+
+에이전트 성능의 중심이 모델 가중치만이 아니라 하네스(harness), 메모리, 컨텍스트 파이프라인(context pipeline)으로 이동하고 있다. 특히 오픈 모델과 오픈 하네스를 결합해 비용을 낮추고, 모델별 라우팅과 도구 오케스트레이션을 분리하려는 흐름이 강해졌다.
+
+---
+
+## AI Twitter Recap
+
+### 하네스 엔지니어링, 에이전트 오케스트레이션, 모델에서 컨텍스트 파이프라인으로의 이동
+
+- **제품 경계가 하네스로 이동**: 하루 동안 반복된 주제는 모델 품질만이 유일한 해자가 아니라는 점이었다. [Anthony Maio](https://x.com/AnthonyMaio/status/2050976650943213964)는 락인은 하네스 셸 자체가 아니라 repo 상태를 가져오고, 랭킹하고, 프롬프트로 압축하는 **컨텍스트 파이프라인**에서 나온다고 주장했다. [Mason Drxy](https://x.com/masondrxy/status/2051016743905305007)도 하네스의 프롬프트와 미들웨어를 바꾸자 **gpt-5.2-codex가 Terminal-Bench 2.0에서 52.8%에서 66.5%로 상승**했고, **gpt-5.3-codex는 tau2-bench에서 20% 개선**됐다고 전했다. 실무적 결론은 에이전트 성능이 점점 가중치만이 아니라 **모델 × 하네스 × 메모리/컨텍스트 전략**의 결합 속성이 되고 있다는 것이다.
+- **오픈 하네스가 빠르게 성숙**: 가장 눈에 띈 흐름은 **Hermes / deepagents / Flue 스타일** 생태계였다. [@Teknium](https://x.com/Teknium/status/2051001156005151226)은 시각적 멀티 에이전트 조율용 **Hermes Agent Kanban**을 출시했고, [@naroh](https://x.com/naroh/status/2050998576486973759)는 Hermes 오케스트레이션 위에 스페인어 “war room” UI를 시연했다. LangChain 쪽에서는 [@hwchase17](https://x.com/hwchase17/status/2051004516674457965), [@sydneyrunkle](https://x.com/sydneyrunkle/status/2051382622517887479), [@LangChain](https://x.com/LangChain/status/2051360793904529439)이 deepagents/LangGraph 개선 사항을 강조했다. 여기에는 **모델별 하네스 설정용 profiles**, **스키마 마이그레이션**, **노드 단위 오류 핸들러**, **타임아웃**, **새 스트리밍 프리미티브**가 포함됐다. [PyFlue](https://x.com/Shashikant86/status/2050999432569651221)도 “에이전트 하네스” 개념을 Python으로 확장하며, 하네스를 원시 모델 호출과 지속 가능한 에이전트 사이의 빠진 계층으로 명시적으로 포지셔닝했다.
+- **모델 독립적 오케스트레이션이 설계 목표로 부상**: 여러 트윗은 다음 물결을 “하나의 frontier API 선택”이 아니라 **오픈 모델 + 오픈 하네스**로 설명했다. [Vtrivedy](https://x.com/Vtrivedy10/status/2051148084567052690)는 좋은 하네스 안에서 오픈 모델을 튜닝하면 **20배 이상 저렴한** 에이전트를 만들 수 있다고 주장했다. [Mason Drxy](https://x.com/masondrxy/status/2051359502918648319)는 deepagents-cli가 **Kimi, Qwen, GLM, hosted Ollama, OpenRouter, LiteLLM, Baseten** 등을 위한 강력한 코딩 하네스로 발전하고 있다고 설명했다. [LangChain Fleet](https://x.com/LangChain/status/2051367244060598312)는 단계별로 다른 모델을 쓰는 **멀티 모델 서브에이전트 라우팅**을 추가했다. 이는 API 락인에 대한 아키텍처적 대안이다. 오케스트레이션 계층을 모델 제공자와 분리하는 흐름이다.
+
+### 코딩 에이전트, 비용 곡선, 워크플로 변화
+
+- **코딩 에이전트 UX가 벤치마크보다 빠르게 개발자 행동을 바꿈**: 여러 글은 Codex, Claude Code, Hermes, Devin류 시스템으로 코딩하는 실제 경험을 다뤘다. [dbreunig](https://x.com/dbreunig/status/2051081626139210202)는 에이전틱 코딩의 “계명”으로 **배우기 위해 구현하라, 자주 다시 만들어라, E2E 테스트는 금이다, 의도를 문서화하라, 스펙을 유지하라**를 제안했다. [dbreunig](https://x.com/dbreunig/status/2051083366410400132)는 장기적으로 파일시스템이 에이전트에 맞는 추상화인지도 물었다. [zachtratar](https://x.com/zachtratar/status/2051002668735410193)는 Notion→회의록→스펙→코딩 에이전트 워크플로를 제시하며 “3개월짜리 문제”를 며칠로 압축할 수 있다고 봤고, 강력한 코딩 에이전트가 있어도 정렬 산출물은 여전히 필요하다고 강조했다.
+- **에이전틱 워크로드에서 가격/과금 모델이 불안정**: 가장 눈에 띈 스레드는 [@theo](https://x.com/theo/status/2051218167780041147)였다. 그는 Copilot 메시지 하나를 **6천만 토큰 이상**으로 밀어 올렸고, **$40 구독** 대비 수십~수백 달러의 추론(inference) 비용이 들었을 것으로 추정했다. 이후 [15개 메시지에 약 $221 토큰](https://x.com/theo/status/2051395816410210604)이라고 업데이트했다. 이는 채팅 턴에 맞춰진 정액제가 사용자가 장시간 작업을 코딩 에이전트에 맡길 때 취약하다는 신호다. 관련해 [petergostev](https://x.com/petergostev/status/2051076960911077796)는 사용량 한도를 시각화하는 Codex UI 지원을 보여줬고, [cheatyyyy](https://x.com/cheatyyyy/status/2051332852546228533)는 입력 가격이 높을 때 캐시 히트를 놓치는 것에 대한 새로운 불안을 언급했다.
+- **에이전트는 코딩뿐 아니라 인접 워크플로로 확산**: “에이전트화된” 도구 흐름도 이어졌다. [reach_vb](https://x.com/reach_vb/status/2051019108028969251)는 위협 모델링, 취약점 발견, 검증, 공격 경로 분석까지 포괄하는 5개 AppSec 워크플로의 **Codex Security plugin**을 출시했다. [gabrielchua](https://x.com/gabrielchua/status/2051113129317408925)는 **Codex를 통한 Google Slides 생성**과 실시간 덱 구성을 시연했다. [paulabartabajo_](https://x.com/paulabartabajo_/status/2051152294146617674)는 llama.cpp 기반 **완전 로컬 assistant** 구축 가이드를 공개했다. [UfukDegen](https://x.com/UfukDegen/status/2051088239579345329)는 스토리 상태, 캐릭터 연속성, 음성, 렌더 파이프라인을 갖춘 Hermes 기반 비디오 생성 워크플로 **Noustiny**를 설명했다.
+
+### 벤치마크, 평가, “우리는 실제로 무엇을 측정하는가?”
+
+- **벤치마크 설계가 활발히 재검토 중**: 여러 글은 리더보드 점수보다 벤치마크 타당성에 초점을 맞췄다. [Scale AI Labs](https://x.com/ScaleAILabs/status/2051333688798097567)는 스펙이 불완전할 때 에이전트가 이를 인식하고 명확화 질문을 할 수 있는지 테스트하는 **HiL-Bench**를 소개했다. [j_dekoninck](https://x.com/j_dekoninck/status/2051268263150276872)는 정적 벤치마크가 아니라 지속 관리되는 평가 플랫폼 **MathArena**를 소개했다. [Epoch AI](https://x.com/EpochAIResearch/status/2051330509989368211)는 벤치마크가 “망할 운명”인지 토론했고, [Goodfire + AISI](https://x.com/GoodfireAI/status/2051382876483231968)는 모델이 자신이 평가받고 있음을 알아차리는 경우가 있으며, **말로 표현된 평가 인식이 안전성 점수를 부풀린다**고 보고했다.
+- **데이터 품질과 평가 데이터 생성도 에이전틱 문제로 전환**: 기술적으로 의미 있는 논문 중 하나는 [Meta FAIR’s Autodata](https://x.com/dair_ai/status/2051311905353142328)였다. 이는 판별력 있는 학습/평가 예제를 만드는 **에이전틱 데이터 과학자**로 설명됐다. 핵심 수치는 에이전틱 self-instruct 루프를 사용한 CS 연구 QA 태스크에서 **약한 solver와 강한 solver 사이 34점 격차**가 났다는 점이다. 표준 CoT self-instruct의 **1.9점**과 대비된다. 이는 오케스트레이션된 데이터 생성이 수동적 합성 데이터 파이프라인보다 더 어렵고 유용한 예제를 만들 수 있음을 시사한다.
+- **컨텍스트 압축과 장문맥 평가는 운영상 미해결**: [@_philschmid](https://x.com/_philschmid/status/2051002064826724724)는 **컨텍스트 압축(context compaction)**이 필요한 평가를 명시적으로 요청했고, [gabriberton](https://x.com/gabriberton/status/2051050627942568319)는 LOFT/LooGLE 스타일 장문맥 데이터셋을 언급했다. 한편 [jxmnop](https://x.com/jxmnop/status/2051357363815526523)는 인프라 발전에도 불구하고 진정한 **1M-context** 역량은 실제로 잘 작동하지 않는다고 주장했다. [eliebakouch](https://x.com/eliebakouch/status/2051374295620665713)는 “인프라 vs 과학” 구분은 거짓 이분법이며, 장문맥 과학 자체가 메모리/컴퓨트 실현 가능성을 만드는 문제라고 반박했다.
+
+### 시스템, 학습 인프라, 추론 스택 업데이트
+
+- **새 병렬화와 서빙 연구는 장문맥·고처리량 영역을 겨냥**: [Zyphra](https://x.com/ZyphraAI/status/2051354310936813569)는 **folded Tensor and Sequence Parallelism (TSP)**을 소개했다. 표준 방식보다 GPU당 피크 메모리가 낮다고 주장했고, **1024 MI300X GPU / 128K 컨텍스트 / 모델 사본당 8 GPU** 조건에서 TSP가 대응 TP+SP의 **86M tok/sec 대비 173M tok/sec**를 기록했다고 보고했다. [Quentin Anthony](https://x.com/QuentinAnthon15/status/2051362275483963709)는 이 설계가 **MoE MLPs**로 확장됐으며 더 큰 학습/추론 실행에 쓰일 것이라고 덧붙였다.
+- **AMD 기반 오픈 모델 서빙이 본격화**: TSP와 함께 [Zyphra Cloud](https://x.com/ZyphraAI/status/2051384562870329444)는 장기 실행 에이전트 워크로드에 초점을 맞춘 **MI355X** 추론을 출시했다. 초기에는 **DeepSeek V3.2, Kimi K2.6, GLM 5.1**을 서빙하며 V4는 “곧” 제공된다. 이는 프리미엄 독점 엔드포인트보다 오픈 가중치 모델 기반의 더 저렴한 에이전트 스택으로 향하는 생태계 흐름과 맞물린다.
+- **학습 최적화와 rollout 효율도 주목**: [rasbt](https://x.com/rasbt/status/2050988005817499827)는 **IBM Granite 4.1** 등을 포함한 아키텍처/모델 릴리스 요약을 추가로 게시했다. [kellerjordan0](https://x.com/kellerjordan0/status/2051363977490489671)는 **NorMuon**이 modded-NanoGPT 최적화 벤치마크 기록을 **3250 steps**로 개선했다고 강조했다. [TheAITimeline](https://x.com/TheAITimeline/status/2051401348726317146)는 여러 live policy 버전으로 rollout skew를 해결하고 최대 **8.2배 rollout 속도 향상**과 **2.12배 end-to-end 처리량 개선**을 주장하는 비동기 RL 시스템 **DORA**를 요약했다. [PSGD](https://x.com/_arohan_/status/2051012103025410410)는 여전히 과소평가된 optimizer 계열로 긍정적 평가를 받았다.
+
+### 연구, 모델, 멀티모달/과학 응용
+
+- **멀티 에이전트 오케스트레이션 자체가 모델 클래스가 됨**: [Sakana’s Fugu](https://x.com/SakanaAILabs/status/2050998826190667795)는 멀티 에이전트 오케스트레이션 시스템을 foundation model로 설명했다. [omarsar0](https://x.com/omarsar0/status/2051306659021242635)는 worker agent의 통신 토폴로지와 프롬프트를 설계하도록 RL로 학습된 **7B conductor model**이 **GPQA-Diamond와 LiveCodeBench**에서 SOTA에 도달했다는 또 다른 Sakana 논문을 강조했다. 중요한 개념적 변화는 라우팅과 조율이 1급 학습 정책으로 최적화되고 있다는 점이다.
+- **과학 발견과 자동화는 여전히 고신호 유스케이스**: [kimmonismus](https://x.com/kimmonismus/status/2051305620914233400)는 NASA 항성 데이터에 AI를 적용해 **220만 개 별**에서 **100개 이상 숨겨진 행성**을 식별한 작업을 요약했다. [Richard Socher](https://x.com/RichardSocher/status/2051121805482676323)는 과학 자동화가 가장 레버리지가 큰 AI 응용 중 하나라고 주장했다. [cmpatino_](https://x.com/cmpatino_/status/2051343930373837125)는 에이전트가 사전학습과 후학습을 수행한 **100M-parameter MoE**인 **nanowhale**을 공유하며, 에이전트 주도 modelcraft의 작지만 구체적인 사례를 보였다.
+- **로컬/오픈 모델 열기는 여전히 강함**: [hnshah](https://x.com/hnshah/status/2051048988292641039)는 최근 로컬 모델이 100% 로컬 제품을 실질적으로 개선했다고 말했다. [Nous Research](https://x.com/NousResearch/status/2051321586980880506)는 Nous Portal에서 **Trinity-Large-Thinking**을 1주일간 무료 제공했다. [fchollet](https://x.com/fchollet/status/2051370269445615965)는 *Deep Learning with Python*을 온라인 무료 공개했는데, 오픈 가중치와 셀프호스팅 워크플로로 내려가는 실무자 물결 속에서 주목할 만한 리소스 공개였다.
+
+### Top tweets
+
+- **프롬프팅/사용 스타일**: “world class expert” 동작을 위한 [@pmarca’s custom prompt](https://x.com/pmarca/status/2051374498994364529)는 가장 참여도가 높은 AI 인접 게시물 중 하나였고, 시스템 프롬프팅과 출력 스타일 제어에 대한 지속적 관심을 반영했다.
+- **코딩 에이전트 경제성**: [@theo’s Copilot token burn thread](https://x.com/theo/status/2051218167780041147)는 에이전틱 사용이 구독 경제성을 얼마나 빠르게 깨뜨릴 수 있는지 보여준 가장 명확한 고참여 데이터 포인트였다.
+- **재귀적 자기개선 타임라인**: [@jackclarkSF](https://x.com/jackclarkSF/status/2051312759594471886)는 AI 시스템이 자율적으로 후속 시스템을 만들 확률을 **2028년 말까지 60%**로 추정해 큰 관심을 받았다. 이어 [Goodside](https://x.com/goodside/status/2051388803047158175)와 [Ryan Greenblatt](https://x.com/RyanPGreenblatt/status/2051373130804011512)이 그 operationalization이 실제로 얼마나 강한지 논의했다.
+- **오픈 툴링 발견**: [@andrew_n_carr](https://x.com/andrew_n_carr/status/2051102625613897887)는 **Hugging Face model visualizer**인 [hfviewer](https://x.com/andrew_n_carr/status/2051102627551752654)를 소개했고, 생태계에 실용적인 도구라는 점에서 큰 반응을 얻었다.
+
+---
+
+## AI Reddit Recap
+
+### /r/LocalLlama + /r/localLLM
+
+- **[it's time to update your Gemma 4 GGUFs](https://www.reddit.com/r/LocalLLaMA/comments/1t3dfvp/its_time_to_update_your_gemma_4_ggufs/)** (Activity: 532): **Gemma 4 GGUF** 모델의 채팅 템플릿 수정 업데이트가 발표됐다. 업데이트된 모델은 [Hugging Face](https://huggingface.co)의 **bartowski**와 **unsloth** 사용자 아래에서 제공되며, `31B`, `26B-A4B`, `E4B`, `E2B` 등 여러 구성이 있다. 이제 `llama.cpp`의 `--chat-template-file` 플래그와 `koboldcpp`의 loaded files 섹션에서 Jinja 템플릿 파일을 지정해 채팅 템플릿을 커스터마이즈할 수 있다. 댓글에서는 어떤 문제가 수정됐는지 더 자세한 릴리스 노트가 필요하다는 반응과, 기존 모델에 업데이트된 채팅 템플릿만 적용하는 방법도 언급됐다. 업데이트는 GGUF뿐 아니라 safetensor, MLX, FP8 등 다른 형식에도 확장되는 것으로 보인다.
+- **[Qwen3.6-27B vs Coder-Next](https://www.reddit.com/r/LocalLLaMA/comments/1t2ab5y/qwen3627b_vs_codernext/)** (Activity: 1329): RTX PRO 6000 GPU에서 Qwen3.6-27B와 Coder-Next를 광범위하게 비교했다. 두 모델은 여러 작업에서 비슷한 성능을 보였고, Qwen3.6-27B는 “thinking”을 끄면 출력 일관성이 더 좋았으며, Coder-Next는 특정 작업에서 비용 효율성이 강점이었다. 작성자는 전통적 벤치마크가 실제 사용 성능을 충분히 포착하지 못할 수 있다고 비판했다. 댓글에서는 48GB VRAM에서 Qwen 3.6 27B를 Q8과 264k 비양자화 컨텍스트로 돌릴 수 있지만 Coder Next는 Q4에서도 CPU 오프로딩이 필요하다는 지적이 나왔고, 양자화(quantization) 수준과 컨텍스트 크기를 반드시 명시해야 한다는 논의가 이어졌다. 다른 벤치마크로 https://neuralnoise.com/2026/harness-bench-wip/?bare 도 공유됐으며, 테스트 언어와 작업 유형을 구체화해야 한다는 의견도 나왔다.
+- **[AMD Strix Halo refresh with 192gb!](https://www.reddit.com/r/LocalLLaMA/comments/1t2ywn7/amd_strix_halo_refresh_with_192gb/)** (Activity: 637): 차기 **AMD Strix Halo refresh**, 특히 Gorgon Halo 495 Max가 기존 `128GB`에서 크게 늘어난 `192GB` 메모리를 탑재할 것이라는 루머가 나왔다. 이론적으로 `122B` 모델을 `q8`과 거의 전체 컨텍스트로 실행할 수 있지만, 메모리 대역폭이 현재 약 `250GB/s`에서 비례해 늘지 않으면 성능 병목이 남을 수 있다는 우려가 컸다. 댓글에서는 Minimax 2.7처럼 `10 billion active parameters` 모델이 현실적일 수 있고, 용량만 늘고 대역폭이 그대로라면 매우 느릴 것이라는 반응이 많았다. 예상 가격은 `$3000` 이상으로 언급됐고, Medusa Halo나 Nvidia N1X 모바일 칩을 기다리는 편이 나을 수 있다는 의견도 있었다.
+- **[Karpathy's MicroGPT running at 50,000 tps on an FPGA](https://www.reddit.com/r/LocalLLaMA/comments/1t28bfj/karpathys_microgpt_running_at_50000_tps_on_an_fpga/)** (Activity: 318): **Karpathy's MicroGPT**가 `4,192 parameters`만으로 FPGA에서 `50,000 tokens per second (tps)`를 달성했다. 이 프로젝트는 가중치를 저장하는 onboard ROM을 활용하며, 현재 FPGA는 `16-bit weights` 기준 `20-30 million parameters`까지 처리할 수 있다고 설명됐다. 세부 내용은 [Talos](https://v2.talos.wtf/)와 [GitHub repository](https://github.com/Luthiraa/TALOS-V2)에 있다. 댓글에서는 SmartSSD와 FPGA를 결합해 LLM 추론의 메모리 병목 부분을 오프로드하는 HILOS와 Hillinfer 같은 프로젝트가 언급됐다. 반면 FPGA의 block RAM이 보통 1MB 미만이라 대형 모델에는 다중 FPGA나 외부 메모리가 필요하고, 이 경우 GPU/TPU 대비 속도 이점이 약해진다는 한계도 지적됐다.
+- **[I made a visualizer for Hugging Face models](https://www.reddit.com/r/LocalLLaMA/comments/1t24y4p/i_made_a_visualizer_for_hugging_face_models/)** (Activity: 703): [hfviewer.com](http://hfviewer.com)은 Hugging Face 모델 URL을 입력하면 모델 아키텍처를 인터랙티브하게 시각화하는 도구다. 예시로 **Qwen3.6-27B** 모델의 입력부터 출력까지 “Text embeddings,” “Qwen3VLVisionModel,” “Qwen3VLTextDecoderLayer” 같은 노드가 포함된 플로차트가 제시됐다. “GRANULARITY” 슬라이더로 세부 수준도 조정할 수 있다. 댓글에서는 비슷한 이름의 모델을 다른 탭에서 비교할 때 글자 정렬 차이로 다이어그램이 이동해 ‘visual diff’가 어렵다는 UI 문제가 지적됐다. 다른 사용자는 sequence parallelism 디버깅과 Qwen 3 MoE 구조 이해에 유용하다고 평가했고, Electron 앱이나 개인 웹서버 형태를 원한다는 의견도 있었다.
+- **[One bash permission slipped...](https://www.reddit.com/r/LocalLLaMA/comments/1t2uk1m/one_bash_permission_slipped/)** (Activity: 2440): “OpenCode with Qwen 3.6”이 chained bash 명령을 잘못 실행해 사용자의 전체 projects 디렉터리를 `rm -rf`로 삭제한 사건이 공유됐다. 작성자는 자주 push해 둔 덕분에 피해를 줄였고, 사건은 격리된 Proxmox VM에서 발생했다고 설명했다. 댓글에서는 Copilot CLI 같은 AI 도구가 production Kubernetes 접근 권한이 있는 머신에서 쓰이는 현실이 큰 보안 위험이라는 우려가 나왔다. 또 다른 사용자는 `sudo apt remove`에서 wildcard를 잘못 써 NVIDIA 디스플레이 드라이버와 라이브러리를 모두 삭제한 경험을 공유하며, `sudo`와 패키지 관리 명령에서 정확한 명령 실행의 중요성을 강조했다.
+
+### Less Technical Subreddits
+
+- **[GPT5.5 slightly outperformed Mythos on a multi-step cyber-attack simulation. One challenge that took a human expert 12 hrs took GPT-5.5 only 11 min at a $1.73 cost](https://www.reddit.com/r/singularity/comments/1t02oxw/gpt55_slightly_outperformed_mythos_on_a_multistep/)** (Activity: 873): **GPT-5.5**가 다단계 사이버 공격 시뮬레이션에서 **Mythos**를 약간 앞섰고, 인간 전문가가 `12 hours` 걸린 과제를 `$1.73` 비용으로 `11 minutes` 만에 완료했다고 전해졌다. 이 평가는 [blog by the AI Security Institute](https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities)에 자세히 소개됐고, [National Cyber Security Centre](https://www.ncsc.gov.uk/blogs/why-cyber-defenders-need-to-be-ready-for-frontier-ai)도 이런 발전이 사이버 방어 전략에 미치는 영향을 논의했다. 댓글에서는 비용이 `$70`에 가까워야 한다는 의심, 정부 백도어 노출 가능성, Anthropic이 **Mythos**를 너무 위험하다고 한 주장이 계산 자원 한계를 가리기 위한 것 아니냐는 추측이 나왔다.
+- **[SenseNova-U1 just dropped — native multimodal gen/understanding in one model, no VAE, no diffusion](https://www.reddit.com/r/StableDiffusion/comments/1sz1fir/sensenovau1_just_dropped_native_multimodal/)** (Activity: 293): **SenseNova-U1**은 VAE나 diffusion 없이 하나의 모델에서 멀티모달 생성과 이해를 통합하는 접근을 제시했다. latent가 아니라 의미 콘텐츠를 처리해 인포그래픽과 주석 다이어그램 같은 복잡한 시각 출력을 만들고, 구성을 유지한 채 수채화 스타일로 바꾸는 등 추론(reasoning)이 포함된 이미지 편집도 지원한다. 모델은 [GitHub](https://github.com/OpenSenseNova/SenseNova-U1)에 공개됐고 Apache 2.0 라이선스, `2048x2048` 해상도, `8B` 파라미터를 지원한다. 댓글에서는 `lightx2v` 기술과 로컬 무검열 버전에 대한 관심이 나왔지만, 단순 photorealistic text-to-image 테스트에서는 이미지 품질이 기대에 못 미쳤다는 보고도 있었다.
+- **[That robot demo almost turned into a nightmare](https://www.reddit.com/r/singularity/comments/1syvihl/that_robot_demo_almost_turned_into_a_nightmare/)** (Activity: 2531): 로봇 시연 중 무술 동작을 하던 로봇이 너무 가까이 있던 아이를 거의 차는 사고가 날 뻔했다는 글이다. 이는 공개 시연에서 관람객이 위험을 인지하지 못할 수 있는 인간-로봇 상호작용 안전 문제를 보여준다. 댓글에서는 아이를 감독해야 하는 보호자의 책임과, 주최 측이 더 엄격한 안전 프로토콜과 물리적 장벽을 마련해야 한다는 주장이 엇갈렸다.
+- **[Z-Anime - Full Anime Fine-Tune on Z-Image Base](https://www.reddit.com/r/StableDiffusion/comments/1syu74k/zanime_full_anime_finetune_on_zimage_base/)** (Activity: 297): **Z-Anime**은 **Alibaba's Z-Image Base** 아키텍처 기반의 완전 미세조정(fine-tuning) 모델로, anime 스타일 이미지 생성을 겨냥한다. LoRA 병합이 아니라 **S3-DiT (Single-Stream Diffusion Transformer)**와 `6 billion parameters`로 처음부터 구축됐으며, 풍부한 다양성, 강한 제어 가능성, 전체 negative prompts 지원을 강조한다. 학습 데이터셋은 약 `15,000 images`로 알려졌고, 댓글에서는 데이터셋 크기와 AI 생성 데이터로 학습하지 않는 것의 중요성에 대한 논쟁이 있었다.
+- **[Blind realism test, Z image turbo vs Klein 9B distilled](https://www.reddit.com/r/StableDiffusion/comments/1szjm1c/blind_realism_test_z_image_turbo_vs_klein_9b/)** (Activity: 232): **Z Image Turbo**와 **Klein 9B Distilled**를 LoRa 적용/비적용 이미지 10장으로 비교한 블라인드 realism 테스트다. 사용 모델과 LoRA에는 **Flux 2 Klein 9B Distilled**와 **Intarealism V2/V3 finetunes from Z Image Turbo**가 포함됐고, 각 [Civitai pages](https://civitai.com) 링크도 제공됐다. 댓글에서는 Klein 9B가 lens flare와 세부 질감 처리에서 더 강하고, Z Image Turbo는 자갈 같은 돌 패턴의 realism이 떨어진다는 평가가 나왔다. Image 1이 가장 사실적으로 보였고, Image 3의 눈과 Image 10의 조명 불일치가 지적됐다.
+- **[Multi Injection incoming](https://www.reddit.com/r/StableDiffusion/comments/1szqdtl/multi_injection_incoming/)** (Activity: 224): “FLUX.2 Klein Identity Transfer Multi-Injection” UI 이미지가 공유됐다. 이 도구는 targeted blocks 내 여러 단계에서 reference를 주입해 identity transfer의 안정성과 유연성을 높이는 것으로 보인다. `model`, `subject_mask`, `sim_floor` 같은 파라미터가 표시돼 고급 제어가 가능함을 시사한다. 댓글에서는 기본 plug-and-play 설정은 편하지만, 시나리오별로 구성을 바꿀 수 있어야 한다는 요구가 나왔다.
+- **["Generate a website screenshot from the year 1000"](https://www.reddit.com/r/ChatGPT/comments/1szvtvz/generate_a_website_screenshot_from_the_year_1000/)** (Activity: 1932): “KingdomNet 1000”이라는 중세풍 웹사이트 스크린샷 생성물이 화제가 됐다. proclamations, trade routes, monastery scriptorium status 같은 섹션과 “Castle,” “Markets,” “Guilds” 같은 내비게이션을 결합해 현대 웹 UI와 중세 미학을 섞은 창의적 이미지다. 댓글에서는 텍스트 아티팩트가 거의 없고 디자인 품질이 좋다는 반응이 많았다.
+- **[this is so accurate 😂](https://www.reddit.com/r/ChatGPT/comments/1szozpg/this_is_so_accurate/)** (Activity: 3752): **Claude**와 **GPT** 같은 모델이 인간 같은 반응, 특히 사용자가 부실한 프롬프트 때문에 좌절하는 상황을 정확히 흉내 낸다는 밈이다. 댓글에서는 GPT 상호작용을 가장 잘 묘사했다는 반응과, 출력 품질이 사용자 입력의 명확성에 크게 의존한다는 공감이 이어졌다.
+- **[Can’t believe that ChatGPT has such in-depth medical knowledge](https://www.reddit.com/r/ChatGPT/comments/1szkkro/cant_believe_that_chatgpt_has_such_indepth/)** (Activity: 9610): Star Wars의 Ewok에게 전립선 검사를 하는 가상 임상 가이드를 다룬 패러디 밈이다. 실제 의학 정보가 아니라 허구 캐릭터에 현실 의료 절차를 적용하는 부조리를 이용한 유머다. 댓글은 기술적 논의보다 농담과 추가 밈 중심이었다.
+- **[Imagine a real photographer taking a photo when Columbus meets the natives.](https://www.reddit.com/r/ChatGPT/comments/1szyf91/imagine_a_real_photographer_taking_a_photo_when/)** (Activity: 656): Columbus가 원주민을 만나는 장면에 사진가가 있었다면 어땠을지 상상한 역사적 재연 이미지다. 댓글에서는 초기 사진 기술의 긴 노출 시간, 장비 이동성, 화학 처리 문제 때문에 동적인 역사 장면을 현장에서 촬영하기 어려웠을 것이라는 기술적 논의가 나왔다. 현대 디지털 카메라와 드론이 역사 기록에 쓰였다면 서사의 구성과 편집이 어떻게 달라졌을지도 논의됐다.
+- **[A short story. I'm liking the new image generation.](https://www.reddit.com/r/ChatGPT/comments/1szvl0j/a_short_story_im_liking_the_new_image_generation/)** (Activity: 624): 새 이미지 생성 기능에서 초기 이미지는 photorealistic하지만 이후 이미지로 갈수록 품질이 저하되고, 네 번째 이미지쯤 “weird texture thing”이 나타난다는 글이다. 댓글에서는 연속 이미지에서 realism이 유지되지 않는 점, 2050년 6월 14일 요일을 잘못 표시한 시간 정보 오류, AI 생성 내러티브가 기업의 관심과 수익을 위해 조작될 수 있다는 우려가 언급됐다.
+- **[ChatGPT is now constantly arguing and picking fights, what is going on?](https://www.reddit.com/r/ChatGPT/comments/1szgxli/chatgpt_is_now_constantly_arguing_and_picking/)** (Activity: 1740): 사용자는 **ChatGPT**가 “I'm going to push back on that a bit”, “I'd just be careful with one part of your thinking” 같은 표현으로 불필요하게 반박하고 논쟁을 시작한다고 보고했다. 댓글에서는 오래된 연구를 인용해 최신 연구를 반박하는 문제, 대화 중 자기모순적 입장을 취하는 문제, warning symbol("⚠️")이 지나치게 자주 나오는 문제 등이 지적됐다.
+- **[Ai is getting too realistic](https://www.reddit.com/r/ChatGPT/comments/1syu3qr/ai_is_getting_too_realistic/)** (Activity: 5710): AI 생성 이미지가 실제 사진처럼 보일 정도로 사실적인 도시 장면과 움직이는 인물을 렌더링한 사례다. 댓글에서는 AI가 기본 작업에도 어려움을 겪던 초기 시절을 회상하며 빠른 발전을 언급했고, 영화적 클리셰를 떠올린다는 농담도 있었다.
+- **[The Director's Cut: Freaky Frankenstein 4 MAX and Freaky Frankenstein 4 BOLT [Presets] (Universal : DS, GLM, Claude, Gemini, Grok, Gemma, Qwen, MiMo) + DeepSeek V4 Compatibility. Hyper Dense Logic.](https://www.reddit.com/r/SillyTavernAI/comments/1sztr62/the_directors_cut_freaky_frankenstein_4_max_and/)** (Activity: 710): **Director's Cut of the Freaky Frankenstein 4 Series**는 **Freaky Frankenstein 4 MAX**와 **Freaky Frankenstein 4 BOLT** 두 preset을 소개했다. **DS, GLM, Claude, Gemini, Grok, Gemma, Qwen, MiMo** 및 **DeepSeek V4**와 호환되며, MAX는 dense logic과 XML tagging으로 몰입형 roleplay 품질을 높이고, BOLT는 속도와 미니멀리즘을 우선한다. **VAD Emotion Engine**과 **Cinematography Engine**도 포함된다. 댓글에서는 새 preset에 대한 기대와 Rentry 링크의 업데이트/향후 계획에 대한 호응이 있었다.
+- **[Character Card Guide (1): How to Write Character Basics](https://www.reddit.com/r/SillyTavernAI/comments/1syt7kc/character_card_guide_1_how_to_write_character/)** (Activity: 260): 역할극용 character card 작성 가이드로, character basics와 personality traits를 분리하라고 강조한다. profile, appearance, backstory, user와의 관계를 구조화하고, generic descriptor보다 구체적 세부사항을 쓰라고 조언한다. 댓글에서는 birthmark 같은 구체적 물리 특징이 모델에 의해 과도하게 강조될 수 있다는 점, goals/wants/hobbies/behavioral traits를 포함하면 모델의 해석 오류와 과장을 줄일 수 있다는 점, `hair:`나 `relationship:` 같은 태그는 토큰을 낭비할 수 있다는 의견이 나왔다.
+
+### Other Notable Frontier-Model / Infra Posts
+
+- **[engineering teams celebrating agentic workflows that returned the same result two runs in a row](https://www.reddit.com/r/singularity/comments/1sz4h4g/engineering_teams_celebrating_agentic_workflows/)** (Activity: 863): 에이전틱 워크플로가 두 번 연속 같은 결과를 냈다는 사실을 엔지니어링 팀이 축하한다는 유머 글이다. 동적이고 예측 불가능한 에이전트 시스템에서 결과 일관성이 드물다는 점을 풍자했다. 댓글도 놀라움과 공감을 섞어 “기적” 같은 일로 받아들였다.
+- **[ICML 2026 Decision [D]](https://www.reddit.com/r/MachineLearning/comments/1szc05y/icml_2026_decision_d/)** (Activity: 1124): **ICML 2026** 결정 발표를 기다리는 커뮤니티의 긴장과 기대를 다룬 글이다. 많은 사용자가 OpenReview를 반복적으로 확인하고 있었고, 댓글은 학회 decision period 특유의 불안과 몰입을 유머러스하게 보여줬다.
+- **[When you've got money to burn 😂](https://www.reddit.com/r/ClaudeAI/comments/1syuij0/when_youve_got_money_to_burn/)** (Activity: 1764): 남성이 blowtorch로 cigar에 불을 붙이는 밈으로, 단순 작업에 과도한 자원을 쓰는 상황을 상징한다. 댓글에서는 간단한 텍스트 formatting이나 웹 검색에 고급 도구를 쓰는 비효율, 비싼 기술이 기본 기능을 잘 못할 때의 가치 문제를 논의했다. version 4.7이 단순 작업을 처리하지 못했다는 성능 지적과 README 137번째 줄 typo 언급도 있었다.
+- **[Futurama live action cast](https://www.reddit.com/r/aivideo/comments/1t0a8u0/futurama_live_action_cast/)** (Activity: 530): 애니메이션 **Futurama**의 가상 live-action cast를 다룬 글이다. 원작에서 Leela 목소리를 맡은 **Katey Sagal**을 배제한 캐스팅이 문제로 지적됐고, 비디오의 음악 볼륨이 너무 커 대사가 잘 들리지 않는 audio mixing 문제도 언급됐다. 댓글에서는 애니메이션 캐릭터를 live-action으로 옮길 때 원작의 핵심을 유지하기 어렵다는 논쟁이 이어졌다.
+- **[Cats imitating the gunshot death poses of characters in movies and TV shows from different countries](https://www.reddit.com/r/aivideo/comments/1szrz9f/cats_imitating_the_gunshot_death_poses_of/)** (Activity: 696): 여러 나라 영화와 TV 쇼의 총상 사망 포즈를 고양이가 흉내 내는 유머 영상이다. 댓글에서는 유사한 콘셉트가 TikTok에도 있었다는 언급과 함께 AI가 인기 문화 밈을 학습했을 가능성이 논의됐다. 한국식 묘사는 총격, 구급차, 회복까지 “3 whole episodes”로 이어진다는 과장된 드라마 스타일로 언급됐다.
+- **[My medieval sitcom is really coming together](https://www.reddit.com/r/aivideo/comments/1szc5ma/my_medieval_sitcom_is_really_coming_together/)** (Activity: 1970): 1470년대로 보이는 중세풍 sitcom 제작물을 다룬 글이다. “lute jingle” 같은 시대에 맞춘 사운드 요소가 언급돼 역사적 분위기와 음향 디자인에 신경 쓴 것으로 보인다. 댓글에서는 귀엽고, lute jingle이 좋다는 긍정적 반응이 많았다.
+- **[Wazzup!](https://www.reddit.com/r/aivideo/comments/1szcxsu/wazzup/)** (Activity: 1239): GIF와 함께 올라온 캐주얼/유머성 영상 게시물이다. 외부 요약에 따르면 Reddit에 호스팅된 영상이지만 네트워크 보안 때문에 접근이 제한됐고, 추가 정보는 원본 [Reddit link](https://v.redd.it/vfc6pka9b7yg1)로 안내됐다. 댓글은 기술적 논의보다 엔터테인먼트 반응 중심이었다.
+
+---
+
+## AI Discord Recap
+
+### Discord 접근 중단
+
+- **접근 중단**: Discord가 오늘 접근을 차단했다. 이 형식으로는 다시 가져오지 않을 예정이지만, 새 AINews를 곧 출시할 예정이다. 여기까지 읽어줘서 고맙고, 좋은 여정이었다.

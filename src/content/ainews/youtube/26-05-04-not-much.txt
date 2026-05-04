@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [05/04] 오픈 하네스가 에이전트 성능 격차를 키움 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• 오픈 하네스가 에이전트 성능 격차를 키움
+• Codex·Copilot 사용량 경제성이 흔들림
+• HiL-Bench가 명확화 질문 능력을 평가
+• Zyphra가 장문맥 병렬화 성능을 공개
+• GPT-5.5가 사이버 시뮬레이션에서 선전
+
+📋 목차:
+1. 헤드라인: 오픈 하네스가 에이전트 성능 격차를 키움
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-05-04-not-much.md
+
+#AI Agents #OpenAI #Codex
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Codex, 머신러닝, AI뉴스, OpenAI, 인공지능, AI Agents, 테크뉴스, AI
+
+Date: 2026-05-04
+==================================================
