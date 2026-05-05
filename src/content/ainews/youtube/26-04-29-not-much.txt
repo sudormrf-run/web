@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [04/29] Cursor SDK, 프로그래머블 에이전트 플랫폼으로 출시 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Cursor SDK가 에이전트 런타임 공개
+• OpenAI Codex가 업무 플랫폼으로 확장
+• Mistral Medium 3.5가 128B로 출시
+• Qwen FlashQLA가 장문맥 속도 개선
+• Claude가 Blender와 공식 연동 시작
+
+📋 목차:
+1. 헤드라인: Cursor SDK, 프로그래머블 에이전트 플랫폼으로 출시
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-04-29-not-much.md
+
+#Cursor #Codex #Mistral
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 머신러닝, AI뉴스, AI, Cursor, 테크뉴스, Codex, Mistral, 인공지능
+
+Date: 2026-04-29
+==================================================
