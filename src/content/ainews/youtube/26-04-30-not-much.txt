@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [04/30] GPT-5.5, 장기 사이버 평가 상위권 진입 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• GPT-5.5가 사이버 평가 상위권에 진입
+• Codex가 범용 컴퓨터 작업으로 확장
+• Qwen3.6 27B가 오픈 모델 선두
+• Grok 4.3이 에이전트 성능을 개선
+• 보안 스캐너가 AI 제품군으로 부상
+
+📋 목차:
+1. 헤드라인: GPT-5.5, 장기 사이버 평가 상위권 진입
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-04-30-not-much.md
+
+#OpenAI #GPT-5.5 #Codex #Qwen #Security
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Qwen, Codex, 테크뉴스, Security, AI, 머신러닝, GPT-5.5, 인공지능, AI뉴스, OpenAI
+
+Date: 2026-04-30
+==================================================
