@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [05/06] Anthropic, SpaceX 컴퓨트 제휴로 Claude 한도 확대 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Anthropic이 SpaceX 컴퓨트 제휴 체결
+• Claude Code 5시간 한도가 두 배로 증가
+• OpenAI가 MRC 네트워크 프로토콜 공개
+• Gemma 4 MTP 체크포인트 출시
+• 로컬 Qwen 3.6 코딩 활용 확산
+
+📋 목차:
+1. 헤드라인: Anthropic, SpaceX 컴퓨트 제휴로 Claude 한도 확대
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-05-06-not-much.md
+
+#Anthropic #Claude #SpaceX
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: SpaceX, 테크뉴스, 머신러닝, 인공지능, Anthropic, AI뉴스, Claude, AI
+
+Date: 2026-05-06
+==================================================
