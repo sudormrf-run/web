@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [05/08] OpenAI가 GPT-5.5 제품군과 Codex 런타임을 확장 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI가 GPT-5.5 제품군을 확장
+• Codex가 장기 실행 에이전트로 진화
+• Zyphra가 ZAYA1 오픈 모델 공개
+• Anthropic이 Claude 정렬 연구 발표
+• DeepMind 공동 수학자가 신기록 달성
+
+📋 목차:
+1. 헤드라인: OpenAI가 GPT-5.5 제품군과 Codex 런타임을 확장
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-05-08-not-much.md
+
+#OpenAI #Codex #GPT-5.5
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Codex, 테크뉴스, GPT-5.5, AI, 인공지능, 머신러닝, AI뉴스, OpenAI
+
+Date: 2026-05-08
+==================================================
