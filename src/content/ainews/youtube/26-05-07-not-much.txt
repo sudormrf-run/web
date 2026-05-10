@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [05/07] GPT-Realtime-2, OpenAI API에 출시 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI가 GPT-Realtime-2를 API에 출시
+• Codex가 Chrome 브라우저 제어 지원
+• Anthropic이 Natural Language Autoencoders 공개
+• Qwen3.6 27B 로컬 추론 속도 2.5배 향상
+• Claude Code 사용 한도가 SpaceX 컴퓨트로 확대
+
+📋 목차:
+1. 헤드라인: GPT-Realtime-2, OpenAI API에 출시
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-05-07-not-much.md
+
+#OpenAI #GPT-Realtime-2 #Codex #Anthropic #Qwen
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 머신러닝, 인공지능, Codex, GPT-Realtime-2, Qwen, AI뉴스, Anthropic, 테크뉴스, AI, OpenAI
+
+Date: 2026-05-07
+==================================================
