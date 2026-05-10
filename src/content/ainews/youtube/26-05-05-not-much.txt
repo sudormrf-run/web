@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [05/05] GPT-5.5 Instant, ChatGPT 기본 모델로 출시 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• GPT-5.5 Instant가 기본 모델로 출시
+• OpenAI Agents SDK TypeScript 공개
+• Gemma 4 MTP로 디코딩 최대 3배 가속
+• RadixArk가 1억 달러 시드 유치
+• Anthropic과 Perplexity가 금융 AI 확장
+
+📋 목차:
+1. 헤드라인: GPT-5.5 Instant, ChatGPT 기본 모델로 출시
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-05-05-not-much.md
+
+#OpenAI #GPT-5.5 #Gemma #Agents #Anthropic
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Anthropic, AI, 인공지능, 테크뉴스, Gemma, 머신러닝, OpenAI, AI뉴스, Agents, GPT-5.5
+
+Date: 2026-05-05
+==================================================
