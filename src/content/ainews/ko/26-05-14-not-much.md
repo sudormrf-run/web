@@ -1,0 +1,101 @@
+---
+title: "ChatGPT 모바일 앱에 Codex 통합"
+summary:
+  - "ChatGPT 모바일 앱에 Codex 통합"
+  - "GitHub Copilot App 미리보기 공개"
+  - "LangChain Engine·SmithDB 출시"
+  - "Claude Code 제한에 개발자 반발"
+  - "Figure 로봇 24시간 자율 작업"
+date: 2026-05-14
+originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-05-14-not-much.md"
+hasHeadline: false
+headline: "ChatGPT 모바일 앱에 Codex 통합"
+tags:
+  - OpenAI
+  - Codex
+  - GitHub
+  - LangChain
+  - Claude
+isFeatured: false
+---
+
+## 헤드라인: ChatGPT 모바일 앱에 Codex 통합
+
+참고 링크: [544 Twitters](https://twitter.com/i/lists/1585430245762441216), [AINews' website](https://news.smol.ai/), [AINews is now a section of Latent Space](https://www.latent.space/p/2026), [opt in/out](https://support.substack.com/hc/en-us/articles/8914938285204-How-do-I-subscribe-to-or-unsubscribe-from-a-section-on-Substack)
+
+OpenAI가 Codex를 ChatGPT 모바일 앱에 통합하며, 사용자가 노트북, Mac mini, devbox에서 계속 실행 중인 코딩 에이전트 세션을 원격으로 시작, 검토, 승인, 제어할 수 있게 했다. 이번 업데이트는 개발자 워크플로가 데스크톱 IDE를 넘어 모바일 검토와 원격 실행까지 확장되고 있음을 보여준다.
+
+---
+
+## AI Twitter Recap
+
+### 코딩 에이전트 툴링: Codex 모바일, GitHub 새 앱, VS Code 멀티 에이전트 UX, Hermes/Codex 연동
+
+- **OpenAI가 Codex를 일상 워크플로로 더 깊이 밀어 넣었다**: 이번 묶음에서 가장 큰 제품 출시는 **ChatGPT 모바일 앱의 Codex**였다. 사용자는 Codex가 노트북, Mac mini, devbox에서 계속 실행되는 동안 모바일에서 작업을 시작하고, 결과를 검토하고, 명령을 승인하고, 실행 방향을 조정할 수 있다. OpenAI는 관리형 원격 환경용 **Remote SSH가 정식 제공**된다고도 밝혔고, 이후 Codex 루프 주변의 Business/Enterprise 자동화를 위한 **hooks**와 **programmatic access tokens**도 추가했다 ([OpenAI](https://x.com/OpenAI/status/2055016850849993072), [OpenAI follow-up](https://x.com/OpenAI/status/2055016852133417389), [@OpenAIDevs on mobile workflow](https://x.com/OpenAIDevs/status/2055016926213181608), [@OpenAIDevs on Remote SSH](https://x.com/OpenAIDevs/status/2055016938217377945), [@OpenAIDevs on hooks/tokens](https://x.com/OpenAIDevs/status/2055032115964870838)). 별도로 OpenAI는 코딩 에이전트에서 유용성과 제한된 머신 접근 사이의 절충을 다룬 **Codex용 Windows sandbox** 기술 글도 공개했다 ([OpenAI Devs](https://x.com/OpenAIDevs/status/2054735161166819377), [@gdb](https://x.com/gdb/status/2054744721570820444)).
+- **더 넓은 IDE/앱 생태계는 “agent-first” UX로 수렴 중이다**: GitHub는 병렬 작업 흐름, repo/PR 생명주기 관리, 모델 유연성을 위한 데스크톱 환경으로 설명되는 **GitHub Copilot App** 기술 프리뷰를 발표했다 ([GitHub](https://x.com/github/status/2054959324485628120), [@adrianmg](https://x.com/adrianmg/status/2054961575929508067), [@OrenMe](https://x.com/OrenMe/status/2054959549413503308)). **VS Code**는 멀티 에이전트, 멀티 프로젝트 워크플로용 새 **Agents window**, **vscode.dev/agents**를 통한 브라우저/모바일 지원, BYOK 개선, 압축된 터미널 출력 같은 토큰 효율 기능을 내놓았다 ([VS Code](https://x.com/pierceboggan/status/2054775908586934440), [remote/browser support](https://x.com/pierceboggan/status/2054778014135902715), [BYOK updates](https://x.com/pierceboggan/status/2054778582216622579), [terminal compression](https://x.com/pierceboggan/status/2054779764523815264)). 오픈 진영에서는 **Nous/Hermes Agent**가 **Codex runtime integration**을 추가해, OpenAI 기반 턴을 사실상 Codex CLI/app-server로 라우팅하고 Hermes 세션에서 ChatGPT 구독 기반 실행을 재사용하게 했다 ([Nous Research](https://x.com/NousResearch/status/2054958564951912714), [@Teknium](https://x.com/Teknium/status/2054958835547443553), [@HermesAgentTips](https://x.com/HermesAgentTips/status/2054963533800992962)). Kimi도 Kimi Code CLI, Claude Code, Cursor, Codex, Hermes 등에 사람 같은 웹 상호작용을 노출하는 브라우저 확장 **Kimi Web Bridge**를 출시했다 ([Moonshot AI](https://x.com/Kimi_Moonshot/status/2054918374837322140)).
+
+### 에이전트 인프라와 자기 개선 루프: LangSmith Engine, SmithDB, Sandboxes, Continual Learning
+
+- **LangChain의 출시 묶음은 가장 실질적인 에이전트 인프라 릴리스 클러스터였다**: **SmithDB**는 **agent trace data**를 위해 목적에 맞게 만든 데이터베이스이고, **LangSmith Engine**은 trace를 소비해 실패를 클러스터링하고, 가능성 높은 코드 이슈를 식별하고, 수정/eval을 제안한다. 즉 관측성을 수동 검사에서 개선 루프로 바꾼다 ([@hwchase17](https://x.com/hwchase17/status/2054754206926700914), [@caspar_br on Engine](https://x.com/caspar_br/status/2054726851659248068), [@bentannyhill](https://x.com/bentannyhill/status/2054949581679653326)). 커뮤니티 해설은 이 워크로드 형태를 위해 object storage와 맞춤 storage/query 경로로 향하는 SmithDB의 아키텍처 전환을 강조했다 ([@caspar_br on SmithDB](https://x.com/caspar_br/status/2054773536603144458), [@ngates_](https://x.com/ngates_/status/2054859033488580721), [Chinese summary](https://x.com/0xLogicrw/status/2054852978243404008)).
+- **LangChain은 LangChain Labs도 발표했다**: 에이전트의 **continual learning**을 중심으로 한 응용 연구 조직으로, 프로덕션 trace가 장기적으로 학습 신호, eval, 표적화된 능력 개선이 되어야 한다는 논지다 ([LangChain](https://x.com/LangChain/status/2054971487694749898), [@jakebroekhuizen](https://x.com/jakebroekhuizen/status/2054973621312073832), [@willccbb](https://x.com/willccbb/status/2054983266046996839), [Prime Intellect partnership](https://x.com/PrimeIntellect/status/2054986817779425579)).
+- **에이전트 실행 격리도 계속 성숙하고 있다**: W&B/CoreWeave는 RL, tool use, eval 워크로드에서 격리 실행을 위한 **CoreWeave Sandboxes**를 출시했고, `rm -rf /` 같은 파괴적 명령을 규모 있게 테스트한다고 명시했다 ([Weights & Biases](https://x.com/wandb/status/2054958004118724672)). 비슷한 맥락에서 오픈소스/로컬 개발 툴링도 에이전트 디버깅 주변에 등장했다. [@benhylak](https://x.com/benhylak/status/2054987683928383872)은 자동 eval 작성용으로 Codex/Claude Code에 trace를 노출하는 무료 로컬 에이전트 디버깅 스택을 소개했다.
+
+### Anthropic Claude Code 제한과 개발자 반발
+
+- **가장 날카로운 생태계 반응은 Anthropic이 Claude Code 사용을 제한하거나 재구성한 데서 나왔다**: 특히 서드파티 wrapper와 대량 programmatic workflow가 문제였다. Theo의 thread가 초점이 됐다. 그는 T3 Code 사용자들이 공식 지원 경로로 통합했음에도 사실상 극적인 rate-limit 축소를 맞았다고 주장했고, 이후 구독을 취소하며 오픈소스 기부를 위해 다른 사람들에게 취소 스크린샷을 올리라고 독려했다 ([@theo initial thread](https://x.com/theo/status/2054731856248283318), [subscription cancellation](https://x.com/theo/status/2054732997287625013), [donation thread](https://x.com/theo/status/2054734057368621176), [T3 Code clarification](https://x.com/theo/status/2054737293186126056)). 다른 주요 빌더들도 Anthropic이 사실상 오픈소스 개발자/앱을 차단하고 `claude -p` 주변에 구축된 harness를 불안정하게 만들었다는 불만을 반복했다 ([@theo](https://x.com/theo/status/2054728187498946969), [@andersonbcdefg](https://x.com/andersonbcdefg/status/2054721558141403242)).
+- **더 전략적인 반론도 있었다**: 일부 사용자는 Anthropic이 서드파티 앱을 위해 크게 보조된 정액 토큰을 개발자에게 제공할 의무는 없으며, 생태계가 더 명시적인 API 경제와 비싼 모델/저렴한 모델 사이의 더 똑똑한 라우팅으로 이동할 가능성이 높다고 주장했다 ([Sentdex](https://x.com/Sentdex/status/2054925517426491739), [@tadasayy](https://x.com/tadasayy/status/2054922713857462487)). 그래도 reply thread 취소만으로도 의미 있는 ARR 손실을 추정하는 사용자들이 보이는 등 가시적 이탈 신호는 작지 않았다 ([@thegenioo](https://x.com/thegenioo/status/2054919696663663009), [Uncle Bob Martin](https://x.com/unclebobmartin/status/2054970327592042661), [Theo later](https://x.com/theo/status/2055022768262144102)). 에이전트 엔지니어에게 실용적 결론은 분명하다. **구독 기반 harness는 안정적인 플랫폼 primitive가 아니다**. provider/model abstraction과 BYOK 경로는 점점 필수가 되어 보인다.
+
+### 로보틱스와 Embodied AI: Figure의 24/7 분류 스트림과 더 넓은 자동화 신호
+
+- **Figure의 livestream이 로보틱스 논의를 지배했다**: 회사는 먼저 **8시간 완전 자율, 무감독 작업**을 보여준 뒤 **24/7 livestream**으로 확장했고, 결국 소형 패키지 분류에서 **고장 없는 24시간 이상 연속 자율 운용**, **인간 수준 처리량**, OOD 케이스 자동 reset을 포함해 **Helix-02가 완전히 onboard로 실행**된다는 내용을 보고했다. 또한 **teleoperation이 없었다**고 명시적으로 주장했다 ([Figure CEO Brett Adcock](https://x.com/adcock_brett/status/2054729581391962353), [24h update](https://x.com/adcock_brett/status/2054946098431881720), [detailed technical clarifications](https://x.com/adcock_brett/status/2054973511572271172), [Day 2 livestream](https://x.com/adcock_brett/status/2054970993442169230)). 반복된 “Bob, Frank, and Gary” 업데이트는 더 가벼운 분위기였지만, 핵심 신호는 생산 환경 같은 uptime에서 지속적 자율 운용이었다.
+- **해석은 Figure 자체에 대한 회의와 로보틱스 가속에 대한 더 넓은 확신으로 갈렸다**: 일부 코멘터는 비판자들이 이런 시연이 단기 노동 대체에 대해 암시하는 바를 과소평가한다고 주장했고, 다른 이들은 회의론이 **로보틱스라는 범주**보다 **Figure**에 더 향해 있다고 지적했다 ([@cloneofsimo](https://x.com/cloneofsimo/status/2054712329431109708), [@iScienceLuvr](https://x.com/iScienceLuvr/status/2054715505982743009), [@kimmonismus](https://x.com/kimmonismus/status/2054947354625630462)). 어느 쪽이든 이번 묶음에서 가장 분명한 “continuous uptime” 데모 중 하나였다.
+
+### 연구, 벤치마크, 오픈 모델: Diffusion LMs, Time-Series FMs, Mechanistic Interpretability, RL/Search
+
+- **기술적으로 중요한 모델/연구 릴리스 몇 가지가 눈에 띄었다**: **Zyphra의 ZAYA1-8B-Diffusion-Preview**는 autoregressive generation 대비 **4.6-7.7배 decoding speedup**을 품질 손실이 제한적인 상태로 주장하며, diffusion LM이 더 저렴한 rollout과 더 풍부한 생성 모드를 가능하게 한다는 익숙한 논리를 내세웠다 ([Zyphra](https://x.com/ZyphraAI/status/2055038845809480113)).
+- **Datadog의 Toto 2.0**은 **4M에서 2.5B params** 범위의 **오픈웨이트 time-series forecasting 모델 5개**를 **Apache 2.0**으로 공개했고, **BOOM, GIFT-Eval, TIME**에서 1위를 주장했다. 더 중요하게는 scaling laws가 TSFM에도 마침내 깔끔하게 성립할 수 있다는 증거를 제시했다 ([Datadog](https://x.com/datadoghq/status/2054929795385893108), [@atalwalkar](https://x.com/atalwalkar/status/2054941930497142826), [@ClementDelangue](https://x.com/ClementDelangue/status/2054991352295731619)).
+- **Goodfire의 interpretability 글**은 Llama가 산술에 대해 기하학적 “shape-rotating calculator” / Fourier-feature-like 메커니즘을 사용한다고 주장했다. 이는 순수 post-hoc 설명이 아니라 steering 기반 증거를 동반했다 ([GoodfireAI](https://x.com/GoodfireAI/status/2054962242022777189), [follow-up](https://x.com/GoodfireAI/status/2054962356162363599)).
+- **RL/search와 optimizer식 진전에서도 여러 thread가 주목할 만했다**: LLM RL을 PPO-vs-GRPO가 아니라 **Generate / Filter / Control / Replay** 전반의 **rollout engineering**으로 프레이밍한 survey ([The Turing Post](https://x.com/TheTuringPost/status/2054713822343266365)); 유용한 rollout을 능동적으로 찾기 위해 privileged information을 쓰는 **Pedagogical RL** ([Souradip Chakraborty](https://x.com/SOURADIPCHAKR18/status/2055057138070733176), [@lateinteraction](https://x.com/lateinteraction/status/2055065846389649436)); 그리고 nanoGPT speedrun benchmark에서 **Opus 4.7이 2930 steps**, **GPT-5.5가 2950**에 도달해 약 1만 회 run / 약 1.4만 H200 hours 후 **2990 human baseline**을 넘긴 **Prime Intellect의 autonomous optimizer search**가 있었다 ([Prime Intellect](https://x.com/PrimeIntellect/status/2055056380881744365), [@eliebakouch](https://x.com/eliebakouch/status/2055059154738278851)). 또한 **Kimi K2.6**은 **Finance Agent Benchmark V2에서 1위 open-weight model**로 보고됐고 ([Moonshot AI](https://x.com/Kimi_Moonshot/status/2054803169994272819)), **Ring-2.6-1T**는 오픈 릴리스로 day-0 vLLM 지원을 받았다 ([vLLM](https://x.com/vllm_project/status/2054968127298150506)).
+
+### Top Tweets
+
+- **OpenAI의 Codex 모바일 출시**는 engagement와 실용적 관련성에서 가장 분명한 제품 승자였다. ChatGPT mobile에서 실행 중인 코딩 에이전트 세션을 원격으로 제어/검토할 수 있다 ([OpenAI](https://x.com/OpenAI/status/2055016850849993072)).
+- **Theo의 Claude Code 반발 thread**는 플랫폼 리스크와 구독 기반 에이전트 워크플로를 둘러싼 가장 강한 개발자 정서 변화를 포착했다 ([@theo](https://x.com/theo/status/2054731856248283318), [@theo donations thread](https://x.com/theo/status/2054734057368621176)).
+- **Figure의 자율 humanoid 분류 livestream**은 24시간 지점을 넘기고 onboard policy execution과 no teleop에 관한 자세한 주장이 나온 뒤에도 가장 많이 논의된 embodied-AI 데모 중 하나였다 ([Brett Adcock](https://x.com/adcock_brett/status/2054973511572271172)).
+- **GitHub의 Copilot App**과 **LangChain의 Engine/SmithDB/Labs**는 이번 사이클에서 에이전트 엔지니어에게 가장 중요한 비-OpenAI 툴링 출시였다 ([GitHub](https://x.com/github/status/2054959324485628120), [LangChain](https://x.com/LangChain/status/2054971487694749898), [@hwchase17](https://x.com/hwchase17/status/2054754206926700914)).
+- **Prime Intellect의 autonomous optimizer-search 결과**는 코딩 에이전트가 앱 개발뿐 아니라 개방형 ML 최적화 루프에도 들어가는 구체적 사례로 지켜볼 만하다 ([Prime Intellect](https://x.com/PrimeIntellect/status/2055056380881744365)).
+
+---
+
+## AI Reddit Recap
+
+### /r/LocalLlama + /r/localLLM
+
+- **[Multi-Token Prediction (MTP) for Qwen on LLaMA.cpp + TurboQuant](https://www.reddit.com/r/LocalLLaMA/comments/1tckzy2/multitoken_prediction_mtp_for_qwen_on_llamacpp/)** (Activity: 514): 패치된 **llama.cpp** fork가 **Qwen**용 **Multi-Token Prediction (MTP)** 지원과 **TurboQuant**를 추가해, MacBook Pro M5 Max 64GB에서 `21 tok/s`에서 `34 tok/s`로 개선됐고 `90%` MTP acceptance rate를 주장했다. 원시 속도 향상은 `40%`가 아니라 약 `62%`다. 코드는 [`AtomicBot-ai/atomic-llama-cpp-turboquant`](https://github.com/AtomicBot-ai/atomic-llama-cpp-turboquant)에 공개됐고, Qwen 3.6 27B/35B용 GGUF MTP quantization은 [`AtomicChat/qwen-36-udt-mtp`](https://huggingface.co/collections/AtomicChat/qwen-36-udt-mtp) HF collection에 있다. 댓글에서는 TurboQuant 프레이밍에 의문을 제기하며, 종종 `f16`, `q8`, `q4`보다 느리다고 주장했다. 또 TurboQuant PR이 llama.cpp에서 거절된 이유는 기존 Q4 KV-quant rotation 지원이 이미 대부분의 이점을 커버했고, 이득은 주로 품질 저하가 우려되는 Q3에서 나온다는 점이었다. 다른 이들은 더 높은 speculative/MTP acceptance와 tokens/s만으로는 출력 동등성을 입증하지 못한다며 품질/eval 데이터를 요구했다.
+- **[we really all are going to make it, aren't we? 2x3090 setup.](https://www.reddit.com/r/LocalLLaMA/comments/1tcf2dt/we_really_all_are_going_to_make_it_arent_we/)** (Activity: 487): **RTX 3090 두 장(`48 GB` VRAM total, no NVLink)** 설정에서 [`club-3090`](https://github.com/noonghunna/club-3090)을 실행한 결과, **WSL2**의 약 `30 tok/s` generation과 약 `400 pp/s` prompt processing에서 **native Ubuntu**의 약 `113 tok/s`와 약 `4000 pp/s`로 개선됐다고 한다. 작성자는 최근 *“sse-session drop bug”*와 tool-calling 수정으로 로컬 워크플로가 실용적이 됐고, **Qwen “3.6” 27B at `262k` context**가 소비자 GPU에서 코딩, monkey patch, code review에 “almost-Sonnet level”처럼 느껴진다고 말했다.
+- **[I don't get Quants, I'm running Qwen3.6-27b flawlessly at iq3, makes no sense](https://www.reddit.com/r/LocalLLM/comments/1tcas9a/i_dont_get_quants_im_running_qwen3627b_flawlessly/)** (Activity: 325): 작성자는 **Qwen `27B` dense coding-capable model**의 **bartowski GGUF quant**를 대략 **`IQ3` quantization**으로 실행해 **`16GB` VRAM에 약 `90k` context**를 맞추고 약 **`30 tok/s`**로 생성하면서도 **Godot/GDScript** 작업에서 잘 작동한다고 보고했다. 낮은 비트 quantization의 품질 저하가 거의 보이지 않는다고 관찰했으며, 같은 모델이 Opencode 같은 다른 harness에서는 비슷한 tool 연결에도 더 나쁘게 작동한다는 점에서 강한 결과가 **Pi harness**와 **Context7/ContextQMD** retrieval/checking 때문일 수 있다고 추정했다.
+
+### 오픈소스 로컬 AI 앱과 음성 모델 릴리스
+
+- **[TextGen is now a native desktop app. Open-source alternative to LM Studio (formerly text-generation-webui).](https://www.reddit.com/r/LocalLLaMA/comments/1tbyyee/textgen_is_now_a_native_desktop_app_opensource/)** (Activity: 1092): **oobabooga/textgen**이 오래된 `text-generation-webui`에서 **portable, no-install Electron desktop app**으로 재패키징됐다. Windows/Linux/macOS용이며, 자체 포함 `user_data` 저장소와 **CUDA, Vulkan, CPU-only, Apple Silicon/Intel macOS, ROCm** release variant가 [GitHub releases](https://github.com/oobabooga/textgen/releases)를 통해 제공된다. 작성자는 이를 private, open-source **LM Studio alternative**로 포지셔닝하며, **zero outbound requests**, `IQ4_KS`/`IQ5_KS` 같은 최신 quantization format을 지원하는 `ik_llama.cpp`, `ANTHROPIC_BASE_URL=http://127.0.0.1:5000`을 통한 Claude Code compatibility를 포함한 OpenAI/Anthropic-compatible API, 내장 웹 검색, `PyMuPDF` 기반 PDF extraction, `trafilatura` page cleanup, Jinja2 chat-template rendering, Python 파일 또는 MCP 서버를 통한 tool calling을 강조했다. 소스는 [github.com/oobabooga/textgen](https://github.com/oobabooga/textgen)에 AGPLv3로 공개됐다.
+- **[DramaBox - Most Expressive Voice model ever based on LTX 2.3](https://www.reddit.com/r/LocalLLaMA/comments/1tc5wx1/dramabox_most_expressive_voice_model_ever_based/)** (Activity: 405): **Resemble AI**가 **LTX 2.3** 기반의 오픈 expressive voice/TTS 모델 **DramaBox**를 공개했다. 코드는 [GitHub](https://github.com/resemble-ai/DramaBox), weights는 [Hugging Face](https://huggingface.co/ResembleAI/Dramabox), hosted demo는 [HF Space](https://huggingface.co/spaces/ResembleAI/Dramabox)에 있다. 게시물은 이를 매우 감정 표현이 강한 음성 모델로 포지셔닝했고, 댓글은 **indie game voice acting**과 캐릭터 대화 워크플로에 유용할 수 있다고 봤다. 상위 댓글은 표현력에 대체로 긍정적이었고, *“actually sounds like a real person emotes”*라고 평가했지만, 한 기술적 비판은 speaker/character likeness가 약 `95%`에 이르는 반면 로봇 같거나 저품질 artifact 때문에 audio naturalness는 약 `60%` 수준이라고 했다.
+
+### 로컬 LLM 워크플로의 Retrieval 병목
+
+- **[Web-Search is coming to a screeching performance halt as Google shuts down their free search index, and traffic defenders like Cloudflare challenge AI at every gateway. What are our options?](https://www.reddit.com/r/LocalLLaMA/comments/1tcaboi/websearch_is_coming_to_a_screeching_performance/)** (Activity: 838): 이 글은 **Google**이 무료 site-specific/custom search를 `50`개 도메인으로 제한하고 legacy cutoff를 `2027-01-01`로 두는 한편, **Cloudflare**가 고객 사이트 전반에서 기본적으로 AI scraper에 challenge를 걸고, 이것이 **GoDaddy** 파트너십을 통해 확장되고 있어 AI-agent web search/retrieval pipeline이 악화되고 있다고 주장한다. 댓글은 기존 대안으로 탈중앙 **[YaCy](https://yacy.net/)**, self-hosted meta-search **SearXNG**, 실시간이 아닌 대량 웹 데이터용 **[Common Crawl](https://commoncrawl.org/)**, 독립 index와 월 `2,000` 무료 query를 제공하는 **[Brave Search API](https://brave.com/search/api/)**, 그리고 **[Wayback Machine](https://archive.org/help/wayback_api.php)**, archive.today, **[Jina Reader](https://r.jina.ai/)** 같은 retrieval fallback을 제시했다. 주요 논쟁은 순수 기술보다 경제 문제였다. 댓글은 봇/API 트래픽이 광고로 monetization되지 않기 때문에 paid search로 이동할 것이라고 예상했다. *“how do you monetize searches when there’s no human eyes to land on advertising?”* 단기적으로는 무제한 무료 Google-backed search가 아니라 paid 또는 federated search API와 caching/reader service 조합이 유력하다고 봤다.
+- **[Anyone actually using a local LLM as their daily knowledge base? Not for coding, for life stuff. What's your setup?](https://www.reddit.com/r/LocalLLaMA/comments/1tcrtt6/anyone_actually_using_a_local_llm_as_their_daily/)** (Activity: 719): 이 thread는 로컬 LLM이 private notes/PDF 위에서 **daily personal knowledge base**로 실용적인지 묻고, RAG reliability, quant/model choice, framework complexity, context growth를 우려했다. 가장 구체적인 설정은 **M3 Max `36GB`**, [`Qwen3-32B`](https://huggingface.co/Qwen) via [`Ollama`](https://ollama.com/), [`bge-m3`](https://huggingface.co/BAAI/bge-m3) embeddings, [`Obsidian`](https://obsidian.md/) as source of truth, [`Postgres + pgvector`](https://github.com/pgvector/pgvector), LlamaIndex 대신 약 `300`줄의 custom Python이었다. 핵심 구현 세부사항은 title/parent-heading prefix가 붙은 heading-based Markdown chunking, [`BM25`](https://en.wikipedia.org/wiki/Okapi_BM25)+dense retrieval hybrid와 [`RRF`](https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf), mandatory source citations/quotes, 약 `3000`개 note를 약 `4 min`에 nightly full reindexing하는 방식이었다. 다른 댓글은 speech-to-text/translation, screenshot-to-vision translation, clipboard automation, TTS, 향후 문서 추출을 통한 business task tracking을 결합한 실용적 local-AI workflow를 설명하며, Whisper급 ASR과 vision model이 오래된 speech/OCR pipeline보다 신뢰할 수 있었다고 했다.
+
+### Less Technical Subreddits
+
+- **[Anthropic just ripped off everyone and they still managed to make it sound deceptively friendly](https://www.reddit.com/r/ClaudeCode/comments/1tc832e/anthropic_just_ripped_off_everyone_and_they_still/)** (Activity: 2761): 이미지는 `June 15`부터 paid Claude plan이 **Claude Agent SDK**, `claude -p`, **Claude Code GitHub Actions**, 서드파티 Agent SDK apps를 통한 programmatic usage용 전용 월간 credit을 받을 수 있다는 [screenshot of a ClaudeDevs/X announcement](https://i.redd.it/q81piy8c5y0h1.jpeg)이다. 문맥상 Reddit 글은 이것이 사실상 pricing/usage-limit nerf라고 주장한다. 이전에는 불투명하고 강하게 보조된 subscription limit의 이익을 보던 programmatic Claude Code usage가 이제 고정 dollar credit allowance로 라우팅되어, heavy SDK/CLI 사용자에게 실질 가치가 대략 “`$2000` of tokens”에서 `$200`로 줄었다는 주장이다. 댓글은 대체로 이를 혜택이 아니라 위장된 다운그레이드로 본다. 특히 credit이 interactive subscription usage보다 더 빨리 소진될 수 있는 autonomous `claude -p` workflow가 문제다. 한 사용자는 이것이 자신을 “permanent local mode”로 밀어낸다고 말하며, Anthropic이 cloud-based coding-agent workflow를 덜 경제적으로 만들고 있다고 우려했다.
+- **[In Time (2011) was a documentary about Claude Pro users and nobody told us](https://www.reddit.com/r/ClaudeAI/comments/1tckar7/in_time_2011_was_a_documentary_about_claude_pro/)** (Activity: 5292): 이미지는 영화 *In Time*의 빛나는 life-clock 장치를 **Claude Pro token/message limits**와 연결한 **비기술 meme**로, 팔뚝 카운터에 `Tokens Remaining: 125`가 표시된다 ([image](https://i.redd.it/u8m6559bg01h1.png)). 게시물은 paid LLM usage cap을 생산성 시대의 생사 카운트다운처럼 프레이밍하며, “Justin Timberlake was just a guy trying to finish his PR before the window closed.”라고 농담했다.
+- **[Twitter user posts a real Monet and says it's AI](https://www.reddit.com/r/singularity/comments/1td046p/twitter_user_posts_a_real_monet_and_says_its_ai/)** (Activity: 3110): 이는 **비기술 meme/social experiment**다. 이미지는 X/Twitter 게시물 스크린샷으로, 한 사용자가 실제 **Claude Monet** 수련 그림으로 추정되는 작품을 “AI-generated”라고 라벨링하자, 댓글들이 poor depth, cohesion, brushwork, “feeling” 부족 같은 AI 결함을 자신 있게 지적한다. 맥락상 의미는 **AI art discourse의 cognitive bias**다. 이미지가 AI라고 들으면, 작품이 인간 제작이어도 관람자가 비판을 역으로 만들어낼 수 있다. [Image link](https://i.redd.it/4sb11e8m641h1.jpeg)
+- **[Bruh…](https://www.reddit.com/r/GeminiAI/comments/1tbx1bp/bruh/)** (Activity: 2856): 이미지는 AI image-editing model이 hand-vectorization 요청에 실패하는 **비기술 meme**이다. 모델은 먼저 손가락이 많은 손을 생성한 뒤, 이를 “수정”하면서 gesture를 raised middle finger로 바꿔버린다. 이는 **hand/finger topology**와 iterative edit 중 instruction-following 실패라는 흔한 generative-image failure mode를 보여준다. [Image](https://i.redd.it/5clbrmoz5w0h1.jpeg)
+
+---
+
+## AI Discord Recap
+
+### Discord 접근 종료
+
+- **Discord 접근 종료**: 안타깝게도 오늘 Discord가 접근을 차단했다. 이 형태로는 다시 가져오지 않겠지만, 새 AINews를 곧 출시할 예정이다. 여기까지 읽어줘서 고맙고, 좋은 여정이었다.
