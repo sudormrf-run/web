@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [05/11] Thinking Machines가 상호작용 모델 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Thinking Machines가 상호작용 모델 공개
+• OpenAI가 Deployment Company 출범
+• OpenAI Daybreak 보안 제품화 추진
+• 코딩 에이전트 벤치마크가 하네스 평가
+• Qwen 3.6 로컬 추론 기대감 확산
+
+📋 목차:
+1. 헤드라인: Thinking Machines가 상호작용 모델 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-05-11-not-much.md
+
+#Thinking Machines #OpenAI #Agent
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 테크뉴스, OpenAI, AI, Thinking Machines, 머신러닝, Agent, 인공지능, AI뉴스
+
+Date: 2026-05-11
+==================================================
