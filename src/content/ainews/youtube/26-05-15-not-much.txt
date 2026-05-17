@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [05/15] Cerebras IPO, OpenAI 5.4·5.5 서빙 주장 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Cerebras IPO가 인프라 논쟁 재점화
+• CFO가 OpenAI 5.4·5.5 서빙 주장
+• Codex 모바일이 에이전트 사용면 확대
+• Claude 한도 초기화로 경쟁 압력 부각
+• 로컬 LLM은 MTP와 고VRAM 실험 집중
+
+📋 목차:
+1. 헤드라인: Cerebras IPO, OpenAI 5.4·5.5 서빙 주장
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-05-15-not-much.md
+
+#Cerebras #OpenAI #Codex #Anthropic #LocalLLM
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI뉴스, 인공지능, AI, Anthropic, 테크뉴스, Cerebras, OpenAI, 머신러닝, LocalLLM, Codex
+
+Date: 2026-05-15
+==================================================
