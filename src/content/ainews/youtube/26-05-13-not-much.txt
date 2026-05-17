@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [05/13] Figure, 휴머노이드 로봇 8시간 자율 근무 시연 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Figure가 8시간 로봇 근무 시연
+• Cline SDK와 LangChain 플랫폼 출시
+• Nous가 TST 2-3배 속도 향상 발표
+• OpenAI가 Codex 전환 혜택 제공
+• Anthropic 기업 채택률이 OpenAI 추월
+
+📋 목차:
+1. 헤드라인: Figure, 휴머노이드 로봇 8시간 자율 근무 시연
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-05-13-not-much.md
+
+#Figure #OpenAI #Codex
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 인공지능, AI, Codex, 테크뉴스, Figure, AI뉴스, 머신러닝, OpenAI
+
+Date: 2026-05-13
+==================================================
