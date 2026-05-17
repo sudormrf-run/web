@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [05/12] Perceptron Mk1, 비디오·체화 추론 모델 출시 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Perceptron Mk1 비디오 추론 모델 출시
+• Mini Shai-Hulud 공급망 공격 확산
+• GB200 대형 MoE 서빙 벤치 공개
+• Qwen 3.6 장문맥 로컬 평가 화제
+• Isomorphic Labs가 21억 달러 조달
+
+📋 목차:
+1. 헤드라인: Perceptron Mk1, 비디오·체화 추론 모델 출시
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-05-12-not-much.md
+
+#Perceptron #Security #Qwen
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI, 머신러닝, Perceptron, 테크뉴스, 인공지능, Security, AI뉴스, Qwen
+
+Date: 2026-05-12
+==================================================
