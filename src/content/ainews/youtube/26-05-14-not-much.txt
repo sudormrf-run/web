@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [05/14] ChatGPT 모바일 앱에 Codex 통합 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• ChatGPT 모바일 앱에 Codex 통합
+• GitHub Copilot App 미리보기 공개
+• LangChain Engine·SmithDB 출시
+• Claude Code 제한에 개발자 반발
+• Figure 로봇 24시간 자율 작업
+
+📋 목차:
+1. 헤드라인: ChatGPT 모바일 앱에 Codex 통합
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-05-14-not-much.md
+
+#OpenAI #Codex #GitHub #LangChain #Claude
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Claude, 테크뉴스, Codex, LangChain, OpenAI, AI, 인공지능, AI뉴스, 머신러닝, GitHub
+
+Date: 2026-05-14
+==================================================
