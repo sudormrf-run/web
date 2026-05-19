@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [05/18] Cursor, Composer 2.5 공개와 대형 모델 훈련 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Cursor가 Composer 2.5를 공개
+• LangSmith Engine이 에이전트 CI/CD 제시
+• llama.cpp가 Qwen3.6 MTP를 지원
+• Qwen3.7 Preview가 Arena 순위 상승
+• Anthropic이 Stainless를 인수
+
+📋 목차:
+1. 헤드라인: Cursor, Composer 2.5 공개와 대형 모델 훈련
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-05-18-not-much.md
+
+#Cursor #Composer #OpenAI #Claude #Qwen
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Cursor, 머신러닝, OpenAI, Composer, 인공지능, Qwen, AI뉴스, Claude, 테크뉴스, AI
+
+Date: 2026-05-18
+==================================================
