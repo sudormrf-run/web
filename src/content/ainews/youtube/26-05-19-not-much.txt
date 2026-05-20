@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [05/19] Google I/O 2026, Gemini 3.5 Flash와 Omni 및 에이전트 스택 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Google이 Gemini 3.5 Flash를 공개
+• Gemini Omni가 멀티모달 생성을 확대
+• Antigravity가 에이전트 플랫폼으로 확장
+• Karpathy가 Anthropic에 합류
+• OpenAI가 Guaranteed Capacity 출시
+
+📋 목차:
+1. 헤드라인: Google I/O 2026, Gemini 3.5 Flash와 Omni 및 에이전트 스택 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-05-19-not-much.md
+
+#Google #Gemini #OpenAI #Anthropic #Claude
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Gemini, Claude, 인공지능, Anthropic, OpenAI, AI뉴스, 테크뉴스, AI, 머신러닝, Google
+
+Date: 2026-05-19
+==================================================
