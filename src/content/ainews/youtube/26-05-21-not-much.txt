@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [05/21] Codex가 잠긴 Mac 앱을 휴대폰에서 원격 사용 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Codex가 잠긴 Mac 앱을 휴대폰에서 원격 사용
+• Qwen3.7 Max가 주요 벤치마크 상위권 기록
+• Modal이 46.5억 달러 가치로 3.55억 달러 유치
+• turbopuffer가 1억 달러 런레이트를 돌파
+• Runway Aleph 2.0과 Edit Studio 공개
+
+📋 목차:
+1. 헤드라인: Codex가 잠긴 Mac 앱을 휴대폰에서 원격 사용
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-05-21-not-much.md
+
+#OpenAI #Codex #Qwen #Modal #Runway
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Modal, OpenAI, Codex, 인공지능, AI, AI뉴스, Qwen, Runway, 테크뉴스, 머신러닝
+
+Date: 2026-05-21
+==================================================
