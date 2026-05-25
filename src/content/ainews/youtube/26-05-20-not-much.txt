@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [05/05] OpenAI 모델, Erdős 단위거리 문제에서 수학적 돌파 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI 모델이 수학 난제를 반박
+• Cohere가 Command A+를 공개
+• Gemini 3.5 Flash가 확대 출시
+• Qwen3.7 공개 모델 기대감 상승
+• Karpathy가 Anthropic에 합류
+
+📋 목차:
+1. 헤드라인: OpenAI 모델, Erdős 단위거리 문제에서 수학적 돌파
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-05-20-not-much.md
+
+#OpenAI #Cohere #Gemini
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 테크뉴스, OpenAI, Cohere, 머신러닝, 인공지능, AI, Gemini, AI뉴스
+
+Date: 2026-05-05
+==================================================
