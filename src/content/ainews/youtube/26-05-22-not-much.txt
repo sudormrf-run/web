@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [05/05] DeepSeek, V4-Pro 75% 할인 영구화 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• DeepSeek, V4-Pro 75% 할인 영구화
+• Codex, Appshots 등 기능 대거 추가
+• MCP, 무상태 프로토콜 RC 공개
+• Google, Gemini Spark와 Omni 공개
+• Anthropic, 취약점 1만 건 이상 발견
+
+📋 목차:
+1. 헤드라인: DeepSeek, V4-Pro 75% 할인 영구화
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-05-22-not-much.md
+
+#DeepSeek #Qwen #Codex #MCP #Google
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI뉴스, 인공지능, 테크뉴스, AI, MCP, Google, Anthropic, Qwen, DeepSeek, Codex, 머신러닝
+
+Date: 2026-05-05
+==================================================
