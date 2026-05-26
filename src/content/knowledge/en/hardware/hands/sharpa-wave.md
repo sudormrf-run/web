@@ -18,6 +18,8 @@ lastEditedAt: 2026-05-17
 
 # SharpaWave
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/GcTUlOHvdOs" title="SharpaWave Official Product Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## One-line judgment
 
 **SharpaWave is a high-DoF hand worth tracking for flower manipulation if its tactile stack is as accessible as the public claims suggest.** It should not be treated as a first-choice purchase until pricing, delivery, SDK access, and raw tactile data access are confirmed.

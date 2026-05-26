@@ -18,6 +18,8 @@ lastEditedAt: 2026-05-17
 
 # WUJI Hand
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/LXVV-oErD8s" title="WUJI Hand Official Release" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## 한 줄 판단
 
 **WUJI Hand는 꽃 작업 후보군에서 "고자유도 손동작을 실제 로봇 암에 붙여 빠르게 실험할 수 있는 핸드"에 가깝다.** 무게가 가볍고 ROS 2/SDK가 공개되어 있어 연구 통합성은 좋지만, 꽃잎 접촉 같은 미세 힘 제어는 실제 센서 품질과 컨트롤 루프를 확인해야 한다.

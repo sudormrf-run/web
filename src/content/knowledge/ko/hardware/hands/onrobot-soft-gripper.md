@@ -18,6 +18,8 @@ lastEditedAt: 2026-05-17
 
 # OnRobot Soft Gripper
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/BYAwP7Gn4N4" title="OnRobot Soft Gripper Official Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## 한 줄 판단
 
 **꽃을 실제로 망가뜨리지 않고 잡는 첫 엔드이펙터 후보는 덱스터러스 핸드보다 OnRobot Soft Gripper 쪽이 더 현실적일 수 있다.** 인핸드 조작은 약하지만 부드러운 접촉면이 바로 장점이다.

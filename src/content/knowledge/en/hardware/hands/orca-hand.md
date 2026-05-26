@@ -18,6 +18,8 @@ lastEditedAt: 2026-05-17
 
 # ORCA Hand
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/WNtlUViSrPg" title="ORCA Dexterity Official Hand Announcement" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## One-line judgment
 
 **ORCA Hand is the candidate for starting dexterous learning experiments with a reproducible, lower-cost hand instead of buying a high-end commercial platform.** For flower work, its value is strongest when you expect to modify fingertips, compliance, or tactile sensing.

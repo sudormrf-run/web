@@ -18,6 +18,8 @@ lastEditedAt: 2026-05-17
 
 # OnRobot Soft Gripper
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/BYAwP7Gn4N4" title="OnRobot Soft Gripper Official Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## One-line judgment
 
 **For actually grasping flowers without damage, OnRobot Soft Gripper may be more practical than a dexterous hand as the first end-effector.** It is weak at in-hand manipulation, but its compliant contact is exactly the point.

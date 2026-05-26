@@ -18,6 +18,8 @@ lastEditedAt: 2026-05-17
 
 # Robotiq Adaptive Grippers
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/LQukPCgaeFg" title="Robotiq Adaptive Grippers Official Introduction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## 한 줄 판단
 
 **Robotiq는 꽃잎을 직접 다루는 손이라기보다 줄기 묶음, 도구, 지그를 안정적으로 잡는 작업용 그리퍼다.** 소프트 팁과 힘 제한을 붙이면 꽃 작업 셀의 튼튼한 보조 손이 된다.

@@ -18,6 +18,8 @@ lastEditedAt: 2026-05-17
 
 # Sharpa North
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/2j63rnhsFPQ" title="Sharpa North Official Autonomous Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## One-line judgment
 
 **Sharpa North is not yet an immediate flower-shop purchase candidate; it is a reference platform for watching how high-DoF hands and full-body manipulation become productized.** It becomes actionable only after SDK, teleoperation, safety, price, and lead time are confirmed.

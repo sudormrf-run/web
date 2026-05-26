@@ -18,6 +18,8 @@ lastEditedAt: 2026-05-17
 
 # WUJI Hand
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/LXVV-oErD8s" title="WUJI Hand Official Release" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## One-line judgment
 
 **WUJI Hand looks like a strong candidate when the goal is to attach a high-DoF hand to a real robot arm and start collecting manipulation data quickly.** Its low mass and ROS 2/SDK support are attractive, but petal-level manipulation still needs careful force limiting, contact sensing validation, and soft fingertip treatment.

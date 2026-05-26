@@ -18,6 +18,8 @@ lastEditedAt: 2026-05-17
 
 # Sharpa North
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/2j63rnhsFPQ" title="Sharpa North Official Autonomous Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## 한 줄 판단
 
 **Sharpa North는 꽃집 자동화의 즉시 구매 후보라기보다, 고자유도 양손과 전신 조작을 어떻게 제품화하는지 관찰할 레퍼런스 로봇이다.** 실제 도입 후보가 되려면 SDK, 원격 조작, 안전, 가격, 납기가 확인되어야 한다.

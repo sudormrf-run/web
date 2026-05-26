@@ -18,6 +18,8 @@ lastEditedAt: 2026-05-17
 
 # ORCA Hand
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/WNtlUViSrPg" title="ORCA Dexterity Official Hand Announcement" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## 한 줄 판단
 
 **ORCA Hand는 "비싼 상용 덱스터러스 핸드 대신 직접 재현 가능한 손으로 학습 실험을 시작한다"는 선택지다.** 꽃 작업에서는 완성품 구매보다 오픈소스 조립/개조/촉각 실험의 장점이 크다.

@@ -18,6 +18,8 @@ lastEditedAt: 2026-05-17
 
 # OpenArm
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/6ZLM6f8kF4Q" title="OpenArm 01 - Official Enactic Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## 한 줄 판단
 
 **OpenArm은 꽃다발 제작용 본 실험 플랫폼 후보 1순위에 가깝다.** LeRobot 공식 지원, 양팔 구성, 7-DoF 리치, 낮은 BOM 비용이 잘 맞지만, 최종 성능은 꽃을 망가뜨리지 않는 엔드이펙터와 센서 구성에 달려 있다.

@@ -18,6 +18,8 @@ lastEditedAt: 2026-05-17
 
 # SharpaWave
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/GcTUlOHvdOs" title="SharpaWave Official Product Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## 한 줄 판단
 
 **SharpaWave는 꽃 작업에서 "촉각이 충분히 좋은지 확인할 가치가 큰 고자유도 핸드"다.** 공개 수치만 보면 섬세한 조작 후보지만, 실제 SDK 접근성, tactile raw data, 납기, 가격을 확인하기 전에는 구매 1순위로 두기 어렵다.

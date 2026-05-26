@@ -18,6 +18,8 @@ lastEditedAt: 2026-05-17
 
 # OpenArm
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/6ZLM6f8kF4Q" title="OpenArm 01 - Official Enactic Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## One-line judgment
 
 **OpenArm is the strongest first-tier main experiment platform candidate for bouquet-making VLA work.** Official LeRobot support, bimanual configuration, 7-DoF reach, and a low BOM line up well, but final performance depends on the end-effector and sensing stack.

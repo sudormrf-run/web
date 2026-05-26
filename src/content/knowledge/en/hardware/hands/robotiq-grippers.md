@@ -18,6 +18,8 @@ lastEditedAt: 2026-05-17
 
 # Robotiq Adaptive Grippers
 
+<iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/LQukPCgaeFg" title="Robotiq Adaptive Grippers Official Introduction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## One-line judgment
 
 **Robotiq is better treated as a robust work gripper for stem bundles, tools, and fixtures than as a petal-handling hand.** With soft tips and force limits, it becomes a practical support gripper for a flower-work cell.
