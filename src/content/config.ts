@@ -222,7 +222,7 @@ const archiveCollection = defineCollection({
     date: z.coerce.date(),
 
     // Video info
-    videoId: z.string(), // YouTube video ID (uploaded version with Korean subs)
+    videoId: z.string().optional(), // YouTube video ID (uploaded version with Korean subs)
     originalVideoId: z.string().optional(), // Original video ID
     duration: z.string().optional(), // "HH:MM:SS" or "MM:SS"
     thumbnail: z.string().optional(),

@@ -159,6 +159,12 @@ const categoryNames: Record<string, string> = {
             <p class="article-description">{entry.data.description}</p>
           </header>
 
+          {entry.data.thumbnail && (
+            <figure class="article-hero-image">
+              <img src={entry.data.thumbnail} alt="" loading="lazy" />
+            </figure>
+          )}
+
           <div class="article-content prose">
             <Content />
           </div>
@@ -363,6 +369,21 @@ const categoryNames: Record<string, string> = {
     font-size: 1rem;
     color: var(--color-text-muted);
     line-height: 1.6;
+  }
+
+  .article-hero-image {
+    margin: -0.5rem 0 2rem;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-secondary);
+  }
+
+  .article-hero-image img {
+    display: block;
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
   }
 
   /* Article Content */

@@ -52,22 +52,29 @@ const sources = [...new Set(sortedArchive.map(item => item.data.source).filter(B
         {sortedArchive.map((item) => {
           const slug = item.slug.replace('ko/', '');
           const summaryLines = item.data.description.split('\n').filter(l => l.trim());
+          const hasVideo = Boolean(item.data.videoId);
           return (
             <article class="archive-item" data-source={item.data.source}>
               <a href={`/archive/${slug}`} class="archive-item-link">
                 <div class="archive-item-video">
                   <div class="video-thumbnail">
-                    <img
-                      src={`https://img.youtube.com/vi/${item.data.videoId}/mqdefault.jpg`}
-                      alt={item.data.title}
-                      loading="lazy"
-                    />
-                    <div class="video-duration">{item.data.duration}</div>
-                    <div class="video-overlay">
-                      <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    </div>
+                    {item.data.thumbnail || hasVideo ? (
+                      <img
+                        src={item.data.thumbnail || `https://img.youtube.com/vi/${item.data.videoId}/mqdefault.jpg`}
+                        alt={item.data.title}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div class="report-thumbnail">Research Report</div>
+                    )}
+                    {item.data.duration && <div class="video-duration">{item.data.duration}</div>}
+                    {hasVideo && (
+                      <div class="video-overlay">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
+                    )}
                   </div>
                 </div>
                 <div class="archive-item-content">
@@ -95,7 +102,7 @@ const sources = [...new Set(sortedArchive.map(item => item.data.source).filter(B
                       )}
                     </div>
                     <span class="archive-chapters-count">
-                      {item.data.chapters?.length || 0} chapters
+                      {item.data.chapters?.length ? `${item.data.chapters.length} chapters` : 'research report'}
                     </span>
                   </div>
                 </div>
@@ -251,6 +258,20 @@ const sources = [...new Set(sortedArchive.map(item => item.data.source).filter(B
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+  }
+
+  .report-thumbnail {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(67, 214, 168, 0.16), rgba(167, 139, 250, 0.12));
+    color: var(--color-green);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
   }
 
   .archive-item:hover .video-thumbnail img {

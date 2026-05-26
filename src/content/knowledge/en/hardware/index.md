@@ -40,6 +40,7 @@ General-purpose humanoid robot platforms.
 | [HopeJr](/knowledge/hardware/humanoids/hopejr) | Fourier Intelligence | 1.35m compact, education/research |
 | [Agibot](/knowledge/hardware/humanoids/agibot) | Agibot | China, manufacturing focus |
 | [Noetix Bumi](/knowledge/hardware/humanoids/noetix-bumi) | Noetix | General-purpose, research platform |
+| [Sharpa North](/knowledge/hardware/humanoids/sharpa-north) | Sharpa | SharpaWave hands, CraftNet/VTLA, CES 2026 full-body robot |
 
 ---
 
@@ -56,6 +57,7 @@ Manipulation research platforms.
 | [xArm](/knowledge/hardware/arms/xarm) | UFACTORY | Low-cost research, Franka alternative |
 | [Koch v1.1](/knowledge/hardware/arms/koch) | Jess Moss | Open-source ~$440/pair, LeRobot compatible |
 | [LeRobot Arms](/knowledge/hardware/arms/lerobot-arms) | HuggingFace/TheRobotStudio | SO-100/SO-101, ~$130, open-source |
+| [OpenArm](/knowledge/hardware/arms/openarm) | Enactic | Official LeRobot support, 7-DoF bimanual arms, ~$6.5K BOM |
 | [Kinova Gen3](/knowledge/hardware/arms/kinova) | Kinova Robotics | Modular, Gen3/Gen3 Lite/Link 6 |
 | [Galaxea Arms](/knowledge/hardware/arms/galaxea-arms) | Galaxea AI | Force control, A1/A1X/A1Y, ~$3K |
 | [WidowX/ViperX](/knowledge/hardware/arms/widowx) | Interbotix | ALOHA base, BridgeData |
@@ -73,6 +75,11 @@ Dexterous manipulation platforms.
 | [Allegro Hand](/knowledge/hardware/hands/allegro) | Wonik Robotics | 16 DoF, research standard |
 | [Ability Hand](/knowledge/hardware/hands/ability) | PSYONIC | 6 DoF, prosthetic tech, touch sensing |
 | [Inspire Hand](/knowledge/hardware/hands/inspire) | Inspire Robots | 6 DoF, Unitree integration, RH56/F1 |
+| [WUJI Hand](/knowledge/hardware/hands/wuji-hand) | WUJI TECH | 20 active DoF, ROS 2/SDK, lightweight direct-drive hand |
+| [ORCA Hand](/knowledge/hardware/hands/orca-hand) | ETH Zurich / ORCA Dexterity | 17 DoF open-source hand, Touch line |
+| [SharpaWave](/knowledge/hardware/hands/sharpa-wave) | Sharpa | 22 active DoF, high-resolution tactile array |
+| [OnRobot Soft Gripper](/knowledge/hardware/hands/onrobot-soft-gripper) | OnRobot | Soft gripper for fragile objects such as flowers and food |
+| [Robotiq Adaptive Grippers](/knowledge/hardware/hands/robotiq-grippers) | Robotiq | 2F/3F industrial adaptive grippers for tools and stem bundles |
 | [Clone Hand](/knowledge/hardware/hands/clone) | Clone Robotics | Hydraulic bionic, human mimicry |
 | [GEX Series](/knowledge/hardware/hands/gex) | DYMC | Ultra low-cost ~$600, GX11/EX12 |
 
@@ -97,6 +104,7 @@ Mobile platforms with manipulation capabilities.
 | Robot | Company | Features |
 |-------|---------|----------|
 | [Mobile ALOHA](/knowledge/hardware/mobile/mobile-aloha) | Stanford | Mobile bimanual manipulation, ~$32K, Co-training |
+| [LeKiwi](/knowledge/hardware/mobile/lekiwi) | SIGRobotics-UIUC | Official LeRobot support, SO-101 + Kiwi base, low-cost mobile manipulation |
 
 ---
 

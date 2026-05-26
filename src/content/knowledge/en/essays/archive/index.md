@@ -21,3 +21,4 @@ A collection of presentation materials, talks, and comprehensive guide documents
 ### Documents
 
 - [Physical AI: The Age of Physical Intelligence is Coming](physical-ai-is-coming) - Podcast presentation material
+- [VLA Robot Candidates for Flower Trimming and Bouquet Making](flower-manipulation-robot-candidates) - LeRobot-first robot hardware shortlist for purchase decisions

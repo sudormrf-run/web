@@ -40,6 +40,7 @@ Physical AI 연구와 개발을 위한 로봇 하드웨어 플랫폼들을 정�
 | [HopeJr](/knowledge/hardware/humanoids/hopejr) | Fourier Intelligence | 1.35m 소형, 교육/연구용 |
 | [Agibot](/knowledge/hardware/humanoids/agibot) | Agibot | 중국, 제조업 특화 |
 | [Noetix Bumi](/knowledge/hardware/humanoids/noetix-bumi) | Noetix | 범용 작업, 연구 플랫폼 |
+| [Sharpa North](/knowledge/hardware/humanoids/sharpa-north) | Sharpa | SharpaWave 양손, CraftNet/VTLA, CES 2026 전신 로봇 |
 
 ---
 
@@ -56,6 +57,7 @@ Physical AI 연구와 개발을 위한 로봇 하드웨어 플랫폼들을 정�
 | [xArm](/knowledge/hardware/arms/xarm) | UFACTORY | 저가 연구용, Franka 대안 |
 | [Koch v1.1](/knowledge/hardware/arms/koch) | Jess Moss | 오픈소스 저가 ~$440/쌍, LeRobot 호환 |
 | [LeRobot Arms](/knowledge/hardware/arms/lerobot-arms) | HuggingFace/TheRobotStudio | SO-100/SO-101, ~$130, 오픈소스 |
+| [OpenArm](/knowledge/hardware/arms/openarm) | Enactic | LeRobot 공식 지원, 7-DoF 양팔, ~$6.5K BOM |
 | [Kinova Gen3](/knowledge/hardware/arms/kinova) | Kinova Robotics | 모듈러, Gen3/Gen3 Lite/Link 6 |
 | [Galaxea Arms](/knowledge/hardware/arms/galaxea-arms) | Galaxea AI | 힘 제어, A1/A1X/A1Y, ~$3K |
 | [WidowX/ViperX](/knowledge/hardware/arms/widowx) | Interbotix | ALOHA 베이스, BridgeData |
@@ -73,6 +75,11 @@ Physical AI 연구와 개발을 위한 로봇 하드웨어 플랫폼들을 정�
 | [Allegro Hand](/knowledge/hardware/hands/allegro) | Wonik Robotics | 16 DoF, 연구용 표준 |
 | [Ability Hand](/knowledge/hardware/hands/ability) | PSYONIC | 6 DoF, 의수 기술, 터치 센싱 |
 | [Inspire Hand](/knowledge/hardware/hands/inspire) | Inspire Robots | 6 DoF, Unitree 통합, RH56/F1 |
+| [WUJI Hand](/knowledge/hardware/hands/wuji-hand) | WUJI TECH | 20 active DoF, ROS 2/SDK, 저무게 직접구동형 핸드 |
+| [ORCA Hand](/knowledge/hardware/hands/orca-hand) | ETH Zurich / ORCA Dexterity | 17 DoF 오픈소스 핸드, Touch 라인업 |
+| [SharpaWave](/knowledge/hardware/hands/sharpa-wave) | Sharpa | 22 active DoF, 고해상도 촉각 배열 |
+| [OnRobot Soft Gripper](/knowledge/hardware/hands/onrobot-soft-gripper) | OnRobot | 꽃/식품 등 손상 쉬운 물체용 소프트 그리퍼 |
+| [Robotiq Adaptive Grippers](/knowledge/hardware/hands/robotiq-grippers) | Robotiq | 2F/3F 산업용 적응형 그리퍼, 도구/줄기 묶음 고정 |
 | [Clone Hand](/knowledge/hardware/hands/clone) | Clone Robotics | 유압 바이오닉, 인체 모방 |
 | [GEX Series](/knowledge/hardware/hands/gex) | 동양미래대 | 초저가 ~$600, GX11/EX12 |
 
@@ -97,6 +104,7 @@ Physical AI 연구와 개발을 위한 로봇 하드웨어 플랫폼들을 정�
 | 로봇 | 회사 | 특징 |
 |------|------|------|
 | [Mobile ALOHA](/knowledge/hardware/mobile/mobile-aloha) | Stanford | 이동형 양팔 조작, ~$32K, Co-training |
+| [LeKiwi](/knowledge/hardware/mobile/lekiwi) | SIGRobotics-UIUC | LeRobot 공식 지원, SO-101 + 키위 베이스, 저가 모바일 조작 |
 
 ---
 

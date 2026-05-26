@@ -21,3 +21,4 @@ lastEditedAt: 2026-01-31
 ### 문서 목록
 
 - [Physical AI, 물리적 지능도 곧 온다](physical-ai-is-coming) - 2026.01.31 노정석 팟캐스트 발표 자료
+- [꽃 손질·꽃다발 제작 VLA 로봇 후보군](flower-manipulation-robot-candidates) - LeRobot 우선 로봇 하드웨어 구매 후보 비교

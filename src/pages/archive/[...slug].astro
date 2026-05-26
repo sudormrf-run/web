@@ -43,26 +43,28 @@ function timestampToSeconds(timestamp: string): number {
       </nav>
 
       <!-- Video Section -->
-      <div class="video-section" id="video-section">
-        <div class="video-container" id="video-container">
-          <button class="pip-close" id="pip-close" aria-label="PiP 닫기">
-            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-          </button>
-          <iframe
-            id="youtube-player"
-            src={`https://www.youtube.com/embed/${item.data.videoId}?enablejsapi=1`}
-            title={item.data.title}
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+      {item.data.videoId && (
+        <div class="video-section" id="video-section">
+          <div class="video-container" id="video-container">
+            <button class="pip-close" id="pip-close" aria-label="PiP 닫기">
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+            <iframe
+              id="youtube-player"
+              src={`https://www.youtube.com/embed/${item.data.videoId}?enablejsapi=1`}
+              title={item.data.title}
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-placeholder" id="video-placeholder">
+            <span>영상으로 돌아가기</span>
+          </div>
         </div>
-        <div class="video-placeholder" id="video-placeholder">
-          <span>영상으로 돌아가기</span>
-        </div>
-      </div>
+      )}
 
       <!-- Content Layout -->
       <div class="content-layout">
@@ -75,7 +77,7 @@ function timestampToSeconds(timestamp: string): number {
                 <span class="content-source">{item.data.source}</span>
               )}
               <span class="content-date">{item.data.date.toISOString().split('T')[0]}</span>
-              <span class="content-duration">{item.data.duration}</span>
+              {item.data.duration && <span class="content-duration">{item.data.duration}</span>}
             </div>
             <h1 class="content-title">{item.data.title}</h1>
 
@@ -118,27 +120,29 @@ function timestampToSeconds(timestamp: string): number {
         </main>
 
         <!-- Sidebar - Chapters -->
-        <aside class="sidebar">
-          <div class="chapters-panel">
-            <h3 class="chapters-title">
-              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-              </svg>
-              Chapters ({item.data.chapters?.length || 0})
-            </h3>
-            <div class="chapters-list">
-              {item.data.chapters?.map((chapter, index) => (
-                <button
-                  class="chapter-item"
-                  data-time={timestampToSeconds(chapter.startTime)}
-                >
-                  <span class="chapter-time">{chapter.startTime}</span>
-                  <span class="chapter-name">{chapter.title}</span>
-                </button>
-              ))}
+        {item.data.chapters && item.data.chapters.length > 0 && (
+          <aside class="sidebar">
+            <div class="chapters-panel">
+              <h3 class="chapters-title">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+                Chapters ({item.data.chapters.length})
+              </h3>
+              <div class="chapters-list">
+                {item.data.chapters.map((chapter) => (
+                  <button
+                    class="chapter-item"
+                    data-time={timestampToSeconds(chapter.startTime)}
+                  >
+                    <span class="chapter-time">{chapter.startTime}</span>
+                    <span class="chapter-name">{chapter.title}</span>
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
-        </aside>
+          </aside>
+        )}
       </div>
     </div>
   </div>
