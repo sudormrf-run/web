@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [05/26] Qwen3.7-Max, Claude급 벤치마크 경쟁 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Qwen3.7-Max가 Claude급 성능 경쟁
+• DeepSWE가 실제 코딩 경험 벤치 제시
+• Claude Mythos가 Erdős 문제를 해결
+• vLLM이 Rust 프론트엔드를 병합
+• OpenRouter가 1.13억 달러 투자 유치
+
+📋 목차:
+1. 헤드라인: Qwen3.7-Max, Claude급 벤치마크 경쟁
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-05-26-not-much.md
+
+#Qwen #Claude #Codex
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI, Qwen, Claude, Codex, 머신러닝, AI뉴스, 인공지능, 테크뉴스
+
+Date: 2026-05-26
+==================================================
