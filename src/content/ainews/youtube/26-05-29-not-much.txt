@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [05/29] Claude Opus 4.8 출시 평가가 엇갈림 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Claude Opus 4.8 출시 평가가 엇갈림
+• Codex가 Windows 컴퓨터 사용을 지원
+• StepFun 3.7 Flash가 로컬 MoE로 부상
+• Starlette BadHost 취약점이 LLM 도구에 영향
+• Google Gemini Spark가 개인 에이전트로 출시
+
+📋 목차:
+1. 헤드라인: Claude Opus 4.8 출시 평가가 엇갈림
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-05-29-not-much.md
+
+#Claude #Anthropic #Codex #StepFun #Gemini
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI, 테크뉴스, Anthropic, 인공지능, Claude, StepFun, AI뉴스, Codex, 머신러닝, Gemini
+
+Date: 2026-05-29
+==================================================
