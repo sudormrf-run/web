@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [06/02] Microsoft, Build에서 7개 MAI 모델 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Microsoft가 7개 MAI 모델을 공개
+• MAI-Thinking-1 109쪽 보고서 공개
+• OpenAI가 Sites in Codex를 출시
+• Holo 3.1 로컬 모델 패밀리 공개
+• Harvey와 LangChain 검증 비용 절감
+
+📋 목차:
+1. 헤드라인: Microsoft, Build에서 7개 MAI 모델 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-06-02-msft-mai-2.md
+
+#Microsoft #MAI #Build #Codex #LocalAI
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Microsoft, Codex, AI뉴스, AI, 테크뉴스, Build, LocalAI, MAI, 머신러닝, 인공지능
+
+Date: 2026-06-02
+==================================================
