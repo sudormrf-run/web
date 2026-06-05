@@ -6,7 +6,7 @@ summary:
   - "Qwen3.7-Plus가 에이전트 기능 확대"
   - "OpenAI 모델과 Codex가 Bedrock에 출시"
   - "Claude Code 버그로 사용량 제한 재설정"
-date: 2026-06-02
+date: 2026-06-01
 originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-06-01-not-much.md"
 hasHeadline: false
 headline: "NVIDIA가 Cosmos 3와 Nemotron 3 Ultra 공개"
