@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [06/03] Microsoft가 MAI-Thinking-1 보고서를 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Microsoft가 MAI-Thinking-1 보고서를 공개
+• Google이 Gemma 4 12B를 오픈 출시
+• Ideogram 4.0이 오픈 가중치로 전환
+• 에이전트 실행 계층 경쟁이 본격화됐다
+• 하이브리드 라우팅 비용 논쟁이 확산됐다
+
+📋 목차:
+1. 헤드라인: Microsoft가 MAI-Thinking-1 보고서를 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-06-03-not-much.md
+
+#Microsoft #MAI-Thinking-1 #Gemma 4 #Ideogram #Agents
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI뉴스, Gemma 4, 인공지능, MAI-Thinking-1, 테크뉴스, 머신러닝, AI, Microsoft, Ideogram, Agents
+
+Date: 2026-06-03
+==================================================
