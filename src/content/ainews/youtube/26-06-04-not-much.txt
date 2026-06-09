@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [06/04] NVIDIA, Nemotron 3 Ultra 출시 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• NVIDIA, Nemotron 3 Ultra 출시
+• Anthropic, RSI 초기 신호 주장
+• Cloudflare, VoidZero 팀 영입
+• OpenAI, ChatGPT 메모리 강화
+• Gemma 4 12B 벤치마크 논쟁 확산
+
+📋 목차:
+1. 헤드라인: NVIDIA, Nemotron 3 Ultra 출시
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-06-04-not-much.md
+
+#NVIDIA #Nemotron #Anthropic #Cloudflare #OpenAI
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI, NVIDIA, Anthropic, Cloudflare, 인공지능, Nemotron, 머신러닝, AI뉴스, 테크뉴스, OpenAI
+
+Date: 2026-06-04
+==================================================
