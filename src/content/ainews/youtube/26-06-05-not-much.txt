@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [06/05] Gemma 4 QAT, 로컬 배포용 체크포인트 출시 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Google이 Gemma 4 QAT 체크포인트를 공개
+• Ideogram 4가 오픈웨이트 이미지 모델 선두
+• Sakana AI가 도쿄 RSI Lab을 출범
+• Agents’ Last Exam이 장기 작업 평가를 제시
+• Cloudflare가 AI Gateway 지출 제한을 출시
+
+📋 목차:
+1. 헤드라인: Gemma 4 QAT, 로컬 배포용 체크포인트 출시
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-06-05-not-much.md
+
+#Google #Gemma #QAT #Ideogram #Agents
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 테크뉴스, 머신러닝, AI뉴스, AI, Ideogram, Agents, Google, Cloudflare, Gemma, QAT, 인공지능
+
+Date: 2026-06-05
+==================================================
