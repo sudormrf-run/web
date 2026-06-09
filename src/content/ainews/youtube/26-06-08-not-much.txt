@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [06/09] FrontierCode가 병합 가능 코드 평가 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• FrontierCode가 병합 가능 코드 평가 공개
+• Kimi Code와 Kimi Work가 동시 출시
+• Gemma 4 QAT·MTP로 로컬 추론 강화
+• Agent Arena가 실사용 세션으로 평가 시작
+• Claude Code 보안·사용량 논란 확산
+
+📋 목차:
+1. 헤드라인: FrontierCode가 병합 가능 코드 평가 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-06-08-not-much.md
+
+#Cognition #FrontierCode #Coding Agents
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: FrontierCode, 인공지능, Cognition, Coding Agents, 머신러닝, AI, 테크뉴스, AI뉴스
+
+Date: 2026-06-09
+==================================================
