@@ -6,7 +6,7 @@ summary:
   - "Gemma 4 QAT·MTP로 로컬 추론 강화"
   - "Agent Arena가 실사용 세션으로 평가 시작"
   - "Claude Code 보안·사용량 논란 확산"
-date: 2026-06-09
+date: 2026-06-08
 originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-06-08-not-much.md"
 hasHeadline: false
 headline: "FrontierCode가 병합 가능 코드 평가 공개"
