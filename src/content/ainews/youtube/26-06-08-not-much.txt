@@ -2,7 +2,7 @@
 YouTube Template
 ==================================================
 
-Title: [06/09] FrontierCode가 병합 가능 코드 평가 공개 | AI 뉴스
+Title: [06/08] FrontierCode가 병합 가능 코드 평가 공개 | AI 뉴스
 
 Description:
 ------------------------------
