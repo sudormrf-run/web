@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [06/09] Claude Fable 5와 Mythos 5 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Anthropic이 Claude Fable 5를 공개
+• Mythos 5 제한 접근 논란 확산
+• Fable 5가 코딩 벤치마크 선도
+• 숨은 성능 제한이 신뢰 논쟁 촉발
+• Cohere가 North Mini Code 공개
+
+📋 목차:
+1. 헤드라인: Claude Fable 5와 Mythos 5 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-06-09-anthropic-claude-fable-5.md
+
+#Anthropic #Claude #Fable 5 #Mythos 5 #AI Safety
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI, Anthropic, AI뉴스, Claude, Fable 5, Mythos 5, 테크뉴스, 머신러닝, AI Safety, 인공지능
+
+Date: 2026-06-09
+==================================================
