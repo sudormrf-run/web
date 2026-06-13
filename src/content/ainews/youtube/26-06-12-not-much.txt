@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [06/12] Anthropic, Fable/Mythos 접근 중단 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Anthropic, Fable/Mythos 접근 중단
+• Kimi-K2.7-Code 오픈소스 공개
+• MiniMax M3, 1M 컨텍스트 공개
+• AA-AgentPerf가 에이전트 추론 측정
+• Fable 5, DOS 게임 역공학 화제
+
+📋 목차:
+1. 헤드라인: Anthropic, Fable/Mythos 접근 중단
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-06-12-not-much.md
+
+#Anthropic #Fable #Kimi #MiniMax #Agent
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI, Kimi, 인공지능, Anthropic, AI뉴스, Agent, MiniMax, Fable, 머신러닝, 테크뉴스
+
+Date: 2026-06-12
+==================================================
