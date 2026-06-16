@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [06/11] Fable/Mythos 수출통제 파장 확산 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Fable/Mythos 수출통제 파장 확산
+• 모델 중립성과 라우팅 아키텍처 부상
+• DFlash와 ReplaySSM 추론 최적화
+• Sakana Marlin과 Cartesia 음성 모델 출시
+• 구독 한도와 AI 컴퓨트 비용 논쟁 확대
+
+📋 목차:
+1. 헤드라인: Fable/Mythos 수출통제 파장 확산
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-06-15-not-much.md
+
+#Anthropic #Fable #Mythos #Inference #LocalLLM
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 인공지능, Mythos, 머신러닝, LocalLLM, AI, Inference, AI뉴스, Anthropic, 테크뉴스, Fable
+
+Date: 2026-06-11
+==================================================
