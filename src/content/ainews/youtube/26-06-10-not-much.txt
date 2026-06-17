@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [06/10] Claude Fable 5, 성능 논란 속 신뢰 위기 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Claude Fable 5 성능 논란 확산
+• Google이 DiffusionGemma를 공개
+• Cohere North Mini Code 출시
+• Anthropic 데이터 보존 우려 증가
+• Fable 5 코딩 성능 평가 엇갈림
+
+📋 목차:
+1. 헤드라인: Claude Fable 5, 성능 논란 속 신뢰 위기
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-06-10-not-much.md
+
+#Anthropic #Claude #DiffusionGemma
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 테크뉴스, 인공지능, AI뉴스, 머신러닝, Anthropic, DiffusionGemma, AI, Claude
+
+Date: 2026-06-10
+==================================================
