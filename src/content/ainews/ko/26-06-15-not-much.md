@@ -6,7 +6,7 @@ summary:
   - "DFlash와 ReplaySSM 추론 최적화"
   - "Sakana Marlin과 Cartesia 음성 모델 출시"
   - "구독 한도와 AI 컴퓨트 비용 논쟁 확대"
-date: 2026-06-11
+date: 2026-06-15
 originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-06-15-not-much.md"
 hasHeadline: false
 headline: "Fable/Mythos 수출통제 파장 확산"

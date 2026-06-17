@@ -32,5 +32,5 @@ Reviewed by Claude Opus
 
 Tags: 인공지능, Mythos, 머신러닝, LocalLLM, AI, Inference, AI뉴스, Anthropic, 테크뉴스, Fable
 
-Date: 2026-06-11
+Date: 2026-06-15
 ==================================================
