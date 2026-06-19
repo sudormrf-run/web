@@ -6,7 +6,7 @@ summary:
   - "GLM-5.2가 오픈 모델 벤치마크 선두"
   - "Fable 5 커널이 브라우저 추론 가속"
   - "Claude Code 사용량 최적화 팁 확산"
-date: 2026-06-11
+date: 2026-06-17
 originalUrl: "https://github.com/smol-ai/ainews-web-2025/blob/main/src/content/issues/26-06-17-midjourney-medical.md"
 hasHeadline: false
 headline: "Midjourney가 의료용 스캐너를 공개"

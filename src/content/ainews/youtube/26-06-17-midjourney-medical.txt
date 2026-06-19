@@ -2,7 +2,7 @@
 YouTube Template
 ==================================================
 
-Title: [06/11] Midjourney가 의료용 스캐너를 공개 | AI 뉴스
+Title: [06/17] Midjourney가 의료용 스캐너를 공개 | AI 뉴스
 
 Description:
 ------------------------------
@@ -32,5 +32,5 @@ Reviewed by Claude Opus
 
 Tags: 테크뉴스, AI, OpenAI, AI뉴스, 인공지능, Midjourney, 머신러닝, Medical AI, GLM-5.2, Claude Code
 
-Date: 2026-06-11
+Date: 2026-06-17
 ==================================================
