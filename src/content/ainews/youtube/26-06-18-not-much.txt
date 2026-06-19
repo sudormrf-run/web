@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [06/18] GLM-5.2가 프런티어급 오픈 모델로 부상 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• GLM-5.2가 프런티어급 오픈 모델로 부상
+• Codex Record & Replay가 워크플로 자동화
+• AA-Briefcase가 장기 에이전트 평가 공개
+• Midjourney Medical 발표에 회의론 확산
+• OpenAI가 희귀질환·건강 AI 성과 공개
+
+📋 목차:
+1. 헤드라인: GLM-5.2가 프런티어급 오픈 모델로 부상
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-06-18-not-much.md
+
+#GLM-5.2 #OpenAI #Codex #Benchmarks #HealthAI
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Benchmarks, HealthAI, 테크뉴스, Codex, GLM-5.2, 머신러닝, AI뉴스, 인공지능, AI, OpenAI
+
+Date: 2026-06-18
+==================================================
