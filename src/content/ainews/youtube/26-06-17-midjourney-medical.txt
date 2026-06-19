@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [06/17] Midjourney가 의료용 스캐너를 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Midjourney가 의료용 스캐너를 공개
+• Noam Shazeer가 OpenAI에 합류
+• GLM-5.2가 오픈 모델 벤치마크 선두
+• Fable 5 커널이 브라우저 추론 가속
+• Claude Code 사용량 최적화 팁 확산
+
+📋 목차:
+1. 헤드라인: Midjourney가 의료용 스캐너를 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-06-17-midjourney-medical.md
+
+#Midjourney #Medical AI #GLM-5.2 #OpenAI #Claude Code
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 테크뉴스, AI, OpenAI, AI뉴스, 인공지능, Midjourney, 머신러닝, Medical AI, GLM-5.2, Claude Code
+
+Date: 2026-06-17
+==================================================
