@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [06/19] GLM-5.2가 프런티어급 코딩 모델로 부상 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• GLM-5.2가 프런티어급 코딩 모델로 부상
+• Hermes Agent v0.17.0이 공개됨
+• Mythos/Fable 접근 제한 파장이 확산
+• QUEST-35B 연구 에이전트가 공개됨
+• OpenRouter에서 OSS 모델 점유율 역전
+
+📋 목차:
+1. 헤드라인: GLM-5.2가 프런티어급 코딩 모델로 부상
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-06-19-not-much.md
+
+#GLM-5.2 #Z.ai #OpenWeight #Anthropic #Agent
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI뉴스, Z.ai, Anthropic, 테크뉴스, 머신러닝, 인공지능, Agent, OpenWeight, AI, GLM-5.2
+
+Date: 2026-06-19
+==================================================
