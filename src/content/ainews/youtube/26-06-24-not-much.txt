@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [06/24] OpenAI, 첫 맞춤형 추론 칩 Jalapeño 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI가 Jalapeño 추론 칩 공개
+• Claude Slack 에이전트 보안 논쟁 확산
+• Qwen-AgentWorld 오픈소스 공개
+• GLM-5.2가 오픈 모델 경쟁 주도
+• Krea 2 이미지 모델 오픈소스 출시
+
+📋 목차:
+1. 헤드라인: OpenAI, 첫 맞춤형 추론 칩 Jalapeño 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-06-24-not-much.md
+
+#OpenAI #Jalapeño #Broadcom #Anthropic #Qwen
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Jalapeño, 테크뉴스, Qwen, AI뉴스, OpenAI, 인공지능, AI, Broadcom, Anthropic, GLM-5.2, 머신러닝
+
+Date: 2026-06-24
+==================================================
