@@ -85,6 +85,7 @@ const eventsCollection = defineCollection({
     // Optional date fields
     endDate: z.coerce.date().optional(),
     time: z.string().optional(),
+    dateTbd: z.boolean().default(false), // 일정 미정(TBD)일 때 날짜 대신 "미정" 표시
 
     // Status (will be computed if not provided)
     status: eventStatusEnum.optional(),

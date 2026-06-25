@@ -26,9 +26,11 @@ const formatDate = (date: Date) => {
   });
 };
 
-const dateDisplay = data.endDate
-  ? `${formatDate(data.date)} ~ ${formatDate(data.endDate)}`
-  : formatDate(data.date);
+const dateDisplay = data.dateTbd
+  ? (locale === 'ko' ? '미정 (TBD)' : 'TBD')
+  : data.endDate
+    ? `${formatDate(data.date)} ~ ${formatDate(data.endDate)}`
+    : formatDate(data.date);
 
 // Extract event slug without locale prefix (e.g., "ko/2025-08-physical-ai-workshop" -> "2025-08-physical-ai-workshop")
 const eventSlug = slug.split('/').slice(1).join('/');
