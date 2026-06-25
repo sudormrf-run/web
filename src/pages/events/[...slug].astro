@@ -31,9 +31,11 @@ const formatDate = (date: Date) => {
   });
 };
 
-const dateDisplay = data.endDate
-  ? `${formatDate(data.date)} ~ ${formatDate(data.endDate)}`
-  : formatDate(data.date);
+const dateDisplay = data.dateTbd
+  ? '미정 (TBD)'
+  : data.endDate
+    ? `${formatDate(data.date)} ~ ${formatDate(data.endDate)}`
+    : formatDate(data.date);
 
 const isPast = data.status === 'past';
 const isUpcoming = data.status === 'upcoming';
