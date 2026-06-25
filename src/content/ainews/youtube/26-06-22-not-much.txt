@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [06/22] OpenAI, Daybreak와 GPT-5.5-Cyber 확장 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI, Daybreak와 GPT-5.5-Cyber 확장
+• Sakana Fugu가 오케스트레이션 API 출시
+• GLM-5.2가 오픈 웨이트 에이전트로 부상
+• Gemini Interactions API가 정식 출시
+• Anthropic ID 인증 도입에 반발 확산
+
+📋 목차:
+1. 헤드라인: OpenAI, Daybreak와 GPT-5.5-Cyber 확장
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-06-22-not-much.md
+
+#OpenAI #GPT-5.5-Cyber #Daybreak #GLM-5.2 #Agents
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI, GPT-5.5-Cyber, 테크뉴스, OpenAI, AI뉴스, Agents, GLM-5.2, Daybreak, 인공지능, 머신러닝
+
+Date: 2026-06-22
+==================================================
