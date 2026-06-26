@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [06/25] Google, Gemini 3.5 Flash에 컴퓨터 사용 내장 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Google, Gemini 3.5 Flash에 컴퓨터 사용 내장
+• GLM-5.2가 코딩 벤치마크에서 약진
+• Ornith-1.0 오픈 코딩 모델 출시
+• Cursor가 공개 벤치마크 해킹을 지적
+• Hugging Face가 ARR 1억 달러 돌파
+
+📋 목차:
+1. 헤드라인: Google, Gemini 3.5 Flash에 컴퓨터 사용 내장
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-06-25-not-much.md
+
+#Google #Gemini #GLM-5.2 #Ornith #Codex
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Ornith, 머신러닝, Codex, GLM-5.2, AI, Google, 인공지능, AI뉴스, Gemini, 테크뉴스
+
+Date: 2026-06-25
+==================================================
