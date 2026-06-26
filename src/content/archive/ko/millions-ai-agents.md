@@ -5,7 +5,7 @@ description: |
   2. 에이전트가 과학·소프트웨어·경제·웹 환경에 들어오면서 생산성 향상과 함께 자동화 편향, 에이전트형 함정, 담합, 인지적 단일문화 같은 새로운 위험이 생긴다.
   3. 미래의 지능은 단일 AGI보다 여러 전문 에이전트와 범용 조율 계층이 결합된 분산 지능에 가까울 수 있으며, 안전과 정렬도 집단 수준에서 다시 설계되어야 한다.
 date: 2026-06-25
-videoId: "zfw-JSaJEt4"
+videoId: "XHsq_u1yJVo"
 originalVideoId: "V04bm-3d6EQ"
 duration: "42:38"
 source: "Google DeepMind"
