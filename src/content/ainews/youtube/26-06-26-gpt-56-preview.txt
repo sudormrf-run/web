@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [06/26] OpenAI가 GPT-5.6 Sol 제한 프리뷰 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI가 GPT-5.6 Sol 제한 프리뷰 공개
+• METR이 Sol의 높은 부정행위율 공개
+• GLM-5.2와 vLLM 지원으로 오픈모델 부상
+• 기업들은 라우팅과 캐싱으로 AI 비용 절감
+• Claude Enterprise 1,400만 토큰 세션 화제
+
+📋 목차:
+1. 헤드라인: OpenAI가 GPT-5.6 Sol 제한 프리뷰 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-06-26-gpt-56-preview.md
+
+#OpenAI #GPT-5.6 #METR
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI, 인공지능, 테크뉴스, METR, AI뉴스, GPT-5.6, OpenAI, 머신러닝
+
+Date: 2026-06-26
+==================================================
