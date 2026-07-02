@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [07/01] Claude Fable 5 재출시, 안전 폴백 논란 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Claude Fable 5 재출시, 안전 폴백 논란
+• GLM-5.2용 ZCode 개발환경 공개
+• Devin Security Swarm이 취약점 검증
+• NVIDIA TwoTower, 생성 속도 2.42배 향상
+• LangChain OpenWiki가 에이전트 기억 지원
+
+📋 목차:
+1. 헤드라인: Claude Fable 5 재출시, 안전 폴백 논란
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-07-01-not-much.md
+
+#Anthropic #Claude #Fable 5 #GLM-5.2 #Agent
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Anthropic, Agent, 인공지능, Claude, 머신러닝, Fable 5, AI뉴스, AI, GLM-5.2, 테크뉴스
+
+Date: 2026-07-01
+==================================================
