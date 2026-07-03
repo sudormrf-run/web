@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [07/02] Fable 5, 가드레일 업데이트 후 재배포 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Fable 5, 가드레일 업데이트 후 재배포
+• Claude API rate limits 상향 및 단순화
+• Fullstack Code Arena 평가 출시
+• GLM-5.2가 Claude Code 워크플로에 진입
+• DeepSeek V4 Flash 1M 컨텍스트 로컬 실행
+
+📋 목차:
+1. 헤드라인: Fable 5, 가드레일 업데이트 후 재배포
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-07-02-not-much.md
+
+#Anthropic #Fable #Claude #GLM-5.2 #llama.cpp
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 머신러닝, Anthropic, GLM-5.2, llama.cpp, Fable, AI뉴스, Claude, 인공지능, AI, 테크뉴스
+
+Date: 2026-07-02
+==================================================
