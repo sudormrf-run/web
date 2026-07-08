@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [07/06] Tencent Hy3가 Apache 2.0으로 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Tencent Hy3가 Apache 2.0으로 공개
+• Anthropic이 Claude J-space 연구를 발표
+• AutomationBench-AA가 에이전트 평가 공개
+• OpenAI가 GPT-Realtime-2.1-mini 출시
+• MIRA가 실시간 플레이 월드 모델을 시연
+
+📋 목차:
+1. 헤드라인: Tencent Hy3가 Apache 2.0으로 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-07-06-not-much.md
+
+#Tencent #Hy3 #Anthropic #vLLM #Fable
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 인공지능, AI, Anthropic, vLLM, 테크뉴스, 머신러닝, Hy3, AI뉴스, Fable, Tencent
+
+Date: 2026-07-06
+==================================================
