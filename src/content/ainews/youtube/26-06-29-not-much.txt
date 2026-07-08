@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [06/30] Meta가 Brain2Qwerty v2를 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Meta가 Brain2Qwerty v2를 공개
+• Cursor가 iOS 원격 에이전트를 출시
+• DeepSeek DSpark가 추론 개선을 시사
+• Arena가 1억 달러 ARR 런레이트 달성
+• Snowflake가 Arctic RL 인프라를 공개
+
+📋 목차:
+1. 헤드라인: Meta가 Brain2Qwerty v2를 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-06-29-not-much.md
+
+#Meta #Brain2Qwerty #Cursor #DeepSeek #Arena
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI, Cursor, Meta, AI뉴스, 인공지능, Brain2Qwerty, Arena, DeepSeek, 머신러닝, 테크뉴스
+
+Date: 2026-06-30
+==================================================
