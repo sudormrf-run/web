@@ -1,0 +1,35 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [07/10] GPT-5.6이 모델 계층과 UX를 개편했다 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• GPT-5.6이 모델 계층과 UX를 개편했다
+• Muse Spark 1.1이 비용 성능을 끌어올렸다
+• Unsloth가 Qwen3.6 NVFP4 양자화를 공개했다
+• OpenAI가 바이오 버그바운티 보상을 확대했다
+• DeepSWE에서 GPT-5.6의 비용 우위가 부각됐다
+
+📋 목차:
+1. 헤드라인: GPT-5.6이 모델 계층과 UX를 개편했다
+2. AI Twitter Recap
+3. AI Reddit Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-07-10-not-much.md
+
+#OpenAI #GPT-5.6 #Meta #Claude #LocalLLM
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: OpenAI, GPT-5.6, LocalLLM, 테크뉴스, AI, 머신러닝, AI뉴스, Claude, 인공지능, Meta
+
+Date: 2026-07-10
+==================================================
