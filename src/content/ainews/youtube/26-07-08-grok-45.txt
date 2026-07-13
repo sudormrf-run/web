@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [07/02] OpenAI가 GPT-5.6 Sol 공개를 예고 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI가 GPT-5.6 Sol 공개를 예고
+• GPT-Live가 풀듀플렉스 음성 구조를 공개
+• xAI와 Cursor가 Grok 4.5를 출시
+• Cognition이 SWE-1.7 코딩 모델을 공개
+• MiniMax가 2.7T 오픈 모델을 준비
+
+📋 목차:
+1. 헤드라인: OpenAI가 GPT-5.6 Sol 공개를 예고
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-07-08-grok-45.md
+
+#OpenAI #GPT-5.6 #xAI #Grok #GPT-Live
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Grok, 머신러닝, 인공지능, AI뉴스, xAI, GPT-5.6, 테크뉴스, GPT-Live, AI, OpenAI
+
+Date: 2026-07-02
+==================================================
