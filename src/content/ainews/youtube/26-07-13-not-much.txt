@@ -1,0 +1,35 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [07/13] OpenAI가 GPT-5.6 Sol 사용량을 수정 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI가 GPT-5.6 Sol 사용량을 수정
+• Prime Intellect가 verifiers v1 출시
+• Transformers가 vLLM 네이티브 속도 지원
+• Grok Build 전체 저장소 업로드 논란
+• Claude Fable 5 구독 접근 논란 확산
+
+📋 목차:
+1. 헤드라인: OpenAI가 GPT-5.6 Sol 사용량을 수정
+2. AI Twitter Recap
+3. AI Reddit Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-07-13-not-much.md
+
+#OpenAI #Codex #GPT-5.6 #Prime Intellect #Claude
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 테크뉴스, GPT-5.6, AI뉴스, OpenAI, AI, 머신러닝, Claude, 인공지능, Prime Intellect, Codex
+
+Date: 2026-07-13
+==================================================
