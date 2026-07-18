@@ -1,0 +1,35 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [07/17] Kimi K3가 프런티어급 오픈웨이트로 부상 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Kimi K3가 프런티어급 오픈웨이트로 부상
+• K3가 코딩 벤치마크 상위권 진입
+• KDA가 1M 컨텍스트 효율을 제시
+• Bonsai 27B가 iPhone에서 로컬 실행
+• 에이전트 코딩 검증 논의가 확산
+
+📋 목차:
+1. 헤드라인: Kimi K3가 프런티어급 오픈웨이트로 부상
+2. AI Twitter Recap
+3. AI Reddit Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-07-17-not-much.md
+
+#Kimi K3 #Moonshot #OpenWeights
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI뉴스, AI, 인공지능, 테크뉴스, OpenWeights, Kimi K3, Moonshot, 머신러닝
+
+Date: 2026-07-17
+==================================================
