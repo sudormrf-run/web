@@ -1,0 +1,36 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [07/20] Qwen 3.8 Max 2.4T 오픈웨이트 예고 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Qwen 3.8 Max 2.4T 오픈웨이트 예고
+• Kimi K3가 에이전트 평가 상위권 부상
+• 오픈 모델 제한 논쟁이 정책 단계 진입
+• 보안 대응에서 로컬 GLM 5.2 필요성 부각
+• Jacobian 반례로 AI 수학 능력 논쟁
+
+📋 목차:
+1. 헤드라인: Qwen 3.8 Max 2.4T 오픈웨이트 예고
+2. AI Twitter Recap
+3. AI Reddit Recap
+4. AI Discord Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-07-20-not-much.md
+
+#Qwen #Kimi #OpenWeight #AI Policy #Security
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Security, 테크뉴스, Kimi, AI뉴스, AI Policy, Qwen, OpenWeight, 머신러닝, 인공지능, AI
+
+Date: 2026-07-20
+==================================================
