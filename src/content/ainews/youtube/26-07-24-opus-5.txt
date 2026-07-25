@@ -1,0 +1,35 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [07/24] Anthropic이 Claude Opus 5를 출시했다 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Anthropic이 Claude Opus 5를 출시했다
+• Epoch ECI 159로 Fable 5보다 낮았다
+• 오픈웨이트 제한 반대 서한이 확산됐다
+• Reuters의 AI 에이전트 보도가 논란됐다
+• Hugging Face가 The Stack v3를 공개했다
+
+📋 목차:
+1. 헤드라인: Anthropic이 Claude Opus 5를 출시했다
+2. AI Twitter Recap
+3. AI Reddit Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-07-24-opus-5.md
+
+#Anthropic #Claude #OpenAI #Hugging Face #Open Weights
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: OpenAI, Claude, AI, 테크뉴스, AI뉴스, 머신러닝, Anthropic, Open Weights, 인공지능, Hugging Face
+
+Date: 2026-07-24
+==================================================
