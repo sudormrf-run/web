@@ -1,0 +1,35 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [07/29] OpenAI, Codex Security CLI 오픈소스 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI가 Codex Security CLI를 공개
+• GPT-5.6 Sol이 추론 비용 20% 절감
+• Kimi K3가 vLLM에서 464 tok/s 기록
+• OpenAI가 연구자 10만 명 접근을 추진
+• Claude Code 원격 제어가 주목받음
+
+📋 목차:
+1. 헤드라인: OpenAI, Codex Security CLI 오픈소스 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-07-29-not-much.md
+
+#OpenAI #Codex #Kimi K3 #vLLM #Agent Security
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: vLLM, AI, 테크뉴스, OpenAI, 인공지능, Codex, 머신러닝, AI뉴스, Kimi K3, Agent Security
+
+Date: 2026-07-29
+==================================================
