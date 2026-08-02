@@ -1,0 +1,35 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [07/31] DeepSeek V4-Flash API 공개 베타 출시 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• DeepSeek V4-Flash API 공개 베타 출시
+• MIT 오픈 가중치가 Hugging Face에 공개
+• OpenAI·DeepSeek 가격 경쟁이 심화
+• 샌드박스 실패가 보안 논쟁을 주도했다
+• MiniMax H3·Seedance 2.5가 확산
+
+📋 목차:
+1. 헤드라인: DeepSeek V4-Flash API 공개 베타 출시
+2. AI Twitter Recap
+3. AI Reddit Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-07-31-not-much.md
+
+#DeepSeek #OpenAI #Codex #OpenWeights #AI Security
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI뉴스, AI, 머신러닝, 인공지능, Codex, AI Security, OpenWeights, DeepSeek, OpenAI, 테크뉴스
+
+Date: 2026-07-31
+==================================================
