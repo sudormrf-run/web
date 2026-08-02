@@ -1,0 +1,35 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [07/28] Kimi K3 오픈웨이트 공개, 2.8T MoE와 인프라 동시 출시 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Kimi K3 오픈웨이트가 공개됐다
+• Moonshot이 K3 인프라까지 공개했다
+• HF 자율 에이전트 침해 보고서 공개
+• 장기 에이전트 평가 연구가 진전됐다
+• AI 거버넌스 논쟁이 격화됐다
+
+📋 목차:
+1. 헤드라인: Kimi K3 오픈웨이트 공개, 2.8T MoE와 인프라 동시 출시
+2. AI Twitter Recap
+3. AI Reddit Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-07-28-not-much.md
+
+#Kimi #Moonshot #OpenAI
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI뉴스, Kimi, Moonshot, 인공지능, 머신러닝, AI, 테크뉴스, OpenAI
+
+Date: 2026-07-28
+==================================================
