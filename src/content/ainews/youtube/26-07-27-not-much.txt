@@ -1,0 +1,35 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [07/27] Moonshot, 2.8T MoE Kimi K3 오픈웨이트 공개 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Moonshot이 Kimi K3 오픈웨이트 공개
+• NVIDIA가 Open Secure AI Alliance 출범
+• Anthropic이 오픈웨이트 입장 명확화
+• Kimi K3가 에이전트·코딩 평가 강세
+• Claude 공유 링크 색인 노출 논란
+
+📋 목차:
+1. 헤드라인: Moonshot, 2.8T MoE Kimi K3 오픈웨이트 공개
+2. AI Twitter Recap
+3. AI Reddit Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-07-27-not-much.md
+
+#Moonshot #Kimi #OpenWeights #NVIDIA #Claude
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: Claude, 테크뉴스, 인공지능, 머신러닝, OpenWeights, NVIDIA, Kimi, Moonshot, AI뉴스, AI
+
+Date: 2026-07-27
+==================================================
