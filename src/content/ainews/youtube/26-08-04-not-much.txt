@@ -1,0 +1,35 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [08/04] Qwen3.8-Max와 27B가 발표됐다 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• Qwen3.8-Max와 27B가 발표됐다
+• Alpamayo 2 Super가 공개됐다
+• MiniMax H3 영상 데모가 확산됐다
+• AISI 사이버 평가 사건이 공개됐다
+• Cursor가 MoK 훈련 커널을 공개했다
+
+📋 목차:
+1. 헤드라인: Qwen3.8-Max와 27B가 발표됐다
+2. AI Twitter Recap
+3. AI Reddit Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-08-04-not-much.md
+
+#Qwen #MiniMax #NVIDIA #Cybersecurity #Inference
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: AI뉴스, NVIDIA, Inference, Qwen, 테크뉴스, Cybersecurity, 인공지능, 머신러닝, AI, MiniMax
+
+Date: 2026-08-04
+==================================================
