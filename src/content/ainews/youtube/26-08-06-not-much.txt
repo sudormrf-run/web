@@ -1,0 +1,35 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [08/06] OpenAI가 ChatGPT 모델을 GPT-5.6 Sol로 통합 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI가 ChatGPT 모델을 GPT-5.6 Sol로 통합
+• Meta Muse Spark 1.2가 frontier급으로 부상
+• Cloudflare가 에이전트 브라우저 Kitesurf 공개
+• Qwen3.8-Max 공개 일정과 벤치마크 논쟁
+• Claude Code 안전 사고가 권한 논쟁 촉발
+
+📋 목차:
+1. 헤드라인: OpenAI가 ChatGPT 모델을 GPT-5.6 Sol로 통합
+2. AI Twitter Recap
+3. AI Reddit Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-08-06-not-much.md
+
+#OpenAI #ChatGPT #Meta #MCP #Qwen
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: OpenAI, 인공지능, 머신러닝, 테크뉴스, Meta, AI뉴스, ChatGPT, Qwen, MCP, AI
+
+Date: 2026-08-06
+==================================================
