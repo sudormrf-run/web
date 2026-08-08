@@ -1,0 +1,35 @@
+==================================================
+YouTube Template
+==================================================
+
+Title: [08/08] OpenAI, Astra를 critical cyber 모델로 분류 | AI 뉴스
+
+Description:
+------------------------------
+📌 오늘의 주요 소식:
+• OpenAI가 Astra를 critical cyber로 분류
+• Hugging Face incident 논란 확산
+• Claude Code가 세션 간 메시징 추가
+• LangChain Managed Deep Agents 베타
+• DeepSeek API 가격 인상 신호
+
+📋 목차:
+1. 헤드라인: OpenAI, Astra를 critical cyber 모델로 분류
+2. AI Twitter Recap
+3. AI Reddit Recap
+
+🔗 링크:
+• 원문: https://raw.githubusercontent.com/smol-ai/ainews-web-2025/main/src/content/issues/26-08-07-not-much.md
+
+#OpenAI #Astra #Claude Code #LangChain #DeepSeek
+
+────────────────────────────────────────
+smol.ai 뉴스 자동 번역 시스템
+Translated by Codex CLI (gpt-5.5)
+Reviewed by Claude Opus
+------------------------------
+
+Tags: 머신러닝, 인공지능, AI, LangChain, DeepSeek, AI뉴스, Claude Code, Astra, 테크뉴스, OpenAI
+
+Date: 2026-08-08
+==================================================
