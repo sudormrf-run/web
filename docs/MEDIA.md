@@ -6,13 +6,13 @@
 
 ## Purpose
 
-미디어 영역은 YouTube/AI 뉴스, 팟캐스트 라이브러리, AI 데일리 뉴스, 발표 자료, 자료 창고, 에세이 링크를 한곳에 모아 보여주는 정적 Astro 페이지입니다. 팟캐스트는 `podcasts` Content Collection과 `/podcasts/` 상세 페이지로 분리되었고, YouTube API helper나 자동 동기화는 아직 없습니다.
+미디어 영역은 YouTube/AI 뉴스, AI 데일리 뉴스, 발표 자료, 자료 창고, 에세이 링크를 한곳에 모아 보여주는 정적 Astro 페이지입니다. 팟캐스트는 `podcasts` Content Collection과 `/podcasts/` 상세 페이지로 분리되어 있으며, 구현이 끝나지 않아 `/media/` 상단 팟캐스트 라이브러리 섹션은 제거된 상태입니다. YouTube API helper나 자동 동기화는 아직 없습니다.
 
 ## Route / Component Map
 
 | Surface | Path | 역할 | 데이터 소스 |
 |---|---|---|---|
-| 한국어 미디어 페이지 | `src/pages/media/index.astro` | `/media/` 전체 미디어 허브 | 하드코딩된 YouTube/essay/presentation 데이터 + `archive`, `ainews`, `podcasts` collections |
+| 한국어 미디어 페이지 | `src/pages/media/index.astro` | `/media/` 전체 미디어 허브 | 하드코딩된 YouTube/essay/presentation 데이터 + `archive`, `ainews` collections |
 | 영어 미디어 페이지 | `src/pages/en/media/index.astro` | `/en/media/` 영어 미디어 허브 | 하드코딩된 YouTube/essay/presentation 데이터 + `archive` ko collection |
 | 홈 미디어 섹션 | `src/components/home/HomeMediaSection.astro` | 홈(`/`, `/en/`)의 미디어 프리뷰 | 한국어는 `/podcasts/` CTA, 영어는 기존 playlist iframe + social links |
 | 한국어 홈 | `src/pages/index.astro` | `HomeMediaSection locale="ko"` 렌더링 | component props |
@@ -31,18 +31,19 @@
 2. `getCollection('archive')`에서 `ko/` slug만 읽고 최신 3개를 `자료 창고` 카드로 보여줍니다.
 3. `getCollection('ainews')`에서 `ko/` slug만 읽고 최신 3개를 `AI 데일리 뉴스` 카드로 보여줍니다.
 4. YouTube 채널/Instagram URL, playlist URL, essay, presentation 데이터는 파일 상단 상수 배열로 직접 정의되어 있습니다.
-5. 최상단 `팟캐스트 라이브러리 & AI 뉴스` 섹션은 `/podcasts/` CTA/featured episode card와 AI 뉴스 YouTube playlist iframe 카드로 구성됩니다.
-6. 페이지 내부 `<style>`에서 카드/섹션별 CSS를 모두 소유합니다.
+5. 최상단 팟캐스트 라이브러리 hero 섹션은 기능 구현이 끝나지 않아 제거되었습니다. `/podcasts/` 라이브러리 자체는 그대로 유지되며, 헤더 네비게이션과 홈 미디어 섹션에서 접근합니다.
+6. 하단 `AI 뉴스` 섹션은 AI 뉴스 YouTube playlist iframe 카드로 구성됩니다.
+7. 페이지 내부 `<style>`에서 카드/섹션별 CSS를 모두 소유합니다.
 
 섹션 순서:
 
 ```text
 Header / Social links
-→ Podcast Library CTA + AI News iframe card
 → AI Daily News cards from ainews collection
 → Presentations & Lectures hardcoded cards
 → Archive cards from archive collection
 → Essays & Columns hardcoded cards
+→ AI News iframe card
 ```
 
 ### `/en/media/` (`src/pages/en/media/index.astro`)
@@ -94,7 +95,7 @@ Header / Social links
 1. **에피소드 추가**: `src/content/podcasts/ko/{slug}.md`에 Markdown 파일을 추가합니다. 필수 frontmatter는 `title`, `description`, `date`, `videoId`입니다. 전체 transcript가 있으면 YouTube captions에서 온 `transcriptSegments`를 사용하고 Markdown body에 중복하지 않습니다.
 2. **목록/검색 UI 변경**: `src/pages/podcasts/index.astro`의 search/tag filter와 card markup/CSS를 수정합니다. 필터는 dependency 없는 client script입니다.
 3. **상세 페이지 변경**: `src/pages/podcasts/[...slug].astro`의 YouTube embed, summary/takeaways, chapters, resources, Markdown render layout을 수정합니다.
-4. **미디어 허브 카드 변경**: `src/pages/media/index.astro`의 `Podcast Library & AI News Section`과 `.podcast-library-*` CSS를 수정합니다.
+4. **미디어 허브 노출 복구**: 팟캐스트 라이브러리 hero 섹션은 `/media/`에서 제거되었습니다. 다시 노출하려면 `src/pages/media/index.astro`에 `podcasts` collection fetch와 hero markup/CSS를 되살려야 합니다.
 5. **홈 프리뷰 영향 여부**: 한국어 홈 CTA는 `src/components/home/HomeMediaSection.astro`에서 `/podcasts/`로 연결합니다. 영어 홈은 기존 playlist fallback을 유지합니다.
 6. **i18n 문자열 관리**: 반복 사용될 제목/설명은 `src/i18n/ko.json`, `src/i18n/en.json`에 추가하고, 단일 페이지에만 쓰이는 임시 문구는 현재 패턴처럼 page 내부 문자열로 둘 수 있습니다.
 
