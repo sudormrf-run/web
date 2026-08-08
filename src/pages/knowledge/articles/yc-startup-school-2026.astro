@@ -1,0 +1,1250 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import data from '../../../data/yc-startup-school-2026.json';
+
+const locale = 'ko';
+const { event, runOfShow, sessions, themes, tensions, closing } = data;
+
+const tabs = [
+  { id: 'run', label: '진행 대본', kicker: 'START' },
+  ...sessions.map((s) => ({ id: s.id, label: s.speaker, kicker: `0${s.order}` })),
+  { id: 'wrap', label: '관통 주제', kicker: 'END' },
+];
+
+const thumb = (id: string) => `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+---
+
+<Layout
+  title="YC Startup School 2026 — 팟캐스트 진행 대본"
+  description="YC Startup School 2026의 9개 세션 전체 트랜스크립트를 읽고, 팟캐스트에서 화면에 띄워 놓고 진행하기 좋게 재편집한 대본. 인용구, 토론 포인트, 세션별 요약과 유튜브 임베드."
+  locale={locale}
+  hideLanguageSwitcher={true}
+>
+  <div class="article">
+    <div class="container">
+      <!-- Source strip -->
+      <a class="source-strip" href={event.sourceUrl} target="_blank" rel="noopener noreferrer">
+        <span class="source-badge">출처</span>
+        <span class="source-text">{event.sourceLabel}</span>
+        <span class="source-url">ycombinator.com/library</span>
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+
+      <!-- Tabs -->
+      <nav class="tabs" id="tabs" aria-label="세션 탭">
+        {tabs.map((t, i) => (
+          <button class:list={['tab', { 'is-active': i === 0 }]} data-tab={t.id} type="button">
+            <span class="tab-kicker">{t.kicker}</span>
+            <span class="tab-label">{t.label}</span>
+          </button>
+        ))}
+      </nav>
+
+      <!-- ==================== PANEL: RUN OF SHOW ==================== -->
+      <section class="panel is-active" data-panel="run">
+        <header class="hero">
+          <div class="hero-media">
+            <img src={event.heroImage} alt={`${event.name} 키노트 무대`} loading="eager" />
+            <span class="hero-credit">{event.heroImageCredit}</span>
+          </div>
+          <div class="hero-copy">
+            <div class="hero-kicker">{event.host} · {event.venue}</div>
+            <h1>{event.name}</h1>
+            <div class="hero-stats">
+              <div><strong>{event.talkCount}</strong><span>Sessions</span></div>
+              <div><strong>{runOfShow.totalMinutes}</strong><span>분 예상</span></div>
+              <div><strong>{sessions.reduce((n, s) => n + s.quotes.length, 0)}</strong><span>Quotes</span></div>
+              <div><strong>{sessions.reduce((n, s) => n + s.discussion.length, 0)}</strong><span>논점</span></div>
+            </div>
+          </div>
+        </header>
+
+        {event.intro.map((p) => <p class="lead">{p}</p>)}
+
+        <!-- Opening script -->
+        <div class="block">
+          <h2 class="block-title"><span class="num">00</span>오프닝 멘트</h2>
+          <ul class="script-list">
+            {runOfShow.openingScript.map((line) => <li>{line}</li>)}
+          </ul>
+        </div>
+
+        <!-- Flow -->
+        <div class="block">
+          <h2 class="block-title"><span class="num">01</span>오늘의 흐름</h2>
+          <p class="block-note">원 발표 순서가 아니라 이야기가 흐르는 순서로 다시 짰습니다. 도구 → 무엇을 만들까 → 현실의 벽 → 창업론 → 클로징.</p>
+          <ol class="flow">
+            {runOfShow.segments.map((seg) => (
+              <li>
+                <span class="flow-slot">{seg.slot}</span>
+                <span class="flow-label">{seg.label}</span>
+                <span class="flow-min">{seg.min}분</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <!-- Quote wall -->
+        <div class="block">
+          <h2 class="block-title"><span class="num">02</span>딱 하나씩만 고른 인용구</h2>
+          <p class="block-note">세션당 한 문장. 화면에 띄워 놓고 읽으면서 시작하기 좋게 골랐습니다.</p>
+          <div class="quote-wall">
+            {sessions.map((s) => (
+              <blockquote class:list={['quote-card', `accent-${s.accent}`]}>
+                <p class="q-ko">{s.bestQuoteKo}</p>
+                <p class="q-en">“{s.bestQuoteEn}”</p>
+                <footer>
+                  <button class="q-jump" data-jump={s.id} type="button">
+                    <span class="q-order">{s.order}</span>
+                    {s.speaker}
+                    <span class="q-role">{s.role.split('(')[0].trim()}</span>
+                  </button>
+                </footer>
+              </blockquote>
+            ))}
+          </div>
+        </div>
+
+        <!-- Discussion highlights -->
+        <div class="block">
+          <h2 class="block-title"><span class="num">03</span>제일 붙기 좋은 논점</h2>
+          <p class="block-note">각 세션에서 하나씩 뽑았습니다. 전체 논점은 세션 탭에 들어 있습니다.</p>
+          <div class="dp-grid">
+            {sessions.map((s) => (
+              <div class="dp-card">
+                <div class="dp-head">
+                  <span class:list={['dp-num', `accent-${s.accent}`]}>{s.order}</span>
+                  <span class="dp-speaker">{s.speaker}</span>
+                </div>
+                <p>{s.discussion[0]}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Tension teaser -->
+        <div class="block">
+          <h2 class="block-title"><span class="num">04</span>서로 반대되는 말들</h2>
+          <p class="block-note">방송 마지막에 몰아서 다루면 좋은 대목. 자세한 건 “관통 주제” 탭에 있습니다.</p>
+          <div class="tension-teaser">
+            {tensions.map((t) => (
+              <div class="tt-item">
+                <span class="tt-a">{t.a.who}</span>
+                <span class="tt-vs">vs</span>
+                <span class="tt-b">{t.b.who}</span>
+                <span class="tt-topic">{t.topic}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== PANELS: SESSIONS ==================== -->
+      {sessions.map((s) => (
+        <section class="panel" data-panel={s.id}>
+          <header class:list={['s-head', `accent-${s.accent}`]}>
+            <div class="s-order">{String(s.order).padStart(2, '0')}</div>
+            <div class="s-head-copy">
+              <h1>{s.titleKo}</h1>
+              <p class="s-original">{s.title}</p>
+              <p class="s-meta">
+                <strong>{s.speaker}</strong> · {s.role}
+                {s.durationMin && <span class="s-dur">{s.durationMin}분</span>}
+                <span class="s-slot">방송 배분 {s.slotMin}분</span>
+              </p>
+            </div>
+          </header>
+
+          <p class="s-oneliner">{s.oneLiner}</p>
+          <p class="s-why"><span>이 자리에 배치한 이유</span>{s.whyFirst}</p>
+
+          <div class="video" data-video={s.youtubeId} data-title={s.title}>
+            <img src={thumb(s.youtubeId)} alt={`${s.title} 썸네일`} loading="lazy" />
+            <button class="video-play" type="button" aria-label="유튜브 영상 재생">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+            </button>
+          </div>
+          <div class="video-links">
+            <a href={`https://www.youtube.com/watch?v=${s.youtubeId}`} target="_blank" rel="noopener noreferrer">유튜브에서 보기 ↗</a>
+            <a href={s.libraryUrl} target="_blank" rel="noopener noreferrer">YC 라이브러리 원문 ↗</a>
+          </div>
+
+          <div class="block">
+            <h2 class="block-title"><span class="num">요약</span>무슨 얘기를 했나</h2>
+            <ul class="bullets">
+              {s.summary.map((b) => <li>{b}</li>)}
+            </ul>
+          </div>
+
+          <div class="block">
+            <h2 class="block-title"><span class="num">인용</span>읽고 갈 문장들</h2>
+            <div class="quotes">
+              {s.quotes.map((q) => (
+                <blockquote class:list={['quote', `accent-${s.accent}`]}>
+                  <p class="q-ko">{q.ko}</p>
+                  <p class="q-en">“{q.en}”</p>
+                  <p class="q-why">{q.why}</p>
+                </blockquote>
+              ))}
+            </div>
+          </div>
+
+          <div class="block">
+            <h2 class="block-title"><span class="num">재미</span>웃기거나 의외인 부분</h2>
+            <ul class="bullets fun">
+              {s.funParts.map((b) => <li>{b}</li>)}
+            </ul>
+          </div>
+
+          <div class="block">
+            <h2 class="block-title"><span class="num">토론</span>주고받을 논점</h2>
+            <ol class="dp-list">
+              {s.discussion.map((b) => <li>{b}</li>)}
+            </ol>
+          </div>
+
+          <div class="block">
+            <h2 class="block-title"><span class="num">실전</span>가져갈 것</h2>
+            <ul class="bullets take">
+              {s.takeaways.map((b) => <li>{b}</li>)}
+            </ul>
+          </div>
+
+          <div class="korea">
+            <h3>한국에서 보면</h3>
+            <p>{s.koreaAngle}</p>
+          </div>
+        </section>
+      ))}
+
+      <!-- ==================== PANEL: WRAP ==================== -->
+      <section class="panel" data-panel="wrap">
+        <header class="wrap-head">
+          <h1>관통 주제와 대립 구도</h1>
+          <p>아홉 명이 서로 짜고 나온 게 아닌데도 같은 단어를 반복해서 쓴다. 그리고 몇 군데선 정면으로 부딪힌다.</p>
+        </header>
+
+        <div class="block">
+          <h2 class="block-title"><span class="num">공통</span>반복해서 나온 이야기</h2>
+          <div class="themes">
+            {themes.map((t, i) => (
+              <article class="theme">
+                <div class="theme-num">{String(i + 1).padStart(2, '0')}</div>
+                <div class="theme-body">
+                  <h3>{t.title}</h3>
+                  <p>{t.body}</p>
+                  <div class="theme-who">
+                    {t.who.map((w) => <span>{w}</span>)}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div class="block">
+          <h2 class="block-title"><span class="num">대립</span>정면으로 부딪히는 지점</h2>
+          <div class="tensions">
+            {tensions.map((t) => (
+              <article class="tension">
+                <h3>{t.topic}</h3>
+                <div class="tension-pair">
+                  <div class="side side-a">
+                    <span class="side-who">{t.a.who}</span>
+                    <p>{t.a.claim}</p>
+                  </div>
+                  <div class="side-vs">vs</div>
+                  <div class="side side-b">
+                    <span class="side-who">{t.b.who}</span>
+                    <p>{t.b.claim}</p>
+                  </div>
+                </div>
+                <p class="tension-ask">{t.ask}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div class="block">
+          <h2 class="block-title"><span class="num">마무리</span>{closing.title}</h2>
+          <ol class="closing">
+            {closing.points.map((p) => <li>{p}</li>)}
+          </ol>
+        </div>
+
+        <a class="source-strip bottom" href={event.sourceUrl} target="_blank" rel="noopener noreferrer">
+          <span class="source-badge">출처</span>
+          <span class="source-text">{event.sourceLabel}</span>
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const tabButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('.tab'));
+  const panels = Array.from(document.querySelectorAll<HTMLElement>('.panel'));
+
+  function activate(id: string, pushHash = true) {
+    const exists = panels.some((p) => p.dataset.panel === id);
+    if (!exists) return;
+    tabButtons.forEach((b) => b.classList.toggle('is-active', b.dataset.tab === id));
+    panels.forEach((p) => p.classList.toggle('is-active', p.dataset.panel === id));
+    if (pushHash) history.replaceState(null, '', `#${id}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const active = tabButtons.find((b) => b.dataset.tab === id);
+    active?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+  }
+
+  tabButtons.forEach((b) => b.addEventListener('click', () => activate(b.dataset.tab!)));
+  document.querySelectorAll<HTMLButtonElement>('.q-jump').forEach((b) => {
+    b.addEventListener('click', () => activate(b.dataset.jump!));
+  });
+
+  // Deep link support: /knowledge/articles/yc-startup-school-2026#jeff-dean
+  if (location.hash) activate(location.hash.slice(1), false);
+  window.addEventListener('hashchange', () => activate(location.hash.slice(1), false));
+
+  // Arrow keys move between tabs — handy while presenting on stream.
+  document.addEventListener('keydown', (e) => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const target = e.target as HTMLElement;
+    if (target && /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName)) return;
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    const i = tabButtons.findIndex((b) => b.classList.contains('is-active'));
+    const next = e.key === 'ArrowRight' ? i + 1 : i - 1;
+    if (next < 0 || next >= tabButtons.length) return;
+    e.preventDefault();
+    activate(tabButtons[next].dataset.tab!);
+  });
+
+  // YouTube facade: only load the iframe once asked, so nine embeds don't
+  // all phone home when the page opens.
+  document.querySelectorAll<HTMLElement>('.video').forEach((box) => {
+    box.querySelector('.video-play')?.addEventListener('click', () => {
+      const id = box.dataset.video;
+      const frame = document.createElement('iframe');
+      frame.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+      frame.title = box.dataset.title || 'YouTube';
+      frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      frame.allowFullscreen = true;
+      box.replaceChildren(frame);
+      box.classList.add('is-playing');
+    });
+  });
+</script>
+
+<style>
+  .article {
+    padding: 1.5rem 0 5rem;
+  }
+
+  .article .container {
+    max-width: 940px;
+  }
+
+  /* ---------- Source strip ---------- */
+  .source-strip {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0.9rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    font-size: 0.82rem;
+    text-decoration: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .source-strip:hover {
+    border-color: var(--color-accent);
+    background: var(--color-surface-hover);
+  }
+
+  .source-strip.bottom {
+    margin: 2.5rem 0 0;
+  }
+
+  .source-badge {
+    padding: 0.15rem 0.45rem;
+    border-radius: var(--radius-sm);
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+
+  .source-text {
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .source-url {
+    margin-left: auto;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+  }
+
+  /* ---------- Tabs ---------- */
+  .tabs {
+    position: sticky;
+    /* The site header is sticky at top:0 with height 70px + 1px border, so the
+       tab rail has to park just below it or it slides out of reach. */
+    top: 71px;
+    z-index: 20;
+    display: flex;
+    gap: 0.4rem;
+    padding: 0.6rem 0 0.75rem;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    background: var(--color-bg-primary);
+    box-shadow: 0 10px 16px -10px var(--color-bg-primary);
+  }
+
+  .tabs::-webkit-scrollbar { height: 4px; }
+  .tabs::-webkit-scrollbar-thumb {
+    background: var(--color-border-hover);
+    border-radius: 2px;
+  }
+
+  .tab {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    flex-shrink: 0;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.18s ease;
+  }
+
+  .tab:hover {
+    border-color: var(--color-border-hover);
+    color: var(--color-text-secondary);
+  }
+
+  .tab.is-active {
+    border-color: var(--color-accent);
+    background: var(--color-accent-light);
+    color: var(--color-text-primary);
+  }
+
+  .tab-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+  }
+
+  .tab.is-active .tab-kicker { color: var(--color-accent); opacity: 1; }
+
+  .tab-label {
+    font-size: 0.84rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  /* ---------- Panels ---------- */
+  .panel { display: none; }
+  .panel.is-active { display: block; animation: fade 0.22s ease; }
+
+  @keyframes fade {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    display: grid;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 860px) {
+    .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
+  }
+
+  .hero-media {
+    position: relative;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+  }
+
+  .hero-media img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .hero-credit {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.6rem 0.75rem 0.5rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+    color: var(--color-text-muted);
+    font-size: 0.68rem;
+    line-height: 1.4;
+  }
+
+  .hero-kicker {
+    display: inline-flex;
+    margin-bottom: 0.6rem;
+    padding: 0.22rem 0.55rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .hero-stats div {
+    padding: 0.6rem 0.5rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    text-align: center;
+  }
+
+  .hero-stats strong {
+    display: block;
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .hero-stats span {
+    color: var(--color-text-muted);
+    font-size: 0.64rem;
+    letter-spacing: 0.04em;
+  }
+
+  .lead {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    line-height: 1.85;
+    margin-bottom: 0.9rem;
+  }
+
+  /* ---------- Blocks ---------- */
+  .block { margin: 2.75rem 0; }
+
+  .block-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .block-title .num {
+    flex-shrink: 0;
+    padding: 0.2rem 0.45rem;
+    border-radius: var(--radius-sm);
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  .block-note {
+    color: var(--color-text-muted);
+    font-size: 0.86rem;
+    line-height: 1.65;
+    margin-bottom: 1.1rem;
+  }
+
+  /* ---------- Opening script ---------- */
+  .script-list {
+    list-style: none;
+    padding: 1.1rem 1.25rem;
+    margin: 0;
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+
+  .script-list li {
+    position: relative;
+    padding-left: 1.1rem;
+    margin-bottom: 0.6rem;
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .script-list li:last-child { margin-bottom: 0; }
+
+  .script-list li::before {
+    content: '“';
+    position: absolute;
+    left: 0;
+    top: 0.15rem;
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
+  /* ---------- Flow ---------- */
+  .flow {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .flow li {
+    display: grid;
+    grid-template-columns: 3.4rem 1fr auto;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+
+  .flow-slot {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+  }
+
+  .flow-label {
+    color: var(--color-text-primary);
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+
+  .flow-min {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
+  /* ---------- Quote wall ---------- */
+  .quote-wall {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  @media (min-width: 720px) {
+    .quote-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  .quote-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.1rem 1.25rem;
+    margin: 0;
+    border: 1px solid var(--color-border-light);
+    border-left: 3px solid var(--accent, var(--color-accent));
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+
+  .quote-card .q-ko {
+    color: var(--color-text-primary);
+    font-size: 1.02rem;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.55rem;
+  }
+
+  .q-en {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .quote-card footer { margin-top: auto; padding-top: 0.85rem; }
+
+  .q-jump {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.3rem 0.6rem 0.3rem 0.35rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-text-secondary);
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.18s ease;
+  }
+
+  .q-jump:hover {
+    border-color: var(--accent, var(--color-accent));
+    color: var(--color-text-primary);
+  }
+
+  .q-order {
+    display: grid;
+    place-items: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent, var(--color-accent));
+    color: var(--color-bg-primary);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+  }
+
+  .q-role {
+    color: var(--color-text-muted);
+    font-weight: 400;
+    font-size: 0.72rem;
+  }
+
+  /* ---------- Discussion grid ---------- */
+  .dp-grid {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 720px) {
+    .dp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  .dp-card {
+    padding: 0.95rem 1.1rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+
+  .dp-head {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .dp-num {
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent, var(--color-accent));
+    color: var(--color-bg-primary);
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    font-weight: 700;
+  }
+
+  .dp-speaker {
+    color: var(--color-text-muted);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .dp-card p {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  /* ---------- Tension teaser ---------- */
+  .tension-teaser { display: grid; gap: 0.5rem; }
+
+  .tt-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+
+  .tt-a, .tt-b {
+    color: var(--color-text-primary);
+    font-size: 0.86rem;
+    font-weight: 700;
+  }
+
+  .tt-vs {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+  }
+
+  .tt-topic {
+    margin-left: auto;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+  }
+
+  /* ---------- Session head ---------- */
+  .s-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .s-order {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: var(--radius-lg);
+    background: var(--accent, var(--color-accent));
+    color: var(--color-bg-primary);
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 800;
+  }
+
+  .s-head-copy h1 {
+    font-size: clamp(1.45rem, 3.6vw, 2.05rem);
+    font-weight: 800;
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.35rem;
+  }
+
+  .s-original {
+    color: var(--accent, var(--color-accent));
+    font-size: 0.86rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .s-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .s-meta strong { color: var(--color-text-primary); }
+
+  .s-dur, .s-slot {
+    padding: 0.1rem 0.42rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+  }
+
+  .s-slot { color: var(--color-accent); border-color: var(--color-border); }
+
+  .s-oneliner {
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 0.75rem;
+    border-left: 3px solid var(--accent, var(--color-accent));
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    font-size: 1.06rem;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  .s-why {
+    margin-bottom: 1.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+
+  .s-why span {
+    display: inline-block;
+    margin-right: 0.4rem;
+    padding: 0.08rem 0.4rem;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-secondary);
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  /* ---------- Video ---------- */
+  .video {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+  }
+
+  .video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .video :global(iframe) {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .video-play {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    border: 0;
+    background: rgba(0, 0, 0, 0.28);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .video-play svg {
+    padding: 0.9rem 0.85rem 0.9rem 1.05rem;
+    border-radius: 50%;
+    background: rgba(255, 0, 0, 0.92);
+    box-sizing: content-box;
+    transition: transform 0.2s ease;
+  }
+
+  .video-play:hover { background: rgba(0, 0, 0, 0.1); }
+  .video-play:hover svg { transform: scale(1.08); }
+
+  .video-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.6rem;
+  }
+
+  .video-links a {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    text-decoration: none;
+  }
+
+  .video-links a:hover { color: var(--color-accent); }
+
+  /* ---------- Lists ---------- */
+  .bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .bullets li {
+    position: relative;
+    padding: 0.15rem 0 0.15rem 1.15rem;
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
+  .bullets.fun li::before { background: var(--color-yellow); }
+  .bullets.take li::before { background: var(--color-green); }
+
+  .dp-list {
+    padding-left: 1.2rem;
+    margin: 0;
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .dp-list li {
+    padding-left: 0.3rem;
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .dp-list li::marker {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+  }
+
+  /* ---------- Session quotes ---------- */
+  .quotes { display: grid; gap: 0.85rem; }
+
+  .quote {
+    padding: 1.05rem 1.2rem;
+    margin: 0;
+    border: 1px solid var(--color-border-light);
+    border-left: 3px solid var(--accent, var(--color-accent));
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+
+  .quote .q-ko {
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+
+  .q-why {
+    margin-top: 0.6rem;
+    padding-top: 0.6rem;
+    border-top: 1px dashed var(--color-border-light);
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    line-height: 1.65;
+  }
+
+  /* ---------- Korea box ---------- */
+  .korea {
+    padding: 1.2rem 1.35rem;
+    margin-top: 2.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background:
+      radial-gradient(circle at 8% 12%, rgba(253, 115, 24, 0.1), transparent 40%),
+      var(--color-surface);
+  }
+
+  .korea h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-accent);
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
+  .korea p {
+    color: var(--color-text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.85;
+  }
+
+  /* ---------- Wrap ---------- */
+  .wrap-head { margin-bottom: 2rem; }
+
+  .wrap-head h1 {
+    font-size: clamp(1.7rem, 4.5vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.6rem;
+  }
+
+  .wrap-head p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .themes { display: grid; gap: 0.85rem; }
+
+  .theme {
+    display: flex;
+    gap: 0.9rem;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+
+  .theme-num {
+    flex-shrink: 0;
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 1.05rem;
+    font-weight: 800;
+    opacity: 0.65;
+  }
+
+  .theme-body h3 {
+    margin-bottom: 0.45rem;
+    color: var(--color-text-primary);
+    font-size: 1.02rem;
+    font-weight: 800;
+    line-height: 1.45;
+  }
+
+  .theme-body p {
+    color: var(--color-text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+
+  .theme-who {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.7rem;
+  }
+
+  .theme-who span {
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+  }
+
+  .tensions { display: grid; gap: 0.85rem; }
+
+  .tension {
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+
+  .tension h3 {
+    margin-bottom: 0.85rem;
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  .tension-pair {
+    display: grid;
+    gap: 0.6rem;
+    align-items: stretch;
+  }
+
+  @media (min-width: 700px) {
+    .tension-pair { grid-template-columns: 1fr auto 1fr; }
+  }
+
+  .side {
+    padding: 0.8rem 0.95rem;
+    border-radius: var(--radius-md);
+    background: var(--color-bg-secondary);
+  }
+
+  .side-a { border-left: 2px solid var(--color-blue); }
+  .side-b { border-left: 2px solid var(--color-orange); }
+
+  .side-who {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+  }
+
+  .side p {
+    color: var(--color-text-secondary);
+    font-size: 0.86rem;
+    line-height: 1.7;
+  }
+
+  .side-vs {
+    display: grid;
+    place-items: center;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
+  .tension-ask {
+    margin-top: 0.85rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--color-border-light);
+    color: var(--color-accent-hover);
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.7;
+  }
+
+  .closing {
+    padding-left: 1.2rem;
+    margin: 0;
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .closing li {
+    padding-left: 0.35rem;
+    color: var(--color-text-secondary);
+    font-size: 0.97rem;
+    line-height: 1.85;
+  }
+
+  .closing li::marker {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+  }
+
+  /* ---------- Accents ---------- */
+  .accent-orange { --accent: var(--color-orange); }
+  .accent-green { --accent: var(--color-green); }
+  .accent-blue { --accent: var(--color-blue); }
+  .accent-red { --accent: #ff5566; }
+  .accent-yellow { --accent: var(--color-yellow); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 640px) {
+    .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .flow li { grid-template-columns: 3rem 1fr; }
+    .flow-min { grid-column: 2; justify-self: start; }
+    .tt-topic { margin-left: 0; width: 100%; }
+    .s-head { gap: 0.75rem; }
+    .s-order { width: 38px; height: 38px; font-size: 0.95rem; }
+  }
+</style>

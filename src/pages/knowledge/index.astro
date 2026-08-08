@@ -87,6 +87,38 @@ const { t } = useTranslations(locale);
         </div>
       </section>
 
+      <!-- Articles Section -->
+      <section class="topic-section">
+        <header class="section-header">
+          <h2 class="section-title">Articles</h2>
+          <p class="section-subtitle">직접 읽고 정리한 글, 그리고 팟캐스트에서 화면에 띄우고 진행하는 대본</p>
+        </header>
+        <div class="cards-grid">
+          <a href="/knowledge/articles/yc-startup-school-2026" class="card card-article">
+            <div class="card-thumbnail">
+              <img
+                src="https://img.youtube.com/vi/eRrc1pUY5oU/hqdefault.jpg"
+                alt="YC Startup School 2026"
+                loading="lazy"
+              />
+              <span class="article-badge">진행 대본</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">YC Startup School 2026</h3>
+              <p class="card-description">
+                젠슨 황부터 클로드 코드를 만든 사람까지, 9개 세션 전체 트랜스크립트를 읽고 뽑은
+                인용구와 토론 포인트
+              </p>
+              <div class="card-tags">
+                <span>9 Sessions</span>
+                <span>Quotes</span>
+                <span>YouTube</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
       <!-- LLM Section -->
       <section class="topic-section">
         <header class="section-header">
@@ -228,6 +260,62 @@ const { t } = useTranslations(locale);
     min-height: auto;
     padding: 0;
     overflow: hidden;
+  }
+
+  /* Article card */
+  .card-article {
+    width: 380px;
+    min-height: auto;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .card-article .card-thumbnail {
+    position: relative;
+    height: 180px;
+  }
+
+  .article-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    background: var(--color-accent);
+    border-radius: var(--radius-sm);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+  }
+
+  .card-article:hover {
+    border-color: var(--color-accent);
+  }
+
+  .card-article:hover .card-thumbnail img {
+    transform: scale(1.05);
+  }
+
+  .card-article:hover .card-title {
+    color: var(--color-accent);
+  }
+
+  .card-article .card-title {
+    margin-bottom: 0.375rem;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.75rem;
+  }
+
+  .card-tags span {
+    padding: 0.15rem 0.45rem;
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+    font-size: 0.65rem;
   }
 
   .card-visual {

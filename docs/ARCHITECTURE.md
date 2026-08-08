@@ -51,6 +51,7 @@ src/
 │   ├── events/[...slug].astro
 │   ├── knowledge/index.astro
 │   ├── knowledge/[...slug].astro
+│   ├── knowledge/articles/*.astro
 │   ├── knowledge/essays/index.astro
 │   ├── knowledge/physical-ai/index.astro
 │   ├── knowledge/physical-ai/browse.astro
@@ -106,6 +107,7 @@ src/
 | Knowledge index | `/knowledge/` | `/en/knowledge/` | 별도 페이지 |
 | Knowledge doc | `/knowledge/{...slug}` | `/en/knowledge/{...slug}` | 언어별 dynamic route |
 | Knowledge graph | `/knowledge/physical-ai/browse/` | `/en/knowledge/physical-ai/browse/` | GraphView + DocumentPanel |
+| Knowledge article | `/knowledge/articles/{slug}/` | - | 한국어 전용. Markdown collection이 아니라 페이지별 `.astro` + `src/data/{slug}.json` |
 | Archive | `/archive/`, `/archive/{slug}` | `/en/archive/`, `/en/archive/{slug}` | 영어 route는 현재 `archive` collection의 `ko/` 콘텐츠를 사용 |
 | Events | `/events/`, `/events/{slug}` | `/en/events/`, `/en/events/{slug}` | 영어 route는 현재 `events` collection의 `ko/` 콘텐츠를 사용 |
 | News | `/news/`, `/news/{slug}` | - | 현재 한국어 route만 구현 |
