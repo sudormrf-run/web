@@ -40,6 +40,7 @@ src/
 │   │   ├── ko/     # 한국어
 │   │   └── en/     # 영어
 │   └── knowledge_to_book/ # 보조 원고/샘플. collection 미정의 상태
+├── data/           # 페이지 전용 정적 데이터 JSON (collection이 아닌 단발성 아티클 등)
 ├── i18n/           # locale config, translation JSON, helper
 ├── styles/         # global.css
 └── utils/          # graphData.ts 등
@@ -51,6 +52,7 @@ src/
 - `/en/` - 영어 홈
 - `/knowledge/`, `/en/knowledge/` - Knowledge Base
 - `/knowledge/physical-ai/browse`, `/en/knowledge/physical-ai/browse` - 그래프 탐색
+- `/knowledge/articles/{slug}` - 아티클. 한국어 전용이며 `src/data/{slug}.json` + 페이지별 `.astro`로 구성
 - `/archive/`, `/en/archive/` - 영상 노트 아카이브. 영어 route는 현재 한국어 archive collection을 사용
 - `/news/` - AI news. 현재 한국어 route만 구현
 - `/media/`, `/en/media/` - 미디어 페이지
