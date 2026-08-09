@@ -11,200 +11,87 @@
     "intro": [
       "YC가 Chase Center에 6,000명을 앉혀 놓고 연 Startup School 2026. 공개된 세션은 9개인데, 라인업이 노골적으로 한쪽으로 기울어 있다. 엔비디아, OpenAI, 구글, Meta, Anthropic, Waymo, Stripe — AI 스택의 바닥부터 꼭대기까지가 한 무대에 순서대로 올라왔다.",
       "재미있는 건 이 사람들이 서로 짜고 나온 게 아닌데도 같은 단어를 반복해서 쓴다는 점이다. eval, 스킬 파일, 마크다운, 크론잡, 시스템 사고, 그리고 “1%”. 심지어 “1%”는 정반대 의미로 두 번 나온다.",
-      "이 문서는 그 9개 세션의 전체 트랜스크립트를 읽고, 팟캐스트에서 화면에 띄워 놓고 진행하기 좋게 재편집한 진행 대본이다. 순서는 원래 발표 순서가 아니라 이야기가 자연스럽게 흐르는 순서로 다시 짰다."
-    ]
+      "이 문서는 그 9개 세션의 전체 트랜스크립트를 읽고, 팟캐스트에서 화면에 띄워 놓고 진행하기 좋게 재편집한 진행 대본이다. 순서는 원래 발표 순서가 아니라 재미있는 순서로 다시 짰다."
+    ],
+    "hook": {
+      "badge": "오늘의 훅",
+      "title": "1번을 제프 딘으로 여는 이유",
+      "body": "이 행사 나흘 뒤인 2026년 8월 5일, 제프 딘이 27년 다닌 구글을 나와 Discovery Loop을 창업한다고 발표했다. 산자이 게마왓, 오리올 비냘스, 쿽 레까지 넷이 함께다. 그러니까 우리가 보는 이 강연은 창업 직전 인터뷰이고, “측정 가능한 목표만 있으면 자동 실험 루프로 밀어붙일 수 있다”던 그 대목은 사실상 회사 소개였다. 이걸 알고 보면 세션 전체가 다르게 들린다 — 그래서 1번이다."
+    }
   },
   "runOfShow": {
     "openingScript": [
       "오늘은 YC Startup School 2026 몰아보기입니다. 9개 세션 전부 봤고요.",
-      "먼저 판을 까는 얘기(개리 탄) → 도구 얘기(클로드 코드) → 뭘 만들지 고르는 법(제프 딘) → 만들고 나서의 현실(웨이모) 순서로 갑니다.",
-      "그다음이 창업 얘기(알렉산더 왕, 샘 알트만, 패트릭 콜리슨), 불가능해 보이는 걸 하는 얘기(블레이크 숄), 마지막이 젠슨 황입니다.",
-      "중간에 “이 사람 저 사람이랑 정반대 얘기 하는데?” 싶은 대목이 계속 나오는데, 그건 맨 뒤에 따로 모아놨습니다."
+      "순서는 발표 순서 무시하고 재미있는 순서로 다시 짰습니다. 1번은 제프 딘이에요. 이 강연 나흘 뒤에 구글 27년 다니다 나와서 창업했거든요. 그거 알고 보면 강연이 완전히 다르게 들립니다.",
+      "그다음이 웨이모입니다. 딘이 “모델이 0~1%밖에 못 하는 걸 골라라”라고 하는데, 웨이모는 “데모까지가 전체의 1%”라고 해요. 같은 숫자가 정반대 뜻으로 두 번 나옵니다.",
+      "3번 4번은 클로드 코드 만든 사람이랑 개리 탄인데, 한 명은 “6개월마다 다 지워라”, 한 명은 “쌓아서 소유해라”입니다. 대놓고 반대죠.",
+      "뒤로 갈수록 창업 얘기(왕 · 알트만 · 콜리슨)로 가고, 마지막 두 개가 제일 이야기가 좋은 블레이크 숄이랑 젠슨 황입니다.",
+      "서로 정반대로 말하는 대목들은 맨 뒤에 따로 모아놨습니다."
     ],
-    "totalMinutes": 95,
+    "totalMinutes": 97,
     "segments": [
-      { "slot": "00:00", "min": 5, "label": "오프닝 — 행사 소개, 오늘의 흐름" },
-      { "slot": "05:00", "min": 10, "label": "1. 개리 탄 — 지능을 소유하라" },
-      { "slot": "15:00", "min": 12, "label": "2. 보리스 체르니 — 클로드 코드를 만든 사람" },
-      { "slot": "27:00", "min": 10, "label": "3. 제프 딘 — 1% 규칙" },
-      { "slot": "37:00", "min": 10, "label": "4. 드미트리 돌고프 — 데모는 1%" },
-      { "slot": "47:00", "min": 7, "label": "5. 알렉산더 왕 — 병목은 모델이 아니다" },
-      { "slot": "54:00", "min": 8, "label": "6. 샘 알트만 — 지금이 최적기" },
-      { "slot": "62:00", "min": 7, "label": "7. 패트릭 콜리슨 — 성공하면 어쩔 건데?" },
-      { "slot": "69:00", "min": 8, "label": "8. 블레이크 숄 — 55년 된 금지법 뒤집기" },
-      { "slot": "77:00", "min": 8, "label": "9. 젠슨 황 — 틀린 기술로 시작한 회사" },
-      { "slot": "85:00", "min": 10, "label": "마무리 — 관통 주제와 대립 구도" }
+      {
+        "slot": "00:00",
+        "min": 5,
+        "label": "오프닝 — 행사 소개, 오늘의 흐름"
+      },
+      {
+        "slot": "00:05",
+        "min": 12,
+        "label": "1. 제프 딘 — 1% 규칙, 그리고 Discovery Loop"
+      },
+      {
+        "slot": "00:17",
+        "min": 10,
+        "label": "2. 드미트리 돌고프 — 데모는 1%"
+      },
+      {
+        "slot": "00:27",
+        "min": 12,
+        "label": "3. 보리스 체르니 — 프롬프트의 80%를 지운 사람"
+      },
+      {
+        "slot": "00:39",
+        "min": 10,
+        "label": "4. 개리 탄 — 지능을 소유하라"
+      },
+      {
+        "slot": "00:49",
+        "min": 7,
+        "label": "5. 알렉산더 왕 — 병목은 모델이 아니다"
+      },
+      {
+        "slot": "00:56",
+        "min": 8,
+        "label": "6. 샘 알트만 — 지금이 최적기"
+      },
+      {
+        "slot": "01:04",
+        "min": 7,
+        "label": "7. 패트릭 콜리슨 — 성공하면 어쩔 건데?"
+      },
+      {
+        "slot": "01:11",
+        "min": 8,
+        "label": "8. 블레이크 숄 — 55년 된 금지법 뒤집기"
+      },
+      {
+        "slot": "01:19",
+        "min": 8,
+        "label": "9. 젠슨 황 — 틀린 기술로 시작한 회사"
+      },
+      {
+        "slot": "01:27",
+        "min": 10,
+        "label": "마무리 — 관통 주제와 대립 구도"
+      }
     ]
   },
   "sessions": [
     {
-      "id": "garry-tan",
-      "order": 1,
-      "slotMin": 10,
-      "title": "Garry Tan: Own Your Intelligence",
-      "titleKo": "지능을 소유하라 — 개리 탄의 개인 AGI 선언",
-      "speaker": "Garry Tan",
-      "role": "President & CEO, Y Combinator",
-      "youtubeId": "eRrc1pUY5oU",
-      "libraryUrl": "https://www.ycombinator.com/library/WX-garry-tan-own-your-intelligence",
-      "accent": "orange",
-      "oneLiner": "AGI는 데이터센터에 오지 않는다, 내 폴더 안에 이미 와 있다.",
-      "whyFirst": "행사 전체의 프레임을 깔아주는 키노트. 우리 청취자가 당장 오늘 밤 따라할 수 있는 얘기라 오프닝으로 최적.",
-      "summary": [
-        "핵심 공식은 이것. 지능 = 프론티어 모델(렌트, 커모디티) + 내 컨텍스트(소유, 유일무이) + 하네스. 모델은 빌려 쓰는 거고 값도 계속 싸지는데, 진짜 자산은 “내 컨텍스트”라는 것.",
-        "구독료 내는 챗봇은 탭 닫으면 리셋되고 회사가 방향 틀면 로보토미당하는 “내가 소유하지 않은 기업 AGI”다. 반면 개인 AGI는 내 인프라에서 돌고, 내가 소유한 메모리를 읽고, 내가 쓴 절차를 실행하며 매일 복리로 쌓인다.",
-        "소유의 대상은 둘. 하나는 라이브러리(25년치 이메일·회의·결정과 그 이유를 담은 마크다운 아카이브), 다른 하나는 스킬 파일(내가 일하는 방식을 영어 한 페이지로 뽑아낸 실행 가능한 인지). 본인은 22만 페이지짜리 GBrain을 운영한다.",
-        "실행법 5단계: ① 오늘 밤 하네스 깔고 에이전트 돌리기 ② 주말에 폴더 하나로 라이브러리 시작 ③ 제일 싫어하는 주간 업무로 첫 스킬 파일 쓰기 ④ 정기 잡으로 걸기 ⑤ 절대 일회성 작업 금지, 끝날 때마다 skillify.",
-        "90일 곡선: 1주차 장난감, 4주차 플라이휠, 12주차엔 남들이 빌려달라는 도구. 대부분 2주차에 그만둔다.",
-        "마지막은 정치적이다. 스킬 파일은 문서가 아니라 외부화된 내 인지라서, 내 레포에 있으면 이직할 때 따라오는 자산이고 회사 레포에 있으면 나는 빈손으로 나가고 회사는 내 판단력을 영원히 돌린다."
-      ],
-      "quotes": [
-        {
-          "en": "Everyone is watching the sky and the thing they're watching for is already in the room. It doesn't look like a God. It looks like infrastructure, a terminal window, a folder of markdown files, a job that finishes while you sleep.",
-          "ko": "다들 하늘만 쳐다보고 있는데, 기다리던 그건 이미 방 안에 들어와 있어요. 신처럼 안 생겼습니다. 인프라처럼 생겼죠. 터미널 창 하나, 마크다운 파일 폴더 하나, 자는 동안 끝나 있는 잡 하나.",
-          "why": "AGI를 “사건”이 아니라 “확산된 인프라”로 재정의하는 문장. 오프닝으로 최적."
-        },
-        {
-          "en": "The corporate AGI you don't own gets better only when the company ships something. Your personal AGI gets better every single day you use it. One of these is a product you consume. The other is an asset you build.",
-          "ko": "내가 소유하지 않은 기업 AGI는 그 회사가 뭔가 출시할 때만 좋아집니다. 내 개인 AGI는 쓰는 날마다 좋아져요. 하나는 소비하는 제품이고, 다른 하나는 쌓아 올리는 자산입니다.",
-          "why": "“Own Your Intelligence”가 정확히 무슨 뜻인지 한 방에 정리되는 대목."
-        },
-        {
-          "en": "There are 2X people and there are 100X people who are using the same Claude, same weights, same context window size, same API, but the leverage is not in the weights. It's in what context you give it.",
-          "ko": "똑같은 Claude, 똑같은 가중치, 똑같은 컨텍스트 윈도우, 똑같은 API를 쓰는데 어떤 사람은 2배가 되고 어떤 사람은 100배가 됩니다. 레버리지는 가중치에 있는 게 아니에요. 어떤 컨텍스트를 주느냐에 있습니다.",
-          "why": "같은 도구 쓰는데 왜 결과가 갈리냐는 질문에 대한 YC 수장의 답. 제일 논쟁 붙기 좋은 지점."
-        },
-        {
-          "en": "A brain nobody curates is a garbage dump with great search. Retrieval will surface a stale fact with total confidence. A bad skill file encodes a bad process forever.",
-          "ko": "아무도 관리 안 하는 브레인은 검색 잘 되는 쓰레기장일 뿐입니다. 검색은 낡은 사실을 아주 자신 있게 꺼내 옵니다. 나쁜 스킬 파일은 나쁜 프로세스를 영원히 박제하고요.",
-          "why": "강연 유일한 자기반박 구간. 컨텍스트 쌓기만 하면 된다는 순진한 해석을 본인이 먼저 막는다."
-        },
-        {
-          "en": "Markdown is actually code. If you can write clear instructions in English, you're a programmer. The compiler is a language model.",
-          "ko": "마크다운은 사실 코드입니다. 영어로 명확한 지시를 쓸 수 있으면 당신은 프로그래머예요. 컴파일러가 언어 모델인 거죠.",
-          "why": "예전에 이 말로 엄청 욕먹었다고 본인이 언급하는데, 지금은 더 맞다고 밀어붙인다. 개발자 청중 반응이 갈릴 문장."
-        },
-        {
-          "en": "Craftsmen owned their tools. That's what made them free. The factory broke that. The loom belonged to the mill. The knowledge workers assumed we were safe because our tools lived in our heads where nobody could confiscate them. Skill files end that.",
-          "ko": "장인들은 자기 연장을 소유했어요. 그래서 자유로웠죠. 공장이 그걸 깨뜨렸습니다. 베틀은 방직공장 소유였으니까요. 지식노동자들은 우리 연장은 머릿속에 있어서 아무도 압수 못 한다고 생각했어요. 스킬 파일이 그 시대를 끝냅니다.",
-          "why": "지식노동자의 “머릿속은 안전지대”라는 전제가 처음으로 깨진다는 역사적 비유."
-        },
-        {
-          "en": "When something that powerful stays private, you get a priesthood. When it gets given away, you get a renaissance.",
-          "ko": "그 정도로 강력한 게 사유화되면 사제 계급이 생깁니다. 그게 공짜로 풀리면 르네상스가 오고요.",
-          "why": "왜 전부 오픈소스로 풀었냐는 질문에 대한 답. 행사 전체의 메시지를 한 줄로 압축."
-        }
-      ],
-      "bestQuoteEn": "I believe skill files are yours. Own your skills because if you don't, your job becomes a skill file.",
-      "bestQuoteKo": "스킬 파일은 여러분 겁니다. 여러분의 스킬을 소유하세요. 안 그러면 여러분의 직업 자체가 스킬 파일이 되어버리니까요.",
-      "funParts": [
-        "강연 오프닝을 통째로 17세기 철학자 스피노자 이야기로 시작한다. 1656년 파문, 입 다물면 연 1000길더 준다는 제안 거절, 칼에 찔릴 뻔해 찢어진 망토를 평생 안 꿰맨 이야기까지. 그런데 반전 — 이 오프닝 자체를 5일 전에 에이전트가 만들었다. 전기 3권 1500페이지를 밤새 읽혀서 “가장 이야기하기 좋은 순간 10개를 딜리버리 노트까지 붙여 랭킹”으로 뽑아냈다고 무대에서 공개한다.",
-        "“여러분이 지금 그 안에 앉아 계신다”며 컨퍼런스 자체를 증거로 든다. 6,000명 좌석 배치와 개인별 브레이크아웃 일정을 마크다운이 SQL을 호출하는 구조로 만들었다고.",
-        "악플을 “채택 곡선”으로 해석한다. “에이전트가 내 코드 대부분을 짠다고 말하면 점심때쯤 조롱이 도착한다. 그런데 제일 시끄럽게 조롱하는 사람들이 실제로 뭘 배포하나 보면 죄다 에이전트다. 먼저 인용 트윗을 하고, 그다음엔 git clone을 한다.”",
-        "YC 재무팀 직원이 터미널 한 번 안 열어본 상태로 엑셀 워크북 약 100개를 앱 하나로 합쳤다는 사례. “그분은 프로그래머가 아닙니다. 이제 에이전트 매니저죠.”",
-        "가장 뭉클한 마무리. 희귀 뇌전증을 앓는 아들을 둔 친구가 랩도 연구비도 없이 마크다운 8만 개짜리 레포를 만들었다. 전문의 진료, 논문, 발작 로그, 약물 상호작용을 전부 인덱싱해서 새 의사가 아이디어를 내면 몇 분 안에 이미 시도된 건지 알 수 있게. “아빠 한 명, 노트북 한 대, 그리고 도서관 하나.”"
-      ],
-      "discussion": [
-        "“모델은 렌트, 컨텍스트는 소유”라는 공식이 진짜로 성립할까? 모델이 계속 좋아지면 개인 라이브러리 없이도 웬만한 건 다 되는 거 아닌가?",
-        "22만 개 마크다운 페이지. 이거 실제로 유지 가능한 규모인가? 본인도 “큐레이션 안 된 브레인은 검색 잘 되는 쓰레기장”이라고 인정했는데, 그럼 사서를 유지하는 비용이 절약분보다 작다는 보장은 어디에?",
-        "400배라는 숫자를 어떻게 받아들여야 하나? 본인이 먼저 “가장 병적인 장황함 페널티를 먹여도 최소 8배”라고 방어선을 쳤는데, 코드 라인 수가 아직도 유효한 생산성 지표인가?",
-        "스킬 파일 소유권 문제는 한국 고용 환경에서 어떻게 되나? 업무 산출물 귀속, 경업금지, 개인 레포 반출 금지인 회사에서 “내 스킬은 내 것”을 어떻게 실천하지?",
-        "“마크다운이 코드고, 영어로 명확히 쓰면 프로그래머”라는 주장 — 개발자 직군에 좋은 소식인가 나쁜 소식인가? 그리고 한국어로 스킬 파일을 쓰는 건 영어 대비 얼마나 불리한가?"
-      ],
-      "takeaways": [
-        "오늘 밤 안에 폴더 하나 만들고 시작하자. 22만 페이지도 시작은 “같이 일하는 사람들에 대한 마크다운 몇 개”였다. “창고부터 짓는 사람은 없습니다. 먼저 선반 하나를 만드는 거죠.”",
-        "일회성 작업을 하지 마라. 작업이 끝날 때마다 방금 한 걸 스킬로 만들어달라고(skillify) 시켜서 재사용 가능한 마크다운으로 남길 것. “같은 걸 두 번 부탁해야 한다면, 그건 실패한 겁니다.”",
-        "첫 스킬 파일은 “매주 하는데 제일 하기 싫은 일”로 고른다. 판별 기준은 “똑똑한 인턴이 따라 할 수 있으면 에이전트도 실행할 수 있다”.",
-        "라텐트와 결정론을 분리하라. 취향·판단·애매한 요청 해석은 모델에게, 산수·SQL·6,000명 좌석 배치는 반드시 코드와 DB로. 이걸 헷갈리는 게 에이전트 실패의 거의 전부다."
-      ],
-      "koreaAngle": "사내 보안정책상 개인 레포 반출이 사실상 불가능하고 업무 산출물 귀속이 회사로 가는 환경에서 “내 스킬은 내 레포에”는 선언으로 끝나기 쉽다. 현실적인 선 긋기는 회사 데이터는 두고 오되 판단의 절차는 문서로 들고 나오는 것. 반대로 희망적인 각도도 있다 — 무기가 인력 규모가 아니라 축적된 컨텍스트라면, 그건 인원 적은 한국 스타트업과 1인 개발자에게 오히려 유리한 물리 법칙이다."
-    },
-    {
-      "id": "boris-cherny",
-      "order": 2,
-      "slotMin": 12,
-      "title": "Boris Cherny: Building Claude Code",
-      "titleKo": "시스템 프롬프트의 80%를 지운 사람",
-      "speaker": "Boris Cherny",
-      "role": "Creator of Claude Code, Anthropic (진행: Diana Hu, YC Group Partner)",
-      "youtubeId": "qyPCVqFUyDo",
-      "libraryUrl": "https://www.ycombinator.com/library/UN-boris-cherny-building-claude-code",
-      "durationMin": 36,
-      "accent": "green",
-      "oneLiner": "모델이 똑똑해질수록 우리가 쓴 코드와 프롬프트는 방해물이 된다.",
-      "whyFirst": "우리 청취자 대부분이 매일 쓰는 도구를 만든 사람. 개리 탄이 “컨텍스트를 쌓아라”라고 한 직후에 “6개월마다 지워라”가 나오는 배치가 재미있다.",
-      "summary": [
-        "Opus 5 출시 다음 날 무대에 올라, 새 모델이 나올 때마다 시스템 프롬프트를 통째로 지우고 ablation(한 줄씩 되돌리며 효과 측정)으로 다시 쌓는 개발 방식을 공개했다. 이번 릴리스에서 실제로 시스템 프롬프트의 80% 이상을 삭제했다.",
-        "Claude Code에는 툴 프롬프트까지 전부 제거한 상태로 돌리는 비공개 환경변수가 있고, 이걸 ablation 용도로 쓴다. 놀랍게도 프롬프트가 없을 때 모델이 오히려 “조금 더 똑똑하다”고 한다. 프롬프트는 모델을 위한 게 아니라 제품 사용성을 위한 것이라는 얘기.",
-        "핵심 개념은 unhobbling과 product overhang. 모델은 이미 할 수 있는데 제품이 그걸 못 하게 막고 있다는 것. Claude Code의 탄생 자체가 Sonnet 3.5를 unhobbling한 결과였다 — 당시 코딩 제품들이 한 줄 자동완성과 읽기 전용 챗에 머물 때, 스캐폴딩을 다 걷어내고 터미널을 통째로 줬다.",
-        "Bun 런타임을 Zig에서 Rust로 통째로 재작성한 사례가 압권. 프롬프트 하나 + 중간 steering만 주고 11일간 돌려서 10만 줄 넘는 JS 런타임을 다시 썼고, 그게 지금 프로덕션에서 Claude Code를 돌리고 있다.",
-        "Anthropic 내부에서는 Claude가 Claude Code를 스스로 유지보수한다. 하루 20~30개 routine이 코드베이스를 돌며 데드코드 삭제, 100% 롤아웃된 실험 정리, 테스트 추가/삭제, 그리고 “abstraction police”(중복 추상화 통합) 같은 일을 매일 PR로 올린다."
-      ],
-      "quotes": [
-        {
-          "en": "And a lot of the stuff in the system prompt was correcting for these behaviors that the model should have known, but it didn't. Now Opus V just does it. So yeah, we deleted 80% of the system prompt.",
-          "ko": "시스템 프롬프트에 있던 것들 상당수가, 원래 모델이 알아서 했어야 하는데 못 하던 걸 교정해주는 내용이었어요. 이제 Opus 5는 그냥 알아서 합니다. 그래서 시스템 프롬프트의 80%를 지웠습니다.",
-          "why": "우리가 쌓아온 프롬프트 자산이 실은 “모델의 결함 패치”였다는 얘기. 청취자들 CLAUDE.md 다시 보게 만드는 포인트."
-        },
-        {
-          "en": "What's interesting is that the model is actually a little bit more intelligent without these prompts. That's something that we've been finding.",
-          "ko": "재밌는 건, 프롬프트가 없을 때 모델이 실제로 조금 더 똑똑하다는 겁니다. 저희가 계속 발견하고 있는 사실이에요.",
-          "why": "프롬프트 엔지니어링 업계 전체에 대한 도발. 그럼 우리가 쓴 그 긴 프롬프트는 뭐였나로 넘어감."
-        },
-        {
-          "en": "For people that aren't building agentic products but you're using Claude Code, every six months delete your Claude.md. Delete your skills.",
-          "ko": "에이전트 제품을 만들지 않고 그냥 Claude Code를 쓰는 분들도, 6개월마다 CLAUDE.md를 지우세요. skills도 지우세요.",
-          "why": "청취자가 방송 끝나고 바로 실행할 수 있는 지시. “진짜 지울 수 있냐”로 두 진행자 의견 갈리기 좋음."
-        },
-        {
-          "en": "The way to think about it is almost like a living creature, like as something more organic. Every model generation it behaves differently. It has a slightly different personality. And you have to take the time to get to know it and then adjust the harness based on that.",
-          "ko": "이걸 생각하는 방식은 거의 살아있는 생물에 가깝습니다. 모델 세대마다 행동이 다르고, 성격이 조금씩 달라요. 시간을 들여서 그 모델을 알아가고, 거기 맞춰 harness를 조정해야 합니다.",
-          "why": "“소프트웨어 엔지니어링 → 경험과학”으로의 전환을 가장 잘 압축한 문장."
-        },
-        {
-          "en": "And he had the model rewrite it from Zig to Rust. It was one prompt, it was a dynamic workflow... And it ran for eleven days and it rewrote the entire code base.",
-          "ko": "그래서 모델한테 Zig에서 Rust로 재작성을 시켰어요. 프롬프트 하나, dynamic workflow였고요. 11일 동안 돌아서 코드베이스 전체를 다시 썼습니다.",
-          "why": "이 세션에서 가장 구체적인 “숫자가 있는” 사례. 11일 vs 사람 1년 이상 비교로 밈처럼 쓸 수 있음."
-        },
-        {
-          "en": "I think we called it abstraction police. And the idea is there are often in a big code base, there's kind of the same abstraction and it appears multiple times.",
-          "ko": "abstraction police라고 불렀던 것 같아요. 큰 코드베이스에는 사실상 같은 추상화가 여러 번 나타나는 경우가 많거든요.",
-          "why": "“AI가 매일 리팩터링 PR을 올린다”는 구체적 그림. 우리 팀에 바로 이식 가능한 아이디어."
-        },
-        {
-          "en": "Forget all the things that you learned about past models. Forget everything that you've learned about computer science theory in class. Look at the model, try to do a task, see where it struggles, and then based on that, adjust.",
-          "ko": "예전 모델에 대해 배운 걸 다 잊으세요. 수업에서 배운 컴퓨터과학 이론도 다 잊으세요. 모델을 보고, 작업을 시켜보고, 어디서 막히는지 보고, 거기 맞춰 조정하세요.",
-          "why": "“CS 배우지 말라는 거냐”로 논쟁 붙이기 좋음. 특히 한국의 CS 교육/코테 문화와 대비하면 재밌음."
-        }
-      ],
-      "bestQuoteEn": "What's interesting is that the model is actually a little bit more intelligent without these prompts.",
-      "bestQuoteKo": "재밌는 건, 프롬프트가 없을 때 모델이 실제로 조금 더 똑똑하다는 겁니다.",
-      "funParts": [
-        "프로그래밍 입문기가 최고다. TI-83 계산기에서 BASIC으로 코딩을 배웠는데, 이유가 “수학 시험에서 커닝해서 점수를 올리려고”였다. 그때 쓴 TI-83 프로그래밍 가이드가 아직 인터넷 어딘가에 남아있다고.",
-        "Anthropic 내부에서 최근 바이럴이었던 건 거창한 게 아니라 “Opus 5한테 OpenCV 주고 그림 그리게 하기”. 초상화, 동물, 풍경까지 그리는데 그리는 법을 학습시킨 적이 없다. 상업적 용도 전혀 없이 그냥 놀다가 발견했다고.",
-        "진행자가 객석에 “코드를 100% 에이전트로 쓰는 분 손 들어보세요” 하고 물었더니 꽤 많이 들었고, “50% 이상은요?”에는 오히려 손이 살짝 줄었다.",
-        "“2주 전에 돌린 그 태스크, 에이전트를 몇 개나 띄웠나요?”라는 질문에 “모르겠는데요, Claude한테 물어보고 알려드릴게요. 수천 개? 수만 개?”라고 답한다. 자기가 만든 시스템의 규모를 자기도 모른다.",
-        "마지막에 객석 전원에게 Max 20x 계정을 뿌린다."
-      ],
-      "discussion": [
-        "“프롬프트 없을 때 모델이 더 똑똑하다”가 사실이라면, 지난 2년간 쌓아온 프롬프트 엔지니어링 노하우는 자산인가 부채인가? 우리 팀 CLAUDE.md도 지금 지우면 더 나아질까?",
-        "6개월마다 harness를 갈아엎는 건 모델 회사라서 감당 가능한 사이클 아닌가? 모델 위에 올라탄 스타트업이 같은 속도로 delete를 반복하면 제품 안정성과 고객 신뢰는 어떻게 되나?",
-        "“evals도 1~3세대면 saturate되니 버려라”는 곧 측정 기준마저 계속 새로 만들어야 한다는 뜻이다. 그럼 우리 제품이 나아지고 있다는 걸 무엇으로 증명하나?",
-        "“코딩은 (거의) 풀렸다”고 하면서도 딥 시스템, 분산 시스템, 픽셀 단위 UI 검증은 아직 아니라고 한다. 그럼 지금 주니어 개발자는 정확히 뭘 배워야 살아남나?",
-        "개리 탄은 “컨텍스트를 쌓아 소유하라”고 하고 보리스는 “6개월마다 지워라”라고 한다. 둘 다 맞을 수 있나? 쌓아야 할 것과 지워야 할 것의 경계는 뭘까?"
-      ],
-      "takeaways": [
-        "새 모델이 나오면 먼저 지워라. 그다음 실제로 써보고, “같은 실수를 반복적으로” 관찰했을 때만 그 줄을 다시 넣어라. 미리 예측해서 규칙을 쓰지 마라 — 그 줄은 모든 요청마다 모델이 읽는 비용이다.",
-        "지시는 절차가 아니라 목표로 줘라. “1번 하고 2번 하고 3번 해”는 구형 모델용 패턴이다. 지금은 태스크 설명 + 가드레일 + 종료 조건만 주고 맡긴 뒤 나중에 확인하는 쪽이 결과가 좋다.",
-        "“예전에 안 됐던 그 문제”를 목록으로 관리하고, 새 모델이 나올 때마다 그대로 다시 던져봐라. 대형 재작업은 탄탄한 테스트 스위트가 있는지가 성패를 가른다 — 검증 가능해야 에이전트를 오래 풀어놓을 수 있다.",
-        "반복 유지보수는 사람이 하지 말고 routine으로 돌려라. 데드코드 제거, 롤아웃 끝난 플래그 정리, 테스트 보강, 중복 추상화 통합 — 각각 한 문장짜리 프롬프트로 매일 PR을 만들게 할 수 있다."
-      ],
-      "koreaAngle": "한국 개발 조직은 컨벤션 문서와 사내 가이드라인을 쌓아 올리는 걸 성숙도의 증거로 보는 경향이 강한데, 보리스의 메시지는 정확히 그 반대다 — 그 축적물의 상당수는 이미 죽은 모델의 결함을 패치하던 잔해이고, 6개월마다 과감히 지울 수 있는 조직만 새 모델의 성능을 온전히 가져간다. 더 뼈아픈 건 “이론 잊고 경험적으로 접근하라”는 조언인데, 알고리즘 코테 중심으로 사람을 거르는 채용 시장이 정작 “모델을 관찰하고 빠르게 자기 전제를 버리는 사람”을 못 골라낼 가능성이 있다."
-    },
-    {
       "id": "jeff-dean",
-      "order": 3,
-      "slotMin": 10,
+      "order": 1,
+      "slotMin": 12,
       "title": "Jeff Dean: The 1% Rule for Building in AI",
       "titleKo": "제프 딘의 1% 규칙 — 뭘 만들지 고르는 법",
       "speaker": "Jeff Dean",
@@ -214,7 +101,7 @@
       "durationMin": 57,
       "accent": "blue",
       "oneLiner": "모델이 20% 하는 일 말고, 0~1%밖에 못 하는 일을 골라라.",
-      "whyFirst": "도구 얘기 다음에 자연스럽게 “그럼 뭘 만들지”로 넘어가는 자리. 그리고 뒤에 나올 웨이모의 “1%”와 정면으로 대칭된다.",
+      "whyFirst": "1번으로 뺀 이유가 명확합니다. 이 강연 나흘 뒤에 제프 딘이 27년 다닌 구글을 나와 Discovery Loop을 창업했어요. 그러니까 이건 사실상 창업 직전 인터뷰이고, 알고 보면 강연 내용 자체가 그 회사 소개입니다.",
       "summary": [
         "제목의 1% 규칙은 이것 — 창업 아이템을 고를 때 지금 프론티어 모델을 직접 테스트해 보고, 그 일을 0~1% 성공률로 완전히 실패하는 영역을 골라야 한다. 반대로 “20% 정도는 되는데 잘은 못 하는” 영역은 이미 능력의 싹이 보인다는 신호라, 데이터와 스케일이 늘면 6~12개월 안에 범용 모델이 삼켜버린다.",
         "2001년 “검색 인덱스가 전부 RAM에 들어간다”는 냅킨 계산의 2026년 버전은 추론 전용 하드웨어. 지연시간이 50배 빨라지면 무엇이 가능해지는지를 지금 상상해야 한다는 것.",
@@ -263,12 +150,17 @@
           "en": "If you think about our large-scale models today, they probably see a thousand times as much data as a human does by the age of 18. Yet the human by the age of 18 is better in a lot of things.",
           "ko": "지금 대규모 모델들은 사람이 18살까지 보는 데이터의 한 1000배를 봅니다. 그런데도 18살짜리 인간이 많은 면에서 더 낫거나 비슷해요.",
           "why": "스케일링을 만든 장본인이 스케일링의 비효율을 지적한다. 다음 아키텍처 혁신이 어디서 올지에 대한 힌트."
+        },
+        {
+          "en": "In this case they said, oh, it's unlikely to have significant impact. ... So it gets rejected every so often; that's fine. We put it on arXiv, people read it, people use it. It's all good.",
+          "ko": "그때 리뷰어가 이렇게 썼어요. “아, 이건 유의미한 임팩트가 없을 것 같다.” … 가끔 그렇게 리젝되는 거죠, 괜찮습니다. arXiv에 올렸고, 사람들이 읽었고, 사람들이 씁니다. 다 잘 됐어요.",
+          "why": "지금 업계 전체가 쓰는 기법이 “임팩트 없을 듯”으로 떨어졌다는 얘기. 리뷰 시스템 얘기로도, 버티는 얘기로도 확장 가능."
         }
       ],
       "bestQuoteEn": "So look for something where the model succeeds 0% or 1% of the time, not 20%.",
       "bestQuoteKo": "모델이 20% 성공하는 게 아니라, 0% 아니면 1% 성공하는 문제를 찾으세요.",
       "funParts": [
-        "2014년 힌튼·비냘스와 쓴 distillation(증류) 논문이 NeurIPS에서 리젝됐는데, 리뷰어 사유가 “임팩트가 크지 않을 것 같다”였다. 지금 업계 전체가 쓰는 기법이고 제미나이 Flash 모델도 여기서 나온다. 진행자가 “그래도 계속하라는 교훈이네요” 하니까 “Yeah, that's the lesson I would distill from that”이라고 받는다.",
+        "2014년 힌튼·비냘스와 쓴 distillation(증류) 논문이 NIPS 본 학회에서 리젝됐다. 딘이 무대에서 밝힌 리뷰 사유는 “유의미한 임팩트가 없을 것 같다”. 지금은 업계 전체가 쓰는 기법이고 제미나이 Flash가 이걸로 만들어진다. 진행자가 “그래도 계속하라는 교훈이네요” 하니까 딘이 “Yeah, that’s the lesson I would distill from that”이라고 받는다 — distill로 말장난.",
         "제프 딘이 목이 완전히 쉰 채로 등장한다. 첫 마디가 “I'm afraid I've lost my voice.” 한 시간짜리 스케일링 강연을 감기 걸린 목소리로 한다.",
         "“제프 딘처럼 최적화하는 법”이 사실 공개돼 있다. 산자이와 함께 쓴 30페이지짜리 Performance Hints 문서를 요약해서 모델에 넣으면 모델이 성능 이슈를 훨씬 잘 추론한다고.",
         "하루 20번 오류 나는 트랜지스터 사고실험 끝에 진행자가 “이거 뉴로모픽/뇌 얘기랑 라임이 맞는데요” 하자, 딘이 “맞다, 뇌 신호도 신뢰성이 낮고 중요한 건 여러 경로로 보낸다”고 받는다."
@@ -286,11 +178,115 @@
         "에이전트 성능을 올리는 가장 실용적인 레버는 모델 파라미터가 아니라 스킬 문서다. 사람이 하던 절차를 그대로 글로 옮기는 게 핵심.",
         "평가기를 빠르게 만드는 데 투자해라. 비싼 시뮬레이터를 신경망으로 근사해 30만 배 빠르게 만든 사례처럼, 루프의 병목은 대개 생성이 아니라 검증이다."
       ],
-      "koreaAngle": "한국 팀 입장에서 1% 규칙은 오히려 반가운 소식이다. 범용 모델을 직접 만드는 경쟁에는 못 들어가도, 한국어 기업 내부 문서·의료/제조/반도체 공정 데이터처럼 프론티어 모델이 아예 접근조차 못 하는 데이터 위에서는 여전히 0% 영역이 널려 있고, AlphaFold식 좁고 정확한 전문 모델은 적은 컴퓨트로도 만들 수 있다. 다만 “에너지가 단위”라는 관점은 반도체와 데이터센터 전력이 국가 산업인 한국에서 앱 레이어보다 훨씬 크게 걸린 판이라는 점도 같이 봐야 한다."
+      "koreaAngle": "한국 팀 입장에서 1% 규칙은 오히려 반가운 소식이다. 범용 모델을 직접 만드는 경쟁에는 못 들어가도, 한국어 기업 내부 문서·의료/제조/반도체 공정 데이터처럼 프론티어 모델이 아예 접근조차 못 하는 데이터 위에서는 여전히 0% 영역이 널려 있고, AlphaFold식 좁고 정확한 전문 모델은 적은 컴퓨트로도 만들 수 있다. 다만 “에너지가 단위”라는 관점은 반도체와 데이터센터 전력이 국가 산업인 한국에서 앱 레이어보다 훨씬 크게 걸린 판이라는 점도 같이 봐야 한다.",
+      "context": [
+        {
+          "badge": "이 강연 나흘 뒤",
+          "title": "제프 딘이 구글을 나왔습니다 — Discovery Loop 창업",
+          "body": [
+            "2026년 8월 5일, 제프 딘이 27년 다닌 구글을 떠나 Discovery Loop을 창업한다고 발표했습니다. 이 강연이 그 직전이니, 우리는 지금 “창업 직전의 구글 수석과학자”를 보고 있는 겁니다.",
+            "혼자 나간 게 아닙니다. 산자이 게마왓(MapReduce·Bigtable·Spanner를 딘과 페어프로그래밍으로 만든 그 사람), 오리올 비냘스(구글 딥마인드 리서치 VP, 제미나이 공동 리드), 쿽 레(구글 브레인 창립 멤버) — 넷이 같이 나갔습니다. 회사 형태는 공익법인(Public Benefit Corporation)입니다.",
+            "하려는 건 “실험 루프 전체의 자동화”입니다. 가설을 세우고 · 구현하고 · 돌리고 · 결과를 보고 · 다시 반복하는 과정을 사람이 순차적으로 하는 대신 수천 개를 병렬로 돌리겠다는 것. 먼저 ML 연구·엔지니어링 자동화로 시작해서 자기들이 첫 고객이 되고, 그다음 신약·의료정보·저가 태양광·식수·사이버보안 같은 공학 난제로 확장한다는 계획입니다.",
+            "그래서 이 강연을 다시 보면 완전히 다르게 읽힙니다. “측정 가능한 목표만 있으면 자동 실험 루프로 다 밀어붙일 수 있다”(AlphaEvolve·AlphaChip)는 대목, 비싼 시뮬레이터를 신경망으로 근사해 30만 배 빠른 평가기를 만든 이야기, “결국 남는 건 무엇을 시킬지 고르는 taste”라는 결론 — 전부 Discovery Loop의 사업계획서입니다. 자기가 차릴 회사를 강연에서 미리 설명하고 있었던 거죠. 이 관점 하나로 세션 전체가 다시 재미있어집니다.",
+            "투자는 Radical Ventures와 Khosla Ventures 공동 리드, 구글/알파벳이 창립 투자자이자 클라우드 파트너로 최소 1년치 컴퓨트를 대는 것으로 보도됐습니다. 금액과 밸류에이션은 공개되지 않았습니다."
+          ],
+          "note": "피치덱은 전체가 공개된 게 아닙니다. 딘이 X에 “VC들한테 보여준 덱에서 몇 장”이라며 슬라이드 이미지 서너 장을 올린 게 전부이고, 그게 “피치덱 공개”로 퍼졌습니다. 돌아다니는 “Discovery Loop 피치덱 PDF”가 있다면 재구성이거나 가짜입니다.",
+          "links": [
+            {
+              "label": "Discovery Loop 공식 사이트",
+              "url": "https://www.discoveryloop.com/",
+              "note": "팀 소개와 미션 원문"
+            },
+            {
+              "label": "제프 딘의 창업 발표 (X)",
+              "url": "https://x.com/JeffDean/status/2085034604172603724",
+              "note": "2026-08-05"
+            },
+            {
+              "label": "피치덱 슬라이드 몇 장 (X)",
+              "url": "https://x.com/JeffDean/status/2085036253263921218",
+              "note": "“배경과 우리가 만든 것들” — 이미지 2장"
+            },
+            {
+              "label": "피치덱 슬라이드 한 장 더 (X)",
+              "url": "https://x.com/JeffDean/status/2085044057387286583",
+              "note": "팀 출신 인물들이 적힌, 화제가 된 그 슬라이드"
+            },
+            {
+              "label": "TechCrunch 보도",
+              "url": "https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/",
+              "note": "네 명의 동반 퇴사와 투자자"
+            },
+            {
+              "label": "Radical Ventures 투자 노트",
+              "url": "https://radical.vc/our-investment-in-discovery-loop/",
+              "note": "공동 리드 투자사가 직접 쓴 글"
+            },
+            {
+              "label": "채용 페이지",
+              "url": "https://jobs.ashbyhq.com/Discovery-Loop",
+              "note": "지금 뽑고 있는 자리"
+            }
+          ]
+        },
+        {
+          "badge": "예습",
+          "title": "“알아야 하는 숫자들” — 2009년의 그 표",
+          "body": [
+            "제프 딘 하면 나오는 그 표입니다. 2009년 LADIS 키노트 “Designs, Lessons and Advice from Building Large Distributed Systems”에 나온 Numbers Everyone Should Know — L1 캐시 참조 0.5ns, 뮤텍스 락 25ns, 메인 메모리 100ns, 같은 데이터센터 안 왕복 500μs, 디스크 seek 10ms, 캘리포니아→네덜란드→캘리포니아 패킷 150ms.",
+            "이번 강연에서 “AI의 진짜 단위는 FLOPS가 아니라 에너지”라며 곱셈 한 번은 1피코줄인데 HBM에서 데이터 끌어오는 건 그 1000배라고 하는 대목이 있는데, 그게 정확히 17년 전 그 표의 2026년 버전입니다. 딘은 커리어 내내 같은 방식으로 생각해 온 거고, 방송에서 두 개를 나란히 놓으면 그림이 확 삽니다.",
+            "덤으로 재미있는 것 — 커뮤니티가 이어받은 gist 버전은 지금도 갱신되고 있어서, 2026년 기준 LLM 토큰 생성 지연이나 롱컨텍스트 prefill 같은 줄이 추가돼 있습니다."
+          ],
+          "links": [
+            {
+              "label": "원본 슬라이드 PDF (LADIS 2009)",
+              "url": "https://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf",
+              "note": "표는 “Numbers Everyone Should Know” 슬라이드에"
+            },
+            {
+              "label": "Latency Numbers Every Programmer Should Know (gist)",
+              "url": "https://gist.github.com/jboner/2841832",
+              "note": "커뮤니티 확장판. 2026년 LLM 지연 항목까지 갱신 중"
+            },
+            {
+              "label": "연도별 인터랙티브 버전",
+              "url": "https://colin-scott.github.io/personal_website/research/interactive_latency.html",
+              "note": "1990~2020 슬라이더로 숫자가 어떻게 변했는지"
+            },
+            {
+              "label": "스탠퍼드 CS295 버전 슬라이드",
+              "url": "https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf",
+              "note": "같은 내용의 다른 판본"
+            }
+          ]
+        },
+        {
+          "badge": "뒷이야기",
+          "title": "그 유명한 distillation 리젝 건",
+          "body": [
+            "강연에서 진행자가 “리젝 얘기 좀 해달라”고 꺼내는 대목이 있습니다. 힌튼·비냘스·딘이 쓴 “Distilling the Knowledge in a Neural Network”가 NIPS 2014 본 학회에서 떨어진 그 사건이죠.",
+            "딘이 무대에서 리뷰 사유를 직접 말합니다. “이 경우엔 리뷰어가 이렇게 썼어요. 아, 이건 유의미한 임팩트가 없을 것 같다.” 그러면서 프로그램 위원회를 탓하진 않는다고, 리뷰어가 대규모 AI 서비스를 운영해본 사람이 아니었을 뿐이라고 덧붙입니다.",
+            "결말은 아시는 대로입니다. arXiv에 올렸고, 업계 전체가 쓰는 기법이 됐고, 제미나이 Flash 모델이 바로 이 방식으로 만들어집니다. 논문은 본 학회에선 떨어졌지만 NIPS 2014 딥러닝 워크샵에는 붙었고, arXiv 코멘트 필드에 아직도 “NIPS 2014 Deep Learning Workshop”이라고 적혀 있는 게 그 흔적입니다.",
+            "그리고 이게 오늘 진짜 재미있는 지점인데 — 그 리젝된 논문의 공저자 두 명, 제프 딘과 오리올 비냘스가 12년 뒤인 지금 같이 회사를 차렸습니다. 비냘스는 2019년에 트위터로 이렇게 썼습니다. “채택 확률이 아니라 장기 임팩트를 최적화하세요.”"
+          ],
+          "links": [
+            {
+              "label": "논문 (arXiv 1503.02531)",
+              "url": "https://arxiv.org/abs/1503.02531",
+              "note": "코멘트 필드에 “NIPS 2014 Deep Learning Workshop”"
+            },
+            {
+              "label": "비냘스가 직접 밝힌 리젝 (X, 2019)",
+              "url": "https://x.com/OriolVinyalsML/status/1129420305246629899",
+              "note": "“optimize for long term impact, not probability of acceptance”"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "dmitri-dolgov",
-      "order": 4,
+      "order": 2,
       "slotMin": 10,
       "title": "Waymo Co-CEO Dmitri Dolgov: The Demo Is Only 1% Of The Work",
       "titleKo": "데모는 전체 일의 1%다 — 웨이모가 15년간 배운 것",
@@ -300,7 +296,7 @@
       "libraryUrl": "https://www.ycombinator.com/library/WV-waymo-co-ceo-dmitri-dolgov-the-demo-is-only-1-of-the-work",
       "accent": "red",
       "oneLiner": "데모는 18개월, 제품은 15년. 진짜 일은 데모가 끝난 다음부터 시작된다.",
-      "whyFirst": "바로 앞 제프 딘의 “1%”와 정반대 의미의 “1%”. 이 두 세션을 붙여서 트는 게 이 대본의 핵심 설계다.",
+      "whyFirst": "딘의 “0~1%짜리를 골라라” 바로 뒤에 “데모까지가 1%다”를 붙입니다. 같은 숫자를 정반대 뜻으로 쓰는 두 사람을 연달아 트는 게 이 대본의 핵심 설계.",
       "summary": [
         "웨이모는 2009년 시작해 1년 반 만에 자율주행 10만 마일, 100마일 코스 10개 무개입 주파를 달성했다. 엔지니어 열두 명, 컨브넷도 트랜스포머도 없던 시절에. 데모 기준으로는 2010년에 자율주행이 “풀린” 셈인데, 실제 서비스까지 10년이 더 걸렸고 주당 50만 건 규모로 키우는 데 5년이 또 걸렸다.",
         "이유는 “9의 사다리(ladder of nines)”. 90%나 99%까지는 쉽고, 그다음 9 하나를 더 붙일 때마다 노력이 10배씩 든다. 그리고 9를 더 붙이는 방법은 매번 다르다 — 앞의 두 개를 만든 방식을 더 오래 반복해도 여섯 개까지는 절대 못 간다.",
@@ -382,6 +378,170 @@
       "koreaAngle": "한국은 완성차, 배터리, 센서, 반도체가 다 있으면서도 자율주행 서비스는 규제 샌드박스 단계에 머물러 있는데, 이 강연은 병목이 기술 데모가 아니라 “9를 더 붙이는 지루한 15년”과 그걸 증명하는 평가·안전 프레임워크라고 말한다. 동시에 이 강연의 진짜 실용적 가치는 자율주행 회사가 아닌 팀에도 있다 — AI 에이전트를 만드는 한국 스타트업이 데모 이후의 롱테일, eval 우선주의, 시뮬레이터/크리틱 구조를 지금 도입하면 남들이 데모에 태우는 자원을 9에 쌓을 수 있다."
     },
     {
+      "id": "boris-cherny",
+      "order": 3,
+      "slotMin": 12,
+      "title": "Boris Cherny: Building Claude Code",
+      "titleKo": "시스템 프롬프트의 80%를 지운 사람",
+      "speaker": "Boris Cherny",
+      "role": "Creator of Claude Code, Anthropic (진행: Diana Hu, YC Group Partner)",
+      "youtubeId": "qyPCVqFUyDo",
+      "libraryUrl": "https://www.ycombinator.com/library/UN-boris-cherny-building-claude-code",
+      "durationMin": 36,
+      "accent": "green",
+      "oneLiner": "모델이 똑똑해질수록 우리가 쓴 코드와 프롬프트는 방해물이 된다.",
+      "whyFirst": "앞의 두 개가 “무엇을 만들까”였다면 여기서 실무로 내려옵니다. 청취자 대부분이 매일 쓰는 도구를 만든 사람.",
+      "summary": [
+        "Opus 5 출시 다음 날 무대에 올라, 새 모델이 나올 때마다 시스템 프롬프트를 통째로 지우고 ablation(한 줄씩 되돌리며 효과 측정)으로 다시 쌓는 개발 방식을 공개했다. 이번 릴리스에서 실제로 시스템 프롬프트의 80% 이상을 삭제했다.",
+        "Claude Code에는 툴 프롬프트까지 전부 제거한 상태로 돌리는 비공개 환경변수가 있고, 이걸 ablation 용도로 쓴다. 놀랍게도 프롬프트가 없을 때 모델이 오히려 “조금 더 똑똑하다”고 한다. 프롬프트는 모델을 위한 게 아니라 제품 사용성을 위한 것이라는 얘기.",
+        "핵심 개념은 unhobbling과 product overhang. 모델은 이미 할 수 있는데 제품이 그걸 못 하게 막고 있다는 것. Claude Code의 탄생 자체가 Sonnet 3.5를 unhobbling한 결과였다 — 당시 코딩 제품들이 한 줄 자동완성과 읽기 전용 챗에 머물 때, 스캐폴딩을 다 걷어내고 터미널을 통째로 줬다.",
+        "Bun 런타임을 Zig에서 Rust로 통째로 재작성한 사례가 압권. 프롬프트 하나 + 중간 steering만 주고 11일간 돌려서 10만 줄 넘는 JS 런타임을 다시 썼고, 그게 지금 프로덕션에서 Claude Code를 돌리고 있다.",
+        "Anthropic 내부에서는 Claude가 Claude Code를 스스로 유지보수한다. 하루 20~30개 routine이 코드베이스를 돌며 데드코드 삭제, 100% 롤아웃된 실험 정리, 테스트 추가/삭제, 그리고 “abstraction police”(중복 추상화 통합) 같은 일을 매일 PR로 올린다."
+      ],
+      "quotes": [
+        {
+          "en": "And a lot of the stuff in the system prompt was correcting for these behaviors that the model should have known, but it didn't. Now Opus V just does it. So yeah, we deleted 80% of the system prompt.",
+          "ko": "시스템 프롬프트에 있던 것들 상당수가, 원래 모델이 알아서 했어야 하는데 못 하던 걸 교정해주는 내용이었어요. 이제 Opus 5는 그냥 알아서 합니다. 그래서 시스템 프롬프트의 80%를 지웠습니다.",
+          "why": "우리가 쌓아온 프롬프트 자산이 실은 “모델의 결함 패치”였다는 얘기. 청취자들 CLAUDE.md 다시 보게 만드는 포인트."
+        },
+        {
+          "en": "What's interesting is that the model is actually a little bit more intelligent without these prompts. That's something that we've been finding.",
+          "ko": "재밌는 건, 프롬프트가 없을 때 모델이 실제로 조금 더 똑똑하다는 겁니다. 저희가 계속 발견하고 있는 사실이에요.",
+          "why": "프롬프트 엔지니어링 업계 전체에 대한 도발. 그럼 우리가 쓴 그 긴 프롬프트는 뭐였나로 넘어감."
+        },
+        {
+          "en": "For people that aren't building agentic products but you're using Claude Code, every six months delete your Claude.md. Delete your skills.",
+          "ko": "에이전트 제품을 만들지 않고 그냥 Claude Code를 쓰는 분들도, 6개월마다 CLAUDE.md를 지우세요. skills도 지우세요.",
+          "why": "청취자가 방송 끝나고 바로 실행할 수 있는 지시. “진짜 지울 수 있냐”로 두 진행자 의견 갈리기 좋음."
+        },
+        {
+          "en": "The way to think about it is almost like a living creature, like as something more organic. Every model generation it behaves differently. It has a slightly different personality. And you have to take the time to get to know it and then adjust the harness based on that.",
+          "ko": "이걸 생각하는 방식은 거의 살아있는 생물에 가깝습니다. 모델 세대마다 행동이 다르고, 성격이 조금씩 달라요. 시간을 들여서 그 모델을 알아가고, 거기 맞춰 harness를 조정해야 합니다.",
+          "why": "“소프트웨어 엔지니어링 → 경험과학”으로의 전환을 가장 잘 압축한 문장."
+        },
+        {
+          "en": "And he had the model rewrite it from Zig to Rust. It was one prompt, it was a dynamic workflow... And it ran for eleven days and it rewrote the entire code base.",
+          "ko": "그래서 모델한테 Zig에서 Rust로 재작성을 시켰어요. 프롬프트 하나, dynamic workflow였고요. 11일 동안 돌아서 코드베이스 전체를 다시 썼습니다.",
+          "why": "이 세션에서 가장 구체적인 “숫자가 있는” 사례. 11일 vs 사람 1년 이상 비교로 밈처럼 쓸 수 있음."
+        },
+        {
+          "en": "I think we called it abstraction police. And the idea is there are often in a big code base, there's kind of the same abstraction and it appears multiple times.",
+          "ko": "abstraction police라고 불렀던 것 같아요. 큰 코드베이스에는 사실상 같은 추상화가 여러 번 나타나는 경우가 많거든요.",
+          "why": "“AI가 매일 리팩터링 PR을 올린다”는 구체적 그림. 우리 팀에 바로 이식 가능한 아이디어."
+        },
+        {
+          "en": "Forget all the things that you learned about past models. Forget everything that you've learned about computer science theory in class. Look at the model, try to do a task, see where it struggles, and then based on that, adjust.",
+          "ko": "예전 모델에 대해 배운 걸 다 잊으세요. 수업에서 배운 컴퓨터과학 이론도 다 잊으세요. 모델을 보고, 작업을 시켜보고, 어디서 막히는지 보고, 거기 맞춰 조정하세요.",
+          "why": "“CS 배우지 말라는 거냐”로 논쟁 붙이기 좋음. 특히 한국의 CS 교육/코테 문화와 대비하면 재밌음."
+        }
+      ],
+      "bestQuoteEn": "What's interesting is that the model is actually a little bit more intelligent without these prompts.",
+      "bestQuoteKo": "재밌는 건, 프롬프트가 없을 때 모델이 실제로 조금 더 똑똑하다는 겁니다.",
+      "funParts": [
+        "프로그래밍 입문기가 최고다. TI-83 계산기에서 BASIC으로 코딩을 배웠는데, 이유가 “수학 시험에서 커닝해서 점수를 올리려고”였다. 그때 쓴 TI-83 프로그래밍 가이드가 아직 인터넷 어딘가에 남아있다고.",
+        "Anthropic 내부에서 최근 바이럴이었던 건 거창한 게 아니라 “Opus 5한테 OpenCV 주고 그림 그리게 하기”. 초상화, 동물, 풍경까지 그리는데 그리는 법을 학습시킨 적이 없다. 상업적 용도 전혀 없이 그냥 놀다가 발견했다고.",
+        "진행자가 객석에 “코드를 100% 에이전트로 쓰는 분 손 들어보세요” 하고 물었더니 꽤 많이 들었고, “50% 이상은요?”에는 오히려 손이 살짝 줄었다.",
+        "“2주 전에 돌린 그 태스크, 에이전트를 몇 개나 띄웠나요?”라는 질문에 “모르겠는데요, Claude한테 물어보고 알려드릴게요. 수천 개? 수만 개?”라고 답한다. 자기가 만든 시스템의 규모를 자기도 모른다.",
+        "마지막에 객석 전원에게 Max 20x 계정을 뿌린다."
+      ],
+      "discussion": [
+        "“프롬프트 없을 때 모델이 더 똑똑하다”가 사실이라면, 지난 2년간 쌓아온 프롬프트 엔지니어링 노하우는 자산인가 부채인가? 우리 팀 CLAUDE.md도 지금 지우면 더 나아질까?",
+        "6개월마다 harness를 갈아엎는 건 모델 회사라서 감당 가능한 사이클 아닌가? 모델 위에 올라탄 스타트업이 같은 속도로 delete를 반복하면 제품 안정성과 고객 신뢰는 어떻게 되나?",
+        "“evals도 1~3세대면 saturate되니 버려라”는 곧 측정 기준마저 계속 새로 만들어야 한다는 뜻이다. 그럼 우리 제품이 나아지고 있다는 걸 무엇으로 증명하나?",
+        "“코딩은 (거의) 풀렸다”고 하면서도 딥 시스템, 분산 시스템, 픽셀 단위 UI 검증은 아직 아니라고 한다. 그럼 지금 주니어 개발자는 정확히 뭘 배워야 살아남나?",
+        "개리 탄은 “컨텍스트를 쌓아 소유하라”고 하고 보리스는 “6개월마다 지워라”라고 한다. 둘 다 맞을 수 있나? 쌓아야 할 것과 지워야 할 것의 경계는 뭘까?"
+      ],
+      "takeaways": [
+        "새 모델이 나오면 먼저 지워라. 그다음 실제로 써보고, “같은 실수를 반복적으로” 관찰했을 때만 그 줄을 다시 넣어라. 미리 예측해서 규칙을 쓰지 마라 — 그 줄은 모든 요청마다 모델이 읽는 비용이다.",
+        "지시는 절차가 아니라 목표로 줘라. “1번 하고 2번 하고 3번 해”는 구형 모델용 패턴이다. 지금은 태스크 설명 + 가드레일 + 종료 조건만 주고 맡긴 뒤 나중에 확인하는 쪽이 결과가 좋다.",
+        "“예전에 안 됐던 그 문제”를 목록으로 관리하고, 새 모델이 나올 때마다 그대로 다시 던져봐라. 대형 재작업은 탄탄한 테스트 스위트가 있는지가 성패를 가른다 — 검증 가능해야 에이전트를 오래 풀어놓을 수 있다.",
+        "반복 유지보수는 사람이 하지 말고 routine으로 돌려라. 데드코드 제거, 롤아웃 끝난 플래그 정리, 테스트 보강, 중복 추상화 통합 — 각각 한 문장짜리 프롬프트로 매일 PR을 만들게 할 수 있다."
+      ],
+      "koreaAngle": "한국 개발 조직은 컨벤션 문서와 사내 가이드라인을 쌓아 올리는 걸 성숙도의 증거로 보는 경향이 강한데, 보리스의 메시지는 정확히 그 반대다 — 그 축적물의 상당수는 이미 죽은 모델의 결함을 패치하던 잔해이고, 6개월마다 과감히 지울 수 있는 조직만 새 모델의 성능을 온전히 가져간다. 더 뼈아픈 건 “이론 잊고 경험적으로 접근하라”는 조언인데, 알고리즘 코테 중심으로 사람을 거르는 채용 시장이 정작 “모델을 관찰하고 빠르게 자기 전제를 버리는 사람”을 못 골라낼 가능성이 있다."
+    },
+    {
+      "id": "garry-tan",
+      "order": 4,
+      "slotMin": 10,
+      "title": "Garry Tan: Own Your Intelligence",
+      "titleKo": "지능을 소유하라 — 개리 탄의 개인 AGI 선언",
+      "speaker": "Garry Tan",
+      "role": "President & CEO, Y Combinator",
+      "youtubeId": "eRrc1pUY5oU",
+      "libraryUrl": "https://www.ycombinator.com/library/WX-garry-tan-own-your-intelligence",
+      "accent": "orange",
+      "oneLiner": "AGI는 데이터센터에 오지 않는다, 내 폴더 안에 이미 와 있다.",
+      "whyFirst": "보리스가 “6개월마다 지워라”라고 한 직후에 “쌓아서 소유하라”가 나옵니다. 붙여 놔야 싸움이 됩니다.",
+      "summary": [
+        "핵심 공식은 이것. 지능 = 프론티어 모델(렌트, 커모디티) + 내 컨텍스트(소유, 유일무이) + 하네스. 모델은 빌려 쓰는 거고 값도 계속 싸지는데, 진짜 자산은 “내 컨텍스트”라는 것.",
+        "구독료 내는 챗봇은 탭 닫으면 리셋되고 회사가 방향 틀면 로보토미당하는 “내가 소유하지 않은 기업 AGI”다. 반면 개인 AGI는 내 인프라에서 돌고, 내가 소유한 메모리를 읽고, 내가 쓴 절차를 실행하며 매일 복리로 쌓인다.",
+        "소유의 대상은 둘. 하나는 라이브러리(25년치 이메일·회의·결정과 그 이유를 담은 마크다운 아카이브), 다른 하나는 스킬 파일(내가 일하는 방식을 영어 한 페이지로 뽑아낸 실행 가능한 인지). 본인은 22만 페이지짜리 GBrain을 운영한다.",
+        "실행법 5단계: ① 오늘 밤 하네스 깔고 에이전트 돌리기 ② 주말에 폴더 하나로 라이브러리 시작 ③ 제일 싫어하는 주간 업무로 첫 스킬 파일 쓰기 ④ 정기 잡으로 걸기 ⑤ 절대 일회성 작업 금지, 끝날 때마다 skillify.",
+        "90일 곡선: 1주차 장난감, 4주차 플라이휠, 12주차엔 남들이 빌려달라는 도구. 대부분 2주차에 그만둔다.",
+        "마지막은 정치적이다. 스킬 파일은 문서가 아니라 외부화된 내 인지라서, 내 레포에 있으면 이직할 때 따라오는 자산이고 회사 레포에 있으면 나는 빈손으로 나가고 회사는 내 판단력을 영원히 돌린다."
+      ],
+      "quotes": [
+        {
+          "en": "Everyone is watching the sky and the thing they're watching for is already in the room. It doesn't look like a God. It looks like infrastructure, a terminal window, a folder of markdown files, a job that finishes while you sleep.",
+          "ko": "다들 하늘만 쳐다보고 있는데, 기다리던 그건 이미 방 안에 들어와 있어요. 신처럼 안 생겼습니다. 인프라처럼 생겼죠. 터미널 창 하나, 마크다운 파일 폴더 하나, 자는 동안 끝나 있는 잡 하나.",
+          "why": "AGI를 “사건”이 아니라 “확산된 인프라”로 재정의하는 문장. 오프닝으로 최적."
+        },
+        {
+          "en": "The corporate AGI you don't own gets better only when the company ships something. Your personal AGI gets better every single day you use it. One of these is a product you consume. The other is an asset you build.",
+          "ko": "내가 소유하지 않은 기업 AGI는 그 회사가 뭔가 출시할 때만 좋아집니다. 내 개인 AGI는 쓰는 날마다 좋아져요. 하나는 소비하는 제품이고, 다른 하나는 쌓아 올리는 자산입니다.",
+          "why": "“Own Your Intelligence”가 정확히 무슨 뜻인지 한 방에 정리되는 대목."
+        },
+        {
+          "en": "There are 2X people and there are 100X people who are using the same Claude, same weights, same context window size, same API, but the leverage is not in the weights. It's in what context you give it.",
+          "ko": "똑같은 Claude, 똑같은 가중치, 똑같은 컨텍스트 윈도우, 똑같은 API를 쓰는데 어떤 사람은 2배가 되고 어떤 사람은 100배가 됩니다. 레버리지는 가중치에 있는 게 아니에요. 어떤 컨텍스트를 주느냐에 있습니다.",
+          "why": "같은 도구 쓰는데 왜 결과가 갈리냐는 질문에 대한 YC 수장의 답. 제일 논쟁 붙기 좋은 지점."
+        },
+        {
+          "en": "A brain nobody curates is a garbage dump with great search. Retrieval will surface a stale fact with total confidence. A bad skill file encodes a bad process forever.",
+          "ko": "아무도 관리 안 하는 브레인은 검색 잘 되는 쓰레기장일 뿐입니다. 검색은 낡은 사실을 아주 자신 있게 꺼내 옵니다. 나쁜 스킬 파일은 나쁜 프로세스를 영원히 박제하고요.",
+          "why": "강연 유일한 자기반박 구간. 컨텍스트 쌓기만 하면 된다는 순진한 해석을 본인이 먼저 막는다."
+        },
+        {
+          "en": "Markdown is actually code. If you can write clear instructions in English, you're a programmer. The compiler is a language model.",
+          "ko": "마크다운은 사실 코드입니다. 영어로 명확한 지시를 쓸 수 있으면 당신은 프로그래머예요. 컴파일러가 언어 모델인 거죠.",
+          "why": "예전에 이 말로 엄청 욕먹었다고 본인이 언급하는데, 지금은 더 맞다고 밀어붙인다. 개발자 청중 반응이 갈릴 문장."
+        },
+        {
+          "en": "Craftsmen owned their tools. That's what made them free. The factory broke that. The loom belonged to the mill. The knowledge workers assumed we were safe because our tools lived in our heads where nobody could confiscate them. Skill files end that.",
+          "ko": "장인들은 자기 연장을 소유했어요. 그래서 자유로웠죠. 공장이 그걸 깨뜨렸습니다. 베틀은 방직공장 소유였으니까요. 지식노동자들은 우리 연장은 머릿속에 있어서 아무도 압수 못 한다고 생각했어요. 스킬 파일이 그 시대를 끝냅니다.",
+          "why": "지식노동자의 “머릿속은 안전지대”라는 전제가 처음으로 깨진다는 역사적 비유."
+        },
+        {
+          "en": "When something that powerful stays private, you get a priesthood. When it gets given away, you get a renaissance.",
+          "ko": "그 정도로 강력한 게 사유화되면 사제 계급이 생깁니다. 그게 공짜로 풀리면 르네상스가 오고요.",
+          "why": "왜 전부 오픈소스로 풀었냐는 질문에 대한 답. 행사 전체의 메시지를 한 줄로 압축."
+        }
+      ],
+      "bestQuoteEn": "I believe skill files are yours. Own your skills because if you don't, your job becomes a skill file.",
+      "bestQuoteKo": "스킬 파일은 여러분 겁니다. 여러분의 스킬을 소유하세요. 안 그러면 여러분의 직업 자체가 스킬 파일이 되어버리니까요.",
+      "funParts": [
+        "강연 오프닝을 통째로 17세기 철학자 스피노자 이야기로 시작한다. 1656년 파문, 입 다물면 연 1000길더 준다는 제안 거절, 칼에 찔릴 뻔해 찢어진 망토를 평생 안 꿰맨 이야기까지. 그런데 반전 — 이 오프닝 자체를 5일 전에 에이전트가 만들었다. 전기 3권 1500페이지를 밤새 읽혀서 “가장 이야기하기 좋은 순간 10개를 딜리버리 노트까지 붙여 랭킹”으로 뽑아냈다고 무대에서 공개한다.",
+        "“여러분이 지금 그 안에 앉아 계신다”며 컨퍼런스 자체를 증거로 든다. 6,000명 좌석 배치와 개인별 브레이크아웃 일정을 마크다운이 SQL을 호출하는 구조로 만들었다고.",
+        "악플을 “채택 곡선”으로 해석한다. “에이전트가 내 코드 대부분을 짠다고 말하면 점심때쯤 조롱이 도착한다. 그런데 제일 시끄럽게 조롱하는 사람들이 실제로 뭘 배포하나 보면 죄다 에이전트다. 먼저 인용 트윗을 하고, 그다음엔 git clone을 한다.”",
+        "YC 재무팀 직원이 터미널 한 번 안 열어본 상태로 엑셀 워크북 약 100개를 앱 하나로 합쳤다는 사례. “그분은 프로그래머가 아닙니다. 이제 에이전트 매니저죠.”",
+        "가장 뭉클한 마무리. 희귀 뇌전증을 앓는 아들을 둔 친구가 랩도 연구비도 없이 마크다운 8만 개짜리 레포를 만들었다. 전문의 진료, 논문, 발작 로그, 약물 상호작용을 전부 인덱싱해서 새 의사가 아이디어를 내면 몇 분 안에 이미 시도된 건지 알 수 있게. “아빠 한 명, 노트북 한 대, 그리고 도서관 하나.”"
+      ],
+      "discussion": [
+        "“모델은 렌트, 컨텍스트는 소유”라는 공식이 진짜로 성립할까? 모델이 계속 좋아지면 개인 라이브러리 없이도 웬만한 건 다 되는 거 아닌가?",
+        "22만 개 마크다운 페이지. 이거 실제로 유지 가능한 규모인가? 본인도 “큐레이션 안 된 브레인은 검색 잘 되는 쓰레기장”이라고 인정했는데, 그럼 사서를 유지하는 비용이 절약분보다 작다는 보장은 어디에?",
+        "400배라는 숫자를 어떻게 받아들여야 하나? 본인이 먼저 “가장 병적인 장황함 페널티를 먹여도 최소 8배”라고 방어선을 쳤는데, 코드 라인 수가 아직도 유효한 생산성 지표인가?",
+        "스킬 파일 소유권 문제는 한국 고용 환경에서 어떻게 되나? 업무 산출물 귀속, 경업금지, 개인 레포 반출 금지인 회사에서 “내 스킬은 내 것”을 어떻게 실천하지?",
+        "“마크다운이 코드고, 영어로 명확히 쓰면 프로그래머”라는 주장 — 개발자 직군에 좋은 소식인가 나쁜 소식인가? 그리고 한국어로 스킬 파일을 쓰는 건 영어 대비 얼마나 불리한가?"
+      ],
+      "takeaways": [
+        "오늘 밤 안에 폴더 하나 만들고 시작하자. 22만 페이지도 시작은 “같이 일하는 사람들에 대한 마크다운 몇 개”였다. “창고부터 짓는 사람은 없습니다. 먼저 선반 하나를 만드는 거죠.”",
+        "일회성 작업을 하지 마라. 작업이 끝날 때마다 방금 한 걸 스킬로 만들어달라고(skillify) 시켜서 재사용 가능한 마크다운으로 남길 것. “같은 걸 두 번 부탁해야 한다면, 그건 실패한 겁니다.”",
+        "첫 스킬 파일은 “매주 하는데 제일 하기 싫은 일”로 고른다. 판별 기준은 “똑똑한 인턴이 따라 할 수 있으면 에이전트도 실행할 수 있다”.",
+        "라텐트와 결정론을 분리하라. 취향·판단·애매한 요청 해석은 모델에게, 산수·SQL·6,000명 좌석 배치는 반드시 코드와 DB로. 이걸 헷갈리는 게 에이전트 실패의 거의 전부다."
+      ],
+      "koreaAngle": "사내 보안정책상 개인 레포 반출이 사실상 불가능하고 업무 산출물 귀속이 회사로 가는 환경에서 “내 스킬은 내 레포에”는 선언으로 끝나기 쉽다. 현실적인 선 긋기는 회사 데이터는 두고 오되 판단의 절차는 문서로 들고 나오는 것. 반대로 희망적인 각도도 있다 — 무기가 인력 규모가 아니라 축적된 컨텍스트라면, 그건 인원 적은 한국 스타트업과 1인 개발자에게 오히려 유리한 물리 법칙이다."
+    },
+    {
       "id": "alexandr-wang",
       "order": 5,
       "slotMin": 7,
@@ -394,7 +554,7 @@
       "durationMin": 32,
       "accent": "green",
       "oneLiner": "스케일링 논쟁은 그만, 지금은 다윗이 아니라 골리앗 대 골리앗이다.",
-      "whyFirst": "웨이모가 “현실은 15년”이라고 한 직후에 “모델은 이미 충분하고 병목은 확산”이 나오면 논쟁이 붙는다.",
+      "whyFirst": "쌓기냐 지우기냐 논쟁을 “애초에 모델이 문제냐, 확산이 문제냐”로 한 단계 넓히는 자리.",
       "summary": [
         "Scale AI를 19살에 창업한 알렉산더 왕이 이제 Meta Superintelligence Labs를 이끌면서 YC 무대에 돌아왔다. MIT에서 모델을 돌려보다 “컴퓨트와 코드는 버튼 하나로 구하는데 데이터만 못 구한다”는 단순한 관찰에서 회사가 시작됐다.",
         "창업 초기 데이터는 전혀 섹시하지 않은 분야였고, 매출이 좋은데도 VC들은 계속 회의적이었다. 왕은 “모델을 한 번도 학습시켜본 적 없는 투자자들이라 이해를 못 한 것”이라고 정리하는데, 그 투자자들이 지금은 데이터가 AI의 핵심이라는 칼럼을 쓰고 있다.",
@@ -569,7 +729,7 @@
       "durationMin": 31,
       "accent": "blue",
       "oneLiner": "실패가 아니라 “성공한 다음 30년”을 기준으로 회사를 고르라는 이야기.",
-      "whyFirst": "샘 알트만의 “지금 당장 시작해라” 바로 뒤에 “근데 성공하면 30년이야”가 오면 톤이 확 잡힌다.",
+      "whyFirst": "알트만의 “지금 당장 시작해라” 바로 뒤에 “근데 성공하면 30년이야”가 오면 톤이 잡힙니다.",
       "summary": [
         "스트라이프는 2009년 스타트업 스쿨 끝나고 초밥 먹고 걸어오다 결정됐다. 그때 형제가 한 말이 “뭐, 어차피 그렇게 어렵지도 않을 텐데”. 실제로는 런칭까지 2년 걸렸다.",
         "제목의 “성공하면?”은 이런 뜻이다. 다들 실패 리스크만 계산하는데, 정작 물어야 할 건 성공했을 때 그 회사를 10년, 17년, 30년 하고 싶냐는 것.",
@@ -658,7 +818,7 @@
       "durationMin": 50,
       "accent": "yellow",
       "oneLiner": "일단 만들어서 보여주면, 법도 바뀐다.",
-      "whyFirst": "AI 얘기만 계속하다가 여기서 공기를 완전히 바꾼다. “규제 때문에 안 된다”는 한국 창업판의 국룰 변명을 정면으로 때리는 세션.",
+      "whyFirst": "AI 얘기만 내리 했으니 여기서 공기를 완전히 바꿉니다. 하드웨어와 규제 싸움, 그리고 이 행사에서 제일 거친 발언들.",
       "summary": [
         "1969년에 인류는 달에 갔고 콩코드를 날렸는데, 반세기 뒤엔 둘 다 못 한다는 문제 제기로 시작한다. 보잉 707과 787을 나란히 놓고 “차이를 못 찾겠죠”라고 말하는 장면이 출발점이다.",
         "블레이크 숄은 소프트웨어 엔지니어 출신(초기 아마존, 앱 회사 매각)에 항공 지식은 세스나 조종 면허가 전부였다. 2014년 골판지와 합판, 오피스디포 의자로 만든 목업으로 시작해 10여 년 만에 XB-1로 민간 최초 음속 돌파에 성공했다.",
@@ -747,7 +907,7 @@
       "durationMin": 49,
       "accent": "green",
       "oneLiner": "창업 기술이 틀렸음을 인정하고 교과서 세 권으로 다시 배운 회사.",
-      "whyFirst": "클로징으로 최적. 마지막 한마디가 “오늘을 오늘 이겨내면 된다”라서 방송을 감정적으로 닫을 수 있다.",
+      "whyFirst": "클로징. 마지막 한마디가 “오늘을 오늘 이겨내면 된다”라서 방송을 감정적으로 닫을 수 있습니다.",
       "summary": [
         "젠슨 황은 1993년 창업 당시 선택한 3D 그래픽 알고리즘이 “완전히 틀렸다”고 인정한다. 1995년에야 그걸 깨달았고, 심지어 회사 안의 누구도 제대로 된 방법을 몰랐다.",
         "주머니에 있던 몇백 달러로 프라이스(Fry's)에서 OpenGL 교과서 세 권을 사서 엔지니어들에게 건넨 게 전환점이었다. “돈 모아서 창업하고, 교과서를 샀다”는 게 엔비디아의 실제 시작이다.",
@@ -829,68 +989,131 @@
     {
       "title": "“1%”가 정반대 의미로 두 번 나온다",
       "body": "제프 딘은 “모델이 0~1%밖에 못 하는 문제를 골라라”라고 하고(기회의 1%), 드미트리 돌고프는 “데모는 전체 일의 1%”라고 한다(현실의 1%). 두 개를 붙이면 이번 행사의 창업 공식이 완성된다 — 모델이 0~1%로 실패하는 영역을 고르고, 거기서 데모를 만들고, 그 데모가 다시 전체의 1%임을 각오하는 것.",
-      "who": ["제프 딘", "드미트리 돌고프"]
+      "who": [
+        "제프 딘",
+        "드미트리 돌고프"
+      ]
     },
     {
       "title": "eval이 해자다 — 네 명이 각자 다른 길로 같은 결론에 도착",
       "body": "돌고프는 “기술보다 eval을 먼저 만들라”, 알렉산더 왕은 “에이전트 떼를 이끄는 건 올바른 지표”, 제프 딘은 “평가기를 30만 배 빠르게 만들었더니 과학의 속도가 바뀌었다”, 보리스 체르니는 “evals는 1~3세대면 saturate되니 계속 새로 만들어라”. 모델이 커모디티가 되는 세상에서 남는 자산은 “무엇이 좋은 것인지 정의한 체계”라는 얘기.",
-      "who": ["돌고프", "알렉산더 왕", "제프 딘", "보리스 체르니"]
+      "who": [
+        "돌고프",
+        "알렉산더 왕",
+        "제프 딘",
+        "보리스 체르니"
+      ]
     },
     {
       "title": "결론이 전부 마크다운과 크론잡이다",
       "body": "개리 탄의 스킬 파일, 알렉산더 왕의 “결국 스킬 파일, 마크다운, 크론잡”, 보리스의 하루 20~30개 routine, 제프 딘이 산자이와 쓴 성능 최적화 스킬 문서. 슈퍼인텔리전스를 얘기하던 사람들이 실무 얘기로 내려오면 하나같이 같은 물건에 도달한다. 왕의 표현이 정확하다 — “파고들면 다 이렇게 시시하다는 게 늘 웃기죠.”",
-      "who": ["개리 탄", "알렉산더 왕", "보리스 체르니", "제프 딘"]
+      "who": [
+        "개리 탄",
+        "알렉산더 왕",
+        "보리스 체르니",
+        "제프 딘"
+      ]
     },
     {
       "title": "지우는 사람이 이긴다",
       "body": "보리스는 시스템 프롬프트의 80%를 지웠고 6개월마다 CLAUDE.md를 지우라고 한다. 젠슨은 창업 기술이 틀렸다고 공개 선언하고 교과서를 샀다. 블레이크는 “전문가가 되는 순간 과거에 절여진 사람이 된다”고 하고, 콜리슨은 린 스타트업을 “자본이 없던 시절의 방법론”이라고 재평가한다. 축적이 아니라 폐기 능력이 경쟁력이라는 말.",
-      "who": ["보리스 체르니", "젠슨 황", "블레이크 숄", "패트릭 콜리슨"]
+      "who": [
+        "보리스 체르니",
+        "젠슨 황",
+        "블레이크 숄",
+        "패트릭 콜리슨"
+      ]
     },
     {
       "title": "모델은 렌트다 — 그럼 소유하는 건 뭔가",
       "body": "개리 탄은 “내 컨텍스트”, 돌고프는 “수억 마일의 운행 기록과 검증된 증명”, 제프 딘은 “범용 모델이 접근할 수 없는 데이터”, 알렉산더 왕은 “각 산업에 심는 에이전트 루프”라고 답한다. 넷 다 모델 가중치가 아니라 모델 바깥에 있다는 점에서 같다.",
-      "who": ["개리 탄", "돌고프", "제프 딘", "알렉산더 왕"]
+      "who": [
+        "개리 탄",
+        "돌고프",
+        "제프 딘",
+        "알렉산더 왕"
+      ]
     },
     {
       "title": "경력의 가치는 떨어지고, 시스템 사고의 가치는 오른다",
       "body": "샘 알트만은 “경력에 불리하게, 도구 숙련도에 유리하게”, 블레이크 숄은 “하드웨어는 경력이 이긴다는 건 큰 회사 늙은 사람들의 거짓말”이라고 한다. 그런데 다들 남는 것으로는 같은 걸 지목한다 — 젠슨의 시스템 사고, 왕의 systems thinking, 딘의 taste, 콜리슨의 인지적 L1 캐시.",
-      "who": ["샘 알트만", "블레이크 숄", "젠슨 황", "알렉산더 왕", "제프 딘"]
+      "who": [
+        "샘 알트만",
+        "블레이크 숄",
+        "젠슨 황",
+        "알렉산더 왕",
+        "제프 딘"
+      ]
     },
     {
       "title": "제도는 고정값이 아니다",
       "body": "블레이크 숄은 55년 된 금지법을 115일 만에 뒤집었고, 샘 알트만은 “AI 안전 과잉 반응”을 10년 뒤 디스토피아 후보로 꼽고, 개리 탄은 “세상의 모든 제도는 여러분보다 딱히 똑똑하지도 않은 사람들이 지어낸 것”이라고 마무리한다. 규제를 상수로 두느냐 변수로 두느냐가 이 행사의 숨은 전제다.",
-      "who": ["블레이크 숄", "샘 알트만", "개리 탄"]
+      "who": [
+        "블레이크 숄",
+        "샘 알트만",
+        "개리 탄"
+      ]
     }
   ],
   "tensions": [
     {
       "topic": "쌓을 것인가, 지울 것인가",
-      "a": { "who": "개리 탄", "claim": "컨텍스트를 소유하고 매일 복리로 쌓아라. 22만 페이지." },
-      "b": { "who": "보리스 체르니", "claim": "6개월마다 CLAUDE.md와 skills를 지워라. 프롬프트 없을 때 모델이 더 똑똑하다." },
+      "a": {
+        "who": "개리 탄",
+        "claim": "컨텍스트를 소유하고 매일 복리로 쌓아라. 22만 페이지."
+      },
+      "b": {
+        "who": "보리스 체르니",
+        "claim": "6개월마다 CLAUDE.md와 skills를 지워라. 프롬프트 없을 때 모델이 더 똑똑하다."
+      },
       "ask": "쌓아야 할 것(내 결정과 그 이유)과 지워야 할 것(모델 결함 패치)의 경계는 어디인가?"
     },
     {
       "topic": "머리에 넣어둘 것인가, 잊을 것인가",
-      "a": { "who": "패트릭 콜리슨", "claim": "인지적 L1 캐시에 있는 것이 압도적으로 빠르다. 계속 공부해라." },
-      "b": { "who": "보리스 체르니", "claim": "수업에서 배운 컴퓨터과학 이론도 다 잊어라. 모델을 관찰해라." },
+      "a": {
+        "who": "패트릭 콜리슨",
+        "claim": "인지적 L1 캐시에 있는 것이 압도적으로 빠르다. 계속 공부해라."
+      },
+      "b": {
+        "who": "보리스 체르니",
+        "claim": "수업에서 배운 컴퓨터과학 이론도 다 잊어라. 모델을 관찰해라."
+      },
       "ask": "서로 다른 층위의 얘기인가, 아니면 진짜로 반대되는 조언인가?"
     },
     {
       "topic": "지금 시작하면 되는가, 15년을 각오해야 하는가",
-      "a": { "who": "샘 알트만", "claim": "지금이 창업하기 제일 좋은 때. 3개월짜리를 17분에 만든다." },
-      "b": { "who": "드미트리 돌고프", "claim": "데모는 18개월, 제품은 15년. 데모는 전체의 1%." },
+      "a": {
+        "who": "샘 알트만",
+        "claim": "지금이 창업하기 제일 좋은 때. 3개월짜리를 17분에 만든다."
+      },
+      "b": {
+        "who": "드미트리 돌고프",
+        "claim": "데모는 18개월, 제품은 15년. 데모는 전체의 1%."
+      },
       "ask": "소프트웨어는 실수 비용이 낮아서 다른 곡선을 타는가, 아니면 에이전트 제품도 같은 9의 사다리를 오르게 되는가?"
     },
     {
       "topic": "일자리는 늘어나는가, 스킬 파일이 되는가",
-      "a": { "who": "젠슨 황", "claim": "AI가 일자리를 없앤다는 서사는 거꾸로다. AI는 태스크를 없앤다." },
-      "b": { "who": "개리 탄", "claim": "스킬을 소유하지 않으면 당신의 직업 자체가 스킬 파일이 된다." },
+      "a": {
+        "who": "젠슨 황",
+        "claim": "AI가 일자리를 없앤다는 서사는 거꾸로다. AI는 태스크를 없앤다."
+      },
+      "b": {
+        "who": "개리 탄",
+        "claim": "스킬을 소유하지 않으면 당신의 직업 자체가 스킬 파일이 된다."
+      },
       "ask": "둘 다 맞을 수 있다 — 총량은 늘지만 소유권은 이동한다면, 개인은 무엇을 해야 하나?"
     },
     {
       "topic": "모델을 기다릴 것인가, 이미 충분한가",
-      "a": { "who": "알렉산더 왕", "claim": "병목은 모델이 아니라 확산이다. 오늘 멈춰도 수십 년 거리가 있다." },
-      "b": { "who": "제프 딘", "claim": "모델이 20% 하는 걸 고르면 6~12개월 안에 삼켜진다. 모델은 계속 온다." },
+      "a": {
+        "who": "알렉산더 왕",
+        "claim": "병목은 모델이 아니라 확산이다. 오늘 멈춰도 수십 년 거리가 있다."
+      },
+      "b": {
+        "who": "제프 딘",
+        "claim": "모델이 20% 하는 걸 고르면 6~12개월 안에 삼켜진다. 모델은 계속 온다."
+      },
       "ask": "“모델 발전을 전제하지 마라”와 “모델 발전을 전제하라”는 각각 언제 맞는 조언인가?"
     }
   ],
