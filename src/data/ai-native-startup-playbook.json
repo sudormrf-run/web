@@ -1,0 +1,443 @@
+{
+  "event": {
+    "name": "AI 네이티브 스타트업 플레이북",
+    "venue": "2026년 8월",
+    "host": "YC Root Access · a16z",
+    "talkCount": 2,
+    "sourceUrl": "https://www.youtube.com/watch?v=Z3JyAqh4ixg",
+    "sourceLabel": "YC Root Access · a16z — 원본 영상 2편",
+    "heroImage": "/assets/articles/ai-native-startup-playbook/10-burn-tokens-not-headcount.jpg",
+    "heroImageCredit": "Tom Blomfield, Startup School Paris 발표 슬라이드 (Y Combinator 공식 채널)",
+    "intro": [
+      "이틀 간격으로 공개된 두 영상이 있다. YC의 Tom Blomfield가 파리 Startup School에서 한 발표(8/14)와, a16z가 올린 Garry Tan 인터뷰(8/12). 따로 찍었는데 같은 얘기를 한다 — 회사를 사람의 위계가 아니라, 스스로 좋아지는 AI 루프의 집합으로 지어라.",
+      "Blomfield 발표가 이론편이다. 로마 군단부터 잭 도시의 트윗까지 끌고 와서 '조직이 왜 지금 모양인가'를 해체하고, YC 내부에서 실제로 돌아가는 루프들을 보여준다. Garry Tan 인터뷰는 실전편이다. 같은 그림을 skillify, 토큰 맥싱, 마크다운 직원이라는 창업자의 언어로 바꾼다. 둘 다 YC 오피스아워 녹음이 소재로 나온다는 것도 재밌는 연결고리다.",
+      "이 문서는 두 영상의 전체 트랜스크립트를 읽고, 팟캐스트에서 화면에 띄워 놓고 진행하기 좋게 재편집한 진행 대본이다. 주제는 하나 — 2026년의 스타트업 플레이북."
+    ],
+    "hook": {
+      "badge": "오늘의 훅",
+      "title": "\"마크다운 파일이 곧 직원이다\"",
+      "body": "이 말을 한 사람은 Garry Tan — YC 사장 겸 CEO, Posterous 창업자, Coinbase·Instacart 초기 투자자, 그리고 Peter Thiel의 수표를 거절하고 초기 Palantir를 놓친 걸 스스로 '20~40억 달러짜리 실수'라 부르는 사람이다. 그가 최근에 한 일이 이 에피소드의 훅이다. YC가 오피스아워를 전부 녹음하기 시작하자, 몇 달치 녹음에서 파트너들이 창업자의 야망을 끌어올릴 때 쓰는 말의 패턴을 뽑아 '완벽한 조언 스크립트' 마크다운을 만들었다. 그리고 Claude에게 '이 프롬프트의 강도를 90% 줄여라'라고 시킨 뒤 오픈소스로 공개했다. 100%짜리는 YC에 와야 받는다 — \"크라운 주얼을 공짜로 줄 수는 없죠. 첫 모금은 무료입니다.\""
+    }
+  },
+  "runOfShow": {
+    "openingScript": [
+      "오늘의 첫 문장입니다. \"A markdown file is an employee.\" — 마크다운 파일이 곧 직원이다. 매번 완벽하게, 원하는 만큼 반복해서 일하는 직원.",
+      "이 말을 한 Garry Tan 소개부터 하고 시작합니다. YC CEO인데 지금도 직접 코딩하는 사람이고, Palantir 초기 합류를 거절한 걸 본인이 '20~40억 달러짜리 실수'라고 부릅니다.",
+      "그리고 이 사람이 최근에 한 일 — YC 오피스아워를 전부 녹음해서, 파트너들의 조언 패턴을 마크다운 프롬프트로 만들고, 강도를 90% 줄여서 오픈소스로 내놨습니다. 100%는 YC 와야 줍니다.",
+      "여기에 제가 최근 다른 팟캐스트에 나갔다가 들은 사례를 하나 붙입니다. 퇴사 예정자의 업무 trajectory를 모아뒀다가, 에이전트가 그 사람 일을 그대로 이어받게 만든다는 얘기. 사람은 나가도 일하는 방식은 회사에 남습니다.",
+      "이게 오늘 주제입니다 — 2026년의 스타트업 플레이북. 회사를 루프로 짓는 법.",
+      "순서는 이론편(Tom Blomfield 발표) 먼저, 실전편(Garry Tan 인터뷰) 다음입니다. 마지막에 두 사람이 정면으로 부딪히는 지점을 모아놨습니다."
+    ],
+    "totalMinutes": 62,
+    "segments": [
+      {
+        "slot": "00:00",
+        "min": 6,
+        "label": "오프닝 — 마크다운 직원 훅, Garry Tan 소개, 오피스아워 → 프롬프트"
+      },
+      {
+        "slot": "00:06",
+        "min": 4,
+        "label": "호스트 사례 — 퇴사자 trajectory를 에이전트에게 물려주기"
+      },
+      {
+        "slot": "00:10",
+        "min": 18,
+        "label": "1. Tom Blomfield — 위계에서 루프로 (이론편)"
+      },
+      {
+        "slot": "00:28",
+        "min": 20,
+        "label": "2. Garry Tan — skillify, 토큰 맥싱, 오늘 2028년을 사는 법 (실전편)"
+      },
+      {
+        "slot": "00:48",
+        "min": 8,
+        "label": "관통 주제 — 두 영상이 겹치는 다섯 지점"
+      },
+      {
+        "slot": "00:56",
+        "min": 6,
+        "label": "대립 구도와 클로징 — \"오늘 시작한다면 이 모양으로 지을 것인가\""
+      }
+    ]
+  },
+  "sessions": [
+    {
+      "id": "tom-blomfield",
+      "order": 1,
+      "slotMin": 18,
+      "title": "Building And Structuring An AI Native Company",
+      "titleKo": "톰 블롬필드 — 위계에서 루프로",
+      "speaker": "Tom Blomfield",
+      "role": "YC General Partner · Monzo 창업자",
+      "youtubeId": "Z3JyAqh4ixg",
+      "durationMin": 21,
+      "accent": "orange",
+      "oneLiner": "AI를 회사 옆에 볼트로 붙이지 말고, 회사 자체를 자기개선 루프의 집합으로 지어라.",
+      "whyFirst": "이론편이라 먼저 틉니다. 21분짜리 슬라이드 발표라 화면 자료가 좋고, 에피소드 전체의 뼈대가 되는 프레임(위계 → 루프 → 컴퍼니 브레인)이 여기서 나옵니다. 본인이 4월에 한 발표를 업데이트한 버전인데, 그 사이에 YC 내부 사례가 더 붙었습니다.",
+      "links": [
+        {
+          "label": "유튜브에서 보기 ↗",
+          "url": "https://www.youtube.com/watch?v=Z3JyAqh4ixg"
+        },
+        {
+          "label": "4월 원형 버전 영상 노트 ↗",
+          "url": "/archive/yc-ai-native-company"
+        }
+      ],
+      "summary": [
+        "출발점은 로마 군단이다. 8명이 천막을 나눠 쓰는 분대에서 백인대, 코호트, 군단까지 — 정보를 사람 손으로 위아래 전달하기 위한 구조. 2천 년 뒤 빅테크의 조직도도 본질이 같고, 잭 도시의 트윗이 그 가정을 정면으로 겨눈다. AI가 있으면 인간이 정보 라우팅의 병목일 필요가 없다.",
+        "지금 대부분 회사의 AI는 Q&A 봇과 코파일럿이다. 사람이 게이트라서 에이전트가 새벽 3시에 멈추면 아침까지 대기한다. 목표를 '생산성 20% 향상'이 아니라 '능력'으로 다시 정의해야 한다 — 한 사람이 옛 조직 전체보다 강해지고, 회사가 통째로 쿼리 가능해지는 것.",
+        "AI 루프의 5층 구조: Sensors/Data → Policy → Tools → Quality Gates → Learning. 품질 게이트는 사람이 아니라 두 번째 적대적 LLM이어야 한다(코드리뷰 모델, 프롬프트 인젝션 감시). 루프 전체가 사람 없이 돌면, 자는 동안 제품이 스스로 좋아진다.",
+        "YC의 실제 사례가 압권이다. 자연어→SQL 쿼리 에이전트 위에 밤마다 도는 2차 에이전트를 얹었다. 낮 동안의 쿼리 성공/실패를 훑고 밤사이 PR을 올려서, 어제 안 되던 쿼리가 오늘은 된다. 본인 표현으로 'head explosion moment'.",
+        "같은 패턴의 반복: 3~4천 시간의 오피스아워 녹음에서 실제 조언을 채굴해 500페이지 유저 매뉴얼이 스스로 다시 쓰이게 했고(16명 파트너의 지혜를 완벽 리콜하는 초인적 조언), 수백 개 회사가 같은 투자자를 만나니 특정 파트너가 뭘 물을지 예측해 모의 투자 미팅까지 돌린다.",
+        "결론은 컴퍼니 브레인. 기존 회사는 지능이 사람들 사이에 퍼져 있고 위계가 그걸 라우팅하지만, 새 모델에서는 지능이 시스템에 산다. 사람은 가장자리로 — 직관, 신뢰, 방 안의 공기, 틀리면 회사가 죽는 결정. 실천 수칙은 세 개: 토큰을 태우고 사람을 늘리지 마라, 중간관리를 없애라(IC와 DRI만), 조직을 AI에 legible하게 만들어라."
+      ],
+      "quotes": [
+        {
+          "en": "There's an underlying assumption that organizations have to be hierarchically organized with humans as a coordinating mechanism.",
+          "ko": "조직은 인간을 조율 메커니즘으로 삼아 위계적으로 구성되어야 한다는 암묵적 가정이 있다.",
+          "why": "발표 전체를 촉발한 잭 도시의 문장. Blomfield는 'AI가 이 가정을 부순다'고 바로 받는다."
+        },
+        {
+          "en": "What happens if we reimagine the company as a series of AI loops?",
+          "ko": "회사를 AI 루프의 연속으로 다시 상상하면 무슨 일이 일어날까?",
+          "why": "이 세션의 핵심 질문. '볼트로 붙이는 AI'와 '루프로 짓는 회사'를 가르는 한 줄."
+        },
+        {
+          "en": "If you can do this entire loop without a human, your product starts improving itself when you're sleeping.",
+          "ko": "이 루프 전체를 사람 없이 돌릴 수 있으면, 당신이 자는 동안 제품이 스스로 좋아지기 시작한다.",
+          "why": "루프 5층 구조의 결론. '사람이 게이트면 새벽 3시에 멈춘다'와 짝으로 읽으면 좋다."
+        },
+        {
+          "en": "That second AI agent overnight goes and puts in pull requests to fix all of the problems from the day before.",
+          "ko": "그 두 번째 에이전트가 밤사이 전날의 문제를 전부 고치는 PR을 올린다.",
+          "why": "YC 데이터 에이전트 이야기의 핵심 문장. 본인이 'head explosion moment'라 부른 대목."
+        },
+        {
+          "en": "In a conventional company, intelligence is spread throughout the people and the hierarchy routes it. In this new model, intelligence lives in the system.",
+          "ko": "기존 회사에서 지능은 사람들 사이에 퍼져 있고 위계가 그것을 라우팅한다. 새 모델에서는 지능이 시스템에 산다.",
+          "why": "컴퍼니 브레인의 정의. 잭 도시의 표현을 빌려 왔다고 본인이 밝힌다."
+        },
+        {
+          "en": "If your API bill doesn't make you uncomfortable, you're not doing enough.",
+          "ko": "API 청구서가 불편하지 않다면, 충분히 쓰고 있지 않은 것이다.",
+          "why": "'Burn tokens, not headcount' 슬라이드의 세 번째 줄. 화면에 띄우기 제일 좋은 문장."
+        },
+        {
+          "en": "Every action needs to create an artifact. Otherwise, it basically didn't happen to the AI.",
+          "ko": "모든 행동은 아티팩트를 남겨야 한다. 아니면 AI에게는 일어나지 않은 일이다.",
+          "why": "legibility 수칙의 핵심. 오프닝의 '퇴사자 trajectory' 사례와 정확히 이어진다."
+        },
+        {
+          "en": "If you are starting a company today, would you build it like this?",
+          "ko": "오늘 회사를 시작한다면, 이 모양으로 짓겠는가?",
+          "why": "발표의 마지막 질문. 클로징에서 우리 자신에게 되물으며 끝내기 좋다."
+        }
+      ],
+      "bestQuoteEn": "Burn tokens, not headcount.",
+      "bestQuoteKo": "사람을 태우지 말고, 토큰을 태워라.",
+      "funParts": [
+        "발표 첫 마디의 디스클레이머 — \"이걸 어떻게 하는지 아는 사람은 아무도 없습니다. 전부 알아냈다고 말하는 사람이 있다면 아마 거짓말일 거예요.\" 이 솔직함 덕에 뒤의 과감한 주장들이 오히려 설득력 있게 들린다.",
+        "YC 선발을 엔드투엔드 AI로 돌릴 수 있다고 예언하면서 붙인 단서 — \"그 PR 리스크를 우리가 감수할지는 모르겠지만요.\" 기술 문제가 아니라 평판 문제라는 것.",
+        "'컴퍼니 브레인'이 6주 만에 얼마나 유행어가 됐는지 말하다가 — \"이제 청중 중에 company brain 티셔츠 입은 분도 보이네요. 저기 계시네요.\" 실제로 그 자리에 있었다.",
+        "투자자 콜을 시뮬레이션한다는 얘기 끝에 — \"전혀 미안하지 않습니다. 그 투자자들도 이 통화를 녹음해서 자기 AI에 넣고 있을 게 확실하니까요.\""
+      ],
+      "slides": [
+        {
+          "src": "/assets/articles/ai-native-startup-playbook/01-legion-org-chart.jpg",
+          "caption": "2:02 — 로마 군단의 위계. 8명 분대 → 백인대 → 코호트 → 군단"
+        },
+        {
+          "src": "/assets/articles/ai-native-startup-playbook/02-org-structures-grid.jpg",
+          "caption": "3:12 — 빅테크 6사의 조직도 풍자 (Manu Cornet). 모양은 달라도 원리는 같다"
+        },
+        {
+          "src": "/assets/articles/ai-native-startup-playbook/03-dorsey-quote.jpg",
+          "caption": "3:25 — 발표 전체를 촉발한 잭 도시의 문장"
+        },
+        {
+          "src": "/assets/articles/ai-native-startup-playbook/04-capability-not-productivity.jpg",
+          "caption": "5:00 — 생산성이 아니라 능력. 왼쪽(기존 접근) → 오른쪽(AI 네이티브)"
+        },
+        {
+          "src": "/assets/articles/ai-native-startup-playbook/06-an-ai-loop.jpg",
+          "caption": "11:00 — AI 루프의 5층 구조"
+        },
+        {
+          "src": "/assets/articles/ai-native-startup-playbook/07-ai-loop-plus-vm.jpg",
+          "caption": "12:40 — 루프 + VM = AI 직원. OpenClaw·Hermes가 원형"
+        },
+        {
+          "src": "/assets/articles/ai-native-startup-playbook/08-company-brain.jpg",
+          "caption": "15:01 — 컴퍼니 브레인. 데이터와 루프가 중심, 사람은 가장자리"
+        },
+        {
+          "src": "/assets/articles/ai-native-startup-playbook/10-burn-tokens-not-headcount.jpg",
+          "caption": "17:25 — Burn tokens, not headcount"
+        },
+        {
+          "src": "/assets/articles/ai-native-startup-playbook/11-no-middle-mgmt.jpg",
+          "caption": "18:25 — 중간관리 없음. 남는 역할은 IC와 DRI 둘뿐"
+        },
+        {
+          "src": "/assets/articles/ai-native-startup-playbook/12-build-self-improving-company.jpg",
+          "caption": "20:01 — 자기개선 회사 체크리스트: legible하게, 모든 행동은 아티팩트로"
+        },
+        {
+          "src": "/assets/articles/ai-native-startup-playbook/13-would-you-build-it-this-shape.jpg",
+          "caption": "20:50 — 마지막 질문. 오늘 시작한다면 이 모양으로 짓겠는가"
+        }
+      ],
+      "discussion": [
+        "우리의 AI 루프는 무엇인가. 품질 게이트는 아직 사람인가 — Blomfield 말대로 두 번째 적대적 모델로 넘길 수 있는 부분은 어디인가?",
+        "API 청구서 테스트를 우리한테 적용하면? 지금 토큰 지출은 '불편한' 수준인가, 아니면 아직 한참 덜 쓰고 있나?",
+        "'모든 회의 녹음, DM 금지'는 작은 팀엔 가능하지만 문화적 비용이 있다. 감시감과 솔직함 위축 — legibility의 대가를 어디까지 지불할 것인가?",
+        "'1 person with AI tools = 1000x Google engineer'는 어디까지 수사이고 어디부터 실감인가? 우리가 체감하는 배수는 얼마인가?",
+        "오피스아워 → 유저 매뉴얼 사례를 우리 것으로 옮기면 뭐가 되나? 우리가 반복해서 답하는 질문, 반복해서 내리는 판단 중 매뉴얼로 굳힐 수 있는 것은?"
+      ],
+      "takeaways": [
+        "루프를 설계할 때 다섯 층을 명시적으로 그려라: 데이터 입력 → 정책 → 도구 → 품질 게이트 → 학습. 품질 게이트에 사람 대신 두 번째 모델을 놓을 수 있는지부터 검토.",
+        "이미 있는 도구 위에 '밤마다 도는 2차 에이전트'를 얹는 것이 시작점이다. 낮의 성공/실패 로그를 먹고 PR을 올리는 구조는 어느 제품에든 이식 가능하다.",
+        "조직을 AI에 legible하게: 전 회의 녹음·전사, 공개 채널 원칙, 모든 행동이 아티팩트를 남기게. 기록되지 않은 일은 AI에게 일어나지 않은 일이다.",
+        "중간관리 대신 IC(덱이 아니라 프로토타입을 들고 회의에 온다)와 DRI(결과에 목을 거는 단 한 사람). 위원회가 생기는 순간 루프가 멈춘다."
+      ],
+      "koreaAngle": "한국 조직문화에서 이 발표의 가장 급진적인 대목은 루프가 아니라 legibility다. 회의록 비공개, DM·개인 메신저 중심 소통, '기록을 남기면 책임진다'는 정서 — 전부 컴퍼니 브레인의 반대편에 있다. 뒤집어 보면, 처음부터 기록 문화로 시작할 수 있는 작은 팀에게는 대기업이 따라올 수 없는 구조적 이점이 생긴다는 뜻이기도 하다.",
+      "context": [
+        {
+          "badge": "이 발표의 원형",
+          "title": "4월에 같은 발표의 v1이 있었다",
+          "body": [
+            "Blomfield 본인이 발표 서두에 밝힌다 — 한 달 반쯤 전에 한 발표를 업데이트한 버전이라고. 그 4월 버전은 우리 아카이브에 이미 정리돼 있다(AI로 처음부터 회사를 구축하는 방법). 두 버전을 비교하면 그 사이에 늘어난 게 정확히 'YC 내부에서 실제로 돌린 루프 사례들'이라는 점이 보인다. 이론이 두 달 만에 운영 사례로 바뀐 것.",
+            "발표에서 Karpathy의 autoresearch 실험도 인용된다(9:30) — 에이전트가 학습 코드를 스스로 고치며 언덕을 오르는 자동 연구 루프. 우리가 지난 에피소드에서 다룬 바로 그 얘기라서, 방송에서는 '지난 회차에 이어서'로 연결하면 자연스럽다."
+          ],
+          "links": [
+            {
+              "label": "AI로 처음부터 회사를 구축하는 방법",
+              "url": "/archive/yc-ai-native-company",
+              "note": "4월 원형 버전 영상 노트"
+            },
+            {
+              "label": "안드레 카파시의 autoresearch",
+              "url": "/podcasts/karpathy-autoresearch",
+              "note": "지난 에피소드 — 발표 9:30에서 인용되는 실험"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "garry-tan",
+      "order": 2,
+      "slotMin": 20,
+      "title": "Garry Tan: New Rules for Founders",
+      "titleKo": "개리 탄 — 오늘 2028년을 사는 법",
+      "speaker": "Garry Tan",
+      "role": "YC 사장 & CEO (진행: Anish Acharya, a16z GP)",
+      "youtubeId": "fsTtKywmWlU",
+      "durationMin": 51,
+      "accent": "green",
+      "oneLiner": "업무를 스킬 파일로 굳히고, 토큰을 최대로 태워서, 남들보다 2년 먼저 살아라.",
+      "whyFirst": "실전편. 오프닝 훅(마크다운 직원, 오피스아워 → 프롬프트)의 전체 맥락이 이 인터뷰에 들어 있다. 51분짜리라 방송에서는 13:54 이후(솔로 창업자 → 비즈니스 루프 → 토큰 맥싱 → Pedro 사례 → 화이트필)에 집중하는 걸 추천.",
+      "links": [
+        {
+          "label": "유튜브에서 보기 ↗",
+          "url": "https://www.youtube.com/watch?v=fsTtKywmWlU"
+        },
+        {
+          "label": "관련: Every의 AI-Native 전략 노트 ↗",
+          "url": "/archive/every-ai-native-strategy"
+        }
+      ],
+      "summary": [
+        "앞 15분은 창업자 심리학이다. 2003년의 암울한 실리콘밸리에서 '핫한 것'을 좇다가 웹을 떠났고(마크 저커버그가 페이스매시를 만들던 그때), Peter Thiel의 초기 Palantir 제안을 거절했다. 교훈은 earnestness — 유행이 아니라 자기가 직접 아는 것을 따라라. '멋진 것은 전부 정통에 반하는 진실에서 시작하는 일종의 컬트다.'",
+        "본론 1: 지금은 누구든 자기 자신의 400배가 될 수 있는 시대다. 솔로 창업자에 대한 YC의 오랜 회의론이 뒤집히는 중이고, 순수 per-seat SaaS는 5~10년 뒤 존재 여부가 불분명하다 — 웨지로는 좋지만 데이터·네트워크 해자로 도약해야 한다.",
+        "본론 2: skillify. 어떤 일을 한 번 해내면 그것을 마크다운 + 코드 + 테스트로 굳혀 크론잡에 넣는다. 이후의 실수는 그냥 버그픽스고, 그 스킬은 영원히 남는다. 영업·마케팅·고객지원 전부에 적용한다. 여기서 '마크다운 파일이 곧 직원'이 나온다.",
+        "본론 3: 토큰 맥싱. 프런티어 랩들은 비용 때문에 컴퓨트를 아껴서 준다. 에이전트를 풀파워로 쓰려면 연 5만~10만 달러가 들지만, 그 돈을 내면 오늘 2028년을 살 수 있다. 실제 결과 — 2~3명이 수백 개 에이전트와 수백 개 스킬 파일로 4개월 만에 0에서 $15M ARR.",
+        "본론 4: Brex CEO Pedro Franceschi의 회의록 에이전트. 자기가 안 들어간 회의의 녹취를 에이전트로 훑어 두 레벨 아래의 갈등을 파악하고, 3주치 맥락을 완벽히 들고 회의에 들어가 '당신이 맞네요, 그렇게 갑시다' 하고 나온다. '회사가 한 사람 머리에 안 들어가서 망한다'는 문제의 해법.",
+        "마지막 15분이 균형추다. 세상 모든 조직의 관료제와 느림이 오히려 화이트필 — 이 전환은 20년짜리고 그게 좋은 일이다. 기존 기업의 해자는 실재한다. 다음 컴퓨터는 음성과 메모리 중심이고, 2027년은 하네스 전쟁의 해가 될 것이다."
+      ],
+      "quotes": [
+        {
+          "en": "A markdown file is an employee. And it's an employee that will do the job perfectly every single time.",
+          "ko": "마크다운 파일이 곧 직원이다. 그것도 매번 완벽하게 일하는 직원.",
+          "why": "오늘의 훅. skillify 설명의 정점에서 나오는 문장이라, 앞뒤 맥락(feat of strength → 스킬 파일 → 크론잡)과 같이 소개하면 좋다."
+        },
+        {
+          "en": "You do some feat of strength and then you turn it into a markdown file plus code, plus tests that can be reused and put into a cron job.",
+          "ko": "어떤 일을 한 번 해내면, 그걸 재사용 가능한 마크다운 + 코드 + 테스트로 바꿔서 크론잡에 넣는 것이다.",
+          "why": "skillify의 정의. '한 번 잘한 일'과 '영원히 잘하는 시스템'의 차이를 만드는 절차."
+        },
+        {
+          "en": "Literally any given person could be 400 of that person.",
+          "ko": "말 그대로 누구든 자기 자신의 400배가 될 수 있다.",
+          "why": "솔로 창업자 재평가의 근거. Blomfield의 1000x와 숫자는 달라도 방향이 같다 — 방송에서 두 숫자를 나란히 놓으면 재밌다."
+        },
+        {
+          "en": "You get to live in 2028 today.",
+          "ko": "오늘 2028년을 살 수 있다.",
+          "why": "토큰 맥싱의 한 줄 요약. 연 5만~10만 달러라는 구체적인 가격표와 함께 나온다."
+        },
+        {
+          "en": "Literally you can go from zero to 15 mil ARR in about four months with like two or three people and like hundreds of agents.",
+          "ko": "말 그대로 2~3명과 수백 개의 에이전트로 4개월 만에 0에서 $15M ARR까지 갈 수 있다.",
+          "why": "이 플레이북이 이론이 아니라는 증거로 제시되는 숫자. 사실 여부를 토론 논점으로 쓰기도 좋다."
+        },
+        {
+          "en": "This is the worst it will ever be.",
+          "ko": "지금이 앞으로 제일 나쁜 상태다.",
+          "why": "크립토 밈이 AI에 10배 더 잘 맞는다며 가져온 문장. 짧아서 화면에 띄우기 좋다."
+        },
+        {
+          "en": "I actually think AI erases the API line.",
+          "ko": "AI는 API 라인을 지워버린다고 생각한다.",
+          "why": "Venkatesh Rao의 'API 라인 위/아래' 프레임을 뒤집는 대목. 도요타 생산방식 재해석으로 이어진다."
+        },
+        {
+          "en": "All of the bureaucracy and the slowness and the seven plus or minus two of every company, every institution — that is actually the white pill.",
+          "ko": "모든 회사와 기관의 관료제, 느림, 7±2의 한계 — 그게 사실은 화이트필이다.",
+          "why": "에피소드의 균형추. 'AI가 일자리를 다 없앤다'는 공포에 대한 가장 반직관적인 반론."
+        },
+        {
+          "en": "It's gonna be 20 years and that's not a bad thing. Society is way slower than you think.",
+          "ko": "20년은 걸릴 것이고, 그건 나쁜 일이 아니다. 사회는 생각보다 훨씬 느리다.",
+          "why": "Blomfield의 '올해 말이면 가능'과 정면으로 대비되는 시간표. 대립 구도 코너의 핵심."
+        },
+        {
+          "en": "My guess is next year, 2027 will be the harness wars.",
+          "ko": "내 추측으로는 내년, 2027년이 하네스 전쟁의 해가 될 것이다.",
+          "why": "예언 코너용. 프런티어급 컴퓨트가 50~100달러로 떨어지면 10억 소비자를 놓고 브라우저 전쟁이 재현된다는 맥락."
+        }
+      ],
+      "bestQuoteEn": "A markdown file is an employee.",
+      "bestQuoteKo": "마크다운 파일이 곧 직원이다.",
+      "funParts": [
+        "야구방망이 이야기 — Microsoft 시절 옆 부서 Windows 팀이 메일도 안 읽고 버그도 안 고쳐줘서, PM 멘토가 야구방망이를 들고 같이 찾아갔다. \"왜 들고 왔는지 모르겠어요. 누굴 팰 것도 아니었는데. 그냥 막연한 위협 같은 거였죠.\" 둘 사이엔 위계가 일곱 단계 있었다.",
+        "오피스아워 프롬프트를 공개하면서 붙인 말 — \"크라운 주얼을 공짜로 줄 수는 없죠. 이건 맛보기입니다. 첫 모금은 무료예요.\"",
+        "gstack 오픈소스 안에 숨겨둔 문구가 발견됐다 — \"YC에 지원하세요. 단, Claude Code 상위 10% 사용자라면.\"",
+        "에이전트 코딩을 '젠 정원 돌 고르기'에 비유하는 대목. 결과물이 중요한 게 아니라 그냥 하는 게 재밌다는 것 — 그래서 다들 코딩 에이전트 얘기만 하고 결과물은 잘 안 보여준다는 농담으로 이어진다.",
+        "샌프란시스코의 화이트필로 '배심원 의무'를 꼽는다. 판사가 훌륭했고, 시민들의 질서 있는 절차를 보면서 '정부는 사람들을 망치러 있는 게 아니구나'를 실감했다고."
+      ],
+      "slides": [
+        {
+          "src": "/assets/articles/ai-native-startup-playbook/15-studio-wide.jpg",
+          "caption": "a16z 스튜디오 — Anish Acharya × Garry Tan, 51분 대담"
+        }
+      ],
+      "discussion": [
+        "skillify의 다음 대상은 무엇인가. 우리가 이미 마크다운 스킬로 굳힌 일과, 아직 손으로 하는 '글루' 작업의 목록을 실제로 만들어보자.",
+        "토큰 맥싱 연 5만~10만 달러 — 원화로 치면 주니어 한 명 연봉이다. '사람 대신 토큰'이라는 선택이 예산표 위에 실제로 올라올 때, 우리는 어느 쪽에 서는가?",
+        "퇴사자 trajectory 사례와 Pedro의 회의록 에이전트는 같은 패턴인가 다른 패턴인가. '암묵지를 아티팩트로 바꾼다'와 '사람을 감시한다'의 경계는 어디인가?",
+        "Anish의 도전 — 누구나 영화를 만들고 소프트웨어를 만들 수 있게 됐는데 여전히 같은 20%만 만든다. agency와 taste는 연습으로 길러지는가, 타고나는가?",
+        "'중간 관료제는 에이전트가 되어야 한다'가 실현되면 관리자 경력이라는 사다리 자체가 사라진다. 그 세계에서 주니어는 어떻게 시니어가 되는가?"
+      ],
+      "takeaways": [
+        "반복하는 업무를 발견할 때마다 물어라 — 이걸 한 번 완벽하게 해서 스킬 파일로 굳힐 수 있는가? 처음은 비싸고 형편없어도, 교정 이력이 그대로 스킬이 된다.",
+        "마크다운이 쌓이면 provenance가 생명이다. 두 사실이 충돌할 때 어느 쪽이 이기는지 정하고, 정확성을 훑는 청소용 크론잡을 돌려라.",
+        "회의록 에이전트 패턴: 내가 없는 자리의 컨텍스트를 기계가 완벽하게 들고 있게 하라. 경영의 병목은 정보가 아니라 머리 용량이다.",
+        "시간표를 이중으로 가져가라 — 제품과 팀은 '오늘 2028년을 사는' 속도로, 시장과 사회에 대한 기대는 '20년짜리 전환'의 속도로."
+      ],
+      "koreaAngle": "'한 바퀴 돌아본 30~40대 창업자가 다시 유리해진다'는 대목은 한국의 시니어 엔지니어들에게 직접적인 기회다. 대기업에서 조직의 비효율을 몸으로 배운 사람이 에이전트 수백 개를 붙이면, 그 경험이 그대로 provenance 감각과 skillify 안목이 된다. 반면 토큰 맥싱은 환율까지 얹으면 진입장벽이 더 높다 — '사람 대신 토큰'이 한국 스타트업의 예산표에서 설득력을 가지려면 400x 서사가 아니라 실측 배수가 필요하다.",
+      "context": [
+        {
+          "badge": "오늘의 훅 전체 맥락",
+          "title": "오피스아워 → 90% 프롬프트 → 오픈소스",
+          "body": [
+            "인터뷰 17:20 대목. Boris Cherny가 Light Cone 팟캐스트에 나온 걸 보고 주변이 전부 다시 코딩을 시작하자, Garry도 '뭔가 벌어지고 있구나' 하고 뛰어들었다. 마침 YC가 오피스아워를 전부 녹음하기 시작한 참이라 몇 달치 데이터가 있었고, 파트너들이 창업자의 야망을 한 단계 끌어올릴 때 쓰는 수사적 장치들이 뚜렷하게 보였다.",
+            "그걸 '창업자에게 조언하는 완벽한 스크립트' 마크다운으로 만들었는데, 원본이 너무 세서 Claude에게 '이 프롬프트의 강도와 세기를 90% 줄여라'라고 시킨 버전을 오픈소스로 공개했다. 팟캐스트 오프닝에서 이 이야기를 먼저 풀고 세션에 들어가면, '마크다운 파일이 곧 직원'이라는 문장이 추상론이 아니라 본인이 실제로 한 일이라는 게 전달된다."
+          ],
+          "links": [
+            {
+              "label": "영상에서 해당 대목 (17:20)",
+              "url": "https://www.youtube.com/watch?v=fsTtKywmWlU&t=1040s"
+            }
+          ]
+        },
+        {
+          "badge": "호스트 노트",
+          "title": "퇴사자의 trajectory를 에이전트에게 물려주기",
+          "body": [
+            "최근 다른 팟캐스트에 출연했다가 들은 사례. 퇴사 예정자의 업무 trajectory — 작업 로그, 처리 이력, 판단의 흐름 — 를 모아두었다가, 에이전트가 그 사람의 일을 그대로 이어받아 따라하게 만든다는 이야기였다.",
+            "오피스아워를 프롬프트로 만든 YC와 정확히 같은 패턴이다. 사람은 나가도 일하는 방식은 회사에 남는다. 암묵지가 아티팩트가 되는 순간 복제 가능한 자산이 된다 — Blomfield의 '기록되지 않은 일은 AI에게 일어나지 않은 일'과 붙여서 이야기하면 오프닝에서 본론으로 넘어가는 다리가 된다."
+          ],
+          "links": []
+        }
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "title": "루프 — 두 사람이 같은 그림을 그린다",
+      "body": "Blomfield의 'AI 루프'(데이터 → 정책 → 도구 → 게이트 → 학습)와 Garry의 '비즈니스 루프/skillify'(한 번 해내고 → 스킬로 굳히고 → 크론잡)는 해상도만 다른 같은 그림이다. 하나는 조직 설계도, 하나는 실행 절차서.",
+      "who": ["Tom Blomfield", "Garry Tan"]
+    },
+    {
+      "title": "토큰을 태워라",
+      "body": "Blomfield는 'Burn tokens, not headcount — API 청구서가 불편하지 않으면 덜 쓰는 것'이라 하고, Garry는 연 5만~10만 달러 가격표를 붙여 '오늘 2028년을 사는 법'이라 부른다. 사람 수를 늘리는 대신 컴퓨트를 사는 것이 새 플레이북의 자본 배분이다.",
+      "who": ["Tom Blomfield", "Garry Tan"]
+    },
+    {
+      "title": "조직을 AI에 legible하게",
+      "body": "전 회의 녹음, DM 금지, 모든 행동은 아티팩트로(Blomfield) — 그 데이터 위에서 오피스아워가 프롬프트가 되고(Garry), CEO가 안 들어간 회의의 갈등을 읽고(Pedro), 퇴사자의 일이 에이전트에게 넘어간다(호스트 사례). 넷 다 같은 전제 위에 서 있다: 기록되지 않은 지식은 자산이 아니다.",
+      "who": ["Tom Blomfield", "Garry Tan", "Pedro Franceschi", "호스트 사례"]
+    },
+    {
+      "title": "중간관리의 소멸",
+      "body": "Blomfield는 'IC와 DRI만 남고 중간관리는 사라진다'고 하고, Garry는 '중간 관료제야말로 에이전트가 되어야 한다'며 야구방망이 일화로 그 지옥을 증언한다. AI가 API 라인을 지우면, 라인에서 일하는 사람이 라인을 바꾸는 도요타식 임파워먼트가 소프트웨어에서 재현된다.",
+      "who": ["Tom Blomfield", "Garry Tan"]
+    },
+    {
+      "title": "사람의 자리 — 가장자리와 안목",
+      "body": "Blomfield는 사람을 '가장자리'에 놓는다: 직관, 신뢰, 방 안의 공기, 실존적 결정. Garry는 같은 것을 'taste와 agency가 그 어느 때보다 중요하다'고 말한다. 정보 라우팅은 기계가, 판단과 관계는 사람이.",
+      "who": ["Tom Blomfield", "Garry Tan"]
+    }
+  ],
+  "tensions": [
+    {
+      "topic": "시간표 — 올해 말인가, 20년인가",
+      "a": {
+        "who": "Tom Blomfield",
+        "claim": "2026년 말~2027년 첫 배치면 YC 선발부터 조언까지 AI가 엔드투엔드로 가능하다. 이미 상당 부분 돌아간다."
+      },
+      "b": {
+        "who": "Garry Tan",
+        "claim": "사회는 생각보다 훨씬 느리다. 이 전환은 20년짜리고, 그 느림이 오히려 화이트필이다."
+      },
+      "ask": "둘 다 YC 사람인데 시간표가 정반대다. 기술 층위에서는 Blomfield가, 조직·사회 층위에서는 Garry가 맞다면 — 우리 제품의 로드맵은 어느 시계에 맞춰야 하나?"
+    },
+    {
+      "topic": "스타트업은 다 이기는가",
+      "a": {
+        "who": "Tom Blomfield",
+        "claim": "회사는 훨씬 작아지고 컴퍼니 브레인 중심으로 재편된다. 지금 시작하는 팀은 처음부터 그 모양으로 지을 수 있다."
+      },
+      "b": {
+        "who": "Garry Tan",
+        "claim": "Microsoft 같은 조직은 못 바꾸지만 그들의 구조적 해자는 실재한다. '스타트업이 다 대체한다'? 그렇게는 안 된다."
+      },
+      "ask": "'대기업은 못 하고 스타트업은 해야만 한다'와 '대기업은 어디 안 간다'가 같은 인터뷰에서 나온다. 그렇다면 스타트업이 실제로 가져갈 수 있는 땅은 정확히 어디인가?"
+    },
+    {
+      "topic": "사람을 빼는 게 먼저인가, 사람의 안목이 먼저인가",
+      "a": {
+        "who": "Tom Blomfield",
+        "claim": "품질 게이트에서 사람을 빼라. 극단적인 경우가 아니면 게이트는 두 번째 적대적 LLM이어야 한다."
+      },
+      "b": {
+        "who": "Garry Tan",
+        "claim": "agency와 taste가 차트를 뚫을 만큼 중요해졌다. 무엇을 시킬지 고르는 안목이 희소 자원이다."
+      },
+      "ask": "루프에서 사람을 빼는 속도와, 사람의 안목을 기르는 속도 — 우리 팀은 어느 쪽 투자가 부족한가?"
+    }
+  ],
+  "closing": {
+    "title": "클로징 멘트",
+    "points": [
+      "오늘의 플레이북을 한 줄로 줄이면 — 반복하는 일을 발견하면 스킬 파일로 굳히고, 그 스킬들이 스스로 좋아지는 루프를 짓고, 사람은 루프가 못 가는 가장자리로 간다.",
+      "훅으로 돌아가면, '마크다운 파일이 곧 직원'은 과장이 아니라 절차였다. 오피스아워가 프롬프트가 되고, 퇴사자의 trajectory가 에이전트에게 넘어가는 걸 우리는 이미 봤다.",
+      "동시에 Garry 자신이 달아둔 균형추를 잊지 말 것 — 이 전환은 20년짜리고, 세상의 느림이 오히려 기회의 창을 길게 열어준다. 조급함이 아니라 복리가 이긴다.",
+      "그리고 Blomfield의 마지막 슬라이드로 끝낸다. \"오늘 이 회사를 시작한다면, 이 모양으로 짓겠는가?\" — 다음 화면은 두 단어였다. no excuses."
+    ]
+  }
+}
