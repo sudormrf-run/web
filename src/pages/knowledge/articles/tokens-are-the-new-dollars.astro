@@ -53,7 +53,7 @@ const contextById = Object.fromEntries(
 
 <Layout
   title="토큰은 새로운 달러다 — 팟캐스트 진행 대본"
-  description="Stripe의 OpenRouter 70억 달러 인수, SemiAnalysis가 말하는 토크노믹스, 그리고 토큰을 실제로 어떻게 태우는가. 영상 3편의 전체 트랜스크립트와 공개 재무 수치를 엮은 진행 대본."
+  description="Stripe의 OpenRouter $7B (약 9.8조 원) 인수, SemiAnalysis가 말하는 토크노믹스, 그리고 토큰을 실제로 어떻게 태우는가. 영상 3편의 전체 트랜스크립트와 공개 재무 수치를 엮은 진행 대본."
   locale={locale}
   hideLanguageSwitcher={true}
 >
@@ -119,9 +119,9 @@ const contextById = Object.fromEntries(
         <div class="block">
           <h2 class="block-title"><span class="num">01</span>오늘의 흐름</h2>
           <p class="block-note">
-            질문 세 개를 순서대로 답합니다. 왜 샀나(1막) → 그 배경인 토크노믹스가 뭔가(2막) →
-            그래서 우리는 토큰을 어떻게 태워야 하나(3막). 세 질문은 인과로 이어집니다.
-            토큰이 희소해서 라우팅이 돈이 되고, 희소한 걸 어디에 쓸지가 곧 경영 문제가 되니까요.
+            질문 세 개를 순서대로 답합니다. 토크노믹스가 뭔가(1막) → 그래서 토큰을 어떻게 태울 것인가(2막) →
+            왜 Stripe는 OpenRouter를 샀나(3막). 배경을 깔고 인수로 착지합니다.
+            토큰이 희소해서 어디에 쓸지가 경영 문제가 되고, 그래서 라우팅이 $7B가 되니까요.
             오프닝 직후에 “돈의 지도” 탭을 먼저 깔고 들어가면 뒤가 전부 구체적으로 들립니다.
           </p>
           <ol class="flow">
@@ -195,6 +195,7 @@ const contextById = Object.fromEntries(
         <header class="wrap-head">
           <h1>{money.title}</h1>
           <p>{money.lead}</p>
+          {money.fx && <p class="fx-note">{money.fx.note}</p>}
         </header>
 
         <!-- Stat tiles: the four numbers to read out loud -->
@@ -202,6 +203,7 @@ const contextById = Object.fromEntries(
           {money.tiles.map((t) => (
             <div class:list={['tile', `accent-${t.accent}`]}>
               <div class="tile-value">{t.value}</div>
+              {t.krw && <div class="tile-krw">{t.krw}</div>}
               <div class="tile-label">{t.label}</div>
               <div class="tile-note">{t.note}</div>
             </div>
@@ -226,7 +228,10 @@ const contextById = Object.fromEntries(
                   <div class="bar-label">{d.label}<span>{d.note}</span></div>
                   <div class="bar-track">
                     <div class:list={['bar-fill', `g-${d.group}`]} style={`width:${(d.value / c.max) * 100}%`} />
-                    <span class="bar-value">{d.display}</span>
+                    <span class="bar-value">
+                      {d.display}
+                      {d.krw && <span class="bar-krw">{d.krw}</span>}
+                    </span>
                   </div>
                 </div>
               ))}
@@ -256,7 +261,10 @@ const contextById = Object.fromEntries(
                   ]}
                   style={`left:${pt.x}%;bottom:${(pt.value / anthropic.max) * 100}%`}
                 >
-                  <span class="dot-value">{pt.display}</span>
+                  <span class="dot-value">
+                    {pt.display}
+                    {pt.krw && <span class="dot-krw">{pt.krw}</span>}
+                  </span>
                   <i />
                   <span class="dot-label">{pt.label}</span>
                 </div>
@@ -279,7 +287,10 @@ const contextById = Object.fromEntries(
                   <div class="bar-label">{d.label}</div>
                   <div class="bar-track">
                     <div class="bar-fill g-token" style={`width:${logPct(d.value)}%`} />
-                    <span class="bar-value">{d.display}</span>
+                    <span class="bar-value">
+                      {d.display}
+                      {d.krw && <span class="bar-krw">{d.krw}</span>}
+                    </span>
                   </div>
                 </div>
               ))}
@@ -1477,6 +1488,14 @@ const contextById = Object.fromEntries(
     line-height: 1.8;
   }
 
+  .fx-note {
+    margin-top: 0.55rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem !important;
+    line-height: 1.55 !important;
+    color: var(--color-text-disabled);
+  }
+
   .themes { display: grid; gap: 0.85rem; }
 
   .theme {
@@ -1676,6 +1695,15 @@ const contextById = Object.fromEntries(
     color: var(--color-text-primary);
   }
 
+  .tile-krw {
+    margin-top: 0.2rem;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-text-secondary);
+  }
+
   .tile-label {
     margin-top: 0.4rem;
     font-size: 0.9rem;
@@ -1793,10 +1821,19 @@ const contextById = Object.fromEntries(
   }
 
   .bar-value {
+    display: flex;
+    flex-direction: column;
     font-family: var(--font-mono);
     font-size: 0.85rem;
     font-weight: 700;
+    line-height: 1.15;
     color: var(--color-text-primary);
+  }
+
+  .bar-krw {
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
     white-space: nowrap;
   }
 
@@ -1871,11 +1908,21 @@ const contextById = Object.fromEntries(
   }
 
   .dot-value {
-    bottom: 0.75rem;
+    bottom: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.08rem;
     font-family: var(--font-mono);
     font-size: 0.8rem;
     font-weight: 800;
     color: var(--color-text-primary);
+  }
+
+  .dot-krw {
+    font-size: 0.62rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
   }
 
   .line-dot.is-projected .dot-value { color: var(--color-text-muted); }
@@ -1891,9 +1938,11 @@ const contextById = Object.fromEntries(
      centring it — the marker itself stays on the true x position. */
   .line-dot.is-first .dot-value,
   .line-dot.is-first .dot-label { transform: translateX(0); }
+  .line-dot.is-first .dot-value { align-items: flex-start; }
 
   .line-dot.is-last .dot-value,
   .line-dot.is-last .dot-label { transform: translateX(-100%); }
+  .line-dot.is-last .dot-value { align-items: flex-end; }
 
   .dot-label {
     order: 3;
