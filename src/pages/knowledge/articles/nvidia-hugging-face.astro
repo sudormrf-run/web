@@ -32,9 +32,8 @@ const dashPath = toPath(linePts.slice(solidPath.length - 1));
 // facade, and nothing is requested from YouTube until the play button is pressed.
 const thumb = (id: string) => `/assets/articles/nvidia-hugging-face/${id}.jpg`;
 
-// Only some sessions carry background blocks (Jeff Dean has the Discovery Loop
-// news, the latency-numbers table, and the distillation rejection), so pull them
-// into a lookup rather than widening every session's type.
+// Only some sessions carry background blocks, so pull them into a lookup
+// rather than widening every session's type.
 type ContextBlock = {
   badge: string;
   title: string;
