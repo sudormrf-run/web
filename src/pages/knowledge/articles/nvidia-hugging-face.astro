@@ -114,9 +114,9 @@ const contextById = Object.fromEntries(
         <div class="block">
           <h2 class="block-title"><span class="num">01</span>오늘의 흐름</h2>
           <p class="block-note">
-            질문 세 개를 순서대로 답합니다. 무엇이 사실이고 무엇이 보도인가(1막) →
-            중립 플랫폼을 산 거인들은 어떻게 됐나(2막) → 엔비디아가 사려는 건 정확히 무엇인가(3막 — 우리가 파리에서 본 것).
-            오프닝 직후에 “돈의 지도” 탭을 먼저 깔면, $12.9B가 어떤 크기의 돈인지 감이 잡힌 상태로 뒤를 들을 수 있습니다.
+            질문 세 개를 순서대로 답합니다. 이 주소는 왜 18조가 됐는가(돈·1막) →
+            주인이 생기면 어떤 결말이 가능한가(2막) → 값이 붙기 전에 그 안에서 우리는 무엇을 봤는가(3막).
+            오프닝은 “팔린 뉴스”가 아니라 “값이 생긴 뉴스”로 고정하고, 돈의 지도에서 비교 기준은 2023년 시리즈D $4.5B다. $7B 매각 거절은 없다.
           </p>
           <ol class="flow">
             {runOfShow.segments.map((seg) => (
@@ -204,7 +204,7 @@ const contextById = Object.fromEntries(
           ))}
         </div>
 
-        <!-- Chart 1: the valuation ladder — closed rounds vs rejected/reported price points -->
+        <!-- Chart 1: the valuation ladder — closed rounds vs unsigned reported price -->
         {money.charts.filter((c) => c.id === 'ladder').map((c) => (
           <figure class="chart">
             <figcaption class="chart-head">
