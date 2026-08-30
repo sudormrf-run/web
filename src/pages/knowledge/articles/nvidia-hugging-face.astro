@@ -192,7 +192,7 @@ const contextById = Object.fromEntries(
           {money.fx && <p class="fx-note">{money.fx.note}</p>}
         </header>
 
-        <!-- Stat tiles: the four numbers to read out loud -->
+        <!-- Stat tiles: the numbers to read out loud -->
         <div class="tiles">
           {money.tiles.map((t) => (
             <div class:list={['tile', `accent-${t.accent}`]}>
