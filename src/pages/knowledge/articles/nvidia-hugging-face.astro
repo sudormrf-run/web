@@ -1,0 +1,2093 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import data from '../../../data/nvidia-hugging-face.json';
+
+const locale = 'ko';
+const { event, runOfShow, money, sessions, embeds, themes, tensions, closing } = data;
+
+const tabs = [
+  { id: 'run', label: '진행 대본', kicker: 'START' },
+  { id: 'money', label: '돈의 지도', kicker: '$$' },
+  ...sessions.map((s) => ({ id: s.id, label: s.speaker, kicker: `0${s.order}` })),
+  { id: 'wrap', label: '관통 주제', kicker: 'END' },
+];
+
+// Chart geometry. These are plain numbers rather than a charting lib so the SVG
+// ships in the HTML — no client JS needed to see the numbers, which matters when
+// the page is being screen-shared live.
+
+// Line chart for the Hugging Face ARR curve: map points into a 0-100 viewBox.
+const arrChart = money.charts.find((c: any) => c.id === 'arr')!;
+const linePts = (arrChart.points as any[]).map((pt, i, all) => ({
+  ...pt,
+  x: (i / (all.length - 1)) * 100,
+  y: 100 - (pt.value / arrChart.max) * 100,
+}));
+const solidPath = linePts.filter((p) => !p.projected);
+const toPath = (pts: typeof linePts) => pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(2)},${p.y.toFixed(2)}`).join(' ');
+const areaPath = `${toPath(solidPath)} L${solidPath[solidPath.length - 1].x.toFixed(2)},100 L0,100 Z`;
+const dashPath = toPath(linePts.slice(solidPath.length - 1));
+
+// Self-hosted maxres stills rather than img.youtube.com/hqdefault: sharper on the
+// facade, and nothing is requested from YouTube until the play button is pressed.
+const thumb = (id: string) => `/assets/articles/nvidia-hugging-face/${id}.jpg`;
+
+// Only some sessions carry background blocks, so pull them into a lookup
+// rather than widening every session's type.
+type ContextBlock = {
+  badge: string;
+  title: string;
+  body: string[];
+  note?: string;
+  links?: { label: string; url: string; note?: string }[];
+};
+const contextById = Object.fromEntries(
+  (sessions as any[]).filter((s) => s.context).map((s) => [s.id, s.context as ContextBlock[]])
+);
+---
+
+<Layout
+  title="18조 원짜리 포옹 — 엔비디아는 왜 허깅페이스를 사는가 · 팟캐스트 진행 대본"
+  description="엔비디아의 허깅페이스 $12.9B (약 18조 원) 인수 보도 — 사실과 소문의 구분, 케빈 듀란트의 캡테이블, 깃허브·스케일·Arm 판례 비교, 그리고 우리가 석 달 전 파리 본사에서 직접 들은 대답들. 진행 대본."
+  locale={locale}
+  hideLanguageSwitcher={true}
+>
+  <div class="article">
+    <div class="container">
+      <!-- Source strip -->
+      <a class="source-strip" href={event.sourceUrl} target="_blank" rel="noopener noreferrer">
+        <span class="source-badge">출처</span>
+        <span class="source-text">{event.sourceLabel}</span>
+        <span class="source-url">theinformation.com</span>
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+
+      <!-- Tabs -->
+      <nav class="tabs" id="tabs" aria-label="세션 탭">
+        {tabs.map((t, i) => (
+          <button class:list={['tab', { 'is-active': i === 0 }]} data-tab={t.id} type="button">
+            <span class="tab-kicker">{t.kicker}</span>
+            <span class="tab-label">{t.label}</span>
+          </button>
+        ))}
+      </nav>
+
+      <!-- ==================== PANEL: RUN OF SHOW ==================== -->
+      <section class="panel is-active" data-panel="run">
+        <header class="hero">
+          <div class="hero-media">
+            <img src={event.heroImage} alt={`${event.name} — ${event.heroImageCredit}`} loading="eager" />
+            <span class="hero-credit">{event.heroImageCredit}</span>
+          </div>
+          <div class="hero-copy">
+            <div class="hero-kicker">{event.host} · {event.venue}</div>
+            <h1>{event.name}</h1>
+            <div class="hero-stats">
+              <div><strong>{event.talkCount}</strong><span>Sessions</span></div>
+              <div><strong>{runOfShow.totalMinutes}</strong><span>분 예상</span></div>
+              <div><strong>{sessions.reduce((n, s) => n + s.quotes.length, 0)}</strong><span>Quotes</span></div>
+              <div><strong>{sessions.reduce((n, s) => n + s.discussion.length, 0)}</strong><span>논점</span></div>
+            </div>
+          </div>
+        </header>
+
+        {event.intro.map((p) => <p class="lead">{p}</p>)}
+
+        <aside class="hook">
+          <div class="hook-badge">{event.hook.badge}</div>
+          <h2>{event.hook.title}</h2>
+          <p>{event.hook.body}</p>
+          <button class="hook-jump" data-jump="money" type="button">돈의 지도부터 보기 →</button>
+        </aside>
+
+        <!-- Opening script -->
+        <div class="block">
+          <h2 class="block-title"><span class="num">00</span>오프닝 멘트</h2>
+          <ul class="script-list">
+            {runOfShow.openingScript.map((line) => <li>{line}</li>)}
+          </ul>
+        </div>
+
+        <!-- Flow -->
+        <div class="block">
+          <h2 class="block-title"><span class="num">01</span>오늘의 흐름</h2>
+          <p class="block-note">
+            질문 세 개를 순서대로 답합니다. 이 주소는 왜 18조가 됐는가(돈·1막) →
+            주인이 생기면 어떤 결말이 가능한가(2막) → 값이 붙기 전에 그 안에서 우리는 무엇을 봤는가(3막).
+            오프닝은 “팔린 뉴스”가 아니라 “값이 생긴 뉴스”로 고정하고, 돈의 지도에서 비교 기준은 2023년 시리즈D $4.5B다. $7B 매각 거절은 없다.
+          </p>
+          <ol class="flow">
+            {runOfShow.segments.map((seg) => (
+              <li>
+                <span class="flow-slot">{seg.slot}</span>
+                <span class="flow-label">{seg.label}</span>
+                <span class="flow-min">{seg.min}분</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <!-- Quote wall -->
+        <div class="block">
+          <h2 class="block-title"><span class="num">02</span>딱 하나씩만 고른 인용구</h2>
+          <p class="block-note">세션당 한 문장씩. 화면에 띄워 놓고 읽으면서 넘어가기 좋게 골랐습니다.</p>
+          <div class="quote-wall">
+            {sessions.map((s) => (
+              <blockquote class:list={['quote-card', `accent-${s.accent}`]}>
+                <p class="q-ko">{s.bestQuoteKo}</p>
+                <p class="q-en">“{s.bestQuoteEn}”</p>
+                <footer>
+                  <button class="q-jump" data-jump={s.id} type="button">
+                    <span class="q-order">{s.order}</span>
+                    {s.speaker}
+                    <span class="q-role">{s.role.split('(')[0].trim()}</span>
+                  </button>
+                </footer>
+              </blockquote>
+            ))}
+          </div>
+        </div>
+
+        <!-- Discussion highlights -->
+        <div class="block">
+          <h2 class="block-title"><span class="num">03</span>제일 붙기 좋은 논점</h2>
+          <p class="block-note">각 세션에서 하나씩 뽑았습니다. 전체 논점은 각 세션 탭에 들어 있습니다.</p>
+          <div class="dp-grid">
+            {sessions.map((s) => (
+              <div class="dp-card">
+                <div class="dp-head">
+                  <span class:list={['dp-num', `accent-${s.accent}`]}>{s.order}</span>
+                  <span class="dp-speaker">{s.speaker}</span>
+                </div>
+                <p>{s.discussion[0]}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Tension teaser -->
+        <div class="block">
+          <h2 class="block-title"><span class="num">04</span>서로 반대되는 말들</h2>
+          <p class="block-note">방송 마지막에 몰아서 다루면 좋은 대목입니다. 전문은 “관통 주제” 탭에 있습니다.</p>
+          <div class="tension-teaser">
+            {tensions.map((t) => (
+              <div class="tt-item">
+                <span class="tt-a">{t.a.who}</span>
+                <span class="tt-vs">vs</span>
+                <span class="tt-b">{t.b.who}</span>
+                <span class="tt-topic">{t.topic}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== PANEL: MONEY ==================== -->
+      <section class="panel" data-panel="money">
+        <header class="wrap-head">
+          <h1>{money.title}</h1>
+          <p>{money.lead}</p>
+          {money.fx && <p class="fx-note">{money.fx.note}</p>}
+        </header>
+
+        <!-- Stat tiles: the numbers to read out loud -->
+        <div class="tiles">
+          {money.tiles.map((t) => (
+            <div class:list={['tile', `accent-${t.accent}`]}>
+              <div class="tile-value">{t.value}</div>
+              {t.krw && <div class="tile-krw">{t.krw}</div>}
+              <div class="tile-label">{t.label}</div>
+              <div class="tile-note">{t.note}</div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Chart 1: the valuation ladder — closed rounds vs unsigned reported price -->
+        {money.charts.filter((c) => c.id === 'ladder').map((c) => (
+          <figure class="chart">
+            <figcaption class="chart-head">
+              <h2>{c.title}</h2>
+              <p>{c.subtitle}</p>
+            </figcaption>
+            <div class="chart-legend">
+              {c.legend.map((l) => (
+                <span class="legend-item"><i class:list={['swatch', `g-${l.group}`]} />{l.label}</span>
+              ))}
+            </div>
+            <div class="bars">
+              {c.series.map((d) => (
+                <div class="bar-row">
+                  <div class="bar-label">{d.label}<span>{d.note}</span></div>
+                  <div class="bar-track">
+                    <div class:list={['bar-fill', `g-${d.group}`]} style={`width:${(d.value / c.max) * 100}%`} />
+                    <span class="bar-value">
+                      {d.display}
+                      {d.krw && <span class="bar-krw">{d.krw}</span>}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p class="chart-caption">{c.caption}</p>
+          </figure>
+        ))}
+
+        <!-- Chart 2: Hugging Face ARR line -->
+        <figure class="chart">
+          <figcaption class="chart-head">
+            <h2>{arrChart.title}</h2>
+            <p>{arrChart.subtitle}</p>
+          </figcaption>
+          <div class="linechart">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <path class="area" d={areaPath} />
+              <path class="line" d={toPath(solidPath)} vector-effect="non-scaling-stroke" />
+              <path class="line dashed" d={dashPath} vector-effect="non-scaling-stroke" />
+            </svg>
+            <div class="line-dots">
+              {linePts.map((pt, i) => (
+                <div
+                  class:list={[
+                    'line-dot',
+                    { 'is-projected': pt.projected, 'is-first': i === 0, 'is-last': i === linePts.length - 1 },
+                  ]}
+                  style={`left:${pt.x}%;bottom:${(pt.value / arrChart.max) * 100}%`}
+                >
+                  <span class="dot-value">
+                    {pt.display}
+                    {pt.krw && <span class="dot-krw">{pt.krw}</span>}
+                  </span>
+                  <i />
+                  <span class="dot-label">{pt.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <p class="chart-caption">{arrChart.caption}</p>
+        </figure>
+
+        <!-- Chart 3: comparable deals, colored by outcome -->
+        {money.charts.filter((c) => c.id === 'comps').map((c) => (
+          <figure class="chart">
+            <figcaption class="chart-head">
+              <h2>{c.title}</h2>
+              <p>{c.subtitle}</p>
+            </figcaption>
+            <div class="chart-legend">
+              {c.legend.map((l) => (
+                <span class="legend-item"><i class:list={['swatch', `g-${l.group}`]} />{l.label}</span>
+              ))}
+            </div>
+            <div class="bars">
+              {c.series.map((d) => (
+                <div class="bar-row">
+                  <div class="bar-label">{d.label}<span>{d.note}</span></div>
+                  <div class="bar-track">
+                    <div class:list={['bar-fill', `g-${d.group}`]} style={`width:${(d.value / c.max) * 100}%`} />
+                    <span class="bar-value">
+                      {d.display}
+                      {d.krw && <span class="bar-krw">{d.krw}</span>}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p class="chart-caption">{c.caption}</p>
+          </figure>
+        ))}
+
+        <!-- Supporting notes -->
+        <div class="block">
+          <h2 class="block-title"><span class="num">배경</span>같이 봐야 할 숫자들</h2>
+          <div class="money-notes">
+            {money.notes.map((n) => (
+              <article class="mnote">
+                <h3>{n.title}</h3>
+                <p>{n.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <!-- X embeds live here: they are the primary-source receipts for the numbers above -->
+        <div class="block">
+          <h2 class="block-title"><span class="num">원문</span>당사자들이 직접 올린 글</h2>
+          <p class="block-note">
+            X 포스트를 그대로 임베드했습니다. 방송 중에 화면에 띄우기 좋습니다.
+            (위젯이 로드되지 않으면 아래 인용문이 그대로 보입니다.)
+          </p>
+          <div class="xwall">
+            {embeds.map((e) => (
+              <div class="xcard">
+                <div class="xcard-why">
+                  <span class="xcard-handle">{e.handle}</span>
+                  <span class="xcard-who">{e.who}</span>
+                  <span class="xcard-when">{e.when}</span>
+                </div>
+                <p class="xcard-note">{e.why}</p>
+                <blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" data-conversation="none">
+                  <p lang="en" dir="ltr">{e.fallback}</p>
+                  <a href={e.url}>원문 보기 ↗</a>
+                </blockquote>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== PANELS: SESSIONS ==================== -->
+      {sessions.map((s) => (
+        <section class="panel" data-panel={s.id}>
+          <header class:list={['s-head', `accent-${s.accent}`]}>
+            <div class="s-order">{String(s.order).padStart(2, '0')}</div>
+            <div class="s-head-copy">
+              <h1>{s.titleKo}</h1>
+              <p class="s-original">{s.title}</p>
+              <p class="s-meta">
+                <strong>{s.speaker}</strong> · {s.role}
+                {s.durationMin && <span class="s-dur">{s.durationMin}분</span>}
+                <span class="s-slot">방송 배분 {s.slotMin}분</span>
+              </p>
+            </div>
+          </header>
+
+          <p class="s-oneliner">{s.oneLiner}</p>
+          <p class="s-why"><span>이 자리에 배치한 이유</span>{s.whyFirst}</p>
+
+          {contextById[s.id]?.map((c) => (
+            <aside class:list={['ctx', `accent-${s.accent}`]}>
+              <div class="ctx-badge">{c.badge}</div>
+              <h2 class="ctx-title">{c.title}</h2>
+              {c.body.map((p) => <p class="ctx-p">{p}</p>)}
+              {c.note && <p class="ctx-note">{c.note}</p>}
+              {!!c.links?.length && <div class="ctx-links">
+                {c.links.map((l) => (
+                  <a href={l.url} target="_blank" rel="noopener noreferrer">
+                    <span class="ctx-link-label">{l.label}</span>
+                    {l.note && <span class="ctx-link-note">{l.note}</span>}
+                    <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                ))}
+              </div>}
+            </aside>
+          ))}
+
+          {s.youtubeId && (
+            <div class="video" data-video={s.youtubeId} data-title={s.title}>
+              <img src={thumb(s.youtubeId)} alt={`${s.title} 썸네일`} loading="lazy" />
+              <button class="video-play" type="button" aria-label="유튜브 영상 재생">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+              </button>
+            </div>
+          )}
+          <div class="video-links">
+            {s.links.map((l) => (
+              <a href={l.url} target={l.url.startsWith('/') ? undefined : '_blank'} rel={l.url.startsWith('/') ? undefined : 'noopener noreferrer'}>{l.label}</a>
+            ))}
+          </div>
+
+          {s.slides.length > 0 && (
+            <div class="block">
+              <h2 class="block-title"><span class="num">화면</span>띄워 놓을 캡처</h2>
+              <div class="slides">
+                {s.slides.map((sl) => (
+                  <figure class="slide">
+                    <img src={sl.src} alt={sl.caption} loading="lazy" />
+                    <figcaption>{sl.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div class="block">
+            <h2 class="block-title"><span class="num">요약</span>무슨 얘기를 했나</h2>
+            <ul class="bullets">
+              {s.summary.map((b) => <li>{b}</li>)}
+            </ul>
+          </div>
+
+          <div class="block">
+            <h2 class="block-title"><span class="num">인용</span>읽고 갈 문장들</h2>
+            <div class="quotes">
+              {s.quotes.map((q) => (
+                <blockquote class:list={['quote', `accent-${s.accent}`]}>
+                  <p class="q-ko">{q.ko}</p>
+                  <p class="q-en">“{q.en}”</p>
+                  <p class="q-why">{q.why}</p>
+                </blockquote>
+              ))}
+            </div>
+          </div>
+
+          <div class="block">
+            <h2 class="block-title"><span class="num">재미</span>웃기거나 의외인 부분</h2>
+            <ul class="bullets fun">
+              {s.funParts.map((b) => <li>{b}</li>)}
+            </ul>
+          </div>
+
+          <div class="block">
+            <h2 class="block-title"><span class="num">토론</span>주고받을 논점</h2>
+            <ol class="dp-list">
+              {s.discussion.map((b) => <li>{b}</li>)}
+            </ol>
+          </div>
+
+          <div class="block">
+            <h2 class="block-title"><span class="num">실전</span>가져갈 것</h2>
+            <ul class="bullets take">
+              {s.takeaways.map((b) => <li>{b}</li>)}
+            </ul>
+          </div>
+
+          <div class="korea">
+            <h3>한국에서 보면</h3>
+            <p>{s.koreaAngle}</p>
+          </div>
+        </section>
+      ))}
+
+      <!-- ==================== PANEL: WRAP ==================== -->
+      <section class="panel" data-panel="wrap">
+        <header class="wrap-head">
+          <h1>관통 주제와 대립 구도</h1>
+          <p>세 개의 막이 같은 질문 하나로 수렴한다 — 중립은 팔 수 있는 상품인가. 갈리는 건 그 다음부터다.</p>
+        </header>
+
+        <div class="block">
+          <h2 class="block-title"><span class="num">공통</span>반복해서 나온 이야기</h2>
+          <div class="themes">
+            {themes.map((t, i) => (
+              <article class="theme">
+                <div class="theme-num">{String(i + 1).padStart(2, '0')}</div>
+                <div class="theme-body">
+                  <h3>{t.title}</h3>
+                  <p>{t.body}</p>
+                  <div class="theme-who">
+                    {t.who.map((w) => <span>{w}</span>)}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div class="block">
+          <h2 class="block-title"><span class="num">대립</span>정면으로 부딪히는 지점</h2>
+          <div class="tensions">
+            {tensions.map((t) => (
+              <article class="tension">
+                <h3>{t.topic}</h3>
+                <div class="tension-pair">
+                  <div class="side side-a">
+                    <span class="side-who">{t.a.who}</span>
+                    <p>{t.a.claim}</p>
+                  </div>
+                  <div class="side-vs">vs</div>
+                  <div class="side side-b">
+                    <span class="side-who">{t.b.who}</span>
+                    <p>{t.b.claim}</p>
+                  </div>
+                </div>
+                <p class="tension-ask">{t.ask}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div class="block">
+          <h2 class="block-title"><span class="num">마무리</span>{closing.title}</h2>
+          <ol class="closing">
+            {closing.points.map((p) => <li>{p}</li>)}
+          </ol>
+        </div>
+
+        <a class="source-strip bottom" href={event.sourceUrl} target="_blank" rel="noopener noreferrer">
+          <span class="source-badge">출처</span>
+          <span class="source-text">{event.sourceLabel}</span>
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </section>
+    </div>
+  </div>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" is:inline></script>
+</Layout>
+
+<script>
+  const tabButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('.tab'));
+  const panels = Array.from(document.querySelectorAll<HTMLElement>('.panel'));
+
+  function activate(id: string, pushHash = true) {
+    const exists = panels.some((p) => p.dataset.panel === id);
+    if (!exists) return;
+    tabButtons.forEach((b) => b.classList.toggle('is-active', b.dataset.tab === id));
+    panels.forEach((p) => p.classList.toggle('is-active', p.dataset.panel === id));
+    if (pushHash) history.replaceState(null, '', `#${id}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const active = tabButtons.find((b) => b.dataset.tab === id);
+    active?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+  }
+
+  // X embeds inside a display:none panel measure to zero width, so ask the widget
+  // factory to re-render whenever a panel becomes visible.
+  function reloadTweets() {
+    (window as any).twttr?.widgets?.load?.(document.querySelector('.xwall'));
+  }
+
+  tabButtons.forEach((b) => b.addEventListener('click', () => { activate(b.dataset.tab!); reloadTweets(); }));
+  document.querySelectorAll<HTMLButtonElement>('.q-jump').forEach((b) => {
+    b.addEventListener('click', () => activate(b.dataset.jump!));
+  });
+
+  // Deep link support: /knowledge/articles/yc-startup-school-2026#jeff-dean
+  if (location.hash) activate(location.hash.slice(1), false);
+  window.addEventListener('load', reloadTweets);
+  window.addEventListener('hashchange', () => activate(location.hash.slice(1), false));
+
+  // Arrow keys move between tabs — handy while presenting on stream.
+  document.addEventListener('keydown', (e) => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const target = e.target as HTMLElement;
+    if (target && /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName)) return;
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    const i = tabButtons.findIndex((b) => b.classList.contains('is-active'));
+    const next = e.key === 'ArrowRight' ? i + 1 : i - 1;
+    if (next < 0 || next >= tabButtons.length) return;
+    e.preventDefault();
+    activate(tabButtons[next].dataset.tab!);
+  });
+
+  // YouTube facade: only load the iframe once asked, so nine embeds don't
+  // all phone home when the page opens.
+  document.querySelectorAll<HTMLElement>('.video').forEach((box) => {
+    box.querySelector('.video-play')?.addEventListener('click', () => {
+      const id = box.dataset.video;
+      const frame = document.createElement('iframe');
+      frame.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+      frame.title = box.dataset.title || 'YouTube';
+      frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      frame.allowFullscreen = true;
+      box.replaceChildren(frame);
+      box.classList.add('is-playing');
+    });
+  });
+</script>
+
+<style>
+  .article {
+    padding: 1.5rem 0 5rem;
+  }
+
+  .article .container {
+    max-width: 940px;
+  }
+
+  /* ---------- Source strip ---------- */
+  .source-strip {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0.9rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    font-size: 0.82rem;
+    text-decoration: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .source-strip:hover {
+    border-color: var(--color-accent);
+    background: var(--color-surface-hover);
+  }
+
+  .source-strip.bottom {
+    margin: 2.5rem 0 0;
+  }
+
+  .source-badge {
+    padding: 0.15rem 0.45rem;
+    white-space: nowrap;
+    border-radius: var(--radius-sm);
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+
+  .source-text {
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .source-url {
+    margin-left: auto;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+  }
+
+  /* ---------- Tabs ---------- */
+  .tabs {
+    position: sticky;
+    /* The site header is sticky at top:0 with height 70px + 1px border, so the
+       tab rail has to park just below it or it slides out of reach. */
+    top: 71px;
+    z-index: 20;
+    display: flex;
+    gap: 0.4rem;
+    padding: 0.6rem 0 0.75rem;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    background: var(--color-bg-primary);
+    box-shadow: 0 10px 16px -10px var(--color-bg-primary);
+  }
+
+  .tabs::-webkit-scrollbar { height: 4px; }
+  .tabs::-webkit-scrollbar-thumb {
+    background: var(--color-border-hover);
+    border-radius: 2px;
+  }
+
+  .tab {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    flex-shrink: 0;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.18s ease;
+  }
+
+  .tab:hover {
+    border-color: var(--color-border-hover);
+    color: var(--color-text-secondary);
+  }
+
+  .tab.is-active {
+    border-color: var(--color-accent);
+    background: var(--color-accent-light);
+    color: var(--color-text-primary);
+  }
+
+  .tab-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+  }
+
+  .tab.is-active .tab-kicker { color: var(--color-accent); opacity: 1; }
+
+  .tab-label {
+    font-size: 0.84rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  /* ---------- Panels ---------- */
+  .panel { display: none; }
+  .panel.is-active { display: block; animation: fade 0.22s ease; }
+
+  @keyframes fade {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    display: grid;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 860px) {
+    .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
+  }
+
+  .hero-media {
+    position: relative;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+  }
+
+  .hero-media img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .hero-credit {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.6rem 0.75rem 0.5rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+    color: var(--color-text-muted);
+    font-size: 0.68rem;
+    line-height: 1.4;
+  }
+
+  .hero-kicker {
+    display: inline-flex;
+    margin-bottom: 0.6rem;
+    padding: 0.22rem 0.55rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .hero-stats div {
+    padding: 0.6rem 0.5rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    text-align: center;
+  }
+
+  .hero-stats strong {
+    display: block;
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .hero-stats span {
+    color: var(--color-text-muted);
+    font-size: 0.64rem;
+    letter-spacing: 0.04em;
+  }
+
+  .lead {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    line-height: 1.85;
+    margin-bottom: 0.9rem;
+  }
+
+  /* ---------- Hook callout ---------- */
+  .hook {
+    padding: 1.35rem 1.4rem 1.25rem;
+    margin: 1.75rem 0 0.5rem;
+    border: 1px solid var(--color-border-hover);
+    border-radius: var(--radius-lg);
+    background:
+      radial-gradient(circle at 4% 0%, rgba(95, 173, 254, 0.16), transparent 45%),
+      var(--color-surface);
+  }
+
+  .hook-badge {
+    display: inline-flex;
+    margin-bottom: 0.5rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: var(--color-blue);
+    color: var(--color-bg-primary);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 800;
+  }
+
+  .hook h2 {
+    margin-bottom: 0.6rem;
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  .hook p {
+    color: var(--color-text-secondary);
+    font-size: 0.94rem;
+    line-height: 1.85;
+  }
+
+  .hook-jump {
+    margin-top: 1rem;
+    padding: 0.45rem 0.85rem;
+    border: 1px solid var(--color-blue);
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--color-blue);
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.18s ease, color 0.18s ease;
+  }
+
+  .hook-jump:hover {
+    background: var(--color-blue);
+    color: var(--color-bg-primary);
+  }
+
+  /* ---------- Blocks ---------- */
+  .block { margin: 2.75rem 0; }
+
+  .block-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .block-title .num {
+    flex-shrink: 0;
+    padding: 0.2rem 0.45rem;
+    border-radius: var(--radius-sm);
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  .block-note {
+    color: var(--color-text-muted);
+    font-size: 0.86rem;
+    line-height: 1.65;
+    margin-bottom: 1.1rem;
+  }
+
+  /* ---------- Opening script ---------- */
+  .script-list {
+    list-style: none;
+    padding: 1.1rem 1.25rem;
+    margin: 0;
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+
+  .script-list li {
+    position: relative;
+    padding-left: 1.1rem;
+    margin-bottom: 0.6rem;
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .script-list li:last-child { margin-bottom: 0; }
+
+  .script-list li::before {
+    content: '“';
+    position: absolute;
+    left: 0;
+    top: 0.15rem;
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
+  /* ---------- Flow ---------- */
+  .flow {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .flow li {
+    display: grid;
+    grid-template-columns: 3.4rem 1fr auto;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+
+  .flow-slot {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+  }
+
+  .flow-label {
+    color: var(--color-text-primary);
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+
+  .flow-min {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
+  /* ---------- Quote wall ---------- */
+  .quote-wall {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  @media (min-width: 720px) {
+    .quote-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  .quote-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.1rem 1.25rem;
+    margin: 0;
+    border: 1px solid var(--color-border-light);
+    border-left: 3px solid var(--accent, var(--color-accent));
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+
+  .quote-card .q-ko {
+    color: var(--color-text-primary);
+    font-size: 1.02rem;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.55rem;
+  }
+
+  .q-en {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .quote-card footer { margin-top: auto; padding-top: 0.85rem; }
+
+  .q-jump {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.3rem 0.6rem 0.3rem 0.35rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-text-secondary);
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.18s ease;
+  }
+
+  .q-jump:hover {
+    border-color: var(--accent, var(--color-accent));
+    color: var(--color-text-primary);
+  }
+
+  .q-order {
+    display: grid;
+    place-items: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent, var(--color-accent));
+    color: var(--color-bg-primary);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+  }
+
+  .q-role {
+    color: var(--color-text-muted);
+    font-weight: 400;
+    font-size: 0.72rem;
+  }
+
+  /* ---------- Discussion grid ---------- */
+  .dp-grid {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 720px) {
+    .dp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  .dp-card {
+    padding: 0.95rem 1.1rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+
+  .dp-head {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .dp-num {
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent, var(--color-accent));
+    color: var(--color-bg-primary);
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    font-weight: 700;
+  }
+
+  .dp-speaker {
+    color: var(--color-text-muted);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .dp-card p {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  /* ---------- Tension teaser ---------- */
+  .tension-teaser { display: grid; gap: 0.5rem; }
+
+  .tt-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+
+  .tt-a, .tt-b {
+    color: var(--color-text-primary);
+    font-size: 0.86rem;
+    font-weight: 700;
+  }
+
+  .tt-vs {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+  }
+
+  .tt-topic {
+    margin-left: auto;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+  }
+
+  /* ---------- Session head ---------- */
+  .s-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .s-order {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: var(--radius-lg);
+    background: var(--accent, var(--color-accent));
+    color: var(--color-bg-primary);
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 800;
+  }
+
+  .s-head-copy h1 {
+    font-size: clamp(1.45rem, 3.6vw, 2.05rem);
+    font-weight: 800;
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.35rem;
+  }
+
+  .s-original {
+    color: var(--accent, var(--color-accent));
+    font-size: 0.86rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .s-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .s-meta strong { color: var(--color-text-primary); }
+
+  .s-dur, .s-slot {
+    padding: 0.1rem 0.42rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+  }
+
+  .s-slot { color: var(--color-accent); border-color: var(--color-border); }
+
+  .s-oneliner {
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 0.75rem;
+    border-left: 3px solid var(--accent, var(--color-accent));
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    font-size: 1.06rem;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  .s-why {
+    margin-bottom: 1.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+
+  .s-why span {
+    display: inline-block;
+    margin-right: 0.4rem;
+    padding: 0.08rem 0.4rem;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-secondary);
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  /* ---------- Context blocks (background reading) ---------- */
+  .ctx {
+    position: relative;
+    padding: 1.35rem 1.4rem 1.2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background:
+      radial-gradient(circle at 6% 0%, color-mix(in srgb, var(--accent, var(--color-accent)) 14%, transparent), transparent 42%),
+      var(--color-bg-secondary);
+  }
+
+  .ctx-badge {
+    display: inline-flex;
+    margin-bottom: 0.55rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: var(--accent, var(--color-accent));
+    color: var(--color-bg-primary);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+  }
+
+  .ctx-title {
+    margin-bottom: 0.7rem;
+    color: var(--color-text-primary);
+    font-size: 1.12rem;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+
+  .ctx-p {
+    color: var(--color-text-secondary);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    margin-bottom: 0.7rem;
+  }
+
+  .ctx-note {
+    padding: 0.65rem 0.85rem;
+    margin: 0.9rem 0 0.2rem;
+    border-left: 3px solid var(--color-warning);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    background: rgba(253, 228, 113, 0.07);
+    color: var(--color-text-muted);
+    font-size: 0.84rem;
+    line-height: 1.75;
+  }
+
+  .ctx-links {
+    display: grid;
+    gap: 0.35rem;
+    margin-top: 1rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--color-border-light);
+  }
+
+  .ctx-links a {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.45rem 0.6rem;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: background 0.18s ease, color 0.18s ease;
+  }
+
+  .ctx-links a:hover {
+    background: var(--color-surface-hover);
+    color: var(--color-text-primary);
+  }
+
+  .ctx-link-label {
+    font-weight: 700;
+    color: var(--accent, var(--color-accent));
+  }
+
+  .ctx-link-note {
+    color: var(--color-text-muted);
+    font-size: 0.76rem;
+  }
+
+  .ctx-links svg {
+    margin-left: auto;
+    flex-shrink: 0;
+    opacity: 0.45;
+  }
+
+  .ctx-links a:hover svg { opacity: 1; }
+
+  /* ---------- Video ---------- */
+  .video {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+  }
+
+  .video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .video :global(iframe) {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .video-play {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    border: 0;
+    background: rgba(0, 0, 0, 0.28);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .video-play svg {
+    padding: 0.9rem 0.85rem 0.9rem 1.05rem;
+    border-radius: 50%;
+    background: rgba(255, 0, 0, 0.92);
+    box-sizing: content-box;
+    transition: transform 0.2s ease;
+  }
+
+  .video-play:hover { background: rgba(0, 0, 0, 0.1); }
+  .video-play:hover svg { transform: scale(1.08); }
+
+  .video-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.6rem;
+  }
+
+  .video-links a {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    text-decoration: none;
+  }
+
+  .video-links a:hover { color: var(--color-accent); }
+
+  /* ---------- Lists ---------- */
+  .bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .bullets li {
+    position: relative;
+    padding: 0.15rem 0 0.15rem 1.15rem;
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
+  .bullets.fun li::before { background: var(--color-yellow); }
+  .bullets.take li::before { background: var(--color-green); }
+
+  .dp-list {
+    padding-left: 1.2rem;
+    margin: 0;
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .dp-list li {
+    padding-left: 0.3rem;
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .dp-list li::marker {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+  }
+
+  /* ---------- Session quotes ---------- */
+  .quotes { display: grid; gap: 0.85rem; }
+
+  .quote {
+    padding: 1.05rem 1.2rem;
+    margin: 0;
+    border: 1px solid var(--color-border-light);
+    border-left: 3px solid var(--accent, var(--color-accent));
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+
+  .quote .q-ko {
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+
+  .q-why {
+    margin-top: 0.6rem;
+    padding-top: 0.6rem;
+    border-top: 1px dashed var(--color-border-light);
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    line-height: 1.65;
+  }
+
+  /* ---------- Korea box ---------- */
+  .korea {
+    padding: 1.2rem 1.35rem;
+    margin-top: 2.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background:
+      radial-gradient(circle at 8% 12%, rgba(253, 115, 24, 0.1), transparent 40%),
+      var(--color-surface);
+  }
+
+  .korea h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-accent);
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
+  .korea p {
+    color: var(--color-text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.85;
+  }
+
+  /* ---------- Wrap ---------- */
+  .wrap-head { margin-bottom: 2rem; }
+
+  .wrap-head h1 {
+    font-size: clamp(1.7rem, 4.5vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.6rem;
+  }
+
+  .wrap-head p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .fx-note {
+    margin-top: 0.55rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem !important;
+    line-height: 1.55 !important;
+    color: var(--color-text-disabled);
+  }
+
+  .themes { display: grid; gap: 0.85rem; }
+
+  .theme {
+    display: flex;
+    gap: 0.9rem;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+
+  .theme-num {
+    flex-shrink: 0;
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 1.05rem;
+    font-weight: 800;
+    opacity: 0.65;
+  }
+
+  .theme-body h3 {
+    margin-bottom: 0.45rem;
+    color: var(--color-text-primary);
+    font-size: 1.02rem;
+    font-weight: 800;
+    line-height: 1.45;
+  }
+
+  .theme-body p {
+    color: var(--color-text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+
+  .theme-who {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.7rem;
+  }
+
+  .theme-who span {
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+  }
+
+  .tensions { display: grid; gap: 0.85rem; }
+
+  .tension {
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+
+  .tension h3 {
+    margin-bottom: 0.85rem;
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  .tension-pair {
+    display: grid;
+    gap: 0.6rem;
+    align-items: stretch;
+  }
+
+  @media (min-width: 700px) {
+    .tension-pair { grid-template-columns: 1fr auto 1fr; }
+  }
+
+  .side {
+    padding: 0.8rem 0.95rem;
+    border-radius: var(--radius-md);
+    background: var(--color-bg-secondary);
+  }
+
+  .side-a { border-left: 2px solid var(--color-blue); }
+  .side-b { border-left: 2px solid var(--color-orange); }
+
+  .side-who {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+  }
+
+  .side p {
+    color: var(--color-text-secondary);
+    font-size: 0.86rem;
+    line-height: 1.7;
+  }
+
+  .side-vs {
+    display: grid;
+    place-items: center;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
+  .tension-ask {
+    margin-top: 0.85rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--color-border-light);
+    color: var(--color-accent-hover);
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.7;
+  }
+
+  .closing {
+    padding-left: 1.2rem;
+    margin: 0;
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .closing li {
+    padding-left: 0.35rem;
+    color: var(--color-text-secondary);
+    font-size: 0.97rem;
+    line-height: 1.85;
+  }
+
+  .closing li::marker {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+  }
+
+  /* ---------- Slides ---------- */
+  .slides {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .slide {
+    margin: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--color-surface);
+  }
+
+  .slide img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .slide figcaption {
+    padding: 0.55rem 0.8rem;
+    color: var(--color-text-secondary);
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
+
+  /* ---------- Accents ---------- */
+  /* ==================== MONEY PANEL ==================== */
+  /* Two-hue categorical set, snapped into the dark-mode OKLCH lightness band and
+     run through the palette validator against this surface (#1e1219):
+     CVD separation 29.7 ΔE, normal-vision 35.0 ΔE, contrast >= 3:1 on both. */
+  .panel[data-panel='money'] {
+    --c-token: #da5f00;
+    --c-machine: #008bf3;
+    /* Deal-outcome groups for the comps/ladder charts. Palette validated against
+       the dark surface (#1e1219) with the dataviz six-checks script. */
+    --c-closed: #008bf3;
+    --c-pending: #da5f00;
+    --c-failed: #c8619e;
+  }
+
+  /* ---------- Stat tiles ---------- */
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+    margin: 0 0 2.5rem;
+  }
+
+  .tile {
+    padding: 1.1rem 1.1rem 1rem;
+    border: 1px solid var(--color-border-light);
+    border-top: 3px solid var(--accent, var(--color-accent));
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+
+  .tile-value {
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+  }
+
+  .tile-krw {
+    margin-top: 0.2rem;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-text-secondary);
+  }
+
+  .tile-label {
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+  }
+
+  .tile-note {
+    margin-top: 0.35rem;
+    font-size: 0.76rem;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+  }
+
+  /* ---------- Chart shell ---------- */
+  .chart {
+    margin: 0 0 2.5rem;
+    padding: 1.25rem 1.25rem 1.1rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+
+  .chart-head h2 {
+    margin: 0;
+    font-size: 1.08rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+  }
+
+  .chart-head p {
+    margin: 0.3rem 0 0;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+  }
+
+  .chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0.9rem 0 0.2rem;
+  }
+
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    color: var(--color-text-secondary);
+  }
+
+  .swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+  }
+
+  .g-machine { background: var(--c-machine); }
+  .g-token { background: var(--c-token); }
+  .g-closed { background: var(--c-closed); }
+  .g-pending { background: var(--c-pending); }
+  .g-failed { background: var(--c-failed); }
+
+  .chart-caption {
+    margin: 1rem 0 0;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--color-border-light);
+    font-size: 0.84rem;
+    line-height: 1.75;
+    color: var(--color-text-secondary);
+  }
+
+  .chart-scale {
+    margin: 0.5rem 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    color: var(--color-text-disabled);
+  }
+
+  /* ---------- Bar chart ---------- */
+  .bars {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.1rem;
+  }
+
+  .bar-label {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+
+  .bar-label span {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+  }
+
+  .bar-track {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  /* 4px rounded data-end, anchored flat against the baseline at the origin. */
+  .bar-fill {
+    height: 18px;
+    min-width: 3px;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .bar-value {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--color-text-primary);
+  }
+
+  .bar-krw {
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  /* ---------- Line chart ---------- */
+  .linechart {
+    position: relative;
+    height: 190px;
+    margin: 2rem 0 2.4rem;
+  }
+
+  .linechart svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .linechart .area {
+    fill: color-mix(in srgb, var(--c-token) 22%, transparent);
+  }
+
+  .linechart .line {
+    fill: none;
+    stroke: var(--c-token);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .linechart .line.dashed {
+    stroke-dasharray: 5 4;
+    opacity: 0.6;
+  }
+
+  .line-dots {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* A zero-size anchor pinned to the exact data point. Sizing the wrapper around
+     its own children made `translateY(50%)` centre on the label stack instead of
+     the marker, which pushed every dot below the line. */
+  .line-dot {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+
+  .line-dot i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 9px;
+    height: 9px;
+    margin: -4.5px 0 0 -4.5px;
+    border-radius: 50%;
+    background: var(--c-token);
+    /* 2px surface ring so the marker reads against the area fill */
+    box-shadow: 0 0 0 2px var(--color-surface);
+  }
+
+  .line-dot.is-projected i {
+    background: var(--color-surface);
+    border: 2px solid var(--c-token);
+  }
+
+  .dot-value,
+  .dot-label {
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+
+  .dot-value {
+    bottom: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.08rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+  }
+
+  .dot-krw {
+    font-size: 0.62rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+  }
+
+  .line-dot.is-projected .dot-value { color: var(--color-text-muted); }
+
+  .dot-label {
+    top: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--color-text-muted);
+  }
+
+  /* The end markers sit on the plot edge, so hang their text inward instead of
+     centring it — the marker itself stays on the true x position. */
+  .line-dot.is-first .dot-value,
+  .line-dot.is-first .dot-label { transform: translateX(0); }
+  .line-dot.is-first .dot-value { align-items: flex-start; }
+
+  .line-dot.is-last .dot-value,
+  .line-dot.is-last .dot-label { transform: translateX(-100%); }
+  .line-dot.is-last .dot-value { align-items: flex-end; }
+
+  .dot-label {
+    order: 3;
+    position: absolute;
+    top: calc(100% + 0.45rem);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  /* ---------- Money notes ---------- */
+  .money-notes {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .mnote {
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--color-border-light);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-secondary);
+  }
+
+  .mnote h3 {
+    margin: 0 0 0.45rem;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+  }
+
+  .mnote p {
+    margin: 0;
+    font-size: 0.86rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+  }
+
+  /* ---------- X embeds ---------- */
+  .xwall {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .xcard {
+    padding: 1rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-secondary);
+  }
+
+  .xcard-why {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .xcard-handle {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: var(--color-accent);
+  }
+
+  .xcard-who {
+    font-size: 0.74rem;
+    color: var(--color-text-secondary);
+  }
+
+  .xcard-when {
+    margin-left: auto;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--color-text-disabled);
+  }
+
+  .xcard-note {
+    margin: 0 0 0.85rem;
+    font-size: 0.82rem;
+    line-height: 1.75;
+    color: var(--color-text-secondary);
+  }
+
+  /* Fallback styling for the blockquote before widgets.js swaps it for an iframe.
+     If the script is blocked this is what the reader sees, so it has to stand alone. */
+  .xcard :global(.twitter-tweet) {
+    margin: 0 !important;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+
+  .xcard :global(.twitter-tweet-rendered) {
+    padding: 0;
+    border: none;
+    background: none;
+  }
+
+  .xcard :global(.twitter-tweet p) {
+    margin: 0 0 0.6rem;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+
+  .xcard :global(.twitter-tweet a) {
+    font-size: 0.76rem;
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 640px) {
+    .tile-value { font-size: 1.6rem; }
+    .linechart { height: 160px; }
+    .dot-value { font-size: 0.7rem; }
+    .xwall { grid-template-columns: 1fr; }
+  }
+
+  .accent-orange { --accent: var(--color-orange); }
+  .accent-green { --accent: var(--color-green); }
+  .accent-blue { --accent: var(--color-blue); }
+  .accent-red { --accent: #ff5566; }
+  .accent-yellow { --accent: var(--color-yellow); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 640px) {
+    .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .flow li { grid-template-columns: 3rem 1fr; }
+    .flow-min { grid-column: 2; justify-self: start; }
+    .tt-topic { margin-left: 0; width: 100%; }
+    .s-head { gap: 0.75rem; }
+    .s-order { width: 38px; height: 38px; font-size: 0.95rem; }
+    .slides { grid-template-columns: 1fr; }
+  }
+</style>
