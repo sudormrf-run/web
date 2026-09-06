@@ -1,0 +1,453 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuoteCard from '../../../components/podcast/QuoteCard.astro';
+import data from '../../../data/from-chat-to-delegation.json';
+
+const sourceById = Object.fromEntries(data.sources.map(source => [source.id, source]));
+const sections = [data.opening, ...data.scenes, data.closing, { id: 'sources', label: '출처', time: '' }];
+const evidenceUrl = (item: { sourceId: string; seconds?: number }) =>
+  sourceById[item.sourceId].url + (item.seconds === undefined ? '' : `&t=${item.seconds}s`);
+---
+
+<Layout title={data.title} description={data.subtitle} locale="ko" hideLanguageSwitcher>
+  <article class="podcast-notes">
+    <header class="notes-header">
+      <div class="eyebrow-row">
+        <a href="/knowledge/">← Knowledge</a>
+        <span>방송 노트 · {data.date}</span>
+        <button type="button" class="print-button js-only">인쇄 / PDF</button>
+      </div>
+      <h1>{data.title}</h1>
+      <p class="subtitle">{data.subtitle}</p>
+      <div class="episode-meta"><span>{data.duration}</span><span>코어 영상 2개</span><span>인용 5개</span><span>기술 포인트 3개</span></div>
+    </header>
+
+    <section class="video-overview" aria-labelledby="video-overview-title">
+      <h2 id="video-overview-title">먼저, 두 영상에서 한 이야기</h2>
+      <p class="overview-description">TIME 원본 영상과 내용 요약. 아래 불렛은 인터뷰 당시 발언을 정리한 것입니다.</p>
+      <div class="overview-grid">
+        {data.videoOverview.map(video => {
+          const source = sourceById[video.sourceId];
+          return (
+            <article class="overview-video">
+              <p class="overview-meta">{source.type} · {source.publisher} · {source.date}</p>
+              <h3><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} ↗</a></h3>
+              <div class="overview-player">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${source.youtubeId}?rel=0`}
+                  title={source.title}
+                  width="560"
+                  height="315"
+                  loading="lazy"
+                  allow="encrypted-media; picture-in-picture; fullscreen"
+                  allowfullscreen
+                  referrerpolicy="strict-origin-when-cross-origin"
+                ></iframe>
+              </div>
+              <p class="overview-format">{video.format}</p>
+              <ul>
+                {video.summary.map(point => (
+                  <li>
+                    <a class="overview-time" href={`${source.url}&t=${point.seconds}s`} target="_blank" rel="noopener noreferrer" aria-label={`${point.at}부터 YouTube에서 보기`}>{point.at}</a>
+                    {' '}{point.text}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          );
+        })}
+      </div>
+      <p class="overview-overlap">A는 여러 경영진의 발언을 묶은 기획 영상, B는 브록먼의 긴 대담입니다. 일부 발언은 두 영상에 겹칩니다.</p>
+    </section>
+
+    <nav class="section-nav" aria-label="방송 진행 순서">
+      {sections.map((section, i) => (
+        <a id={`tab-${section.id}`} href={`#${section.id}`} data-section={section.id}>
+          <span>{section.label}</span><small>{section.time || `${data.sources.length}개`}</small>
+        </a>
+      ))}
+    </nav>
+
+    <section id="opening" class="note-panel" aria-labelledby="heading-opening">
+      <div class="scene-meta"><span>OPENING</span><span>진행 제안 · {data.opening.time}</span></div>
+      <h2 id="heading-opening" tabindex="-1">{data.opening.title}</h2>
+      <QuoteCard quote={data.opening.quote} source={sourceById[data.opening.quote.sourceId]} />
+      <div class="host-line"><h3>이렇게 시작하기 <span>진행 멘트 제안</span></h3><p>{data.opening.script}</p></div>
+      <details class="notes-detail">
+        <summary>자율주행 코너에서 이어오기</summary>
+        <p>{data.opening.bridge}</p><p class="muted">{data.opening.bridgeNote}</p>
+      </details>
+      <div class="story-spine" aria-label="오늘 이야기의 세 장면">
+        {data.scenes.map(scene => <a href={`#${scene.id}`} data-go={scene.id}><span>{scene.label}</span><strong>{scene.title}</strong><span aria-hidden="true">↗</span></a>)}
+      </div>
+    </section>
+
+    {data.scenes.map(scene => (
+      <section id={scene.id} class="note-panel" aria-labelledby={`heading-${scene.id}`}>
+        <div class="scene-meta"><span>{scene.label}</span><span>진행 제안 · {scene.time}</span></div>
+        <h2 id={`heading-${scene.id}`} tabindex="-1">{scene.title}</h2>
+        <p class="scene-message">{scene.message}</p>
+        <QuoteCard quote={scene.quote} source={sourceById[scene.quote.sourceId]} />
+        <div class="main-question"><h3>함께 물어볼 질문</h3><p>{scene.question}</p></div>
+        <div class="host-line"><h3>말문 열기 <span>진행 멘트 제안</span></h3><p>{scene.hostLine}</p></div>
+        <aside class="technical-note" aria-labelledby={`technical-${scene.id}`}>
+          <p class="technical-label">기술 포인트 · 장면 안에서 약 90초</p>
+          <h3 id={`technical-${scene.id}`}>{scene.technical.title}</h3>
+          <p class="technical-concept">{scene.technical.concept}</p>
+          <p>{scene.technical.summary}</p>
+          <details class="notes-detail technical-detail">
+            <summary>원리 · 설명 예시 · 기술 질문</summary>
+            <dl class="technical-steps">
+              {scene.technical.points.map(point => <div><dt>{point.term}</dt><dd>{point.text}</dd></div>)}
+            </dl>
+            <h4>이렇게 풀어 말하기 · 진행 멘트 제안</h4>
+            <p>{scene.technical.example}</p>
+            <h4>한 걸음 더 물어보기</h4>
+            <p class="technical-question">{scene.technical.question}</p>
+            <p class="muted">{scene.technical.context}</p>
+            <div class="technical-links">
+              {scene.technical.links.map(link => <a href={evidenceUrl(link)} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>)}
+            </div>
+          </details>
+        </aside>
+        <details class="notes-detail">
+          <summary>추가 질문 · 근거 자료</summary>
+          <h3>대화가 이어지면</h3>
+          <ul>{scene.followUps.map(question => <li>{question}</li>)}</ul>
+          <h3>근거 옆에서 확인하기</h3>
+          {scene.evidence.map(item => (
+            <div class="evidence">
+              <h4>{item.label}</h4><p>{item.text}</p>
+              {'caveat' in item && <p class="muted">{item.caveat}</p>}
+              <a href={evidenceUrl(item)} target="_blank" rel="noopener noreferrer">
+                {sourceById[item.sourceId].publisher} · {'at' in item ? item.at : sourceById[item.sourceId].date} ↗
+              </a>
+            </div>
+          ))}
+        </details>
+        <p class="transition"><span>다음으로</span>{scene.transition}</p>
+      </section>
+    ))}
+
+    <section id="closing" class="note-panel" aria-labelledby="heading-closing">
+      <div class="scene-meta"><span>CLOSING</span><span>진행 제안 · {data.closing.time}</span></div>
+      <h2 id="heading-closing" tabindex="-1">{data.closing.title}</h2>
+      <QuoteCard quote={data.closing.quote} source={sourceById[data.closing.quote.sourceId]} />
+      <div class="host-line"><h3>마지막 멘트 <span>진행 멘트 제안</span></h3><p>{data.closing.script}</p></div>
+      <div class="main-question"><h3>두 진행자와 청취자에게</h3><p>{data.closing.question}</p></div>
+      <p class="closing-note">{data.closing.takeaway}</p>
+      <div class="takeaway"><span>오늘 남길 한 문장 · 편집 관점</span><p>{data.thesis}</p></div>
+    </section>
+
+    <section id="sources" class="note-panel" aria-labelledby="heading-sources">
+      <div class="scene-meta"><span>REFERENCE DESK</span><span>확인 기준 · {data.date}</span></div>
+      <h2 id="heading-sources" tabindex="-1">원문과 기술 근거, 함께 보기.</h2>
+      <p class="scene-message">두 영상에 사건 조사, 검증 사례, 에이전트 구현 자료를 연결했습니다. 총 {data.sources.length}개 출처입니다.</p>
+      <div class="source-list">
+        {data.sources.map((source, i) => (
+          <div class="source-item">
+            <span class="source-number">0{i + 1}</span>
+            <div>
+              <p class="source-meta">{source.type} · {source.publisher} · {source.date}</p>
+              <h3><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} ↗</a></h3>
+              <p>{source.note}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <details class="notes-detail">
+        <summary>자료를 읽는 기준</summary>
+        <ul>
+          <li>인용은 두 영상의 영어 자동 자막에서 발췌하고 한국어로 번역했습니다. 타임스탬프는 인용 지점, ‘맥락 듣기’는 앞뒤를 포함한 구간입니다. 녹음·클립 편집 전 원음과 대조할 수 있습니다.</li>
+          <li>TIME의 두 영상은 일부 발언이 겹칩니다. 서로 독립적인 검증 자료나 두 경영진의 찬반 토론으로 취급하지 않습니다.</li>
+          <li>개인 AI 기능은 인터뷰 속 구상으로 소개합니다. 영상 업로드일과 촬영·취재 시점은 다르며, 현재 출시 상태를 설명하는 자료로 쓰지 않습니다.</li>
+          <li>‘진행 멘트 제안’과 토론 질문은 방송을 위해 작성한 문장입니다. 화자의 실제 발언은 인용 블록에만 표시했습니다.</li>
+          <li>기술 포인트는 각 장면의 경험담 일부를 약 90초 설명으로 바꿔 진행하는 제안입니다. 인터뷰 발언, 다른 회사의 구현 사례, 설명용 가정을 구분했습니다.</li>
+        </ul>
+      </details>
+    </section>
+
+    <footer class="panel-controls js-only">
+      <button type="button" data-prev>← 이전</button>
+      <span data-progress aria-live="polite" aria-atomic="true"></span>
+      <button type="button" data-next>다음 →</button>
+    </footer>
+
+    <dialog class="clip-dialog" aria-labelledby="clip-title">
+      <div class="dialog-header"><h2 id="clip-title">영상 발췌</h2><button type="button" data-close aria-label="영상 닫기">닫기 ✕</button></div>
+      <div class="clip-frame"></div>
+      <p>재생이 제한되면 <a class="clip-fallback" target="_blank" rel="noopener noreferrer">YouTube에서 해당 구간 열기 ↗</a></p>
+    </dialog>
+  </article>
+</Layout>
+
+<script>
+  const root = document.querySelector<HTMLElement>('.podcast-notes');
+  if (root) {
+    const nav = root.querySelector<HTMLElement>('.section-nav')!;
+    const tabs = Array.from(nav.querySelectorAll<HTMLAnchorElement>('[data-section]'));
+    const panels = Array.from(root.querySelectorAll<HTMLElement>('.note-panel'));
+    const previous = root.querySelector<HTMLButtonElement>('[data-prev]')!;
+    const next = root.querySelector<HTMLButtonElement>('[data-next]')!;
+    const progress = root.querySelector<HTMLElement>('[data-progress]')!;
+    let active = 0;
+    nav.setAttribute('role', 'tablist');
+    panels.forEach((panel, i) => {
+      panel.setAttribute('role', 'tabpanel');
+      panel.setAttribute('aria-labelledby', tabs[i].id);
+      panel.tabIndex = 0;
+      tabs[i].setAttribute('role', 'tab');
+      tabs[i].setAttribute('aria-controls', panel.id);
+    });
+
+    function select(index: number, updateHash = true, focus: 'tab' | 'heading' | 'none' = 'none') {
+      active = Math.max(0, Math.min(index, panels.length - 1));
+      panels.forEach((panel, i) => { panel.hidden = i !== active; });
+      tabs.forEach((tab, i) => {
+        tab.setAttribute('aria-selected', String(i === active));
+        tab.tabIndex = i === active ? 0 : -1;
+      });
+      previous.disabled = active === 0;
+      next.disabled = active === panels.length - 1;
+      progress.textContent = `${active + 1} / ${panels.length} · ${tabs[active].querySelector('span')!.textContent}`;
+      if (updateHash && location.hash !== `#${panels[active].id}`) history.pushState(null, '', `#${panels[active].id}`);
+      if (focus === 'tab') tabs[active].focus({ preventScroll: true });
+      if (focus === 'heading') panels[active].querySelector<HTMLElement>('h2')?.focus({ preventScroll: true });
+      if (focus !== 'none') {
+        nav.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+        tabs[active].scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      } else {
+        nav.scrollLeft = tabs[active].offsetLeft - nav.offsetLeft;
+      }
+    }
+
+    function fromHash() {
+      const index = panels.findIndex(panel => `#${panel.id}` === location.hash);
+      select(index < 0 ? 0 : index, false);
+    }
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', event => { event.preventDefault(); select(i, true, 'tab'); });
+      tab.addEventListener('keydown', event => {
+        let index = i;
+        if (event.key === 'ArrowRight') index = (i + 1) % tabs.length;
+        else if (event.key === 'ArrowLeft') index = (i - 1 + tabs.length) % tabs.length;
+        else if (event.key === 'Home') index = 0;
+        else if (event.key === 'End') index = tabs.length - 1;
+        else if (event.key === ' ') index = i;
+        else return;
+        event.preventDefault();
+        select(index, true, 'tab');
+      });
+    });
+    root.querySelectorAll<HTMLAnchorElement>('[data-go]').forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        select(panels.findIndex(panel => panel.id === link.dataset.go), true, 'heading');
+      });
+    });
+    previous.addEventListener('click', () => select(active - 1, true, 'heading'));
+    next.addEventListener('click', () => select(active + 1, true, 'heading'));
+    window.addEventListener('hashchange', fromHash);
+    root.classList.add('enhanced');
+    fromHash();
+
+    const dialog = root.querySelector<HTMLDialogElement>('.clip-dialog')!;
+    const frame = dialog.querySelector<HTMLElement>('.clip-frame')!;
+    const title = dialog.querySelector<HTMLElement>('#clip-title')!;
+    const fallback = dialog.querySelector<HTMLAnchorElement>('.clip-fallback')!;
+    root.querySelectorAll<HTMLButtonElement>('[data-video]').forEach(button => {
+      button.addEventListener('click', () => {
+        const { video, start, end } = button.dataset;
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube-nocookie.com/embed/${video}?start=${start}&end=${end}&autoplay=1&rel=0`;
+        iframe.title = button.dataset.title || '영상 발췌';
+        iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        iframe.allowFullscreen = true;
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        title.textContent = iframe.title;
+        fallback.href = `https://www.youtube.com/watch?v=${video}&t=${start}s`;
+        frame.replaceChildren(iframe);
+        dialog.showModal();
+      });
+    });
+    dialog.querySelector('[data-close]')!.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('close', () => frame.replaceChildren());
+
+    const details = Array.from(root.querySelectorAll<HTMLDetailsElement>('details'));
+    let beforePrint: boolean[] | null = null;
+    window.addEventListener('beforeprint', () => {
+      beforePrint ??= details.map(detail => detail.open);
+      details.forEach(detail => { detail.open = true; });
+      panels.forEach(panel => { panel.hidden = false; });
+    });
+    window.addEventListener('afterprint', () => {
+      if (!beforePrint) return;
+      const saved = beforePrint;
+      details.forEach((detail, i) => { detail.open = saved[i]; });
+      panels.forEach((panel, i) => { panel.hidden = i !== active; });
+      beforePrint = null;
+    });
+    root.querySelector('.print-button')!.addEventListener('click', () => window.print());
+  }
+</script>
+
+<style>
+  .podcast-notes { --note-accent: #fd9c62; max-width: 1120px; margin: 0 auto; padding: 3.5rem 2.5rem 4rem; color: #ede7e9; }
+  .eyebrow-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; color: #a49b9f; font-size: .75rem; }
+  .eyebrow-row a { color: #bdb4b8; }
+  .eyebrow-row > span { margin-left: auto; }
+  .print-button { background: none; color: #cbbbc2; border: 1px solid #43343c; border-radius: 4px; padding: .35rem .6rem; }
+  .notes-header h1 { max-width: 860px; margin: 1.6rem 0 .8rem; font-size: clamp(2rem, 4.1vw, 3.25rem); line-height: 1.28; letter-spacing: -.06em; font-weight: 750; word-break: keep-all; overflow-wrap: anywhere; }
+  .subtitle { color: #bdb4b8; font-size: 1rem; word-break: keep-all; }
+  .episode-meta { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; margin-top: 1.3rem; font-size: .74rem; color: #a49b9f; }
+  .episode-meta span:first-child { color: #fd9c62; }
+  .video-overview { margin-top: 2.5rem; padding-top: 1.6rem; border-top: 1px solid #403038; }
+  .video-overview > h2 { font-size: 1.25rem; font-weight: 600; letter-spacing: -.025em; }
+  .overview-description { margin-top: .5rem; color: #bdb4b8; font-size: .84rem; line-height: 1.8; }
+  .overview-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; margin-top: 1.4rem; }
+  .overview-meta { color: #c4aa99; font-size: .7rem; }
+  .overview-video h3 { margin: .6rem 0 .85rem; min-height: 4.9rem; font-size: 1rem; font-weight: 550; line-height: 1.6; overflow-wrap: anywhere; }
+  .overview-video h3 a { color: #eee0d6; }
+  .overview-video h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .overview-player { aspect-ratio: 16 / 9; background: #080608; border: 1px solid #403038; border-radius: 5px; overflow: hidden; }
+  .overview-player iframe { display: block; width: 100%; height: 100%; border: 0; }
+  .overview-format { margin-top: .65rem; color: #ab9fa6; font-size: .73rem; }
+  .overview-video ul { list-style: disc; margin: 1rem 0 0; padding-left: 1.15rem; }
+  .overview-video li { padding-left: .15rem; color: #d2c8cd; font-size: .86rem; line-height: 1.85; word-break: keep-all; overflow-wrap: anywhere; }
+  .overview-video li + li { margin-top: .6rem; }
+  .overview-video li::marker { color: #9e8371; }
+  .overview-time { color: #e1b493; font-family: var(--font-mono); font-size: .73rem; white-space: nowrap; text-decoration: underline; text-underline-offset: 3px; margin-right: .25rem; }
+  .overview-overlap { margin-top: 1.25rem; color: #ab9fa6; font-size: .78rem; line-height: 1.8; word-break: keep-all; }
+  .section-nav { display: flex; gap: .25rem; overflow-x: auto; margin: 2rem 0 0; border-bottom: 1px solid #403038; padding-bottom: 1px; scroll-margin-top: 6rem; }
+  .section-nav a { display: flex; align-items: center; flex: 1 0 auto; gap: .6rem; padding: .85rem 1rem; color: #b4a9ae; border-bottom: 2px solid transparent; white-space: nowrap; font-size: .9rem; }
+  .section-nav small { color: #998c92; font-size: .7rem; margin-left: auto; }
+  .section-nav a[aria-selected="true"] { color: #ffd3b4; border-color: #fd9c62; background: #201217; }
+  .note-panel { padding: 2.5rem 0 .75rem; scroll-margin-top: 5rem; }
+  .scene-meta { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: .8rem; color: #a49b9f; font-size: .72rem; letter-spacing: .06em; }
+  .scene-meta span:first-child { color: #fd9c62; }
+  .note-panel h2 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.25rem); font-weight: 650; line-height: 1.4; letter-spacing: -.04em; word-break: keep-all; overflow-wrap: anywhere; }
+  .scene-message { max-width: 850px; margin: .8rem 0 0; color: #bdb4b8; line-height: 1.85; font-size: .92rem; word-break: keep-all; }
+  .host-line { margin: 1.6rem 0; max-width: 850px; }
+  .host-line h3, .main-question h3, .notes-detail h3 { font-size: .76rem; font-weight: 600; color: #c7bac1; margin: 0 0 .6rem; }
+  .host-line h3 span { margin-left: .6rem; font-size: .68rem; font-weight: 400; color: #9b8f96; }
+  .host-line p { font-size: 1.04rem; line-height: 1.95; color: #d9cfd4; word-break: keep-all; overflow-wrap: anywhere; }
+  .main-question { margin: 1.75rem 0; padding: 1.3rem 1.5rem; border-radius: 6px; background: #192120; border: 1px solid #30403a; }
+  .main-question h3 { color: #8bd5b9; }
+  .main-question p { color: #e4f2eb; font-size: clamp(1.15rem, 2vw, 1.45rem); font-weight: 550; line-height: 1.65; letter-spacing: -.03em; word-break: keep-all; overflow-wrap: anywhere; }
+  .notes-detail { margin: 1.25rem 0; border-top: 1px solid #36272f; border-bottom: 1px solid #36272f; padding: 1rem 0; color: #c5b9bf; font-size: .9rem; line-height: 1.85; }
+  .notes-detail summary { cursor: pointer; color: #d9cfd4; width: fit-content; }
+  .notes-detail p { margin-top: .65rem; max-width: 850px; word-break: keep-all; overflow-wrap: anywhere; }
+  .notes-detail h3 { margin-top: 1.3rem; color: #fd9c62; }
+  .notes-detail ul { list-style: disc; margin: .65rem 0 .4rem; padding-left: 1.3rem; max-width: 850px; }
+  .notes-detail li + li { margin-top: .65rem; }
+  .notes-detail a { display: inline-block; margin-top: .5rem; color: #e1b493; text-decoration: underline; text-underline-offset: 4px; font-size: .8rem; }
+  .evidence { margin: 1rem 0; padding-left: 1rem; border-left: 1px solid #5a454d; }
+  .evidence h4 { font-size: .85rem; color: #e8dce3; font-weight: 600; }
+  .evidence .muted, .muted { color: #a99ca3; font-size: .82rem; }
+  .technical-note { margin: 1.6rem 0; padding: 1.2rem 1.4rem; border: 1px solid #34374a; border-radius: 6px; background: #13121e; }
+  .technical-note > p { color: #c5bfce; font-size: .9rem; line-height: 1.85; word-break: keep-all; overflow-wrap: anywhere; }
+  .technical-note > .technical-label { color: #a8b6ea; font-size: .72rem; margin-bottom: .5rem; }
+  .technical-note h3 { font-size: 1.15rem; line-height: 1.6; font-weight: 600; letter-spacing: -.025em; color: #e0e5fa; word-break: keep-all; }
+  .technical-note > .technical-concept { color: #a8b6ea; font-size: .76rem; margin: .45rem 0 .6rem; }
+  .technical-detail { border-bottom: 0; border-color: #34374a; margin: 1rem 0 0; padding-bottom: 0; }
+  .technical-detail h4 { font-size: .77rem; font-weight: 550; color: #c9d2f7; margin-top: 1rem; }
+  .technical-steps { margin: .9rem 0 1.2rem; }
+  .technical-steps > div { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1rem; padding: .6rem 0; border-bottom: 1px solid #302a3b; }
+  .technical-steps dt { color: #c9d2f7; font-size: .82rem; font-weight: 550; }
+  .technical-steps dd { margin: 0; color: #c5bfce; font-size: .86rem; line-height: 1.8; word-break: keep-all; overflow-wrap: anywhere; }
+  .technical-detail .technical-question { color: #e0e5fa; font-weight: 550; }
+  .technical-links { display: flex; flex-direction: column; align-items: flex-start; gap: .2rem; margin-top: .6rem; }
+  .transition { display: flex; gap: 1rem; margin: 1.5rem 0 0; color: #ac9ba5; font-size: .83rem; line-height: 1.8; word-break: keep-all; }
+  .transition span { color: #d4b298; flex-shrink: 0; }
+  .story-spine { margin-top: 1.8rem; }
+  .story-spine a { display: flex; align-items: center; gap: 1.25rem; padding: .9rem 0; border-bottom: 1px solid #36272f; color: #d3c7ce; }
+  .story-spine span { color: #b39179; font-size: .76rem; white-space: nowrap; }
+  .story-spine span:last-child { margin-left: auto; }
+  .story-spine strong { font-size: .9rem; font-weight: 500; word-break: keep-all; }
+  .closing-note { margin-top: -.5rem; color: #b5a7af; font-size: .85rem; }
+  .takeaway { margin-top: 2rem; padding-top: 1.3rem; border-top: 1px solid #473239; }
+  .takeaway span { font-size: .75rem; color: #b99a84; }
+  .takeaway p { margin-top: .6rem; font-size: 1.15rem; line-height: 1.8; word-break: keep-all; }
+  .source-list { margin: 1.5rem 0; }
+  .source-item { display: flex; gap: 1.25rem; padding: 1.4rem 0; border-bottom: 1px solid #36272f; }
+  .source-number { color: #b99a84; font-family: var(--font-mono); font-size: .85rem; padding-top: .15rem; }
+  .source-meta { color: #ad9fa7; font-size: .73rem; }
+  .source-item h3 { font-size: 1rem; font-weight: 550; line-height: 1.65; margin: .5rem 0; overflow-wrap: anywhere; }
+  .source-item h3 a { color: #f0d3bd; text-decoration: underline; text-decoration-color: #654737; text-underline-offset: 4px; }
+  .source-item p:last-child { color: #bbadb5; font-size: .86rem; line-height: 1.8; word-break: keep-all; }
+  .panel-controls { display: none; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1.5rem; margin-top: 1.5rem; border-top: 1px solid #473239; }
+  .panel-controls button, .dialog-header button { border: 1px solid #5c414c; border-radius: 5px; background: #201219; color: #eddbd0; padding: .6rem 1rem; }
+  .panel-controls button:disabled { opacity: .35; cursor: default; }
+  .panel-controls span { color: #aa98a3; font-size: .75rem; }
+  button { cursor: pointer; font: inherit; font-size: .8rem; }
+  :is(a, button, summary):focus-visible, .note-panel:focus-visible { outline: 2px solid #fd9c62; outline-offset: 4px; }
+  h2:focus { outline: none; }
+  .js-only { display: none; }
+  .enhanced :global(button.js-only) { display: inline-flex; }
+  .enhanced .panel-controls { display: flex; }
+  .clip-dialog { position: fixed; inset: 0; margin: auto; width: min(960px, calc(100vw - 2rem)); max-height: calc(100dvh - 2rem); overflow: auto; padding: 1rem; border: 1px solid #705447; border-radius: 8px; background: #170d12; color: #f4e7dd; }
+  .clip-dialog::backdrop { background: rgb(0 0 0 / 85%); }
+  .dialog-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+  .dialog-header h2 { font-size: 1rem; font-weight: 550; }
+  .clip-frame { aspect-ratio: 16 / 9; background: #000; }
+  .clip-frame :global(iframe) { width: 100%; height: 100%; border: 0; }
+  .clip-dialog > p { margin: 1rem 0 0; color: #b6a8ae; font-size: .8rem; }
+  .clip-fallback { color: #f3b994; text-decoration: underline; }
+  @media (max-width: 640px) {
+    .podcast-notes { padding: 2rem 1.25rem 3rem; }
+    .eyebrow-row { gap: .6rem; font-size: .67rem; }
+    .print-button { font-size: .65rem; }
+    .notes-header h1 { margin-top: 1.4rem; }
+    .subtitle { font-size: .9rem; line-height: 1.8; }
+    .overview-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+    .overview-video h3 { min-height: 0; }
+    .section-nav { margin-top: 1.5rem; }
+    .section-nav a { padding: .8rem .85rem; }
+    .note-panel { padding-top: 1.75rem; }
+    .main-question { padding: 1rem; }
+    .host-line p { font-size: .96rem; }
+    .story-spine a { gap: .7rem; }
+    .story-spine strong { font-size: .8rem; }
+    .source-item { gap: .8rem; }
+    .technical-note { padding: 1rem; }
+    .technical-steps > div { grid-template-columns: 1fr; gap: .2rem; }
+  }
+  @media print {
+    :global(html) { background: white !important; color-scheme: light; }
+    :global(body) { background: white !important; color: #111 !important; }
+    :global(body > header), :global(body > footer), .section-nav, .story-spine, .panel-controls, .print-button, .clip-dialog, .notes-detail summary { display: none !important; }
+    .podcast-notes { max-width: none; padding: 0; color: #111; }
+    .note-panel, .note-panel[hidden] { display: block !important; break-before: page; padding-top: 0; }
+    .note-panel#opening { break-before: page; }
+    .notes-header { margin-bottom: 1.5rem; }
+    .notes-header h1 { font-size: 24pt; }
+    .video-overview { margin-top: 1rem; padding-top: 1rem; }
+    .overview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+    .overview-video { break-inside: avoid; }
+    .overview-video h3 { min-height: 0; font-size: 11pt; }
+    .overview-player { display: none; }
+    .overview-video li { font-size: 9pt; line-height: 1.65; }
+    .note-panel h2 { font-size: 21pt; }
+    .main-question { background: #f1f4f2; border-color: #aaa; break-inside: avoid; margin: .8rem 0; padding: .65rem 1rem; }
+    .main-question p { font-size: 12pt; line-height: 1.6; }
+    .podcast-notes :is(p, span, a, h3, h4), .source-item h3 a { color: #111 !important; }
+    .host-line, .evidence, .source-item, .takeaway { break-inside: avoid; }
+    .host-line { margin: .8rem 0; }
+    .host-line p, .notes-detail { font-size: 9pt; line-height: 1.7; }
+    .scene-message { font-size: 9pt; line-height: 1.65; }
+    .notes-detail { border-color: #ccc; margin: .8rem 0; padding: .65rem 0; }
+    .notes-detail h3 { margin-top: .65rem; }
+    .notes-detail li + li { margin-top: .4rem; }
+    .evidence { margin: .65rem 0; }
+    .evidence .muted { font-size: 8pt; }
+    .transition { margin-top: .8rem; font-size: 9pt; }
+    .technical-note { background: white; border-color: #aaa; margin: .8rem 0; padding: .75rem 1rem; }
+    .technical-note > p, .technical-steps dd { font-size: 9pt; line-height: 1.6; }
+    .technical-note h3 { font-size: 12pt; break-after: avoid; }
+    .technical-steps :is(dt, dd) { color: #111; }
+    .technical-steps > div { break-inside: avoid; padding: .4rem 0; }
+    .technical-detail { padding-bottom: 0; margin-bottom: 0; }
+    :global(.podcast-notes details::details-content) { content-visibility: visible; }
+    :global(.podcast-notes details > :not(summary)) { display: block !important; }
+  }
+</style>
