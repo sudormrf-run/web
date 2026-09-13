@@ -1,0 +1,461 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import SourceQuote from '../../../components/podcast/SourceQuote.astro';
+import data from '../../../data/when-expertise-gets-cheap.json';
+
+const sourceById = Object.fromEntries(data.sources.map(source => [source.id, source]));
+const sections = [data.opening, ...data.scenes, data.closing, { id: 'sources', label: '출처', time: '' }];
+const linkUrl = (item: { sourceId: string; anchor?: string }) =>
+  sourceById[item.sourceId].url + (item.anchor ?? '');
+---
+
+<Layout title={data.title} description={data.subtitle} locale="ko" hideLanguageSwitcher>
+  <article class="podcast-notes">
+    <header class="notes-header">
+      <div class="eyebrow-row">
+        <a href="/knowledge/">← Knowledge</a>
+        <span>방송 노트 · {data.date}</span>
+        <button type="button" class="print-button js-only">인쇄 / PDF</button>
+      </div>
+      <h1>{data.title}</h1>
+      <p class="subtitle">{data.subtitle}</p>
+      <div class="episode-meta"><span>{data.duration}</span><span>원문 {data.sources.filter(s => s.core).length}편</span><span>사례 {data.scenes.length}개</span></div>
+    </header>
+
+    <section class="hook-banner" aria-labelledby="hook-title">
+      <span class="hook-badge">{data.hook.badge}</span>
+      <p id="hook-title" class="hook-line" lang="ko">“{data.hook.ko}”</p>
+      <p class="hook-en" lang="en">“{data.hook.en}”</p>
+      <p class="hook-src">{data.hook.speaker}{data.hook.grade ? ` · ${data.hook.grade}` : ''}</p>
+      <p class="hook-why">{data.hook.why}</p>
+    </section>
+
+    <section class="article-overview" aria-labelledby="article-overview-title">
+      <h2 id="article-overview-title">먼저, 이번 주 앤트로픽이 낸 글 넷</h2>
+      <p class="overview-description">전부 한 회사가 낸 글입니다. 경제 예측, 오용 보고서, 무기 능력 측정, 자사 모델의 정렬 실패 조사. 아래는 각 글의 핵심 요약입니다.</p>
+      <div class="overview-grid">
+        {data.articleOverview.map(item => {
+          const source = sourceById[item.sourceId];
+          return (
+            <article class="overview-article">
+              <p class="overview-meta">{item.kind} · {source.publisher} · {item.date}</p>
+              <h3><a href={source.url} target="_blank" rel="noopener noreferrer">{item.titleKo} ↗</a></h3>
+              <p class="overview-title-en" lang="en">{source.title}</p>
+              <ul>
+                {item.summary.map(point => <li>{point}</li>)}
+              </ul>
+            </article>
+          );
+        })}
+      </div>
+      <p class="overview-overlap">{data.articleOverview.length}편을 관통하는 한 문장: {data.thesis}</p>
+    </section>
+
+    <nav class="section-nav" aria-label="방송 진행 순서">
+      {sections.map((section) => (
+        <a id={`tab-${section.id}`} href={`#${section.id}`} data-section={section.id}>
+          <span>{section.label}</span><small>{section.time || `${data.sources.length}개`}</small>
+        </a>
+      ))}
+    </nav>
+
+    <section id="opening" class="note-panel" aria-labelledby="heading-opening">
+      <div class="scene-meta"><span>OPENING</span><span>진행 제안 · {data.opening.time}</span></div>
+      <h2 id="heading-opening" tabindex="-1">{data.opening.title}</h2>
+      <div class="host-line"><h3>이렇게 시작하기 <span>진행 멘트 제안</span></h3><p>{data.opening.script}</p></div>
+      <details class="notes-detail">
+        <summary>오늘 왜 이 네 편인가</summary>
+        <p>{data.opening.bridge}</p>
+      </details>
+      <div class="story-spine" aria-label="오늘 이야기의 네 막">
+        {data.scenes.map(scene => <a href={`#${scene.id}`} data-go={scene.id}><span>{scene.label}</span><strong>{scene.title}</strong><span aria-hidden="true">↗</span></a>)}
+      </div>
+    </section>
+
+    {data.scenes.map(scene => (
+      <section id={scene.id} class="note-panel" aria-labelledby={`heading-${scene.id}`}>
+        <div class="scene-meta"><span>{scene.label}</span>{scene.group && <span class="scene-group">{scene.group}</span>}<span>진행 제안 · {scene.time}</span></div>
+        <h2 id={`heading-${scene.id}`} tabindex="-1">{scene.title}</h2>
+        {scene.message && <p class="scene-message">{scene.message}</p>}
+        {scene.tiles && (
+          <div class="tile-row">
+            {scene.tiles.map(tile => (
+              <div class={`tile tile-${tile.accent ?? 'orange'}`}>
+                <strong>{tile.value}</strong>
+                {tile.krw && <span class="tile-krw">{tile.krw}</span>}
+                <span class="tile-label">{tile.label}</span>
+                {tile.note && <span class="tile-note">{tile.note}</span>}
+              </div>
+            ))}
+          </div>
+        )}
+        {scene.quote && <SourceQuote quote={scene.quote} source={sourceById[scene.quote.sourceId]} anchor={scene.quote.anchor} />}
+        {scene.question && <div class="main-question"><h3>함께 물어볼 질문</h3><p>{scene.question}</p></div>}
+        {scene.hostLine && <div class="host-line"><h3>말문 열기 <span>진행 멘트 제안</span></h3><p>{scene.hostLine}</p></div>}
+        {scene.deepDive && (
+          <aside class="technical-note" aria-labelledby={`technical-${scene.id}`}>
+            <p class="technical-label">깊이 보기 · 장면 안에서 약 90초</p>
+            <h3 id={`technical-${scene.id}`}>{scene.deepDive.title}</h3>
+            <p class="technical-concept">{scene.deepDive.concept}</p>
+            <p>{scene.deepDive.summary}</p>
+            <details class="notes-detail technical-detail">
+              <summary>원리 · 설명 예시 · 한 걸음 더</summary>
+              <dl class="technical-steps">
+                {scene.deepDive.points.map(point => <div><dt>{point.term}</dt><dd>{point.text}</dd></div>)}
+              </dl>
+              <h4>이렇게 풀어 말하기 · 진행 멘트 제안</h4>
+              <p>{scene.deepDive.example}</p>
+              <h4>한 걸음 더 물어보기</h4>
+              <p class="technical-question">{scene.deepDive.question}</p>
+              <p class="muted">{scene.deepDive.context}</p>
+              <div class="technical-links">
+                {scene.deepDive.links.map(link => <a href={linkUrl(link)} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>)}
+              </div>
+            </details>
+          </aside>
+        )}
+        {(scene.followUps || scene.evidence) && (
+          <details class="notes-detail">
+            <summary>추가 질문 · 근거 자료</summary>
+            {scene.followUps && <h3>대화가 이어지면</h3>}
+            {scene.followUps && <ul>{scene.followUps.map(question => <li>{question}</li>)}</ul>}
+            {scene.evidence && <h3>근거 옆에서 확인하기</h3>}
+            {scene.evidence && scene.evidence.map(item => (
+              <div class="evidence">
+                <h4>{item.label}{item.grade ? ` · ${item.grade}` : ''}</h4><p>{item.text}</p>
+                {'caveat' in item && <p class="muted">{item.caveat}</p>}
+                <a href={linkUrl(item)} target="_blank" rel="noopener noreferrer">
+                  {sourceById[item.sourceId].publisher}{'section' in item ? ` · ${item.section}` : ''} ↗
+                </a>
+              </div>
+            ))}
+          </details>
+        )}
+        {scene.transition && <p class="transition"><span>다음으로</span>{scene.transition}</p>}
+      </section>
+    ))}
+
+    <section id="closing" class="note-panel" aria-labelledby="heading-closing">
+      <div class="scene-meta"><span>CLOSING</span><span>진행 제안 · {data.closing.time}</span></div>
+      <h2 id="heading-closing" tabindex="-1">{data.closing.title}</h2>
+      <SourceQuote quote={data.closing.quote} source={sourceById[data.closing.quote.sourceId]} anchor={data.closing.quote.anchor} />
+      <div class="host-line"><h3>마지막 멘트 <span>진행 멘트 제안</span></h3><p>{data.closing.script}</p></div>
+      <div class="discuss" aria-label="다같이 생각해볼 거리">
+        <h3>다같이 생각해볼 거리</h3>
+        <div class="discuss-grid">
+          <div class="discuss-col"><h4>경제</h4><ul>{data.closing.discuss.economy.map(q => <li>{q}</li>)}</ul></div>
+          <div class="discuss-col"><h4>보안</h4><ul>{data.closing.discuss.security.map(q => <li>{q}</li>)}</ul></div>
+          <div class="discuss-col"><h4>사회</h4><ul>{data.closing.discuss.society.map(q => <li>{q}</li>)}</ul></div>
+        </div>
+      </div>
+      <div class="main-question"><h3>두 진행자와 청취자에게</h3><p>{data.closing.question}</p></div>
+      <div class="takeaway"><span>오늘 남길 한 문장 · 편집 관점</span><p>{data.thesis}</p></div>
+    </section>
+
+    <section id="sources" class="note-panel" aria-labelledby="heading-sources">
+      <div class="scene-meta"><span>REFERENCE DESK</span><span>확인 기준 · {data.date}</span></div>
+      <h2 id="heading-sources" tabindex="-1">원문과 추가 근거, 함께 보기.</h2>
+      <p class="scene-message">앤트로픽의 글 네 편에 외부 검증·반응 자료를 연결했습니다. 총 {data.sources.length}개 출처입니다.</p>
+      <div class="source-list">
+        {data.sources.map((source, i) => (
+          <div class="source-item">
+            <span class="source-number">{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <p class="source-meta">{source.type} · {source.publisher} · {source.date}</p>
+              <h3><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} ↗</a></h3>
+              <p>{source.note}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <details class="notes-detail">
+        <summary>자료를 읽는 기준</summary>
+        <ul>
+          <li>인용은 앤트로픽 원문(영문)에서 발췌하고 한국어로 번역했습니다. 방송 전 원문과 대조할 수 있도록 영어 원문을 각 인용 블록에 함께 실었습니다.</li>
+          <li>네 편 모두 같은 회사(앤트로픽)가 낸 글입니다. 서로 독립된 제3자 검증이 아니며, 외부 언론·기관 반응은 출처 목록에 따로 표시했습니다.</li>
+          <li>수치에는 등급을 달았습니다. [사실]은 앤트로픽 1차 발표, [보도]는 언론 보도, [추정]은 추론입니다. 미확정 항목은 ‘미확인’으로 표기했습니다.</li>
+          <li>‘진행 멘트 제안’과 토론 질문은 방송을 위해 작성한 문장입니다. 원문 발언은 인용 블록에만 표시했습니다.</li>
+          <li>달러 금액은 미국식 표기와 원화 환산(1달러 = {data.fx}원, {data.date} 기준 반올림)을 병기했습니다.</li>
+        </ul>
+      </details>
+    </section>
+
+    <footer class="panel-controls js-only">
+      <button type="button" data-prev>← 이전</button>
+      <span data-progress aria-live="polite" aria-atomic="true"></span>
+      <button type="button" data-next>다음 →</button>
+    </footer>
+  </article>
+</Layout>
+
+<script>
+  const root = document.querySelector<HTMLElement>('.podcast-notes');
+  if (root) {
+    const nav = root.querySelector<HTMLElement>('.section-nav')!;
+    const tabs = Array.from(nav.querySelectorAll<HTMLAnchorElement>('[data-section]'));
+    const panels = Array.from(root.querySelectorAll<HTMLElement>('.note-panel'));
+    const previous = root.querySelector<HTMLButtonElement>('[data-prev]')!;
+    const next = root.querySelector<HTMLButtonElement>('[data-next]')!;
+    const progress = root.querySelector<HTMLElement>('[data-progress]')!;
+    let active = 0;
+    nav.setAttribute('role', 'tablist');
+    panels.forEach((panel, i) => {
+      panel.setAttribute('role', 'tabpanel');
+      panel.setAttribute('aria-labelledby', tabs[i].id);
+      panel.tabIndex = 0;
+      tabs[i].setAttribute('role', 'tab');
+      tabs[i].setAttribute('aria-controls', panel.id);
+    });
+
+    function select(index: number, updateHash = true, focus: 'tab' | 'heading' | 'none' = 'none') {
+      active = Math.max(0, Math.min(index, panels.length - 1));
+      panels.forEach((panel, i) => { panel.hidden = i !== active; });
+      tabs.forEach((tab, i) => {
+        tab.setAttribute('aria-selected', String(i === active));
+        tab.tabIndex = i === active ? 0 : -1;
+      });
+      previous.disabled = active === 0;
+      next.disabled = active === panels.length - 1;
+      progress.textContent = `${active + 1} / ${panels.length} · ${tabs[active].querySelector('span')!.textContent}`;
+      if (updateHash && location.hash !== `#${panels[active].id}`) history.pushState(null, '', `#${panels[active].id}`);
+      if (focus === 'tab') tabs[active].focus({ preventScroll: true });
+      if (focus === 'heading') panels[active].querySelector<HTMLElement>('h2')?.focus({ preventScroll: true });
+      if (focus !== 'none') {
+        nav.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+        tabs[active].scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      } else {
+        nav.scrollLeft = tabs[active].offsetLeft - nav.offsetLeft;
+      }
+    }
+
+    function fromHash() {
+      const index = panels.findIndex(panel => `#${panel.id}` === location.hash);
+      select(index < 0 ? 0 : index, false);
+    }
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', event => { event.preventDefault(); select(i, true, 'tab'); });
+      tab.addEventListener('keydown', event => {
+        let index = i;
+        if (event.key === 'ArrowRight') index = (i + 1) % tabs.length;
+        else if (event.key === 'ArrowLeft') index = (i - 1 + tabs.length) % tabs.length;
+        else if (event.key === 'Home') index = 0;
+        else if (event.key === 'End') index = tabs.length - 1;
+        else if (event.key === ' ') index = i;
+        else return;
+        event.preventDefault();
+        select(index, true, 'tab');
+      });
+    });
+    root.querySelectorAll<HTMLAnchorElement>('[data-go]').forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        select(panels.findIndex(panel => panel.id === link.dataset.go), true, 'heading');
+      });
+    });
+    previous.addEventListener('click', () => select(active - 1, true, 'heading'));
+    next.addEventListener('click', () => select(active + 1, true, 'heading'));
+    window.addEventListener('hashchange', fromHash);
+    root.classList.add('enhanced');
+    fromHash();
+    // Deep-link fix: on a hashed load the browser jumps to the anchor before JS
+    // collapses the other panels, stranding the scroll in empty space. Re-pin to
+    // the top so a hashed load shows the same header→nav→active-panel view as a
+    // normal load. Belt-and-suspenders across timing paths; in-page tab clicks
+    // never scroll the window, so they are unaffected.
+    if (location.hash) {
+      const pin = () => window.scrollTo(0, 0);
+      requestAnimationFrame(pin);
+      setTimeout(pin, 0);
+      window.addEventListener('load', pin, { once: true });
+    }
+
+    const details = Array.from(root.querySelectorAll<HTMLDetailsElement>('details'));
+    let beforePrint: boolean[] | null = null;
+    window.addEventListener('beforeprint', () => {
+      beforePrint ??= details.map(detail => detail.open);
+      details.forEach(detail => { detail.open = true; });
+      panels.forEach(panel => { panel.hidden = false; });
+    });
+    window.addEventListener('afterprint', () => {
+      if (!beforePrint) return;
+      const saved = beforePrint;
+      details.forEach((detail, i) => { detail.open = saved[i]; });
+      panels.forEach((panel, i) => { panel.hidden = i !== active; });
+      beforePrint = null;
+    });
+    root.querySelector('.print-button')!.addEventListener('click', () => window.print());
+  }
+</script>
+
+<style>
+  .podcast-notes { --note-accent: #fd9c62; max-width: 1120px; margin: 0 auto; padding: 3.5rem 2.5rem 4rem; color: #ede7e9; }
+  .eyebrow-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; color: #a49b9f; font-size: .75rem; }
+  .eyebrow-row a { color: #bdb4b8; }
+  .eyebrow-row > span { margin-left: auto; }
+  .print-button { background: none; color: #cbbbc2; border: 1px solid #43343c; border-radius: 4px; padding: .35rem .6rem; }
+  .notes-header h1 { max-width: 900px; margin: 1.6rem 0 .8rem; font-size: clamp(2rem, 4.1vw, 3.25rem); line-height: 1.28; letter-spacing: -.06em; font-weight: 750; word-break: keep-all; overflow-wrap: anywhere; }
+  .subtitle { color: #bdb4b8; font-size: 1rem; word-break: keep-all; line-height: 1.7; }
+  .episode-meta { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; margin-top: 1.3rem; font-size: .74rem; color: #a49b9f; }
+  .episode-meta span:first-child { color: #fd9c62; }
+  .hook-banner { margin-top: 2.5rem; padding: 1.8rem 1.75rem; border: 1px solid #5c3a2a; border-radius: 8px; background: linear-gradient(135deg, #241218, #1a1420); }
+  .hook-badge { display: inline-block; font-size: .72rem; letter-spacing: .08em; color: #ffb98a; border: 1px solid #6b4433; border-radius: 999px; padding: .25rem .7rem; }
+  .hook-line { margin: 1rem 0 .6rem; color: #ffd3b4; font-size: clamp(1.5rem, 3.2vw, 2.5rem); font-weight: 700; line-height: 1.45; letter-spacing: -.04em; word-break: keep-all; overflow-wrap: anywhere; }
+  .hook-en { color: #d7c4b8; font-size: .95rem; line-height: 1.7; font-style: italic; }
+  .hook-src { margin-top: .75rem; color: #ab9fa6; font-size: .78rem; }
+  .hook-why { margin-top: .6rem; color: #c5b9bf; font-size: .88rem; line-height: 1.8; word-break: keep-all; }
+  .article-overview { margin-top: 2.5rem; padding-top: 1.6rem; border-top: 1px solid #403038; }
+  .article-overview > h2 { font-size: 1.25rem; font-weight: 600; letter-spacing: -.025em; }
+  .overview-description { margin-top: .5rem; color: #bdb4b8; font-size: .84rem; line-height: 1.8; word-break: keep-all; }
+  .overview-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 2rem; margin-top: 1.4rem; }
+  .overview-meta { color: #c4aa99; font-size: .7rem; }
+  .overview-article h3 { margin: .55rem 0 .35rem; font-size: 1rem; font-weight: 600; line-height: 1.55; overflow-wrap: anywhere; }
+  .overview-article h3 a { color: #eee0d6; }
+  .overview-article h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .overview-title-en { color: #9a8e95; font-size: .74rem; line-height: 1.5; margin-bottom: .7rem; font-style: italic; overflow-wrap: anywhere; }
+  .overview-article ul { list-style: disc; margin: .4rem 0 0; padding-left: 1.15rem; }
+  .overview-article li { padding-left: .15rem; color: #d2c8cd; font-size: .85rem; line-height: 1.8; word-break: keep-all; overflow-wrap: anywhere; }
+  .overview-article li + li { margin-top: .45rem; }
+  .overview-article li::marker { color: #9e8371; }
+  .overview-overlap { margin-top: 1.5rem; padding: .9rem 1.1rem; border-left: 2px solid #6b4433; color: #d8cdd3; font-size: .88rem; line-height: 1.8; word-break: keep-all; }
+  .section-nav { display: flex; gap: .25rem; overflow-x: auto; margin: 2rem 0 0; border-bottom: 1px solid #403038; padding-bottom: 1px; scroll-margin-top: 6rem; }
+  .section-nav a { display: flex; align-items: center; flex: 1 0 auto; gap: .6rem; padding: .85rem 1rem; color: #b4a9ae; border-bottom: 2px solid transparent; white-space: nowrap; font-size: .9rem; }
+  .section-nav small { color: #998c92; font-size: .7rem; margin-left: auto; }
+  .section-nav a[aria-selected="true"] { color: #ffd3b4; border-color: #fd9c62; background: #201217; }
+  .note-panel { padding: 2.5rem 0 .75rem; scroll-margin-top: 5rem; }
+  .scene-meta { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: .8rem; color: #a49b9f; font-size: .72rem; letter-spacing: .06em; }
+  .scene-meta span:first-child { color: #fd9c62; }
+  .scene-group { color: #cbbcc4 !important; border: 1px solid #4a3a42; border-radius: 999px; padding: .1rem .6rem; letter-spacing: .04em; }
+  .note-panel h2 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.25rem); font-weight: 650; line-height: 1.4; letter-spacing: -.04em; word-break: keep-all; overflow-wrap: anywhere; }
+  .scene-message { max-width: 850px; margin: .8rem 0 0; color: #bdb4b8; line-height: 1.85; font-size: .92rem; word-break: keep-all; }
+  .tile-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .9rem; margin: 1.6rem 0 .4rem; }
+  .tile { display: flex; flex-direction: column; gap: .25rem; padding: 1rem 1.1rem; border: 1px solid #3a2c33; border-radius: 7px; background: #1c1318; }
+  .tile strong { font-size: clamp(1.4rem, 2.6vw, 1.9rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; }
+  .tile-orange strong { color: #fca36a; }
+  .tile-blue strong { color: #6fb7f5; }
+  .tile-green strong { color: #74d0a6; }
+  .tile-magenta strong { color: #e08ac0; }
+  .tile-krw { color: #c3b4bb; font-size: .78rem; font-weight: 500; }
+  .tile-label { margin-top: .2rem; color: #d4c9cf; font-size: .8rem; line-height: 1.5; word-break: keep-all; }
+  .tile-note { color: #988c92; font-size: .72rem; line-height: 1.55; word-break: keep-all; }
+  .host-line { margin: 1.6rem 0; max-width: 850px; }
+  .host-line h3, .main-question h3, .notes-detail h3, .discuss h3 { font-size: .76rem; font-weight: 600; color: #c7bac1; margin: 0 0 .6rem; }
+  .host-line h3 span { margin-left: .6rem; font-size: .68rem; font-weight: 400; color: #9b8f96; }
+  .host-line p { font-size: 1.04rem; line-height: 1.95; color: #d9cfd4; word-break: keep-all; overflow-wrap: anywhere; }
+  .main-question { margin: 1.75rem 0; padding: 1.3rem 1.5rem; border-radius: 6px; background: #192120; border: 1px solid #30403a; }
+  .main-question h3 { color: #8bd5b9; }
+  .main-question p { color: #e4f2eb; font-size: clamp(1.15rem, 2vw, 1.45rem); font-weight: 550; line-height: 1.65; letter-spacing: -.03em; word-break: keep-all; overflow-wrap: anywhere; }
+  .notes-detail { margin: 1.25rem 0; border-top: 1px solid #36272f; border-bottom: 1px solid #36272f; padding: 1rem 0; color: #c5b9bf; font-size: .9rem; line-height: 1.85; }
+  .notes-detail summary { cursor: pointer; color: #d9cfd4; width: fit-content; }
+  .notes-detail p { margin-top: .65rem; max-width: 850px; word-break: keep-all; overflow-wrap: anywhere; }
+  .notes-detail h3 { margin-top: 1.3rem; color: #fd9c62; }
+  .notes-detail ul { list-style: disc; margin: .65rem 0 .4rem; padding-left: 1.3rem; max-width: 850px; }
+  .notes-detail li + li { margin-top: .65rem; }
+  .notes-detail a { display: inline-block; margin-top: .5rem; color: #e1b493; text-decoration: underline; text-underline-offset: 4px; font-size: .8rem; }
+  .evidence { margin: 1rem 0; padding-left: 1rem; border-left: 1px solid #5a454d; }
+  .evidence h4 { font-size: .85rem; color: #e8dce3; font-weight: 600; }
+  .evidence .muted, .muted { color: #a99ca3; font-size: .82rem; }
+  .technical-note { margin: 1.6rem 0; padding: 1.2rem 1.4rem; border: 1px solid #34374a; border-radius: 6px; background: #13121e; }
+  .technical-note > p { color: #c5bfce; font-size: .9rem; line-height: 1.85; word-break: keep-all; overflow-wrap: anywhere; }
+  .technical-note > .technical-label { color: #a8b6ea; font-size: .72rem; margin-bottom: .5rem; }
+  .technical-note h3 { font-size: 1.15rem; line-height: 1.6; font-weight: 600; letter-spacing: -.025em; color: #e0e5fa; word-break: keep-all; }
+  .technical-note > .technical-concept { color: #a8b6ea; font-size: .76rem; margin: .45rem 0 .6rem; }
+  .technical-detail { border-bottom: 0; border-color: #34374a; margin: 1rem 0 0; padding-bottom: 0; }
+  .technical-detail h4 { font-size: .77rem; font-weight: 550; color: #c9d2f7; margin-top: 1rem; }
+  .technical-steps { margin: .9rem 0 1.2rem; }
+  .technical-steps > div { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1rem; padding: .6rem 0; border-bottom: 1px solid #302a3b; }
+  .technical-steps dt { color: #c9d2f7; font-size: .82rem; font-weight: 550; }
+  .technical-steps dd { margin: 0; color: #c5bfce; font-size: .86rem; line-height: 1.8; word-break: keep-all; overflow-wrap: anywhere; }
+  .technical-detail .technical-question { color: #e0e5fa; font-weight: 550; }
+  .technical-links { display: flex; flex-direction: column; align-items: flex-start; gap: .2rem; margin-top: .6rem; }
+  .transition { display: flex; gap: 1rem; margin: 1.5rem 0 0; color: #ac9ba5; font-size: .83rem; line-height: 1.8; word-break: keep-all; }
+  .transition span { color: #d4b298; flex-shrink: 0; }
+  .story-spine { margin-top: 1.8rem; }
+  .story-spine a { display: flex; align-items: center; gap: 1.25rem; padding: .9rem 0; border-bottom: 1px solid #36272f; color: #d3c7ce; }
+  .story-spine span { color: #b39179; font-size: .76rem; white-space: nowrap; }
+  .story-spine span:last-child { margin-left: auto; }
+  .story-spine strong { font-size: .9rem; font-weight: 500; word-break: keep-all; }
+  .discuss { margin: 2rem 0 0; padding-top: 1.4rem; border-top: 1px solid #473239; }
+  .discuss h3 { color: #e4b48f; font-size: .85rem; }
+  .discuss-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+  .discuss-col h4 { font-size: .78rem; font-weight: 600; color: #ffd3b4; margin: 0 0 .6rem; padding-bottom: .4rem; border-bottom: 1px solid #3a2c33; }
+  .discuss-col ul { list-style: none; margin: 0; padding: 0; }
+  .discuss-col li { color: #d2c8cd; font-size: .86rem; line-height: 1.75; padding: .45rem 0; border-bottom: 1px dashed #2e2228; word-break: keep-all; }
+  .takeaway { margin-top: 2rem; padding-top: 1.3rem; border-top: 1px solid #473239; }
+  .takeaway span { font-size: .75rem; color: #b99a84; }
+  .takeaway p { margin-top: .6rem; font-size: 1.15rem; line-height: 1.8; word-break: keep-all; }
+  .source-list { margin: 1.5rem 0; }
+  .source-item { display: flex; gap: 1.25rem; padding: 1.4rem 0; border-bottom: 1px solid #36272f; }
+  .source-number { color: #b99a84; font-family: var(--font-mono); font-size: .85rem; padding-top: .15rem; }
+  .source-meta { color: #ad9fa7; font-size: .73rem; }
+  .source-item h3 { font-size: 1rem; font-weight: 550; line-height: 1.65; margin: .5rem 0; overflow-wrap: anywhere; }
+  .source-item h3 a { color: #f0d3bd; text-decoration: underline; text-decoration-color: #654737; text-underline-offset: 4px; }
+  .source-item p:last-child { color: #bbadb5; font-size: .86rem; line-height: 1.8; word-break: keep-all; }
+  .panel-controls { display: none; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1.5rem; margin-top: 1.5rem; border-top: 1px solid #473239; }
+  .panel-controls button { border: 1px solid #5c414c; border-radius: 5px; background: #201219; color: #eddbd0; padding: .6rem 1rem; }
+  .panel-controls button:disabled { opacity: .35; cursor: default; }
+  .panel-controls span { color: #aa98a3; font-size: .75rem; }
+  button { cursor: pointer; font: inherit; font-size: .8rem; }
+  :is(a, button, summary):focus-visible, .note-panel:focus-visible { outline: 2px solid #fd9c62; outline-offset: 4px; }
+  h2:focus { outline: none; }
+  .js-only { display: none; }
+  .enhanced :global(button.js-only) { display: inline-flex; }
+  .enhanced .panel-controls { display: flex; }
+  @media (max-width: 640px) {
+    .podcast-notes { padding: 2rem 1.25rem 3rem; }
+    .eyebrow-row { gap: .6rem; font-size: .67rem; }
+    .print-button { font-size: .65rem; }
+    .notes-header h1 { margin-top: 1.4rem; }
+    .subtitle { font-size: .9rem; line-height: 1.8; }
+    .hook-banner { padding: 1.3rem 1.2rem; }
+    .overview-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .section-nav { margin-top: 1.5rem; }
+    .section-nav a { padding: .8rem .85rem; }
+    .note-panel { padding-top: 1.75rem; }
+    .main-question { padding: 1rem; }
+    .host-line p { font-size: .96rem; }
+    .story-spine a { gap: .7rem; }
+    .story-spine strong { font-size: .8rem; }
+    .discuss-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+    .source-item { gap: .8rem; }
+    .technical-note { padding: 1rem; }
+    .technical-steps > div { grid-template-columns: 1fr; gap: .2rem; }
+  }
+  @media print {
+    :global(html) { background: white !important; color-scheme: light; }
+    :global(body) { background: white !important; color: #111 !important; }
+    :global(body > header), :global(body > footer), .section-nav, .story-spine, .panel-controls, .print-button, .notes-detail summary { display: none !important; }
+    .podcast-notes { max-width: none; padding: 0; color: #111; }
+    .note-panel, .note-panel[hidden] { display: block !important; break-before: page; padding-top: 0; }
+    .note-panel#opening { break-before: page; }
+    .notes-header { margin-bottom: 1.5rem; }
+    .notes-header h1 { font-size: 24pt; }
+    .hook-banner { background: #f4efe9 !important; border-color: #aaa; break-inside: avoid; }
+    .hook-line { font-size: 18pt; color: #111 !important; }
+    .hook-en, .hook-src, .hook-why, .hook-badge { color: #333 !important; }
+    .article-overview { margin-top: 1rem; padding-top: 1rem; }
+    .overview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+    .overview-article { break-inside: avoid; }
+    .overview-article li { font-size: 9pt; line-height: 1.6; }
+    .note-panel h2 { font-size: 21pt; }
+    .tile { border-color: #bbb; break-inside: avoid; }
+    .tile strong { color: #111 !important; }
+    .main-question { background: #f1f4f2; border-color: #aaa; break-inside: avoid; margin: .8rem 0; padding: .65rem 1rem; }
+    .main-question p { font-size: 12pt; line-height: 1.6; }
+    .podcast-notes :is(p, span, a, h3, h4, strong, dt, dd, li), .source-item h3 a, .tile-krw, .tile-label, .tile-note { color: #111 !important; }
+    .host-line, .evidence, .source-item, .takeaway, .discuss-col { break-inside: avoid; }
+    .host-line { margin: .8rem 0; }
+    .host-line p, .notes-detail { font-size: 9pt; line-height: 1.7; }
+    .scene-message { font-size: 9pt; line-height: 1.65; }
+    .notes-detail { border-color: #ccc; margin: .8rem 0; padding: .65rem 0; }
+    .discuss-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .discuss-col li { font-size: 8.5pt; }
+    .transition { margin-top: .8rem; font-size: 9pt; }
+    .technical-note { background: white; border-color: #aaa; margin: .8rem 0; padding: .75rem 1rem; }
+    .technical-note > p, .technical-steps dd { font-size: 9pt; line-height: 1.6; }
+    .technical-note h3 { font-size: 12pt; break-after: avoid; }
+    .technical-steps > div { break-inside: avoid; padding: .4rem 0; }
+    .technical-detail { padding-bottom: 0; margin-bottom: 0; }
+    :global(.podcast-notes details::details-content) { content-visibility: visible; }
+    :global(.podcast-notes details > :not(summary)) { display: block !important; }
+  }
+</style>
