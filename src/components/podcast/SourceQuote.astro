@@ -1,0 +1,62 @@
+---
+interface Props {
+  quote: {
+    ko: string;
+    en: string;
+    speaker: string;
+    section?: string;
+    grade?: string;
+    why: string;
+    context: string;
+  };
+  source: { url: string; publisher: string; title: string };
+  anchor?: string;
+}
+
+const { quote, source, anchor } = Astro.props;
+const url = anchor ? `${source.url}${anchor}` : source.url;
+---
+
+<figure class="quote-card">
+  <span class="quote-label">인용 · 한국어 번역{quote.grade ? ` · ${quote.grade}` : ''}</span>
+  <blockquote cite={url}><p>“{quote.ko}”</p></blockquote>
+  <figcaption>
+    <span><strong>{quote.speaker}</strong>{quote.section ? ` · ${quote.section}` : ''} · {source.publisher}</span>
+    <div class="quote-actions">
+      <a href={url} target="_blank" rel="noopener noreferrer">원문 읽기 ↗<span class="sr-only"> · {source.title}</span></a>
+    </div>
+  </figcaption>
+  <details>
+    <summary>영어 원문과 맥락</summary>
+    <p class="original" lang="en">“{quote.en}”</p>
+    <p>{quote.context}</p>
+    <p><strong>훅으로 쓰는 이유</strong> {quote.why}</p>
+  </details>
+</figure>
+
+<style>
+  .quote-card { margin: 1.8rem 0; padding: 1.8rem 0 1.4rem 1.5rem; border-left: 3px solid var(--note-accent, #fd9c62); }
+  .quote-label { color: #a49b9f; font-size: .75rem; letter-spacing: .06em; }
+  blockquote p { margin: .65rem 0 1.25rem; color: #ffd3b4; font-size: clamp(1.6rem, 3.1vw, 2.55rem); font-weight: 650; line-height: 1.5; letter-spacing: -.045em; word-break: keep-all; overflow-wrap: anywhere; }
+  figcaption { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.4rem; color: #bdb4b8; font-size: .8rem; }
+  figcaption strong { color: #e8e0e4; font-weight: 550; }
+  .quote-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+  a { color: #e1b493; text-decoration: underline; text-underline-offset: 4px; }
+  details { margin-top: 1.1rem; color: #bdb4b8; font-size: .86rem; line-height: 1.85; }
+  summary { cursor: pointer; color: #bdb4b8; width: fit-content; }
+  details p { margin-top: .7rem; max-width: 78ch; word-break: keep-all; overflow-wrap: anywhere; }
+  details strong { display: block; color: #e1d7dc; font-weight: 550; }
+  .original { color: #f2e5da; font-size: 1rem; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  :is(a, summary):focus-visible { outline: 2px solid #fd9c62; outline-offset: 5px; }
+  @media (max-width: 600px) { .quote-card { padding: 1rem 0 1rem 1rem; margin: 1.4rem 0; } }
+  @media print {
+    .quote-card { break-inside: avoid; margin: .75rem 0; padding: .4rem 1rem; border-color: #555; }
+    blockquote p, .quote-label, figcaption, figcaption strong, details, details strong, .original, a { color: #111; }
+    blockquote p { font-size: 17pt; margin: .4rem 0 .65rem; }
+    details { font-size: 9pt; line-height: 1.55; margin-top: .65rem; }
+    details p { margin-top: .4rem; }
+    .original { font-size: 10pt; }
+    summary { display: none !important; }
+  }
+</style>

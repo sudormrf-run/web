@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="한 주 사이, 한 회사가 네 번 고백했다">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#241218"/>
+      <stop offset="1" stop-color="#15121d"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg)"/>
+  <text x="64" y="120" fill="#ffb98a" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" letter-spacing="3">ANTHROPIC · 2026.09 · 방송 노트</text>
+  <text x="60" y="250" fill="#ffd3b4" font-family="ui-sans-serif, system-ui, sans-serif" font-size="92" font-weight="750" letter-spacing="-3">네 번의 고백</text>
+  <text x="64" y="318" fill="#d7c4b8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="30" font-weight="500">경제 · 오용 · 무기 · 통제</text>
+  <g transform="translate(64,400)">
+    <rect x="0" y="0" width="200" height="10" rx="5" fill="#fca36a"/>
+    <rect x="216" y="0" width="200" height="10" rx="5" fill="#6fb7f5"/>
+    <rect x="432" y="0" width="200" height="10" rx="5" fill="#e08ac0"/>
+    <rect x="648" y="0" width="200" height="10" rx="5" fill="#74d0a6"/>
+  </g>
+  <text x="64" y="470" fill="#ab9fa6" font-family="ui-monospace, monospace" font-size="22" letter-spacing="1">“This is a very elaborate simulated-internet environment.”</text>
+</svg>
