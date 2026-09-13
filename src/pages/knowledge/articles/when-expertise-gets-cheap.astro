@@ -89,6 +89,14 @@ const linkUrl = (item: { sourceId: string; anchor?: string }) =>
             ))}
           </div>
         )}
+        {scene.figures && scene.figures.map(fig => (
+          <figure class="scene-figure">
+            <a href={sourceById[fig.sourceId].url} target="_blank" rel="noopener noreferrer">
+              <img src={fig.src} alt={fig.alt} loading="lazy" />
+            </a>
+            <figcaption>{fig.caption} <span class="fig-credit">원문 그림 · {sourceById[fig.sourceId].publisher} ↗</span></figcaption>
+          </figure>
+        ))}
         {scene.quote && <SourceQuote quote={scene.quote} source={sourceById[scene.quote.sourceId]} anchor={scene.quote.anchor} />}
         {scene.question && <div class="main-question"><h3>함께 물어볼 질문</h3><p>{scene.question}</p></div>}
         {scene.hostLine && <div class="host-line"><h3>말문 열기 <span>진행 멘트 제안</span></h3><p>{scene.hostLine}</p></div>}
@@ -337,6 +345,11 @@ const linkUrl = (item: { sourceId: string; anchor?: string }) =>
   .tile-krw { color: #c3b4bb; font-size: .78rem; font-weight: 500; }
   .tile-label { margin-top: .2rem; color: #d4c9cf; font-size: .8rem; line-height: 1.5; word-break: keep-all; }
   .tile-note { color: #988c92; font-size: .72rem; line-height: 1.55; word-break: keep-all; }
+  .scene-figure { margin: 1.8rem 0; }
+  .scene-figure a { display: block; border: 1px solid #3a2c33; border-radius: 8px; overflow: hidden; background: #f7f4f1; }
+  .scene-figure img { display: block; width: 100%; height: auto; }
+  .scene-figure figcaption { margin-top: .7rem; color: #ab9fa6; font-size: .8rem; line-height: 1.7; word-break: keep-all; }
+  .scene-figure .fig-credit { color: #c4aa99; white-space: nowrap; }
   .host-line { margin: 1.6rem 0; max-width: 850px; }
   .host-line h3, .main-question h3, .notes-detail h3, .discuss h3 { font-size: .76rem; font-weight: 600; color: #c7bac1; margin: 0 0 .6rem; }
   .host-line h3 span { margin-left: .6rem; font-size: .68rem; font-weight: 400; color: #9b8f96; }
@@ -442,7 +455,9 @@ const linkUrl = (item: { sourceId: string; anchor?: string }) =>
     .main-question { background: #f1f4f2; border-color: #aaa; break-inside: avoid; margin: .8rem 0; padding: .65rem 1rem; }
     .main-question p { font-size: 12pt; line-height: 1.6; }
     .podcast-notes :is(p, span, a, h3, h4, strong, dt, dd, li), .source-item h3 a, .tile-krw, .tile-label, .tile-note { color: #111 !important; }
-    .host-line, .evidence, .source-item, .takeaway, .discuss-col { break-inside: avoid; }
+    .host-line, .evidence, .source-item, .takeaway, .discuss-col, .scene-figure { break-inside: avoid; }
+    .scene-figure a { border-color: #bbb; }
+    .scene-figure figcaption, .scene-figure .fig-credit { color: #333 !important; font-size: 8.5pt; }
     .host-line { margin: .8rem 0; }
     .host-line p, .notes-detail { font-size: 9pt; line-height: 1.7; }
     .scene-message { font-size: 9pt; line-height: 1.65; }
