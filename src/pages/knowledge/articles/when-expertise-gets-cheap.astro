@@ -89,14 +89,14 @@ const linkUrl = (item: { sourceId: string; anchor?: string }) =>
             ))}
           </div>
         )}
-        {scene.figure && (
+        {scene.figures && scene.figures.map(fig => (
           <figure class="scene-figure">
-            <a href={sourceById[scene.figure.sourceId].url} target="_blank" rel="noopener noreferrer">
-              <img src={scene.figure.src} alt={scene.figure.alt} loading="lazy" />
+            <a href={sourceById[fig.sourceId].url} target="_blank" rel="noopener noreferrer">
+              <img src={fig.src} alt={fig.alt} loading="lazy" />
             </a>
-            <figcaption>{scene.figure.caption} <span class="fig-credit">원문 그림 · {sourceById[scene.figure.sourceId].publisher} ↗</span></figcaption>
+            <figcaption>{fig.caption} <span class="fig-credit">원문 그림 · {sourceById[fig.sourceId].publisher} ↗</span></figcaption>
           </figure>
-        )}
+        ))}
         {scene.quote && <SourceQuote quote={scene.quote} source={sourceById[scene.quote.sourceId]} anchor={scene.quote.anchor} />}
         {scene.question && <div class="main-question"><h3>함께 물어볼 질문</h3><p>{scene.question}</p></div>}
         {scene.hostLine && <div class="host-line"><h3>말문 열기 <span>진행 멘트 제안</span></h3><p>{scene.hostLine}</p></div>}

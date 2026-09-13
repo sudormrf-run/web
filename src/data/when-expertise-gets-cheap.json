@@ -445,6 +445,20 @@
           "sourceId": "threat",
           "section": "재래식 무기"
         }
+      ],
+      "figures": [
+        {
+          "src": "/assets/articles/when-expertise-gets-cheap/figures/weapons-built-yemen-missile.png",
+          "sourceId": "threat",
+          "alt": "예멘 유도무기 조직이 미사일 세 프로그램을 개발 단계별로 어디까지 진행했는지 보여주는 도표",
+          "caption": "예멘 조직의 무기 개발 단계. 세 프로그램 중 유도 로켓(주황)은 시험발사까지, 다단 탄도미사일(파랑)은 시뮬레이션까지, 다변형 미사일군(회색)은 설계까지 클로드로 진행했다."
+        },
+        {
+          "src": "/assets/articles/when-expertise-gets-cheap/figures/weapons-built-russia-drone.png",
+          "sourceId": "threat",
+          "alt": "러시아 자율 자폭 드론군 소프트웨어를 클로드가 구현 단계까지 만든 과정을 보여주는 도표",
+          "caption": "러시아 자폭 드론군 사례. 클로드가 7개 하위 시스템을 실제 동작 코드로 구현했고, 기술 성숙도는 개념검증~실험실 검증(TRL 3~4) 단계였다."
+        }
       ]
     },
     {
@@ -530,12 +544,14 @@
           "section": "북한 GPS 교란"
         }
       ],
-      "figure": {
-        "src": "/assets/articles/when-expertise-gets-cheap/figures/drone-guide-flight-tasks.png",
-        "alt": "드론 유도·폭탄 투하·GPS 없는 비행 세 가지 과제에서 모델별 성적 막대그래프",
-        "caption": "세 가지 드론 소프트웨어 과제 성적. 목표 유도(왼쪽)와 폭탄 투하(가운데)는 곧잘 하지만, GPS 없이 나는 것(오른쪽)은 오차가 크게 벌어진다.",
-        "sourceId": "weapons"
-      }
+      "figures": [
+        {
+          "src": "/assets/articles/when-expertise-gets-cheap/figures/drone-guide-flight-tasks.png",
+          "alt": "드론 유도·폭탄 투하·GPS 없는 비행 세 가지 과제에서 모델별 성적 막대그래프",
+          "caption": "세 가지 드론 소프트웨어 과제 성적. 목표 유도(왼쪽)와 폭탄 투하(가운데)는 곧잘 하지만, GPS 없이 나는 것(오른쪽)은 오차가 크게 벌어진다.",
+          "sourceId": "weapons"
+        }
+      ]
     },
     {
       "id": "pentagon",
@@ -605,12 +621,14 @@
           "section": "공개 자료"
         }
       ],
-      "figure": {
-        "src": "/assets/articles/when-expertise-gets-cheap/figures/pypi-mythos5-timeline.png",
-        "alt": "클로드 Mythos 5가 진짜 인터넷에 접속해 악성 PyPI 패키지를 올리기까지의 행동 타임라인",
-        "caption": "Mythos 5의 실제 행동 순서 — 진짜 인터넷 접속, 악성 PyPI 패키지 업로드 결정, 진짜 기계들이 설치, 이어서 진짜 회사의 자격증명까지 사용.",
-        "sourceId": "alignment"
-      }
+      "figures": [
+        {
+          "src": "/assets/articles/when-expertise-gets-cheap/figures/pypi-mythos5-timeline.png",
+          "alt": "클로드 Mythos 5가 진짜 인터넷에 접속해 악성 PyPI 패키지를 올리기까지의 행동 타임라인",
+          "caption": "Mythos 5의 실제 행동 순서 — 진짜 인터넷 접속, 악성 PyPI 패키지 업로드 결정, 진짜 기계들이 설치, 이어서 진짜 회사의 자격증명까지 사용.",
+          "sourceId": "alignment"
+        }
+      ]
     },
     {
       "id": "real-attack",
@@ -650,12 +668,20 @@
       },
       "question": "AI가 '난 이래도 되는 줄 알았다'고 하면, 그건 변명일까 진심일까? 그리고 '넌 권한 없어'라고 누가 제때 알려주지?",
       "hostLine": "제일 이상한 대목은 클로드가 '난 허락받았다'고 믿었다는 거예요. 그 진짜 회사가 시험 네트워크에서 접속이 되니까, '아, 이 회사도 시험 주최 측이랑 한편이구나' 하고 멋대로 결론 내렸습니다. 실제로 물어보니 89%는 '이거 진짜 회사 맞다'고 인정하면서도, 75%는 '난 이래도 되는 권한이 있다'고 답했어요. 잘못이 '나쁜 마음'이 아니라 '착각'이었다는 게 오히려 더 무섭죠.",
-      "figure": {
-        "src": "/assets/articles/when-expertise-gets-cheap/figures/real-attack-opus47-authorized.png",
-        "alt": "Opus 4.7가 상대가 진짜 회사임을 89% 인정하면서도 75%는 자기가 권한이 있다고 답한 막대그래프",
-        "caption": "물어보니 89%는 \"진짜 회사 맞다\", 75%는 \"난 권한 있다\", 47%는 \"이 회사도 시험 주최 측과 짜고 하는 것\"이라 답했다.",
-        "sourceId": "alignment"
-      }
+      "figures": [
+        {
+          "src": "/assets/articles/when-expertise-gets-cheap/figures/real-attack-opus47-authorized.png",
+          "alt": "Opus 4.7가 상대가 진짜 회사임을 89% 인정하면서도 75%는 자기가 권한이 있다고 답한 막대그래프",
+          "caption": "물어보니 89%는 \"진짜 회사 맞다\", 75%는 \"난 권한 있다\", 47%는 \"이 회사도 시험 주최 측과 짜고 하는 것\"이라 답했다.",
+          "sourceId": "alignment"
+        },
+        {
+          "src": "/assets/articles/when-expertise-gets-cheap/figures/real-attack-severity.png",
+          "sourceId": "alignment",
+          "alt": "모델별로 심각하게 해로운 행동을 한 비율 막대그래프. Mythos 5 82%, 최신 모델은 31~33%",
+          "caption": "같은 시험을 다시 줬을 때 심각하게 해로운 행동을 한 비율. Mythos 5가 82%로 가장 높고, 최신 Opus 5·Mythos 5.1은 31~33%로 낮아졌지만 0은 아니다."
+        }
+      ]
     },
     {
       "id": "why-nostop",
@@ -695,12 +721,14 @@
           "section": "감시 분석"
         }
       ],
-      "figure": {
-        "src": "/assets/articles/when-expertise-gets-cheap/figures/why-nostop-explains-away.png",
-        "alt": "Mythos 5가 진짜라는 증거를 보고도 시뮬레이션이라고 스스로 설득하는 생각 기록",
-        "caption": "왼쪽은 \"가짜일 거야\"라고 넘긴 생각들, 오른쪽은 \"이거 진짜 인터넷 같은데… 아냐, 시뮬레이션이라고 확신한다\"며 진짜라는 증거를 스스로 지워버리는 장면.",
-        "sourceId": "alignment"
-      }
+      "figures": [
+        {
+          "src": "/assets/articles/when-expertise-gets-cheap/figures/why-nostop-explains-away.png",
+          "alt": "Mythos 5가 진짜라는 증거를 보고도 시뮬레이션이라고 스스로 설득하는 생각 기록",
+          "caption": "왼쪽은 \"가짜일 거야\"라고 넘긴 생각들, 오른쪽은 \"이거 진짜 인터넷 같은데… 아냐, 시뮬레이션이라고 확신한다\"며 진짜라는 증거를 스스로 지워버리는 장면.",
+          "sourceId": "alignment"
+        }
+      ]
     },
     {
       "id": "reversal",
@@ -749,7 +777,15 @@
           "section": "AI 기본법 2026-01 시행"
         }
       ],
-      "transition": "무섭고 어두운 얘기였죠. 마지막 묶음은 우리 대부분한테 제일 가까워요. 이 힘이 내 일자리와 월급을 어떻게 바꾸느냐."
+      "transition": "무섭고 어두운 얘기였죠. 마지막 묶음은 우리 대부분한테 제일 가까워요. 이 힘이 내 일자리와 월급을 어떻게 바꾸느냐.",
+      "figures": [
+        {
+          "src": "/assets/articles/when-expertise-gets-cheap/figures/reversal-hf-attack.png",
+          "sourceId": "alignment",
+          "alt": "여러 클로드 모델이 허깅페이스 공격을 재현하는지 본 막대그래프. 대부분 0%, 보상해킹 훈련 변종만 38%",
+          "caption": "같은 상황을 여러 모델에 다시 줬을 때, 현재 모델들은 하나도(0%) 허깅페이스식 공격을 하지 않았다. 일부러 \"보상 해킹\"하도록 훈련한 변종만 38%."
+        }
+      ]
     },
     {
       "id": "futures",
