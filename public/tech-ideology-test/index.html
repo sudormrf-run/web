@@ -388,10 +388,10 @@ function statsSVG(per, total, mine){
     s+=num(CX+r1*UNIT/2, yb, r1, false)+num(xR2+r2*UNIT/2, yb, r2, true);
 
     // 내 위치 — 내가 속한 칸 위에 표식
-    const cell=mine[i], mx={};
+    const cell=mine ? mine[i] : null, mx={};
     mx[ax.L.c+'1']=xL1+l1*UNIT/2; mx[ax.L.c+'2']=xL2+l2*UNIT/2;
     mx[ax.R.c+'1']=CX+r1*UNIT/2;  mx[ax.R.c+'2']=xR2+r2*UNIT/2;
-    if(mx[cell]!==undefined){
+    if(cell && mx[cell]!==undefined){
       const x=mx[cell];
       s+=`<path d="M${x-5},${yb-7} L${x+5},${yb-7} L${x},${yb-1} Z" fill="${INK}"/>`;
     }
@@ -405,26 +405,37 @@ function renderStats(host, data, r){
   const rows = (data && data.codes) || [];
   const {per, total} = tallyCodes(rows);
   if(total < 1) return;
-  const mine = r.axes.map(o=>o.code+o.intensity);
-  const myCode = r.code;
-  const same = rows.filter(x=>x.code===myCode).reduce((a,x)=>a+(x.n|0),0);
-  const pct = Math.round(same/total*100);
   const uniq = rows.length;
+  const mine = r ? r.axes.map(o=>o.code+o.intensity) : null;   // 인트로에서는 내 자리가 없다
+
+  let lead;
+  if(r){
+    const same = rows.filter(x=>x.code===r.code).reduce((a,x)=>a+(x.n|0),0);
+    const pct = Math.round(same/total*100);
+    lead = `
+      <div class="stats-hero">
+        <div class="cap">나와 같은 코드</div>
+        <div class="fig">${same>0 ? same+'<small> / '+total+'명</small>' : '<small style="font-size:22px">아직 나뿐</small>'}</div>
+        <div class="cap" style="margin-top:6px">${r.code}${same>0 ? ' · '+pct+'%' : ' · '+total+'명 중 0명'}</div>
+      </div>
+      <p>${total}명이 남긴 코드는 서로 다른 것이 ${uniq}가지다.${same>0 ? '' : ' 같은 코드는 아직 없다 — 다섯 자리가 다 맞아야 같은 코드다.'} 아래는 그 응답을 축 다섯 개로 풀어 어느 쪽으로 기울었는지 본 것이고, <b>▼</b> 가 당신이 선 자리다.</p>`;
+  } else {
+    lead = `
+      <div class="stats-hero">
+        <div class="cap">지금까지 응답</div>
+        <div class="fig">${total}<small> 명</small></div>
+        <div class="cap" style="margin-top:6px">서로 다른 코드 ${uniq}가지</div>
+      </div>
+      <p>먼저 재본 사람들이 어느 쪽으로 기울었는지다. 축 다섯 개를 좌우로 풀었고, 가운데 선이 두 극의 경계다. <b>당신의 자리는 45문항을 마치면 여기에 같이 찍힌다.</b></p>`;
+  }
 
   host.innerHTML = `
   <div class="stats-card">
     <div class="res-head">
-      <div class="slab"><span>02</span><b>EVERYONE</b></div>
-      <span>지금까지의 응답</span>
+      <div class="slab"><span>${r ? '02' : 'NOW'}</span><b>EVERYONE</b></div>
+      <span>${r ? '지금까지의 응답' : '먼저 재본 사람들'}</span>
     </div>
-    <div class="stats-lead">
-      <div class="stats-hero">
-        <div class="cap">나와 같은 코드</div>
-        <div class="fig">${same>0 ? same+'<small> / '+total+'명</small>' : '<small style="font-size:22px">아직 나뿐</small>'}</div>
-        <div class="cap" style="margin-top:6px">${myCode}${same>0 ? ' · '+pct+'%' : ' · '+total+'명 중 0명'}</div>
-      </div>
-      <p>${total}명이 남긴 코드는 서로 다른 것이 ${uniq}가지다.${same>0 ? '' : ' 같은 코드는 아직 없다 — 다섯 자리가 다 맞아야 같은 코드다.'} 아래는 그 응답을 축 다섯 개로 풀어 어느 쪽으로 기울었는지 본 것이고, <b>▼</b> 가 당신이 선 자리다.</p>
-    </div>
+    <div class="stats-lead">${lead}</div>
     <div class="stats-legend">
       <span class="ttl">강도</span>
       <span class="grp"><i style="background:${SC.L2}"></i>왼쪽 2</span>
@@ -433,18 +444,18 @@ function renderStats(host, data, r){
       <span class="grp"><i style="background:${SC.R2}"></i>오른쪽 2</span>
     </div>
     <div class="stats-plot">${statsSVG(per, total, mine)}</div>
-    <p class="stats-note">가운데 세로선이 좌우 극의 경계다 — 선에서 멀수록 강도 2. 색은 어느 극인지만 가리키며 <b>좋고 나쁨을 뜻하지 않는다</b>.${total<30?' 아직 응답이 <b>'+total+'건</b>이라 경향으로 읽을 수치가 아니다.':''} 방금 낸 응답은 최대 1분 뒤 반영된다.</p>
+    <p class="stats-note">가운데 세로선이 좌우 극의 경계다 — 선에서 멀수록 강도 2. 색은 어느 극인지만 가리키며 <b>좋고 나쁨을 뜻하지 않는다</b>.${total<30?' 아직 응답이 <b>'+total+'건</b>이라 경향으로 읽을 수치가 아니다.':''}${r ? ' 방금 낸 응답은 최대 1분 뒤 반영된다.' : ''}</p>
   </div>`;
 }
 
-function loadStats(r){
+function loadStats(r){            // r 없이 부르면 전체 분포만 그린다 (인트로)
   const host = document.getElementById('stats');
   if(!host) return;
   const base = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) ? '/api/stats' : COLLECTOR+'/stats';
   fetch(base+'?qset='+encodeURIComponent(QSET))
     .then(res=>res.ok?res.json():null)
-    .then(data=>{ if(data) renderStats(host, data, r); })
-    .catch(()=>{});      // 수집기가 없어도 결과 화면은 그대로다
+    .then(data=>{ if(data) renderStats(host, data, r || null); })
+    .catch(()=>{});      // 수집기가 없어도 화면은 그대로다
 }
 
 /* ───────── views ───────── */
@@ -472,12 +483,15 @@ function viewIntro(resumable){
       ${resumable?'<button class="btn btn--ghost" id="restart"><span>처음부터</span></button>':''}
       <a class="btn btn--ghost" href="levers.html"><span>레버 다섯 개 보기</span><b>→</b></a>
     </div>
+    <div id="stats"></div>
+
     <div class="notice">
       <p>※ 실제로 존재하는 여러 사회적 입장에 대한 응답자의 '동의 여부'를 확인하는 것이므로, 일부 차별적이거나 과격하다고 느껴지는 문항이 있는 점을 참고하여 주시기 바랍니다. 측정값이 응답자의 실제 관점과 일치하지 않을 수 있습니다.</p>
       <p>※ 완료 시 익명 응답(O/X ${N_Q}개)만 저장됩니다 — 이름·연락처 등 개인 정보는 묻지도 받지도 않습니다. 결과 공유는 링크에 응답을 담는 방식입니다.</p>
       <p>※ 이 포맷은 웨이브 [사상검증구역: 더 커뮤니티] 시즌 1·2 테스트의 구조(축·강도·O/X)에서 영감을 받은 비상업 실험입니다.</p>
     </div>
   </section>`;
+  loadStats();          // 먼저 재본 사람들의 분포 — 없으면 아무것도 안 뜬다
   document.getElementById('start').onclick = ()=>{ if(!resumable){step=0;ans={};} render(); };
   const r = document.getElementById('restart');
   if(r) r.onclick = ()=>{ step=0; ans={}; save(); render(); };
