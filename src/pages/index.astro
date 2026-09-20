@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HeroQuote from '../components/HeroQuote.astro';
+import HomeTestBanner from '../components/home/HomeTestBanner.astro';
 import HomeKnowledgeSection from '../components/home/HomeKnowledgeSection.astro';
 import HomeMediaSection from '../components/home/HomeMediaSection.astro';
 import HomeEventsSection from '../components/home/HomeEventsSection.astro';
@@ -23,6 +24,9 @@ const locale = 'ko';
       </div>
     </div>
   </section>
+
+  <!-- 기술 사상검증구역 배너 -->
+  <HomeTestBanner locale={locale} />
 
   <!-- Knowledge Section with Graph -->
   <HomeKnowledgeSection locale={locale} />

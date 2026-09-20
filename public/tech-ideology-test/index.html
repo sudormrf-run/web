@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>기술 사상검증구역</title>
+<meta name="description" content="AI·로보틱스 판에서 우리는 왜 서로 다른 답을 말하는가. 레버 다섯 개를 묻는 45문항 O/X 테스트 — 약 3분, 결과는 코드 다섯 자리.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="기술 사상검증구역">
+<meta property="og:description" content="레버 다섯 개 — 속도·공개·주권·수혜·가치. 45문항 O/X, 약 3분. 당신의 코드는?">
+<meta property="og:image" content="/sudormrf.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#111417; --panel:#191d21; --panel-2:#14181b; --line:#2b3238; --line-soft:#22282d;
+  --ink:#EAE7DE; --muted:#94a0a8; --dim:#5c676f;
+  --accent:#FF5A1F; --accent-dim:#c9440f;
+  --paper:#EDEAE1; --paper-line:#c9c4b4; --paper-ink:#17191c; --paper-dim:#6d6a5e;
+  --disp:'Black Han Sans',system-ui,sans-serif;
+  --body:'IBM Plex Sans KR',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;word-break:keep-all}
+b,strong{font-weight:700}
+button{font-family:inherit;color:inherit;background:none;border:0;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+a{color:inherit}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+/* ── header ── */
+.site-head{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid var(--line-soft)}
+.brand{font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--muted)}
+.brand b{color:var(--ink);font-weight:500}
+.counter{font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.progress{height:3px;background:var(--line-soft)}
+.progress i{display:block;height:100%;background:var(--accent);width:0;transition:width .25s ease}
+@media (prefers-reduced-motion:reduce){.progress i{transition:none}}
+/* ── section label ── */
+.slab{display:flex;align-items:baseline;gap:14px;font-family:var(--mono);font-size:12px;letter-spacing:.18em}
+.slab span{color:var(--accent)}
+.slab b{color:var(--muted);font-weight:500}
+/* ── intro ── */
+.intro{padding:64px 0 80px}
+.intro h1{font-family:var(--disp);font-weight:400;font-size:clamp(44px,8vw,92px);line-height:1.04;margin:18px 0 20px;letter-spacing:-.01em;text-wrap:balance}
+.intro h1 em{font-style:normal;color:var(--accent)}
+.intro .lede{max-width:38em;color:var(--muted);font-size:17px;margin:0 0 8px}
+.intro .lede strong{color:var(--ink)}
+.axes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);margin:44px 0 0}
+.axis-card{background:var(--panel-2);padding:20px 18px 18px}
+.axis-card small{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--dim);display:block}
+.axis-card small em{font-style:normal;color:var(--accent-dim)}
+.axis-card .pair{display:flex;align-items:baseline;gap:10px;margin:10px 0 8px;font-family:var(--disp);font-size:24px;line-height:1}
+.axis-card .pair i{font-style:normal;color:var(--dim);font-family:var(--mono);font-size:14px}
+.axis-card .pair .l{color:var(--ink)} .axis-card .pair .r{color:var(--muted)}
+.axis-card p{margin:0;font-size:13px;color:var(--muted);line-height:1.55}
+.axis-card.eye{background:#171b1f;border-top:2px solid var(--accent-dim)}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px 26px;margin:30px 0 0;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.meta-row b{color:var(--ink);font-weight:500}
+.start-row{margin-top:40px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:14px;padding:16px 26px;border:1px solid var(--line);font-family:var(--mono);font-size:14px;letter-spacing:.1em;transition:border-color .15s,background .15s}
+.btn b{font-weight:400}
+.btn--go{background:var(--accent);border-color:var(--accent);color:#16100c;font-weight:500}
+.btn--go:hover{background:#ff6c36}
+.btn--ghost:hover{border-color:var(--muted)}
+.notice{margin-top:56px;border-top:1px solid var(--line-soft);padding-top:20px;max-width:46em}
+.notice p{margin:0 0 8px;font-size:12.5px;color:var(--dim)}
+/* ── question ── */
+.qscreen{position:relative;padding:56px 0 60px;min-height:62vh}
+.ghost{position:absolute;top:8px;right:0;font-family:var(--disp);font-size:clamp(120px,22vw,260px);line-height:1;color:transparent;-webkit-text-stroke:1px var(--line);user-select:none;pointer-events:none}
+.qmeta{display:flex;justify-content:space-between;align-items:baseline}
+.kbd-hint{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--dim)}
+.qtext{font-family:var(--disp);font-weight:400;font-size:clamp(30px,4.6vw,54px);line-height:1.22;margin:34px 0 8px;max-width:19em;position:relative;z-index:1;text-wrap:balance}
+.qtext .qmark{color:var(--accent);font-family:var(--mono);font-size:.45em;vertical-align:.7em;margin-right:.6em;letter-spacing:0}
+.answers{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-top:40px}
+.answers button{display:grid;grid-template-rows:auto 1fr auto;gap:6px;justify-items:start;min-height:150px;padding:14px 18px;text-align:left;border:0;background:var(--panel-2);transition:background .12s}
+.answers button + button{border-left:1px solid var(--line)}
+.answers button small{font-family:var(--mono);font-size:11px;color:var(--dim)}
+.answers button .mark{font-family:var(--disp);font-size:52px;line-height:1;justify-self:center;align-self:center;color:var(--ink)}
+.answers button span{font-size:13px;color:var(--muted)}
+.answers button:hover{background:#1e2327}
+.answers button.sel{background:var(--accent)}
+.answers button.sel .mark,.answers button.sel span,.answers button.sel small{color:#16100c}
+.backrow{margin-top:26px}
+.back{font-family:var(--mono);font-size:13px;color:var(--muted);padding:8px 0}
+.back:disabled{color:var(--dim);cursor:default}
+/* ── result ── */
+.result{padding:56px 0 90px}
+.res-card{background:var(--paper);color:var(--paper-ink);border:1px solid var(--paper-line);padding:30px 30px 34px;margin-top:26px;box-shadow:10px 10px 0 var(--accent-dim)}
+.res-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--paper-ink);padding-bottom:14px}
+.res-head .slab span{color:var(--accent-dim)} .res-head .slab b{color:var(--paper-dim)}
+.res-head>span{font-size:13px;color:var(--paper-dim)}
+.res-body{display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:36px;align-items:start;margin-top:30px}
+.res-code{font-family:var(--disp);font-size:clamp(30px,4.2vw,48px);line-height:1;margin:0 0 6px;letter-spacing:.02em}
+.res-code i{font-style:normal;color:var(--paper-dim);font-size:.5em;vertical-align:.28em;padding:0 .18em}
+.res-sub{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--paper-dim);margin:0 0 24px}
+.axis-read{display:grid;gap:0;border-top:1px solid var(--paper-line)}
+.axis-row{display:grid;grid-template-columns:52px 1fr auto;gap:14px;align-items:center;padding:13px 0;border-bottom:1px solid var(--paper-line)}
+.axis-row small{font-family:var(--mono);font-size:11px;color:var(--paper-dim);letter-spacing:.1em}
+.axis-row .who em{font-style:normal;font-size:12.5px;color:var(--paper-dim);margin-right:6px}
+.axis-row .who b{font-family:var(--disp);font-weight:400;font-size:21px}
+.axis-row .pts{font-family:var(--disp);font-size:26px;line-height:1}
+.axis-row .pts em{font-style:normal;font-size:12px;font-family:var(--body);color:var(--paper-dim)}
+.axis-row.hot .pts{color:var(--accent-dim)}
+.symwrap{justify-self:center;display:grid;gap:10px;justify-items:center}
+.symwrap figcaption{font-family:var(--mono);font-size:11px;color:var(--paper-dim);letter-spacing:.12em}
+/* split bars */
+.splits{margin-top:34px;border-top:2px solid var(--paper-ink);padding-top:6px}
+.split-row{display:grid;grid-template-columns:76px 1fr 76px;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid var(--paper-line)}
+.split-row .pole{font-size:13px}
+.split-row .pole b{font-family:var(--mono);font-weight:500;font-size:11px;color:var(--paper-dim);margin:0 4px}
+.split-row .pole.r{text-align:right}
+.split-row .pole.win{font-weight:700}
+.track{position:relative;height:22px;display:flex;border:1px solid var(--paper-ink);background:var(--paper)}
+.track i{display:block;height:100%}
+.track .l{background:var(--paper-ink)}
+.track .r{background:repeating-linear-gradient(-55deg,var(--paper-ink) 0 1px,transparent 1px 5px)}
+.track em{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-style:normal;font-family:var(--mono);font-size:11px;color:var(--paper-ink);background:var(--paper);border:1px solid var(--paper-line);padding:0 7px;line-height:1.5;white-space:nowrap}
+.split-note{font-size:12px;color:var(--paper-dim);margin:10px 0 0}
+/* share */
+.share{margin-top:44px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.share .hint{font-family:var(--mono);font-size:12px;color:var(--dim)}
+.foot{margin-top:60px;border-top:1px solid var(--line-soft);padding-top:20px}
+.foot p{font-size:12.5px;color:var(--dim);max-width:52em;margin:0 0 8px}
+[hidden]{display:none!important}
+@media(max-width:760px){
+  .res-body{grid-template-columns:1fr}
+  .symwrap{justify-self:start}
+  .answers button{min-height:120px}
+}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="brand"><b>sudoremove</b> — 기술 사상검증구역</div>
+  <div class="counter" id="counter"></div>
+</header>
+<div class="progress"><i id="pbar"></i></div>
+
+<main id="app" class="wrap"></main>
+
+<script>
+'use strict';
+/* ───────── data ─────────
+   5축. 왼쪽 묶음 = 가속·개방·시장·첨단·역량, 오른쪽 = 제동·폐쇄·주권·보편·효용 (원형: 안드리센 ↔ 아모데이).
+   순서 = 진영 이름이 있는 순: 속도 → 공개 → 주권 → 수혜 → 가치. 레버 다섯 — 앞 넷은 손이 닿는 레버, 다섯째(가치)는 그 손이 기술을 보는 눈이라 eye 표시를 단다.
+   기획 SoT = vault 260906_sudoremove_tech_ideology_test.md (5절 · Part II D/F). */
+const AXES = {
+  spd:{name:'속도', L:{c:'A',ko:'가속',en:'ACCEL'},      R:{c:'D',ko:'제동',en:'DECEL'},       ask:'위험이 확인되기 전에 만드는가, 통제가 확인된 뒤에 만드는가.'},
+  opn:{name:'공개', L:{c:'O',ko:'개방',en:'OPEN'},       R:{c:'P',ko:'폐쇄',en:'PROPRIETARY'}, ask:'만든 것 — 가중치·데이터·논문·특허 — 을 밖에 내놓는가, 쥐고 있는가.'},
+  sov:{name:'주권', L:{c:'M',ko:'시장',en:'MARKET'},     R:{c:'S',ko:'주권',en:'SOVEREIGN'},   ask:'기술은 국경 없이 최적을 고르면 되는 상품인가, 국가가 확보해야 할 것인가.'},
+  ben:{name:'수혜', L:{c:'F',ko:'첨단',en:'FRONTIER'},   R:{c:'U',ko:'보편',en:'UNIVERSAL'},   ask:'누구에게 이로워야 성공인가 — 최상단이 올라간 것으로 재는가, 평균이 올라간 것으로 재는가.'},
+  val:{name:'가치', eye:true, L:{c:'C',ko:'역량',en:'CAPABILITY'}, R:{c:'W',ko:'효용',en:'WANT'},        ask:'기술의 가치는 어디서 오는가 — 할 수 있어서인가, 쓰여서인가.'},
+};
+const AXIS_ORDER = ['spd','opn','sov','ben','val'];
+/* p = '그렇다'가 가리키는 극. 각 축 블록은 정방향(L)이 앞, 역(R)이 뒤. 번호 = 출제본 D절 번호(제외분은 빈 번호로 남긴다). */
+const Q = [
+ /* ① 속도 — 가속 A ↔ 제동 D (9문항, 역 3 · 7 제외) */
+ {n:1,  a:'spd',p:'L',t:'전문가 절반이 위험하다고 말하는 기술이라도 실제 사고가 나기 전까지는 만들어야 한다.'},
+ {n:2,  a:'spd',p:'L',t:'안전 연구는 실질적으로 개발을 늦추기 위한 명분으로 쓰인다.'},
+ {n:3,  a:'spd',p:'L',t:'AI가 인류를 멸종시킬 수 있다는 주장은 과장됐다.'},
+ {n:4,  a:'spd',p:'L',t:'자율주행이 사람보다 사고를 덜 낸다면, 사망 사고가 나더라도 도입을 늦춰서는 안 된다.'},
+ {n:5,  a:'spd',p:'L',t:'AI 데이터센터 때문에 우리 집 전기요금이 20% 오르더라도 감수할 만한 비용이다.'},
+ {n:6,  a:'spd',p:'L',t:'내 부모의 간병을 로봇에게 맡길 수 있다.'},
+ {n:8,  a:'spd',p:'R',t:'사람보다 똑똑한 AI는 통제 방법이 확인되기 전까지 만들지 말아야 한다.'},
+ {n:9,  a:'spd',p:'R',t:'내가 만든 소프트웨어가 콜센터 직원 열 명을 해고시켰다면 그 결과에 나도 책임이 있다.'},
+ {n:10, a:'spd',p:'R',t:'유전자 편집으로 아기의 유전병을 고치는 기술은 안전성이 확인되기 전까지 어느 나라도 허용하면 안 된다.'},
+ /* ② 공개 — 개방 O ↔ 폐쇄 P (9문항, 역 4 · 12 제외) */
+ {n:11, a:'opn',p:'L',t:'기술의 진짜 혁신은 오픈소스에서 나온다.'},
+ {n:13, a:'opn',p:'L',t:'논문을 내지 않는 회사는 학계에 무임승차하는 것이다.'},
+ {n:14, a:'opn',p:'L',t:'특허 제도는 지금 혁신을 돕기보다 막고 있다.'},
+ {n:15, a:'opn',p:'L',t:'유튜브·인스타그램 같은 플랫폼은 추천 알고리즘을 공개할 의무가 있다.'},
+ {n:16, a:'opn',p:'L',t:'회사에서 배운 기술을 개인 블로그나 발표로 공유하는 것은 유출이 아니라 홍보다.'},
+ {n:17, a:'opn',p:'R',t:'AI 회사는 학습에 쓴 그림·글·코드의 원작자에게 대가를 지불해야 한다.'},
+ {n:18, a:'opn',p:'R',t:'모델 가중치를 공개하는 것은 무기를 푸는 것과 다르지 않다.'},
+ {n:19, a:'opn',p:'R',t:'경쟁사가 따라 할 수 있는 것은 공개하지 않는 게 맞다.'},
+ {n:20, a:'opn',p:'R',t:'자율주행 사고의 주행 기록은 제조사 내부 자료라 공개할 의무가 없다.'},
+ /* ③ 주권 — 시장 M ↔ 주권 S (9문항, 역 5 · 22 제외) */
+ {n:21, a:'sov',p:'L',t:'미국이 GPU 수출을 막아도 중국의 AI 발전은 결국 막지 못한다.'},
+ {n:23, a:'sov',p:'L',t:'학습·추론용 반도체를 100% NVIDIA에 의존하더라도, 그 위에서 세계 최고 AI를 만들면 한국은 AI 주권을 가진 것이다.'},
+ {n:24, a:'sov',p:'L',t:'미국·중국 모델을 쓰면 충분하다. 자체 모델은 낭비다.'},
+ {n:25, a:'sov',p:'L',t:'인재가 해외로 나가는 것은 개인의 선택이지 국가의 손실이 아니다.'},
+ {n:26, a:'sov',p:'R',t:'미국 GPS가 공짜로 잘 돌아가도 한국은 3조 7천억 원을 들여 자체 위성항법(KPS)을 가져야 한다.'},
+ {n:27, a:'sov',p:'R',t:'기술 주권을 위해서라면 값이 두 배라도 국산을 써야 한다.'},
+ {n:28, a:'sov',p:'R',t:'독자 AI 파운데이션 모델 사업은 실패하더라도 시도한 것만으로 의미가 있다.'},
+ {n:29, a:'sov',p:'R',t:'구글이 요구하는 한국 정밀 지도 데이터의 국외 반출은 허용하면 안 된다.'},
+ {n:30, a:'sov',p:'R',t:'화웨이 5G 장비를 한국 통신망에 쓰는 것은 성능·가격과 무관하게 안보 문제다.'},
+ /* ④ 수혜 — 첨단 F ↔ 보편 U (9문항, 역 4 · 31 제외) */
+ {n:32, a:'ben',p:'L',t:'빈부격차가 벌어지더라도 인류의 총생산이 늘어난다면 그 기술은 성공이다.'},
+ {n:33, a:'ben',p:'L',t:'최고 성능 로봇은 끝내 보급형으로 내려오지 않아도 그 자체로 성공이다.'},
+ {n:34, a:'ben',p:'L',t:'자동화가 없앤 일자리는 10년 안에 같은 수의 새 일자리로 대체된다.'},
+ {n:35, a:'ben',p:'L',t:'알바 한 명 몫을 완전히 대체하는 키오스크는 그 자체로 좋은 기술이다.'},
+ {n:36, a:'ben',p:'L',t:'한 사람의 천재가 이룬 도약이 백 명의 삶이 조금씩 나아진 것보다 더 큰 진보다.'},
+ {n:37, a:'ben',p:'R',t:'값싼 보급형 기술이 최첨단 기술보다 세상을 더 많이 바꿨다.'},
+ {n:38, a:'ben',p:'R',t:'AI로 생산성이 두 배 오르면 주 4일 근무가 돼야 한다.'},
+ {n:39, a:'ben',p:'R',t:'로봇으로 일자리를 줄인 기업은 로봇세를 내야 한다.'},
+ {n:40, a:'ben',p:'R',t:'생산성 향상의 이익은 대부분 자본이 가져갔다.'},
+ /* ⑤ 가치 — 역량 C ↔ 효용 W (9문항, 역 5 · 45 제외) */
+ {n:41, a:'val',p:'L',t:'1회 치료비 30억 원이라 아무도 못 맞는 유전자 치료제라도, 전에 불치였던 병을 처음 고쳤다면 만들 가치가 있다.'},
+ {n:42, a:'val',p:'L',t:'좋은 엔지니어는 돈 되는 문제보다 어려운 문제를 고른다.'},
+ {n:43, a:'val',p:'L',t:'아직 아무 일도 못 하는 휴머노이드를 만든 것도 진보다.'},
+ {n:44, a:'val',p:'L',t:'15억 명의 하루를 바꾼 틱톡은 대단한 제품이지 대단한 기술은 아니다.'},
+ {n:46, a:'val',p:'R',t:'효율은 그대로인데 값을 10분의 1로 낮춘 태양광 패널은, 값은 그대로인데 효율을 두 배 올린 패널보다 더 큰 진보다.'},
+ {n:47, a:'val',p:'R',t:'GPT 위에 얹은 서비스도 기술이다.'},
+ {n:48, a:'val',p:'R',t:'실험실 성공률 99%를 찍은 로봇이라도 실제 현장(공장·병원·가정)에 하루도 투입되지 못했다면 실패작이다.'},
+ {n:49, a:'val',p:'R',t:'NeurIPS·CoRL급 학회 논문 100편보다 고객 현장에서 1년 넘게 매일 돌아가는 제품 하나가 더 큰 기여다.'},
+ {n:50, a:'val',p:'R',t:'열 번에 한 번 놀라운 일을 하는 로봇보다 열 번 다 같은 일을 하는 지루한 로봇이 더 좋은 기술이다.'},
+];
+/* 고정 출제 순서 (gen_order.py, seed 260906) — 45문항, 같은 축 연속 없음. 테마별 블록 출제는 축 의도가 읽히므로 금지.
+   응답 비교를 위해 사용자별 셔플도 하지 않는다. 문항 텍스트가 바뀌면 QSET을 bump한다. */
+const DISPLAY = [48,1,15,36,19,40,25,38,11,3,29,50,16,43,9,30,34,26,18,33,8,17,35,21,10,23,44,6,32,14,28,2,41,13,42,24,20,4,46,5,27,37,47,39,49].map(n=>'q'+n);
+const TEXT = {};
+Q.forEach(q=>TEXT['q'+q.n]=q.t);
+const STEPS = DISPLAY.map(k=>({key:k}));
+const N_Q = Q.length;          // 45
+const PER_AXIS = 9;            // 축당 9문항 (홀수 — 동점 없음)
+const HEX_LEN = 12;            // 45bit → 48bit(3bit 패딩) = 12 hex
+const COLLECTOR = 'https://ideology.sudormrf.run';   // 응답 수집기 (collector/ — 우리 계정의 Worker + D1)
+const QSET = 'v5';             // 5축 45문항, D절 문구 확정본 (2026-09-13). 문항 텍스트 변경 시 bump
+const LS_KEY = 'tit-'+QSET+'-progress';
+
+/* ───────── state ───────── */
+let step = 0;               // index into STEPS
+let ans = {};               // key 'q<n>' → 'O'|'X'
+const app = document.getElementById('app');
+const pbar = document.getElementById('pbar');
+const counterEl = document.getElementById('counter');
+
+function save(){ try{ localStorage.setItem(LS_KEY, JSON.stringify({step, ans})); }catch(e){} }
+function load(){ try{ const v = JSON.parse(localStorage.getItem(LS_KEY)||'null'); if(v && v.ans){ ans=v.ans; step=Math.min(v.step|0, STEPS.length-1); return Object.keys(v.ans).length>0; } }catch(e){} return false; }
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+/* ───────── scoring ─────────
+   축당 9문항(홀수라 동점 없음). 격차 = |L−R|/9 %. 25% 이상(6:3부터)이면 강도 2 — 시즌2 원본 임계와 동일. 5:4는 11%로 강도 1. */
+function score(){
+  const per = {};
+  for(const k of AXIS_ORDER) per[k] = {L:0,R:0};
+  for(const q of Q){
+    const v = ans['q'+q.n]; if(!v) continue;
+    const side = (v==='O') ? q.p : (q.p==='L'?'R':'L');
+    per[q.a][side]++;
+  }
+  const out = AXIS_ORDER.map(k=>{
+    const {L,R} = per[k], ax = AXES[k];
+    const win = L>=R ? 'L' : 'R';
+    const gap = Math.abs(L-R)/PER_AXIS*100;             // % (문항 9개)
+    return {k, ax, L, R, win, gap, code:ax[win].c, intensity: gap>=25?2:1};
+  });
+  return {axes:out, code:out.map(o=>o.code+o.intensity).join('·')};
+}
+
+/* ───────── URL hash 결과 인코딩 (Q 배열 순서로 45bit + 3bit 패딩 → 12 hex) ───────── */
+function encodeAns(){
+  let bits='';
+  for(const q of Q) bits += ans['q'+q.n]==='O'?'1':'0';
+  bits = bits.padEnd(HEX_LEN*4,'0');
+  let hex='';
+  for(let i=0;i<bits.length;i+=4) hex += parseInt(bits.slice(i,i+4),2).toString(16);
+  return hex;
+}
+function decodeAns(hex){
+  if(!new RegExp('^[0-9a-f]{'+HEX_LEN+'}$').test(hex)) return false;
+  let bits='';
+  for(const ch of hex) bits += parseInt(ch,16).toString(2).padStart(4,'0');
+  ans={};
+  Q.forEach((q,i)=>{ ans['q'+q.n] = bits[i]==='1'?'O':'X'; });
+  return true;
+}
+
+/* ───────── 결과 심볼: 5단 모듈 스택 (기울기 = 극, 해칭 밀도 = 강도) ───────── */
+function symbolSVG(axRes){
+  const W=210, BH=44, GAP=8, PAD=6;
+  const Hh = axRes.length*(BH+GAP)-GAP+PAD*2;
+  let s = `<svg width="${W}" height="${Hh}" viewBox="0 0 ${W} ${Hh}" role="img" aria-label="결과 심볼: ${axRes.length}단 모듈 스택" xmlns="http://www.w3.org/2000/svg">`;
+  axRes.forEach((r,bi)=>{
+    const y = PAD + bi*(BH+GAP);
+    const tilt = r.win==='L' ? -1 : 1;                 // 왼극 ↖ / 오른극 ↗
+    const nLines = r.intensity===2 ? 11 : 5;
+    const inkC = '#17191c', accC = '#c9440f';
+    const eye = !!r.ax.eye;
+    s += `<g><rect x="6" y="${y}" width="${W-12}" height="${BH}" fill="none" stroke="${inkC}" stroke-width="1.4"${eye?' stroke-dasharray="4 3"':''}/>`;
+    const span = W-12, dx = span/(nLines+1), lean = 14*tilt;
+    for(let i=1;i<=nLines;i++){
+      const x = 6 + dx*i;
+      s += `<line x1="${x-lean/2}" y1="${y+BH-4}" x2="${x+lean/2}" y2="${y+4}" stroke="${r.intensity===2?accC:inkC}" stroke-width="1.4"/>`;
+    }
+    s += `<text x="${W-14}" y="${y+BH/2+4}" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="12" fill="${inkC}" style="paint-order:stroke" stroke="#EDEAE1" stroke-width="3">${r.code}${r.intensity}</text>`;
+    s += `<text x="12" y="${y+BH/2+4}" font-family="IBM Plex Mono,monospace" font-size="9" letter-spacing="1" fill="#6d6a5e" style="paint-order:stroke" stroke="#EDEAE1" stroke-width="3">${r.ax.name}</text></g>`;
+  });
+  s += '</svg>';
+  return s;
+}
+
+/* ───────── views ───────── */
+function chrome(pct, label){
+  pbar.style.width = pct+'%';
+  counterEl.textContent = label||'';
+}
+function viewIntro(resumable){
+  chrome(0,'');
+  app.innerHTML = `
+  <section class="intro">
+    <div class="slab"><span>SUDOREMOVE</span><b>FORMAT EXPERIMENT 01</b></div>
+    <h1>기술<br>사상검증<em>구역</em></h1>
+    <p class="lede">AI·로보틱스 판에서 우리는 왜 서로 다른 답을 말하는가. 이 테스트는 신념을 묻지 않는다 — <strong>레버 다섯 개</strong>가 각각 어느 쪽으로 당겨져 있는지를 묻는다. 얼마나 빨리 만드는가, 만든 것을 여는가, 어느 단위로 갖는가, 누구에게 이로워야 하는가. 그리고 다섯째는 그 손이 기술을 보는 눈 — 할 수 있어서 좋은가, 쓰여서 좋은가.</p>
+    <div class="axes-grid">${AXIS_ORDER.map((k,i)=>{const a=AXES[k];return `
+      <div class="axis-card ${a.eye?'eye':''}">
+        <small>LEVER ${i+1} — ${a.name}${a.eye?' <em>· 눈</em>':''}</small>
+        <div class="pair"><span class="l">${a.L.ko}</span><i>${a.L.c}&nbsp;↔&nbsp;${a.R.c}</i><span class="r">${a.R.ko}</span></div>
+        <p>${a.ask}</p>
+      </div>`;}).join('')}
+    </div>
+    <div class="meta-row"><span>문항 <b>${N_Q}</b></span><span>응답 <b>O / X</b></span><span>소요 <b>약 3분</b></span><span>결과 <b>코드 ${AXIS_ORDER.length}자리</b></span></div>
+    <div class="start-row">
+      <button class="btn btn--go" id="start"><span>${resumable?'이어서 하기':'테스트 시작'}</span><b>↘</b></button>
+      ${resumable?'<button class="btn btn--ghost" id="restart"><span>처음부터</span></button>':''}
+      <a class="btn btn--ghost" href="levers.html"><span>레버 다섯 개 보기</span><b>→</b></a>
+    </div>
+    <div class="notice">
+      <p>※ 실제로 존재하는 여러 사회적 입장에 대한 응답자의 '동의 여부'를 확인하는 것이므로, 일부 차별적이거나 과격하다고 느껴지는 문항이 있는 점을 참고하여 주시기 바랍니다. 측정값이 응답자의 실제 관점과 일치하지 않을 수 있습니다.</p>
+      <p>※ 완료 시 익명 응답(O/X ${N_Q}개)만 저장됩니다 — 이름·연락처 등 개인 정보는 묻지도 받지도 않습니다. 결과 공유는 링크에 응답을 담는 방식입니다.</p>
+      <p>※ 이 포맷은 웨이브 [사상검증구역: 더 커뮤니티] 시즌 1·2 테스트의 구조(축·강도·O/X)에서 영감을 받은 비상업 실험입니다.</p>
+    </div>
+  </section>`;
+  document.getElementById('start').onclick = ()=>{ if(!resumable){step=0;ans={};} render(); };
+  const r = document.getElementById('restart');
+  if(r) r.onclick = ()=>{ step=0; ans={}; save(); render(); };
+}
+function answeredCount(){ return Object.keys(ans).length; }
+function viewQuestion(st){
+  const idx = STEPS.indexOf(st);
+  const no = idx+1;
+  const dispNo = String(no).padStart(2,'0');
+  chrome(Math.round(no/N_Q*100), `${dispNo} / ${N_Q}`);
+  const key = st.key;
+  const text = TEXT[key];
+  app.innerHTML = `
+  <section class="qscreen">
+    <div class="ghost" aria-hidden="true">${dispNo}</div>
+    <div class="qmeta">
+      <div class="slab"><span>${dispNo}</span><b>QUESTION</b></div>
+      <span class="kbd-hint">KEYBOARD O / X</span>
+    </div>
+    <h1 class="qtext"><span class="qmark">Q.</span>${esc(text)}</h1>
+    <div class="answers">
+      <button data-v="O"><small>01</small><span class="mark">O</span><span>그렇다</span></button>
+      <button data-v="X"><small>02</small><span class="mark">×</span><span>아니다</span></button>
+    </div>
+    <div class="backrow"><button class="back" id="back" ${idx===0?'disabled':''}>← 이전 문항</button></div>
+  </section>`;
+  for(const b of app.querySelectorAll('.answers button')){
+    b.onclick = ()=>pick(key, b.dataset.v, b);
+  }
+  document.getElementById('back').onclick = ()=>{ if(step>0){ step--; render(); } };
+}
+let locking=false;
+function pick(key, v, btn){
+  if(locking) return; locking=true;
+  ans[key]=v; btn.classList.add('sel');
+  window.setTimeout(()=>{
+    locking=false;
+    if(step < STEPS.length-1){ step++; save(); render(); }
+    else { save(); finish(); }
+  }, 240);
+}
+function finish(){
+  try{ localStorage.removeItem(LS_KEY); }catch(e){}
+  const hex = encodeAns();
+  const r = score();
+  /* 익명 응답 수집. 로컬은 server.py가, 배포본은 COLLECTOR(우리 계정의 Worker)가 받는다 —
+     사이트는 다른 계정의 Pages에서 도는데 수집기는 우리가 쥐고 있어야 해서 갈랐다.
+     실패는 조용히 무시한다: 결과는 #r= 링크로 재현되므로 수집 여부와 무관하다. */
+  const localhost = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+  const submitURL = localhost ? '/api/submit' : COLLECTOR + '/submit';
+  try{
+    fetch(submitURL,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({v:2, qset:QSET, hex, code:r.code, ts:new Date().toISOString()})
+    }).catch(()=>{});
+  }catch(e){}
+  history.replaceState(null,'','#r='+hex);
+  viewResult();
+}
+function viewResult(){
+  const r = score();
+  chrome(100,'RESULT');
+  app.innerHTML = `
+  <section class="result">
+    <div class="slab"><span>RESULT</span><b>FIVE LEVERS</b></div>
+    <div class="res-card">
+      <div class="res-head">
+        <div class="slab"><span>01</span><b>CODE</b></div>
+        <span>당신의 결과</span>
+      </div>
+      <div class="res-body">
+        <figure class="symwrap" style="margin:0">
+          ${symbolSVG(r.axes)}
+          <figcaption>기울기 = 극 · 밀도 = 강도 · 점선 = 눈</figcaption>
+        </figure>
+        <div>
+          <p class="res-code">${r.axes.map(o=>`${o.code}${o.intensity}`).join('<i>·</i>')}</p>
+          <p class="res-sub">${r.axes.map(o=>o.ax[o.win].en+' '+o.intensity).join(' / ')}</p>
+          <div class="axis-read">
+            ${r.axes.map((o,i)=>{
+              const lose = o.win==='L'?'R':'L';
+              return `<div class="axis-row ${o.intensity===2?'hot':''}">
+                <small>${String(i+1).padStart(2,'0')} ${o.ax.name}</small>
+                <span class="who"><em>${o.ax[lose].ko}보다</em><b>${o.ax[o.win].ko}</b></span>
+                <span class="pts">${o.intensity}<em>점</em></span>
+              </div>`;
+            }).join('')}
+          </div>
+          <div class="splits">
+            ${r.axes.map(o=>`
+              <div class="split-row">
+                <span class="pole ${o.win==='L'?'win':''}">${o.ax.L.ko}<b>${o.ax.L.c}</b></span>
+                <span class="track"><i class="l" style="width:${o.L/PER_AXIS*100}%"></i><i class="r" style="width:${o.R/PER_AXIS*100}%"></i><em>${o.L} : ${o.R}</em></span>
+                <span class="pole r ${o.win==='R'?'win':''}"><b>${o.ax.R.c}</b>${o.ax.R.ko}</span>
+              </div>`).join('')}
+            <p class="split-note">축당 9문항 — 홀수라 동점이 없다. 좌우 격차 25% 이상(6:3부터)이면 강도 2. ※ 각 영역별 최대 2점까지 측정된다. 다섯 자리가 레버 다섯 개 — 다섯째(가치)만 손이 아니라 눈이라 점선으로 그린다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="share">
+      <button class="btn btn--go" id="share"><span>결과 링크 복사</span><b>↗</b></button>
+      <button class="btn btn--ghost" id="again"><span>다시 하기</span></button>
+      <a class="btn btn--ghost" href="levers.html"><span>레버 다섯 개 보기</span><b>→</b></a>
+      <span class="hint" id="share-hint">링크에 응답 ${N_Q}개가 담긴다 — 링크만으로 결과 재현</span>
+    </div>
+
+    <div class="foot">
+      <p>※ 결과에서 사용하는 용어(가속·제동·개방·폐쇄·시장·주권·첨단·보편·역량·효용)는 이 테스트 안에서 정의한 것으로, 실제 용례와 다를 수 있다.</p>
+      <p>※ 같은 코드 비율 통계는 응답이 쌓인 뒤 제공한다. 이 페이지는 sudoremove 포맷 실험 프로토타입이다.</p>
+    </div>
+  </section>`;
+  document.getElementById('share').onclick = async (e)=>{
+    const url = location.href.split('#')[0] + '#r=' + encodeAns();
+    const txt = `${url} 나의 기술 코드는 ${r.code} — 기술 사상검증구역`;
+    let ok=false;
+    try{ await navigator.clipboard.writeText(txt); ok=true; }catch(err){}
+    document.getElementById('share-hint').textContent = ok ? '복사 완료 — 붙여넣어 공유' : url;
+  };
+  document.getElementById('again').onclick = ()=>{
+    ans={}; step=0; history.replaceState(null,'',location.pathname+location.search);
+    try{ localStorage.removeItem(LS_KEY); }catch(e){}
+    render(true);
+  };
+}
+function render(forceIntro){
+  if(forceIntro===true){ viewIntro(false); return; }
+  viewQuestion(STEPS[step]);
+  window.scrollTo(0,0);
+}
+
+/* ───────── keyboard ───────── */
+window.addEventListener('keydown', e=>{
+  if(e.repeat||e.metaKey||e.ctrlKey||e.altKey) return;
+  const btns = app.querySelectorAll('.answers button');
+  if(!btns.length) return;
+  const k = e.key.toLowerCase();
+  if(k==='o'){ e.preventDefault(); btns[0].click(); }
+  else if(k==='x'){ e.preventDefault(); btns[1].click(); }
+  else if(e.key==='ArrowLeft'){ const b=document.getElementById('back'); if(b&&!b.disabled) b.click(); }
+});
+
+/* ───────── boot ───────── */
+(function(){
+  const m = location.hash.match(new RegExp('#r=([0-9a-f]{'+HEX_LEN+'})'));
+  if(m && decodeAns(m[1])){ viewResult(); return; }
+  const resumable = load();
+  viewIntro(resumable);
+})();
+</script>
+</body>
+</html>

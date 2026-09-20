@@ -104,6 +104,10 @@
       "tbd": "준비 중"
     }
   },
+  "projects": {
+    "title": "프로젝트",
+    "subtitle": "수도리무브가 만들어 본 것들"
+  },
   "common": {
     "readMore": "더 보기",
     "viewAll": "전체 보기",
