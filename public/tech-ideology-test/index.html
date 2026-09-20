@@ -216,6 +216,7 @@ const STEPS = DISPLAY.map(k=>({key:k}));
 const N_Q = Q.length;          // 45
 const PER_AXIS = 9;            // 축당 9문항 (홀수 — 동점 없음)
 const HEX_LEN = 12;            // 45bit → 48bit(3bit 패딩) = 12 hex
+const COLLECTOR = 'https://ideology.sudormrf.run';   // 응답 수집기 (collector/ — 우리 계정의 Worker + D1)
 const QSET = 'v5';             // 5축 45문항, D절 문구 확정본 (2026-09-13). 문항 텍스트 변경 시 bump
 const LS_KEY = 'tit-'+QSET+'-progress';
 
@@ -367,10 +368,13 @@ function finish(){
   try{ localStorage.removeItem(LS_KEY); }catch(e){}
   const hex = encodeAns();
   const r = score();
-  /* 익명 응답 수집 — 로컬은 server.py, 배포본은 Cloudflare Pages Functions가 같은 경로로 받는다.
+  /* 익명 응답 수집. 로컬은 server.py가, 배포본은 COLLECTOR(우리 계정의 Worker)가 받는다 —
+     사이트는 다른 계정의 Pages에서 도는데 수집기는 우리가 쥐고 있어야 해서 갈랐다.
      실패는 조용히 무시한다: 결과는 #r= 링크로 재현되므로 수집 여부와 무관하다. */
+  const localhost = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+  const submitURL = localhost ? '/api/submit' : COLLECTOR + '/submit';
   try{
-    fetch('/api/submit',{method:'POST',headers:{'Content-Type':'application/json'},
+    fetch(submitURL,{method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({v:2, qset:QSET, hex, code:r.code, ts:new Date().toISOString()})
     }).catch(()=>{});
   }catch(e){}
