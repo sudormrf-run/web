@@ -95,8 +95,10 @@ sudoremove 포맷 실험 01. **Astro 빌드에 참여하지 않는 정적 파일
 | `/projects` · `/en/projects` | `src/pages/projects.astro` | 사이트 안에서 들어가는 입구 카드 |
 
 - **원본(SoT)은 이 저장소가 아니다.** 문항·채점·결과 화면은 `JH-MacBook-Pro:~/gotgan/tech_ideology_test/`에서 개발하고, 그 저장소의 `check_sync.py`로 vault 노트와 대조한 뒤 여기로 복사한다. 여기 파일을 직접 고치면 다음 복사 때 덮어쓰인다.
-- **응답 수집**은 정적 호스팅이라 서버 API가 없다. `index.html`의 `SUBMIT_URL` 상수가 비어 있으면 아무것도 전송하지 않으며, 결과 공유는 URL 해시(`#r=`)에 응답을 담는 방식이라 수집 여부와 무관하게 동작한다.
-- 수집을 켜려면 외부 엔드포인트(Google Apps Script 웹 앱 등) URL을 원본 저장소의 `SUBMIT_URL`에 넣고 다시 복사한다. 설정 절차는 원본 저장소 README에 있다.
+- **응답 수집**은 `functions/api/`의 Pages Functions가 맡는다. `POST /api/submit`이 형식을 검증해 D1에 넣고, `GET /api/stats`가 코드 분포를 돌려준다. 테이블 정의는 `functions/api/schema.sql`.
+  - D1 데이터베이스 `tech-ideology-test`를 Pages 프로젝트에 **`DB`**라는 이름으로 바인딩해야 동작한다.
+  - 저장 값은 `qset` · `hex`(O/X 45비트를 접은 12자리) · `code` · 타임스탬프뿐이다. 이름·연락처는 묻지 않고 IP·User-Agent도 남기지 않는다.
+  - 수집이 끊겨도 테스트는 정상 동작한다 — 결과 공유는 URL 해시(`#r=`)에 응답을 담는 방식이다.
 
 ## Documentation
 
