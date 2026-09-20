@@ -1,0 +1,137 @@
+---
+/**
+ * 홈 히어로 바로 아래 한 줄 배너 — 기술 사상검증구역 테스트로 보낸다.
+ * 방송 CTA("여러분도 재보세요")가 한 번의 클릭으로 닿게 하려고 둔 자리다.
+ * 다음 포맷 실험으로 갈아끼우거나, 회차가 끝나면 index.astro에서 줄만 지운다.
+ */
+import type { Locale } from '../../i18n/config';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'ko' } = Astro.props;
+
+const copy = {
+  ko: {
+    label: 'FORMAT EXPERIMENT 01',
+    title: '기술 사상검증구역',
+    tagline: '레버 다섯 개 — 속도 · 공개 · 주권 · 수혜 · 가치',
+    meta: '45문항 O/X · 약 3분 · 결과 코드 5자리',
+    cta: '내 코드 재러 가기',
+  },
+  en: {
+    label: 'FORMAT EXPERIMENT 01',
+    title: 'Tech Ideology Test',
+    tagline: 'Five levers — speed · openness · sovereignty · beneficiary · value',
+    meta: '45 statements · ~3 minutes · Korean only',
+    cta: 'Take the test',
+  },
+}[locale === 'en' ? 'en' : 'ko'];
+---
+
+<section class="test-banner">
+  <div class="container">
+    <a href="/tech-ideology-test/" class="banner">
+      <div class="banner-text">
+        <span class="banner-label">{copy.label}</span>
+        <h2 class="banner-title">{copy.title}</h2>
+        <p class="banner-tagline">{copy.tagline}</p>
+        <p class="banner-meta">{copy.meta}</p>
+      </div>
+      <span class="banner-cta">
+        {copy.cta}
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </span>
+    </a>
+  </div>
+</section>
+
+<style>
+  .test-banner {
+    padding: 0 0 3rem;
+  }
+
+  .banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1.5rem 1.75rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    border-radius: 0.75rem;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .banner:hover {
+    background: var(--color-surface-hover);
+    border-color: var(--color-border-hover);
+    border-left-color: var(--color-accent);
+  }
+
+  .banner-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    color: var(--color-accent);
+    margin-bottom: 0.4rem;
+  }
+
+  .banner-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--color-text-primary);
+    margin: 0 0 0.3rem;
+  }
+
+  .banner-tagline {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin: 0 0 0.25rem;
+    word-break: keep-all;
+  }
+
+  .banner-meta {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .banner-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    transition: background 0.2s;
+  }
+
+  .banner:hover .banner-cta {
+    background: var(--color-accent-hover);
+  }
+
+  @media (max-width: 640px) {
+    .banner {
+      padding: 1.25rem 1.25rem;
+    }
+
+    .banner-cta {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
