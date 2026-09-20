@@ -118,6 +118,30 @@ a{color:inherit}
 .track .r{background:repeating-linear-gradient(-55deg,var(--paper-ink) 0 1px,transparent 1px 5px)}
 .track em{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-style:normal;font-family:var(--mono);font-size:11px;color:var(--paper-ink);background:var(--paper);border:1px solid var(--paper-line);padding:0 7px;line-height:1.5;white-space:nowrap}
 .split-note{font-size:12px;color:var(--paper-dim);margin:10px 0 0}
+/* ── 전체 응답 통계 (수집기 /stats) ── */
+.stats-card{background:var(--paper);color:var(--paper-ink);border:1px solid var(--paper-line);
+  padding:26px 30px 30px;margin-top:22px}
+.stats-card .res-head{margin-bottom:22px}
+.stats-lead{display:flex;gap:26px;align-items:stretch;flex-wrap:wrap;
+  border-bottom:1px solid var(--paper-line);padding-bottom:20px;margin-bottom:20px}
+.stats-hero{flex:0 0 auto;padding-right:26px;border-right:1px solid var(--paper-line)}
+.stats-hero .cap{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--paper-dim)}
+.stats-hero .fig{font-family:var(--disp);font-weight:400;font-size:44px;line-height:1.05;margin-top:6px;color:var(--accent-dim)}
+.stats-hero .fig small{font-family:var(--body);font-size:15px;color:var(--paper-dim);font-weight:400}
+.stats-lead p{font-size:14px;line-height:1.7;align-self:center;margin:0;flex:1 1 16em;min-width:15em;color:var(--paper-ink)}
+.stats-legend{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:6px;
+  font-family:var(--mono);font-size:11.5px;color:var(--paper-dim)}
+.stats-legend .grp{display:flex;align-items:center;gap:7px}
+.stats-legend i{display:block;width:22px;height:11px;border-radius:2px}
+.stats-legend .ttl{letter-spacing:.14em;color:var(--paper-ink)}
+.stats-plot{overflow-x:auto;margin:0 -2px}
+.stats-card svg{display:block;width:100%;min-width:600px;height:auto}
+.stats-note{font-size:12px;color:var(--paper-dim);margin:14px 0 0;border-top:1px solid var(--paper-line);padding-top:12px;line-height:1.65}
+.stats-note b{color:var(--paper-ink)}
+@media(max-width:620px){
+  .stats-card{padding:20px 16px 22px}
+  .stats-hero{border-right:0;padding-right:0}
+}
 /* share */
 .share{margin-top:44px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
 .share .hint{font-family:var(--mono);font-size:12px;color:var(--dim)}
@@ -292,6 +316,137 @@ function symbolSVG(axRes){
   return s;
 }
 
+/* ───────── 전체 응답 통계 — 수집기 /stats를 받아 축별 좌우 분포를 그린다 ─────────
+   테스트를 마친 사람이 자기 코드를 전체와 견주어 보라고 둔 자리다.
+   수집기가 죽어 있거나 응답이 없으면 아무것도 그리지 않는다(결과 자체는 이미 나와 있다). */
+const POLES = {                       // 코드 글자 → 축 인덱스·좌우
+  A:[0,'L'],D:[0,'R'], O:[1,'L'],P:[1,'R'], M:[2,'L'],S:[2,'R'],
+  F:[3,'L'],U:[3,'R'], C:[4,'L'],W:[4,'R'],
+};
+const SC = {L2:'#BF4310', L1:'#E39468', R1:'#5BAFDE', R2:'#15699F'};
+
+function tallyCodes(rows){
+  const per = AXIS_ORDER.map(()=>({}));
+  let total = 0;
+  for(const row of rows){
+    const n = row.n|0; if(n<=0) continue;
+    const cells = String(row.code).split('·');
+    if(cells.length !== AXIS_ORDER.length) continue;
+    let ok = true;
+    cells.forEach((cell,i)=>{ const p = POLES[cell[0]]; if(!p || p[0]!==i) ok=false; });
+    if(!ok) continue;
+    total += n;
+    cells.forEach((cell,i)=>{ per[i][cell] = (per[i][cell]||0) + n; });
+  }
+  return {per, total};
+}
+
+function statsSVG(per, total, mine){
+  const W=920, PAD_T=22, ROW=46, GAP=13, PAD_B=26;
+  const X_L=136, X_PLOT=150, PLOT=600, X_R=X_PLOT+PLOT+14;
+  const CX=X_PLOT+PLOT/2, UNIT=(PLOT/2)/total, BAR=24;
+  const H=PAD_T+AXIS_ORDER.length*(ROW+GAP)-GAP+PAD_B;
+  const INK='#17191c', LINE='#c9c4b4', DIM='#6d6a5e', PAPER='#EDEAE1';
+  const step = total<=10 ? Math.max(1,Math.ceil(total/3)) : Math.ceil(total/3);
+
+  const bar=(x,w,y,fill,round,side)=>{
+    if(w<=0.2) return '';
+    const r=Math.min(3,w);
+    if(!round) return `<rect x="${x}" y="${y}" width="${w}" height="${BAR}" fill="${fill}"/>`;
+    return side<0
+      ? `<path d="M${x+r},${y} H${x+w} V${y+BAR} H${x+r} A${r},${r} 0 0 1 ${x},${y+BAR-r} V${y+r} A${r},${r} 0 0 1 ${x+r},${y} Z" fill="${fill}"/>`
+      : `<path d="M${x},${y} H${x+w-r} A${r},${r} 0 0 1 ${x+w},${y+r} V${y+BAR-r} A${r},${r} 0 0 1 ${x+w-r},${y+BAR} H${x} Z" fill="${fill}"/>`;
+  };
+  const num=(x,y,n,dark)=> n<=0 || n*UNIT<16 ? '' :
+    `<text x="${x}" y="${y+BAR/2+4}" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" fill="${dark?PAPER:INK}">${n}</text>`;
+
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="축별 좌우 극 분포 — 응답 ${total}건" xmlns="http://www.w3.org/2000/svg">`;
+  s+=`<g font-family="IBM Plex Mono,monospace" font-size="9.5" fill="${DIM}">`;
+  for(let u=-total; u<=total; u+=step){
+    const x=CX+u*UNIT, zero=u===0;
+    s+=`<line x1="${x}" y1="${PAD_T-8}" x2="${x}" y2="${H-PAD_B+3}" stroke="${zero?INK:LINE}" stroke-width="${zero?1.5:1}"${zero?'':' stroke-dasharray="2 4"'}/>`;
+    s+=`<text x="${x}" y="${H-PAD_B+17}" text-anchor="middle">${Math.abs(u)}</text>`;
+  }
+  s+='</g>';
+
+  AXIS_ORDER.forEach((k,i)=>{
+    const ax=AXES[k], t=per[i], y=PAD_T+i*(ROW+GAP), yb=y+(ROW-BAR)/2;
+    const l2=t[ax.L.c+'2']||0, l1=t[ax.L.c+'1']||0, r1=t[ax.R.c+'1']||0, r2=t[ax.R.c+'2']||0;
+    const lT=l1+l2, rT=r1+r2, win=lT>=rT?'L':'R';
+
+    s+=`<text x="0" y="${yb+BAR/2+5}" font-family="Black Han Sans,sans-serif" font-size="16" fill="${INK}">${ax.name}</text>`;
+    s+=`<text x="${X_L}" y="${yb+BAR/2+4}" text-anchor="end" font-size="12" font-family="IBM Plex Sans KR,sans-serif" font-weight="${win==='L'?700:400}" fill="${win==='L'?INK:DIM}">${ax.L.ko}</text>`;
+    s+=`<text x="${X_R}" y="${yb+BAR/2+4}" font-size="12" font-family="IBM Plex Sans KR,sans-serif" font-weight="${win==='R'?700:400}" fill="${win==='R'?INK:DIM}">${ax.R.ko}</text>`;
+    if(ax.eye) s+=`<rect x="${CX-total*UNIT-4}" y="${yb-4}" width="${2*total*UNIT+8}" height="${BAR+8}" fill="none" stroke="${LINE}" stroke-width="1.1" stroke-dasharray="4 3" rx="3"/>`;
+
+    const xL1=CX-l1*UNIT, xL2=xL1-l2*UNIT, xR2=CX+r1*UNIT;
+    s+=bar(xL1, l1*UNIT, yb, SC.L1, l2===0, -1);
+    s+=bar(xL2, Math.max(0,l2*UNIT-2), yb, SC.L2, true, -1);
+    s+=bar(CX, r1*UNIT, yb, SC.R1, r2===0, 1);
+    s+=bar(xR2+2, Math.max(0,r2*UNIT-2), yb, SC.R2, true, 1);
+    s+=num(xL1+l1*UNIT/2, yb, l1, false)+num(xL2+l2*UNIT/2, yb, l2, true);
+    s+=num(CX+r1*UNIT/2, yb, r1, false)+num(xR2+r2*UNIT/2, yb, r2, true);
+
+    // 내 위치 — 내가 속한 칸 위에 표식
+    const cell=mine[i], mx={};
+    mx[ax.L.c+'1']=xL1+l1*UNIT/2; mx[ax.L.c+'2']=xL2+l2*UNIT/2;
+    mx[ax.R.c+'1']=CX+r1*UNIT/2;  mx[ax.R.c+'2']=xR2+r2*UNIT/2;
+    if(mx[cell]!==undefined){
+      const x=mx[cell];
+      s+=`<path d="M${x-5},${yb-7} L${x+5},${yb-7} L${x},${yb-1} Z" fill="${INK}"/>`;
+    }
+
+    s+=`<text x="${W}" y="${yb+BAR/2+4}" text-anchor="end" font-family="IBM Plex Mono,monospace" font-size="11.5" fill="${DIM}">${lT} : ${rT}</text>`;
+  });
+  return s+'</svg>';
+}
+
+function renderStats(host, data, r){
+  const rows = (data && data.codes) || [];
+  const {per, total} = tallyCodes(rows);
+  if(total < 1) return;
+  const mine = r.axes.map(o=>o.code+o.intensity);
+  const myCode = r.code;
+  const same = rows.filter(x=>x.code===myCode).reduce((a,x)=>a+(x.n|0),0);
+  const pct = Math.round(same/total*100);
+  const uniq = rows.length;
+
+  host.innerHTML = `
+  <div class="stats-card">
+    <div class="res-head">
+      <div class="slab"><span>02</span><b>EVERYONE</b></div>
+      <span>지금까지의 응답</span>
+    </div>
+    <div class="stats-lead">
+      <div class="stats-hero">
+        <div class="cap">나와 같은 코드</div>
+        <div class="fig">${same>0 ? same+'<small> / '+total+'명</small>' : '<small style="font-size:22px">아직 나뿐</small>'}</div>
+        <div class="cap" style="margin-top:6px">${myCode}${same>0 ? ' · '+pct+'%' : ' · '+total+'명 중 0명'}</div>
+      </div>
+      <p>${total}명이 남긴 코드는 서로 다른 것이 ${uniq}가지다.${same>0 ? '' : ' 같은 코드는 아직 없다 — 다섯 자리가 다 맞아야 같은 코드다.'} 아래는 그 응답을 축 다섯 개로 풀어 어느 쪽으로 기울었는지 본 것이고, <b>▼</b> 가 당신이 선 자리다.</p>
+    </div>
+    <div class="stats-legend">
+      <span class="ttl">강도</span>
+      <span class="grp"><i style="background:${SC.L2}"></i>왼쪽 2</span>
+      <span class="grp"><i style="background:${SC.L1}"></i>왼쪽 1</span>
+      <span class="grp"><i style="background:${SC.R1}"></i>오른쪽 1</span>
+      <span class="grp"><i style="background:${SC.R2}"></i>오른쪽 2</span>
+    </div>
+    <div class="stats-plot">${statsSVG(per, total, mine)}</div>
+    <p class="stats-note">가운데 세로선이 좌우 극의 경계다 — 선에서 멀수록 강도 2. 색은 어느 극인지만 가리키며 <b>좋고 나쁨을 뜻하지 않는다</b>.${total<30?' 아직 응답이 <b>'+total+'건</b>이라 경향으로 읽을 수치가 아니다.':''} 방금 낸 응답은 최대 1분 뒤 반영된다.</p>
+  </div>`;
+}
+
+function loadStats(r){
+  const host = document.getElementById('stats');
+  if(!host) return;
+  const base = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) ? '/api/stats' : COLLECTOR+'/stats';
+  fetch(base+'?qset='+encodeURIComponent(QSET))
+    .then(res=>res.ok?res.json():null)
+    .then(data=>{ if(data) renderStats(host, data, r); })
+    .catch(()=>{});      // 수집기가 없어도 결과 화면은 그대로다
+}
+
 /* ───────── views ───────── */
 function chrome(pct, label){
   pbar.style.width = pct+'%';
@@ -423,6 +578,8 @@ function viewResult(){
       </div>
     </div>
 
+    <div id="stats"></div>
+
     <div class="share">
       <button class="btn btn--go" id="share"><span>결과 링크 복사</span><b>↗</b></button>
       <button class="btn btn--ghost" id="again"><span>다시 하기</span></button>
@@ -432,7 +589,7 @@ function viewResult(){
 
     <div class="foot">
       <p>※ 결과에서 사용하는 용어(가속·제동·개방·폐쇄·시장·주권·첨단·보편·역량·효용)는 이 테스트 안에서 정의한 것으로, 실제 용례와 다를 수 있다.</p>
-      <p>※ 같은 코드 비율 통계는 응답이 쌓인 뒤 제공한다. 이 페이지는 sudoremove 포맷 실험 프로토타입이다.</p>
+      <p>※ 위 분포는 지금까지 쌓인 익명 응답을 실시간으로 읽은 것이다. 저장되는 값은 O/X 응답과 코드뿐이며, 이름·연락처·IP는 남기지 않는다. 이 페이지는 sudoremove 포맷 실험 프로토타입이다.</p>
     </div>
   </section>`;
   document.getElementById('share').onclick = async (e)=>{
@@ -442,6 +599,7 @@ function viewResult(){
     try{ await navigator.clipboard.writeText(txt); ok=true; }catch(err){}
     document.getElementById('share-hint').textContent = ok ? '복사 완료 — 붙여넣어 공유' : url;
   };
+  loadStats(r);
   document.getElementById('again').onclick = ()=>{
     ans={}; step=0; history.replaceState(null,'',location.pathname+location.search);
     try{ localStorage.removeItem(LS_KEY); }catch(e){}
