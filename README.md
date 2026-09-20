@@ -17,7 +17,7 @@ AI와 로보틱스 분야의 지식 공유, 자료 아카이브, 미디어, 행�
 | **Media** | `/media` | `/en/media` | 미디어 허브. 한국어는 podcast library preview 포함 |
 | **Podcasts** | `/podcasts` | - | 한국어 팟캐스트 에피소드별 요약/챕터/참고자료 라이브러리 |
 | **Events** | `/events` | `/en/events` | 행사 목록/상세. 영어 경로는 현재 한국어 events 콘텐츠를 사용 |
-| **Projects** | `/projects` | `/en/projects` | 준비 중(TBD) 페이지 |
+| **Projects** | `/projects` | `/en/projects` | 프로젝트 목록. 현재 항목은 기술 사상검증구역 테스트 |
 | **About** | `/about` | `/en/about` | 소개 페이지 |
 
 ### 다국어 지원
@@ -61,6 +61,7 @@ web/
 ├── astro.config.mjs        # Astro 설정: Tailwind Vite plugin 연결
 ├── package.json            # npm scripts/dependencies
 ├── public/                 # 정적 파일과 이미지/영상 asset
+│   └── tech-ideology-test/ # 기술 사상검증구역 — Astro 밖에서 도는 단일 파일 테스트(아래 참고)
 ├── docs/                   # 프로젝트/콘텐츠 문서
 └── src/
     ├── components/         # Astro UI 컴포넌트
@@ -81,6 +82,21 @@ web/
     ├── styles/             # global.css
     └── utils/              # graphData.ts 등
 ```
+
+## 기술 사상검증구역 (`/tech-ideology-test/`)
+
+sudoremove 포맷 실험 01. **Astro 빌드에 참여하지 않는 정적 파일**로, `public/tech-ideology-test/`에 그대로 놓여 있다 — 의존성이 없고(폰트만 Google Fonts) 자체 스킨을 쓰기 때문에 컴포넌트로 쪼개지 않았다.
+
+| 경로 | 파일 | 내용 |
+|------|------|------|
+| `/tech-ideology-test/` | `public/tech-ideology-test/index.html` | 테스트 본체 — 45문항 O/X, 채점, 결과 카드, 링크 공유 |
+| `/tech-ideology-test/levers.html` | `public/tech-ideology-test/levers.html` | 레버 다섯 개 설명 — 극별 인물 사진·예시 문항·인물 코드 표 |
+| — | `public/tech-ideology-test/assets/people/` | 인물 사진 27장(Wikimedia Commons). 저자·라이선스는 `credits.json`과 `levers.html` 하단 크레딧에 표기 |
+| `/projects` · `/en/projects` | `src/pages/projects.astro` | 사이트 안에서 들어가는 입구 카드 |
+
+- **원본(SoT)은 이 저장소가 아니다.** 문항·채점·결과 화면은 `JH-MacBook-Pro:~/gotgan/tech_ideology_test/`에서 개발하고, 그 저장소의 `check_sync.py`로 vault 노트와 대조한 뒤 여기로 복사한다. 여기 파일을 직접 고치면 다음 복사 때 덮어쓰인다.
+- **응답 수집**은 정적 호스팅이라 서버 API가 없다. `index.html`의 `SUBMIT_URL` 상수가 비어 있으면 아무것도 전송하지 않으며, 결과 공유는 URL 해시(`#r=`)에 응답을 담는 방식이라 수집 여부와 무관하게 동작한다.
+- 수집을 켜려면 외부 엔드포인트(Google Apps Script 웹 앱 등) URL을 원본 저장소의 `SUBMIT_URL`에 넣고 다시 복사한다. 설정 절차는 원본 저장소 README에 있다.
 
 ## Documentation
 

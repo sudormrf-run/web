@@ -104,6 +104,10 @@
       "tbd": "Coming Soon"
     }
   },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Things we have built at sudoremove"
+  },
   "common": {
     "readMore": "Read more",
     "viewAll": "View all",

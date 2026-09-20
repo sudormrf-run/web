@@ -4,81 +4,212 @@ import { useTranslations } from '../i18n/utils';
 
 const locale = 'ko';
 const { t } = useTranslations(locale);
+
+const projects = [
+  {
+    label: 'FORMAT EXPERIMENT 01',
+    title: '기술 사상검증구역',
+    tagline: '레버 다섯 개 — 속도 · 공개 · 주권 · 수혜 · 가치',
+    description:
+      'AI·로보틱스 판에서 우리는 왜 서로 다른 답을 말하는가. 45문항에 O/X로 답하면 코드 다섯 자리가 나온다. 약 3분이면 끝나고, 결과는 링크 하나로 공유된다.',
+    meta: ['45문항 O/X', '약 3분', '결과 코드 5자리'],
+    href: '/tech-ideology-test/',
+    cta: '테스트 하러 가기',
+    secondary: { label: '레버 다섯 개 먼저 보기', href: '/tech-ideology-test/levers.html' },
+  },
+];
 ---
 
 <Layout title={t('projects.title')} locale={locale}>
-  <div class="tbd-page">
+  <div class="projects-page">
     <div class="container">
-      <div class="tbd-content">
-        <div class="tbd-icon">
-          <svg width="64" height="64" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-          </svg>
-        </div>
-        <h1 class="tbd-title">Projects</h1>
-        <p class="tbd-description">콘텐츠 준비 중입니다</p>
-        <a href="/" class="back-link">
-          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-          </svg>
-          홈으로 돌아가기
-        </a>
+      <header class="page-header">
+        <h1 class="page-title">
+          <span class="gradient-text">{t('projects.title')}</span>
+        </h1>
+        <p class="page-subtitle">{t('projects.subtitle')}</p>
+      </header>
+
+      <div class="project-list">
+        {projects.map((project) => (
+          <article class="project-card">
+            <span class="project-label">{project.label}</span>
+            <h2 class="project-title">
+              <a href={project.href}>{project.title}</a>
+            </h2>
+            <p class="project-tagline">{project.tagline}</p>
+            <p class="project-description">{project.description}</p>
+            <ul class="project-meta">
+              {project.meta.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+            <div class="project-actions">
+              <a href={project.href} class="btn-primary">
+                {project.cta}
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href={project.secondary.href} class="btn-ghost">{project.secondary.label}</a>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </div>
 </Layout>
 
 <style>
-  .tbd-page {
-    min-height: calc(100vh - 200px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 0;
+  .projects-page {
+    padding: 3rem 0 5rem;
   }
 
-  .tbd-content {
+  .page-header {
     text-align: center;
+    margin-bottom: 3rem;
   }
 
-  .tbd-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 120px;
-    height: 120px;
-    background: rgba(67, 214, 168, 0.1);
-    border-radius: 50%;
-    margin-bottom: 2rem;
-    color: var(--color-green);
-  }
-
-  .tbd-title {
+  .page-title {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 800;
-    color: var(--color-text-primary);
-    margin-bottom: 1rem;
     letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
   }
 
-  .tbd-description {
+  .page-subtitle {
     font-size: 1.125rem;
     color: var(--color-text-muted);
-    margin-bottom: 2rem;
   }
 
-  .back-link {
+  .project-list {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .project-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .project-card:hover {
+    border-color: var(--color-border-hover);
+    background: var(--color-surface-hover);
+  }
+
+  .project-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .project-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-title a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+
+  .project-title a:hover {
+    color: var(--color-accent);
+  }
+
+  .project-tagline {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .project-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+    word-break: keep-all;
+  }
+
+  .project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+  }
+
+  .project-meta li {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border-light);
+    border-radius: 999px;
+    padding: 0.25rem 0.75rem;
+  }
+
+  .project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
     font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--color-accent);
+    font-weight: 700;
     text-decoration: none;
-    transition: gap 0.2s;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    transition: background 0.2s;
   }
 
-  .back-link:hover {
-    gap: 0.75rem;
+  .btn-primary:hover {
+    background: var(--color-accent-hover);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--color-border-hover);
+    color: var(--color-text-primary);
+  }
+
+  @media (max-width: 640px) {
+    .project-card {
+      padding: 1.5rem;
+    }
+
+    .project-actions a {
+      width: 100%;
+      justify-content: center;
+    }
   }
 </style>

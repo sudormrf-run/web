@@ -4,81 +4,211 @@ import { useTranslations } from '../../i18n/utils';
 
 const locale = 'en';
 const { t } = useTranslations(locale);
+
+const projects = [
+  {
+    label: 'FORMAT EXPERIMENT 01',
+    title: 'Tech Ideology Test',
+    tagline: 'Five levers — speed, openness, sovereignty, beneficiary, value',
+    description:
+      'Why do we give different answers about AI and robotics? Answer 45 statements with O/X and you get a five-letter code. It takes about three minutes, and the result travels as a single link. The test itself is in Korean.',
+    meta: ['45 statements', '~3 minutes', 'Korean only'],
+    href: '/tech-ideology-test/',
+    cta: 'Take the test (Korean)',
+    secondary: { label: 'See the five levers first', href: '/tech-ideology-test/levers.html' },
+  },
+];
 ---
 
 <Layout title={t('projects.title')} locale={locale}>
-  <div class="tbd-page">
+  <div class="projects-page">
     <div class="container">
-      <div class="tbd-content">
-        <div class="tbd-icon">
-          <svg width="64" height="64" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-          </svg>
-        </div>
-        <h1 class="tbd-title">Projects</h1>
-        <p class="tbd-description">Content coming soon</p>
-        <a href="/en" class="back-link">
-          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to home
-        </a>
+      <header class="page-header">
+        <h1 class="page-title">
+          <span class="gradient-text">{t('projects.title')}</span>
+        </h1>
+        <p class="page-subtitle">{t('projects.subtitle')}</p>
+      </header>
+
+      <div class="project-list">
+        {projects.map((project) => (
+          <article class="project-card">
+            <span class="project-label">{project.label}</span>
+            <h2 class="project-title">
+              <a href={project.href}>{project.title}</a>
+            </h2>
+            <p class="project-tagline">{project.tagline}</p>
+            <p class="project-description">{project.description}</p>
+            <ul class="project-meta">
+              {project.meta.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+            <div class="project-actions">
+              <a href={project.href} class="btn-primary">
+                {project.cta}
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href={project.secondary.href} class="btn-ghost">{project.secondary.label}</a>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </div>
 </Layout>
 
 <style>
-  .tbd-page {
-    min-height: calc(100vh - 200px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 0;
+  .projects-page {
+    padding: 3rem 0 5rem;
   }
 
-  .tbd-content {
+  .page-header {
     text-align: center;
+    margin-bottom: 3rem;
   }
 
-  .tbd-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 120px;
-    height: 120px;
-    background: rgba(67, 214, 168, 0.1);
-    border-radius: 50%;
-    margin-bottom: 2rem;
-    color: var(--color-green);
-  }
-
-  .tbd-title {
+  .page-title {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 800;
-    color: var(--color-text-primary);
-    margin-bottom: 1rem;
     letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
   }
 
-  .tbd-description {
+  .page-subtitle {
     font-size: 1.125rem;
     color: var(--color-text-muted);
-    margin-bottom: 2rem;
   }
 
-  .back-link {
+  .project-list {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .project-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .project-card:hover {
+    border-color: var(--color-border-hover);
+    background: var(--color-surface-hover);
+  }
+
+  .project-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .project-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-title a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+
+  .project-title a:hover {
+    color: var(--color-accent);
+  }
+
+  .project-tagline {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .project-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+  }
+
+  .project-meta li {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border-light);
+    border-radius: 999px;
+    padding: 0.25rem 0.75rem;
+  }
+
+  .project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
     font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--color-accent);
+    font-weight: 700;
     text-decoration: none;
-    transition: gap 0.2s;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    transition: background 0.2s;
   }
 
-  .back-link:hover {
-    gap: 0.75rem;
+  .btn-primary:hover {
+    background: var(--color-accent-hover);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--color-border-hover);
+    color: var(--color-text-primary);
+  }
+
+  @media (max-width: 640px) {
+    .project-card {
+      padding: 1.5rem;
+    }
+
+    .project-actions a {
+      width: 100%;
+      justify-content: center;
+    }
   }
 </style>

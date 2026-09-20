@@ -57,7 +57,8 @@ src/
 - `/news/` - AI news. 현재 한국어 route만 구현
 - `/media/`, `/en/media/` - 미디어 페이지
 - `/events/`, `/en/events/` - 행사. 영어 route는 현재 한국어 events collection을 사용
-- `/projects/`, `/en/projects/` - 준비 중 페이지
+- `/projects/`, `/en/projects/` - 프로젝트 목록(현재 항목: 기술 사상검증구역)
+- `/tech-ideology-test/` - 기술 사상검증구역 테스트. `public/` 아래 정적 파일이라 Astro 라우팅·레이아웃 밖에서 돈다. 원본은 별도 저장소(`~/gotgan/tech_ideology_test/`)이고 여기 파일은 복사본이므로 직접 고치지 않는다
 - `/about/`, `/en/about/` - 소개
 
 ## i18n
