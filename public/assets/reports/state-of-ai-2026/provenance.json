@@ -5,6 +5,19 @@
   "note": "All final chart assets rendered from acquired official PDF. Official website figure PNGs and slide JPEGs can be stale versus PDF. Verified discrepancy: website figure-13 says ENV-294 Phase 2b/68% at 28d, PDF p119 says Phase 2a/85% at 42d, confirmed Oct 7 in PDF. Do not mix website graphics with PDF extraction.",
   "charts": [
     {
+      "pdfPage": 1,
+      "printedSlide": null,
+      "source": "https://www.stateof.ai/State-of-AI-Report-2026.pdf",
+      "pdfUrl": "https://www.stateof.ai/State-of-AI-Report-2026.pdf#page=1",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 46526,
+      "method": "pdftoppm -scale-to 1920 -png from acquired official PDF; WebP quality 90",
+      "alt": "State of AI Report 2026 — Nathan Benaich and Air Street Capital, October 8, 2026",
+      "asset": "page-001.webp",
+      "homepageRole": "viewer-cover"
+    },
+    {
       "pdfPage": 6,
       "printedSlide": 5,
       "source": "https://www.stateof.ai/State-of-AI-Report-2026.pdf",
@@ -125,6 +138,32 @@
       "asset": "page-094.webp"
     },
     {
+      "pdfPage": 100,
+      "printedSlide": 99,
+      "source": "https://www.stateof.ai/State-of-AI-Report-2026.pdf",
+      "pdfUrl": "https://www.stateof.ai/State-of-AI-Report-2026.pdf#page=100",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 184856,
+      "method": "pdftoppm -scale-to 1920 -png from acquired official PDF; WebP quality 90",
+      "alt": "Non-developers’ Codex use is growing faster than developers’ use",
+      "asset": "page-100.webp",
+      "homepageRole": "body-highlight"
+    },
+    {
+      "pdfPage": 108,
+      "printedSlide": 107,
+      "source": "https://www.stateof.ai/State-of-AI-Report-2026.pdf",
+      "pdfUrl": "https://www.stateof.ai/State-of-AI-Report-2026.pdf#page=108",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 198636,
+      "method": "pdftoppm -scale-to 1920 -png from acquired official PDF; WebP quality 90",
+      "alt": "Claude Cowork nuked $285B of public software value in Feb that was won back by Sept",
+      "asset": "page-108.webp",
+      "homepageRole": "body-highlight"
+    },
+    {
       "pdfPage": 110,
       "printedSlide": 109,
       "source": "https://www.stateof.ai/State-of-AI-Report-2026.pdf",
@@ -173,6 +212,32 @@
       "asset": "page-134.webp"
     },
     {
+      "pdfPage": 135,
+      "printedSlide": 134,
+      "source": "https://www.stateof.ai/State-of-AI-Report-2026.pdf",
+      "pdfUrl": "https://www.stateof.ai/State-of-AI-Report-2026.pdf#page=135",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 143680,
+      "method": "pdftoppm -scale-to 1920 -png from acquired official PDF; WebP quality 90",
+      "alt": "Four US hyperscalers will spend $733B in total capex in 2026, Europe commits €1B",
+      "asset": "page-135.webp",
+      "homepageRole": "body-highlight"
+    },
+    {
+      "pdfPage": 165,
+      "printedSlide": 164,
+      "source": "https://www.stateof.ai/State-of-AI-Report-2026.pdf",
+      "pdfUrl": "https://www.stateof.ai/State-of-AI-Report-2026.pdf#page=165",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 160962,
+      "method": "pdftoppm -scale-to 1920 -png from acquired official PDF; WebP quality 90",
+      "alt": "Welcome to the era of Super Intelligence, Superintelligence, or just SI…",
+      "asset": "page-165.webp",
+      "homepageRole": "body-highlight"
+    },
+    {
       "pdfPage": 170,
       "printedSlide": 169,
       "source": "https://www.stateof.ai/State-of-AI-Report-2026.pdf",
@@ -183,6 +248,19 @@
       "method": "pdftoppm -scale-to 1920 -png from acquired official PDF; WebP quality 90",
       "alt": "Outside the US and China, 67 countries have sovereign AI projects",
       "asset": "page-170.webp"
+    },
+    {
+      "pdfPage": 171,
+      "printedSlide": 170,
+      "source": "https://www.stateof.ai/State-of-AI-Report-2026.pdf",
+      "pdfUrl": "https://www.stateof.ai/State-of-AI-Report-2026.pdf#page=171",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 204558,
+      "method": "pdftoppm -scale-to 1920 -png from acquired official PDF; WebP quality 90",
+      "alt": "Selected sovereign AI program pledges total about $138B",
+      "asset": "page-171.webp",
+      "homepageRole": "body-highlight"
     },
     {
       "pdfPage": 173,
@@ -233,6 +311,32 @@
       "asset": "page-203.webp"
     },
     {
+      "pdfPage": 211,
+      "printedSlide": 210,
+      "source": "https://www.stateof.ai/State-of-AI-Report-2026.pdf",
+      "pdfUrl": "https://www.stateof.ai/State-of-AI-Report-2026.pdf#page=211",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 197680,
+      "method": "pdftoppm -scale-to 1920 -png from acquired official PDF; WebP quality 90",
+      "alt": "Claude is helping run cyberattacks, surveillance and weapons programs",
+      "asset": "page-211.webp",
+      "homepageRole": "body-highlight"
+    },
+    {
+      "pdfPage": 214,
+      "printedSlide": 213,
+      "source": "https://www.stateof.ai/State-of-AI-Report-2026.pdf",
+      "pdfUrl": "https://www.stateof.ai/State-of-AI-Report-2026.pdf#page=214",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 167262,
+      "method": "pdftoppm -scale-to 1920 -png from acquired official PDF; WebP quality 90",
+      "alt": "Open cyber models raise the threat, but defenders need them too",
+      "asset": "page-214.webp",
+      "homepageRole": "body-highlight"
+    },
+    {
       "pdfPage": 221,
       "printedSlide": 220,
       "source": "https://www.stateof.ai/State-of-AI-Report-2026.pdf",
@@ -243,6 +347,19 @@
       "method": "pdftoppm -scale-to 1920 -png from acquired official PDF; WebP quality 90",
       "alt": "Astra is better at hiding sabotage when monitors only see its reasoning",
       "asset": "page-221.webp"
+    },
+    {
+      "pdfPage": 233,
+      "printedSlide": 232,
+      "source": "https://www.stateof.ai/State-of-AI-Report-2026.pdf",
+      "pdfUrl": "https://www.stateof.ai/State-of-AI-Report-2026.pdf#page=233",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 181650,
+      "method": "pdftoppm -scale-to 1920 -png from acquired official PDF; WebP quality 90",
+      "alt": "Frontier lab leaders and 1,386 staff call for the ability to slow AI progress",
+      "asset": "page-233.webp",
+      "homepageRole": "body-highlight"
     },
     {
       "pdfPage": 238,
@@ -273,5 +390,135 @@
   "copyright": "© 2026 Air Street Capital Management Ltd.",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
   "retrievedAt": "2026-10-23",
-  "adaptation": "Original PDF pages extracted without cropping or redrawing; converted to WebP by sudoremove."
+  "adaptation": "Original PDF pages extracted without cropping or redrawing; converted to WebP by sudoremove.",
+  "homepageAudit": {
+    "url": "https://www.stateof.ai/",
+    "retrievedAt": "2026-10-23",
+    "bodyHighlightCount": 18,
+    "bodyHighlightPDFPages": [
+      6,
+      38,
+      100,
+      21,
+      56,
+      119,
+      110,
+      83,
+      94,
+      108,
+      135,
+      165,
+      171,
+      197,
+      214,
+      211,
+      221,
+      233
+    ],
+    "viewerCoverPDFPage": 1,
+    "note": "All 18 static body highlights (figure-01 through figure-18) are represented by their corresponding PDF pages. The separate full-report reader can page through all 244 slides; the static avatar is not a report slide."
+  },
+  "homepageHighlights": {
+    "url": "https://www.stateof.ai/",
+    "checkedAt": "2026-10-23",
+    "figures": [
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-01.png",
+        "pdfPage": 6,
+        "storyId": "frontier"
+      },
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-02.png",
+        "pdfPage": 38,
+        "storyId": "frontier"
+      },
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-10.png",
+        "pdfPage": 100,
+        "storyId": "agents"
+      },
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-11.png",
+        "pdfPage": 21,
+        "storyId": "agents"
+      },
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-12.png",
+        "pdfPage": 56,
+        "storyId": "robotics"
+      },
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-13.png",
+        "pdfPage": 119,
+        "storyId": "science",
+        "sourceDiscrepancy": "Official homepage figure-13 and narrative retain ENV-294 Phase 2b / 68% at day 28. Acquired PDF p119 says Phase 2a / 85% at day 42 (n=9, no placebo), company-confirmed Oct 7, 2026. Local image is from PDF, and article must explicitly retain this editorial note."
+      },
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-14.png",
+        "pdfPage": 110,
+        "storyId": "economics"
+      },
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-15.png",
+        "pdfPage": 83,
+        "storyId": "economics"
+      },
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-16.png",
+        "pdfPage": 94,
+        "storyId": "economics"
+      },
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-17.png",
+        "pdfPage": 108,
+        "storyId": "economics"
+      },
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-03.png",
+        "pdfPage": 135,
+        "storyId": "compute"
+      },
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-04.png",
+        "pdfPage": 165,
+        "storyId": "sovereignty"
+      },
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-05.png",
+        "pdfPage": 171,
+        "storyId": "sovereignty"
+      },
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-06.png",
+        "pdfPage": 197,
+        "storyId": "safety"
+      },
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-07.png",
+        "pdfPage": 214,
+        "storyId": "safety"
+      },
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-18.png",
+        "pdfPage": 211,
+        "storyId": "safety"
+      },
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-08.png",
+        "pdfPage": 221,
+        "storyId": "safety"
+      },
+      {
+        "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/figure-09.png",
+        "pdfPage": 233,
+        "storyId": "safety"
+      }
+    ]
+  },
+  "homepageCover": {
+    "imageUrl": "https://www.stateof.ai/assets/2026-staging-55248615/report-pages/page-001.jpg",
+    "pdfPage": 1,
+    "asset": "page-001.webp",
+    "note": "Initial cover image inside the separate 244-page official reader; outside the 18 curated body highlights."
+  }
 }

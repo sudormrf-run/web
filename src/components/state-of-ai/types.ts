@@ -16,6 +16,7 @@ export interface StateOfAIReport {
     coverAlt?: string;
   };
   editorial: { thesis: string; readingNotes: string[] };
+  homepageHighlights: { url: string; checkedAt: string; pages: number[] };
   sections: { id: string; label: string; start: number; end: number }[];
   stories: {
     id: string;
@@ -23,6 +24,7 @@ export interface StateOfAIReport {
     kicker: string;
     title: string;
     thesis: string;
+    bullets: string[];
     paragraphs: string[];
     evidence: { value: string; label: string; detail: string; page: number }[];
     charts: {
