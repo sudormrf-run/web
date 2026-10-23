@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">State of AI 2026</title>
+  <desc id="desc">244 slides, 9 stories, 22 charts. Korean reading notes by sudoremove.</desc>
+  <rect width="1200" height="675" fill="#101110"/>
+  <path d="M72 75H1128M72 552H1128" stroke="#43483b"/>
+  <text x="76" y="55" font-family="sans-serif" font-size="20" letter-spacing="5" fill="#ff7b36">SUDOREMOVE / REPORT NOTES</text>
+  <text x="76" y="180" font-family="sans-serif" font-weight="700" font-size="68" fill="#f4f4ed">STATE OF AI</text>
+  <text x="62" y="458" font-family="sans-serif" font-weight="800" font-size="300" letter-spacing="-18" fill="#f4f4ed">2026<tspan fill="#ff7b36">.</tspan></text>
+  <path d="M945 227H1100M1034 161L1100 227L1034 293" stroke="#ff7b36" stroke-width="13" fill="none"/>
+  <text x="76" y="607" font-family="sans-serif" font-size="27" fill="#c2c8ba">244 SLIDES</text>
+  <text x="461" y="607" font-family="sans-serif" font-size="27" fill="#c2c8ba">9 STORIES</text>
+  <text x="850" y="607" font-family="sans-serif" font-size="27" fill="#ff7b36">22 CHARTS</text>
+</svg>

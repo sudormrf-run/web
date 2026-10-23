@@ -1,0 +1,79 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import ReportStyles from '../../../../components/state-of-ai/ReportStyles.astro';
+import type { StateOfAIReport } from '../../../../components/state-of-ai/types';
+import reportData from '../../../../data/state-of-ai-2026.json';
+
+const report: StateOfAIReport = reportData;
+const { meta, editorial, slides, sections } = report;
+const articleUrl = '/knowledge/articles/state-of-ai-2026/';
+const pdfPage = (page: number) => `${meta.pdfUrl.split('#')[0]}#page=${page}`;
+const sectionForPage = (page: number) => sections.find((section) => page >= section.start && page <= section.end);
+---
+
+<Layout title="State of AI 2026 — 전체 슬라이드 참고 문서" description={`State of AI Report 2026 전체 ${meta.slideCount}장 한국어 요약. 검색, 섹션 필터, PDF 페이지별 원문과 출처 링크를 제공합니다.`} locale="ko" hideLanguageSwitcher={true}>
+  <article class="soai reference-article" data-reference>
+    <div class="report-shell">
+      <div class="report-breadcrumb"><a href="/knowledge/">Knowledge</a><span aria-hidden="true">/</span><a href={articleUrl}>State of AI 2026</a><span aria-hidden="true">/</span><span>전체 참고 문서</span></div>
+      <header class="reference-hero"><p class="report-eyebrow">THE COMPLETE READING NOTES · 2026</p><h1>한 장씩 읽는<br /><span>State of AI.</span></h1><p class="hero-subtitle">{meta.slideCount}장 전체의 한국어 요약과 원문 링크.<br />필요한 내용을 찾고, 그 주장의 근거까지 따라가세요.</p><div class="report-actions"><a class="report-button primary" href={articleUrl}>핵심 이야기로 돌아가기 <span aria-hidden="true">↗</span></a><a class="report-button" href={meta.referenceDownload} download>Markdown 내려받기 <span aria-hidden="true">↓</span></a><button class="report-button enhanced-only" type="button" data-print-reference>전체 인쇄 / PDF 저장 <span aria-hidden="true">↗</span></button></div></header>
+
+      <aside class="reference-method"><div><p class="report-eyebrow">READING GUIDE</p><h2>숫자와 주장을 읽는 기준</h2></div><ul>{editorial.readingNotes.map((note) => <li>{note}</li>)}</ul><div class="reference-original"><a href={meta.reportUrl} target="_blank" rel="noopener noreferrer">공식 보고서 소개 ↗</a><a href={meta.pdfUrl} target="_blank" rel="noopener noreferrer">전체 원문 PDF ↗</a></div></aside>
+
+      <nav class="reference-section-index" aria-label="보고서 섹션 목차">{sections.map((section) => <a href={`#slide-${section.start}`}><span>{section.label}</span><span>PDF p.{section.start}—{section.end}</span></a>)}</nav>
+    </div>
+
+    <div class="reference-controls enhanced-only"><div class="report-shell"><div class="reference-search"><label for="slide-search">슬라이드 검색</label><div class="search-input-wrap"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.8" cy="10.8" r="7.3" /><path d="m16 16 5 5" /></svg><input id="slide-search" type="search" placeholder="키워드, 제목 또는 PDF 페이지 번호" autocomplete="off" data-slide-search /></div></div><div class="reference-filter"><label for="section-filter">섹션</label><select id="section-filter" data-section-filter><option value="all">모든 섹션</option>{sections.map((section) => <option value={section.id}>{section.label}</option>)}</select></div><button class="reset-filters" type="button" data-reset-filters>초기화</button></div></div>
+
+    <div class="report-shell reference-results"><div class="results-heading"><h2>전체 슬라이드 노트</h2><p role="status" aria-live="polite" aria-atomic="true" data-result-count>{slides.length} / {meta.slideCount}장</p></div><p class="page-number-note">이 문서의 페이지 번호는 표지를 포함한 <strong>PDF 페이지 번호</strong>입니다. 원 슬라이드의 하단 표기와 1장 차이가 납니다.</p><p class="empty-results" data-empty-results hidden>검색 결과가 없습니다. 다른 키워드를 입력하거나 섹션 필터를 초기화해 주세요.</p>
+
+      <div class="slide-notes">{slides.map((slide) => {
+        const section = sectionForPage(slide.page);
+        return <section class="slide-note" id={`slide-${slide.page}`} data-slide-note data-page={slide.page} data-section={section?.id ?? slide.section} data-search={`${slide.page} ${slide.title} ${slide.summary} ${slide.caveat ?? ''} ${section?.label ?? slide.section} ${slide.links.map((link) => link.label).join(' ')}`.toLocaleLowerCase('ko')} aria-labelledby={`slide-title-${slide.page}`}><div class="slide-page"><span>PDF PAGE</span><a href={pdfPage(slide.page)} target="_blank" rel="noopener noreferrer" aria-label={`PDF ${slide.page}페이지 원문`}>{String(slide.page).padStart(3, '0')}<span aria-hidden="true">↗</span></a></div><div class="slide-note-content"><p class="slide-section-label">{section?.label ?? slide.section}</p><h3 id={`slide-title-${slide.page}`}>{slide.title}</h3><p class="slide-summary">{slide.summary}</p>{slide.caveat && <p class="slide-caveat"><span>해석 메모</span>{slide.caveat}</p>}{slide.links.length > 0 && <ul class="slide-links" aria-label="슬라이드 출처 및 관련 링크">{slide.links.map((link) => <li><a href={link.url} target="_blank" rel="noopener noreferrer">{link.label} <span aria-hidden="true">↗</span></a></li>)}</ul>}</div><a class="slide-permalink" href={`#slide-${slide.page}`} aria-label={`PDF ${slide.page}페이지 요약 고유 링크`}>#</a></section>;
+      })}</div>
+
+      <aside class="reference-cta compact"><div><p class="report-eyebrow">BACK TO THE STORIES</p><h2>전체를 읽었다면, 이야기로 연결하기.</h2><p>보고서의 주요 변화를 주제별 해설과 도표로 다시 살펴보세요.</p></div><a class="report-button primary" href={articleUrl}>핵심 이야기 읽기 <span aria-hidden="true">↗</span></a></aside><footer class="report-colophon"><p><a href={meta.reportUrl} target="_blank" rel="noopener noreferrer">State of AI Report 2026</a> · Nathan Benaich · Air Street Capital<br />© 2026 Air Street Capital · <a href={meta.licenseUrl} target="_blank" rel="noopener noreferrer">CC BY 4.0</a></p><p>한국어 요약·해설·편집, 슬라이드 이미지 추출·WebP 변환: 수도리무브<br />해설 업데이트 {meta.date}</p></footer>
+    </div>
+  </article>
+  <ReportStyles />
+</Layout>
+
+<script>
+  const reference = document.querySelector<HTMLElement>('[data-reference]');
+  const search = document.querySelector<HTMLInputElement>('[data-slide-search]');
+  const filter = document.querySelector<HTMLSelectElement>('[data-section-filter]');
+  const notes = Array.from(document.querySelectorAll<HTMLElement>('[data-slide-note]'));
+  const count = document.querySelector<HTMLElement>('[data-result-count]');
+  const empty = document.querySelector<HTMLElement>('[data-empty-results]');
+  if (reference && search && filter && count && empty) {
+    reference.classList.add('is-enhanced');
+    const update = () => {
+      const query = search.value.trim().toLocaleLowerCase('ko');
+      const words = query.split(/\s+/).filter(Boolean);
+      let visible = 0;
+      notes.forEach((note) => {
+        const matchesSection = filter.value === 'all' || note.dataset.section === filter.value;
+        const matchesSearch = /^\d+$/.test(query)
+          ? note.dataset.page === String(Number(query))
+          : words.every((word) => (note.dataset.search ?? '').includes(word));
+        note.hidden = !(matchesSection && matchesSearch);
+        if (!note.hidden) visible++;
+      });
+      count.textContent = `${visible} / ${notes.length}장`;
+      empty.hidden = visible > 0;
+    };
+    search.addEventListener('input', update);
+    filter.addEventListener('change', update);
+    document.querySelector('[data-reset-filters]')?.addEventListener('click', () => { search.value = ''; filter.value = 'all'; update(); search.focus(); });
+    document.querySelector('[data-print-reference]')?.addEventListener('click', () => window.print());
+    document.querySelectorAll<HTMLAnchorElement>('.reference-section-index a').forEach((link) => link.addEventListener('click', () => { search.value = ''; filter.value = 'all'; update(); }));
+    // A permalink reached through browser history must remain visible even after filtering.
+    const revealHashTarget = () => {
+      const destination = document.getElementById(location.hash.slice(1));
+      if (destination?.matches('[data-slide-note]') && destination.hidden) { search.value = ''; filter.value = 'all'; update(); destination.scrollIntoView(); }
+    };
+    window.addEventListener('hashchange', revealHashTarget);
+    window.addEventListener('pageshow', () => { update(); revealHashTarget(); });
+    update();
+    revealHashTarget();
+  }
+</script>

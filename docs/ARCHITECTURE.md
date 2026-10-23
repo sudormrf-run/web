@@ -108,6 +108,7 @@ src/
 | Knowledge doc | `/knowledge/{...slug}` | `/en/knowledge/{...slug}` | 언어별 dynamic route |
 | Knowledge graph | `/knowledge/physical-ai/browse/` | `/en/knowledge/physical-ai/browse/` | GraphView + DocumentPanel |
 | Knowledge article | `/knowledge/articles/{slug}/` | - | 한국어 전용. Markdown collection이 아니라 페이지별 `.astro` + `src/data/{slug}.json` |
+| State of AI 2026 reference | `/knowledge/articles/state-of-ai-2026/reference/` | - | 244장 전체 요약. 상위 article과 같은 JSON을 사용하고 검색·섹션 필터·인쇄를 제공 |
 | Archive | `/archive/`, `/archive/{slug}` | `/en/archive/`, `/en/archive/{slug}` | 영어 route는 현재 `archive` collection의 `ko/` 콘텐츠를 사용 |
 | Events | `/events/`, `/events/{slug}` | `/en/events/`, `/en/events/{slug}` | 영어 route는 현재 `events` collection의 `ko/` 콘텐츠를 사용 |
 | News | `/news/`, `/news/{slug}` | - | 현재 한국어 route만 구현 |
