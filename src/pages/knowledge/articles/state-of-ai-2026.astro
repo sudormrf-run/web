@@ -1,0 +1,187 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ReportStyles from '../../../components/state-of-ai/ReportStyles.astro';
+import type { StateOfAIReport } from '../../../components/state-of-ai/types';
+import reportData from '../../../data/state-of-ai-2026.json';
+
+const report: StateOfAIReport = reportData;
+const { meta, editorial, homepageHighlights, stories, sections, sources, predictions } = report;
+const referenceUrl = '/knowledge/articles/state-of-ai-2026/reference/';
+const pdfPage = (page: number) => `${meta.pdfUrl.split('#')[0]}#page=${page}`;
+const chartCount = stories.reduce((sum, story) => sum + story.charts.length, 0);
+---
+
+<Layout title={meta.title} description={meta.subtitle} locale="ko" hideLanguageSwitcher={true}>
+  <article class="soai report-article">
+    <div class="report-shell">
+      <div class="report-breadcrumb"><a href="/knowledge/">Knowledge</a><span aria-hidden="true">/</span><span>리포트 읽기</span></div>
+
+      <header class="report-hero">
+        <div class="hero-copy">
+          <p class="report-eyebrow"><span class="status-dot" aria-hidden="true"></span> THE ANNUAL AI REPORT · 한국어 해설</p>
+          <h1 aria-label="State of AI Report 2026">State of AI<span class="hero-year">2026<span class="year-dot">.</span></span></h1>
+          <p class="hero-subtitle">{meta.subtitle}</p>
+          <div class="report-actions">
+            <a class="report-button primary" href={`#${stories[0]?.id ?? 'stories'}`}>핵심 이야기 읽기 <span aria-hidden="true">↓</span></a>
+            <a class="report-button" href={referenceUrl}>전체 슬라이드 참고 문서 <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <aside class="hero-index" aria-label="보고서 구성">
+          <div class="index-topline"><span>REPORT INDEX</span><span>2026 EDITION</span></div>
+          {meta.coverImage ? <img class="report-cover" src={meta.coverImage} alt={meta.coverAlt ?? 'State of AI Report 2026 표지'} width="1200" height="675" loading="eager" /> : <div class="index-mark" aria-hidden="true">AI<span>→</span></div>}
+          <div class="index-sections">
+            {sections.map((section, index) => <a href={`${referenceUrl}#slide-${section.start}`}><span class="index-number">{String(index + 1).padStart(2, '0')}</span><span>{section.label}</span><span class="index-pages">{section.start}—{section.end}</span></a>)}
+          </div>
+          <a class="index-source" href={meta.reportUrl} target="_blank" rel="noopener noreferrer">공식 보고서 · stateof.ai <span aria-hidden="true">↗</span></a>
+        </aside>
+      </header>
+
+      <dl class="report-facts">
+        <div><dt>원 보고서 발행</dt><dd>{meta.reportDate}</dd></div>
+        <div><dt>전체 슬라이드</dt><dd>{meta.slideCount}<span> pages</span></dd></div>
+        <div><dt>스토리 / 주요 도표</dt><dd>{stories.length}<span> stories</span> / {chartCount}<span> charts</span></dd></div>
+        <div><dt>원 보고서 저자</dt><dd class="fact-author">{meta.author}<span>해설 업데이트 {meta.date}</span></dd></div>
+      </dl>
+
+      <section class="editorial-intro" aria-labelledby="editorial-title">
+        <p class="report-eyebrow">THE BIG PICTURE</p>
+        <h2 id="editorial-title">{editorial.thesis}</h2>
+        <p class="homepage-coverage"><a href={homepageHighlights.url} target="_blank" rel="noopener noreferrer">공식 홈페이지</a>에서 저자가 강조한 {homepageHighlights.pages.length}개 장표를 모두 포함했습니다.</p>
+        <details class="reading-notes">
+          <summary>이 페이지를 읽는 방법 <span aria-hidden="true">+</span></summary>
+          <ul>{editorial.readingNotes.map((note) => <li>{note}</li>)}</ul>
+        </details>
+      </section>
+    </div>
+
+    <div class="story-navigation" id="stories">
+      <div class="report-shell">
+        <div class="story-nav-heading"><span>CHOOSE A STORY</span><span>{String(stories.length).padStart(2, '0')}개의 관점으로 읽기</span></div>
+        <nav class="story-tabs" aria-label="핵심 이야기" data-story-tabs>
+          {stories.map((story, index) => <a id={`tab-${story.id}`} class="story-tab" href={`#${story.id}`} data-story-tab={story.id}><span class="tab-number">{String(index + 1).padStart(2, '0')}</span><span>{story.label}</span></a>)}
+        </nav>
+      </div>
+    </div>
+
+    <div class="report-shell story-content">
+      {stories.map((story, index) => (
+        <section class="story-panel" id={story.id} data-story-panel={story.id} aria-labelledby={`heading-${story.id}`}>
+          <header class="story-heading">
+            <span class="story-order" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            <div><p class="report-eyebrow">{story.kicker}</p><h2 id={`heading-${story.id}`}>{story.title}</h2><p class="story-thesis">{story.thesis}</p></div>
+          </header>
+
+          <div class="story-summary">
+            <h3>핵심 요약</h3>
+            <ul>{story.bullets.map((bullet) => <li>{bullet}</li>)}</ul>
+          </div>
+
+          {story.evidence.length > 0 && <dl class="evidence-grid">{story.evidence.map((item) => <div class="evidence-card"><dt>{item.label}</dt><dd class="evidence-value">{item.value}</dd><dd class="evidence-detail">{item.detail}</dd><dd class="evidence-source"><a href={pdfPage(item.page)} target="_blank" rel="noopener noreferrer">원 보고서 PDF p.{item.page} <span aria-hidden="true">↗</span></a></dd></div>)}</dl>}
+
+          <details class="story-background">
+            <summary>배경 설명 더 읽기 <span aria-hidden="true">+</span></summary>
+            <div class="story-prose">{story.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div>
+          </details>
+
+          <div class="story-charts">
+            {story.charts.map((chart) => <figure class="report-chart"><div class="chart-heading"><div class="chart-labels"><span class="chart-page">FIGURE / PDF P.{String(chart.page).padStart(3, '0')}</span>{homepageHighlights.pages.includes(chart.page) && <span class="chart-homepage">공식 메인 선정</span>}</div><h3>{chart.title}</h3></div><a class="chart-image-link" href={chart.src} target="_blank" rel="noopener noreferrer" data-chart-zoom data-chart-title={chart.title} data-chart-pdf={pdfPage(chart.page)}><img src={chart.src} alt={chart.alt} loading="lazy" width="1920" height="1080" /><span class="chart-zoom-label">이미지 확대 <span aria-hidden="true">↗</span></span></a><figcaption><p>{chart.caption}</p>{chart.caveat && <p class="chart-caveat"><span>읽을 때 주의할 점</span>{chart.caveat}</p>}<a href={pdfPage(chart.page)} target="_blank" rel="noopener noreferrer">State of AI Report 2026 · PDF p.{chart.page} 원문 <span aria-hidden="true">↗</span></a></figcaption></figure>)}
+          </div>
+
+          <div class="story-endnotes">
+            <aside class="story-takeaway"><p class="report-eyebrow">OUR TAKEAWAY</p><p>{story.takeaway}</p></aside>
+            {story.questions.length > 0 && <aside class="story-questions"><p class="report-eyebrow">함께 이야기할 질문</p><ol>{story.questions.map((question) => <li>{question}</li>)}</ol></aside>}
+          </div>
+          {story.sourceLinks.length > 0 && <div class="story-links"><h3>이 이야기를 더 읽으려면</h3>{story.sourceLinks.map((link) => <a href={link.url} target={link.url.startsWith('http') ? '_blank' : undefined} rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined}>{link.label}<span aria-hidden="true">↗</span></a>)}</div>}
+          {story.id === 'predictions' && predictions.length > 0 && <section class="predictions-section" aria-labelledby="predictions-title"><div class="section-heading"><p class="report-eyebrow">WHAT COMES NEXT</p><h2 id="predictions-title">보고서의 다음 12개월 예측</h2><p>저자들의 전망입니다. 현재 확인된 사실과 구분해서 읽어주세요.</p></div><ol class="prediction-list">{predictions.map((prediction) => <li><span class="prediction-number">{String(prediction.number).padStart(2, '0')}</span><div><p>{prediction.text}</p>{prediction.status && <span class="prediction-status">{prediction.status}</span>}</div><a href={pdfPage(prediction.page)} target="_blank" rel="noopener noreferrer" aria-label={`예측 ${prediction.number} 원문 ${prediction.page}페이지`}>PDF p.{prediction.page} ↗</a></li>)}</ol></section>}
+          <div class="story-pagination">{index > 0 ? <a href={`#${stories[index - 1].id}`} data-story-jump={stories[index - 1].id}><span>← 이전 이야기</span>{stories[index - 1].label}</a> : <span></span>}{index < stories.length - 1 ? <a class="next-story" href={`#${stories[index + 1].id}`} data-story-jump={stories[index + 1].id}><span>다음 이야기 →</span>{stories[index + 1].label}</a> : <a class="next-story" href={referenceUrl}><span>다음 읽을거리 →</span>전체 슬라이드 참고 문서</a>}</div>
+        </section>
+      ))}
+
+
+
+      <aside class="reference-cta"><div><p class="report-eyebrow">THE COMPLETE READING NOTES</p><h2>{meta.slideCount}장, 한 장씩 다시 읽기.</h2><p>전체 슬라이드의 한국어 요약, 페이지별 원문 링크와 출처를 검색할 수 있는 참고 문서로 모았습니다.</p></div><div class="reference-cta-actions"><a class="report-button primary" href={referenceUrl}>전체 참고 문서 열기 <span aria-hidden="true">↗</span></a><a class="download-link" href={meta.referenceDownload} download>Markdown 내려받기 <span aria-hidden="true">↓</span></a></div></aside>
+
+      <section class="sources-section" id="sources" aria-labelledby="sources-title"><div class="section-heading"><p class="report-eyebrow">SOURCES & FURTHER READING</p><h2 id="sources-title">원문과 함께 읽은 자료</h2><p>이 페이지의 해설과 원 보고서의 주장을 구분하고, 수치는 각 슬라이드의 원출처와 함께 확인하세요.</p></div><ol class="source-list">{sources.map((source) => <li id={`source-${source.id}`}><span class="source-type">{source.type}</span><div><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} <span aria-hidden="true">↗</span></a><p class="source-meta">{source.publisher}{source.date && ` · ${source.date}`}</p>{source.note && <p class="source-note">{source.note}</p>}</div></li>)}</ol></section>
+      <footer class="report-colophon"><p><a href={meta.reportUrl} target="_blank" rel="noopener noreferrer">State of AI Report 2026</a> · Nathan Benaich · Air Street Capital<br />© 2026 Air Street Capital · <a href={meta.licenseUrl} target="_blank" rel="noopener noreferrer">CC BY 4.0</a></p><p>한국어 요약·해설·편집, 슬라이드 이미지 추출·WebP 변환: 수도리무브<br />해설 업데이트 {meta.date}</p></footer>
+    </div>
+
+    <dialog class="chart-dialog" aria-labelledby="chart-dialog-title" data-chart-dialog><div class="chart-dialog-header"><h2 id="chart-dialog-title"></h2><button type="button" class="dialog-close" aria-label="확대 이미지 닫기" data-dialog-close>닫기 <span aria-hidden="true">×</span></button></div><div class="chart-dialog-body"><img alt="" data-dialog-image /></div><div class="chart-dialog-footer"><span>Esc 키로 닫을 수 있습니다.</span><a href="#" target="_blank" rel="noopener noreferrer" data-dialog-pdf>해당 슬라이드 원문 ↗</a></div></dialog>
+  </article>
+  <ReportStyles />
+</Layout>
+
+<script>
+  const isModifiedClick = (event: MouseEvent) => event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
+  const tabList = document.querySelector<HTMLElement>('[data-story-tabs]');
+  const tabs = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-story-tab]'));
+  const panels = Array.from(document.querySelectorAll<HTMLElement>('[data-story-panel]'));
+  if (tabList && tabs.length && panels.length) {
+    tabList.setAttribute('role', 'tablist');
+    tabs.forEach((tab) => { tab.setAttribute('role', 'tab'); tab.setAttribute('aria-controls', tab.dataset.storyTab!); });
+    panels.forEach((panel) => { panel.setAttribute('role', 'tabpanel'); panel.setAttribute('aria-labelledby', `tab-${panel.id}`); panel.tabIndex = 0; });
+
+    function selectStory(id: string, updateHash = false, focus = false) {
+      const selectedTab = tabs.find((tab) => tab.dataset.storyTab === id);
+      if (!selectedTab) return;
+      tabs.forEach((tab) => { const selected = tab === selectedTab; tab.setAttribute('aria-selected', String(selected)); tab.tabIndex = selected ? 0 : -1; });
+      panels.forEach((panel) => { panel.hidden = panel.dataset.storyPanel !== id; });
+      if (updateHash && window.location.hash !== `#${id}`) history.pushState(null, '', `#${id}`);
+      if (focus) selectedTab.focus({ preventScroll: true });
+      // Switching from deep inside a story should reveal the new story's start.
+      const selectedPanel = panels.find((panel) => panel.id === id);
+      if (updateHash && selectedPanel && selectedPanel.getBoundingClientRect().top < 150) {
+        selectedPanel.scrollIntoView({ block: 'start', behavior: 'instant' });
+      }
+    }
+
+    const fromHash = () => window.location.hash.slice(1);
+    selectStory(tabs.some((tab) => tab.dataset.storyTab === fromHash()) ? fromHash() : tabs[0].dataset.storyTab!);
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', (event) => { if (isModifiedClick(event)) return; event.preventDefault(); selectStory(tab.dataset.storyTab!, true); });
+      tab.addEventListener('keydown', (event) => {
+        let next: number | undefined;
+        if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+        if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === 'Home') next = 0;
+        if (event.key === 'End') next = tabs.length - 1;
+        if (next !== undefined) { event.preventDefault(); selectStory(tabs[next].dataset.storyTab!, true, true); tabs[next].scrollIntoView({ block: 'nearest', inline: 'nearest' }); }
+      });
+    });
+    document.querySelectorAll<HTMLAnchorElement>('[data-story-jump]').forEach((link) => link.addEventListener('click', (event) => { if (isModifiedClick(event)) return; event.preventDefault(); selectStory(link.dataset.storyJump!, true, true); tabList.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' }); }));
+    document.querySelector<HTMLAnchorElement>('.report-actions .primary')?.addEventListener('click', (event) => { if (!isModifiedClick(event)) selectStory(tabs[0].dataset.storyTab!); });
+    window.addEventListener('hashchange', () => selectStory(fromHash()));
+    window.addEventListener('popstate', () => selectStory(fromHash() || tabs[0].dataset.storyTab!));
+  }
+
+  const printDetails = Array.from(document.querySelectorAll<HTMLDetailsElement>('.reading-notes, .story-background'));
+  if (printDetails.length) {
+    let openBeforePrint: boolean[] | undefined;
+    window.addEventListener('beforeprint', () => {
+      openBeforePrint ??= printDetails.map((details) => details.open);
+      printDetails.forEach((details) => { details.open = true; });
+    });
+    window.addEventListener('afterprint', () => {
+      if (openBeforePrint) printDetails.forEach((details, index) => { details.open = openBeforePrint![index]; });
+      openBeforePrint = undefined;
+    });
+  }
+
+  const dialog = document.querySelector<HTMLDialogElement>('[data-chart-dialog]');
+  const dialogImage = document.querySelector<HTMLImageElement>('[data-dialog-image]');
+  const dialogTitle = document.getElementById('chart-dialog-title');
+  const dialogPdf = document.querySelector<HTMLAnchorElement>('[data-dialog-pdf]');
+  if (dialog && typeof dialog.showModal === 'function' && dialogImage && dialogTitle && dialogPdf) {
+    document.querySelectorAll<HTMLAnchorElement>('[data-chart-zoom]').forEach((link) => link.addEventListener('click', (event) => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      dialogImage.src = link.href;
+      dialogImage.alt = link.querySelector('img')?.alt ?? '';
+      dialogTitle.textContent = link.dataset.chartTitle ?? '보고서 도표';
+      dialogPdf.href = link.dataset.chartPdf ?? '#';
+      dialog.showModal();
+    }));
+    dialog.querySelector('[data-dialog-close]')?.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', () => { dialogImage.removeAttribute('src'); });
+  }
+</script>

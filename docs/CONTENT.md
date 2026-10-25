@@ -6,6 +6,28 @@
 
 ## Content Structure
 
+### 보고서 해설: State of AI 2026
+
+한국어 전용 article인 `/knowledge/articles/state-of-ai-2026/`에 9개 이야기와 주요 도표를,
+`/knowledge/articles/state-of-ai-2026/reference/`에 전체 244장 참고 노트를 제공합니다.
+Knowledge collection이 아닌 기존 article 방식으로 관리합니다.
+
+- 단일 데이터 원본: `src/data/state-of-ai-2026.json`
+- 도표·다운로드: `public/assets/reports/state-of-ai-2026/`
+- 다운로드 재생성: `node scripts/generate-state-of-ai-2026-reference.mjs`
+- 내용·페이지 연속성·이미지·다운로드 일치 검증: `node scripts/generate-state-of-ai-2026-reference.mjs --check`
+
+수정 후 다운로드 문서도 재생성합니다. 모든 페이지 번호는 표지를 포함한 PDF 기준이며
+인쇄된 슬라이드 번호보다 1 큽니다. 이미지 출처 PDF의 SHA-256과 추출 방식은 같은 폴더의
+`provenance.json`에 기록합니다. 원문은 CC BY 4.0이며 원저자·원문 링크·라이선스·변경 사항을
+표시합니다. 기업 자체 측정, 관측 상관관계, 예측의 조건을 유지하고, 원본 PDF와 웹 이미지가
+다르면 PDF를 기준으로 삼은 이유를 편집 메모에 남깁니다.
+
+각 이야기의 `bullets`에는 핵심 설명을 3–5개의 짧은 한국어 문장으로 작성합니다.
+기존 상세 문단은 접어서 보존하며 인쇄 시 모두 펼칩니다. 공식 홈페이지 본문에 삽입된
+18개 장표는 `homepageHighlights.pages`와 `provenance.json`의 홈페이지 이미지 대조 기록으로
+관리합니다. 생성 스크립트는 해당 장표가 이야기 본문에 모두 포함되어 있는지도 검증합니다.
+
 ### Knowledge Base
 
 Physical AI 관련 장기 지식 저장소입니다.
