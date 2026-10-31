@@ -1,0 +1,99 @@
+{
+  "title": "Paper2Video operated-channel examples",
+  "compiledAt": "2026-11-01",
+  "scope": "Only public Instagram material and explicitly requested owned-channel examples. Does not include private fundraising documents, personal credentials or owner Insights.",
+  "metricSnapshot": {
+    "observedAt": "2026-10-30T19:59:11+09:00",
+    "channels": [
+      {
+        "handle": "frontier.robotics",
+        "followers": 1453,
+        "reels": 88,
+        "viewsApprox": 209204,
+        "sourceUrl": "https://www.instagram.com/frontier.robotics/reels/"
+      },
+      {
+        "handle": "frontier.ai1",
+        "followers": 682,
+        "reels": 99,
+        "viewsApprox": 123069,
+        "sourceUrl": "https://www.instagram.com/frontier.ai1/reels/"
+      }
+    ],
+    "method": "Deduplicated public reel URLs; sum of visible cumulative view counters. Rounded labels make totals approximate; not unique viewers.",
+    "countersUrl": "/assets/articles/video-generation-lab/instagram-counters.json"
+  },
+  "assets": [
+    {
+      "file": "frontier-vpm.mp4",
+      "sourceUrl": "https://www.instagram.com/frontier.robotics/reel/DeyWBJkD8dG/",
+      "observedAt": "2026-10-31",
+      "note": "Actual public VPM reel, downloaded without login in the related authoring session. Copyright remains with the respective creators.",
+      "bytes": 6508497,
+      "sha256": "230ef7b1065200afd21af7a2bd5c7adc8c2461a3d7b64932cebadd9c19c2290d"
+    },
+    {
+      "file": "frontier-vpm.jpg",
+      "sourceUrl": "https://www.instagram.com/frontier.robotics/reel/DeyWBJkD8dG/",
+      "observedAt": "2026-10-31",
+      "note": "Poster extracted from the same real reel at12seconds.",
+      "bytes": 86793,
+      "sha256": "99625dfe9bfe2858c85a4998cf7cdf9591f36ac6ea54d9473d0fc226a3e39316"
+    },
+    {
+      "file": "vpm-author-comment.png",
+      "sourceUrl": "https://www.instagram.com/frontier.robotics/reel/DeyWBJkD8dG/",
+      "observedAt": "2026-10-30T11:03:13.366Z",
+      "note": "Native public Instagram screenshot cropped to the comment; no text replacement. Comment author im._.bw_, self-identifies as VPM author Byungwoo Jeon; paper author list checked.",
+      "bytes": 25111,
+      "sha256": "ed36378e22c7d978ce4bb43177b82643f445b9eff20ef3a20f567d30cc9b324a"
+    },
+    {
+      "file": "grid-frontier.robotics.png",
+      "sourceUrl": "https://www.instagram.com/frontier.robotics/reels/",
+      "observedAt": "2026-10-31",
+      "note": "Actual public first-post grid; no login. Screenshot illustrates published examples; metrics are separately dated Oct30.",
+      "bytes": 481054,
+      "sha256": "a29cb5274a785a2acd53deadf041874138763db36d61cc66a1af2b16ffca2cef"
+    },
+    {
+      "file": "grid-frontier.ai1.png",
+      "sourceUrl": "https://www.instagram.com/frontier.ai1/reels/",
+      "observedAt": "2026-10-31",
+      "note": "Actual public first-post grid; no login. Screenshot illustrates published examples; metrics are separately dated Oct30.",
+      "bytes": 439839,
+      "sha256": "150d179716a1ce72b9f6d80dc171e66f84c024e3b8c43d55c5caed94e9408a02"
+    },
+    {
+      "file": "instagram-frontier.robotics.jpg",
+      "sourceUrl": "https://www.instagram.com/frontier.robotics/",
+      "observedAt": "2026-10-30",
+      "note": "Profile image from public Instagram metadata.",
+      "bytes": 1670,
+      "sha256": "d066ea0f5de3ae0da645014d0772019c9abdac841720266ef957c2c1ebd0a9c5"
+    },
+    {
+      "file": "instagram-frontier.ai1.jpg",
+      "sourceUrl": "https://www.instagram.com/frontier.ai1/",
+      "observedAt": "2026-10-30",
+      "note": "Profile image from public Instagram metadata.",
+      "bytes": 1683,
+      "sha256": "4154a3196959c13f5f1adac372cf2977e4ca5fa4883e7deb73bfdc357a8ed17f"
+    }
+  ],
+  "comments": [
+    {
+      "handle": "im._.bw_",
+      "quote": "VPM 저자 전병우입니다. 멋진 영상 만들어주셔서 감사합니다!",
+      "postedAt": "2026-10-22T09:47:58Z",
+      "sourceUrl": "https://www.instagram.com/frontier.robotics/reel/DeyWBJkD8dG/",
+      "verificationUrl": "https://arxiv.org/abs/2610.28594"
+    },
+    {
+      "handle": "steve_won_97",
+      "excerpt": "Real to sim to real 로가면 텔레오퍼레이션 없이 데이터를 수집 할수있지않을까싶어요.",
+      "postedAt": "2026-10-27T03:02:27Z",
+      "sourceUrl": "https://www.instagram.com/frontier.robotics/reel/De892UtEXVG/"
+    }
+  ]
+}

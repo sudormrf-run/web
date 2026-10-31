@@ -1,0 +1,379 @@
+<style is:global>
+  .vlab { --vl-bg: #111613; --vl-panel: #181f1a; --vl-line: #354139; --vl-ink: #edf2e9; --vl-muted: #aab8ad; --vl-accent: #a4efc1; --vl-orange: #ff9254; color: var(--vl-ink); background: var(--vl-bg); overflow-wrap: anywhere; }
+  .vlab *, .vlab *::before, .vlab *::after { box-sizing: border-box; }
+  .vlab a { color: inherit; text-decoration: none; }
+  .vlab a:hover { color: var(--vl-accent); }
+  .vlab a:focus-visible, .vlab button:focus-visible, .vlab summary:focus-visible, .vlab [tabindex]:focus-visible { outline: 2px solid var(--vl-accent); outline-offset: 4px; }
+  .vlab button { font: inherit; cursor: pointer; }
+  .vlab button:disabled { opacity: .55; cursor: wait; }
+  .vlab [hidden] { display: none !important; }
+  .vlab .vl-shell { max-width: 1320px; margin-inline: auto; padding-inline: 44px; }
+  .vlab .vl-eyebrow { color: var(--vl-accent); font-family: var(--font-mono); font-size: 10px; line-height: 1.7; letter-spacing: .11em; }
+  .vlab .vl-breadcrumb { display: flex; align-items: center; gap: 20px; padding-block: 30px; color: var(--vl-muted); font-size: 12px; }
+  .vlab .vl-breadcrumb > a { color: var(--vl-accent); }
+  .vlab .vl-breadcrumb > button { margin-left: auto; }
+  .vlab .vl-text-button { color: var(--vl-muted); background: transparent; padding: 8px 0; border: 0; font-size: 12px; }
+  .vlab .vl-text-button:hover { color: var(--vl-accent); }
+  .vlab .vl-hero { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); align-items: center; gap: 66px; padding: 48px 0 72px; }
+  .vlab .vl-record { display: inline-block; width: 7px; height: 7px; margin-right: 7px; background: var(--vl-orange); border-radius: 50%; }
+  .vlab .vl-hero h1 { font-size: clamp(36px, 4.2vw, 62px); line-height: 1.25; font-weight: 750; letter-spacing: -.055em; margin-top: 21px; word-break: keep-all; }
+  .vlab .vl-subtitle { max-width: 670px; margin-top: 26px; font-size: 17px; color: #bdcabe; line-height: 1.9; word-break: keep-all; }
+  .vlab .vl-hero-models { display: flex; flex-wrap: wrap; gap: 9px; margin-block: 24px 29px; }
+  .vlab .vl-hero-models > span { color: #d6e6d7; background: #1c2c22; border: 1px solid #405f4a; padding: 6px 9px; font-family: var(--font-mono); font-size: 11px; }
+  .vlab .vl-button { display: inline-flex; align-items: center; justify-content: center; gap: 25px; padding: 12px 16px; color: #e3ede2; border: 1px solid #5a6d5e; background: transparent; border-radius: 3px; font-size: 12px; font-weight: 600; line-height: 1.5; text-align: center; }
+  .vlab .vl-button:hover { border-color: var(--vl-accent); color: var(--vl-accent); }
+  .vlab .vl-button-primary { background: var(--vl-accent); border-color: var(--vl-accent); color: #152019; }
+  .vlab .vl-button-primary:hover { color: #152019; background: #c4f8d6; }
+  .vlab .vl-slate { border: 1px solid #556b5c; background: #1b231c; transform: rotate(1.4deg); padding: 18px; box-shadow: 18px 20px 0 #0d110f; }
+  .vlab .vl-slate-top { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 14px; font-family: var(--font-mono); font-size: 9px; letter-spacing: .1em; color: #c0d3bf; }
+  .vlab .vl-slate img { display: block; width: 100%; height: auto; border: 1px solid #36493b; }
+  .vlab .vl-slate dl { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 15px; border-top: 1px solid #4b5c4e; padding-top: 18px; margin-top: 19px; }
+  .vlab .vl-slate dl > div:last-child { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 15px; }
+  .vlab .vl-slate dt { color: var(--vl-muted); font-size: 10px; }
+  .vlab .vl-slate dd { font-family: var(--font-mono); font-size: 14px; margin-top: 5px; }
+  .vlab .vl-slate dl > div:last-child dd { margin-top: 0; font-size: 11px; }
+  .vlab .vl-opening { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: 70px; border-top: 1px solid var(--vl-line); padding-block: 45px 58px; }
+  .vlab .vl-opening h2 { margin-top: 14px; font-size: 29px; font-weight: 600; line-height: 1.55; letter-spacing: -.045em; word-break: keep-all; }
+  .vlab .vl-host-script { font-size: 17px; line-height: 1.95; color: #d1ddcf; word-break: keep-all; margin-bottom: 23px; }
+  .vlab .vl-bullets { list-style: disc; padding-left: 20px; font-size: 15px; line-height: 1.95; color: #c8d5c8; word-break: keep-all; }
+  .vlab .vl-bullets li + li { margin-top: 8px; }
+  .vlab .vl-bullets li::marker { color: var(--vl-accent); }
+  .vlab ol.vl-bullets { list-style: decimal; }
+  .vlab .vl-navigation { position: sticky; z-index: 30; top: 70px; background: rgb(17 22 19 / 97%); backdrop-filter: blur(12px); border-block: 1px solid #3e5143; }
+  .vlab .vl-tabs { display: flex; overflow-x: auto; scrollbar-width: thin; overscroll-behavior-x: contain; scroll-margin-top: 85px; }
+  .vlab .vl-tabs > a { flex: 1 0 auto; display: flex; align-items: flex-start; justify-content: center; gap: 8px; color: #b8c6b8; border-bottom: 2px solid transparent; padding: 20px 12px 17px; font-size: 12px; line-height: 1.7; }
+  .vlab .vl-tabs > a:hover { background: #1d2b21; }
+  .vlab .vl-tab-index { color: #718d76; font-family: var(--font-mono); font-size: 9px; padding-top: 2px; }
+  .vlab .vl-tabs small { display: block; color: #7d9382; font-size: 9px; margin-top: 3px; }
+  .vlab .vl-tabs [aria-selected='true'] { border-bottom-color: var(--vl-accent); color: var(--vl-accent); }
+  .vlab .vl-tabs [aria-selected='true'] .vl-tab-index, .vlab .vl-tabs [aria-selected='true'] small { color: #a0bc9f; }
+  .vlab .vl-panel { scroll-margin-top: 178px; padding-top: 61px; }
+  .vlab .vl-section-heading { max-width: 940px; margin-bottom: 38px; }
+  .vlab .vl-section-heading h2 { font-size: clamp(29px, 3.4vw, 44px); font-weight: 650; line-height: 1.45; letter-spacing: -.05em; word-break: keep-all; margin-top: 18px; }
+  .vlab .vl-section-heading > p:last-child { color: var(--vl-muted); font-size: 16px; line-height: 1.95; margin-top: 20px; word-break: keep-all; }
+  .vlab .vl-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 22px; }
+  .vlab .vl-card-header h3 { font-size: 26px; font-weight: 600; line-height: 1.5; letter-spacing: -.035em; word-break: keep-all; margin-top: 8px; }
+  .vlab .vl-card-header > a { font-size: 12px; flex: 0 0 auto; margin-top: 9px; }
+  .vlab .vl-lead { color: #b9cbbb; line-height: 1.95; font-size: 16px; max-width: 1000px; margin-block: 20px 24px; word-break: keep-all; }
+  .vlab .vl-account-list, .vlab .vl-project-list, .vlab .vl-case-list { display: grid; gap: 50px; }
+  .vlab .vl-account, .vlab .vl-project, .vlab .vl-case { padding: 31px; border: 1px solid var(--vl-line); background: var(--vl-panel); min-width: 0; }
+  .vlab .vl-handle { display: inline-block; font-family: var(--font-mono); color: var(--vl-accent); font-size: 13px; margin-top: 8px; }
+  .vlab .vl-observed { text-align: right; color: #8fa492; font-size: 10px; line-height: 1.8; flex: 0 0 auto; }
+  .vlab .vl-observed time { color: #b9c9b9; }
+  .vlab .vl-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); border-block: 1px solid #3f5143; margin-block: 27px; }
+  .vlab .vl-metrics > div { padding: 22px 22px 20px; border-right: 1px solid var(--vl-line); }
+  .vlab .vl-metrics > div:first-child { padding-left: 0; }
+  .vlab .vl-metrics > div:last-child { border-right: 0; }
+  .vlab .vl-metrics dt { color: var(--vl-muted); font-size: 11px; }
+  .vlab .vl-metrics dd { color: var(--vl-accent); font-family: var(--font-mono); font-size: clamp(28px, 3vw, 40px); line-height: 1.25; letter-spacing: -.055em; margin-block: 12px 9px; }
+  .vlab .vl-metrics p { color: #9cae9f; font-size: 11px; line-height: 1.8; }
+  .vlab .vl-account-examples { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 25px; margin-top: 31px; }
+  .vlab .vl-example { min-width: 0; }
+  .vlab .vl-comment { border-left: 2px solid var(--vl-accent); padding: 18px 20px; background: #202d23; margin-top: 18px; }
+  .vlab .vl-comment > p { color: #e1eadc; font-size: 14px; line-height: 1.95; }
+  .vlab .vl-comment footer { display: grid; gap: 6px; color: var(--vl-muted); font-size: 10px; line-height: 1.8; margin-top: 16px; }
+  .vlab .vl-comment footer a { color: var(--vl-accent); }
+  .vlab .vl-comment-evidence { width: 100%; max-width: 640px; margin-top: 15px; }
+  .vlab .vl-comment-evidence img { display: block; width: 100%; height: auto; border: 1px solid var(--vl-line); }
+  .vlab .vl-comment-evidence figcaption { color: #8fa992; font-size: 10px; line-height: 1.8; margin-top: 8px; }
+  .vlab .vl-note { margin-top: 23px; padding: 17px 19px; background: #1d271f; border-left: 2px solid #6d8b70; color: #aebfae; font-size: 12px; line-height: 1.9; }
+  .vlab .vl-note h3, .vlab .vl-note h4 { color: #d5e4ce; font-size: 12px; font-weight: 600; margin-bottom: 7px; }
+  .vlab .vl-note ul { list-style: disc; padding-left: 16px; }
+  .vlab .vl-note li + li { margin-top: 6px; }
+  .vlab .vl-source-refs { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 7px; color: #8fa992; font-size: 10px; line-height: 1.8; margin-top: 17px; }
+  .vlab .vl-source-refs a { color: #b4d5b2; font-family: var(--font-mono); text-decoration: underline; text-underline-offset: 3px; }
+  .vlab .vl-project-number { color: #91a994; font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; }
+  .vlab .vl-workflow { display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 0; border-block: 1px solid var(--vl-line); margin-block: 29px 31px; }
+  .vlab .vl-workflow > li { border-right: 1px solid var(--vl-line); padding: 20px 19px; list-style: none; min-width: 0; }
+  .vlab .vl-workflow > li:first-child { padding-left: 0; }
+  .vlab .vl-workflow > li:last-child { border-right: 0; }
+  .vlab .vl-workflow span { display: block; font-family: var(--font-mono); color: var(--vl-accent); font-size: 11px; }
+  .vlab .vl-workflow p { color: #b6c8b7; line-height: 1.8; font-size: 12px; margin-top: 10px; }
+  .vlab .vl-video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 285px), 1fr)); gap: 22px; }
+  .vlab .vl-media { min-width: 0; margin: 0; }
+  .vlab .vl-media-screen { position: relative; overflow: hidden; background: #090d0a; border: 1px solid #3a4b3d; }
+  .vlab .vl-media video, .vlab .vl-media iframe { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; border: 0; }
+  .vlab .vl-media-screen > a { display: block; position: relative; }
+  .vlab .vl-media-screen img { display: block; width: 100%; height: auto; object-fit: contain; }
+  .vlab .vl-media-portrait .vl-media-screen { max-width: 400px; margin-inline: auto; }
+  .vlab .vl-media-portrait .vl-media-screen video { aspect-ratio: 9 / 16; }
+  .vlab .vl-media-open { position: absolute; right: 12px; bottom: 12px; background: #0d1c13; color: #ccebd0; padding: 8px 10px; border: 1px solid #739476; font-size: 10px; }
+  .vlab .vl-media .vl-media-link { display: flex; min-height: 180px; padding: 24px; flex-direction: column; align-items: flex-start; justify-content: center; gap: 12px; color: #c8d9c7; background: #1b2c20; }
+  .vlab .vl-media-link > span:first-child { color: var(--vl-accent); font-size: 30px; }
+  .vlab .vl-media-link > strong { font-size: 15px; font-weight: 500; }
+  .vlab .vl-media-link > span:last-child { font-size: 11px; color: #a8c5a8; }
+  .vlab .vl-media figcaption { padding-block: 13px 6px; font-size: 11px; line-height: 1.9; color: #9fb3a0; }
+  .vlab .vl-media figcaption > strong { display: block; font-size: 13px; font-weight: 500; line-height: 1.8; color: #d3e0d0; }
+  .vlab .vl-media figcaption > p { margin-top: 8px; }
+  .vlab .vl-media figcaption > a { display: inline-block; color: #b5d6b5; text-decoration: underline; text-underline-offset: 3px; margin-top: 8px; }
+  .vlab .vl-remix-inputs { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 28px; align-items: stretch; }
+  .vlab .vl-remix-inputs > div > .vl-eyebrow { margin-bottom: 15px; }
+  .vlab .vl-portrait { background: var(--vl-panel); border: 1px solid var(--vl-line); padding: 24px; }
+  .vlab .vl-portrait img { display: block; width: 140px; height: 140px; object-fit: cover; border: 1px solid #5b7c60; border-radius: 50%; margin-block: 24px; }
+  .vlab .vl-portrait h3 { font-size: 20px; font-weight: 500; margin-top: 20px; }
+  .vlab .vl-portrait > p:not(.vl-eyebrow) { color: var(--vl-muted); font-size: 12px; line-height: 1.9; margin-block: 15px; }
+  .vlab .vl-portrait > a:last-child { color: #b5d6b5; font-size: 11px; text-decoration: underline; text-underline-offset: 3px; }
+  .vlab .vl-budget { margin-top: 34px; padding: 29px; border: 1px solid #556f53; background: #1a281d; }
+  .vlab .vl-budget h3 { font-size: 23px; line-height: 1.6; letter-spacing: -.03em; font-weight: 500; margin-top: 8px; }
+  .vlab .vl-budget > dl { display: grid; grid-template-columns: repeat(3, 1fr); margin-block: 25px 22px; border-block: 1px solid #435b45; }
+  .vlab .vl-budget > dl > div { padding: 20px; border-right: 1px solid #435b45; }
+  .vlab .vl-budget > dl > div:first-child { padding-left: 0; }
+  .vlab .vl-budget > dl > div:last-child { border: 0; }
+  .vlab .vl-budget dt { font-size: 11px; color: #9eb69f; }
+  .vlab .vl-budget dd { font-family: var(--font-mono); font-size: clamp(24px, 3vw, 38px); letter-spacing: -.04em; margin-top: 7px; }
+  .vlab .vl-budget .vl-budget-total dd { color: var(--vl-accent); }
+  .vlab .vl-budget > ul { list-style: disc; padding-left: 16px; color: #a9bea9; font-size: 11px; line-height: 1.9; }
+  .vlab .vl-budget li + li { margin-top: 6px; }
+  .vlab .vl-detail { border-block: 1px solid var(--vl-line); padding-block: 17px; margin-block: 25px; }
+  .vlab .vl-detail summary { display: flex; justify-content: space-between; gap: 20px; align-items: center; list-style: none; color: #cbdcc9; font-size: 13px; cursor: pointer; }
+  .vlab .vl-detail summary::-webkit-details-marker { display: none; }
+  .vlab .vl-detail summary > span { color: var(--vl-accent); font-size: 20px; line-height: 1; }
+  .vlab .vl-detail[open] summary > span { transform: rotate(45deg); }
+  .vlab .vl-detail > p, .vlab .vl-detail > ul, .vlab .vl-detail > ol { margin-top: 18px; }
+  .vlab .vl-detail > p { color: #adbfad; font-size: 13px; line-height: 2; white-space: pre-line; }
+  .vlab .vl-prompt { margin-top: 22px; padding: 20px; background: #0d120e; color: #9fbaa2; white-space: pre-wrap; font-family: var(--font-mono); font-size: 11px; line-height: 1.95; border: 1px solid #344c3a; }
+  .vlab .vl-player-toolbar { display: flex; flex-wrap: wrap; gap: 13px 25px; align-items: center; justify-content: space-between; margin-block: 30px 20px; }
+  .vlab .vl-player-toolbar > p:first-child { font-size: 12px; color: #bdcfba; }
+  .vlab .vl-player-toolbar > div { display: flex; align-items: center; gap: 18px; }
+  .vlab .vl-player-toolbar .vl-button { padding: 9px 12px; font-size: 11px; }
+  .vlab .vl-sync-status { flex: 1 0 100%; color: #e8c299; font-size: 11px; line-height: 1.8; }
+  .vlab .vl-sync-status:empty { display: none; }
+  .vlab .vl-run-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap: 19px; }
+  .vlab .vl-run { min-width: 0; padding: 19px; background: var(--vl-panel); border: 1px solid var(--vl-line); }
+  .vlab .vl-run > header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+  .vlab .vl-run h3 { font-family: var(--font-mono); font-size: 16px; font-weight: 500; }
+  .vlab .vl-status { color: #a4caa5; border: 1px solid #4f7454; padding: 4px 6px; font-size: 9px; text-align: center; }
+  .vlab .vl-status-failed { color: #d8bd9d; border-color: #745b40; }
+  .vlab .vl-no-result { display: flex; min-height: 190px; align-items: center; justify-content: center; flex-direction: column; gap: 13px; background: #0f1510; padding: 20px; text-align: center; color: #a69e8c; font-size: 12px; line-height: 1.9; border: 1px solid #3e4438; }
+  .vlab .vl-no-result > span { font-size: 33px; color: #6b755d; }
+  .vlab .vl-no-result > p:last-child { font-size: 11px; }
+  .vlab .vl-run-cost { display: flex; gap: 28px; border-block: 1px solid #344639; margin-block: 16px; padding-block: 13px; }
+  .vlab .vl-run-cost > div { display: flex; align-items: center; gap: 12px; }
+  .vlab .vl-run-cost dt { color: #8ca28e; font-size: 10px; }
+  .vlab .vl-run-cost dd { font-family: var(--font-mono); color: #c1debf; font-size: 13px; }
+  .vlab .vl-run .vl-bullets { font-size: 12px; line-height: 1.9; padding-left: 17px; }
+  .vlab .vl-run-settings { color: #97b199; font-size: 10px; margin-block: 12px; }
+  .vlab .vl-case-date { color: #8fa992; font-size: 10px; margin-top: 8px; }
+  .vlab .vl-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 15px 23px; }
+  .vlab .vl-chips > span, .vlab .vl-chip { display: inline-block; color: #abcaaa; border: 1px solid #3d5942; background: #1b2c20; padding: 5px 8px; font-family: var(--font-mono); font-size: 10px; }
+  .vlab .vl-conditions { color: #9fb59f; font-size: 12px; line-height: 1.9; margin-block: 20px; }
+  .vlab .vl-conditions > strong { color: #c4dac1; margin-right: 10px; font-weight: 500; }
+  .vlab .vl-watch-for { margin-top: 27px; }
+  .vlab .vl-watch-for h4 { color: #cbdfc6; font-size: 13px; font-weight: 500; margin-bottom: 10px; }
+  .vlab .vl-watch-for .vl-bullets { font-size: 13px; }
+  .vlab .vl-summary { margin-bottom: 36px; max-width: 1040px; }
+  .vlab .vl-table-wrap { max-width: 100%; overflow-x: auto; scrollbar-width: thin; border: 1px solid var(--vl-line); }
+  .vlab .vl-table { width: 100%; min-width: 650px; text-align: left; border-collapse: collapse; font-size: 12px; line-height: 1.95; }
+  .vlab .vl-table caption { text-align: left; color: #b7cdb4; padding: 16px 20px; font-size: 12px; background: #1c2a1f; border-bottom: 1px solid var(--vl-line); }
+  .vlab .vl-table thead th { background: #213324; color: #cde7c4; font-size: 11px; font-weight: 600; }
+  .vlab .vl-table th, .vlab .vl-table td { vertical-align: top; padding: 17px 19px; border-bottom: 1px solid var(--vl-line); border-right: 1px solid var(--vl-line); }
+  .vlab .vl-table tr > *:last-child { border-right: 0; }
+  .vlab .vl-table tbody tr:last-child > * { border-bottom: 0; }
+  .vlab .vl-table tbody th { width: 17%; color: #b9d0b7; background: #18231a; font-weight: 500; }
+  .vlab .vl-table tbody td { color: #acbea9; white-space: pre-line; }
+  .vlab .vl-table tr:nth-child(even) td { background: #151f17; }
+  .vlab .vl-model-table { table-layout: fixed; min-width: 860px; }
+  .vlab .vl-model-table thead th:first-child { width: 16%; }
+  .vlab .vl-model-table .vl-source-refs { display: flex; margin-top: 9px; }
+  .vlab .vl-table small { display: block; font-size: 10px; color: #87a088; margin-top: 5px; }
+  .vlab .vl-price-table { min-width: 1000px; }
+  .vlab .vl-price-table td:last-child { width: 31%; }
+  .vlab .vl-price-table .vl-source-refs { margin-left: 7px; margin-top: 5px; }
+  .vlab .vl-mono { font-family: var(--font-mono); }
+  .vlab .vl-subheading { margin-block: 46px 24px; }
+  .vlab .vl-subheading h3 { font-size: 27px; line-height: 1.5; font-weight: 600; letter-spacing: -.035em; margin-top: 10px; word-break: keep-all; }
+  .vlab .vl-subheading > p:last-child:not(.vl-eyebrow) { margin-top: 12px; color: #a2b6a1; font-size: 13px; line-height: 1.9; }
+  .vlab .vl-benchmark-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 29px; }
+  .vlab .vl-benchmark { min-width: 0; border: 1px solid var(--vl-line); padding: 25px; background: #161f17; }
+  .vlab .vl-benchmark header { margin-bottom: 20px; }
+  .vlab .vl-benchmark h4 { font-size: 19px; font-weight: 600; }
+  .vlab .vl-benchmark header p { color: #92ad94; font-size: 11px; margin-top: 9px; }
+  .vlab .vl-score { font-family: var(--font-mono); color: var(--vl-accent) !important; font-size: 18px; }
+  .vlab .vl-pipeline { border-block: 1px solid #4c684f; padding-block: 26px; margin-block: 34px 42px; }
+  .vlab .vl-pipeline > h3 { font-size: 14px; font-weight: 500; margin-bottom: 25px; color: #d0e3c9; }
+  .vlab .vl-pipeline ol { display: grid; grid-template-columns: repeat(auto-fit, minmax(205px, 1fr)); gap: 27px; }
+  .vlab .vl-pipeline li { list-style: none; display: flex; gap: 13px; align-items: flex-start; }
+  .vlab .vl-pipeline li > span { font-family: var(--font-mono); color: var(--vl-accent); font-size: 11px; margin-top: 4px; }
+  .vlab .vl-pipeline h4 { font-size: 14px; font-weight: 500; color: #c8dfc2; line-height: 1.6; }
+  .vlab .vl-pipeline li p { margin-top: 9px; color: #94ad95; font-size: 12px; line-height: 1.9; }
+  .vlab .vl-diagrams { display: grid; gap: 30px; margin-block: 35px 42px; }
+  .vlab .vl-diagrams figure { border: 1px solid var(--vl-line); }
+  .vlab .vl-diagrams figure > a { display: block; padding: 16px; background: #fff; }
+  .vlab .vl-diagrams img { display: block; width: 100%; height: auto; object-fit: contain; }
+  .vlab .vl-diagrams figcaption { padding: 20px; color: #a7bda7; font-size: 12px; line-height: 1.9; }
+  .vlab .vl-diagrams figcaption strong { display: block; color: #d2e5cc; font-size: 15px; font-weight: 500; }
+  .vlab .vl-diagrams figcaption p { margin-top: 10px; }
+  .vlab .vl-diagrams figcaption a { display: inline-block; color: #b5d6b5; text-decoration: underline; text-underline-offset: 3px; font-size: 11px; margin-top: 9px; }
+  .vlab .vl-technical-blocks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px; }
+  .vlab .vl-technical-block { padding: 27px; border: 1px solid var(--vl-line); background: var(--vl-panel); min-width: 0; }
+  .vlab .vl-technical-block h3 { color: #dce9d5; font-size: 21px; font-weight: 600; line-height: 1.6; letter-spacing: -.02em; margin-bottom: 21px; }
+  .vlab .vl-technical-block .vl-bullets { font-size: 13px; line-height: 1.95; }
+  .vlab .vl-technical-block .vl-detail { margin-bottom: 10px; }
+  .vlab .vl-posttraining-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 21px; }
+  .vlab .vl-posttraining-grid > article { padding: 26px; border: 1px solid #425b42; background: #1a291c; }
+  .vlab .vl-posttraining-grid h4 { font-size: 22px; font-weight: 500; line-height: 1.6; margin-block: 17px; }
+  .vlab .vl-posttraining-grid p { color: #adbfaa; font-size: 13px; line-height: 1.95; }
+  .vlab .vl-tradeoff { padding-top: 17px; border-top: 1px solid #3e573e; margin-top: 19px; }
+  .vlab .vl-tradeoff strong { display: block; color: #c8ddbf; font-size: 11px; font-weight: 500; margin-bottom: 6px; }
+  .vlab .vl-unknowns { border: 1px dashed #567057; padding: 30px; margin-top: 38px; background: #151f16; }
+  .vlab .vl-unknowns h3 { font-size: 23px; line-height: 1.55; font-weight: 500; margin-block: 12px 19px; letter-spacing: -.025em; }
+  .vlab .vl-unknowns .vl-bullets { font-size: 13px; }
+  .vlab .vl-source-list { border-top: 1px solid var(--vl-line); }
+  .vlab .vl-source-list > li { list-style: none; display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 22px; padding-block: 23px; border-bottom: 1px solid var(--vl-line); scroll-margin-top: 180px; }
+  .vlab .vl-source-number { color: #6f9272; font-family: var(--font-mono); font-size: 11px; padding-top: 4px; }
+  .vlab .vl-source-list a { font-size: 15px; color: #d0e3c9; line-height: 1.8; }
+  .vlab .vl-source-list p { color: #91aa92; font-size: 12px; line-height: 1.9; margin-top: 8px; }
+  .vlab .vl-source-list p.vl-source-meta { color: #adc5a9; font-size: 10px; margin-top: 10px; }
+  .vlab .vl-bottom-nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; border-block: 1px solid var(--vl-line); padding-block: 24px; margin-top: 45px; font-size: 12px; }
+  .vlab .vl-bottom-nav > button { color: #c2dabe; border: 0; background: transparent; font-size: 12px; text-align: left; }
+  .vlab .vl-bottom-nav > button:last-child { text-align: right; }
+  .vlab .vl-bottom-nav > a { color: #8aa58e; font-size: 10px; }
+  .vlab .vl-colophon { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15px; color: #7d9883; font-size: 10px; line-height: 1.9; padding-block: 30px 42px; }
+
+  @media (max-width: 1050px) {
+    .vlab .vl-shell { padding-inline: 28px; }
+    .vlab .vl-hero { gap: 35px; padding-top: 30px; }
+    .vlab .vl-hero h1 { font-size: 43px; }
+    .vlab .vl-subtitle { font-size: 15px; }
+    .vlab .vl-opening { gap: 35px; grid-template-columns: 1fr 1.8fr; }
+    .vlab .vl-opening h2 { font-size: 25px; }
+    .vlab .vl-host-script { font-size: 15px; }
+    .vlab .vl-tabs > a { padding-inline: 13px; flex: 0 0 auto; }
+    .vlab .vl-technical-block { padding: 22px; }
+  }
+  @media (max-width: 760px) {
+    .vlab .vl-shell { padding-inline: 23px; }
+    .vlab .vl-breadcrumb { font-size: 10px; gap: 15px; }
+    .vlab .vl-hero { grid-template-columns: 1fr; gap: 44px; padding-block: 20px 50px; }
+    .vlab .vl-hero-copy { max-width: 650px; }
+    .vlab .vl-hero h1 { font-size: clamp(34px, 6.4vw, 46px); }
+    .vlab .vl-slate { width: min(100% - 12px, 510px); justify-self: center; }
+    .vlab .vl-opening { grid-template-columns: 1fr; gap: 25px; padding-block: 33px 40px; }
+    .vlab .vl-opening h2 br { display: none; }
+    .vlab .vl-opening h2 { font-size: 25px; margin-top: 12px; }
+    .vlab .vl-bullets { font-size: 14px; line-height: 1.95; }
+    .vlab .vl-tabs > a { padding: 15px 13px; font-size: 11px; }
+    .vlab .vl-tabs small { font-size: 8px; }
+    .vlab .vl-panel { padding-top: 40px; scroll-margin-top: 160px; }
+    .vlab .vl-section-heading { margin-bottom: 29px; }
+    .vlab .vl-section-heading h2 { font-size: 32px; }
+    .vlab .vl-section-heading > p:last-child { font-size: 14px; }
+    .vlab .vl-card-header h3 { font-size: 23px; }
+    .vlab .vl-lead { font-size: 14px; line-height: 1.95; }
+    .vlab .vl-account, .vlab .vl-project, .vlab .vl-case { padding: 22px; }
+    .vlab .vl-account-list, .vlab .vl-project-list, .vlab .vl-case-list { gap: 30px; }
+    .vlab .vl-metrics { grid-template-columns: 1fr; }
+    .vlab .vl-metrics > div { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 17px; border-right: 0; border-bottom: 1px solid var(--vl-line); padding: 17px 0; align-items: baseline; }
+    .vlab .vl-metrics > div:last-child { border-bottom: 0; }
+    .vlab .vl-metrics dd { grid-column: 2; grid-row: 1; text-align: right; font-size: 30px; margin-block: 0; }
+    .vlab .vl-metrics p { grid-column: 1 / -1; }
+    .vlab .vl-remix-inputs { grid-template-columns: 1fr; }
+    .vlab .vl-portrait { display: grid; grid-template-columns: 105px 1fr; gap: 8px 20px; }
+    .vlab .vl-portrait > .vl-eyebrow { grid-column: 1 / -1; }
+    .vlab .vl-portrait > a:has(img) { grid-row: 2 / 5; }
+    .vlab .vl-portrait img { margin-block: 10px 0; width: 100%; height: auto; aspect-ratio: 1; }
+    .vlab .vl-portrait h3 { margin-top: 9px; font-size: 18px; }
+    .vlab .vl-portrait > p:not(.vl-eyebrow) { margin-block: 5px; }
+    .vlab .vl-budget { padding: 22px; }
+    .vlab .vl-budget h3 { font-size: 20px; }
+    .vlab .vl-budget > dl > div { padding: 16px 12px; }
+    .vlab .vl-budget dd { font-size: 26px; }
+    .vlab .vl-technical-blocks, .vlab .vl-posttraining-grid { grid-template-columns: 1fr; }
+    .vlab .vl-subheading h3 { font-size: 25px; }
+    .vlab .vl-benchmark { padding: 20px; }
+    .vlab .vl-unknowns { padding: 24px; }
+  }
+  @media (max-width: 450px) {
+    .vlab .vl-shell { padding-inline: 20px; }
+    .vlab .vl-breadcrumb { flex-wrap: wrap; gap: 10px 17px; padding-block: 22px; }
+    .vlab .vl-breadcrumb > span { font-size: 9px; }
+    .vlab .vl-breadcrumb > button { font-size: 10px; }
+    .vlab .vl-hero h1 { font-size: 35px; line-height: 1.35; }
+    .vlab .vl-subtitle { font-size: 14px; margin-top: 19px; }
+    .vlab .vl-hero-models > span { font-size: 9px; }
+    .vlab .vl-eyebrow { font-size: 9px; }
+    .vlab .vl-slate { padding: 14px; }
+    .vlab .vl-opening h2 { font-size: 23px; }
+    .vlab .vl-host-script { font-size: 14px; }
+    .vlab .vl-tabs { margin-inline: -20px; padding-inline: 20px; }
+    .vlab .vl-tabs > a:first-child { padding-left: 0; }
+    .vlab .vl-section-heading h2 { font-size: 28px; line-height: 1.5; }
+    .vlab .vl-section-heading h2 br { display: none; }
+    .vlab .vl-section-heading > p:last-child { font-size: 13px; }
+    .vlab .vl-card-header { gap: 13px; flex-wrap: wrap; }
+    .vlab .vl-card-header h3 { font-size: 22px; }
+    .vlab .vl-account .vl-card-header { flex-wrap: nowrap; }
+    .vlab .vl-observed { font-size: 9px; max-width: 110px; }
+    .vlab .vl-account, .vlab .vl-project, .vlab .vl-case { padding: 19px; margin-inline: -5px; }
+    .vlab .vl-bullets { font-size: 13px; padding-left: 17px; }
+    .vlab .vl-metrics dd { font-size: 28px; }
+    .vlab .vl-handle { font-size: 11px; }
+    .vlab .vl-account-examples { gap: 23px; }
+    .vlab .vl-comment { padding: 16px; }
+    .vlab .vl-comment > p { font-size: 13px; }
+    .vlab .vl-workflow { grid-template-columns: 1fr; }
+    .vlab .vl-workflow > li { display: flex; gap: 16px; align-items: flex-start; border-right: 0; border-bottom: 1px solid var(--vl-line); padding: 15px 0; }
+    .vlab .vl-workflow > li:last-child { border-bottom: 0; }
+    .vlab .vl-workflow span { margin-top: 3px; }
+    .vlab .vl-workflow p { margin-top: 0; }
+    .vlab .vl-portrait { grid-template-columns: 82px 1fr; padding: 19px; gap: 8px 16px; }
+    .vlab .vl-budget { padding: 20px; }
+    .vlab .vl-budget > dl { grid-template-columns: 1fr; margin-block: 20px; }
+    .vlab .vl-budget > dl > div { display: flex; justify-content: space-between; align-items: center; gap: 20px; border-right: 0; border-bottom: 1px solid #435b45; padding: 14px 0; }
+    .vlab .vl-budget dd { margin-top: 0; font-size: 28px; }
+    .vlab .vl-run { padding: 17px; }
+    .vlab .vl-run-grid { gap: 22px; }
+    .vlab .vl-player-toolbar { margin-top: 26px; gap: 15px; }
+    .vlab .vl-player-toolbar > div { gap: 20px; }
+    .vlab .vl-conditions, .vlab .vl-note { font-size: 11px; }
+    .vlab .vl-technical-block { padding: 22px 19px; }
+    .vlab .vl-technical-block h3 { font-size: 20px; }
+    .vlab .vl-technical-block .vl-bullets { font-size: 12px; }
+    .vlab .vl-posttraining-grid > article { padding: 23px; }
+    .vlab .vl-pipeline ol { grid-template-columns: 1fr; gap: 23px; }
+    .vlab .vl-source-list > li { grid-template-columns: 25px minmax(0, 1fr); gap: 12px; }
+    .vlab .vl-source-list a { font-size: 13px; }
+    .vlab .vl-source-list p { font-size: 11px; }
+    .vlab .vl-bottom-nav { gap: 13px; }
+    .vlab .vl-bottom-nav > button { font-size: 11px; }
+    .vlab .vl-bottom-nav > a { font-size: 9px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .vlab *, .vlab *::before, .vlab *::after { scroll-behavior: auto !important; } }
+  @media print {
+    .vlab { --vl-ink: #111; --vl-muted: #333; --vl-line: #bbb; --vl-accent: #184526; background: #fff !important; color: #111 !important; print-color-adjust: economy; }
+    .vlab *, .vlab *::before, .vlab *::after { color: #111 !important; background: transparent !important; box-shadow: none !important; }
+    .vlab .vl-shell { max-width: none; padding-inline: 0; }
+    .vlab .vl-navigation, .vlab .vl-breadcrumb > button, .vlab .vl-hero-copy > .vl-button, .vlab .vl-player-toolbar, .vlab .vl-bottom-nav { display: none !important; }
+    .vlab .vl-breadcrumb { padding-top: 0; font-size: 8pt; }
+    .vlab .vl-hero { grid-template-columns: 1fr; padding-block: 15px 25px; }
+    .vlab .vl-hero h1 { font-size: 29pt; }
+    .vlab .vl-slate { display: none; }
+    .vlab .vl-subtitle { font-size: 11pt; }
+    .vlab .vl-opening { grid-template-columns: 1fr; gap: 15px; padding-block: 20px; }
+    .vlab .vl-opening h2 { font-size: 17pt; }
+    .vlab .vl-host-script, .vlab .vl-bullets { font-size: 10pt; }
+    .vlab .vl-panel, .vlab .vl-panel[hidden] { display: block !important; padding-top: 20px; break-before: page; }
+    .vlab .vl-section-heading h2 { font-size: 22pt; }
+    .vlab .vl-section-heading > p:last-child { font-size: 10pt; }
+    .vlab .vl-account, .vlab .vl-project, .vlab .vl-case, .vlab .vl-run, .vlab .vl-benchmark, .vlab .vl-technical-block, .vlab .vl-posttraining-grid > article { padding: 15px; }
+    .vlab .vl-card-header h3, .vlab .vl-subheading h3 { font-size: 16pt; }
+    .vlab .vl-lead { font-size: 10pt; }
+    .vlab .vl-account-examples, .vlab .vl-video-grid, .vlab .vl-run-grid, .vlab .vl-technical-blocks, .vlab .vl-posttraining-grid { grid-template-columns: 1fr; gap: 20px; }
+    .vlab .vl-media video, .vlab .vl-media iframe, .vlab .vl-media-screen:has(video), .vlab .vl-media-screen:has(iframe) { display: none; }
+    .vlab .vl-media figcaption { padding-block: 9px; }
+    .vlab .vl-media figcaption > a::after { content: ' (' attr(href) ')'; overflow-wrap: anywhere; }
+    .vlab .vl-media-portrait .vl-media-screen { max-width: 250px; }
+    .vlab .vl-media-link { min-height: auto !important; }
+    .vlab .vl-table-wrap { overflow: visible; }
+    .vlab .vl-table { min-width: 0; font-size: 8pt; table-layout: fixed; }
+    .vlab .vl-table th, .vlab .vl-table td { padding: 8px; }
+    .vlab .vl-table caption { padding: 10px; }
+    .vlab .vl-table .vl-source-refs { font-size: 7pt; }
+    .vlab .vl-source-list a { font-size: 10pt; }
+    .vlab .vl-source-list p { font-size: 8pt; }
+    .vlab .vl-detail summary > span { display: none; }
+    .vlab .vl-prompt { font-size: 8pt; }
+  }
+  /* Tailwind's base-layer hidden rule is important, so its print override belongs in the same layer. */
+  @layer base { @media print { .vlab .vl-panel[hidden] { display: block !important; } } }
+</style>
