@@ -6,6 +6,23 @@
 
 ## Content Structure
 
+### 영상 생성 실험 방송 노트
+
+`/knowledge/articles/video-generation-lab/`은 한국어 전용 article입니다. 공개 Instagram 성과,
+자체 제작 영상, 세 모델 비교, H3 후속 학습과 이전 Wan의 기술을 8개 탭으로 제공합니다.
+Knowledge collection 대신 `src/data/video-generation-lab.json`과 전용 Astro 페이지를 사용합니다.
+
+- 자체 제작 영상·캡처·출처 기록: `public/assets/articles/video-generation-lab/`
+- 출처 연결·영상 체크섬·비용 합계 검증: `node scripts/check-video-generation-lab.mjs`
+- 최종 확인: `npm run build`, 데스크톱·모바일 탭과 영상 재생, 전체 인쇄
+
+채널 수치는 같은 시점의 공개 누적값으로 맞추고 조회수와 순시청자를 구분합니다.
+외부 제작자의 비교 영상은 원본 URL로 연결하며 조건·버전·제작자를 표시합니다.
+공식 API와 Sume의 기능·요금, 공개 Base와 호스팅 단계, Wan 3.0과 이전 공개 Wan을 구분합니다.
+직접 얼굴 실험은 프로필 사진 확보 대기로 아직 제출하지 않았습니다. 결과 없는 상태를 성공으로
+표시하지 않습니다. 재개 시 같은 입력·모드·시간·실제 청구액을 기록하고 전체 $20 상한을 지킵니다.
+키·결제 정보는 JSON·자산·프런트엔드·Git에 저장하지 않습니다.
+
 ### 보고서 해설: State of AI 2026
 
 한국어 전용 article인 `/knowledge/articles/state-of-ai-2026/`에 9개 이야기와 주요 도표를,

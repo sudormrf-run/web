@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  url?: string;
+  videoUrl?: string;
+  poster?: string;
+  youtubeId?: string;
+  startSeconds?: number;
+  caption?: string;
+  portrait?: boolean;
+}
+
+const { title, url, videoUrl, poster, youtubeId, startSeconds = 0, caption, portrait = false } = Astro.props;
+const sourceUrl = url ?? (youtubeId ? `https://www.youtube.com/watch?v=${youtubeId}${startSeconds ? `&t=${startSeconds}s` : ''}` : videoUrl);
+const embedUrl = youtubeId ? `https://www.youtube-nocookie.com/embed/${youtubeId}?start=${Math.max(0, Math.floor(startSeconds))}` : undefined;
+---
+
+<figure class:list={['vl-media', { 'vl-media-portrait': portrait }]}>
+  <div class="vl-media-screen">
+    {videoUrl ? (
+      <video src={videoUrl} poster={poster} controls muted playsinline preload="none" aria-label={title}>
+        <p>브라우저에서 영상을 재생할 수 없습니다. <a href={sourceUrl}>원문에서 영상 열기</a></p>
+      </video>
+    ) : embedUrl ? (
+      <iframe src={embedUrl} title={title} loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    ) : poster ? (
+      <a href={sourceUrl} target="_blank" rel="noopener noreferrer"><img src={poster} alt={title} loading="lazy" /><span class="vl-media-open" aria-hidden="true">원문 보기 ↗</span></a>
+    ) : (
+      <a class="vl-media-link" href={sourceUrl} target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span><strong>{title}</strong><span>원문에서 영상 열기</span></a>
+    )}
+  </div>
+  <figcaption><strong>{title}</strong>{caption && <p>{caption}</p>}{sourceUrl && <a href={sourceUrl} target="_blank" rel="noopener noreferrer">원문에서 영상 열기 ↗</a>}</figcaption>
+</figure>

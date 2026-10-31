@@ -1,0 +1,286 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Media from '../../../components/video-lab/Media.astro';
+import Styles from '../../../components/video-lab/Styles.astro';
+import type { VideoLabEpisode } from '../../../components/video-lab/types';
+import episodeData from '../../../data/video-generation-lab.json';
+
+const data: VideoLabEpisode = episodeData;
+const sourceById = Object.fromEntries(data.sources.map((source, index) => [source.id, { ...source, number: index + 1 }]));
+const sections = [
+  { id: 'accounts', label: '논문 → 릴스', detail: '실제 성과' },
+  { id: 'projects', label: '영상 제작 실험', detail: 'Blender → 실사' },
+  { id: 'remix', label: '내 얼굴로 비교', detail: '직접 테스트' },
+  { id: 'cases', label: '사례로 비교', detail: '남들이 만든 영상' },
+  { id: 'models', label: '모델 비교표', detail: '모드 · 가격 · 평가' },
+  { id: 'h3', label: 'H3 뜯어보기', detail: '구조 · 후속 학습' },
+  { id: 'wan', label: 'Wan 뜯어보기', detail: '공개된 것과 빈칸' },
+  { id: 'sources', label: '출처', detail: '다시 찾아보기' },
+];
+const usd = (value: number) => `$${value.toFixed(2)}`;
+const sourceRefs = (ids: string[]) => ids.map((id) => sourceById[id]).filter(Boolean);
+---
+
+<Layout title={data.meta.title} description={data.meta.subtitle} locale="ko" hideLanguageSwitcher>
+  <article class="vlab">
+    <div class="vl-shell">
+      <div class="vl-breadcrumb"><a href="/knowledge/">← Knowledge</a><span>방송 노트 · {data.meta.date}</span><button type="button" class="vl-text-button" data-print hidden>인쇄 / PDF ↗</button></div>
+      <header class="vl-hero">
+        <div class="vl-hero-copy"><p class="vl-eyebrow"><span class="vl-record" aria-hidden="true"></span> VIDEO GENERATION LAB</p><h1>{data.meta.title}</h1><p class="vl-subtitle">{data.meta.subtitle}</p><div class="vl-hero-models" aria-label="비교 모델">{data.comparison.columns.map((model) => <span>{model}</span>)}</div><a class="vl-button vl-button-primary" href="#accounts" data-tab-jump="accounts">직접 해본 이야기부터 <span aria-hidden="true">↓</span></a></div>
+        <aside class="vl-slate"><div class="vl-slate-top"><span>SUDO REMOVE</span><span>TAKE 001</span></div><img src={data.meta.coverImage} alt="Video Generation Lab — 논문에서 릴스로, 프리비즈에서 실사로" width="1200" height="675" loading="eager" /><dl><div><dt>진행 분량</dt><dd>{data.meta.duration}</dd></div><div><dt>직접 실험 예산</dt><dd>{usd(data.remix.budget.limitUsd)} 이내</dd></div><div><dt>자료 확인</dt><dd>{data.meta.date}</dd></div></dl></aside>
+      </header>
+      <section class="vl-opening" aria-labelledby="vl-opening-title"><div><p class="vl-eyebrow">TODAY'S QUESTION</p><h2 id="vl-opening-title">영상은 만들어졌다.<br />그래서, 무엇이 달라졌나?</h2></div><div><p class="vl-host-script">{data.opening.script}</p><ul class="vl-bullets">{data.opening.bullets.map((bullet) => <li>{bullet}</li>)}</ul></div></section>
+    </div>
+
+    <div class="vl-navigation"><div class="vl-shell"><nav class="vl-tabs" aria-label="방송 진행 순서" data-vl-tabs>{sections.map((section, index) => <a id={`vl-tab-${section.id}`} href={`#${section.id}`} data-vl-tab={section.id}><span class="vl-tab-index">{String(index + 1).padStart(2, '0')}</span><span>{section.label}<small>{section.detail}</small></span></a>)}</nav></div></div>
+
+    <div class="vl-shell vl-panels">
+      <section id="accounts" class="vl-panel" data-vl-panel="accounts" aria-labelledby="vl-heading-accounts">
+        <header class="vl-section-heading"><p class="vl-eyebrow">01 / FROM PAPERS TO PEOPLE</p><h2 id="vl-heading-accounts">논문을 영상으로 옮겼더니,<br />사람들의 반응이 돌아왔다.</h2><p>직접 운영한 두 채널의 결과와 실제 게시물, 그리고 댓글을 함께 본다.</p></header>
+        <div class="vl-account-list">{data.accounts.map((account) => <article class="vl-account" id={`account-${account.id}`}><header class="vl-card-header"><div><p class="vl-eyebrow">INSTAGRAM</p><h3>{account.name}</h3><a class="vl-handle" href={account.url} target="_blank" rel="noopener noreferrer">{account.handle} ↗</a></div><p class="vl-observed">관측 시점<br /><time>{account.observedAt}</time></p></header><p class="vl-lead">{account.description}</p><dl class="vl-metrics">{account.metrics.map((metric) => <div><dt>{metric.label}</dt><dd>{metric.value}</dd><p>{metric.note}</p></div>)}</dl><ul class="vl-bullets">{account.bullets.map((bullet) => <li>{bullet}</li>)}</ul><div class="vl-account-examples">{account.examples.map((example) => <article class="vl-example"><Media title={example.title} url={example.url} poster={example.poster} caption={example.caption} />{example.comments.map((comment) => <div class="vl-comment-item"><blockquote class="vl-comment"><p>“{comment.quote}”</p><footer><a href={comment.url} target="_blank" rel="noopener noreferrer">{comment.author} ↗</a><span>{comment.context}</span></footer></blockquote>{comment.screenshot && <figure class="vl-comment-evidence"><a href={comment.url} target="_blank" rel="noopener noreferrer"><img src={comment.screenshot} alt={`${comment.author}가 남긴 댓글의 실제 화면 캡처`} loading="lazy" /></a><figcaption>댓글 원문 화면 · 클릭하면 해당 게시물로 이동합니다.</figcaption></figure>}</div>)}</article>)}</div>{account.caveats.length > 0 && <aside class="vl-note"><h4>이 숫자를 읽는 기준</h4><ul>{account.caveats.map((note) => <li>{note}</li>)}</ul></aside>}<p class="vl-source-refs">근거 {sourceRefs(account.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</p></article>)}</div>
+      </section>
+
+      <section id="projects" class="vl-panel" data-vl-panel="projects" aria-labelledby="vl-heading-projects">
+        <header class="vl-section-heading"><p class="vl-eyebrow">02 / DIRECT BEFORE YOU GENERATE</p><h2 id="vl-heading-projects">스토리를 먼저 짜고,<br />장면을 움직여 본다.</h2><p>가볍게 해본 실험에서 시작한다. 무엇을 자동화했고, 무엇을 사람이 결정했는지 본다.</p></header>
+        <div class="vl-project-list">{data.projects.map((project, index) => <article class="vl-project"><header class="vl-card-header"><div><span class="vl-project-number">EXPERIMENT {String(index + 1).padStart(2, '0')}</span><h3>{project.title}</h3></div><a class="vl-button" href={project.url} target="_blank" rel="noopener noreferrer">프로젝트 열기 ↗</a></header><p class="vl-lead">{project.description}</p><ul class="vl-bullets">{project.bullets.map((bullet) => <li>{bullet}</li>)}</ul><ol class="vl-workflow" aria-label={`${project.title} 제작 흐름`}>{project.steps.map((step, stepIndex) => <li><span>{String(stepIndex + 1).padStart(2, '0')}</span><p>{step}</p></li>)}</ol><div class="vl-video-grid">{project.videos.map((video) => <Media title={video.title} videoUrl={video.videoUrl} url={video.sourceUrl} poster={video.poster} caption={video.caption} portrait={video.portrait} />)}</div><p class="vl-source-refs">근거 {sourceRefs(project.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</p></article>)}</div>
+      </section>
+
+      <section id="remix" class="vl-panel" data-vl-panel="remix" aria-labelledby="vl-heading-remix">
+        <header class="vl-section-heading"><p class="vl-eyebrow">03 / ONE FACE, THREE MODELS</p><h2 id="vl-heading-remix">{data.remix.title}</h2><p>{data.remix.status}</p></header>
+        <ul class="vl-bullets vl-summary">{(data.remix.bullets ?? data.remix.method.slice(0, 3)).map((bullet) => <li>{bullet}</li>)}</ul>
+        <div class="vl-remix-inputs"><div><p class="vl-eyebrow">THE REFERENCE</p><Media title={data.remix.reference.title} url={data.remix.reference.url} videoUrl={data.remix.reference.videoUrl} poster={data.remix.reference.poster} caption={data.remix.reference.note} portrait={true} /></div><aside class="vl-portrait"><p class="vl-eyebrow">THE PERSON</p>{data.remix.portrait.imageUrl && <a href={data.remix.portrait.sourceUrl} target="_blank" rel="noopener noreferrer"><img src={data.remix.portrait.imageUrl} alt="직접 Remix 실험에 사용한 진행자의 프로필 사진" loading="lazy" /></a>}<h3>같은 인물 사진</h3><p>{data.remix.portrait.note}</p><a href={data.remix.portrait.sourceUrl} target="_blank" rel="noopener noreferrer">프로필 원문 ↗</a></aside></div>
+        <div class="vl-budget"><div class="vl-budget-heading"><p class="vl-eyebrow">COST OF THE EXPERIMENT</p><h3>재미있는 실험에도, 계산서는 남는다.</h3></div><dl><div><dt>예산 상한</dt><dd>{usd(data.remix.budget.limitUsd)}</dd></div><div><dt>예상 비용</dt><dd>{usd(data.remix.budget.estimatedUsd)}</dd></div><div class="vl-budget-total"><dt>실제 청구</dt><dd>{usd(data.remix.budget.chargedUsd)}</dd></div></dl><ul>{data.remix.budget.notes.map((note) => <li>{note}</li>)}</ul></div>
+        <details class="vl-detail"><summary>실험 조건과 공통 프롬프트 <span aria-hidden="true">+</span></summary><ol class="vl-bullets">{data.remix.method.map((step) => <li>{step}</li>)}</ol><pre class="vl-prompt">{data.remix.sharedPrompt}</pre></details>
+        <div class="vl-comparison-group" data-video-comparison><div class="vl-player-toolbar"><p>결과 영상 · 같은 입력으로 비교</p><div><button type="button" class="vl-button" data-sync-play hidden>함께 재생 ▶</button><button type="button" class="vl-text-button" data-sync-reset hidden>처음으로 ↺</button></div><p class="vl-sync-status" data-sync-status aria-live="polite"></p></div><div class="vl-run-grid">{data.remix.runs.map((run) => <article class="vl-run"><header><h3>{run.name}</h3><span class:list={['vl-status', { 'vl-status-failed': !run.videoUrl }]}>{run.status}</span></header>{run.videoUrl ? <Media title={`${run.name} 직접 Remix 결과`} videoUrl={run.videoUrl} poster={run.poster} caption={`${run.mode} · ${run.duration}초 · ${run.resolution}`} /> : <div class="vl-no-result"><span aria-hidden="true">—</span><p>결과 영상 없음</p>{run.error && <p>{run.error}</p>}</div>}<dl class="vl-run-cost"><div><dt>예상</dt><dd>{usd(run.estimatedUsd)}</dd></div><div><dt>청구</dt><dd>{usd(run.chargedUsd)}</dd></div></dl>{!run.videoUrl && <p class="vl-run-settings">{run.mode} · {run.duration}초 · {run.resolution}</p>}<ul class="vl-bullets">{run.observations.map((note) => <li>{note}</li>)}</ul></article>)}</div></div>
+        <aside class="vl-note"><h3>비교의 범위</h3><ul>{data.remix.caveats.map((note) => <li>{note}</li>)}</ul></aside><p class="vl-source-refs">근거 {sourceRefs(data.remix.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</p>
+      </section>
+
+      <section id="cases" class="vl-panel" data-vl-panel="cases" aria-labelledby="vl-heading-cases">
+        <header class="vl-section-heading"><p class="vl-eyebrow">04 / WATCH THE DIFFERENCE</p><h2 id="vl-heading-cases">한 번의 성공작 말고,<br />여러 장면을 나란히 보자.</h2><p>다른 제작자들의 비교를 가져왔다. 인물, 동작, 카메라, 장면 연결을 따로 본다.</p></header>
+        <div class="vl-case-list">{data.cases.map((example, index) => <article class="vl-case" id={`case-${example.id}`}><header class="vl-card-header"><div><p class="vl-eyebrow">CASE {String(index + 1).padStart(2, '0')} · {example.creator}</p><h3>{example.title}</h3><p class="vl-case-date">{example.date}</p></div><a href={example.url} target="_blank" rel="noopener noreferrer">원문 비교 ↗</a></header><p class="vl-lead">{example.description}</p><div class="vl-chips">{example.models.map((model) => <span>{model}</span>)}</div><p class="vl-conditions"><strong>비교 조건</strong>{example.conditions}</p>{example.kind === 'youtube' && example.youtubeId && <Media title={`${example.creator} · ${example.title}`} url={example.url} youtubeId={example.youtubeId} startSeconds={example.startSeconds} />}{example.videos.length > 0 && <div class="vl-comparison-group" data-video-comparison><div class="vl-player-toolbar"><p>같은 사례 안의 영상</p><div><button type="button" class="vl-button" data-sync-play hidden>함께 재생 ▶</button><button type="button" class="vl-text-button" data-sync-reset hidden>처음으로 ↺</button></div><p class="vl-sync-status" data-sync-status aria-live="polite"></p></div><div class="vl-video-grid">{example.videos.map((video) => <Media title={video.model ? `${video.model} · ${video.title}` : video.title} url={video.sourceUrl} videoUrl={video.videoUrl} poster={video.poster} caption={video.caption} portrait={video.portrait} />)}</div></div>}{example.kind === 'link' && example.videos.length === 0 && <a class="vl-button" href={example.url} target="_blank" rel="noopener noreferrer">비교 영상 원문에서 보기 ↗</a>}{example.questions.length > 0 && <div class="vl-watch-for"><h4>이 장면에서 볼 것</h4><ul class="vl-bullets">{example.questions.map((question) => <li>{question}</li>)}</ul></div>}{example.caveats.length > 0 && <aside class="vl-note"><ul>{example.caveats.map((note) => <li>{note}</li>)}</ul></aside>}<p class="vl-source-refs">근거 {sourceRefs(example.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</p></article>)}</div>
+      </section>
+
+      <section id="models" class="vl-panel" data-vl-panel="models" aria-labelledby="vl-heading-models">
+        <header class="vl-section-heading"><p class="vl-eyebrow">05 / PICK THE RIGHT TOOL</p><h2 id="vl-heading-models">무엇을 넣고, 무엇을 받나.<br />그리고, 얼마인가.</h2><p>이름 하나로 묶인 모델에도 여러 모드와 서비스가 있다. 같은 조건끼리 비교한다.</p></header><ul class="vl-bullets vl-summary">{data.comparison.bullets.map((bullet) => <li>{bullet}</li>)}</ul>
+        <div class="vl-table-wrap" tabindex="0" role="region" aria-label="영상 모델 기능 비교표, 가로 스크롤 가능"><table class="vl-table vl-model-table"><caption>입력 모드·해상도·길이·공개 범위</caption><thead><tr><th scope="col">비교 항목</th>{data.comparison.columns.map((model) => <th scope="col">{model}</th>)}</tr></thead><tbody>{data.comparison.rows.map((row) => <tr><th scope="row">{row.label}<span class="vl-source-refs">{sourceRefs(row.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</span></th>{row.values.map((value) => <td>{value}</td>)}</tr>)}</tbody></table></div>
+        <div class="vl-subheading"><p class="vl-eyebrow">THE PRICE TAG</p><h3>초당 단가와 한 번의 비용</h3><p>입력 영상, 오디오, 해상도, 생성 길이가 가격을 바꾼다. 아래의 조건도 함께 읽는다.</p></div><div class="vl-table-wrap" tabindex="0" role="region" aria-label="모드별 가격 비교표, 가로 스크롤 가능"><table class="vl-table vl-price-table"><caption>가격표 · USD</caption><thead><tr><th scope="col">모델 / 모드</th><th scope="col">해상도</th><th scope="col">초당 단가</th><th scope="col">예시 비용</th><th scope="col">조건과 출처</th></tr></thead><tbody>{data.comparison.prices.map((price) => <tr><th scope="row">{price.model}<small>{price.mode}</small></th><td>{price.resolution}</td><td class="vl-mono">{price.usdPerSecond}</td><td>{price.exampleCost}</td><td>{price.note}<span class="vl-source-refs">{sourceRefs(price.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</span></td></tr>)}</tbody></table></div>
+        <div class="vl-subheading"><p class="vl-eyebrow">BENCHMARKS, WITH CONTEXT</p><h3>점수는 조건까지가 한 세트다.</h3></div><div class="vl-benchmark-list">{data.comparison.benchmarks.map((benchmark) => <article class="vl-benchmark"><header><h4>{benchmark.name}</h4><p>{benchmark.task} · {benchmark.date}</p></header><div class="vl-table-wrap" tabindex="0" role="region" aria-label={`${benchmark.name} 점수 비교`}><table class="vl-table"><thead><tr><th scope="col">모델</th><th scope="col">점수</th><th scope="col">불확실성</th><th scope="col">표본</th></tr></thead><tbody>{benchmark.scores.map((score) => <tr><th scope="row">{score.model}</th><td class="vl-score">{score.score}</td><td>{score.uncertainty}</td><td>{score.samples}</td></tr>)}</tbody></table></div><p class="vl-conditions"><strong>측정 방식</strong>{benchmark.method}</p><aside class="vl-note"><p>{benchmark.caveat}</p></aside><p class="vl-source-refs">근거 {sourceRefs(benchmark.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</p></article>)}</div>
+      </section>
+
+      {(['h3', 'wan'] as const).map((key) => { const technical = data.technical[key]; return <section id={key} class="vl-panel" data-vl-panel={key} aria-labelledby={`vl-heading-${key}`}><header class="vl-section-heading"><p class="vl-eyebrow">{key === 'h3' ? '06 / INSIDE MINIMAX H3' : '07 / INSIDE WAN'}</p><h2 id={`vl-heading-${key}`}>{technical.title}</h2><p>{technical.summary}</p></header><ul class="vl-bullets vl-summary">{technical.bullets.map((bullet) => <li>{bullet}</li>)}</ul>{technical.pipeline.length > 0 && <section class="vl-pipeline"><h3>입력에서 영상이 되기까지</h3><ol>{technical.pipeline.map((step, index) => <li><span>{String(index + 1).padStart(2, '0')}</span><div><h4>{step.title}</h4><p>{step.description}</p></div></li>)}</ol></section>}{technical.diagrams && technical.diagrams.length > 0 && <div class="vl-diagrams">{technical.diagrams.map((diagram) => <figure><a href={diagram.imageUrl} target="_blank" rel="noopener noreferrer"><img src={diagram.imageUrl} alt={diagram.title} loading="lazy" /></a><figcaption><strong>{diagram.title}</strong><p>{diagram.caption}</p><a href={diagram.sourceUrl} target="_blank" rel="noopener noreferrer">공식 자료에서 확인하기 ↗</a></figcaption></figure>)}</div>}<div class="vl-technical-blocks">{technical.blocks.map((block) => <article class="vl-technical-block"><h3>{block.title}</h3><ul class="vl-bullets">{block.bullets.map((bullet) => <li>{bullet}</li>)}</ul>{block.body && <details class="vl-detail"><summary>조금 더 자세히 <span aria-hidden="true">+</span></summary><p>{block.body}</p></details>}<p class="vl-source-refs">근거 {sourceRefs(block.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</p></article>)}</div>{technical.postTraining.length > 0 && <section class="vl-posttraining"><div class="vl-subheading"><p class="vl-eyebrow">TRAINING &amp; INFERENCE</p><h3>후속 학습과 추론 최적화</h3><p>학습으로 바꾸는 부분과 실행 단계에서 줄이는 비용을 구분한다.</p></div><div class="vl-posttraining-grid">{technical.postTraining.map((variant) => <article><span class="vl-chip">{variant.type}</span><h4><a href={variant.url} target="_blank" rel="noopener noreferrer">{variant.name} ↗</a></h4><p>{variant.description}</p><p class="vl-tradeoff"><strong>확인할 점</strong>{variant.tradeoff}</p></article>)}</div></section>}{technical.unknowns.length > 0 && <aside class="vl-unknowns"><p class="vl-eyebrow">WHAT WE DON'T KNOW</p><h3>공개 자료가 채우지 못한 빈칸</h3><ul class="vl-bullets">{technical.unknowns.map((note) => <li>{note}</li>)}</ul></aside>}<p class="vl-source-refs">이 절의 원자료 {sourceRefs(technical.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</p></section>; })}
+
+      <section id="sources" class="vl-panel" data-vl-panel="sources" aria-labelledby="vl-heading-sources"><header class="vl-section-heading"><p class="vl-eyebrow">08 / KEEP THE RECEIPTS</p><h2 id="vl-heading-sources">직접 확인한 것과,<br />자료에서 배운 것.</h2><p>성과의 관측 시점, 모델 버전과 가격 조건은 각 근거에 남겼다. 다시 찾아볼 수 있도록 연결한다.</p></header><ul class="vl-bullets vl-summary"><li>공식 문서·모델 카드·원 제작자의 사례를 중심으로 연결했다.</li><li>성과·가격·평가 점수는 관측 시점과 조건을 함께 확인한다.</li><li>직접 한 실험과 외부 제작자의 비교는 구분해서 읽는다.</li></ul><ol class="vl-source-list">{data.sources.map((source, index) => <li id={`source-${source.id}`}><span class="vl-source-number">{String(index + 1).padStart(2, '0')}</span><div><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} ↗</a><p class="vl-source-meta">{source.publisher} · {source.date}</p><p>{source.note}</p></div></li>)}</ol></section>
+
+      <nav class="vl-bottom-nav" aria-label="이야기 이동"><button type="button" data-vl-previous hidden>← 이전 이야기</button><a href="/knowledge/">Knowledge로 돌아가기</a><button type="button" data-vl-next hidden>다음 이야기 →</button></nav><footer class="vl-colophon"><p>수도리무브 · 영상 생성 실험과 방송 노트</p><p>자료 확인 {data.meta.date} · 직접 실험과 외부 제작자의 비교를 구분해 기록했습니다.</p></footer>
+    </div>
+  </article>
+  <Styles />
+</Layout>
+
+<script>
+  const article = document.querySelector<HTMLElement>('.vlab');
+  const nav = article?.querySelector<HTMLElement>('[data-vl-tabs]');
+  const tabs = Array.from(article?.querySelectorAll<HTMLAnchorElement>('[data-vl-tab]') ?? []);
+  const panels = Array.from(article?.querySelectorAll<HTMLElement>('[data-vl-panel]') ?? []);
+  const previous = article?.querySelector<HTMLButtonElement>('[data-vl-previous]');
+  const next = article?.querySelector<HTMLButtonElement>('[data-vl-next]');
+  const frames = Array.from(article?.querySelectorAll<HTMLIFrameElement>('iframe[src^="https://www.youtube-nocookie.com/embed/"]') ?? []);
+  frames.forEach((frame) => { frame.dataset.vlEmbedSrc = frame.src; });
+  let printing = false;
+  const isModifiedClick = (event: MouseEvent) => event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
+  const fromHash = () => window.location.hash.slice(1);
+  let currentId = tabs[0]?.dataset.vlTab ?? '';
+
+  function setPanelFrames(panel: HTMLElement, enabled: boolean) {
+    panel.querySelectorAll<HTMLIFrameElement>('iframe[data-vl-embed-src]').forEach((frame) => {
+      const src = enabled && !printing ? frame.dataset.vlEmbedSrc! : 'about:blank';
+      if (frame.getAttribute('src') !== src) frame.src = src;
+    });
+  }
+
+  function stopPanelMedia(panel: HTMLElement) {
+    panel.querySelectorAll<HTMLElement>('[data-video-comparison]').forEach((group) => group.dispatchEvent(new Event('vl-media-stop')));
+    panel.querySelectorAll('video').forEach((video) => video.pause());
+    setPanelFrames(panel, false);
+  }
+
+  function selectTab(id: string, updateHash = false, focus = false) {
+    const selected = tabs.find((tab) => tab.dataset.vlTab === id);
+    if (!selected) return;
+    currentId = id;
+    tabs.forEach((tab) => { const active = tab === selected; tab.setAttribute('aria-selected', String(active)); tab.tabIndex = active ? 0 : -1; });
+    panels.forEach((panel) => {
+      panel.hidden = panel.dataset.vlPanel !== id;
+      if (panel.hidden) stopPanelMedia(panel);
+      else setPanelFrames(panel, true);
+    });
+    if (updateHash && window.location.hash !== `#${id}`) history.pushState(null, '', `#${id}`);
+    if (focus) selected.focus({ preventScroll: true });
+    const index = tabs.indexOf(selected);
+    if (previous) { previous.hidden = index === 0; previous.textContent = index > 0 ? `← ${tabs[index - 1].querySelector('span:last-child')?.firstChild?.textContent ?? '이전 이야기'}` : '← 이전 이야기'; }
+    if (next) { next.hidden = index === tabs.length - 1; next.textContent = index < tabs.length - 1 ? `${tabs[index + 1].querySelector('span:last-child')?.firstChild?.textContent ?? '다음 이야기'} →` : '다음 이야기 →'; }
+    const panel = panels.find((item) => item.id === id);
+    if (updateHash && panel && panel.getBoundingClientRect().top < 170) panel.scrollIntoView({ block: 'start', behavior: 'instant' });
+  }
+
+  if (article && nav && tabs.length && panels.length) {
+    nav.setAttribute('role', 'tablist');
+    tabs.forEach((tab) => { tab.setAttribute('role', 'tab'); tab.setAttribute('aria-controls', tab.dataset.vlTab!); });
+    panels.forEach((panel) => { panel.setAttribute('role', 'tabpanel'); panel.setAttribute('aria-labelledby', `vl-tab-${panel.id}`); panel.tabIndex = 0; });
+    selectTab(tabs.some((tab) => tab.dataset.vlTab === fromHash()) ? fromHash() : currentId);
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', (event) => { if (isModifiedClick(event)) return; event.preventDefault(); selectTab(tab.dataset.vlTab!, true); });
+      tab.addEventListener('keydown', (event) => {
+        let target: number | undefined;
+        if (event.key === 'ArrowRight') target = (index + 1) % tabs.length;
+        if (event.key === 'ArrowLeft') target = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === 'Home') target = 0;
+        if (event.key === 'End') target = tabs.length - 1;
+        if (target !== undefined) { event.preventDefault(); selectTab(tabs[target].dataset.vlTab!, true, true); tabs[target].scrollIntoView({ block: 'nearest', inline: 'nearest' }); }
+      });
+    });
+    article.querySelectorAll<HTMLAnchorElement>('[data-tab-jump]').forEach((link) => link.addEventListener('click', (event) => { if (!isModifiedClick(event)) selectTab(link.dataset.tabJump!); }));
+    window.addEventListener('hashchange', () => selectTab(fromHash() || tabs[0].dataset.vlTab!));
+    window.addEventListener('popstate', () => selectTab(fromHash() || tabs[0].dataset.vlTab!));
+    const jump = (delta: number) => { const index = tabs.findIndex((tab) => tab.dataset.vlTab === currentId); const tab = tabs[index + delta]; if (tab) { selectTab(tab.dataset.vlTab!, true, true); nav.scrollIntoView({ block: 'start', behavior: 'instant' }); } };
+    previous?.addEventListener('click', () => jump(-1));
+    next?.addEventListener('click', () => jump(1));
+  }
+
+  article?.querySelectorAll<HTMLElement>('[data-video-comparison]').forEach((group) => {
+    const videos = Array.from(group.querySelectorAll<HTMLVideoElement>('video'));
+    const play = group.querySelector<HTMLButtonElement>('[data-sync-play]');
+    const reset = group.querySelector<HTMLButtonElement>('[data-sync-reset]');
+    const status = group.querySelector<HTMLElement>('[data-sync-status]');
+    if (videos.length < 2 || !play || !reset) return;
+    play.hidden = false; reset.hidden = false;
+    let revision = 0;
+    let pending: AbortController | undefined;
+    let preparing = false;
+    let coordinated = false;
+    let internalSeeking = false;
+    let resumeAt: number | undefined;
+    const reflect = () => { play.textContent = preparing ? '영상 준비 중…' : videos.some((video) => !video.paused && !video.ended) ? '함께 일시정지 Ⅱ' : '함께 재생 ▶'; };
+    const stop = (message = '', rewind = false) => {
+      revision++;
+      pending?.abort(); pending = undefined;
+      coordinated = false; preparing = false; internalSeeking = false;
+      resumeAt = rewind ? 0 : videos[0].currentTime;
+      videos.forEach((video) => { video.pause(); if (rewind) video.currentTime = 0; });
+      play.disabled = false;
+      if (status) status.textContent = message;
+      reflect();
+    };
+
+    function waitForMedia(video: HTMLVideoElement, predicate: () => boolean, signal: AbortSignal, deadline: number) {
+      return new Promise<void>((resolve, reject) => {
+        const events = ['loadedmetadata', 'loadeddata', 'canplay', 'canplaythrough', 'progress', 'seeked', 'timeupdate', 'error'];
+        const clean = () => { clearTimeout(timer); events.forEach((event) => video.removeEventListener(event, check)); signal.removeEventListener('abort', abort); };
+        const finish = (error?: Error) => { clean(); if (error) reject(error); else resolve(); };
+        const abort = () => finish(new DOMException('Canceled', 'AbortError'));
+        const check = () => {
+          if (signal.aborted) abort();
+          else if (video.error) finish(new Error('영상 중 하나를 불러오지 못했습니다. 원문 링크나 개별 플레이어에서 확인해주세요.'));
+          else if (predicate()) finish();
+        };
+        const timer = window.setTimeout(() => finish(new Error('영상 준비 시간이 초과되어 함께 재생을 멈췄습니다. 다시 시도하거나 개별 플레이어를 이용해주세요.')), Math.max(1, deadline - performance.now()));
+        events.forEach((event) => video.addEventListener(event, check));
+        signal.addEventListener('abort', abort, { once: true });
+        check();
+      });
+    }
+
+    videos.forEach((video) => {
+      video.addEventListener('play', () => { if (!coordinated && !preparing) resumeAt = undefined; reflect(); });
+      video.addEventListener('pause', () => {
+        if (coordinated && !preparing && !internalSeeking) stop('개별 영상을 일시정지해 함께 재생을 멈췄습니다. 함께 재생 버튼으로 다시 시작할 수 있습니다.');
+        reflect();
+      });
+      video.addEventListener('ended', () => { if (coordinated) stop('영상 하나가 끝나 함께 재생을 멈췄습니다.'); else reflect(); });
+      video.addEventListener('waiting', () => { if (coordinated) stop('버퍼링으로 모든 영상을 멈췄습니다. 준비되면 함께 재생 버튼을 눌러주세요.'); });
+      video.addEventListener('error', () => {
+        const message = '영상 중 하나의 재생에 실패했습니다. 원문 링크나 개별 플레이어에서 확인해주세요.';
+        if (coordinated || preparing) stop(message);
+        else if (status) status.textContent = message;
+      });
+      video.addEventListener('seeking', () => {
+        if (!internalSeeking) {
+          const selectedTime = video.currentTime;
+          if (coordinated || preparing) {
+            stop('영상 위치를 개별로 옮겨 함께 재생을 멈췄습니다. 함께 재생 버튼으로 다시 맞출 수 있습니다.');
+          }
+          resumeAt = selectedTime;
+        }
+      });
+    });
+
+    play.addEventListener('click', async () => {
+      if (videos.some((video) => !video.paused && !video.ended)) { stop(); return; }
+      pending?.abort();
+      const run = ++revision;
+      const controller = new AbortController();
+      const { signal } = controller;
+      pending = controller; coordinated = false; preparing = true;
+      play.disabled = true;
+      if (status) status.textContent = '모든 영상이 준비될 때까지 기다립니다.';
+      reflect();
+      const deadline = performance.now() + 12_000;
+      const assertCurrent = () => {
+        if (signal.aborted || run !== revision || printing || group.closest<HTMLElement>('[data-vl-panel]')?.hidden) throw new DOMException('Canceled', 'AbortError');
+      };
+      try {
+        videos.forEach((video) => { video.pause(); video.preload = 'auto'; if (video.readyState === 0 || video.error) video.load(); });
+        await Promise.all(videos.map((video) => waitForMedia(video, () => video.readyState >= 3 && !video.seeking, signal, deadline)));
+        assertCurrent();
+        const requestedTime = resumeAt ?? videos[0].currentTime;
+        const targetTime = videos.some((video) => video.ended || (Number.isFinite(video.duration) && requestedTime >= video.duration)) ? 0 : requestedTime;
+        internalSeeking = true;
+        videos.forEach((video) => { if (Math.abs(video.currentTime - targetTime) > 0.025) video.currentTime = targetTime; });
+        await Promise.all(videos.map((video) => waitForMedia(video, () => !video.seeking && Math.abs(video.currentTime - targetTime) < 0.08 && video.readyState >= 3, signal, deadline)));
+        internalSeeking = false;
+        assertCurrent();
+        coordinated = true; resumeAt = undefined;
+        const starts = Promise.all(videos.map(async (video) => {
+          await video.play();
+          if (signal.aborted || run !== revision) video.pause();
+        }));
+        await new Promise<void>((resolve, reject) => {
+          const abort = () => finish(new DOMException('Canceled', 'AbortError'));
+          const timer = window.setTimeout(() => finish(new Error('함께 재생을 시작하는 시간이 초과되었습니다. 다시 시도하거나 개별 플레이어를 이용해주세요.')), Math.max(1, deadline - performance.now()));
+          function finish(error?: Error) {
+            clearTimeout(timer); signal.removeEventListener('abort', abort);
+            if (error) reject(error); else resolve();
+          }
+          signal.addEventListener('abort', abort, { once: true });
+          starts.then(() => finish(), (error) => finish(error));
+          if (signal.aborted) abort();
+        });
+        assertCurrent();
+        if (status) status.textContent = '같은 위치에서 함께 재생했습니다. 개별 재생·이동을 하면 함께 재생이 해제됩니다.';
+      } catch (error) {
+        if (run === revision) stop(error instanceof Error && error.name !== 'AbortError' ? error.message : '함께 재생을 취소했습니다.');
+      } finally {
+        if (run === revision) { pending = undefined; preparing = false; internalSeeking = false; play.disabled = false; reflect(); }
+      }
+    });
+    reset.addEventListener('click', () => stop('', true));
+    group.addEventListener('vl-media-stop', () => stop());
+  });
+
+  const print = article?.querySelector<HTMLButtonElement>('[data-print]');
+  if (print) { print.hidden = false; print.addEventListener('click', () => window.print()); }
+  const details = Array.from(article?.querySelectorAll<HTMLDetailsElement>('details') ?? []);
+  let previousDetailStates: boolean[] | undefined;
+  window.addEventListener('beforeprint', () => {
+    printing = true;
+    previousDetailStates ??= details.map((detail) => detail.open);
+    details.forEach((detail) => { detail.open = true; });
+    panels.forEach(stopPanelMedia);
+  });
+  window.addEventListener('afterprint', () => {
+    printing = false;
+    if (previousDetailStates) details.forEach((detail, index) => { detail.open = previousDetailStates![index]; });
+    previousDetailStates = undefined;
+    panels.forEach((panel) => setPanelFrames(panel, !panel.hidden));
+  });
+</script>

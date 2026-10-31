@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title description">
+  <title id="title">Video Generation Lab</title>
+  <desc id="description">논문에서 릴스로, 프리비즈에서 실사로. Wan 3.0, Seedance 2.5, MiniMax H3 영상 생성 실험.</desc>
+  <defs><linearGradient id="screen" x2="1" y2="1"><stop stop-color="#253b35"/><stop offset="1" stop-color="#111c1a"/></linearGradient><pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse"><path d="M38 0H0V38" fill="none" stroke="#91cbb4" stroke-opacity=".08"/></pattern></defs>
+  <rect width="1200" height="675" fill="#101713"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  <path d="M60 72H1140M60 599H1140" stroke="#486054"/>
+  <text x="64" y="52" fill="#b1c7bb" font-family="monospace" font-size="16" letter-spacing="4">SUDO REMOVE / EPISODE NOTES</text>
+  <text x="1138" y="52" text-anchor="end" fill="#93efbf" font-family="monospace" font-size="16">2026.11</text>
+  <text x="62" y="183" fill="#eef4e9" font-family="sans-serif" font-size="91" font-weight="800" letter-spacing="-5">VIDEO</text>
+  <text x="62" y="277" fill="#eef4e9" font-family="sans-serif" font-size="91" font-weight="800" letter-spacing="-5">GENERATION</text>
+  <text x="62" y="371" fill="#93efbf" font-family="sans-serif" font-size="91" font-weight="800" letter-spacing="-5">LAB.</text>
+  <text x="66" y="435" fill="#aabcb1" font-family="sans-serif" font-size="25">논문에서 릴스로, 프리비즈에서 실사로.</text>
+  <g transform="translate(810 124)"><rect width="319" height="340" fill="url(#screen)" stroke="#536f60"/><path d="M20 24H299M20 316H299" stroke="#536f60" stroke-dasharray="12 8"/><circle cx="160" cy="170" r="66" fill="none" stroke="#93efbf" stroke-width="2"/><path d="M143 139L190 170 143 201Z" fill="#93efbf"/><text x="160" y="282" text-anchor="middle" fill="#b3c9bc" font-family="monospace" font-size="14" letter-spacing="3">SAME INPUT. THREE MODELS.</text></g>
+  <g font-family="monospace" font-size="21" fill="#d2e5d5"><text x="65" y="560">WAN 3.0</text><text x="399" y="560">SEEDANCE 2.5</text><text x="864" y="560">MINIMAX H3</text></g>
+  <g fill="#93efbf"><rect x="65" y="507" width="34" height="3"/><rect x="399" y="507" width="34" height="3"/><rect x="864" y="507" width="34" height="3"/></g>
+  <text x="65" y="641" fill="#7b9787" font-family="monospace" font-size="15" letter-spacing="2">EXPERIMENTS → COMPARISONS → UNDER THE HOOD</text>
+</svg>

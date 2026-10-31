@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-01",
+  "repository": {
+    "url": "https://github.com/sudocut/video-production",
+    "visibility": "private",
+    "commit": "a30eda5dcff59c39c3458496e95f77e5065e8421",
+    "note": "사용자가 공개 소개를 요청한 직접 제작 예시. GitHub 원본은 로그인 권한이 필요하므로 공개 페이지에서는 사용자 소유 출력본을 자체 호스팅해야 한다. 공개 오픈소스라고 소개하면 안 된다."
+  },
+  "note": "세 영상은 제작 과정을 보여 주는 사례다. try-05와 try-06는 입력·프리비즈·참조·검토 방식이 달라 모델 성능의 공정한 A/B 비교가 아니다. 오늘 별도로 수행하는 3모델 Remix 비교와 구분한다.",
+  "assets": [
+    {
+      "id": "clay-previs",
+      "title": "LLM이 짠 콘티를 Blender로: 폴딩 월드",
+      "filename": "folding-city-clay-previs",
+      "kind": "Blender clay previs",
+      "model": "Blender 5.2",
+      "resolution": "1280×720",
+      "fps": 24,
+      "durationSeconds": 25,
+      "sourceUrl": "https://github.com/sudocut/video-production/blob/a30eda5dcff59c39c3458496e95f77e5065e8421/projects/fold-cinema/tries/try-06/04-renders/folding-city.mp4",
+      "bytes": 7143543,
+      "sha256": "b8f70c689007988a80c6fe61ff9212bf67d86a61df65dd306d3145e51396c191",
+      "note": "게시용 원본 출력본의 실제 체크섬. 프로젝트의 초기 메타데이터와 별도로 계산했다."
+    },
+    {
+      "id": "seedance-25",
+      "title": "같은 기획을 실사 스타일로: Seedance 2.5",
+      "filename": "folding-city-seedance-25",
+      "kind": "generated project draft",
+      "model": "Seedance 2.5",
+      "resolution": "854×480",
+      "fps": 24,
+      "durationSeconds": 25,
+      "sourceUrl": "https://github.com/sudocut/video-production/blob/a30eda5dcff59c39c3458496e95f77e5065e8421/projects/fold-cinema/tries/try-05/06-gen/draft/folding-city.mp4",
+      "bytes": 5374146,
+      "sha256": "69031a14af189dc6493a59bdcc1a437757caecc18fd0d4951fc34f962d4b6e4b",
+      "note": "게시용 원본 출력본의 실제 체크섬. 프로젝트의 초기 메타데이터와 별도로 계산했다."
+    },
+    {
+      "id": "seedance-mini",
+      "title": "입력을 고쳐 다시 만들기: Seedance 2.0 Mini",
+      "filename": "folding-city-seedance-mini",
+      "kind": "generated project draft",
+      "model": "Seedance 2.0 Mini",
+      "resolution": "854×480",
+      "fps": 24,
+      "durationSeconds": 25,
+      "sourceUrl": "https://github.com/sudocut/video-production/blob/a30eda5dcff59c39c3458496e95f77e5065e8421/projects/fold-cinema/tries/try-06/06-gen/draft/folding-city.mp4",
+      "bytes": 6485259,
+      "sha256": "af3d3c9f3f459ca8784f85e1ffcc26da20b66bd211edbe4c84f1a5660f18c017",
+      "note": "게시용 원본 출력본의 실제 체크섬. 프로젝트의 초기 메타데이터와 별도로 계산했다."
+    }
+  ]
+}
