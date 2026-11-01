@@ -16,6 +16,12 @@ Knowledge collection 대신 `src/data/video-generation-lab.json`과 전용 Astro
 - 출처 연결·영상 체크섬·비용 합계 검증: `node scripts/check-video-generation-lab.mjs`
 - 최종 확인: `npm run build`, 데스크톱·모바일 탭과 영상 재생, 전체 인쇄
 
+모델 선택 요약은 `src/data/video-model-guide.json`과 `ModelGuide.astro`에서 관리합니다.
+첫 화면에는 추천 용도·장단점·5초 기준 가격을 보여 주고, 전체 기능·가격·평가 표는 접어 둡니다.
+쉬운 구조 설명은 `src/data/video-architecture-guides.json`과 `ArchitectureGuide.astro`에서 관리합니다.
+Wan의 도식에는 공개된 이전 버전을 명시하며, 최신 3.0의 구조로 소개하지 않습니다.
+기존 심화 자료는 `ModelDetails.astro`·`TechnicalDetails.astro`에서 펼쳐 볼 수 있고 인쇄 시 모두 열립니다.
+
 채널 수치는 같은 시점의 공개 누적값으로 맞추고 조회수와 순시청자를 구분합니다.
 외부 제작자의 비교 영상은 원본 URL로 연결하며 조건·버전·제작자를 표시합니다.
 공식 API와 Sume의 기능·요금, 공개 Base와 호스팅 단계, Wan 3.0과 이전 공개 Wan을 구분합니다.

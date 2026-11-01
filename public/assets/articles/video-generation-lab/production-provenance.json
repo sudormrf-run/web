@@ -6,7 +6,7 @@
     "commit": "a30eda5dcff59c39c3458496e95f77e5065e8421",
     "note": "사용자가 공개 소개를 요청한 직접 제작 예시. GitHub 원본은 로그인 권한이 필요하므로 공개 페이지에서는 사용자 소유 출력본을 자체 호스팅해야 한다. 공개 오픈소스라고 소개하면 안 된다."
   },
-  "note": "세 영상은 제작 과정을 보여 주는 사례다. try-05와 try-06는 입력·프리비즈·참조·검토 방식이 달라 모델 성능의 공정한 A/B 비교가 아니다. 오늘 별도로 수행하는 3모델 Remix 비교와 구분한다.",
+  "note": "영상들은 제작 과정을 보여 주는 사례다. try-05와 try-06는 입력·프리비즈·참조·검토 방식이 달라 모델 성능의 공정한 A/B 비교가 아니다. VS 항목은 Blender 프리비즈만 소개한다. 별도로 수행한 3모델 얼굴·춤 참조 비교와 구분한다.",
   "assets": [
     {
       "id": "clay-previs",
@@ -49,6 +49,41 @@
       "bytes": 6485259,
       "sha256": "af3d3c9f3f459ca8784f85e1ffcc26da20b66bd211edbe4c84f1a5660f18c017",
       "note": "게시용 원본 출력본의 실제 체크섬. 프로젝트의 초기 메타데이터와 별도로 계산했다."
+    },
+    {
+      "id": "versus-blender",
+      "title": "다음 장면 · VS 4막 결투 — Blender 프리비즈",
+      "filename": "versus-four-acts-blender",
+      "kind": "Blender previs",
+      "model": "Blender",
+      "resolution": "1280×720",
+      "fps": 24,
+      "durationSeconds": 91.0,
+      "containerDurationSeconds": 91.008,
+      "sourceUrl": "https://github.com/sudocut/video-production/blob/a30eda5dcff59c39c3458496e95f77e5065e8421/projects/fold-cinema/tries/try-05/04-renders/versus.mp4",
+      "bytes": 17691307,
+      "sha256": "1ab9722ba79a637c97cdb36e542a40c686665001ce48ce2f508cb549b8cd0fb5",
+      "sourcePath": "projects/fold-cinema/tries/try-05/04-renders/versus.mp4",
+      "sourceOriginal": {
+        "bytes": 77984723,
+        "sha256": "ae165f922ea6c1f643db4fe39f9e0caefa2a3e5b42b99d51a8cd51757de9a6cc"
+      },
+      "encoding": {
+        "video": "H.264/libx264, medium preset, 2pass target1450kbps, yuv420p",
+        "audio": "AAC96kbps",
+        "container": "MP4 +faststart",
+        "resize": false,
+        "trim": false,
+        "metadata": "removed",
+        "note": "전체 91초 영상을 유지한 웹용 재압축. AAC 패딩으로 컨테이너 길이는 91.008초다."
+      },
+      "poster": {
+        "file": "versus-four-acts-blender.webp",
+        "selectedSourceFrameSeconds": 47,
+        "bytes": 32480,
+        "sha256": "8eae93e5fd8aa9c43eb12f1c35d411f71812fd5314a8ab1b1229ff2e59c6e81a"
+      },
+      "note": "원본 출력은 비공개 저장소에 있다. 사용자가 공개 소개를 요청한 소유 출력물을 웹용으로 변환했다. 저장소 액세스 토큰과 로컬 경로는 이 기록에 포함하지 않는다."
     }
   ]
 }

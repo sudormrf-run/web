@@ -129,8 +129,17 @@
   .vlab .vl-detail { border-block: 1px solid var(--vl-line); padding-block: 17px; margin-block: 25px; }
   .vlab .vl-detail summary { display: flex; justify-content: space-between; gap: 20px; align-items: center; list-style: none; color: #cbdcc9; font-size: 13px; cursor: pointer; }
   .vlab .vl-detail summary::-webkit-details-marker { display: none; }
-  .vlab .vl-detail summary > span { color: var(--vl-accent); font-size: 20px; line-height: 1; }
-  .vlab .vl-detail[open] summary > span { transform: rotate(45deg); }
+  .vlab .vl-reference-details { margin-top: 38px; }
+  .vlab .vl-reference-detail { margin-block: 0; border-bottom: 0; }
+  .vlab .vl-reference-detail:last-child { border-bottom: 1px solid var(--vl-line); }
+  .vlab .vl-reference-detail > summary { font-size: 15px; font-weight: 550; line-height: 1.8; }
+  .vlab .vl-reference-detail > summary > .vl-reference-count { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; color: var(--vl-muted); font-size: 11px; font-weight: 400; }
+  .vlab .vl-reference-detail .vl-detail-icon { display: inline-block; color: var(--vl-accent); font-size: 20px; line-height: 1; font-weight: 400; }
+  .vlab .vl-reference-detail[open] > summary .vl-detail-icon { transform: rotate(45deg); }
+  .vlab .vl-reference-detail[open] > summary { margin-bottom: 25px; color: var(--vl-accent); }
+  .vlab .vl-reference-intro { margin-bottom: 22px; font-size: 13px; }
+  .vlab .vl-detail > summary > span { color: var(--vl-accent); font-size: 20px; line-height: 1; }
+  .vlab .vl-detail:not(.vl-reference-detail)[open] > summary > span { transform: rotate(45deg); }
   .vlab .vl-detail > p, .vlab .vl-detail > ul, .vlab .vl-detail > ol { margin-top: 18px; }
   .vlab .vl-detail > p { color: #adbfad; font-size: 13px; line-height: 2; white-space: pre-line; }
   .vlab .vl-prompt { margin-top: 22px; padding: 20px; background: #0d120e; color: #9fbaa2; white-space: pre-wrap; font-family: var(--font-mono); font-size: 11px; line-height: 1.95; border: 1px solid #344c3a; }
@@ -348,6 +357,8 @@
   @media print {
     .vlab { --vl-ink: #111; --vl-muted: #333; --vl-line: #bbb; --vl-accent: #184526; background: #fff !important; color: #111 !important; print-color-adjust: economy; }
     .vlab *, .vlab *::before, .vlab *::after { color: #111 !important; background: transparent !important; box-shadow: none !important; }
+    .vlab details::details-content { display: block !important; content-visibility: visible !important; height: auto !important; }
+    .vlab details > :not(summary) { display: block !important; }
     .vlab .vl-shell { max-width: none; padding-inline: 0; }
     .vlab .vl-navigation, .vlab .vl-breadcrumb > button, .vlab .vl-hero-copy > .vl-button, .vlab .vl-player-toolbar, .vlab .vl-bottom-nav { display: none !important; }
     .vlab .vl-breadcrumb { padding-top: 0; font-size: 8pt; }

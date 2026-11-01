@@ -235,6 +235,37 @@
         "video-production",
         "production-evidence"
       ]
+    },
+    {
+      "id": "fold-cinema-versus",
+      "title": "다음 장면 · 스마트폰의 VS 4막 결투",
+      "url": "/assets/articles/video-generation-lab/versus-four-acts-blender.mp4",
+      "description": "25초 폴딩 월드 다음에 이어지는 91초짜리 장르 패러디다. 두 스마트폰이 레드카펫부터 서부극·광선검·공중 추격전까지 넘나드는 Blender 프리비즈를 그대로 본다.",
+      "bullets": [
+        "스마트폰을 주인공으로 세우고 장르를 바꾸며 제품의 차이를 극적인 장면으로 표현했다.",
+        "레드카펫 → 서부 결투 → 광선검 대결 → 퀴디치 추격으로 4막을 잇는다.",
+        "이 항목에는 실사 생성본 대신 Blender 결과만 담았다. 카메라 이동·장면 전환·대사와 효과음의 타이밍을 볼 예시다."
+      ],
+      "steps": [
+        "레드카펫: 투명한 차와 화려한 등장으로 두 주인공을 소개한다.",
+        "서부극: 말·모래바람·총과 클로즈업으로 결투의 긴장감을 만든다.",
+        "광선검: 차가운 복도에서 두 기기가 검을 맞대고, 화면의 반사 차이를 연출한다.",
+        "공중 추격: 경기장을 날며 작은 공을 쫓고, 폴딩 기기의 균열을 개그로 연결한다."
+      ],
+      "videos": [
+        {
+          "title": "VS · 4막 결투 — Blender 프리비즈 전체",
+          "videoUrl": "/assets/articles/video-generation-lab/versus-four-acts-blender.mp4",
+          "sourceUrl": "/assets/articles/video-generation-lab/versus-four-acts-blender.mp4",
+          "poster": "/assets/articles/video-generation-lab/versus-four-acts-blender.webp",
+          "caption": "try-05 Blender 출력 · 전체 91초 · 1280×720 · 24fps · 오디오 포함. 장면을 자르지 않은 웹용 압축본이며 실사 생성 영상이 아니다.",
+          "model": "Blender"
+        }
+      ],
+      "sourceIds": [
+        "video-production",
+        "production-evidence"
+      ]
     }
   ],
   "remix": {

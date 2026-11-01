@@ -1,0 +1,103 @@
+---
+import guide from '../../data/video-model-guide.json';
+const priceDisplay = (usd: number) => `${Math.abs(Math.round(usd * 100) / 100 - usd) > 0.000001 ? '약 ' : ''}$${usd.toFixed(2)}`;
+const unitPrice = (usd: number) => `$${Number.isInteger(usd * 100) ? usd.toFixed(2) : usd} / 초`;
+---
+
+<div class="model-guide" aria-label="용도별 영상 모델 선택 요약">
+  <p class="guide-intro">{guide.intro}</p>
+  <p class="guide-selection-note">{guide.selectionNote}</p>
+
+  <div class="guide-price-condition">
+    <span>가격을 읽는 기준</span>
+    <p>{guide.priceCondition}</p>
+  </div>
+
+  <div class="guide-cards">
+    {guide.models.map((model, index) => (
+      <article class="guide-card" aria-labelledby={`model-guide-${model.id}`}>
+        <header>
+          <span class="guide-index">0{index + 1}</span>
+          <h3 id={`model-guide-${model.id}`}>{model.name}</h3>
+          <p class="guide-headline">{model.headline}</p>
+        </header>
+        <div class="guide-cost">
+          <p>5초 · {model.resolution}</p>
+          <strong>{priceDisplay(model.exampleUsd)}</strong>
+          <small>{unitPrice(model.usdPerSecond)}</small>
+        </div>
+        <div class="guide-when"><h4>이럴 때 먼저</h4><p>{model.when}</p></div>
+        <div class="guide-points"><h4>좋은 점</h4><ul>{model.pros.map((point) => <li>{point}</li>)}</ul></div>
+        <div class="guide-points guide-cons"><h4>아쉬운 점</h4><ul>{model.cons.map((point) => <li>{point}</li>)}</ul></div>
+        <footer>{model.sources.map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} ↗</a>)}</footer>
+      </article>
+    ))}
+  </div>
+
+  <aside class="guide-takeaway">
+    <div><p class="guide-kicker">써보는 순서</p><h3>{guide.takeaway.title}</h3></div>
+    <ol>{guide.takeaway.steps.map((step) => <li>{step}</li>)}</ol>
+    <p class="guide-billing-note">{guide.takeaway.priceNote} <a href="#remix" data-tab-jump="remix">직접 실험 보기 ↗</a></p>
+    <p class="guide-billing-links"><a href={guide.takeaway.receiptUrl} target="_blank" rel="noopener noreferrer">실제 정산 기록 ↗</a><a href={guide.takeaway.billingUrl} target="_blank" rel="noopener noreferrer">과금 방식 ↗</a><span>{guide.checkedAt} 확인</span></p>
+  </aside>
+</div>
+
+<style>
+  .model-guide { margin-bottom: 40px; min-width: 0; }
+  .guide-intro { max-width: 920px; color: #e0ebe0; font-size: clamp(19px, 2vw, 25px); font-weight: 600; line-height: 1.7; letter-spacing: -.035em; word-break: keep-all; }
+  .guide-selection-note { margin-top: 13px; color: #aab8ad; font-size: 13px; line-height: 1.85; word-break: keep-all; }
+  .guide-price-condition { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; border-block: 1px solid #354139; margin-block: 27px 23px; padding-block: 16px; font-size: 12px; line-height: 1.8; }
+  .guide-price-condition > span { color: #a4efc1; font-weight: 600; }
+  .guide-price-condition p { color: #b4c4b8; }
+  .guide-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .guide-card { display: flex; flex-direction: column; min-width: 0; background: #181f1a; border: 1px solid #435548; padding: 23px; }
+  .guide-card header { min-height: 96px; }
+  .guide-index { color: #8aa391; font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; }
+  .guide-card h3 { margin-top: 10px; font-family: var(--font-mono); font-size: 22px; line-height: 1.4; font-weight: 600; }
+  .guide-headline { margin-top: 8px; font-size: 12px; color: #c3d5c6; line-height: 1.7; }
+  .guide-cost { display: grid; gap: 4px; padding-block: 20px; border-bottom: 1px solid #354139; margin-bottom: 22px; }
+  .guide-cost p { font-size: 11px; color: #aab8ad; }
+  .guide-cost strong { color: #a4efc1; font-family: var(--font-mono); font-size: 35px; line-height: 1.35; letter-spacing: -.055em; font-weight: 500; }
+  .guide-cost small { color: #98ac9e; font-family: var(--font-mono); font-size: 11px; }
+  .guide-card h4 { font-size: 11px; color: #a4efc1; font-weight: 600; margin-bottom: 8px; }
+  .guide-when { min-height: 122px; margin-bottom: 20px; }
+  .guide-when p, .guide-points li { color: #d0dcd0; font-size: 13px; line-height: 1.85; word-break: keep-all; }
+  .guide-points { margin-bottom: 20px; }
+  .guide-points ul { list-style: disc; padding-left: 16px; }
+  .guide-points li + li { margin-top: 5px; }
+  .guide-points li::marker { color: #a4efc1; }
+  .guide-cons h4 { color: #e4b794; }
+  .guide-cons li { color: #b6c4b9; }
+  .guide-cons li::marker { color: #c89b79; }
+  .guide-card footer { margin-top: auto; border-top: 1px solid #354139; padding-top: 15px; display: flex; flex-wrap: wrap; gap: 9px 14px; }
+  .model-guide footer a, .guide-billing-note a, .guide-billing-links a { color: #b6d6bd; font-size: 10px; line-height: 1.7; text-decoration: underline; text-underline-offset: 3px; }
+  .guide-takeaway { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 18px 32px; margin-top: 25px; padding: 25px; background: #17251c; border: 1px solid #405e48; }
+  .guide-kicker { color: #a4efc1; font-size: 10px; margin-bottom: 9px; }
+  .guide-takeaway h3 { color: #ddebdc; font-size: 18px; line-height: 1.6; font-weight: 600; word-break: keep-all; }
+  .guide-takeaway ol { list-style: decimal; padding-left: 20px; color: #c5d6c7; font-size: 13px; line-height: 1.9; }
+  .guide-takeaway li + li { margin-top: 4px; }
+  .guide-billing-note { grid-column: 1 / -1; color: #a9beae; font-size: 11px; line-height: 1.9; border-top: 1px solid #354e3c; padding-top: 15px; }
+  .guide-billing-links { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 10px 18px; color: #8fa996; font-size: 10px; line-height: 1.7; }
+  .guide-billing-links span { margin-left: auto; }
+  @media (max-width: 1000px) {
+    .guide-card { padding: 18px; }
+    .guide-card h3 { font-size: 19px; }
+    .guide-when { min-height: 145px; }
+  }
+  @media (max-width: 760px) {
+    .guide-cards { grid-template-columns: minmax(0, 1fr); gap: 17px; }
+    .guide-card { padding: 22px; }
+    .guide-card header, .guide-when { min-height: 0; }
+    .guide-card h3 { font-size: 23px; }
+    .guide-cost { margin-top: 7px; }
+    .guide-takeaway { grid-template-columns: minmax(0, 1fr); padding: 22px; gap: 17px; }
+    .guide-price-condition { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+    .guide-billing-links span { margin-left: 0; }
+  }
+  @media print {
+    .guide-cards { grid-template-columns: minmax(0, 1fr); }
+    .guide-card { break-inside: avoid; }
+    .guide-card header, .guide-when { min-height: 0; }
+    .guide-takeaway { break-inside: avoid; }
+  }
+</style>

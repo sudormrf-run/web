@@ -21,6 +21,14 @@ const visit = (value) => {
 visit(data);
 for (const url of localAssets) await access(path.join(root, 'public', url));
 for (const row of data.comparison.rows) assert.equal(row.values.length, data.comparison.columns.length, `비교 열 불일치: ${row.label}`);
+const guide = JSON.parse(await readFile(path.join(root, 'src/data/video-model-guide.json'), 'utf8'));
+for (const model of guide.models) {
+  const price = data.comparison.prices.find((price) => price.model === model.name && price.mode === 'Sume 채널 표시' && price.resolution === model.resolution);
+  assert(price, `요약 카드의 가격 조건 누락: ${model.name}`);
+  assert.equal(Number(price.usdPerSecond.replace('$', '')), model.usdPerSecond, `요약 카드와 전체 표의 단가 불일치: ${model.name}`);
+  assert.equal(model.seconds, 5, '요약 가격은 5초 기준이어야 합니다.');
+  assert(Math.abs(model.usdPerSecond * model.seconds - model.exampleUsd) < 0.0001, `요약 카드의 가격 계산 불일치: ${model.name}`);
+}
 assert.equal(data.accounts.length, 2);
 assert.equal(data.remix.runs.length, 4);
 assert.deepEqual(new Set(data.remix.runs.map(({ modelId }) => modelId)), new Set(['wan-3.0', 'seedance-2.5', 'minimax-h3', 'sume-remix']));
@@ -124,6 +132,11 @@ for (const file of ['instagram-provenance.json', 'production-provenance.json']) 
     const bytes = await readFile(path.join(directory, name));
     assert.equal(bytes.length, asset.bytes, `파일 크기 불일치: ${name}`);
     assert.equal(createHash('sha256').update(bytes).digest('hex'), asset.sha256, `체크섬 불일치: ${name}`);
+    if (asset.poster) {
+      const poster = await readFile(path.join(directory, asset.poster.file));
+      assert.equal(poster.length, asset.poster.bytes, `포스터 크기 불일치: ${name}`);
+      assert.equal(createHash('sha256').update(poster).digest('hex'), asset.poster.sha256, `포스터 체크섬 불일치: ${name}`);
+    }
   }
 }
 console.log(`영상 노트 검증 통과: ${data.cases.length}개 사례, ${data.sources.length}개 출처, ${localAssets.size}개 로컬 자산, 청구 $${budget.chargedUsd.toFixed(2)}`);

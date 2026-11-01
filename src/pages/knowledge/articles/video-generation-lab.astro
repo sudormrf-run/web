@@ -2,6 +2,10 @@
 import Layout from '../../../layouts/Layout.astro';
 import Media from '../../../components/video-lab/Media.astro';
 import Styles from '../../../components/video-lab/Styles.astro';
+import ModelGuide from '../../../components/video-lab/ModelGuide.astro';
+import ModelDetails from '../../../components/video-lab/ModelDetails.astro';
+import ArchitectureGuide from '../../../components/video-lab/ArchitectureGuide.astro';
+import TechnicalDetails from '../../../components/video-lab/TechnicalDetails.astro';
 import type { VideoLabEpisode } from '../../../components/video-lab/types';
 import episodeData from '../../../data/video-generation-lab.json';
 
@@ -12,9 +16,9 @@ const sections = [
   { id: 'projects', label: '영상 제작 실험', detail: 'Blender → 실사' },
   { id: 'remix', label: '내 얼굴로 비교', detail: '직접 테스트' },
   { id: 'cases', label: '사례로 비교', detail: '남들이 만든 영상' },
-  { id: 'models', label: '모델 비교표', detail: '모드 · 가격 · 평가' },
-  { id: 'h3', label: 'H3 뜯어보기', detail: '구조 · 후속 학습' },
-  { id: 'wan', label: 'Wan 뜯어보기', detail: '공개된 것과 빈칸' },
+  { id: 'models', label: '모델 고르기', detail: '용도 · 장단점 · 가격' },
+  { id: 'h3', label: 'H3 구조', detail: '영상과 소리를 함께' },
+  { id: 'wan', label: 'Wan 구조', detail: '큰 구도에서 디테일로' },
   { id: 'sources', label: '출처', detail: '다시 찾아보기' },
 ];
 const usd = (value: number) => `$${value.toFixed(2)}`;
@@ -61,13 +65,23 @@ const sourceRefs = (ids: string[]) => ids.map((id) => sourceById[id]).filter(Boo
       </section>
 
       <section id="models" class="vl-panel" data-vl-panel="models" aria-labelledby="vl-heading-models">
-        <header class="vl-section-heading"><p class="vl-eyebrow">05 / PICK THE RIGHT TOOL</p><h2 id="vl-heading-models">무엇을 넣고, 무엇을 받나.<br />그리고, 얼마인가.</h2><p>이름 하나로 묶인 모델에도 여러 모드와 서비스가 있다. 같은 조건끼리 비교한다.</p></header><ul class="vl-bullets vl-summary">{data.comparison.bullets.map((bullet) => <li>{bullet}</li>)}</ul>
-        <div class="vl-table-wrap" tabindex="0" role="region" aria-label="영상 모델 기능 비교표, 가로 스크롤 가능"><table class="vl-table vl-model-table"><caption>입력 모드·해상도·길이·공개 범위</caption><thead><tr><th scope="col">비교 항목</th>{data.comparison.columns.map((model) => <th scope="col">{model}</th>)}</tr></thead><tbody>{data.comparison.rows.map((row) => <tr><th scope="row">{row.label}<span class="vl-source-refs">{sourceRefs(row.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</span></th>{row.values.map((value) => <td>{value}</td>)}</tr>)}</tbody></table></div>
-        <div class="vl-subheading"><p class="vl-eyebrow">THE PRICE TAG</p><h3>초당 단가와 한 번의 비용</h3><p>입력 영상, 오디오, 해상도, 생성 길이가 가격을 바꾼다. 아래의 조건도 함께 읽는다.</p></div><div class="vl-table-wrap" tabindex="0" role="region" aria-label="모드별 가격 비교표, 가로 스크롤 가능"><table class="vl-table vl-price-table"><caption>가격표 · USD</caption><thead><tr><th scope="col">모델 / 모드</th><th scope="col">해상도</th><th scope="col">초당 단가</th><th scope="col">예시 비용</th><th scope="col">조건과 출처</th></tr></thead><tbody>{data.comparison.prices.map((price) => <tr><th scope="row">{price.model}<small>{price.mode}</small></th><td>{price.resolution}</td><td class="vl-mono">{price.usdPerSecond}</td><td>{price.exampleCost}</td><td>{price.note}<span class="vl-source-refs">{sourceRefs(price.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</span></td></tr>)}</tbody></table></div>
-        <div class="vl-subheading"><p class="vl-eyebrow">BENCHMARKS, WITH CONTEXT</p><h3>점수는 조건까지가 한 세트다.</h3></div><div class="vl-benchmark-list">{data.comparison.benchmarks.map((benchmark) => <article class="vl-benchmark"><header><h4>{benchmark.name}</h4><p>{benchmark.task} · {benchmark.date}</p></header><div class="vl-table-wrap" tabindex="0" role="region" aria-label={`${benchmark.name} 점수 비교`}><table class="vl-table"><thead><tr><th scope="col">모델</th><th scope="col">점수</th><th scope="col">불확실성</th><th scope="col">표본</th></tr></thead><tbody>{benchmark.scores.map((score) => <tr><th scope="row">{score.model}</th><td class="vl-score">{score.score}</td><td>{score.uncertainty}</td><td>{score.samples}</td></tr>)}</tbody></table></div><p class="vl-conditions"><strong>측정 방식</strong>{benchmark.method}</p><aside class="vl-note"><p>{benchmark.caveat}</p></aside><p class="vl-source-refs">근거 {sourceRefs(benchmark.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</p></article>)}</div>
+        <header class="vl-section-heading"><p class="vl-eyebrow">05 / PICK THE RIGHT TOOL</p><h2 id="vl-heading-models">이번 영상에는<br />어떤 모델을 쓸까?</h2><p>추천 용도, 장단점, 같은 길이의 가격으로 먼저 고른다. 세부 사양과 평가 자료는 아래에서 펼쳐 볼 수 있다.</p></header>
+        <ModelGuide />
+        <ModelDetails comparison={data.comparison} sourceRefs={sourceRefs} />
       </section>
 
-      {(['h3', 'wan'] as const).map((key) => { const technical = data.technical[key]; return <section id={key} class="vl-panel" data-vl-panel={key} aria-labelledby={`vl-heading-${key}`}><header class="vl-section-heading"><p class="vl-eyebrow">{key === 'h3' ? '06 / INSIDE MINIMAX H3' : '07 / INSIDE WAN'}</p><h2 id={`vl-heading-${key}`}>{technical.title}</h2><p>{technical.summary}</p></header><ul class="vl-bullets vl-summary">{technical.bullets.map((bullet) => <li>{bullet}</li>)}</ul>{technical.pipeline.length > 0 && <section class="vl-pipeline"><h3>입력에서 영상이 되기까지</h3><ol>{technical.pipeline.map((step, index) => <li><span>{String(index + 1).padStart(2, '0')}</span><div><h4>{step.title}</h4><p>{step.description}</p></div></li>)}</ol></section>}{technical.diagrams && technical.diagrams.length > 0 && <div class="vl-diagrams">{technical.diagrams.map((diagram) => <figure><a href={diagram.imageUrl} target="_blank" rel="noopener noreferrer"><img src={diagram.imageUrl} alt={diagram.title} loading="lazy" /></a><figcaption><strong>{diagram.title}</strong><p>{diagram.caption}</p><a href={diagram.sourceUrl} target="_blank" rel="noopener noreferrer">공식 자료에서 확인하기 ↗</a></figcaption></figure>)}</div>}<div class="vl-technical-blocks">{technical.blocks.map((block) => <article class="vl-technical-block"><h3>{block.title}</h3><ul class="vl-bullets">{block.bullets.map((bullet) => <li>{bullet}</li>)}</ul>{block.body && <details class="vl-detail"><summary>조금 더 자세히 <span aria-hidden="true">+</span></summary><p>{block.body}</p></details>}<p class="vl-source-refs">근거 {sourceRefs(block.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</p></article>)}</div>{technical.postTraining.length > 0 && <section class="vl-posttraining"><div class="vl-subheading"><p class="vl-eyebrow">TRAINING &amp; INFERENCE</p><h3>후속 학습과 추론 최적화</h3><p>학습으로 바꾸는 부분과 실행 단계에서 줄이는 비용을 구분한다.</p></div><div class="vl-posttraining-grid">{technical.postTraining.map((variant) => <article><span class="vl-chip">{variant.type}</span><h4><a href={variant.url} target="_blank" rel="noopener noreferrer">{variant.name} ↗</a></h4><p>{variant.description}</p><p class="vl-tradeoff"><strong>확인할 점</strong>{variant.tradeoff}</p></article>)}</div></section>}{technical.unknowns.length > 0 && <aside class="vl-unknowns"><p class="vl-eyebrow">WHAT WE DON'T KNOW</p><h3>공개 자료가 채우지 못한 빈칸</h3><ul class="vl-bullets">{technical.unknowns.map((note) => <li>{note}</li>)}</ul></aside>}<p class="vl-source-refs">이 절의 원자료 {sourceRefs(technical.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</p></section>; })}
+      {(['h3', 'wan'] as const).map((key) => {
+        const technical = data.technical[key];
+        return <section id={key} class="vl-panel" data-vl-panel={key} aria-labelledby={`vl-heading-${key}`}>
+          <header class="vl-section-heading">
+            <p class="vl-eyebrow">{key === 'h3' ? '06 / INSIDE MINIMAX H3' : '07 / INSIDE WAN'}</p>
+            <h2 id={`vl-heading-${key}`}>{key === 'h3' ? 'H3: 영상과 소리를 함께 만드는 과정' : 'Wan: 큰 구도에서 세부 묘사까지'}</h2>
+            <p>{key === 'h3' ? '그림과 소리를 작은 표현으로 줄인 뒤, 한 모델 안에서 함께 다듬는다. 전체 흐름부터 따라가 보자.' : 'Wan 3.0의 내부 구조는 공개되지 않았다. 공개된 Wan 2.2를 통해 영상 생성의 원리를 살펴본다.'}</p>
+          </header>
+          <ArchitectureGuide kind={key} />
+          <TechnicalDetails technical={technical} sourceRefs={sourceRefs} />
+        </section>;
+      })}
 
       <section id="sources" class="vl-panel" data-vl-panel="sources" aria-labelledby="vl-heading-sources"><header class="vl-section-heading"><p class="vl-eyebrow">08 / KEEP THE RECEIPTS</p><h2 id="vl-heading-sources">직접 확인한 것과,<br />자료에서 배운 것.</h2><p>성과의 관측 시점, 모델 버전과 가격 조건은 각 근거에 남겼다. 다시 찾아볼 수 있도록 연결한다.</p></header><ul class="vl-bullets vl-summary"><li>공식 문서·모델 카드·원 제작자의 사례를 중심으로 연결했다.</li><li>성과·가격·평가 점수는 관측 시점과 조건을 함께 확인한다.</li><li>직접 한 실험과 외부 제작자의 비교는 구분해서 읽는다.</li></ul><ol class="vl-source-list">{data.sources.map((source, index) => <li id={`source-${source.id}`}><span class="vl-source-number">{String(index + 1).padStart(2, '0')}</span><div><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} ↗</a><p class="vl-source-meta">{source.publisher} · {source.date}</p><p>{source.note}</p></div></li>)}</ol></section>
 

@@ -1,0 +1,117 @@
+---
+import guides from '../../data/video-architecture-guides.json';
+
+interface Props { kind: 'h3' | 'wan' }
+const { kind } = Astro.props;
+const guide = guides[kind];
+---
+
+<div class="architecture-guide" data-architecture-guide={kind}>
+  <header class="architecture-intro">
+    <p class="architecture-eyebrow">{guide.eyebrow}</p>
+    <h3>{guide.title}</h3>
+    <p class="architecture-lead">{guide.lead}</p>
+  </header>
+
+  <figure class="architecture-figure" aria-labelledby={`architecture-title-${kind}`}>
+    <figcaption id={`architecture-title-${kind}`}>
+      <strong>{guide.diagramTitle}</strong>
+      <span>{guide.scope}</span>
+    </figcaption>
+    {guide.conditioning.length > 0 && <div class="architecture-conditioning" aria-label="생성 조건의 전달 흐름">{guide.conditioning.map((label, index) => <><span>{label}</span>{index < guide.conditioning.length - 1 && <b aria-hidden="true">→</b>}</>)}</div>}
+    <ol class="architecture-flow" aria-label={guide.diagramTitle}>
+      {guide.steps.map((step, index) => <li class:list={['architecture-step', { 'architecture-step-core': 'highlight' in step && step.highlight }]}>
+        <details>
+          <summary><span class="architecture-number">{String(index + 1).padStart(2, '0')}</span><strong>{step.label}</strong><span class="architecture-subtitle">{step.subtitle}</span><span class="architecture-tags">{step.tags.map(tag => <span>{tag}</span>)}</span><span class="architecture-expand">설명 보기 <b aria-hidden="true">+</b></span></summary>
+          <p class="architecture-step-detail">{step.detail}</p>
+        </details>
+        {index < guide.steps.length - 1 && <span class="architecture-arrow" aria-hidden="true">→</span>}
+      </li>)}
+    </ol>
+    <p class="architecture-drawing-note">공식 설명을 바탕으로 다시 그린 개념도 · 생략한 내부 구성은 아래 상세 자료에 정리했습니다.</p>
+  </figure>
+
+  <ul class="architecture-takeaways">{guide.takeaways.map(point => <li>{point}</li>)}</ul>
+
+  <details class="architecture-extra">
+    <summary>{guide.extraTitle}<span aria-hidden="true">+</span></summary>
+    <dl>{guide.extras.map(item => <div><dt>{item.label}</dt><dd>{item.text}</dd></div>)}</dl>
+  </details>
+  <dl class="architecture-terms" aria-label="용어 두 개만 알아두기">{guide.terms.map(item => <div><dt>{item.term}</dt><dd>{item.meaning}</dd></div>)}</dl>
+  <p class="architecture-sources">도식 근거 {guide.sources.map(source => <a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} ↗</a>)}</p>
+</div>
+
+<style>
+  .architecture-guide { color: var(--vl-ink, #edf2e9); margin-block: 24px 36px; min-width: 0; }
+  .architecture-eyebrow { color: var(--vl-accent, #a4efc1); font-size: 11px; line-height: 1.7; letter-spacing: .08em; }
+  .architecture-intro h3 { margin-top: 12px; max-width: 920px; font-size: clamp(23px, 2.8vw, 34px); line-height: 1.5; letter-spacing: -.035em; font-weight: 600; word-break: keep-all; }
+  .architecture-lead { max-width: 900px; color: #bdcfbd; font-size: 16px; line-height: 1.95; margin-top: 18px; word-break: keep-all; }
+  .architecture-figure { margin: 26px 0 0; padding: 26px; border: 1px solid #526b58; background: #151e18; }
+  .architecture-figure figcaption { display: grid; gap: 10px; margin-bottom: 26px; }
+  .architecture-figure figcaption strong { font-size: 18px; line-height: 1.6; font-weight: 600; }
+  .architecture-figure figcaption > span { color: #a8bca9; font-size: 13px; line-height: 1.9; max-width: 880px; word-break: keep-all; }
+  .architecture-conditioning { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 14px 16px; border: 1px dashed #516458; margin-bottom: 20px; color: #c6d8c5; font-size: 12px; line-height: 1.8; }
+  .architecture-conditioning b { color: #94b09b; font-weight: 400; }
+  .architecture-flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; padding: 0; margin: 0; list-style: none; align-items: start; }
+  .architecture-step { position: relative; min-width: 0; border: 1px solid #4b5d50; background: #1b271f; }
+  .architecture-step-core { border-color: #91b694; background: #233b2b; }
+  .architecture-step summary { display: flex; flex-direction: column; min-height: 234px; padding: 20px 17px 15px; list-style: none; cursor: pointer; }
+  .architecture-step summary::-webkit-details-marker { display: none; }
+  .architecture-number { color: #9ad7b1; font-family: var(--font-mono, monospace); font-size: 11px; line-height: 1.5; }
+  .architecture-step summary > strong { display: block; font-size: 16px; font-weight: 600; line-height: 1.65; letter-spacing: -.03em; word-break: keep-all; margin-top: 12px; }
+  .architecture-subtitle { display: block; color: #c2d0be; font-size: 12px; line-height: 1.8; word-break: keep-all; margin-top: 8px; }
+  .architecture-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 14px; }
+  .architecture-tags > span { display: inline-block; padding: 3px 6px; border: 1px solid #526a55; color: #b6d0b9; font-size: 10px; line-height: 1.5; }
+  .architecture-expand { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 18px; color: #a8c4ad; font-size: 11px; line-height: 1.5; }
+  .architecture-expand b { font-size: 18px; font-weight: 400; }
+  .architecture-step details[open] .architecture-expand b { transform: rotate(45deg); }
+  .architecture-step-detail { padding: 0 17px 19px; color: #ccdac7; font-size: 13px; line-height: 1.9; word-break: keep-all; }
+  .architecture-arrow { position: absolute; right: -20px; top: 112px; color: #b2cdb6; font-size: 20px; line-height: 1; }
+  .architecture-drawing-note { margin-top: 18px; color: #8fa393; font-size: 11px; line-height: 1.9; }
+  .architecture-takeaways { list-style: disc; padding-left: 20px; margin-block: 25px; color: #c8d7c6; font-size: 15px; line-height: 1.9; word-break: keep-all; }
+  .architecture-takeaways li + li { margin-top: 8px; }
+  .architecture-takeaways li::marker { color: #a4efc1; }
+  .architecture-extra { border-block: 1px solid #425247; margin-block: 24px; }
+  .architecture-extra > summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding-block: 16px; cursor: pointer; list-style: none; color: #c9ddca; font-size: 14px; line-height: 1.8; }
+  .architecture-extra > summary::-webkit-details-marker { display: none; }
+  .architecture-extra > summary > span { font-size: 23px; font-weight: 300; }
+  .architecture-extra[open] > summary > span { transform: rotate(45deg); }
+  .architecture-extra dl { display: grid; gap: 16px; padding-bottom: 24px; }
+  .architecture-extra dl > div { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 20px; font-size: 13px; line-height: 1.9; }
+  .architecture-extra dt { color: #b7dcbd; font-family: var(--font-mono, monospace); }
+  .architecture-extra dd { color: #b4c7b6; word-break: keep-all; }
+  .architecture-terms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .architecture-terms > div { padding: 16px 18px; border-left: 2px solid #58745f; background: #1a251e; min-width: 0; }
+  .architecture-terms dt { color: #bdd8c1; font-size: 12px; font-weight: 600; line-height: 1.8; }
+  .architecture-terms dd { color: #9fb4a3; font-size: 12px; line-height: 1.9; margin-top: 6px; word-break: keep-all; }
+  .architecture-sources { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-top: 20px; color: #8fa393; font-size: 10px; line-height: 1.9; }
+  .architecture-sources a { color: #b4d5b2; text-decoration: underline; text-underline-offset: 3px; }
+  .architecture-guide summary:hover { color: #d3f6d9; }
+  .architecture-guide summary:focus-visible, .architecture-guide a:focus-visible { outline: 2px solid #a4efc1; outline-offset: 4px; }
+  @media (max-width: 1000px) {
+    .architecture-flow { grid-template-columns: 1fr; gap: 25px; }
+    .architecture-step summary { min-height: auto; padding: 17px 19px; }
+    .architecture-step summary > strong { margin-top: 6px; }
+    .architecture-subtitle { margin-top: 4px; }
+    .architecture-tags { margin-top: 10px; }
+    .architecture-expand { padding-top: 11px; }
+    .architecture-step-detail { padding-inline: 19px; }
+    .architecture-arrow { right: auto; left: calc(50% - 10px); top: auto; bottom: -22px; transform: rotate(90deg); }
+  }
+  @media (max-width: 600px) {
+    .architecture-figure { padding: 18px 16px; }
+    .architecture-intro h3 { font-size: 24px; }
+    .architecture-lead { font-size: 15px; }
+    .architecture-extra dl > div { grid-template-columns: 1fr; gap: 3px; }
+    .architecture-terms { grid-template-columns: 1fr; }
+    .architecture-conditioning { padding: 12px; gap: 7px; font-size: 11px; }
+  }
+  @media print {
+    .architecture-figure, .architecture-step, .architecture-terms > div { background: transparent; border-color: #666; }
+    .architecture-flow { grid-template-columns: 1fr; }
+    .architecture-step { break-inside: avoid; }
+    .architecture-step summary { min-height: auto; }
+    .architecture-arrow, .architecture-expand { display: none; }
+    .architecture-guide, .architecture-guide :is(p, strong, dt, dd, span, a, summary) { color: #111; }
+  }
+</style>
