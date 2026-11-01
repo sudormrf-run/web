@@ -1,0 +1,284 @@
+{
+  "checkedAt": "2026-11-01",
+  "title": "공식 가이드로 보는 사용법 차이",
+  "intro": "사진은 누가 나오는지, 영상은 어떻게 움직이는지, 글은 무엇을 바꿀지 정한다. 세 가이드를 이 순서로 읽어 보자.",
+  "bullets": [
+    "먼저 고를 것: 사진 그대로 시작할지, 사진·영상의 특징만 참고할지.",
+    "자료마다 역할을 적자. 인물·제품 외형, 카메라·동작, 소리를 분리한다.",
+    "수정과 새 생성은 설정이 다르다. 무엇을 유지하고 무엇을 바꿀지 명시한다."
+  ],
+  "scopeNote": "Alibaba Model Studio · BytePlus ModelArk · MiniMax 공식 API 기준이다. 이 페이지에서 실험한 Sume 통합 API의 한도·가격과 다를 수 있다. 아래 활용 제안과 프롬프트는 가이드를 바탕으로 재구성했다.",
+  "models": [
+    {
+      "id": "wan-3.0",
+      "name": "Wan 3.0",
+      "headline": "넣은 자료와 작업 의도를 함께 지정",
+      "links": [
+        {
+          "label": "사용 가이드",
+          "url": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/wan3-video-generation-guide"
+        },
+        {
+          "label": "프롬프트·예시",
+          "url": "https://www.alibabacloud.com/help/en/model-studio/wan3-video-generation-prompt-guide"
+        }
+      ],
+      "workflow": [
+        "사진·영상·소리뿐 아니라 문서나 공개 웹 링크도 재료로 넣는다.",
+        "Image 1은 외형, Video 1은 동작처럼 참조할 요소를 지정한다.",
+        "고쳐 만들기는 편집, 앞뒤로 이어 만들기는 연장이라고 명시한다."
+      ],
+      "watchOut": "첫·끝 프레임 지정과 복합 참조를 한 요청에 섞을 수 없다. 영상 입력 길이 + 생성 길이는 30초 이내다."
+    },
+    {
+      "id": "seedance-2.5",
+      "name": "Seedance 2.5",
+      "headline": "많은 자료의 역할과 시간별 연출을 지정",
+      "links": [
+        {
+          "label": "사용 가이드",
+          "url": "https://docs.byteplus.com/en/docs/ModelArk/seedance-2-5"
+        },
+        {
+          "label": "프롬프트·예시",
+          "url": "https://docs.byteplus.com/en/docs/ModelArk/seedance-2-5-prompt-guide"
+        }
+      ],
+      "workflow": [
+        "이미지·영상·소리를 나눠 넣고 @Image 1, @Video 1로 가리킨다.",
+        "언제 어떤 동작·컷이 나올지 시간 순서로 쓴다. 클레이 영상 실사화 예시도 있다.",
+        "새 참조 생성, 편집, 연장을 구분하고 작업에 맞는 길이·비율을 고른다."
+      ],
+      "watchOut": "편집은 원본 길이·비율을 유지하는 설정이 필요하다. 실제 얼굴 참조는 공식 ModelArk의 별도 인물 자산 절차를 확인한다."
+    },
+    {
+      "id": "minimax-h3",
+      "name": "MiniMax H3",
+      "headline": "가져올 특징과 화면·소리를 나눠 지정",
+      "links": [
+        {
+          "label": "사용 가이드",
+          "url": "https://platform.minimax.io/docs/guides/video-generation"
+        },
+        {
+          "label": "활용 사례",
+          "url": "https://platform.minimax.io/docs/guides/video-prompt"
+        },
+        {
+          "label": "참조 작성법",
+          "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md"
+        }
+      ],
+      "workflow": [
+        "사진 그대로 시작·끝내기와, 파일의 특징을 참고하기 중 하나를 고른다.",
+        "참조 사진의 외형, 영상의 동작·카메라, 오디오의 역할을 나눠 쓴다.",
+        "화면에서 일어날 변화, 환경음·효과음, 배경음악을 구분해 적는다."
+      ],
+      "watchOut": "첫·끝 프레임과 복합 참조는 함께 쓸 수 없다. 상세 작성 규격의 모든 필드를 처음부터 외울 필요는 없다."
+    }
+  ],
+  "comparison": {
+    "intro": "세 모델 모두 글·사진·영상·소리를 활용한다. 실제로 달라지는 지시 방법과 제약 여섯 가지만 비교했다.",
+    "rows": [
+      {
+        "label": "참조를 부르는 법",
+        "values": [
+          "Image 1 · Video 1 · Audio 1. 종류별로 따로 번호를 매긴다.",
+          "@Image 1 · @Video 1 · @Audio 1에 외형·동작 등 역할을 붙인다.",
+          "사진·영상·소리의 번호와 역할을 글로 설명한다. 상세 규격에서는 Picture / Video / Audio로 구분한다."
+        ],
+        "sourceIds": [
+          "wan3-prompt",
+          "seed25-prompt",
+          "ref-guide"
+        ]
+      },
+      {
+        "label": "참조 입력 상한",
+        "values": [
+          "총 20개. 사진 10장·영상 5개·소리 5개까지. 영상·소리는 각각 총 15초.",
+          "총 50개. 사진 30장·영상 10개·소리 10개까지. 영상·소리는 각각 총 30초.",
+          "총 12개. 사진 9장·영상 3개·소리 3개까지. 영상·소리는 각각 총 15초."
+        ],
+        "sourceIds": [
+          "wan3-guide",
+          "seed25-guide",
+          "video-guide"
+        ]
+      },
+      {
+        "label": "시작·끝 사진 고정",
+        "values": [
+          "첫 사진 또는 첫+끝 사진. 복합 참조와 함께 쓰지 않는다.",
+          "첫 사진 또는 첫+끝 사진. 출력 비율은 첫 사진을 따른다.",
+          "첫 사진, 끝 사진, 첫+끝 사진. 복합 참조와 함께 쓰지 않는다."
+        ],
+        "sourceIds": [
+          "wan3-api",
+          "seed25-guide",
+          "create-api"
+        ]
+      },
+      {
+        "label": "수정·이어 만들기",
+        "values": [
+          "같은 모델에 영상과 편집·연장 의도를 전달한다. 편집은 원본 길이 유지 설정을 권장한다.",
+          "reference / edit / extend를 구분한다. 편집은 원본 길이·비율을 유지하도록 설정한다.",
+          "참조 영상에서 보존·변경할 요소를 적는다. 가이드가 편집과 이어 만들기를 나눠 설명한다."
+        ],
+        "sourceIds": [
+          "wan3-guide",
+          "seed25-guide",
+          "ref-guide"
+        ]
+      },
+      {
+        "label": "소리 지시",
+        "values": [
+          "화자와 대사, 효과음·BGM을 쓴다. 음색은 Audio N으로 지정한다.",
+          "대사·음색·리듬을 자료에 연결한다. 공식 안내는 한국어 등 11개 언어를 지원한다.",
+          "화면 속 소리·환경음·배경음악을 구분한다. 목소리 참조와 음원 재사용도 구별한다."
+        ],
+        "sourceIds": [
+          "wan3-prompt",
+          "seed25-guide",
+          "base-guide",
+          "ref-guide"
+        ]
+      },
+      {
+        "label": "한 번의 결과",
+        "values": [
+          "2–30초 · 480 / 720 / 1080p · 30fps",
+          "4–30초 · 480 / 720 / 1080p",
+          "기본 H3: 4–15초 · 768P / 2K. Highspeed·Lite·Max와 사양이 다르다."
+        ],
+        "sourceIds": [
+          "wan3-guide",
+          "seed25-guide",
+          "create-api"
+        ]
+      }
+    ]
+  },
+  "recipe": {
+    "title": "Blender 콘티를 실사로 바꾼다면?",
+    "intro": "아래는 공식 가이드를 바탕으로 쓴 새 예시다. 추가 생성·과금은 하지 않았다. 같은 목표라도 자료를 가리키는 법과 지시를 묶는 방식이 달라진다.",
+    "commonBrief": "제작 실험의 VS 장면에서 5초 한 컷을 잘라 Video 1로, 원하는 금속 휴대폰의 외형·재질 사진을 Image 1로 넣는다고 가정한다. 목표는 카메라·동선·타이밍을 따르면서 실사 재질로 바꾸는 것. 사진을 첫 프레임으로 고정하는 모드는 사용하지 않는다.",
+    "models": [
+      {
+        "id": "wan-3.0",
+        "name": "Wan 3.0",
+        "mode": "복합 참조 · Video 1 / Image 1",
+        "why": "클레이 렌더 안내처럼 보존할 요소와 바꿀 재질을 나눈다. 참조 입력과 편집 의도를 함께 전달하는 예시다.",
+        "prompt": "Video 1의 Blender 콘티를 5초 실사 영상으로 바꾼다.\n카메라 경로, 휴대폰 위치·크기, 움직임과 타이밍을 유지한다.\nImage 1에서는 금속 휴대폰의 외형과 재질만 가져온다.\n흰색 클레이 재질을 사실적인 금속·유리로 바꾼다.\n새 물체나 컷을 추가하지 않는다. 환경음만 생성하고 대사·배경음악은 넣지 않는다.",
+        "sourceIds": [
+          "wan3-prompt",
+          "wan3-api"
+        ]
+      },
+      {
+        "id": "seedance-2.5",
+        "name": "Seedance 2.5",
+        "mode": "영상 편집 · @Video 1 / @Image 1",
+        "why": "공식 클레이 영상 예시와 작업 제약을 따른다. API에서는 edit 작업, ratio=adaptive, duration=-1을 지정해 원본 길이·비율에 맞춘다.",
+        "prompt": "@Video 1을 실사 스타일로 편집한다. 전체 5초.\n@Video 1의 카메라 이동, 휴대폰 동선, 컷과 타이밍을 유지한다.\n@Image 1은 휴대폰 외형과 금속·유리 재질의 참고 자료로만 사용한다.\n0–3초: 원본의 이동과 회전을 따른다.\n3–5초: 원본의 마지막 동작과 구도로 마무리한다.\n환경음만 만들고 자막·대사·배경음악은 넣지 않는다.",
+        "sourceIds": [
+          "seed25-prompt",
+          "seed25-guide"
+        ]
+      },
+      {
+        "id": "minimax-h3",
+        "name": "MiniMax H3",
+        "mode": "참조 생성 · 외형 / 동작 / 소리 역할 분리",
+        "why": "일반 사용 가이드처럼 자연어로 시작한다. 정교하게 다듬을 때 상세 참조 규격의 보존·장면·소리 구분을 참고한다.",
+        "prompt": "참조 관계: 사진 1은 휴대폰 외형·금속 재질, 영상 1은 5초 장면의 카메라·동작·구도다.\n보존할 것: 영상 1의 위치, 이동 경로, 회전과 시작·끝 타이밍.\n화면: 동일한 한 컷을 실사로 표현한다. 사진 1의 금속과 유리 질감을 적용하며 새 물체나 컷을 만들지 않는다.\n소리: 영상의 동작에 맞는 환경음만 만든다.\n배경음악·대사: 없음.",
+        "sourceIds": [
+          "video-guide",
+          "base-guide",
+          "ref-guide"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "wan3-guide",
+      "title": "Wan3.0 video generation guide",
+      "url": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/wan3-video-generation-guide",
+      "publisher": "Alibaba Cloud Model Studio",
+      "note": "입력 종류별 모드, 20개 참조 한도, 수정·연장, 2–30초 출력 안내. 사용자가 제시한 가이드."
+    },
+    {
+      "id": "wan3-prompt",
+      "title": "Wan3.0 video generation prompt guide",
+      "url": "https://www.alibabacloud.com/help/en/model-studio/wan3-video-generation-prompt-guide",
+      "publisher": "Alibaba Cloud",
+      "note": "자료 번호 지정, 샷·시간·대사 작성법, 클레이 렌더 실사화 예시."
+    },
+    {
+      "id": "wan3-api",
+      "title": "Wan3.0 video generation API reference",
+      "url": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/wan3-video-generation-api-reference",
+      "publisher": "Alibaba Cloud Model Studio",
+      "note": "첫·끝 프레임과 복합 참조의 조합 규칙, 영상 입력 시 길이 제약."
+    },
+    {
+      "id": "seed25-guide",
+      "title": "Dreamina Seedance 2.5 tutorial",
+      "url": "https://docs.byteplus.com/en/docs/ModelArk/seedance-2-5",
+      "publisher": "BytePlus ModelArk",
+      "note": "최대 50개 자료, 편집·연장 작업 선택, 초안에서 최종본까지의 공식 사용 흐름."
+    },
+    {
+      "id": "seed25-prompt",
+      "title": "Seedance 2.5 공식 프롬프트 가이드",
+      "url": "https://docs.byteplus.com/en/docs/ModelArk/seedance-2-5-prompt-guide",
+      "publisher": "BytePlus ModelArk",
+      "note": "참조 자료의 역할, 시간별 연출, 3D 클레이 영상 실사화, 편집·연장 예시."
+    },
+    {
+      "id": "seed25-portrait",
+      "title": "Seedance 공식 인물 자산 사용 가이드",
+      "url": "https://docs.byteplus.com/en/docs/modelark/seedance-portrait-asset-guide",
+      "publisher": "BytePlus ModelArk",
+      "note": "ModelArk에서 실제 인물 참조를 사용하는 별도 자산 절차. Sume의 지원 범위와 구별한다."
+    },
+    {
+      "id": "video-guide",
+      "title": "Official H3 video generation guide and input limits",
+      "url": "https://platform.minimax.io/docs/guides/video-generation",
+      "publisher": "MiniMax",
+      "note": "H3 기본 모델의 모드·입력 제한과 4–15초·768P/2K 공식 API 예제."
+    },
+    {
+      "id": "h3-gallery",
+      "title": "H3 공식 활용 사례 모음",
+      "url": "https://platform.minimax.io/docs/guides/video-prompt",
+      "publisher": "MiniMax",
+      "note": "광고·제품·영화·애니메이션의 프롬프트와 참조 자료·결과 영상."
+    },
+    {
+      "id": "create-api",
+      "title": "Official v2 video create API",
+      "url": "https://platform.minimax.io/docs/api-reference/video-generation-v2-create",
+      "publisher": "MiniMax",
+      "note": "H3 첫·끝 프레임과 참조 모드의 상호 배제 규칙. Highspeed/Lite/Max와 기본 H3의 차이."
+    },
+    {
+      "id": "base-guide",
+      "title": "Official FL2VA/T2VA prompt guide",
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md",
+      "publisher": "MiniMax",
+      "note": "화면의 변화·환경음·배경음악을 나누는 기본 프롬프트 작성법."
+    },
+    {
+      "id": "ref-guide",
+      "title": "Official Ref2VA prompt guide",
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md",
+      "publisher": "MiniMax",
+      "note": "참조 대상·보존할 것·장면의 흐름을 구분하는 상세 작성 규격. 모든 이용자가 여섯 필드를 직접 써야 한다는 뜻은 아니다."
+    }
+  ]
+}

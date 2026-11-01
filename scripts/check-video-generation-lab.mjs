@@ -22,6 +22,19 @@ visit(data);
 for (const url of localAssets) await access(path.join(root, 'public', url));
 for (const row of data.comparison.rows) assert.equal(row.values.length, data.comparison.columns.length, `비교 열 불일치: ${row.label}`);
 const guide = JSON.parse(await readFile(path.join(root, 'src/data/video-model-guide.json'), 'utf8'));
+const usage = JSON.parse(await readFile(path.join(root, 'src/data/video-usage-guides.json'), 'utf8'));
+visit(usage);
+const usageSourceIds = new Set(usage.sources.map(({ id }) => id));
+assert.equal(usageSourceIds.size, usage.sources.length, '사용법 가이드 출처 ID가 중복되었습니다.');
+for (const item of [...usage.comparison.rows, ...usage.recipe.models]) {
+  for (const id of item.sourceIds) assert(usageSourceIds.has(id), `사용법 가이드 안에 없는 인용: ${id}`);
+}
+for (const source of usage.sources) {
+  assert.equal(data.sources.find(({ id }) => id === source.id)?.url, source.url, `사용법 가이드 출처 불일치: ${source.id}`);
+}
+assert.deepEqual(usage.models.map(({ id }) => id), guide.models.map(({ id }) => id), '사용법 비교의 모델 순서 불일치');
+assert.deepEqual(usage.recipe.models.map(({ id }) => id), usage.models.map(({ id }) => id), '프롬프트 예시의 모델 불일치');
+for (const row of usage.comparison.rows) assert.equal(row.values.length, usage.models.length, `사용법 비교 열 불일치: ${row.label}`);
 for (const model of guide.models) {
   const price = data.comparison.prices.find((price) => price.model === model.name && price.mode === 'Sume 채널 표시' && price.resolution === model.resolution);
   assert(price, `요약 카드의 가격 조건 누락: ${model.name}`);

@@ -9,7 +9,7 @@
 ### 영상 생성 실험 방송 노트
 
 `/knowledge/articles/video-generation-lab/`은 한국어 전용 article입니다. 공개 Instagram 성과,
-자체 제작 영상, 세 모델 비교, H3 후속 학습과 이전 Wan의 기술을 8개 탭으로 제공합니다.
+자체 제작 영상, 세 모델 비교, 공식 사용 가이드와 구조 참고자료를 9개 탭으로 제공합니다.
 Knowledge collection 대신 `src/data/video-generation-lab.json`과 전용 Astro 페이지를 사용합니다.
 
 - 자체 제작 영상·캡처·출처 기록: `public/assets/articles/video-generation-lab/`
@@ -18,6 +18,9 @@ Knowledge collection 대신 `src/data/video-generation-lab.json`과 전용 Astro
 
 모델 선택 요약은 `src/data/video-model-guide.json`과 `ModelGuide.astro`에서 관리합니다.
 첫 화면에는 추천 용도·장단점·5초 기준 가격을 보여 주고, 전체 기능·가격·평가 표는 접어 둡니다.
+공식 사용법 비교는 `src/data/video-usage-guides.json`과 `UsageGuide.astro`에서 관리합니다.
+사용 가이드·프롬프트 링크, 여섯 항목의 비교, 동일 Blender 목표의 재구성 예시를 제공합니다.
+가이드의 직접 제공 API 한도와 Sume 실험의 한도·가격을 구분하고 예시를 실제 생성 결과로 소개하지 않습니다.
 쉬운 구조 설명은 `src/data/video-architecture-guides.json`과 `ArchitectureGuide.astro`에서 관리합니다.
 Wan의 도식에는 공개된 이전 버전을 명시하며, 최신 3.0의 구조로 소개하지 않습니다.
 기존 심화 자료는 `ModelDetails.astro`·`TechnicalDetails.astro`에서 펼쳐 볼 수 있고 인쇄 시 모두 열립니다.

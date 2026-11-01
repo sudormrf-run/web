@@ -1,17 +1,17 @@
 {
   "meta": {
     "title": "논문을 릴스로, 콘티를 실사로",
-    "subtitle": "직접 해본 영상 제작에서 Wan 3.0 · Seedance 2.5 · MiniMax H3의 비교와 기술까지. 다음 방송을 위한 영상 중심 참고 노트.",
+    "subtitle": "직접 해본 영상 제작에서 Wan 3.0 · Seedance 2.5 · MiniMax H3의 결과·가격·공식 사용법까지. 구조 설명은 심화 참고자료로 모았다.",
     "date": "2026-11-01",
-    "duration": "방송 구성안 · 약 60–80분",
+    "duration": "방송 구성안 · 사용법 비교 중심",
     "coverImage": "/assets/articles/video-generation-lab/cover.svg"
   },
   "opening": {
-    "script": "논문을 설명하는 영상은 실제로 사람들에게 도달했을까? LLM이 만든 Blender 콘티는 실사 영상의 출발점이 될까? 직접 운영하고 만들어 본 사례에서 시작해, 세 영상 모델의 입력·출력·가격과 내부 구조를 차례로 살펴본다.",
+    "script": "논문을 설명하는 영상은 실제로 사람들에게 도달했을까? LLM이 만든 Blender 콘티는 실사 영상의 출발점이 될까? 직접 운영하고 만들어 본 사례에서 시작해, 세 영상 모델의 결과·가격을 비교하고 공식 가이드에서 실제로 쓰는 방법을 찾아본다.",
     "bullets": [
       "먼저 실제 서비스·채널·댓글과 제작 초안을 본다.",
       "여러 제작자의 비교 영상에서 얼굴·동작·카메라·오디오를 나눠 본다.",
-      "마지막에는 공개 가중치 H3와 이전 Wan의 구조·학습에서 배울 것을 찾는다."
+      "오늘은 공식 가이드의 입력·프롬프트·편집 방법을 비교한다. H3·Wan 구조와 학습은 심화 참고자료로 남겼다."
     ]
   },
   "accounts": [
@@ -2863,6 +2863,30 @@
       "url": "/assets/articles/video-generation-lab/comparison-posters-provenance.json",
       "date": "2026-11-01 확인",
       "note": "원본 영상의 1.0초 프레임만 미리보기로 축소했다. 전체 영상은 원 게시자 호스트에서 재생한다."
+    },
+    {
+      "id": "seed25-prompt",
+      "title": "Seedance 2.5 공식 프롬프트 가이드",
+      "publisher": "BytePlus ModelArk",
+      "url": "https://docs.byteplus.com/en/docs/ModelArk/seedance-2-5-prompt-guide",
+      "date": "2026-10-16",
+      "note": "참조 자료의 역할, 시간별 연출, 3D 클레이 영상 실사화, 편집·연장 예시."
+    },
+    {
+      "id": "h3-gallery",
+      "title": "H3 공식 활용 사례 모음",
+      "publisher": "MiniMax",
+      "url": "https://platform.minimax.io/docs/guides/video-prompt",
+      "date": "2026-11-01 확인",
+      "note": "광고·제품·영화·애니메이션의 프롬프트와 참조 자료·결과 영상."
+    },
+    {
+      "id": "seed25-portrait",
+      "title": "Seedance 공식 인물 자산 사용 가이드",
+      "publisher": "BytePlus ModelArk",
+      "url": "https://docs.byteplus.com/en/docs/modelark/seedance-portrait-asset-guide",
+      "date": "2026-11-01 확인",
+      "note": "ModelArk에서 실제 인물 참조를 사용하는 별도 자산 절차. Sume의 지원 범위와 구별한다."
     }
   ]
 }

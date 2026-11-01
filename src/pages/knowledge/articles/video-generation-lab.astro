@@ -4,6 +4,7 @@ import Media from '../../../components/video-lab/Media.astro';
 import Styles from '../../../components/video-lab/Styles.astro';
 import ModelGuide from '../../../components/video-lab/ModelGuide.astro';
 import ModelDetails from '../../../components/video-lab/ModelDetails.astro';
+import UsageGuide from '../../../components/video-lab/UsageGuide.astro';
 import ArchitectureGuide from '../../../components/video-lab/ArchitectureGuide.astro';
 import TechnicalDetails from '../../../components/video-lab/TechnicalDetails.astro';
 import type { VideoLabEpisode } from '../../../components/video-lab/types';
@@ -17,8 +18,9 @@ const sections = [
   { id: 'remix', label: '내 얼굴로 비교', detail: '직접 테스트' },
   { id: 'cases', label: '사례로 비교', detail: '남들이 만든 영상' },
   { id: 'models', label: '모델 고르기', detail: '용도 · 장단점 · 가격' },
-  { id: 'h3', label: 'H3 구조', detail: '영상과 소리를 함께' },
-  { id: 'wan', label: 'Wan 구조', detail: '큰 구도에서 디테일로' },
+  { id: 'guides', label: '사용법 비교', detail: '공식 가이드 · 프롬프트' },
+  { id: 'h3', label: 'H3 구조', detail: '심화 참고자료' },
+  { id: 'wan', label: 'Wan 구조', detail: '심화 참고자료' },
   { id: 'sources', label: '출처', detail: '다시 찾아보기' },
 ];
 const usd = (value: number) => `$${value.toFixed(2)}`;
@@ -67,23 +69,30 @@ const sourceRefs = (ids: string[]) => ids.map((id) => sourceById[id]).filter(Boo
       <section id="models" class="vl-panel" data-vl-panel="models" aria-labelledby="vl-heading-models">
         <header class="vl-section-heading"><p class="vl-eyebrow">05 / PICK THE RIGHT TOOL</p><h2 id="vl-heading-models">이번 영상에는<br />어떤 모델을 쓸까?</h2><p>추천 용도, 장단점, 같은 길이의 가격으로 먼저 고른다. 세부 사양과 평가 자료는 아래에서 펼쳐 볼 수 있다.</p></header>
         <ModelGuide />
+        <p class="vl-note">입력 자료와 프롬프트를 어떻게 구성할지는 <a href="#guides" data-tab-jump="guides">공식 가이드 사용법 비교 ↗</a>에서 확인할 수 있다.</p>
         <ModelDetails comparison={data.comparison} sourceRefs={sourceRefs} />
+      </section>
+
+      <section id="guides" class="vl-panel" data-vl-panel="guides" aria-labelledby="vl-heading-guides">
+        <header class="vl-section-heading"><p class="vl-eyebrow">06 / FROM GUIDES TO PRACTICE</p><h2 id="vl-heading-guides">자료를 어떻게 넣고,<br />무엇을 지시해야 할까?</h2><p>공식 사용 가이드와 프롬프트 예시를 한곳에 모았다. 입력·참조·수정의 차이를 보고, 같은 Blender 콘티에 적용해 본다.</p></header>
+        <UsageGuide />
       </section>
 
       {(['h3', 'wan'] as const).map((key) => {
         const technical = data.technical[key];
         return <section id={key} class="vl-panel" data-vl-panel={key} aria-labelledby={`vl-heading-${key}`}>
           <header class="vl-section-heading">
-            <p class="vl-eyebrow">{key === 'h3' ? '06 / INSIDE MINIMAX H3' : '07 / INSIDE WAN'}</p>
+            <p class="vl-eyebrow">{key === 'h3' ? '07 / REFERENCE · INSIDE MINIMAX H3' : '08 / REFERENCE · INSIDE WAN'}</p>
             <h2 id={`vl-heading-${key}`}>{key === 'h3' ? 'H3: 영상과 소리를 함께 만드는 과정' : 'Wan: 큰 구도에서 세부 묘사까지'}</h2>
             <p>{key === 'h3' ? '그림과 소리를 작은 표현으로 줄인 뒤, 한 모델 안에서 함께 다듬는다. 전체 흐름부터 따라가 보자.' : 'Wan 3.0의 내부 구조는 공개되지 않았다. 공개된 Wan 2.2를 통해 영상 생성의 원리를 살펴본다.'}</p>
           </header>
+          <p class="vl-note">구조·학습을 더 살펴볼 때 읽는 심화 참고자료다. 오늘의 사용법 비교는 <a href="#guides" data-tab-jump="guides">공식 가이드 탭 ↗</a>에서 이어간다.</p>
           <ArchitectureGuide kind={key} />
           <TechnicalDetails technical={technical} sourceRefs={sourceRefs} />
         </section>;
       })}
 
-      <section id="sources" class="vl-panel" data-vl-panel="sources" aria-labelledby="vl-heading-sources"><header class="vl-section-heading"><p class="vl-eyebrow">08 / KEEP THE RECEIPTS</p><h2 id="vl-heading-sources">직접 확인한 것과,<br />자료에서 배운 것.</h2><p>성과의 관측 시점, 모델 버전과 가격 조건은 각 근거에 남겼다. 다시 찾아볼 수 있도록 연결한다.</p></header><ul class="vl-bullets vl-summary"><li>공식 문서·모델 카드·원 제작자의 사례를 중심으로 연결했다.</li><li>성과·가격·평가 점수는 관측 시점과 조건을 함께 확인한다.</li><li>직접 한 실험과 외부 제작자의 비교는 구분해서 읽는다.</li></ul><ol class="vl-source-list">{data.sources.map((source, index) => <li id={`source-${source.id}`}><span class="vl-source-number">{String(index + 1).padStart(2, '0')}</span><div><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} ↗</a><p class="vl-source-meta">{source.publisher} · {source.date}</p><p>{source.note}</p></div></li>)}</ol></section>
+      <section id="sources" class="vl-panel" data-vl-panel="sources" aria-labelledby="vl-heading-sources"><header class="vl-section-heading"><p class="vl-eyebrow">09 / KEEP THE RECEIPTS</p><h2 id="vl-heading-sources">직접 확인한 것과,<br />자료에서 배운 것.</h2><p>성과의 관측 시점, 모델 버전과 가격 조건은 각 근거에 남겼다. 다시 찾아볼 수 있도록 연결한다.</p></header><ul class="vl-bullets vl-summary"><li>공식 문서·모델 카드·원 제작자의 사례를 중심으로 연결했다.</li><li>성과·가격·평가 점수는 관측 시점과 조건을 함께 확인한다.</li><li>직접 한 실험과 외부 제작자의 비교는 구분해서 읽는다.</li></ul><ol class="vl-source-list">{data.sources.map((source, index) => <li id={`source-${source.id}`}><span class="vl-source-number">{String(index + 1).padStart(2, '0')}</span><div><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} ↗</a><p class="vl-source-meta">{source.publisher} · {source.date}</p><p>{source.note}</p></div></li>)}</ol></section>
 
       <nav class="vl-bottom-nav" aria-label="이야기 이동"><button type="button" data-vl-previous hidden>← 이전 이야기</button><a href="/knowledge/">Knowledge로 돌아가기</a><button type="button" data-vl-next hidden>다음 이야기 →</button></nav><footer class="vl-colophon"><p>수도리무브 · 영상 생성 실험과 방송 노트</p><p>자료 확인 {data.meta.date} · 직접 실험과 외부 제작자의 비교를 구분해 기록했습니다.</p></footer>
     </div>
