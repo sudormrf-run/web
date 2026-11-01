@@ -239,89 +239,130 @@
   ],
   "remix": {
     "title": "같은 얼굴, 같은 춤. 세 모델은 어떻게 다를까?",
-    "status": "프로필 사진 확보 대기 · 유료 생성은 아직 제출하지 않았다.",
+    "status": "진행자 사진으로 직접 실행 · 4회 제출, 4개 결과 · 최종 청구 $3.31 / $20",
     "reference": {
       "title": "공식 Motion Library · K-pop Hallway Solo",
       "url": "https://www.sume.com/remix",
-      "videoUrl": "https://media.sume.com/assets/asset_0c42fa86d95c454f8a62e1faa9111c59/source.mp4",
+      "videoUrl": "https://media.sume.com/assets/asset_5e1456712bdc406a93ad68f9c925da11/source.mp4",
       "poster": "/assets/articles/video-generation-lab/remix-reference.webp",
-      "note": "Sume 공식 Recreate 입력 원본 · 13.04초 · 720×1280 · 24fps. 실험에는 2–7초 구간 5초를 사용할 계획이다."
+      "note": "공식 K-pop Hallway Solo 입력 원본의 2–7초를 잘랐다. 이 플레이어는 실제 사용한 5초 · 720×1280 · 24fps 입력이다. 원문 링크에서 전체 템플릿을 볼 수 있다."
     },
     "portrait": {
-      "sourceUrl": "https://www.linkedin.com/in/jonhpark7966/",
-      "note": "진행자가 지정한 LinkedIn 프로필 사진. LinkedIn의 자동 접근 차단으로 원본 이미지 URL을 확보하지 못해 입력을 기다리고 있다."
+      "sourceUrl": "https://media.sume.com/assets/asset_b5416d537f1c48878c623ac4d04f4b42/source.jpg",
+      "imageUrl": "https://media.sume.com/assets/asset_b5416d537f1c48878c623ac4d04f4b42/source.jpg",
+      "note": "진행자가 직접 제공한 프로필 사진을 네 작업의 같은 인물 참조로 사용했다. LinkedIn에서 자동 수집한 사진이 아니다."
     },
     "sharedPrompt": "The person in reference image 1 performs the choreography and follows the body motion in reference video 1. Preserve the face, hairstyle and identity from image 1. Full-body shot, bright marble hallway with a teal door, natural photorealistic appearance. Five seconds, one continuous shot, no cuts, no captions.",
     "method": [
-      "같은 원본 춤의 2–7초 구간을 5초로 잘라 모든 모델의 동작 참조로 사용한다.",
-      "같은 인물 이미지·영문 지시·5초·9:16을 사용한다. Wan·Seedance는 720p, H3는 기본 768p로 해상도 차이를 표시한다.",
-      "고정 모델 Sume Remix와 세 제공사의 참조 생성은 별개다. 3종 비교는 Video Router의 이미지+영상 reference 입력으로 요청한다.",
-      "모델마다 한 번만 제출하고 요청 ID·예약액·확정 usage를 기록한다. 실패나 얼굴 참조 제한을 숨기지 않으며 자동 유료 재시도는 하지 않는다."
+      "같은 원본 춤의 2–7초 구간을 5초로 잘라 모든 작업의 동작 입력으로 사용했다.",
+      "세 모델은 같은 인물 사진·아래 영문 지시·5초·9:16으로 한 번씩 요청했다. Wan·Seedance는 720p, H3는 기본 768p다. 실제 파일의 크기와 프레임률은 비용 기록에 남겼다.",
+      "Sume Remix는 추가 실험이다. 전용 motion-transfer 경로·480p를 사용하며 원본 소리를 유지한다. 세 모델의 Video Router 참조 생성과 구분해서 본다.",
+      "Sume Remix에는 원 영상의 사람을 참조 인물로 바꾸고 안경·머리·남색 셔츠를 유지하라는 별도 지시를 사용했다. 정확한 요청은 작업별 비용 기록에서 확인할 수 있다.",
+      "작업마다 한 번만 제출했다. 작업 ID·요청·서버 시각·최종 capture/refund와 파일 체크섬을 기록했으며 유료 재시도는 하지 않았다."
     ],
     "bullets": [
-      "실제 결과가 없는 상태를 성공 사례로 설명하지 않는다.",
-      "현재 청구 $0 · 세 모델 호출 전. 사진 확보 후 공통 입력으로 진행한다.",
-      "얼굴 유지·동작 준수·손발·배경·음성은 각각 관찰한다."
+      "같은 사진·같은 5초 춤으로 세 모델을 각각 한 번 실행했다. Sume Remix도 별도 조건으로 한 번 추가했다.",
+      "네 작업 모두 완료 · 최종 청구 $3.31 / $20. 재생 가능한 원본 출력과 작업별 정산 기록을 함께 남겼다.",
+      "Wan·H3는 안경을 반영했고, Seedance는 더 넓은 전신 구도로 재구성했다. 얼굴·구도·동작의 차이를 직접 비교해 보자."
     ],
     "caveats": [
-      "이 탭은 실험 설계와 진행 상태다. 아직 세 모델의 직접 결과나 우열 결론은 없다.",
-      "Seedance의 공식 실인물 참조 제한 등 제공사 검증이 적용될 수 있다. 거절되면 실패 사유와 청구 상태를 그대로 기록한다.",
-      "샘플 1개와 서로 다른 기본 해상도로 전체 모델 성능을 단정하지 않는다.",
+      "3종 참조 생성과 전용 Sume Remix는 같은 인터페이스나 고정된 내부 모델이 아니다. 입력·해상도·지시 차이를 함께 표시했다.",
+      "각 조건의 결과는 한 개다. 여러 인물·동작·seed에 대한 평균 성능이나 전체 모델의 순위를 뜻하지 않는다.",
+      "얼굴·손발·동작 타이밍·배경·소리는 각각 관찰한다. 재생은 기본 음소거이며 플레이어에서 소리를 켤 수 있다.",
       "원본 춤은 Sume 공식 템플릿으로 연결하며 오픈 라이선스 자료라고 주장하지 않는다."
     ],
     "budget": {
       "limitUsd": 20,
-      "estimatedUsd": 3.912,
-      "chargedUsd": 0,
+      "estimatedUsd": 4.527,
+      "chargedUsd": 3.31,
       "notes": [
-        "세 모델 각각 5초 입력+5초 출력으로 보수적으로 계산한 계획액 $3.91. Wan $1.00 + Seedance $2.312 + H3 $0.60. 실제 과금은 작업별 응답으로 대체한다.",
-        "프로필 사진이 없어 유료 생성 요청을 아직 제출하지 않았다. $0은 생성 성공 비용이 아니라 이번 세션의 현재 사용액이다.",
-        "고정 Sume Remix를 별도로 실행한다면 480p/5초 계획액 $0.615를 추가한다. 총 계획액 $4.527, 상한 $20이며 한도 전 자동 중단한다.",
-        "모델 카탈로그와 무료 유효성 검사는 완료했다. API 키·결제 정보·비공개 계정 정보는 공개하지 않는다."
+        "사전 계획액은 총 $4.527이었다. 입력 영상 비용까지 보수적으로 잡은 예상액이며, 실제 청구와 구분한다.",
+        "네 작업의 예약 합계는 $3.31, 확정 청구 합계는 $3.31다. API 최종 usage_summary의 captured_usd_cents에서 refunded_usd_cents를 빼서 계산했다.",
+        "요청 직후의 usage.usd는 예약액이다. 완료 후 final=true인 정산 기록과 원본 출력의 체크섬을 공개 비용 기록에 함께 남겼다.",
+        "표시 시간은 서버 생성 시각부터 완료 시각까지이며 대기·통신 시간이 포함된다. 모델 순수 추론 속도로 비교하지 않는다.",
+        "추가 생성이나 자동 유료 재시도 없이 마쳤다. API 키·결제 정보·로컬 사진 경로는 공개하지 않는다."
       ]
     },
     "runs": [
       {
         "modelId": "wan-3.0",
         "name": "Wan 3.0",
-        "status": "입력 대기",
-        "mode": "이미지+영상 참조 생성 · 계획",
+        "status": "완료",
+        "jobId": "job_7943b3c7-fbdd-4b49-809c-3cc97ee4f241",
+        "elapsedSeconds": 266.244,
+        "mode": "이미지+영상 참조 생성",
         "duration": 5,
         "resolution": "720p",
         "estimatedUsd": 1.0,
-        "chargedUsd": 0,
+        "chargedUsd": 1.0,
         "observations": [
-          "프로필 사진 원본이 준비되지 않아 요청하지 않았다.",
-          "아직 결과 관찰과 모델 간 평가를 하지 않았다."
-        ]
+          "안경·짧은 검은 머리·남색 셔츠가 보이며, 손을 얼굴 앞에 대고 양손을 드는 원본 춤의 큰 순서가 반영됐다.",
+          "대리석 복도와 청록색 문을 유지했지만 문 크기·벽 배치를 다시 구성했다. 전신 요청에도 주로 무릎 위를 보여준다.",
+          "얼굴 앞을 지나는 손에는 모션 블러가 보인다. 안경과 의상 보존이 관찰돼도 손가락 정확도나 프레임 전체의 동일성을 뜻하지 않는다.",
+          "실제 출력 720×1280 · 30/1 fps · 5.038초 · 오디오 있음."
+        ],
+        "videoUrl": "/assets/articles/video-generation-lab/remix-wan-3.0.mp4",
+        "poster": "/assets/articles/video-generation-lab/remix-wan-3.0.webp"
       },
       {
         "modelId": "seedance-2.5",
         "name": "Seedance 2.5",
-        "status": "입력 대기",
-        "mode": "이미지+영상 참조 생성 · 계획",
+        "status": "완료",
+        "jobId": "job_45366da9-619b-4dfa-b0e5-17955c875a9e",
+        "elapsedSeconds": 195.81,
+        "mode": "이미지+영상 참조 생성",
         "duration": 5,
         "resolution": "720p",
         "estimatedUsd": 2.312,
-        "chargedUsd": 0,
+        "chargedUsd": 1.39,
         "observations": [
-          "프로필 사진 원본이 준비되지 않아 요청하지 않았다.",
-          "아직 결과 관찰과 모델 간 평가를 하지 않았다."
-        ]
+          "짧은 검은 머리와 남색 셔츠·검은 바지로 인물을 바꿨다. 참조 사진의 안경은 확인되지 않아 얼굴의 세부 보존에는 차이가 있다.",
+          "양손을 올리는 등 춤의 큰 동작과 청록색 문·대리석 복도는 따라간다. 원본보다 카메라를 넓혀 발까지 보이는 전신 구도로 재구성했다.",
+          "이 한 샘플에서는 동작 참조와 인물 재구성을 확인했지만 동일 인물의 완벽한 얼굴 복제로 단정하지 않는다.",
+          "실제 출력 720×1280 · 24/1 fps · 5.056초 · 오디오 있음."
+        ],
+        "videoUrl": "/assets/articles/video-generation-lab/remix-seedance-2.5.mp4",
+        "poster": "/assets/articles/video-generation-lab/remix-seedance-2.5.webp"
       },
       {
         "modelId": "minimax-h3",
         "name": "MiniMax H3",
-        "status": "입력 대기",
-        "mode": "이미지+영상 참조 생성 · 계획",
+        "status": "완료",
+        "jobId": "job_4596513c-7053-4f75-801e-c5a41e704e1b",
+        "elapsedSeconds": 276.623,
+        "mode": "이미지+영상 참조 생성",
         "duration": 5,
         "resolution": "768p",
         "estimatedUsd": 0.6,
-        "chargedUsd": 0,
+        "chargedUsd": 0.3,
         "observations": [
-          "프로필 사진 원본이 준비되지 않아 요청하지 않았다.",
-          "아직 결과 관찰과 모델 간 평가를 하지 않았다."
-        ]
+          "안경과 남색 셔츠를 반영하고, 원본과 비슷한 상체 중심 구도에서 손을 들고 머리 쪽으로 옮기는 동작을 만들었다.",
+          "머리를 젖히거나 숙일 때 얼굴 각도·턱선·표정이 바뀐다. 빠른 포즈 전환에서 얼굴 유지가 어느 정도인지 영상을 확대해 볼 지점이다.",
+          "전신 구도 지시와 달리 다리 전체는 보이지 않는다. 더 높은 기본 해상도가 구도 지시의 준수나 인물 동일성을 자동 보장하지 않는다.",
+          "실제 출력 768×1344 · 24/1 fps · 5.167초 · 오디오 있음."
+        ],
+        "videoUrl": "/assets/articles/video-generation-lab/remix-minimax-h3.mp4",
+        "poster": "/assets/articles/video-generation-lab/remix-minimax-h3.webp"
+      },
+      {
+        "modelId": "sume-remix",
+        "name": "Sume Remix · 추가 실험",
+        "status": "완료",
+        "jobId": "job_ff8cf241-2ddd-4990-9f42-933c5aaa69c6",
+        "elapsedSeconds": 422.715,
+        "mode": "전용 모션 전이 · 별도 지시",
+        "duration": 5,
+        "resolution": "480p",
+        "estimatedUsd": 0.615,
+        "chargedUsd": 0.62,
+        "observations": [
+          "원본과 비슷한 상체 구도에서 손을 얼굴 옆에 대고, 양손을 올리고, 머리로 옮기는 동작 순서가 보인다. 복도의 구도도 비교적 가깝게 유지했다.",
+          "안경·남색 셔츠·검은 바지를 반영했지만 머리 각도와 표정은 원본 춤을 따라 달라진다. 인물 보존과 동작 전이를 따로 확인할 예시다.",
+          "480p와 별도 지시를 쓴 전용 모션 전이 결과다. 720p/768p의 세 모델 참조 생성과 같은 조건의 순위 비교로 해석하지 않는다.",
+          "실제 출력 480×854 · 24/1 fps · 5.042초 · 오디오 있음."
+        ],
+        "videoUrl": "/assets/articles/video-generation-lab/remix-sume-remix.mp4",
+        "poster": "/assets/articles/video-generation-lab/remix-sume-remix.webp"
       }
     ],
     "sourceIds": [
@@ -330,7 +371,8 @@
       "sume-remix",
       "sume-motion",
       "sume-billing"
-    ]
+    ],
+    "receiptUrl": "/assets/articles/video-generation-lab/remix-receipts.json"
   },
   "cases": [
     {
@@ -1887,7 +1929,7 @@
         "Context-IR의 내부 모델 크기·데이터·전체 학습법",
         "Regenerate-2K 체크포인트의 크기·전체 구조·학습법",
         "H3 Max·Highspeed·Lite가 원래 H3와 공유하는 가중치 범위",
-        "같은 개인 얼굴·참조·길이에서의 세 모델 재현성: 직접 실험은 아직 제출 전이며 결과가 없다."
+        "같은 개인 얼굴·참조·길이 실험도 샘플 1개다. 다른 인물·동작과 여러 seed에서의 재현성은 별도 검증이 필요하다."
       ],
       "sourceIds": [
         "hf-card",

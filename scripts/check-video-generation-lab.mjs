@@ -14,7 +14,7 @@ const visit = (value) => {
   if (!value || typeof value !== 'object') return;
   for (const id of value.sourceIds ?? []) assert(sourceIds.has(id), `존재하지 않는 출처: ${id}`);
   for (const [key, field] of Object.entries(value)) {
-    if (typeof field === 'string' && /^(?:videoUrl|poster|imageUrl|coverImage|screenshot)$/.test(key) && field.startsWith('/')) localAssets.add(field);
+    if (typeof field === 'string' && /^(?:videoUrl|poster|imageUrl|coverImage|screenshot|receiptUrl)$/.test(key) && field.startsWith('/')) localAssets.add(field);
     visit(field);
   }
 };
@@ -22,7 +22,8 @@ visit(data);
 for (const url of localAssets) await access(path.join(root, 'public', url));
 for (const row of data.comparison.rows) assert.equal(row.values.length, data.comparison.columns.length, `비교 열 불일치: ${row.label}`);
 assert.equal(data.accounts.length, 2);
-assert.equal(data.remix.runs.length, 3);
+assert.equal(data.remix.runs.length, 4);
+assert.deepEqual(new Set(data.remix.runs.map(({ modelId }) => modelId)), new Set(['wan-3.0', 'seedance-2.5', 'minimax-h3', 'sume-remix']));
 assert(data.cases.filter(({ kind }) => kind === 'video-set').length >= 5);
 assert(data.technical.h3.postTraining.length >= 5);
 assert(data.technical.wan.unknowns.length > 0, 'Wan 최신 모델의 미공개 범위를 명시해야 합니다.');
@@ -31,7 +32,62 @@ assert(budget.chargedUsd >= 0 && budget.chargedUsd <= budget.limitUsd && budget.
 assert(Math.abs(data.remix.runs.reduce((sum, run) => sum + run.estimatedUsd, 0) - budget.estimatedUsd) < 0.0001, '모델별 예상액 합계 불일치');
 assert(Math.abs(data.remix.runs.reduce((sum, run) => sum + run.chargedUsd, 0) - budget.chargedUsd) < 0.0001, '모델별 실제 청구 합계 불일치');
 for (const run of data.remix.runs) {
+  for (const key of ['estimatedUsd', 'chargedUsd']) assert(Number.isFinite(run[key]) && run[key] >= 0, `유효하지 않은 비용: ${run.modelId}/${key}`);
+  if (run.status === '완료') assert(run.videoUrl && run.poster && run.jobId, `완료된 실험의 영상·포스터·작업 ID 누락: ${run.modelId}`);
+  if (run.status === '실패') assert(run.error && !run.videoUrl, `실패한 실험의 오류/결과 표시 불일치: ${run.modelId}`);
   if (run.status === '입력 대기') assert(!run.videoUrl && run.chargedUsd === 0, '미제출 실험은 결과·과금을 표시할 수 없습니다.');
+}
+assert.equal(data.remix.receiptUrl, '/assets/articles/video-generation-lab/remix-receipts.json');
+const receipt = JSON.parse(await readFile(path.join(root, 'public', data.remix.receiptUrl), 'utf8'));
+assert.equal(receipt.runs.length, data.remix.runs.length, '비용 기록의 실험 개수 불일치');
+assert.deepEqual(new Set(receipt.runs.map(({ id }) => id)), new Set(data.remix.runs.map(({ modelId }) => modelId)), '비용 기록의 모델 ID 불일치');
+const sameAmount = (actual, expected, message) => assert(Number.isFinite(actual) && Number.isFinite(expected) && Math.abs(actual - expected) < 0.0001, message);
+sameAmount(receipt.limitUsd, budget.limitUsd, '비용 기록의 예산 상한 불일치');
+sameAmount(receipt.plannedUsd, budget.estimatedUsd, '비용 기록의 계획액 불일치');
+sameAmount(receipt.totalChargedUsd, budget.chargedUsd, '비용 기록의 총 청구액 불일치');
+sameAmount(receipt.runs.reduce((sum, run) => sum + run.chargedUsd, 0), receipt.totalChargedUsd, '비용 기록의 청구액 합계 불일치');
+const verifyRemixAsset = async (asset, urlKey, label) => {
+  assert(asset[urlKey]?.startsWith('/assets/articles/video-generation-lab/'), `실험 자산의 로컬 경로 누락: ${label}`);
+  const bytes = await readFile(path.join(root, 'public', asset[urlKey]));
+  assert.equal(bytes.length, asset.bytes, `실험 자산 크기 불일치: ${label}`);
+  assert.equal(createHash('sha256').update(bytes).digest('hex'), asset.sha256, `실험 자산 체크섬 불일치: ${label}`);
+};
+for (const recorded of receipt.runs) {
+  const run = data.remix.runs.find(({ modelId }) => modelId === recorded.id);
+  assert.equal(recorded.billing.final, true, `미확정 청구: ${recorded.id}`);
+  const { captured_usd_cents: captured, refunded_usd_cents: refunded } = recorded.billing;
+  assert(Number.isInteger(captured) && Number.isInteger(refunded) && captured >= refunded && refunded >= 0, `유효하지 않은 확정 청구: ${recorded.id}`);
+  sameAmount(recorded.chargedUsd, (captured - refunded) / 100, `확정 청구 계산 불일치: ${recorded.id}`);
+  sameAmount(recorded.chargedUsd, run.chargedUsd, `페이지와 실제 청구액 불일치: ${recorded.id}`);
+  sameAmount(recorded.plannedUsd, run.estimatedUsd, `페이지와 계획액 불일치: ${recorded.id}`);
+  assert.equal(recorded.jobId, run.jobId, `작업 ID 불일치: ${recorded.id}`);
+  assert(Number.isFinite(recorded.elapsedSeconds) && recorded.elapsedSeconds >= 0, `유효하지 않은 처리 시간: ${recorded.id}`);
+  sameAmount(recorded.elapsedSeconds, run.elapsedSeconds, `처리 시간 불일치: ${recorded.id}`);
+  const request = recorded.request;
+  assert.equal(request.duration, 5, `공통 요청 길이 불일치: ${recorded.id}`);
+  assert.equal(request.resolution, run.resolution, `표시 해상도와 요청 불일치: ${recorded.id}`);
+  if (recorded.id === 'sume-remix') {
+    assert.equal(request.video_url, receipt.inputs.motion.public_url, 'Remix 동작 입력 불일치');
+    assert.deepEqual(request.image_urls, [receipt.inputs.portrait.public_url], 'Remix 인물 입력 불일치');
+  } else {
+    assert.equal(request.model, recorded.id, `요청 모델 불일치: ${recorded.id}`);
+    assert.equal(request.prompt, data.remix.sharedPrompt, `공통 프롬프트 불일치: ${recorded.id}`);
+    assert.equal(request.aspect_ratio, '9:16', `공통 요청 비율 불일치: ${recorded.id}`);
+    assert.deepEqual(request.reference_video_urls, [receipt.inputs.motion.public_url], `동작 입력 불일치: ${recorded.id}`);
+    assert.deepEqual(request.reference_image_urls, [receipt.inputs.portrait.public_url], `인물 입력 불일치: ${recorded.id}`);
+  }
+  if (recorded.status === 'completed') {
+    assert.equal(run.status, '완료');
+    assert.equal(recorded.output.videoUrl, run.videoUrl, `결과 영상 연결 불일치: ${recorded.id}`);
+    assert.equal(recorded.poster.imageUrl, run.poster, `결과 포스터 연결 불일치: ${recorded.id}`);
+    assert(Number.isInteger(recorded.output.width) && recorded.output.width > 0 && Number.isInteger(recorded.output.height) && recorded.output.height > recorded.output.width, `세로 출력 크기 불일치: ${recorded.id}`);
+    await verifyRemixAsset(recorded.output, 'videoUrl', recorded.id);
+    await verifyRemixAsset(recorded.poster, 'imageUrl', `${recorded.id}/poster`);
+  } else {
+    assert(['failed', 'cancelled', 'canceled'].includes(recorded.status), `미종결 실험: ${recorded.id}`);
+    assert.equal(run.status, '실패');
+    assert(recorded.error && run.error && !recorded.output && !run.videoUrl, `실패 기록/결과 불일치: ${recorded.id}`);
+  }
 }
 const counters = JSON.parse(await readFile(path.join(root, 'public/assets/articles/video-generation-lab/instagram-counters.json'), 'utf8'));
 for (const channel of counters.rawCounters) {

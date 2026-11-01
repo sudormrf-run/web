@@ -124,6 +124,8 @@
   .vlab .vl-budget .vl-budget-total dd { color: var(--vl-accent); }
   .vlab .vl-budget > ul { list-style: disc; padding-left: 16px; color: #a9bea9; font-size: 11px; line-height: 1.9; }
   .vlab .vl-budget li + li { margin-top: 6px; }
+  .vlab .vl-cost-receipt { margin-top: 16px; font-size: 12px; }
+  .vlab .vl-cost-receipt a { color: #b5d6b5; text-decoration: underline; text-underline-offset: 3px; }
   .vlab .vl-detail { border-block: 1px solid var(--vl-line); padding-block: 17px; margin-block: 25px; }
   .vlab .vl-detail summary { display: flex; justify-content: space-between; gap: 20px; align-items: center; list-style: none; color: #cbdcc9; font-size: 13px; cursor: pointer; }
   .vlab .vl-detail summary::-webkit-details-marker { display: none; }
@@ -139,6 +141,7 @@
   .vlab .vl-sync-status { flex: 1 0 100%; color: #e8c299; font-size: 11px; line-height: 1.8; }
   .vlab .vl-sync-status:empty { display: none; }
   .vlab .vl-run-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap: 19px; }
+  .vlab .vl-run-grid-four { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
   .vlab .vl-run { min-width: 0; padding: 19px; background: var(--vl-panel); border: 1px solid var(--vl-line); }
   .vlab .vl-run > header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
   .vlab .vl-run h3 { font-family: var(--font-mono); font-size: 16px; font-weight: 500; }
@@ -152,6 +155,9 @@
   .vlab .vl-run-cost dt { color: #8ca28e; font-size: 10px; }
   .vlab .vl-run-cost dd { font-family: var(--font-mono); color: #c1debf; font-size: 13px; }
   .vlab .vl-run .vl-bullets { font-size: 12px; line-height: 1.9; padding-left: 17px; }
+  .vlab .vl-run-receipt { display: grid; gap: 8px; margin-block: 15px; color: #97b199; font-size: 10px; line-height: 1.7; }
+  .vlab .vl-run-receipt > div { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 12px; }
+  .vlab .vl-run-receipt dd { font-family: var(--font-mono); overflow-wrap: anywhere; }
   .vlab .vl-run-settings { color: #97b199; font-size: 10px; margin-block: 12px; }
   .vlab .vl-case-date { color: #8fa992; font-size: 10px; margin-top: 8px; }
   .vlab .vl-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 15px 23px; }

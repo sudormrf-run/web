@@ -41,12 +41,12 @@ export interface VideoLabEpisode {
   }[];
   projects: { id: string; title: string; url: string; description: string; steps: string[]; videos: Video[]; bullets: string[]; sourceIds: string[] }[];
   remix: {
-    title: string; status: string; bullets?: string[];
+    title: string; status: string; bullets?: string[]; receiptUrl?: string;
     reference: { title: string; url: string; videoUrl: string; poster?: string; note: string };
     portrait: { sourceUrl: string; imageUrl?: string; note: string };
     sharedPrompt: string; method: string[]; caveats: string[];
     budget: { limitUsd: number; estimatedUsd: number; chargedUsd: number; notes: string[] };
-    runs: { modelId: string; name: string; status: string; videoUrl?: string; poster?: string; mode: string; duration: number; resolution: string; estimatedUsd: number; chargedUsd: number; observations: string[]; error?: string }[];
+    runs: { modelId: string; name: string; status: string; jobId?: string; elapsedSeconds?: number; videoUrl?: string; poster?: string; mode: string; duration: number; resolution: string; estimatedUsd: number; chargedUsd: number; observations: string[]; error?: string }[];
     sourceIds: string[];
   };
   cases: {
