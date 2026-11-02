@@ -1,0 +1,103 @@
+{
+  "checkedAt": "2026-11-01",
+  "intro": "문서·웹 자료까지 묶어 장면을 만들 때는 Wan, 콘티와 여러 자료로 연출·수정할 때는 Seedance, 짧은 시안의 비용을 줄일 때는 H3부터 시작해 보자.",
+  "selectionNote": "공식 가이드의 기능과 아래 Sume 가격을 참고해 정한 시작점이다. 서비스마다 지원 범위가 다르며, 최종 선택은 같은 입력의 짧은 샘플로 확인한다.",
+  "priceCondition": "5초 기본 생성 · 참조 영상 없음 · Sume 표시 단가 × 5초 · USD. Wan·Seedance는 720p, H3는 기본 768p다.",
+  "models": [
+    {
+      "id": "wan-3.0",
+      "name": "Wan 3.0",
+      "headline": "다양한 입력 + 중간 가격",
+      "when": "사진·영상·소리와 문서·공개 웹 자료를 묶어 장면을 만들고 싶을 때. 직접 제공 API의 지원 범위를 확인한다.",
+      "pros": [
+        "문서·공개 웹 링크도 입력으로 사용",
+        "사진·영상·소리를 참조로 사용"
+      ],
+      "cons": [
+        "3.0 내부 구조와 가중치는 미공개",
+        "제공사도 음성 질감·화면 글자 정확도를 개선점으로 명시"
+      ],
+      "resolution": "720p",
+      "usdPerSecond": 0.1,
+      "seconds": 5,
+      "exampleUsd": 0.5,
+      "sources": [
+        {
+          "title": "Alibaba 공식 사용 가이드",
+          "url": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/wan3-video-generation-guide"
+        },
+        {
+          "title": "Sume 모델 안내",
+          "url": "https://www.sume.com/models/alibaba/wan-3.0"
+        }
+      ]
+    },
+    {
+      "id": "seedance-2.5",
+      "name": "Seedance 2.5",
+      "headline": "콘티·참조 중심의 연출",
+      "when": "Blender 콘티와 인물·제품·카메라 자료를 묶어 장면을 만들거나, 특정 구간을 수정하고 싶을 때.",
+      "pros": [
+        "많은 참조 자료와 구간 수정·연장 지원",
+        "클레이 렌더를 실사화하는 공식 예시"
+      ],
+      "cons": [
+        "이 기본 생성 기준에서는 세 모델 중 가장 높은 단가",
+        "편집 기능은 사용하는 서비스·API의 지원 범위를 확인"
+      ],
+      "resolution": "720p",
+      "usdPerSecond": 0.2312,
+      "seconds": 5,
+      "exampleUsd": 1.156,
+      "sources": [
+        {
+          "title": "ByteDance 공식 기능 소개",
+          "url": "https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5"
+        },
+        {
+          "title": "Sume 모델 카탈로그 안내",
+          "url": "https://www.sume.com/docs/models"
+        }
+      ]
+    },
+    {
+      "id": "minimax-h3",
+      "name": "MiniMax H3",
+      "headline": "저렴한 짧은 시안",
+      "when": "짧은 아이디어를 여러 개 만들며 비용을 줄이고 싶을 때. 첫·끝 사진 고정과 동작 참조를 나눠 시험해 본다.",
+      "pros": [
+        "이 기본 생성 기준에서는 가장 낮은 단가",
+        "구조·가중치가 공개되어 학습 자료가 풍부"
+      ],
+      "cons": [
+        "Sume에서 한 번에 5–15초",
+        "자체 실행에는 큰 GPU와 라이선스 조건 확인이 필요"
+      ],
+      "resolution": "768p",
+      "usdPerSecond": 0.06,
+      "seconds": 5,
+      "exampleUsd": 0.3,
+      "sources": [
+        {
+          "title": "MiniMax 공식 모델 카드",
+          "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
+        },
+        {
+          "title": "Sume 공개 가격표",
+          "url": "https://www.sume.com/pricing"
+        }
+      ]
+    }
+  ],
+  "takeaway": {
+    "title": "처음에는 짧게, 결정한 장면만 크게",
+    "steps": [
+      "용도에 맞는 후보로 5초 시안을 만든다.",
+      "얼굴·동작·카메라·소리를 따로 확인한다.",
+      "쓸 장면을 정한 뒤 길이·해상도를 올린다."
+    ],
+    "priceNote": "영상 참조·고해상도·별도 전처리는 추가 비용을 만들 수 있다. 실제 얼굴+춤 실험에서는 Wan $1.00, Seedance $1.39, H3 $0.30이 청구됐다.",
+    "receiptUrl": "/assets/articles/video-generation-lab/remix-receipts.json",
+    "billingUrl": "https://www.sume.com/docs/billing"
+  }
+}

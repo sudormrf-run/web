@@ -1,0 +1,23 @@
+---
+import type { Source, Technical } from './types';
+interface Props {
+  technical: Technical;
+  sourceRefs: (ids: string[]) => (Source & { number: number })[];
+}
+const { technical, sourceRefs } = Astro.props;
+---
+
+<div class="vl-reference-details">
+  <details class="vl-detail vl-reference-detail" data-reference-details="architecture">
+    <summary>구조·입력 모드·학습 원리 더 알아보기 <span class="vl-reference-count">심화 <b class="vl-detail-icon" aria-hidden="true">+</b></span></summary>
+<ul class="vl-bullets vl-summary">{technical.bullets.map((bullet) => <li>{bullet}</li>)}</ul>{technical.pipeline.length > 0 && <section class="vl-pipeline"><h3>입력에서 영상이 되기까지</h3><ol>{technical.pipeline.map((step, index) => <li><span>{String(index + 1).padStart(2, '0')}</span><div><h4>{step.title}</h4><p>{step.description}</p></div></li>)}</ol></section>}{technical.diagrams && technical.diagrams.length > 0 && <div class="vl-diagrams">{technical.diagrams.map((diagram) => <figure><a href={diagram.imageUrl} target="_blank" rel="noopener noreferrer"><img src={diagram.imageUrl} alt={diagram.title} loading="lazy" /></a><figcaption><strong>{diagram.title}</strong><p>{diagram.caption}</p><a href={diagram.sourceUrl} target="_blank" rel="noopener noreferrer">공식 자료에서 확인하기 ↗</a></figcaption></figure>)}</div>}<div class="vl-technical-blocks">{technical.blocks.map((block) => <article class="vl-technical-block"><h3>{block.title}</h3><ul class="vl-bullets">{block.bullets.map((bullet) => <li>{bullet}</li>)}</ul>{block.body && <details class="vl-detail"><summary>조금 더 자세히 <span aria-hidden="true">+</span></summary><p>{block.body}</p></details>}<p class="vl-source-refs">근거 {sourceRefs(block.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</p></article>)}</div><p class="vl-source-refs">이 절의 원자료 {sourceRefs(technical.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</p>
+  </details>
+  {technical.postTraining.length > 0 && <details class="vl-detail vl-reference-detail" data-reference-details="post-training">
+    <summary>더 빠르고 다양하게: 후속 학습과 실행 최적화 <span class="vl-reference-count">{technical.postTraining.length}가지 <b class="vl-detail-icon" aria-hidden="true">+</b></span></summary>
+<section class="vl-posttraining"><div class="vl-subheading"><p class="vl-eyebrow">TRAINING &amp; INFERENCE</p><h3>후속 학습과 추론 최적화</h3><p>학습으로 바꾸는 부분과 실행 단계에서 줄이는 비용을 구분한다.</p></div><div class="vl-posttraining-grid">{technical.postTraining.map((variant) => <article><span class="vl-chip">{variant.type}</span><h4><a href={variant.url} target="_blank" rel="noopener noreferrer">{variant.name} ↗</a></h4><p>{variant.description}</p><p class="vl-tradeoff"><strong>확인할 점</strong>{variant.tradeoff}</p></article>)}</div></section>
+  </details>}
+  {technical.unknowns.length > 0 && <details class="vl-detail vl-reference-detail" data-reference-details="unknowns">
+    <summary>공개되지 않은 정보와 해석의 한계 <span class="vl-reference-count">확인할 점 <b class="vl-detail-icon" aria-hidden="true">+</b></span></summary>
+<aside class="vl-unknowns"><p class="vl-eyebrow">WHAT WE DON'T KNOW</p><h3>공개 자료가 채우지 못한 빈칸</h3><ul class="vl-bullets">{technical.unknowns.map((note) => <li>{note}</li>)}</ul></aside>
+  </details>}
+</div>

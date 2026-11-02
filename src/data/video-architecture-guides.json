@@ -1,0 +1,180 @@
+{
+  "h3": {
+    "eyebrow": "H3 · 한 장으로 이해하기",
+    "title": "화면과 소리를, 같은 생성기에서 함께 만든다.",
+    "lead": "사진·영상에서 인물과 동작을 읽고, 새 화면과 소리를 함께 다듬는다.",
+    "scope": "공개 H3-Base 개념도 · 상자를 누르면 설명이 열린다.",
+    "diagramTitle": "H3-Base의 생성 흐름",
+    "conditioning": [],
+    "steps": [
+      {
+        "label": "참고자료를 받기",
+        "subtitle": "지시문 · 사진 · 영상 · 소리",
+        "detail": "첫·끝 프레임 연결과 여러 참조 조합은 별도 가중치로 제공된다.",
+        "tags": [
+          "FL2VA / Ref2VA"
+        ]
+      },
+      {
+        "label": "의미를 읽고 압축하기",
+        "subtitle": "의미 인코더 + 영상·음성 압축기",
+        "detail": "인코더는 의미를 읽고, 압축기는 모양·소리를 작은 숫자 묶음으로 바꾼다.",
+        "tags": [
+          "Qwen3-VL",
+          "두 VAE"
+        ]
+      },
+      {
+        "label": "영상·소리 함께 다듬기",
+        "subtitle": "참조를 보며 노이즈를 줄이는 반복",
+        "detail": "무작위 값에서 출발해, 공유 Transformer가 영상·음성 표현을 함께 갱신한다.",
+        "tags": [
+          "33B 생성기",
+          "공동 생성"
+        ],
+        "highlight": true
+      },
+      {
+        "label": "보고 들을 수 있게 복원",
+        "subtitle": "768p 영상 + 스테레오 소리",
+        "detail": "두 VAE가 각각 압축 표현을 실제 영상·소리로 복원한다.",
+        "tags": [
+          "영상 복원",
+          "오디오 복원"
+        ]
+      }
+    ],
+    "takeaways": [
+      "인코더는 자료를 읽고, 생성기는 새 장면을 만든다.",
+      "화면과 소리가 같은 생성기를 공유한다.",
+      "공개 Base는 768p. 문맥 정리와 2K 재생성은 별도다."
+    ],
+    "extraTitle": "33B와 2K는 어디에 붙는 숫자일까?",
+    "extras": [
+      {
+        "label": "33B",
+        "text": "생성기 약 330억 개 가중치. Qwen3-VL-32B 인코더는 별도다."
+      },
+      {
+        "label": "계산 재사용",
+        "text": "생성기는 dense 구조다. 약 13B의 AdaLN 조건 계산을 미리 저장해 재사용할 수 있다."
+      },
+      {
+        "label": "2K",
+        "text": "호스팅 단계가 Base 결과와 원 참고자료로 더 큰 영상을 재생성한다."
+      }
+    ],
+    "terms": [
+      {
+        "term": "VAE",
+        "meaning": "영상·소리의 압축·복원 장치."
+      },
+      {
+        "term": "노이즈 제거",
+        "meaning": "무작위 값을 조건에 맞는 장면으로 바꾸는 반복."
+      }
+    ],
+    "sources": [
+      {
+        "title": "MiniMax 공식 구조 설명",
+        "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3#model-architecture"
+      },
+      {
+        "title": "생성기 설정",
+        "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/FL2VA/transformer/config.json"
+      }
+    ]
+  },
+  "wan": {
+    "eyebrow": "Wan · 한 장으로 이해하기",
+    "title": "큰 구도를 잡은 다음, 세부를 다듬는 전문가에게 넘긴다.",
+    "lead": "스케치 담당이 배치를 잡고 마감 담당이 디테일을 다듬듯, 공개 Wan 2.2는 노이즈가 많은 초반과 적은 후반을 나누어 처리한다.",
+    "scope": "이번 비교 모델은 Wan 3.0이다. 3.0의 내부 구조는 공개 확인이 제한돼, 아래는 공개된 Wan 2.2 A14B 구조로 이해하기 위한 개념도다.",
+    "diagramTitle": "공개된 Wan 2.2 A14B 구조로 이해하기",
+    "conditioning": [
+      "지시문",
+      "텍스트 인코더",
+      "두 전문가에 조건 전달"
+    ],
+    "steps": [
+      {
+        "label": "무작위 값에서 출발",
+        "subtitle": "아직 장면이 없는 압축 표현",
+        "detail": "새로 만들 영상의 작은 숫자 묶음을 노이즈로 시작한다. 지시문이 어떤 장면을 만들지 안내한다.",
+        "tags": [
+          "생성 시작"
+        ]
+      },
+      {
+        "label": "초반: 큰 구도 잡기",
+        "subtitle": "노이즈가 많을 때의 전문가",
+        "detail": "인물·배경의 전체 배치를 잡는 쪽에 집중한다. 여러 번 갱신하면서 노이즈를 줄인다.",
+        "tags": [
+          "고노이즈 전문가"
+        ],
+        "highlight": true
+      },
+      {
+        "label": "후반: 디테일 다듬기",
+        "subtitle": "노이즈가 적을 때의 전문가",
+        "detail": "정해진 노이즈 단계에 도달하면 전문가를 교대해 세부를 다듬는다. 한 반복 단계에서는 전문가 하나가 활성화된다.",
+        "tags": [
+          "저노이즈 전문가"
+        ],
+        "highlight": true
+      },
+      {
+        "label": "영상으로 복원하기",
+        "subtitle": "VAE가 압축 표현을 화면으로",
+        "detail": "완성된 작은 숫자 묶음을 픽셀의 연속으로 복원하면 영상이 된다. 이 도식은 2.2 T2V-A14B의 영상 경로다.",
+        "tags": [
+          "영상 출력"
+        ]
+      }
+    ],
+    "takeaways": [
+      "전문가 교대는 영상의 재생 시점이 아니라 생성 반복의 진행 단계에 따라 일어난다.",
+      "두 전문가가 큰 구조와 세부 작업을 나누어 맡는 것이 핵심이다.",
+      "이 구조와 파라미터 수를 Wan 3.0의 내부 사양으로 옮겨 쓰면 안 된다."
+    ],
+    "extraTitle": "A14B와 MoE는 무슨 뜻일까?",
+    "extras": [
+      {
+        "label": "A14B",
+        "text": "Wan 2.2 A14B 계열은 전체 약 27B, 한 생성 단계에 약 14B가 활성화된다."
+      },
+      {
+        "label": "MoE",
+        "text": "여러 전문가를 준비하고 조건에 맞는 전문가를 쓰는 설계. 여기서는 노이즈 단계가 선택 기준이다."
+      },
+      {
+        "label": "Wan 3.0",
+        "text": "공식 문서로 입력·출력 기능은 확인할 수 있지만 크기·전문가 수·학습법은 이 자료로 확정할 수 없다."
+      }
+    ],
+    "terms": [
+      {
+        "term": "VAE",
+        "meaning": "작은 숫자 표현을 실제 픽셀로 압축·복원하는 장치."
+      },
+      {
+        "term": "확산 Transformer",
+        "meaning": "문장 조건을 보며 노이즈를 조금씩 장면으로 바꾸는 생성기."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Wan 2.2 공식 설명 · 노이즈 단계별 전문가",
+        "url": "https://github.com/Wan-Video/Wan2.2#introduction-of-wan22"
+      },
+      {
+        "title": "Wan 2.2 T2V-A14B 공식 모델 카드",
+        "url": "https://huggingface.co/Wan-AI/Wan2.2-T2V-A14B"
+      },
+      {
+        "title": "Wan 3.0 공식 서비스 가이드",
+        "url": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/wan3-video-generation-guide"
+      }
+    ]
+  }
+}

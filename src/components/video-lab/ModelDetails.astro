@@ -1,0 +1,28 @@
+---
+import type { Source, VideoLabEpisode } from './types';
+interface Props {
+  comparison: VideoLabEpisode['comparison'];
+  sourceRefs: (ids: string[]) => (Source & { number: number })[];
+}
+const { comparison, sourceRefs } = Astro.props;
+---
+
+<div class="vl-reference-details">
+  <details class="vl-detail vl-reference-detail" data-reference-details="capabilities">
+    <summary>입력 모드·해상도·길이 자세히 보기 <span class="vl-reference-count">{comparison.rows.length}개 항목 <b class="vl-detail-icon" aria-hidden="true">+</b></span></summary>
+    <ul class="vl-bullets vl-reference-intro">{comparison.bullets.map((bullet) => <li>{bullet}</li>)}</ul>
+        <div class="vl-table-wrap" tabindex="0" role="region" aria-label="영상 모델 기능 비교표, 가로 스크롤 가능"><table class="vl-table vl-model-table"><caption>입력 모드·해상도·길이·공개 범위</caption><thead><tr><th scope="col">비교 항목</th>{comparison.columns.map((model) => <th scope="col">{model}</th>)}</tr></thead><tbody>{comparison.rows.map((row) => <tr><th scope="row">{row.label}<span class="vl-source-refs">{sourceRefs(row.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</span></th>{row.values.map((value) => <td>{value}</td>)}</tr>)}</tbody></table></div>
+
+  </details>
+  <details class="vl-detail vl-reference-detail" data-reference-details="prices">
+    <summary>모드별 전체 가격표 <span class="vl-reference-count">{comparison.prices.length}개 조건 <b class="vl-detail-icon" aria-hidden="true">+</b></span></summary>
+    <p class="vl-conditions">해상도·영상 입력·서비스 경로에 따라 요금이 달라진다. 아래 표는 각 조건의 단가를 보관한 참고 자료다.</p>
+<div class="vl-table-wrap" tabindex="0" role="region" aria-label="모드별 가격 비교표, 가로 스크롤 가능"><table class="vl-table vl-price-table"><caption>가격표 · USD</caption><thead><tr><th scope="col">모델 / 모드</th><th scope="col">해상도</th><th scope="col">초당 단가</th><th scope="col">예시 비용</th><th scope="col">조건과 출처</th></tr></thead><tbody>{comparison.prices.map((price) => <tr><th scope="row">{price.model}<small>{price.mode}</small></th><td>{price.resolution}</td><td class="vl-mono">{price.usdPerSecond}</td><td>{price.exampleCost}</td><td>{price.note}<span class="vl-source-refs">{sourceRefs(price.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</span></td></tr>)}</tbody></table></div>
+
+  </details>
+  <details class="vl-detail vl-reference-detail" data-reference-details="benchmarks">
+    <summary>벤치마크의 점수와 측정 조건 <span class="vl-reference-count">{comparison.benchmarks.length}개 보드 <b class="vl-detail-icon" aria-hidden="true">+</b></span></summary>
+    <p class="vl-conditions">동일 보드 안에서 표본·오차·입력 조건을 함께 본다. 다른 보드의 점수를 직접 비교하지 않는다.</p>
+<div class="vl-benchmark-list">{comparison.benchmarks.map((benchmark) => <article class="vl-benchmark"><header><h4>{benchmark.name}</h4><p>{benchmark.task} · {benchmark.date}</p></header><div class="vl-table-wrap" tabindex="0" role="region" aria-label={`${benchmark.name} 점수 비교`}><table class="vl-table"><thead><tr><th scope="col">모델</th><th scope="col">점수</th><th scope="col">불확실성</th><th scope="col">표본</th></tr></thead><tbody>{benchmark.scores.map((score) => <tr><th scope="row">{score.model}</th><td class="vl-score">{score.score}</td><td>{score.uncertainty}</td><td>{score.samples}</td></tr>)}</tbody></table></div><p class="vl-conditions"><strong>측정 방식</strong>{benchmark.method}</p><aside class="vl-note"><p>{benchmark.caveat}</p></aside><p class="vl-source-refs">근거 {sourceRefs(benchmark.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</p></article>)}</div>
+  </details>
+</div>

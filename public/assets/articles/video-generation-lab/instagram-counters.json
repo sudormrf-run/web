@@ -1,0 +1,990 @@
+{
+  "checkedAt": "2026-11-01",
+  "method": "Deduplicate by reel URL, parse K labels as rounded thousands, sum visible public view counters. Independently rechecked sums: 209204 and123069.",
+  "channels": [
+    {
+      "handle": "frontier.robotics",
+      "followers": 1453,
+      "reels": 88,
+      "displayedViewSum": 209204,
+      "roundedCounters": [
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DeyWBJkD8dG/",
+          "displayed": "10K"
+        }
+      ],
+      "source": "https://www.instagram.com/frontier.robotics/reels/",
+      "observedAt": "2026-10-30T10:59:09.495Z"
+    },
+    {
+      "handle": "frontier.ai1",
+      "followers": 682,
+      "reels": 99,
+      "displayedViewSum": 123069,
+      "roundedCounters": [
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De_-IYxq9zD/",
+          "displayed": "19.7K"
+        }
+      ],
+      "source": "https://www.instagram.com/frontier.ai1/reels/",
+      "observedAt": "2026-10-30T10:59:11.001Z"
+    }
+  ],
+  "rawCounters": [
+    {
+      "handle": "frontier.robotics",
+      "url": "https://www.instagram.com/frontier.robotics/reels/",
+      "followers": 1453,
+      "observedAt": "2026-10-30T10:59:09.495Z",
+      "reels": [
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DfHXv3bEgzo/",
+          "label": "177",
+          "observedAt": "2026-10-30T10:58:56.112Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DfHUXsKDgc2/",
+          "label": "807",
+          "observedAt": "2026-10-30T10:58:56.113Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DfHQ4kPj5XL/",
+          "label": "1,542",
+          "observedAt": "2026-10-30T10:58:56.113Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DfHNc9Bifd2/",
+          "label": "965",
+          "observedAt": "2026-10-30T10:58:56.113Z",
+          "labelCorrectedAt": "2026-10-30T11:01:59.504Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DfE2Yq2jCQ-/",
+          "label": "1,298",
+          "observedAt": "2026-10-30T10:58:56.113Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DfE2YrBk3kx/",
+          "label": "2,093",
+          "observedAt": "2026-10-30T10:58:56.113Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DfEy9CxDs6_/",
+          "label": "5,149",
+          "observedAt": "2026-10-30T10:58:56.113Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DfEvlXGFXlj/",
+          "label": "3,080",
+          "observedAt": "2026-10-30T10:58:56.113Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DfEsFoXiDv6/",
+          "label": "2,340",
+          "observedAt": "2026-10-30T10:58:56.113Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DfCVE9yDaHP/",
+          "label": "4,458",
+          "observedAt": "2026-10-30T10:58:56.113Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DfCOL05DhTF/",
+          "label": "1,227",
+          "observedAt": "2026-10-30T10:58:56.113Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DfCHU8nlaRR/",
+          "label": "3,645",
+          "observedAt": "2026-10-30T10:58:56.113Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DfCECufEdYw/",
+          "label": "1,910",
+          "observedAt": "2026-10-30T10:58:57.087Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DfB9OIck6tW/",
+          "label": "3,364",
+          "observedAt": "2026-10-30T10:58:57.087Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DfB5lzij79o/",
+          "label": "2,604",
+          "observedAt": "2026-10-30T10:58:57.087Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DfAE8LPir1f/",
+          "label": "1,012",
+          "observedAt": "2026-10-30T10:58:57.087Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De_-Fe5k9wt/",
+          "label": "2,365",
+          "observedAt": "2026-10-30T10:58:57.087Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De_3QvJArfd/",
+          "label": "3,671",
+          "observedAt": "2026-10-30T10:58:57.087Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De_wXZCjGSj/",
+          "label": "2,065",
+          "observedAt": "2026-10-30T10:58:57.087Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De_tE3ukRwq/",
+          "label": "2,575",
+          "observedAt": "2026-10-30T10:58:57.087Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De_pdtcjKmj/",
+          "label": "2,294",
+          "observedAt": "2026-10-30T10:58:58.051Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De_imdMjjo4/",
+          "label": "3,517",
+          "observedAt": "2026-10-30T10:58:58.051Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De_fVRNAXH7/",
+          "label": "2,195",
+          "observedAt": "2026-10-30T10:58:58.051Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De_bunEiusx/",
+          "label": "1,769",
+          "observedAt": "2026-10-30T10:58:58.051Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De_XXgtjlsZ/",
+          "label": "7,737",
+          "observedAt": "2026-10-30T10:58:58.051Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De9c9Ygji6r/",
+          "label": "1,994",
+          "observedAt": "2026-10-30T10:58:58.051Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De9WHTviIns/",
+          "label": "967",
+          "observedAt": "2026-10-30T10:58:58.051Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De9PMfEFdn6/",
+          "label": "2,162",
+          "observedAt": "2026-10-30T10:58:58.051Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De9LkngD699/",
+          "label": "1,605",
+          "observedAt": "2026-10-30T10:58:59.017Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De9ISEXjAHE/",
+          "label": "1,601",
+          "observedAt": "2026-10-30T10:58:59.017Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De9Eqk1CC8d/",
+          "label": "6,160",
+          "observedAt": "2026-10-30T10:58:59.017Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De9BeyAlX7R/",
+          "label": "7,385",
+          "observedAt": "2026-10-30T10:58:59.017Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De892UtEXVG/",
+          "label": "2,659",
+          "observedAt": "2026-10-30T10:58:59.017Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De86hWzk_yN/",
+          "label": "858",
+          "observedAt": "2026-10-30T10:58:59.017Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De82Fo8j-iC/",
+          "label": "1,158",
+          "observedAt": "2026-10-30T10:58:59.017Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De4WjbLlubg/",
+          "label": "1,949",
+          "observedAt": "2026-10-30T10:58:59.017Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De4PrfSlFAM/",
+          "label": "2,858",
+          "observedAt": "2026-10-30T10:59:00.191Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De4I1OLiLF9/",
+          "label": "1,375",
+          "observedAt": "2026-10-30T10:59:00.191Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De4B87OCbID/",
+          "label": "2,820",
+          "observedAt": "2026-10-30T10:59:00.191Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De3-pqAjDdc/",
+          "label": "1,222",
+          "observedAt": "2026-10-30T10:59:00.191Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De37E21j9ns/",
+          "label": "896",
+          "observedAt": "2026-10-30T10:59:00.191Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De33wn-Dm62/",
+          "label": "3,217",
+          "observedAt": "2026-10-30T10:59:00.191Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De30OBAicqn/",
+          "label": "1,437",
+          "observedAt": "2026-10-30T10:59:00.191Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De1Sl0UEWFz/",
+          "label": "3,256",
+          "observedAt": "2026-10-30T10:59:00.191Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De1LuTFDR8H/",
+          "label": "997",
+          "observedAt": "2026-10-30T10:59:01.151Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De1Ksd9jEn5/",
+          "label": "954",
+          "observedAt": "2026-10-30T10:59:01.151Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De1E41Ejtq4/",
+          "label": "2,272",
+          "observedAt": "2026-10-30T10:59:01.151Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De0-GL4jhDF/",
+          "label": "7,085",
+          "observedAt": "2026-10-30T10:59:01.151Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De03IJSDqR7/",
+          "label": "2,302",
+          "observedAt": "2026-10-30T10:59:01.151Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De0wQx5D82M/",
+          "label": "2,114",
+          "observedAt": "2026-10-30T10:59:01.151Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/De0pZGWidu9/",
+          "label": "1,108",
+          "observedAt": "2026-10-30T10:59:01.151Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DeyqoJ_grLa/",
+          "label": "2,333",
+          "observedAt": "2026-10-30T10:59:01.151Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DeyjvQ1Ec2z/",
+          "label": "2,214",
+          "observedAt": "2026-10-30T10:59:02.111Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/Deyc4jXiez7/",
+          "label": "1,200",
+          "observedAt": "2026-10-30T10:59:02.111Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DeyWBJkD8dG/",
+          "label": "10K",
+          "observedAt": "2026-10-30T10:59:02.111Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DeyPJWmj0dW/",
+          "label": "1,402",
+          "observedAt": "2026-10-30T10:59:02.111Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DeyI2hwAFgW/",
+          "label": "1,385",
+          "observedAt": "2026-10-30T10:59:02.111Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DeyBa8oFIXp/",
+          "label": "4,075",
+          "observedAt": "2026-10-30T10:59:02.111Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DewDF6sRYcm/",
+          "label": "1,221",
+          "observedAt": "2026-10-30T10:59:02.111Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DewC6zpRuAr/",
+          "label": "8,250",
+          "observedAt": "2026-10-30T10:59:02.111Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DewCvPXxki8/",
+          "label": "1,774",
+          "observedAt": "2026-10-30T10:59:03.088Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DewCkOxRElt/",
+          "label": "846",
+          "observedAt": "2026-10-30T10:59:03.088Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DewCZCwx22-/",
+          "label": "6,928",
+          "observedAt": "2026-10-30T10:59:03.088Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DewCNyXRv6E/",
+          "label": "3,836",
+          "observedAt": "2026-10-30T10:59:03.088Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DewCClkxiNh/",
+          "label": "1,417",
+          "observedAt": "2026-10-30T10:59:04.052Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DewB3bvxXjY/",
+          "label": "1,827",
+          "observedAt": "2026-10-30T10:59:04.052Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DewBruaxg1i/",
+          "label": "2,306",
+          "observedAt": "2026-10-30T10:59:04.052Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DewBfXqRXeL/",
+          "label": "1,208",
+          "observedAt": "2026-10-30T10:59:04.052Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DesvUFSxkrb/",
+          "label": "1,931",
+          "observedAt": "2026-10-30T10:59:04.052Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DesvEgzxHgP/",
+          "label": "1,196",
+          "observedAt": "2026-10-30T10:59:04.052Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DesumALxhSI/",
+          "label": "2,414",
+          "observedAt": "2026-10-30T10:59:04.052Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/Dest-ESxacp/",
+          "label": "753",
+          "observedAt": "2026-10-30T10:59:04.052Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DestJIcRN3M/",
+          "label": "4,438",
+          "observedAt": "2026-10-30T10:59:05.235Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/Desszk6RgV1/",
+          "label": "697",
+          "observedAt": "2026-10-30T10:59:05.235Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DessNrjx5E2/",
+          "label": "1,877",
+          "observedAt": "2026-10-30T10:59:05.235Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/Desr8yBxUxR/",
+          "label": "1,311",
+          "observedAt": "2026-10-30T10:59:05.235Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DesroVsxlN5/",
+          "label": "828",
+          "observedAt": "2026-10-30T10:59:05.235Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/DesrNdzRhvB/",
+          "label": "1,635",
+          "observedAt": "2026-10-30T10:59:05.235Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/Deq_WLqx0w1/",
+          "label": "1,929",
+          "observedAt": "2026-10-30T10:59:05.235Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/Deq_FOYR-3-/",
+          "label": "2,075",
+          "observedAt": "2026-10-30T10:59:05.235Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/Deq-0O_RBPW/",
+          "label": "839",
+          "observedAt": "2026-10-30T10:59:06.203Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/Deq-f0nROuE/",
+          "label": "1,808",
+          "observedAt": "2026-10-30T10:59:06.203Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/Deq-NGjRxAQ/",
+          "label": "850",
+          "observedAt": "2026-10-30T10:59:06.203Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/Deq9xztxjZq/",
+          "label": "1,789",
+          "observedAt": "2026-10-30T10:59:06.203Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/Deq9YxvRm7O/",
+          "label": "725",
+          "observedAt": "2026-10-30T10:59:06.203Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/Deq85_px-k_/",
+          "label": "2,091",
+          "observedAt": "2026-10-30T10:59:06.203Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/Deq7aYwRR0q/",
+          "label": "756",
+          "observedAt": "2026-10-30T10:59:06.203Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.robotics/reel/Deq7DTLxCmE/",
+          "label": "770",
+          "observedAt": "2026-10-30T10:59:06.203Z"
+        }
+      ]
+    },
+    {
+      "handle": "frontier.ai1",
+      "url": "https://www.instagram.com/frontier.ai1/reels/",
+      "followers": 682,
+      "observedAt": "2026-10-30T10:59:11.001Z",
+      "reels": [
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfHXy19SNBl/",
+          "label": "61",
+          "observedAt": "2026-10-30T10:58:56.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfHUT9LhkYS/",
+          "label": "324",
+          "observedAt": "2026-10-30T10:58:56.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfHQ4deqY-J/",
+          "label": "224",
+          "observedAt": "2026-10-30T10:58:56.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfHNiDPudUW/",
+          "label": "290",
+          "observedAt": "2026-10-30T10:58:56.125Z",
+          "labelCorrectedAt": "2026-10-30T11:01:59.453Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfE9QKHpA89/",
+          "label": "1,339",
+          "observedAt": "2026-10-30T10:58:56.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfE50Xux8Tk/",
+          "label": "550",
+          "observedAt": "2026-10-30T10:58:56.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfE2Yq4T9ce/",
+          "label": "636",
+          "observedAt": "2026-10-30T10:58:56.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfEy891okh4/",
+          "label": "413",
+          "observedAt": "2026-10-30T10:58:56.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfEvhfHx9wE/",
+          "label": "319",
+          "observedAt": "2026-10-30T10:58:56.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfEsFo_goeM/",
+          "label": "365",
+          "observedAt": "2026-10-30T10:58:56.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfEoWdPhlna/",
+          "label": "504",
+          "observedAt": "2026-10-30T10:58:56.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfCVFCxIeIk/",
+          "label": "417",
+          "observedAt": "2026-10-30T10:58:56.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfCRzr1h9Fv/",
+          "label": "2,301",
+          "observedAt": "2026-10-30T10:58:57.086Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfCOL0yOlTQ/",
+          "label": "341",
+          "observedAt": "2026-10-30T10:58:57.086Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfCK4sYOMl7/",
+          "label": "387",
+          "observedAt": "2026-10-30T10:58:57.086Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfCHU_gSLJh/",
+          "label": "460",
+          "observedAt": "2026-10-30T10:58:57.086Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfCED7-Ty5K/",
+          "label": "411",
+          "observedAt": "2026-10-30T10:58:57.086Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfCAdihh5W2/",
+          "label": "859",
+          "observedAt": "2026-10-30T10:58:57.086Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfB9KtUy3Yd/",
+          "label": "352",
+          "observedAt": "2026-10-30T10:58:57.086Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfB5loNzlHz/",
+          "label": "1,807",
+          "observedAt": "2026-10-30T10:58:57.086Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfAE8cCJCig/",
+          "label": "1,646",
+          "observedAt": "2026-10-30T10:58:58.052Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DfABzbrhMpK/",
+          "label": "1,300",
+          "observedAt": "2026-10-30T10:58:58.052Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De_-IYxq9zD/",
+          "label": "19.7K",
+          "observedAt": "2026-10-30T10:58:58.052Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De_3QVPhqya/",
+          "label": "2,177",
+          "observedAt": "2026-10-30T10:58:58.052Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De_0BVRAVbc/",
+          "label": "2,313",
+          "observedAt": "2026-10-30T10:58:58.052Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De_tFGnhprI/",
+          "label": "1,690",
+          "observedAt": "2026-10-30T10:58:58.052Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De_pd5yBJ0R/",
+          "label": "465",
+          "observedAt": "2026-10-30T10:58:58.052Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De_mKIHBKLl/",
+          "label": "1,832",
+          "observedAt": "2026-10-30T10:58:58.052Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De_imeJtgvQ/",
+          "label": "437",
+          "observedAt": "2026-10-30T10:58:59.009Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De_fVr_OA0j/",
+          "label": "570",
+          "observedAt": "2026-10-30T10:58:59.009Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De9gJ3KB3M8/",
+          "label": "544",
+          "observedAt": "2026-10-30T10:58:59.009Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De9ZVHGtAYg/",
+          "label": "558",
+          "observedAt": "2026-10-30T10:58:59.009Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De9SiS1ON7A/",
+          "label": "466",
+          "observedAt": "2026-10-30T10:58:59.009Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De9PMgmpHY0/",
+          "label": "500",
+          "observedAt": "2026-10-30T10:58:59.009Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De9LlDIClKR/",
+          "label": "553",
+          "observedAt": "2026-10-30T10:58:59.009Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De9IZeMqpFL/",
+          "label": "1,545",
+          "observedAt": "2026-10-30T10:58:59.009Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De9EumKhl32/",
+          "label": "599",
+          "observedAt": "2026-10-30T10:59:00.203Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De9BYdWhKaX/",
+          "label": "469",
+          "observedAt": "2026-10-30T10:59:00.203Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De89y-wJkQk/",
+          "label": "704",
+          "observedAt": "2026-10-30T10:59:00.203Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De86hxSJN9h/",
+          "label": "715",
+          "observedAt": "2026-10-30T10:59:00.203Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De4Z2PUBBLT/",
+          "label": "2,797",
+          "observedAt": "2026-10-30T10:59:00.203Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De4WwdnB4gH/",
+          "label": "598",
+          "observedAt": "2026-10-30T10:59:00.203Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De4P5JEsKJu/",
+          "label": "1,474",
+          "observedAt": "2026-10-30T10:59:00.203Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De4JB8FKeGb/",
+          "label": "1,561",
+          "observedAt": "2026-10-30T10:59:00.203Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De4Fl3avjse/",
+          "label": "402",
+          "observedAt": "2026-10-30T10:59:01.170Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De4CJ-MBPjT/",
+          "label": "770",
+          "observedAt": "2026-10-30T10:59:01.170Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De3-uRtBcRM/",
+          "label": "2,439",
+          "observedAt": "2026-10-30T10:59:01.170Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De37Sdwhu3G/",
+          "label": "454",
+          "observedAt": "2026-10-30T10:59:01.170Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De3328sM89F/",
+          "label": "461",
+          "observedAt": "2026-10-30T10:59:01.170Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De30bN6SD61/",
+          "label": "1,663",
+          "observedAt": "2026-10-30T10:59:01.170Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De1nK_egkbu/",
+          "label": "1,486",
+          "observedAt": "2026-10-30T10:59:01.170Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De1gTE7kqhX/",
+          "label": "1,513",
+          "observedAt": "2026-10-30T10:59:01.170Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De1Zbu2DroP/",
+          "label": "357",
+          "observedAt": "2026-10-30T10:59:02.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De1SocSDTv9/",
+          "label": "1,535",
+          "observedAt": "2026-10-30T10:59:02.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De1LueGj6Hl/",
+          "label": "1,632",
+          "observedAt": "2026-10-30T10:59:02.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De1E3JPk7Sh/",
+          "label": "2,909",
+          "observedAt": "2026-10-30T10:59:02.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De09_a7kybk/",
+          "label": "2,018",
+          "observedAt": "2026-10-30T10:59:02.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De03IH1Ersj/",
+          "label": "1,399",
+          "observedAt": "2026-10-30T10:59:02.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De0wXNuidyF/",
+          "label": "485",
+          "observedAt": "2026-10-30T10:59:02.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De0pZL2jbfI/",
+          "label": "475",
+          "observedAt": "2026-10-30T10:59:02.125Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/De0DZ1pk-KE/",
+          "label": "4,879",
+          "observedAt": "2026-10-30T10:59:03.089Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/Dez8Ts3kZj_/",
+          "label": "973",
+          "observedAt": "2026-10-30T10:59:03.089Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/Dez1cWGiZds/",
+          "label": "3,310",
+          "observedAt": "2026-10-30T10:59:03.089Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/Dezuo6GDP2c/",
+          "label": "477",
+          "observedAt": "2026-10-30T10:59:03.089Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/Dezntcyj5O6/",
+          "label": "1,568",
+          "observedAt": "2026-10-30T10:59:03.089Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/Dezg14_EuuK/",
+          "label": "1,616",
+          "observedAt": "2026-10-30T10:59:03.089Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DezZ-UADJ2r/",
+          "label": "1,489",
+          "observedAt": "2026-10-30T10:59:03.089Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DezTMLRip8A/",
+          "label": "709",
+          "observedAt": "2026-10-30T10:59:03.089Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DezMP2Rj4jZ/",
+          "label": "606",
+          "observedAt": "2026-10-30T10:59:04.269Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DezFYJ7ja5o/",
+          "label": "504",
+          "observedAt": "2026-10-30T10:59:04.269Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/Dey-gtjCdXw/",
+          "label": "1,074",
+          "observedAt": "2026-10-30T10:59:04.269Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/Dey3uHIEZKV/",
+          "label": "3,270",
+          "observedAt": "2026-10-30T10:59:04.269Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/Deywx5ciD0r/",
+          "label": "551",
+          "observedAt": "2026-10-30T10:59:04.269Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DeyqAyqiTUE/",
+          "label": "1,739",
+          "observedAt": "2026-10-30T10:59:04.269Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DeyjDH9gqcb/",
+          "label": "558",
+          "observedAt": "2026-10-30T10:59:04.269Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DeycMFBCnqo/",
+          "label": "763",
+          "observedAt": "2026-10-30T10:59:04.269Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DeyVT5ziQ3T/",
+          "label": "396",
+          "observedAt": "2026-10-30T10:59:04.269Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DeyOb_uj-G9/",
+          "label": "1,374",
+          "observedAt": "2026-10-30T10:59:04.269Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DeyHi4-CGVV/",
+          "label": "3,211",
+          "observedAt": "2026-10-30T10:59:04.269Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DesvZrnuSdC/",
+          "label": "325",
+          "observedAt": "2026-10-30T10:59:04.269Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DesvLJvOJPr/",
+          "label": "785",
+          "observedAt": "2026-10-30T10:59:05.453Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DesufRSuwpv/",
+          "label": "431",
+          "observedAt": "2026-10-30T10:59:05.453Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/Dest2KBOymN/",
+          "label": "408",
+          "observedAt": "2026-10-30T10:59:05.453Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DestSeFuEOj/",
+          "label": "671",
+          "observedAt": "2026-10-30T10:59:05.453Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DestDISOTG4/",
+          "label": "841",
+          "observedAt": "2026-10-30T10:59:06.416Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DessmodODUp/",
+          "label": "317",
+          "observedAt": "2026-10-30T10:59:06.416Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DessEKhuhga/",
+          "label": "664",
+          "observedAt": "2026-10-30T10:59:06.416Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DesrxxIOf1q/",
+          "label": "520",
+          "observedAt": "2026-10-30T10:59:06.416Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DesrgR0OrSW/",
+          "label": "342",
+          "observedAt": "2026-10-30T10:59:06.416Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DerZLJAu7Kg/",
+          "label": "2,219",
+          "observedAt": "2026-10-30T10:59:06.416Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DerYt6WOLMN/",
+          "label": "737",
+          "observedAt": "2026-10-30T10:59:06.416Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DerYcJ3OO_y/",
+          "label": "979",
+          "observedAt": "2026-10-30T10:59:06.416Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DerYNTSOhse/",
+          "label": "372",
+          "observedAt": "2026-10-30T10:59:07.386Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DerXpn6uXtX/",
+          "label": "386",
+          "observedAt": "2026-10-30T10:59:07.386Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DerXFOHO4sk/",
+          "label": "436",
+          "observedAt": "2026-10-30T10:59:07.386Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DerWx8kOdKd/",
+          "label": "2,584",
+          "observedAt": "2026-10-30T10:59:07.386Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DerWhtMuLXH/",
+          "label": "1,873",
+          "observedAt": "2026-10-30T10:59:07.386Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DerWQptOHxa/",
+          "label": "330",
+          "observedAt": "2026-10-30T10:59:07.386Z"
+        },
+        {
+          "url": "https://www.instagram.com/frontier.ai1/reel/DerPGYKOTdV/",
+          "label": "1,211",
+          "observedAt": "2026-10-30T10:59:07.386Z"
+        }
+      ]
+    }
+  ],
+  "collectionWindow": "2026-10-30 19:59–20:02 KST. 두 타일의 재확인 시각은 labelCorrectedAt에 보존했다."
+}

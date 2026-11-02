@@ -1,0 +1,238 @@
+{
+  "checkedAt": "2026-11-01T00:40:42.686736+00:00",
+  "limitUsd": 20,
+  "plannedUsd": 4.527,
+  "billingNote": "Final job.usage_summary cents, not submission reservations. chargedUsd = (captured_usd_cents - refunded_usd_cents) / 100. No paid retries.",
+  "inputs": {
+    "portrait": {
+      "public_url": "https://media.sume.com/assets/asset_b5416d537f1c48878c623ac4d04f4b42/source.jpg",
+      "sha256": "304d1abc2bdf83450dc929519e4888c65f564d514fcbc03457444bffa772432d",
+      "bytes": 7312048,
+      "content_type": "image/jpeg",
+      "source": "진행자가 직접 제공한 프로필 사진. LinkedIn 자동 수집 이미지가 아니다."
+    },
+    "motion": {
+      "public_url": "https://media.sume.com/assets/asset_5e1456712bdc406a93ad68f9c925da11/source.mp4",
+      "sha256": "2086bd23dac860379fde458512c72fdfbb53f0c0c4249d85c16459a0d24b2951",
+      "bytes": 2059670,
+      "content_type": "video/mp4",
+      "sourceUrl": "https://media.sume.com/assets/asset_0c42fa86d95c454f8a62e1faa9111c59/source.mp4",
+      "sourceSegmentSeconds": [
+        2,
+        7
+      ],
+      "durationSeconds": 5,
+      "fps": 24,
+      "width": 720,
+      "height": 1280
+    }
+  },
+  "runs": [
+    {
+      "id": "wan-3.0",
+      "jobId": "job_7943b3c7-fbdd-4b49-809c-3cc97ee4f241",
+      "model": "wan-3.0",
+      "endpoint": "/v1/video-router/generate",
+      "submittedAt": "2026-11-01T00:33:12.921Z",
+      "startedAt": "2026-11-01T00:33:14.230Z",
+      "completedAt": "2026-11-01T00:37:39.165Z",
+      "elapsedSeconds": 266.244,
+      "request": {
+        "model": "wan-3.0",
+        "prompt": "The person in reference image 1 performs the choreography and follows the body motion in reference video 1. Preserve the face, hairstyle and identity from image 1. Full-body shot, bright marble hallway with a teal door, natural photorealistic appearance. Five seconds, one continuous shot, no cuts, no captions.",
+        "duration": 5,
+        "resolution": "720p",
+        "aspect_ratio": "9:16",
+        "reference_image_urls": [
+          "https://media.sume.com/assets/asset_b5416d537f1c48878c623ac4d04f4b42/source.jpg"
+        ],
+        "reference_video_urls": [
+          "https://media.sume.com/assets/asset_5e1456712bdc406a93ad68f9c925da11/source.mp4"
+        ],
+        "mode": "async",
+        "generate_audio": true
+      },
+      "status": "completed",
+      "plannedUsd": 1.0,
+      "reservedUsd": 1.0,
+      "billing": {
+        "status": "captured",
+        "final": true,
+        "reserved_usd_cents": 100,
+        "captured_usd_cents": 100,
+        "refunded_usd_cents": 0,
+        "released_usd_cents": 0
+      },
+      "chargedUsd": 1.0,
+      "output": {
+        "videoUrl": "/assets/articles/video-generation-lab/remix-wan-3.0.mp4",
+        "originalUrl": "https://media.sume.com/artifacts/artf_0rAslovQa_pAhE-JTG7UOA2EqoS5dhwJ/video.mp4",
+        "bytes": 5214644,
+        "sha256": "b31dc6997074f80909336343dd222f13bf8083fb8b2b2fe0633c5b950f3c3ae9",
+        "width": 720,
+        "height": 1280,
+        "fps": "30/1",
+        "durationSeconds": 5.038005,
+        "audio": true
+      },
+      "poster": {
+        "imageUrl": "/assets/articles/video-generation-lab/remix-wan-3.0.webp",
+        "bytes": 20030,
+        "sha256": "d7060819df1decb0c56401ee0b1f7c2f14c33f2fa7a6e000024aef8fb9624dce"
+      }
+    },
+    {
+      "id": "seedance-2.5",
+      "jobId": "job_45366da9-619b-4dfa-b0e5-17955c875a9e",
+      "model": "seedance-2.5",
+      "endpoint": "/v1/video-router/generate",
+      "submittedAt": "2026-11-01T00:33:14.677Z",
+      "startedAt": "2026-11-01T00:33:16.251Z",
+      "completedAt": "2026-11-01T00:36:30.487Z",
+      "elapsedSeconds": 195.81,
+      "request": {
+        "model": "seedance-2.5",
+        "prompt": "The person in reference image 1 performs the choreography and follows the body motion in reference video 1. Preserve the face, hairstyle and identity from image 1. Full-body shot, bright marble hallway with a teal door, natural photorealistic appearance. Five seconds, one continuous shot, no cuts, no captions.",
+        "duration": 5,
+        "resolution": "720p",
+        "aspect_ratio": "9:16",
+        "reference_image_urls": [
+          "https://media.sume.com/assets/asset_b5416d537f1c48878c623ac4d04f4b42/source.jpg"
+        ],
+        "reference_video_urls": [
+          "https://media.sume.com/assets/asset_5e1456712bdc406a93ad68f9c925da11/source.mp4"
+        ],
+        "mode": "async",
+        "generate_audio": true
+      },
+      "status": "completed",
+      "plannedUsd": 2.312,
+      "reservedUsd": 1.39,
+      "billing": {
+        "status": "captured",
+        "final": true,
+        "reserved_usd_cents": 139,
+        "captured_usd_cents": 139,
+        "refunded_usd_cents": 0,
+        "released_usd_cents": 0
+      },
+      "chargedUsd": 1.39,
+      "output": {
+        "videoUrl": "/assets/articles/video-generation-lab/remix-seedance-2.5.mp4",
+        "originalUrl": "https://media.sume.com/artifacts/artf_5pk9A6hK5nef3RYKjMC1d6hQRrlPvkc8/video.mp4",
+        "bytes": 5203436,
+        "sha256": "b9bfb10d7c900fae3f45ff15f57a8fd31021e4a0682416fe268a0250e6c36c4e",
+        "width": 720,
+        "height": 1280,
+        "fps": "24/1",
+        "durationSeconds": 5.056,
+        "audio": true
+      },
+      "poster": {
+        "imageUrl": "/assets/articles/video-generation-lab/remix-seedance-2.5.webp",
+        "bytes": 20640,
+        "sha256": "0865d09913b10f42768dc3372e02aa3a336ff99eac07ebf166085f5f16236af8"
+      }
+    },
+    {
+      "id": "minimax-h3",
+      "jobId": "job_4596513c-7053-4f75-801e-c5a41e704e1b",
+      "model": "minimax-h3",
+      "endpoint": "/v1/video-router/generate",
+      "submittedAt": "2026-11-01T00:33:16.193Z",
+      "startedAt": "2026-11-01T00:33:18.268Z",
+      "completedAt": "2026-11-01T00:37:52.816Z",
+      "elapsedSeconds": 276.623,
+      "request": {
+        "model": "minimax-h3",
+        "prompt": "The person in reference image 1 performs the choreography and follows the body motion in reference video 1. Preserve the face, hairstyle and identity from image 1. Full-body shot, bright marble hallway with a teal door, natural photorealistic appearance. Five seconds, one continuous shot, no cuts, no captions.",
+        "duration": 5,
+        "resolution": "768p",
+        "aspect_ratio": "9:16",
+        "reference_image_urls": [
+          "https://media.sume.com/assets/asset_b5416d537f1c48878c623ac4d04f4b42/source.jpg"
+        ],
+        "reference_video_urls": [
+          "https://media.sume.com/assets/asset_5e1456712bdc406a93ad68f9c925da11/source.mp4"
+        ],
+        "mode": "async"
+      },
+      "status": "completed",
+      "plannedUsd": 0.6,
+      "reservedUsd": 0.3,
+      "billing": {
+        "status": "captured",
+        "final": true,
+        "reserved_usd_cents": 30,
+        "captured_usd_cents": 30,
+        "refunded_usd_cents": 0,
+        "released_usd_cents": 0
+      },
+      "chargedUsd": 0.3,
+      "output": {
+        "videoUrl": "/assets/articles/video-generation-lab/remix-minimax-h3.mp4",
+        "originalUrl": "https://media.sume.com/artifacts/artf_-4aNaK8RXQMB7YygbMMFkRDV9zSCu2yS/video.mp4",
+        "bytes": 1151386,
+        "sha256": "ddfa3662e80c871ac88741dfae02df415277d0c5da7023d9b1c5a354e0424916",
+        "width": 768,
+        "height": 1344,
+        "fps": "24/1",
+        "durationSeconds": 5.167,
+        "audio": true
+      },
+      "poster": {
+        "imageUrl": "/assets/articles/video-generation-lab/remix-minimax-h3.webp",
+        "bytes": 21220,
+        "sha256": "2427bbdacffda6e76eacbad5bbc7bb730daa1bcbed5a3779cbda04d601c00bab"
+      }
+    },
+    {
+      "id": "sume-remix",
+      "jobId": "job_ff8cf241-2ddd-4990-9f42-933c5aaa69c6",
+      "model": "sume-remix",
+      "endpoint": "/v1/sume/remix/motion-transfer/v1.0",
+      "submittedAt": "2026-11-01T00:33:17.256Z",
+      "startedAt": "2026-11-01T00:35:12.497Z",
+      "completedAt": "2026-11-01T00:40:19.971Z",
+      "elapsedSeconds": 422.715,
+      "request": {
+        "video_url": "https://media.sume.com/assets/asset_5e1456712bdc406a93ad68f9c925da11/source.mp4",
+        "image_urls": [
+          "https://media.sume.com/assets/asset_b5416d537f1c48878c623ac4d04f4b42/source.jpg"
+        ],
+        "prompt": "Replace the person in the source dance video with the man in image 1. Preserve his face, glasses, hairstyle, dark blue shirt and identity. Follow the original choreography, keep the marble hallway and teal door. Photorealistic, one continuous shot.",
+        "resolution": "480p",
+        "duration": 5
+      },
+      "status": "completed",
+      "plannedUsd": 0.615,
+      "reservedUsd": 0.62,
+      "billing": {
+        "status": "captured",
+        "final": true,
+        "reserved_usd_cents": 62,
+        "captured_usd_cents": 62,
+        "refunded_usd_cents": 0,
+        "released_usd_cents": 0
+      },
+      "chargedUsd": 0.62,
+      "output": {
+        "videoUrl": "/assets/articles/video-generation-lab/remix-sume-remix.mp4",
+        "originalUrl": "https://media.sume.com/artifacts/artf__UwaOjGvX9U7BikzN4B_PLP0qjiAgGWm/video.mp4",
+        "bytes": 2613727,
+        "sha256": "52f5a8503f66f86befaf886665303a7955521e09e1245ffef5147350ff4b04e0",
+        "width": 480,
+        "height": 854,
+        "fps": "24/1",
+        "durationSeconds": 5.042,
+        "audio": true
+      },
+      "poster": {
+        "imageUrl": "/assets/articles/video-generation-lab/remix-sume-remix.webp",
+        "bytes": 16578,
+        "sha256": "63eff5ceb37c3979c1c06d2a6d48d51a72aae1289c6272bda50f913810df6862"
+      }
+    }
+  ],
+  "totalChargedUsd": 3.31
+}

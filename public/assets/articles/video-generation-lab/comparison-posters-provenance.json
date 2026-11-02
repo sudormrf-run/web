@@ -1,0 +1,150 @@
+{
+  "checkedAt": "2026-11-01",
+  "method": "One editorial preview frame per original remote clip, at 1.0 second; ffmpeg scale width640 preserving aspect ratio, WebP quality82. Original full videos remain on their original hosts.",
+  "posters": [
+    {
+      "caseId": "ballet",
+      "modelIndex": 0,
+      "model": "Seedance 2.5",
+      "videoUrl": "https://cf.framepola.com/zms/2026/10/15/d4cd9547-3f82-4e5b-9c9e-ac3621f9d866.mp4?v=1792045890",
+      "sourceUrl": "https://zms.com/blog/seedance-2-5-vs-wan-3-0-vs-minimax-h3",
+      "creator": "ZMS AI",
+      "outputFilename": "ballet-0.webp",
+      "timeSeconds": 1.0,
+      "bytes": 11048,
+      "sha256": "df24a05e07fb59b8dfaae1a039904492258d88b42192c26484c738077c516675"
+    },
+    {
+      "caseId": "ballet",
+      "modelIndex": 1,
+      "model": "Wan 3.0",
+      "videoUrl": "https://cf.framepola.com/zms/2026/10/15/d36a6828-6905-4539-8d61-835dcb8bb938.mp4?v=1792045911",
+      "sourceUrl": "https://zms.com/blog/seedance-2-5-vs-wan-3-0-vs-minimax-h3",
+      "creator": "ZMS AI",
+      "outputFilename": "ballet-1.webp",
+      "timeSeconds": 1.0,
+      "bytes": 29132,
+      "sha256": "ea527a0dd8da4113e12d104dcf6df25d38023a4ed241782958b6e7bba1e806c8"
+    },
+    {
+      "caseId": "ballet",
+      "modelIndex": 2,
+      "model": "MiniMax H3",
+      "videoUrl": "https://cf.framepola.com/zms/2026/10/15/37de99aa-e4c7-44e2-a74e-d4511a8c46c5.mp4?v=1792045922",
+      "sourceUrl": "https://zms.com/blog/seedance-2-5-vs-wan-3-0-vs-minimax-h3",
+      "creator": "ZMS AI",
+      "outputFilename": "ballet-2.webp",
+      "timeSeconds": 1.0,
+      "bytes": 15154,
+      "sha256": "b4ceb558857abc3001a08ec2b6b94b973143804004039dd744a1dd0d048d0902"
+    },
+    {
+      "caseId": "perfume",
+      "modelIndex": 0,
+      "model": "Seedance 2.5",
+      "videoUrl": "https://cf.framepola.com/zms/2026/10/15/bfe09724-04ac-4e21-a671-fab6bf286072.mp4?v=1792045948",
+      "sourceUrl": "https://zms.com/blog/seedance-2-5-vs-wan-3-0-vs-minimax-h3",
+      "creator": "ZMS AI",
+      "outputFilename": "perfume-0.webp",
+      "timeSeconds": 1.0,
+      "bytes": 13794,
+      "sha256": "ac1cd527a0de581b792b3882ece3e3334e5942d5221f6703dcd8ade44baa7e4b"
+    },
+    {
+      "caseId": "perfume",
+      "modelIndex": 1,
+      "model": "Wan 3.0",
+      "videoUrl": "https://cf.framepola.com/zms/2026/10/15/1b07c611-ea5e-4dfe-b858-3c15c8176bcd.mp4?v=1792045960",
+      "sourceUrl": "https://zms.com/blog/seedance-2-5-vs-wan-3-0-vs-minimax-h3",
+      "creator": "ZMS AI",
+      "outputFilename": "perfume-1.webp",
+      "timeSeconds": 1.0,
+      "bytes": 15880,
+      "sha256": "53cea4b71d57e6046629f902bc9d4c1e8d9d283bc3a1cabad9ea43a9e7ba4a49"
+    },
+    {
+      "caseId": "perfume",
+      "modelIndex": 2,
+      "model": "MiniMax H3",
+      "videoUrl": "https://cf.framepola.com/zms/2026/10/15/bb5ef785-617b-43e9-a383-185f6779773a.mp4?v=1792045970",
+      "sourceUrl": "https://zms.com/blog/seedance-2-5-vs-wan-3-0-vs-minimax-h3",
+      "creator": "ZMS AI",
+      "outputFilename": "perfume-2.webp",
+      "timeSeconds": 1.0,
+      "bytes": 16480,
+      "sha256": "086b60cb464e2d7e4006fb9ec3ac72a69864296fbd87faa8337ea64e2307ea37"
+    },
+    {
+      "caseId": "croissant",
+      "modelIndex": 0,
+      "model": "Seedance 2.5",
+      "videoUrl": "https://cf.framepola.com/zms/2026/10/15/43551fd1-f530-4be9-9f94-43b14c3c35ae.mp4?v=1792046011",
+      "sourceUrl": "https://zms.com/blog/seedance-2-5-vs-wan-3-0-vs-minimax-h3",
+      "creator": "ZMS AI",
+      "outputFilename": "croissant-0.webp",
+      "timeSeconds": 1.0,
+      "bytes": 20532,
+      "sha256": "b62e7ce4edb515f6655598028a3ed17e9c31e3b93452e9471f8eebb463ae6296"
+    },
+    {
+      "caseId": "croissant",
+      "modelIndex": 1,
+      "model": "Wan 3.0",
+      "videoUrl": "https://cf.framepola.com/zms/2026/10/15/c0487fba-821d-406c-8241-d1d73ef599f6.mp4?v=1792046029",
+      "sourceUrl": "https://zms.com/blog/seedance-2-5-vs-wan-3-0-vs-minimax-h3",
+      "creator": "ZMS AI",
+      "outputFilename": "croissant-1.webp",
+      "timeSeconds": 1.0,
+      "bytes": 30456,
+      "sha256": "d6e18be125b13060744cdbc70ad9fca708a3bc2d82f35714242fadfa5794ac96"
+    },
+    {
+      "caseId": "croissant",
+      "modelIndex": 2,
+      "model": "MiniMax H3",
+      "videoUrl": "https://cf.framepola.com/zms/2026/10/15/4cee6434-4966-487d-bb4b-b13cccb7576a.mp4?v=1792046039",
+      "sourceUrl": "https://zms.com/blog/seedance-2-5-vs-wan-3-0-vs-minimax-h3",
+      "creator": "ZMS AI",
+      "outputFilename": "croissant-2.webp",
+      "timeSeconds": 1.0,
+      "bytes": 36810,
+      "sha256": "9075cc6846639d6bfdfc160856a5b245bc3e3c06a0e8d0db14d055c48291493c"
+    },
+    {
+      "caseId": "h3-post-training",
+      "modelIndex": 0,
+      "model": "Base",
+      "videoUrl": "https://huggingface.co/alibaba-pai/MiniMax-H3-Acc-LoRAs/resolve/main/results/minimax_h3_fl2va_baseline_1.mp4",
+      "sourceUrl": "https://huggingface.co/alibaba-pai/MiniMax-H3-Acc-LoRAs",
+      "creator": "Alibaba PAI",
+      "outputFilename": "h3-post-training-0.webp",
+      "timeSeconds": 1.0,
+      "bytes": 13950,
+      "sha256": "068ca99538675a8ec0a8fb4ed987e4e1a77387c310b79a22de0c587616231d8c"
+    },
+    {
+      "caseId": "h3-post-training",
+      "modelIndex": 1,
+      "model": "LightX2V4step",
+      "videoUrl": "https://huggingface.co/alibaba-pai/MiniMax-H3-Acc-LoRAs/resolve/main/results/minimax_h3_fl2va_turbo_4step_v1.1_768p_1.mp4",
+      "sourceUrl": "https://huggingface.co/alibaba-pai/MiniMax-H3-Acc-LoRAs",
+      "creator": "Alibaba PAI",
+      "outputFilename": "h3-post-training-1.webp",
+      "timeSeconds": 1.0,
+      "bytes": 12266,
+      "sha256": "d794c7fd4d26bb370cbf09701860134615c8a01c764b5001b0deb7a19ea2ae95"
+    },
+    {
+      "caseId": "h3-post-training",
+      "modelIndex": 2,
+      "model": "PDD8step",
+      "videoUrl": "https://huggingface.co/alibaba-pai/MiniMax-H3-Acc-LoRAs/resolve/main/results/minimax_h3_fl2va_acc_8step_v1_1.mp4",
+      "sourceUrl": "https://huggingface.co/alibaba-pai/MiniMax-H3-Acc-LoRAs",
+      "creator": "Alibaba PAI",
+      "outputFilename": "h3-post-training-2.webp",
+      "timeSeconds": 1.0,
+      "bytes": 13442,
+      "sha256": "4db70e0138e48482e3890da385350bdb93f4d9dd90f99b4c3f76f5ba27217fc6"
+    }
+  ]
+}

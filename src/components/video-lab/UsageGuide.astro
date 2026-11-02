@@ -1,0 +1,158 @@
+---
+import guide from '../../data/video-usage-guides.json';
+
+const sourceById = Object.fromEntries(guide.sources.map((source, index) => [source.id, { ...source, number: index + 1 }]));
+const sourceRefs = (ids: string[]) => ids.map((id) => sourceById[id]).filter(Boolean);
+---
+
+<div class="usage-guide" aria-label="공식 가이드로 비교하는 영상 생성 사용법">
+  <p class="usage-intro">{guide.intro}</p>
+  <ul class="usage-takeaways">{guide.bullets.map((bullet) => <li>{bullet}</li>)}</ul>
+  <p class="usage-scope">{guide.scopeNote}</p>
+
+  <div class="usage-cards">
+    {guide.models.map((model, index) => (
+      <article class="usage-card" aria-labelledby={`usage-model-${model.id}`}>
+        <header>
+          <p class="usage-kicker">OFFICIAL GUIDE / 0{index + 1}</p>
+          <h3 id={`usage-model-${model.id}`}>{model.name}</h3>
+          <p class="usage-headline">{model.headline}</p>
+        </header>
+        <nav class="usage-links" aria-label={`${model.name} 공식 가이드`}>
+          {model.links.map((link) => <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}
+        </nav>
+        <ol class="usage-workflow">{model.workflow.map((step) => <li>{step}</li>)}</ol>
+        <p class="usage-watch"><strong>시작 전에</strong>{model.watchOut}</p>
+      </article>
+    ))}
+  </div>
+
+  <section class="usage-section" aria-labelledby="usage-compare-title">
+    <header class="usage-section-heading"><p class="usage-kicker">WHAT CHANGES IN PRACTICE</p><h3 id="usage-compare-title">가이드에서 드러나는 차이</h3><p>{guide.comparison.intro}</p></header>
+    <p class="usage-scroll-hint">작은 화면에서는 표를 좌우로 밀어 비교할 수 있습니다. ↔</p>
+    <div class="usage-table-scroll" tabindex="0" role="region" aria-label="세 모델 공식 가이드 사용법 비교표">
+      <table class="usage-table">
+        <caption class="usage-sr-only">공식 제공사의 가이드를 기준으로 비교한 입력 방식과 제어 방법</caption>
+        <thead><tr><th scope="col">확인할 것</th>{guide.models.map((model) => <th scope="col">{model.name}</th>)}</tr></thead>
+        <tbody>{guide.comparison.rows.map((row) => <tr><th scope="row">{row.label}<span class="usage-row-sources">{sourceRefs(row.sourceIds ?? []).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`가이드 출처 ${source.number}: ${source.title}`}>[{source.number}]</a>)}</span></th>{row.values.map((value) => <td>{value}</td>)}</tr>)}</tbody>
+      </table>
+    </div>
+    <p class="usage-table-sources">공식 문서로 확인 {guide.sources.map((source, index) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`가이드 출처 ${index + 1}: ${source.title}`}>[{index + 1}]</a>)}</p>
+  </section>
+
+  <section class="usage-section usage-recipe" aria-labelledby="usage-recipe-title">
+    <header class="usage-section-heading"><p class="usage-kicker">ONE BRIEF, THREE WAYS TO ASK</p><h3 id="usage-recipe-title">{guide.recipe.title}</h3><p>{guide.recipe.intro}</p></header>
+    <aside class="usage-common-brief"><h4>같은 제작 목표</h4><p>{guide.recipe.commonBrief}</p></aside>
+    <div class="usage-prompt-list">
+      {guide.recipe.models.map((model) => (
+        <details class="usage-prompt" data-usage-prompt={model.id}>
+          <summary><span><strong>{model.name}</strong><small>{model.mode}</small></span><span class="usage-open-label">프롬프트 보기 <b aria-hidden="true">+</b></span></summary>
+          <div class="usage-prompt-content">
+            <p class="usage-prompt-why">{model.why}</p>
+            <pre><code>{model.prompt}</code></pre>
+            <p class="usage-prompt-sources">작성법 근거 {sourceRefs(model.sourceIds).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" title={source.title} aria-label={`가이드 출처 ${source.number}: ${source.title}`}>[{source.number}] ↗</a>)}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="usage-section usage-sources" aria-labelledby="usage-sources-title">
+    <header class="usage-sources-heading"><h3 id="usage-sources-title">공식 가이드 모아 보기</h3><p>{guide.checkedAt} 확인</p></header>
+    <ol>{guide.sources.map((source, index) => <li id={`usage-source-${source.id}`}><span class="usage-source-number">{String(index + 1).padStart(2, '0')}</span><div><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} ↗</a><p class="usage-source-publisher">{source.publisher}</p><p>{source.note}</p></div></li>)}</ol>
+  </section>
+</div>
+
+<style>
+  .usage-guide { min-width: 0; color: #d0dcd0; }
+  .usage-intro { max-width: 930px; color: #e0ebe0; font-size: clamp(19px, 2vw, 25px); font-weight: 600; line-height: 1.7; letter-spacing: -.035em; word-break: keep-all; }
+  .usage-takeaways { margin-top: 21px; list-style: disc; padding-left: 20px; font-size: 14px; line-height: 1.9; word-break: keep-all; }
+  .usage-takeaways li + li { margin-top: 6px; }
+  .usage-takeaways li::marker { color: #a4efc1; }
+  .usage-scope { margin-block: 21px 26px; padding: 16px 19px; border-left: 2px solid #86b592; background: #19241d; color: #b4c7b9; font-size: 13px; line-height: 1.85; word-break: keep-all; }
+  .usage-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .usage-card { display: flex; flex-direction: column; min-width: 0; padding: 23px; border: 1px solid #435548; background: #181f1a; }
+  .usage-kicker { color: #a4efc1; font-family: var(--font-mono); font-size: 10px; letter-spacing: .07em; line-height: 1.6; }
+  .usage-card h3 { margin-top: 11px; font-family: var(--font-mono); font-size: 22px; font-weight: 600; line-height: 1.4; }
+  .usage-headline { margin-top: 10px; color: #c3d5c6; font-size: 14px; line-height: 1.8; word-break: keep-all; }
+  .usage-links { display: flex; flex-wrap: wrap; gap: 9px; margin-block: 21px; }
+  .usage-links a { display: inline-flex; align-items: center; gap: 9px; padding: 9px 11px; border: 1px solid #52755b; background: #213327; color: #c9f2d5; font-size: 12px; line-height: 1.5; }
+  .usage-links a:hover { background: #2a4734; border-color: #9cddad; }
+  .usage-workflow { list-style: decimal; padding-left: 19px; margin-bottom: 23px; font-size: 13px; line-height: 1.9; word-break: keep-all; }
+  .usage-workflow li + li { margin-top: 10px; }
+  .usage-workflow li::marker { color: #a4efc1; font-family: var(--font-mono); }
+  .usage-watch { margin-top: auto; padding-top: 16px; border-top: 1px solid #354139; color: #b6c4b9; font-size: 12px; line-height: 1.85; word-break: keep-all; }
+  .usage-watch strong { display: block; margin-bottom: 6px; color: #e4b794; font-weight: 600; }
+  .usage-section { margin-top: 47px; }
+  .usage-section-heading { max-width: 900px; margin-bottom: 22px; }
+  .usage-section-heading h3 { margin-top: 12px; color: #e0ebe0; font-size: 27px; line-height: 1.5; font-weight: 600; letter-spacing: -.035em; word-break: keep-all; }
+  .usage-section-heading > p:last-child { margin-top: 12px; color: #b4c7b9; font-size: 14px; line-height: 1.9; word-break: keep-all; }
+  .usage-scroll-hint { display: none; color: #a9bcae; font-size: 11px; line-height: 1.7; margin-bottom: 9px; }
+  .usage-table-scroll { overflow-x: auto; max-width: 100%; border: 1px solid #435548; overscroll-behavior-x: contain; scrollbar-width: thin; }
+  .usage-table { width: 100%; min-width: 840px; border-collapse: collapse; table-layout: fixed; text-align: left; font-size: 13px; line-height: 1.85; }
+  .usage-table th, .usage-table td { padding: 17px 18px; vertical-align: top; border-bottom: 1px solid #354139; word-break: keep-all; overflow-wrap: anywhere; }
+  .usage-table thead th { color: #b6ebc7; background: #203426; font-weight: 600; }
+  .usage-table thead th:first-child { width: 145px; }
+  .usage-table tbody th { color: #d8e4d6; background: #19241d; font-weight: 500; }
+  .usage-table tbody td { color: #c9d7cc; }
+  .usage-table tr:last-child > * { border-bottom: none; }
+  .usage-row-sources { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 7px; }
+  .usage-row-sources a { color: #a4caae; font-family: var(--font-mono); font-size: 10px; text-decoration: underline; text-underline-offset: 3px; }
+  .usage-table-sources, .usage-prompt-sources { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; color: #9fb7a5; font-size: 11px; line-height: 1.8; margin-top: 13px; }
+  .usage-table-sources a, .usage-prompt-sources a { color: #b6d6bd; text-decoration: underline; text-underline-offset: 3px; }
+  .usage-common-brief { border: 1px solid #405e48; background: #17251c; padding: 21px 23px; margin-bottom: 18px; }
+  .usage-common-brief h4 { color: #a4efc1; font-size: 12px; font-weight: 600; line-height: 1.7; margin-bottom: 8px; }
+  .usage-common-brief p { font-size: 14px; line-height: 1.9; word-break: keep-all; }
+  .usage-prompt-list { display: grid; gap: 12px; }
+  .usage-prompt { border: 1px solid #435548; background: #181f1a; }
+  .usage-prompt > summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px 23px; cursor: pointer; list-style: none; }
+  .usage-prompt > summary::-webkit-details-marker { display: none; }
+  .usage-prompt summary strong { display: block; color: #e0ebe0; font-family: var(--font-mono); font-size: 17px; font-weight: 500; line-height: 1.5; }
+  .usage-prompt summary small { display: block; margin-top: 6px; font-size: 12px; color: #a9c5b0; line-height: 1.7; word-break: keep-all; }
+  .usage-open-label { display: inline-flex; align-items: center; gap: 15px; flex-shrink: 0; color: #a4efc1; font-size: 11px; }
+  .usage-open-label b { display: inline-block; font-family: var(--font-mono); font-size: 18px; font-weight: 400; }
+  .usage-prompt[open] > summary .usage-open-label b { transform: rotate(45deg); }
+  .usage-prompt-content { padding: 0 23px 23px; }
+  .usage-prompt-why { color: #b4c7b9; font-size: 13px; line-height: 1.85; margin-bottom: 16px; word-break: keep-all; }
+  .usage-prompt pre { padding: 19px; background: #101813; border: 1px solid #354139; color: #d7e7d5; font-family: var(--font-mono); font-size: 13px; line-height: 1.9; white-space: pre-wrap; overflow-wrap: anywhere; tab-size: 2; }
+  .usage-sources-heading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+  .usage-sources-heading h3 { color: #dce9d5; font-size: 20px; font-weight: 500; line-height: 1.6; }
+  .usage-sources-heading p { color: #9ab5a0; font-size: 11px; line-height: 1.7; }
+  .usage-sources ol { border-top: 1px solid #354139; }
+  .usage-sources li { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 17px; padding-block: 19px; border-bottom: 1px solid #354139; scroll-margin-top: 178px; }
+  .usage-source-number { color: #88ac91; font-family: var(--font-mono); font-size: 11px; padding-top: 4px; }
+  .usage-sources li a { color: #c9e3ce; font-size: 14px; line-height: 1.8; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+  .usage-sources li p { color: #a3bba9; font-size: 12px; line-height: 1.85; margin-top: 6px; word-break: keep-all; }
+  .usage-sources li .usage-source-publisher { color: #bad1bd; font-size: 11px; }
+  .usage-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+  .usage-guide a:focus-visible, .usage-table-scroll:focus-visible, .usage-prompt > summary:focus-visible { outline: 2px solid #a4efc1; outline-offset: 4px; }
+  @media (max-width: 1000px) {
+    .usage-card { padding: 18px; }
+    .usage-card h3 { font-size: 19px; }
+    .usage-scroll-hint { display: block; }
+  }
+  @media (max-width: 760px) {
+    .usage-cards { grid-template-columns: minmax(0, 1fr); }
+    .usage-card { padding: 22px; }
+    .usage-card h3 { font-size: 23px; }
+    .usage-section { margin-top: 35px; }
+    .usage-section-heading h3 { font-size: 23px; }
+    .usage-prompt > summary { padding: 18px; gap: 14px; }
+    .usage-open-label { font-size: 10px; gap: 8px; }
+    .usage-prompt summary strong { font-size: 16px; }
+    .usage-prompt-content { padding: 0 18px 18px; }
+    .usage-prompt pre { padding: 14px; font-size: 12px; }
+    .usage-common-brief { padding: 18px; }
+    .usage-sources li { gap: 12px; grid-template-columns: 23px minmax(0, 1fr); }
+  }
+  @media print {
+    .usage-cards { grid-template-columns: minmax(0, 1fr); }
+    .usage-card, .usage-common-brief { break-inside: avoid; }
+    .usage-table-scroll { overflow: visible; }
+    .usage-table { min-width: 0; font-size: 8pt; }
+    .usage-table th, .usage-table td { padding: 8px; }
+    .usage-table thead th:first-child { width: 85px; }
+    .usage-scroll-hint, .usage-open-label { display: none; }
+    .usage-prompt pre { font-size: 9pt; }
+  }
+</style>
