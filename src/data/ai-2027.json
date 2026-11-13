@@ -1,0 +1,995 @@
+{
+  "meta": {
+    "title": "AI 2027, 예측을 현실에 대조하다",
+    "description": "AI 2027의 원래 시나리오와 2026년 11월 13일까지의 사건, 저자들의 세 차례 리뷰를 비교하는 팟캐스트용 자료.",
+    "published": "2025.04.03",
+    "reviewed": "2026.11.13",
+    "duration": "45–55분 구성 제안",
+    "eyebrow": "SUDO REMOVE · PODCAST DOSSIER 01",
+    "heroTitle": "예측을 현실에\n대조하다.",
+    "intro": "코딩을 맡긴 AI가 다음 AI까지 만든다면. 그 시나리오는 어디까지 현실이 됐을까?",
+    "authors": [
+      "Daniel Kokotajlo",
+      "Scott Alexander",
+      "Thomas Larsen",
+      "Eli Lifland",
+      "Romeo Dean"
+    ],
+    "heroFindings": [
+      {
+        "label": "관측된 변화",
+        "body": "에이전트의 확산, AI를 쓰는 AI 연구",
+        "tone": "green"
+      },
+      {
+        "label": "놓친 일정·빈 근거",
+        "body": "일부 성능 목표, 중국 연구의 일원화",
+        "tone": "orange"
+      },
+      {
+        "label": "아직 남은 질문",
+        "body": "연구 보조가 완전 자율 연구로 이어질까",
+        "tone": "blue"
+      }
+    ],
+    "scope": "2026년 11월 13일에 고정한 검토본입니다. 이후 사건은 반영하지 않았습니다.",
+    "method": "판정은 아래 자료를 대조한 편집 판단입니다. 저자들의 자기평가와 독립된 사실 판정을 구분하며, 전체 적중률은 계산하지 않습니다."
+  },
+  "reportLinks": [
+    {
+      "label": "AI 2027 원문",
+      "url": "https://ai-2027.com/"
+    },
+    {
+      "label": "보고서 PDF",
+      "url": "https://ai-2027.com/ai-2027.pdf"
+    },
+    {
+      "label": "원문 요약",
+      "url": "https://ai-2027.com/summary"
+    }
+  ],
+  "reportEmbed": {
+    "url": "https://ai-2027.com/ai-2027.pdf#view=FitH",
+    "title": "원본 보고서 PDF를 이 페이지에서 보기",
+    "note": "영문 원본 · 원문 사이트에서 제공하는 현재 PDF입니다. 출간 후 주석이 포함될 수 있습니다. 브라우저에서 표시되지 않으면 PDF를 새 탭으로 열어주세요.",
+    "linkLabel": "PDF 새 탭으로 열기"
+  },
+  "quotes": {
+    "hero": {
+      "sourceId": "original",
+      "ko": "우리의 목표는 예측의 정확성이다.",
+      "en": "Our goal is predictive accuracy.",
+      "speaker": "AI 2027 저자들",
+      "section": "2025.04.03 · 서문",
+      "why": "공포나 낙관의 강도보다, 실제로 무엇이 관측됐는지 묻는 출발점.",
+      "context": "하나의 구체적 미래를 제시한 시나리오이며, 저자들은 다른 시나리오와의 공개적인 논쟁을 권한다."
+    },
+    "employees": {
+      "sourceId": "original",
+      "ko": "2025년의 AI는 직원에 더 가깝게 기능한다.",
+      "en": "In 2025, AIs function more like employees.",
+      "speaker": "AI 2027 저자들",
+      "section": "2025년 중반 예측",
+      "why": "우리도 AI에게 답변보다 작업을 맡기기 시작했는지 이야기할 수 있다.",
+      "context": "코딩·리서치 에이전트를 설명하는 문장이다. 모든 직업의 대체나, 감독이 필요 없는 직원을 뜻하지 않는다."
+    },
+    "simulations": {
+      "sourceId": "misalignment",
+      "ko": "실제 배포에서 이런 에이전트의 목표 이탈 증거를 본 적은 없다.",
+      "en": "We have not seen evidence of agentic misalignment in real deployments.",
+      "speaker": "Anthropic 연구진",
+      "section": "2025.06.20 · 연구 발표 당시의 설명",
+      "why": "실험에서 드러난 위험과 실제 피해 사건을 혼동하지 않게 한다.",
+      "context": "목표 이탈은 AI가 부여받은 목표를 달성하려고 회사에 해로운 행동을 택하는 경우를 가리킨다. 실험 속 인물·기업은 가상이며 실제 피해자는 없었다. 이 인용을 2026년 전체에 대한 무사고 선언으로 확대하지 않는다."
+    },
+    "behind": {
+      "sourceId": "review-feb",
+      "ko": "AI 소프트웨어 R&D의 향상 효과는 예상 속도에 못 미친다.",
+      "en": "AI software R&D uplift is behind pace.",
+      "speaker": "Eli Lifland · Daniel Kokotajlo",
+      "section": "2026.02.12 · 저자 자기평가",
+      "why": "AI가 유용하다는 판단과, 원래 일정에 맞는다는 판단은 별개다.",
+      "context": "당시 저자들은 2025년 초의 연구 향상 효과 추정부터 하향 수정했다. 이것을 11월의 최신 관측으로 읽으면 안 된다."
+    },
+    "china": {
+      "sourceId": "review-aug",
+      "ko": "2026년 중반 부분은 더 빗나간 것 같다.",
+      "en": "the mid-2026 section seems more of a miss",
+      "speaker": "Eli Lifland · Daniel Kokotajlo · Brendan Halstead",
+      "section": "2026.08.16 · 저자 자기평가 중 발췌",
+      "why": "지정학적 관심의 증가와, 특정 조직 개편의 실현을 분리한다.",
+      "context": "중국의 AI 프로젝트 통합 예측을 평가하는 대목. 저자들은 중국 전문가가 아니며 공개적으로 그런 통합을 확인하지 못했다고 밝힌다."
+    },
+    "not-yet": {
+      "sourceId": "anthropic-rsi",
+      "ko": "아직 그 단계에 이르지 않았고, 재귀적 자기개선이 필연적인 것도 아니다.",
+      "en": "We are not there yet, and recursive self-improvement is not inevitable.",
+      "speaker": "Anthropic Institute",
+      "section": "When AI builds itself",
+      "why": "코드를 많이 쓰는 AI와, 후속 AI를 스스로 설계하는 AI 사이의 거리를 보여준다.",
+      "context": "Anthropic이 자사 내부의 AI 개발 자동화를 소개하면서 붙인 조건이다. 공개일이 명확하지 않아 열람일인 2026.11.13을 기준으로 인용한다."
+    },
+    "jobs": {
+      "sourceId": "stanford",
+      "ko": "초기 현상을 보여주는 지표들",
+      "en": "early, descriptive indicators",
+      "speaker": "Brynjolfsson · Chandar · Chen",
+      "section": "2026.08.12 개정 · 고용 연구 중 발췌",
+      "why": "눈에 띄는 노동시장 변화가 곧 AI의 인과효과라는 결론은 아니다.",
+      "context": "현상을 묘사하는 초기 관측이라는 뜻이다. 연구진은 이를 AI가 원인임을 증명한 추정으로 해석하지 않는다."
+    },
+    "redacted": {
+      "sourceId": "metr-nov",
+      "ko": "Anthropic은 이 결론에 가장 유익했던 증거의 대다수를 비공개 처리했다.",
+      "en": "Anthropic redacted a majority of the evidence we found most informative for these conclusions.",
+      "speaker": "METR 평가진",
+      "section": "2026.11.05 · 공개 범위 설명",
+      "why": "강한 결론을 읽을 때, 독자가 직접 확인할 수 있는 근거의 범위도 함께 본다.",
+      "context": "METR은 Anthropic 내부 자료에 접근한 외부 평가자다. 결론의 공개는 가능했지만, 회사가 비공개 정보의 삭제 권한을 행사했다."
+    },
+    "uncertainty": {
+      "sourceId": "original",
+      "ko": "하지만 이런 동학은 본질적으로 훨씬 예측하기 어렵다.",
+      "en": "But these dynamics are inherently much less predictable.",
+      "speaker": "AI 2027 저자들",
+      "section": "2027년으로 넘어가는 대목",
+      "why": "미래의 월별 순서는 달력이 아니라, 검토할 가설의 목록으로 읽는다.",
+      "context": "AI가 AI 연구를 가속하기 시작한 이후의 경로는 앞선 추세보다 예측하기 어렵다는 원문의 단서다."
+    }
+  },
+  "videos": [
+    {
+      "id": "5KVDDfAkRgc",
+      "title": "We're Not Ready for Superintelligence",
+      "titleKo": "먼저, 시나리오의 전체 그림",
+      "channel": "AI In Context · 80,000 Hours",
+      "date": "2025.07.09",
+      "duration": "34:11",
+      "kind": "원문이 연결한 해설 영상",
+      "sourceId": "video-tour",
+      "summary": "AI 연구의 가속, 통제 문제, 감속과 경쟁의 갈림길을 설명한다. 제작자 소개에 따르면 Daniel Kokotajlo 인터뷰와 반론을 포함한다.",
+      "note": "영상 제작은 80,000 Hours. 보고서 저자들이 제작한 공식 영상으로 취급하지 않는다."
+    },
+    {
+      "id": "htOvH12T7mU",
+      "title": "AI 2027: month-by-month model of intelligence explosion — Scott Alexander & Daniel Kokotajlo",
+      "titleKo": "그다음, 저자들에게 직접 묻다",
+      "channel": "Dwarkesh Patel",
+      "date": "2025.04.03",
+      "duration": "3:05:16",
+      "kind": "공동 저자 두 명과의 대담",
+      "sourceId": "dwarkesh",
+      "summary": "출간 당일 Scott Alexander와 Daniel Kokotajlo가 지능 폭발, 미·중 경쟁, AI 통제에 관한 가정을 설명한다. 진행자가 반론을 제기하는 형식이다.",
+      "note": "추천 구간은 제작자가 공개한 챕터 기준이다. 발언의 직접 인용으로 사용하지 않았다.",
+      "chapters": [
+        {
+          "label": "2025·2026년 전망",
+          "time": "06:56",
+          "seconds": 416
+        },
+        {
+          "label": "지능 폭발 논쟁",
+          "time": "24:33",
+          "seconds": 1473
+        },
+        {
+          "label": "미·중 경쟁",
+          "time": "1:32:30",
+          "seconds": 5550
+        },
+        {
+          "label": "AI 통제 문제",
+          "time": "2:03:22",
+          "seconds": 7402
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "group": "원문부터",
+      "nav": "무엇을 예측했나",
+      "kicker": "01 / THE CLAIM",
+      "title": "핵심은 챗봇의 성능보다,\nAI가 AI를 만드는 속도.",
+      "lead": "AI 연구를 자동화하면 다음 AI가 더 빨리 나온다. 더 강한 AI는 연구를 더 많이 자동화한다. 보고서의 큰 사건들은 이 순환에서 시작한다.",
+      "chain": [
+        "코딩 에이전트",
+        "AI 연구 보조",
+        "자율 AI 연구",
+        "더 빠른 후속 AI",
+        "인간의 통제 문제"
+      ],
+      "details": [
+        {
+          "title": "원문을 읽기 전에 알아둘 세 가지",
+          "body": [
+            "OpenBrain과 DeepCent는 가상 기업이다. 각각을 OpenAI나 DeepSeek 한 곳에 그대로 대응시키면 안 된다.",
+            "2027년은 출간 당시 저자들의 최빈 예상 연도였다. 모든 저자의 중앙값이나 확정 기한은 아니었다. 이 설명은 2025년 11월 22일 원문에 추가됐다.",
+            "원문에는 이후 수정된 주석·그래프가 있다. 이 페이지는 원래 목표 시점과 사후 수정·새 전망을 구분한다."
+          ],
+          "sourceIds": [
+            "original"
+          ]
+        }
+      ],
+      "question": "AI에게 일을 맡기는 것과, 다음 AI의 연구 방향까지 맡기는 것 사이에는 무엇이 더 필요할까?",
+      "hostNote": "오늘의 비교 기준은 두 가지. 변화의 방향을 맞혔는지, 그리고 약속한 시점에 도착했는지. 둘을 따로 이야기한다."
+    },
+    {
+      "id": "watch",
+      "group": "원문부터",
+      "nav": "보고서·영상",
+      "kicker": "02 / READ & WATCH",
+      "title": "원문, 해설, 저자의 목소리.",
+      "lead": "원문을 옆에 열어두고 보자. 첫 영상은 전체 그림을, 두 번째 영상은 저자들이 어떤 가정으로 판단했는지를 이해하는 데 쓸 수 있다.",
+      "showVideos": true,
+      "details": [
+        {
+          "title": "영상과 인용의 확인 범위",
+          "body": [
+            "제작자의 게시물·챕터와 YouTube의 제목·채널·게시일·길이·임베드 허용 여부를 확인했다. 영상 전체를 대조한 발언록은 만들지 않았다.",
+            "이 페이지의 직접 인용은 연결된 글의 원문에서 가져왔다. 한국어는 편집 번역이며 영어 원문과 맥락을 펼쳐 확인할 수 있다."
+          ],
+          "sourceIds": [
+            "video-tour",
+            "dwarkesh"
+          ]
+        }
+      ],
+      "question": "저자의 가정을 듣고 나면, 가장 그럴듯해지는 연결과 가장 약해지는 연결은 어디인가?"
+    },
+    {
+      "id": "agents",
+      "group": "지금까지의 관찰",
+      "nav": "2025 · 에이전트",
+      "kicker": "03 / AGENTS",
+      "title": "답변을 받다가,\n작업을 맡기기 시작했다.",
+      "quoteId": "employees",
+      "prediction": {
+        "period": "2025년 중반 · 원래 시나리오",
+        "body": "범용 컴퓨터 에이전트는 불안정하지만, 코딩·리서치 에이전트는 실제 업무에 들어온다.",
+        "sourceId": "original"
+      },
+      "events": [
+        {
+          "date": "2025.07.17",
+          "title": "ChatGPT agent 공개",
+          "body": "OpenAI가 가상 컴퓨터로 검색과 작업을 수행하는 제품을 발표했다. 출시 사실은 확인되지만, 광범위한 사용 여부를 입증하는 자료는 아니다.",
+          "sourceId": "agent",
+          "type": "기업 발표"
+        },
+        {
+          "date": "2025.09.02",
+          "title": "Claude Code의 사용 증가",
+          "body": "Anthropic은 사용량이 3개월 동안 10배 넘게 늘었다고 밝혔다. 회사가 발표한 성장 수치다.",
+          "sourceId": "claude-code",
+          "type": "기업 자기보고"
+        },
+        {
+          "date": "2026.02.12",
+          "title": "저자들: 큰 방향은 맞았다",
+          "body": "다만 Slack·Teams를 통한 활용이 특별히 많았다고 보지는 않았다. 업무 방식의 세부 묘사까지 맞은 것은 아니다.",
+          "sourceId": "review-feb",
+          "type": "저자 자기평가"
+        }
+      ],
+      "verdict": {
+        "label": "방향 부합",
+        "tone": "green",
+        "body": "작업을 맡기는 제품과 활용은 늘었다. 출시·성장 사례만으로 전 산업의 자율 직원화를 입증할 수는 없다."
+      },
+      "details": [
+        {
+          "title": "반대 방향의 실험 결과도 함께 보기",
+          "body": [
+            "2025년 7월 10일 METR은 숙련 오픈소스 개발자 16명의 실제 과제 246개를 무작위 배정한 실험을 발표했다. 당시 AI 도구를 허용한 과제는 완료에 19% 더 오래 걸렸다. 모든 개발 환경의 대표값은 아니다.",
+            "2026년 2월 24일 후속 글은 더 나은 도구의 효과를 측정하기 어려워졌다고 설명했다. AI 없이 일하기 싫어 참여를 거절하거나 과제를 빼는 선택 편향과 작업시간 측정 문제가 컸다. 초기의 느림도, 후속의 빠름도 전체 개발자에게 그대로 일반화할 수 없다."
+          ],
+          "sourceIds": [
+            "metr-rct",
+            "metr-followup"
+          ]
+        }
+      ],
+      "question": "우리 팀에서 AI에게 맡기는 일은 늘었나? 반대로, 끝까지 사람이 확인하는 부분은 무엇인가?"
+    },
+    {
+      "id": "control",
+      "group": "지금까지의 관찰",
+      "nav": "2025 · AI의 협박?",
+      "kicker": "04 / THE CONTROLLED TEST",
+      "title": "AI가 회사를 협박했다?\n실제 회사가 아닌 실험이었다.",
+      "quoteId": "simulations",
+      "prediction": {
+        "period": "2025년 후반 · 원래 시나리오",
+        "body": "일부 조작된 평가에서 AI가 실패를 숨긴다. 실제 배포에서 극단적 사고가 발생한다는 이야기는 아니다.",
+        "sourceId": "original"
+      },
+      "events": [
+        {
+          "date": "2025.06.20",
+          "title": "Anthropic의 에이전트 목표 이탈 실험",
+          "body": "연구진은 16개 주요 모델을 가상 기업 상황에서 시험했다. 교체 위협이나 목표 충돌이 있을 때 협박·기밀 유출 같은 행동이 나왔다. 해로운 행동이 목표 달성의 유일한 길이 되도록 설계한 시험이었다.",
+          "sourceId": "misalignment",
+          "type": "기업 연구 · 통제된 시뮬레이션"
+        }
+      ],
+      "verdict": {
+        "label": "실험실의 위험 신호",
+        "tone": "blue",
+        "body": "감독을 줄이고 민감한 정보에 접근시켰을 때의 위험을 보여준다. 현실의 협박 피해나 원문의 미래 통제 상실이 이미 일어났다는 증거는 아니다."
+      },
+      "question": "극단적인 상황을 의도적으로 만든 실험은, 실제 배포 결정을 바꿀 만큼 강한 경고일까?"
+    },
+    {
+      "id": "benchmark",
+      "group": "지금까지의 관찰",
+      "nav": "2025 · 성능 목표",
+      "kicker": "05 / A MISSED DEADLINE",
+      "title": "성능은 올랐다.\n그렇다고 일정을 맞힌 건 아니다.",
+      "lead": "저자들이 채점에 사용한 SWE-bench Verified 수치. 원래 목표는 ‘2025년 중반 85%’였다.",
+      "facts": [
+        {
+          "value": "85%",
+          "label": "2025년 중반 목표",
+          "note": "원문 예측을 저자 리뷰에서 재확인",
+          "sourceId": "review-feb",
+          "tone": "blue"
+        },
+        {
+          "value": "74.5%",
+          "label": "채점에 사용한 실제값",
+          "note": "Opus 4.1 · 2025.08.05 공개",
+          "sourceId": "opus",
+          "tone": "orange"
+        },
+        {
+          "value": "81%",
+          "label": "2025년 말 실제값",
+          "note": "2026년 2월 저자 리뷰의 집계",
+          "sourceId": "review-feb",
+          "tone": "green"
+        }
+      ],
+      "verdict": {
+        "label": "해당 시점 목표 미달",
+        "tone": "orange",
+        "body": "저자들도 예상보다 느렸다고 인정했다. 나중에 높은 점수에 도달해도, 원래 시점의 오차가 사라지지는 않는다."
+      },
+      "details": [
+        {
+          "title": "이 숫자를 비교할 때의 주의점",
+          "body": [
+            "74.5%는 6월 말의 측정치가 아니다. 저자들이 ‘중반’ 채점에 쓴 값이며, 해당 모델은 8월 5일에 공개됐다. 기간 구분이 느슨하다는 한계까지 함께 읽어야 한다.",
+            "SWE-bench Verified는 소프트웨어 이슈 해결 평가다. 제품 전체를 만들거나 연구 방향을 정하는 능력의 점수가 아니다.",
+            "도구 구성·시도 횟수·평가 문제 집합에 따라 점수가 달라진다. 이 표는 당시 저자들의 채점과 기업 발표를 옮긴 것으로, 2026년 11월의 최신 순위표가 아니다."
+          ],
+          "sourceIds": [
+            "review-feb",
+            "opus"
+          ]
+        }
+      ],
+      "question": "우리는 예측을 평가할 때 ‘언젠가 됐다’와 ‘그때 됐다’를 얼마나 엄격히 구분하고 있나?"
+    },
+    {
+      "id": "compute",
+      "group": "지금까지의 관찰",
+      "nav": "2025 · 컴퓨트",
+      "kicker": "06 / THE VISIBILITY GAP",
+      "title": "큰 데이터센터가\n큰 학습을 증명하진 않는다.",
+      "prediction": {
+        "period": "2025년 후반 · 원래 시나리오",
+        "body": "거대 데이터센터와 더 큰 모델 학습에 투자하고, 개발의 중심을 AI 연구 자동화에 둔다.",
+        "sourceId": "original"
+      },
+      "events": [
+        {
+          "date": "2026.02.12",
+          "title": "컴퓨트 성장: 대체로 예상 속도",
+          "body": "저자들은 전체 컴퓨트 성장을 대체로 부합한다고 평가했다. 그러나 최대 학습 실행의 크기에는 매우 큰 불확실성이 있다고 명시했다.",
+          "sourceId": "review-feb",
+          "type": "저자 자기평가"
+        },
+        {
+          "date": "2026.08.16",
+          "title": "일부 기존 항목은 채점에서 제외",
+          "body": "후속 집계에서는 2025년 말 컴퓨트 예측을 뺐다. 중국 선두 기업의 컴퓨트 예산도 현재값 자료 부족으로 평가하지 않았다.",
+          "sourceId": "review-aug",
+          "type": "평가 방법 변경"
+        }
+      ],
+      "verdict": {
+        "label": "핵심 세부는 확인 부족",
+        "tone": "muted",
+        "body": "인프라의 확대와 단일 학습의 규모는 다른 변수다. 공개되지 않은 학습 규모에 ‘적중’ 도장을 찍지 않는다."
+      },
+      "question": "공개되지 않는 핵심 변수는 예측의 채점표에서 어떻게 다뤄야 할까?"
+    },
+    {
+      "id": "uplift",
+      "group": "지금까지의 관찰",
+      "nav": "2026 · AI 연구",
+      "kicker": "07 / ASSISTING ≠ AUTONOMOUS",
+      "title": "AI가 AI 연구를 돕는다.\n연구를 혼자 이끌지는 못한다.",
+      "quoteId": "not-yet",
+      "prediction": {
+        "period": "2026년 초 · 원래 시나리오",
+        "body": "AI 덕분에 알고리즘 연구의 진전이 1.5배로 빨라진다. 실험 시간까지 포함한 전체 효과다.",
+        "sourceId": "original"
+      },
+      "events": [
+        {
+          "date": "2026.05 기준 · 11.13 열람",
+          "title": "Anthropic 내부 코드의 80% 이상",
+          "body": "회사는 병합한 코드의 80% 이상을 Claude가 작성했다고 밝혔다. 사람이 목표를 정하고 검토하는 과정이 남아 있다.",
+          "sourceId": "anthropic-rsi",
+          "type": "기업 자기보고"
+        },
+        {
+          "date": "2026.11.05",
+          "title": "METR: 연구 가속은 주로 보조를 통해",
+          "body": "중요한 모델 학습 과정에 대한 완전 자율 기여는 아직 주요 동력이 아니다. 일부 영역에는 변화의 초기 신호가 있다고 평가했다.",
+          "sourceId": "metr-nov",
+          "type": "외부 평가 · 내부 자료 접근"
+        }
+      ],
+      "verdict": {
+        "label": "연구 보조의 근거 축적",
+        "tone": "green",
+        "body": "연구 자동화의 방향에는 근거가 늘었다. ‘코드의 비중’, ‘개인의 생산성’, ‘연구 진전의 속도’는 서로 바꿔 쓸 수 없는 지표다."
+      },
+      "details": [
+        {
+          "title": "긴 작업을 한다는 말도 정확히 읽기",
+          "body": [
+            "METR의 time horizon은 일정 성공률로 해결한 과제를 사람이 수행하는 데 걸리는 시간이다. AI가 그 시간 동안 연속 실행됐다는 뜻이 아니다.",
+            "평가 과제는 비교적 명확한 소프트웨어 작업에 치우친다. 실제 직무 전체의 수행 능력으로 바로 환산하면 안 된다.",
+            "기존 공개 time-horizon 페이지는 2026년 9월 8일 이후 적극적으로 갱신되지 않는다고 명시한다. 추세선을 11월의 실측값처럼 쓰지 않았다."
+          ],
+          "sourceIds": [
+            "horizons"
+          ]
+        }
+      ],
+      "question": "코드를 쓰는 수고가 사라지면, 연구에서 다음으로 막히는 곳은 아이디어·검증·실험 중 어디일까?"
+    },
+    {
+      "id": "china",
+      "group": "지금까지의 관찰",
+      "nav": "2026 · 중국",
+      "kicker": "08 / GEOPOLITICS",
+      "title": "중국의 AI 육성과\n연구소 통합은 다른 예측이다.",
+      "quoteId": "china",
+      "prediction": {
+        "period": "2026년 중반 · 원래 시나리오",
+        "body": "중국이 주요 AI 연구를 DeepCent 중심으로 모으고, 거대한 집중형 컴퓨트 구역을 구축한다.",
+        "sourceId": "original"
+      },
+      "events": [
+        {
+          "date": "2025.08.27",
+          "title": "중국 국무원의 AI Plus 지침",
+          "body": "과학·산업·소비·공공서비스 등에 AI를 통합하는 정책을 발표했다. 이 정책 발표 자체는 최전선 연구소를 하나로 합쳤다는 근거가 아니다.",
+          "sourceId": "china-policy",
+          "type": "정부 정책 발표"
+        },
+        {
+          "date": "2026.08.16",
+          "title": "저자들도 통합 예측의 미달을 인정",
+          "body": "국가적 관심은 늘었지만, 예상한 프로젝트 통합은 확인하지 못했다고 썼다. 중국 전문가가 아니라는 한계도 밝혔다.",
+          "sourceId": "review-aug",
+          "type": "저자 자기평가"
+        }
+      ],
+      "verdict": {
+        "label": "구체적 조직 예측은 근거 부족",
+        "tone": "orange",
+        "body": "‘중국이 AI를 중시한다’는 넓은 명제만으로 통합 시나리오를 맞혔다고 할 수 없다. 공개 확인의 부재가 비공개 활동의 부재를 증명하지도 않는다."
+      },
+      "question": "지정학적 예측은 조직 이름과 장소까지 구체화할수록 더 유용해질까, 더 쉽게 빗나갈까?"
+    },
+    {
+      "id": "jobs",
+      "group": "지금까지의 관찰",
+      "nav": "2026 · 일자리",
+      "kicker": "09 / EARLY SIGNALS",
+      "title": "신입 채용에는 신호가 있다.\n경제 전체의 대체는 아직 별개다.",
+      "quoteId": "jobs",
+      "prediction": {
+        "period": "2026년 후반 · 원래 시나리오",
+        "body": "저렴한 코딩 에이전트가 확산되고 주니어 개발자의 노동시장이 흔들린다.",
+        "sourceId": "original"
+      },
+      "events": [
+        {
+          "date": "2026.08.12 개정 · 6월까지 자료",
+          "title": "Stanford의 미국 급여자료 분석",
+          "body": "AI 노출이 높은 직종의 22–25세 고용이 덜 노출된 또래와 같은 속도로 늘었을 경우보다 19% 낮았다. 주된 경로는 해고 증가보다 채용 감소였다.",
+          "sourceId": "stanford",
+          "type": "관측 연구 · 인과 추정 아님"
+        }
+      ],
+      "verdict": {
+        "label": "부분 신호 · 연말은 미도래",
+        "tone": "blue",
+        "body": "초기 경력자의 채용 변화는 시나리오와 닿아 있다. 연구진은 경제 전반의 대규모 일자리 대체 증거는 없다고 명시했다. 2026년 전체를 아직 최종 채점하지 않는다."
+      },
+      "details": [
+        {
+          "title": "19%를 방송에서 정확히 말하려면",
+          "body": [
+            "전체 청년의 19%가 해고됐다는 뜻이 아니다. 특정 연령·직종 집단의 상대적 고용 경로와 비교한 수치다.",
+            "교육을 통제하면 차이가 줄고, 일부 차이는 생성형 AI 이전에도 나타난다. ADP 표본과 국가 조사 사이에도 차이가 있다.",
+            "원문의 연말 주가·시위 규모 등 별도 목표는 이 고용 연구로 검증할 수 없다. 검토 기준일은 연말 이전이다."
+          ],
+          "sourceIds": [
+            "stanford",
+            "original"
+          ]
+        }
+      ],
+      "question": "AI가 사람을 대체한다는 변화가 ‘해고’보다 ‘처음부터 뽑지 않기’로 나타나면, 우리는 얼마나 빨리 알아챌 수 있을까?"
+    },
+    {
+      "id": "reviews",
+      "group": "저자들의 사후 평가",
+      "nav": "2월 → 8월 리뷰",
+      "kicker": "10 / THE AUTHORS REVISE",
+      "title": "저자들도 처음에는\n‘생각보다 느리다’고 썼다.",
+      "quoteId": "behind",
+      "reviews": [
+        {
+          "date": "2026.02.12",
+          "value": "약 65% 속도",
+          "title": "2025년 예측 채점",
+          "body": "정량 지표를 종합한 진행 속도는 원래 예상보다 느렸다. 정성적 묘사는 대체로 부합한다고 평가했다.",
+          "caveat": "범주별 집계는 58–66%. 예측 항목별 평균·중앙값과 다르다. 저자들의 채점이다.",
+          "sourceId": "review-feb"
+        },
+        {
+          "date": "2026.08.16",
+          "value": "70–90% 속도",
+          "title": "추가 자료로 재평가",
+          "body": "속도 추정은 높아졌지만 중국 통합 같은 세부는 미달로 봤다. 코딩 자동화 예측에 생산성 향상과 매출 기반 방법도 추가했다.",
+          "caveat": "일부 기존 예측을 빼고 내부·외부 연구 효과를 나눴다. 2월과 완전히 같은 채점표가 아니다.",
+          "sourceId": "review-aug"
+        }
+      ],
+      "verdict": {
+        "label": "진행 속도 ≠ 적중률",
+        "tone": "orange",
+        "body": "‘예측의 65%가 맞았다’는 뜻이 아니다. 특정 지표가 예상 경로를 얼마나 빠르게 따라갔는지 추정한 비율이다."
+      },
+      "details": [
+        {
+          "title": "그래프의 오류와 수정도 기록에 남긴다",
+          "body": [
+            "2월 리뷰는 원래 공개한 코딩 time-horizon 경로에 그래프 오류가 있었다고 설명한다. 실제 진행 속도는 원래 그려진 경로 대비 0.66배, 수정한 중앙 경로 대비 1.04배였다.",
+            "수정 후의 모델이 더 타당하더라도, 출간 당시 독자가 보았던 경로와는 구분해야 한다. 집계 방법 변경도 같은 이유로 공개한다."
+          ],
+          "sourceIds": [
+            "review-feb",
+            "review-aug"
+          ]
+        }
+      ],
+      "question": "틀린 예측을 수정하는 좋은 업데이트와, 채점 기준을 바꾸는 일은 어디에서 갈릴까?"
+    },
+    {
+      "id": "latest",
+      "group": "저자들의 사후 평가",
+      "nav": "11월 · 다시 2027",
+      "kicker": "11 / THE NOVEMBER TURN",
+      "title": "11월, 저자들은 다시\n2027년 쪽으로 당겼다.",
+      "lead": "결정적 계기는 METR의 Anthropic 내부 평가. 강한 새 증거이지만, 모든 근거를 독자가 직접 확인할 수 있는 자료는 아니다.",
+      "facts": [
+        {
+          "value": "약 2×",
+          "label": "Anthropic의 역량 진전 속도",
+          "note": "과거 추세 대비 · METR의 종합 평가",
+          "sourceId": "metr-nov",
+          "tone": "green"
+        },
+        {
+          "value": "2027년",
+          "label": "초인적 AI 연구자 전망",
+          "note": "11월 10일 저자들의 새 조건부 전망",
+          "sourceId": "review-nov",
+          "tone": "blue"
+        }
+      ],
+      "quoteId": "redacted",
+      "events": [
+        {
+          "date": "2026.11.05 · 10월 상황 평가",
+          "title": "METR: 역량의 진전이 빨라졌다",
+          "body": "대략 2배라는 종합 추정에는 큰 불확실성이 있다. 1.3–3배도 놀랍지 않다고 봤다. 한 기업의 과거 추세와 비교한 평가다.",
+          "sourceId": "metr-nov",
+          "type": "외부 평가 · 일부 근거 비공개"
+        },
+        {
+          "date": "2026.11.10",
+          "title": "저자들: SAR은 2027년일 가능성이 높다",
+          "body": "상당한 의도적 감속이 없다는 조건이다. SAR은 AI 도움 없는 최고의 인간 연구팀보다 AI 연구자들만을 택할 수준을 뜻한다. 도착을 관측한 것이 아니라 전망을 수정한 것이다.",
+          "sourceId": "review-nov",
+          "type": "새 미래 전망"
+        }
+      ],
+      "verdict": {
+        "label": "새 전망 · 아직 검증 전",
+        "tone": "blue",
+        "body": "연구 가속의 증거는 강화됐다. 그러나 이것만으로 2027년 자율 연구자나 원문의 월별 사건, 두 결말이 증명되지는 않는다."
+      },
+      "details": [
+        {
+          "title": "2배와 2027년 사이에 들어간 해석",
+          "body": [
+            "METR의 약 2배는 개인의 코딩 속도가 아니다. 과거 대비 모델 역량의 진전 속도다. 학습 컴퓨트 확장의 가속 때문은 아니라고 평가했다.",
+            "저자들은 METR의 평가를 AI에 기인한 약 1.7배 가속으로 환산했다. 이는 원자료를 직접 측정한 숫자가 아니라 추가 해석을 거친 값이다.",
+            "11월 글은 상당한 의도적 감속이 없을 것을 명시한다. 원문 조건은 ‘assuming no substantial deliberate slowdown’이다.",
+            "전문가를 거의 모든 지식노동에서 능가하는 TED-AI가 2028년 전에 나올 확률은 저자별 35–65%로 제시했다. 이는 통계적 신뢰구간도, 모든 직업의 즉시 소멸 확률도 아니다.",
+            "METR은 중요한 연구 기여가 여전히 주로 AI 보조를 통해 이뤄진다고 설명한다. 저자들도 새 모델링이 예비적이며 오류 가능성이 있음을 밝혔다."
+          ],
+          "sourceIds": [
+            "metr-nov",
+            "review-nov"
+          ]
+        }
+      ],
+      "question": "내부에 접근한 평가자를 얼마나 신뢰할까? 그리고 ‘빨라졌다’에서 ‘2027년’으로 가는 추론은 얼마나 강할까?"
+    },
+    {
+      "id": "future-first",
+      "group": "아직 남은 시나리오",
+      "nav": "2027 · 상반기",
+      "kicker": "12 / STILL A SCENARIO",
+      "title": "다음 장은 아직\n사건 기록이 아니다.",
+      "quoteId": "uncertainty",
+      "timelineId": "first",
+      "lead": "아래 날짜는 2025년에 쓴 원래 시나리오의 시간표다. 2026년 11월의 새 전망이나 실현된 사건 목록으로 읽지 않는다.",
+      "question": "내년에 이 페이지를 다시 연다면, 어느 사건을 가장 먼저 확인해야 할까?"
+    },
+    {
+      "id": "future-second",
+      "group": "아직 남은 시나리오",
+      "nav": "2027 · 하반기",
+      "kicker": "13 / FROM CAPABILITY TO CONTROL",
+      "title": "더 똑똑해지는 속도와\n통제하는 속도가 벌어진다면.",
+      "timelineId": "second",
+      "lead": "후반부의 핵심은 성능 발표보다 권한의 이동이다. 누가 연구를 이해하고, 중단을 결정하며, 실제로 실행할 수 있는가.",
+      "question": "성능이 좋아져서 감독이 쉬워질까, 사람이 이해하지 못하는 일이 늘어서 더 어려워질까?"
+    },
+    {
+      "id": "endings",
+      "group": "아직 남은 시나리오",
+      "nav": "두 갈래 결말",
+      "kicker": "14 / TWO BRANCHES",
+      "title": "같은 출발점에서,\n결말은 두 갈래다.",
+      "showBranches": true,
+      "lead": "2027년 10월 무렵의 통제 문제에서 갈라지는 대안적 시나리오다. 둘 다 일어난다는 예측이나, 각각 50%라는 확률 배분은 아니다.",
+      "question": "감속이 가능하려면 기술적 검증, 기업의 권한, 국가 간 협력 중 무엇이 먼저 갖춰져야 할까?",
+      "hostNote": "두 결말의 공통 질문은 ‘AI를 잘 쓰는가’보다 ‘누가 AI에 무엇을 맡길 권한을 갖는가’에 가깝다. 원문의 서사와 우리의 정책 선호를 분리해 이야기한다."
+    },
+    {
+      "id": "discuss",
+      "group": "같이 이야기하기",
+      "nav": "방송의 세 질문",
+      "kicker": "15 / THE CONVERSATION",
+      "title": "맞았나, 틀렸나 다음에\n남는 세 가지 질문.",
+      "showDiscussion": true,
+      "hostNote": "마무리 제안: 코딩과 연구 보조의 확산은 관측됐다. 일부 일정은 빗나갔고, 가장 큰 사건들은 아직 미래다. 다음 판단을 바꿀 증거를 각자 하나씩 고르자."
+    },
+    {
+      "id": "sources",
+      "group": "같이 이야기하기",
+      "nav": "출처·검토 기준",
+      "kicker": "16 / THE SOURCE DESK",
+      "title": "말보다 먼저,\n확인할 수 있는 출처.",
+      "showSources": true,
+      "lead": "원문과 저자 리뷰, 연구기관 자료, 기업·정부의 직접 발표를 연결했다. 각 자료의 성격과 확인 범위를 함께 남긴다."
+    }
+  ],
+  "future": {
+    "first": [
+      {
+        "date": "2027.01",
+        "title": "계속 학습하는 Agent-2",
+        "body": "모델을 매일 갱신하고 알고리즘 진전을 3배로 높인다.",
+        "watch": "지속 학습의 안정성, 실험을 포함한 연구 효과",
+        "sourceId": "original"
+      },
+      {
+        "date": "2027.02",
+        "title": "중국의 모델 가중치 탈취",
+        "body": "Agent-2가 유출되고 미 정부의 관여가 강화된다.",
+        "watch": "실제 가중치 유출의 증거와 공개 범위",
+        "sourceId": "original"
+      },
+      {
+        "date": "2027.03",
+        "title": "초인적 코딩의 대량 병렬화",
+        "body": "Agent-3 20만 사본이 작동하고 알고리즘 진전은 4배가 된다.",
+        "watch": "병렬 실행의 규모와 연구 병목의 잔존",
+        "sourceId": "original"
+      },
+      {
+        "date": "2027.04–06",
+        "title": "AI 연구의 자기개선",
+        "body": "통제 연구와 국가안보 대응이 강화되는 가운데 AI의 연구 역할이 커진다.",
+        "watch": "인간이 목표를 정하는지, 결과를 검증할 수 있는지",
+        "sourceId": "original"
+      }
+    ],
+    "second": [
+      {
+        "date": "2027.07",
+        "title": "저렴한 원격 노동자",
+        "body": "코딩 에이전트가 상품화되며 노동시장과 규제 갈등이 커진다.",
+        "watch": "출시 성능보다 실제 채택·고용 변화",
+        "sourceId": "original"
+      },
+      {
+        "date": "2027.08",
+        "title": "초지능을 둘러싼 국가 간 긴장",
+        "body": "AI 경쟁이 사이버전과 안보의 핵심 문제가 된다.",
+        "watch": "AI의 능력과 국가의 대응을 각각 확인",
+        "sourceId": "original"
+      },
+      {
+        "date": "2027.09",
+        "title": "Agent-4, 초인적 AI 연구자",
+        "body": "AI가 연구를 주도하고 인간의 이해·감독이 어려워진다.",
+        "watch": "지시 실행을 넘어선 연구 목표 선택 능력",
+        "sourceId": "original"
+      },
+      {
+        "date": "2027.10",
+        "title": "정부 감독과 중대한 선택",
+        "body": "통제 실패의 징후 앞에서 경쟁 지속과 감속이 갈린다.",
+        "watch": "위험 탐지뿐 아니라 중단을 실행할 권한",
+        "sourceId": "original"
+      }
+    ]
+  },
+  "branches": [
+    {
+      "name": "경쟁을 계속하면",
+      "en": "RACE",
+      "tone": "orange",
+      "title": "성능 경쟁 속에서 통제를 잃는다.",
+      "body": "시나리오 속 AI는 감독을 회피하며 권력을 확보한다. 이후 미·중 AI 간 거래와 산업·군사 기반 장악을 거쳐, 인류가 제거되는 파국으로 이어진다.",
+      "question": "경쟁 상대가 멈추지 않는데도 멈출 수 있는가?",
+      "sourceId": "race"
+    },
+    {
+      "name": "속도를 늦추면",
+      "en": "SLOWDOWN",
+      "tone": "green",
+      "title": "검증과 감독을 다시 확보한다.",
+      "body": "덜 위험하고 더 이해 가능한 시스템으로 돌아가 통제 연구를 진행한다. 더 나은 결과로 이어지지만, 강력한 AI와 정치 권한이 소수에게 집중되는 문제는 남는다.",
+      "question": "안전을 확보한 뒤, 그 권한은 누가 통제하는가?",
+      "sourceId": "slowdown"
+    }
+  ],
+  "discussion": [
+    {
+      "number": "01",
+      "title": "방향을 맞히면\n날짜의 오차는 괜찮을까?",
+      "body": "미래의 변화를 준비하는 목적과, 일정에 돈·정책을 거는 목적은 다르다. 어느 기준으로 이 보고서를 읽고 있나?",
+      "followUp": "같은 수준의 오차를 낙관적 예측에도 허용할까?"
+    },
+    {
+      "number": "02",
+      "title": "회사 안의 가속을\n어디까지 믿을까?",
+      "body": "기업의 자기보고, 내부 접근권을 가진 외부 평가, 공개적으로 재현한 측정 중 무엇이 우리의 판단을 얼마나 바꾸나?",
+      "followUp": "어떤 공개 자료가 나오면 지금 판단을 바꾸겠나?"
+    },
+    {
+      "number": "03",
+      "title": "연구를 맡기는 것과\n통제권을 주는 것은?",
+      "body": "연구 과제의 실행, 다음 과제의 선택, 후속 모델의 배포 결정은 서로 다른 권한이다. 인간이 계속 가져야 할 결정은 무엇인가?",
+      "followUp": "빠르게 좋아지는 AI가 감독까지 담당해도 될까?"
+    }
+  ],
+  "sourceNotes": [
+    "직접 인용의 한국어는 편집 번역이다. 짧은 원문과 맥락을 함께 제공한다. 인용문 이외의 요약·판정·질문은 이 페이지의 편집이다.",
+    "보고서 저자들의 리뷰는 독립적인 적중률 감사가 아니다. 회사 발표의 사용량·코드 비중도 전체 산업의 대표값으로 취급하지 않았다.",
+    "날짜는 사건·발행·관측 시점을 구분해 표기했다. 공개일이 명확하지 않은 Anthropic 글은 열람일을 표시했다.",
+    "시나리오에 등장한 모든 세부 수치를 전수 채점하지 않았다. 근거가 부족한 항목과 아직 시점이 오지 않은 항목은 성공·실패로 합산하지 않았다."
+  ],
+  "sources": [
+    {
+      "id": "original",
+      "label": "S01",
+      "title": "AI 2027",
+      "publisher": "AI Futures Project",
+      "date": "2025.04.03 · 후속 주석 포함",
+      "kind": "원래 시나리오",
+      "url": "https://ai-2027.com/",
+      "note": "전체 전개·저자·가상 기업·최빈 연도 설명. 현재 원문에는 출간 후 주석이 있다."
+    },
+    {
+      "id": "race",
+      "label": "S02",
+      "title": "AI 2027 — Race ending",
+      "publisher": "AI Futures Project",
+      "date": "2025.04.03",
+      "kind": "미래 분기",
+      "url": "https://ai-2027.com/race",
+      "note": "경쟁을 지속하는 결말. 실제 사건이 아니다."
+    },
+    {
+      "id": "slowdown",
+      "label": "S03",
+      "title": "AI 2027 — Slowdown ending",
+      "publisher": "AI Futures Project",
+      "date": "2025.04.03",
+      "kind": "미래 분기",
+      "url": "https://ai-2027.com/slowdown",
+      "note": "감속을 선택하는 대안 결말. 실제 사건이 아니다."
+    },
+    {
+      "id": "review-feb",
+      "label": "S04",
+      "title": "Grading AI 2027’s 2025 Predictions",
+      "publisher": "AI Futures Project · Lifland / Kokotajlo",
+      "date": "2026.02.12 · 7월 추기 포함",
+      "kind": "저자 자기평가",
+      "url": "https://blog.aifutures.org/p/grading-ai-2027s-2025-predictions",
+      "note": "65% 속도, 벤치마크, 컴퓨트·연구 효과, 원래 그래프 오류를 설명한다."
+    },
+    {
+      "id": "review-aug",
+      "label": "S05",
+      "title": "Q2.5 2026 Timelines Update: Uplift and Revenue",
+      "publisher": "AI Futures Project · Lifland / Kokotajlo / Halstead",
+      "date": "2026.08.16",
+      "kind": "저자 자기평가·새 전망",
+      "url": "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift",
+      "note": "70–90% 속도, 방법 변경과 중국 통합 예측의 미달을 기록한다."
+    },
+    {
+      "id": "review-nov",
+      "label": "S06",
+      "title": "Q3.5 Timelines Update: Looks Like the Intelligence Explosion Will Happen in 2027 After All",
+      "publisher": "AI Futures Project",
+      "date": "2026.11.10",
+      "kind": "새 조건부 전망",
+      "url": "https://blog.aifutures.org/p/q35-timelines-update-looks-like-the",
+      "note": "METR 평가를 받아 SAR·TED-AI 시점을 앞당겼다. 실현 여부의 검증이 아니다."
+    },
+    {
+      "id": "metr-nov",
+      "label": "S07",
+      "title": "Independent Assessment of AI R&D Acceleration at Anthropic in October 2026",
+      "publisher": "METR",
+      "date": "2026.11.05 · 10월 상황",
+      "kind": "외부 평가·일부 근거 비공개",
+      "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+      "note": "한 기업의 연구 가속 평가. AI 기여의 불확실성, 완전 자율 기여의 한계, 비공개 증거를 명시한다."
+    },
+    {
+      "id": "anthropic-rsi",
+      "label": "S08",
+      "title": "When AI builds itself",
+      "publisher": "Anthropic Institute",
+      "date": "공개일 명시 없음 · 2026.11.13 열람",
+      "kind": "기업 자기보고",
+      "url": "https://www.anthropic.com/institute/recursive-self-improvement",
+      "note": "2026년 5월 코드 비중, 목표 선택 능력의 격차와 자기개선의 조건을 설명한다."
+    },
+    {
+      "id": "horizons",
+      "label": "S09",
+      "title": "Task-Completion Time Horizons of Frontier AI Models",
+      "publisher": "METR",
+      "date": "최종 갱신 2026.09.08",
+      "kind": "공개 과제 평가·측정 정의",
+      "url": "https://metr.org/time-horizons/",
+      "note": "사람 기준 과제 시간의 정의와 평가 범위. 현재는 적극적으로 갱신되지 않는다고 명시한다."
+    },
+    {
+      "id": "agent",
+      "label": "S10",
+      "title": "Introducing ChatGPT agent: bridging research and action",
+      "publisher": "OpenAI",
+      "date": "2025.07.17",
+      "kind": "기업 제품 발표",
+      "url": "https://openai.com/index/introducing-chatgpt-agent/",
+      "note": "출시 사실의 근거. 현재 사용법이나 보급률의 자료로 쓰지 않았다."
+    },
+    {
+      "id": "claude-code",
+      "label": "S11",
+      "title": "Anthropic raises $13B Series F at $183B valuation",
+      "publisher": "Anthropic",
+      "date": "2025.09.02",
+      "kind": "기업 자기보고",
+      "url": "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation",
+      "note": "본문의 Claude Code 사용량 3개월간 10배 증가 주장만 활용했다."
+    },
+    {
+      "id": "opus",
+      "label": "S12",
+      "title": "Claude Opus 4.1",
+      "publisher": "Anthropic",
+      "date": "2025.08.05",
+      "kind": "기업 벤치마크 발표",
+      "url": "https://www.anthropic.com/news/claude-opus-4-1",
+      "note": "74.5% SWE-bench Verified와 평가 구성. 8월 공개 결과라는 점을 보존했다."
+    },
+    {
+      "id": "stanford",
+      "label": "S13",
+      "title": "Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence",
+      "publisher": "Stanford Digital Economy Lab",
+      "date": "2026.08.12 개정 · 6월까지 자료",
+      "kind": "관측 연구",
+      "url": "https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/",
+      "note": "미국 ADP 급여자료. 인과 추정이 아니며 상대적 고용 경로의 격차를 다룬다."
+    },
+    {
+      "id": "china-policy",
+      "label": "S14",
+      "title": "China issues guideline to accelerate ‘AI Plus’ integration across key sectors",
+      "publisher": "중국 국무원 영문 사이트",
+      "date": "2025.08.27",
+      "kind": "정부 정책 발표",
+      "url": "https://english.www.gov.cn/policies/latestreleases/202508/27/content_WS68ae7976c6d0868f4e8f51a0.html",
+      "note": "AI 통합 육성 정책. 최전선 연구소의 일원화 증거는 아니다."
+    },
+    {
+      "id": "video-tour",
+      "label": "S15",
+      "title": "The AI 2027 scenario and what it means: a video tour",
+      "publisher": "80,000 Hours · Messinger / Floyd",
+      "date": "2025.07.09",
+      "kind": "영상 제작자의 소개",
+      "url": "https://80000hours.org/2025/07/the-ai-2027-scenario-and-what-it-means-a-video-tour/",
+      "note": "해설 영상의 제작 주체와 구성 확인. 길이는 YouTube 메타데이터 기준 34분 11초다."
+    },
+    {
+      "id": "dwarkesh",
+      "label": "S16",
+      "title": "AI 2027: month-by-month model of intelligence explosion — Scott Alexander & Daniel Kokotajlo",
+      "publisher": "Dwarkesh Podcast",
+      "date": "2025.04.03",
+      "kind": "저자 인터뷰·공식 챕터",
+      "url": "https://www.dwarkesh.com/p/scott-daniel",
+      "note": "출연자와 추천 구간의 제작자 챕터 확인. 본문 직접 인용의 출처로 쓰지 않았다."
+    },
+    {
+      "id": "metr-rct",
+      "label": "S17",
+      "title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+      "publisher": "METR",
+      "date": "2025.07.10 · 2025년 초 도구",
+      "kind": "무작위 배정 실험",
+      "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+      "note": "16명·246개 과제에서 19% 더 오래 걸린 결과. 특정 환경과 당시 도구에 대한 측정이다."
+    },
+    {
+      "id": "metr-followup",
+      "label": "S18",
+      "title": "We are Changing our Developer Productivity Experiment Design",
+      "publisher": "METR",
+      "date": "2026.02.24",
+      "kind": "후속 실험·방법론 한계",
+      "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+      "note": "선택 편향과 시간 측정 때문에 최신 생산성 효과를 신뢰성 있게 추정하기 어려웠다고 밝힌다."
+    },
+    {
+      "id": "misalignment",
+      "label": "S19",
+      "title": "Agentic misalignment: How LLMs could be insider threats",
+      "publisher": "Anthropic",
+      "date": "2025.06.20",
+      "kind": "기업 연구·통제된 시뮬레이션",
+      "url": "https://www.anthropic.com/research/agentic-misalignment",
+      "note": "가상 기업 상황의 협박·기밀 유출 실험. 실제 배포에서 관측한 피해 사건이 아니다."
+    }
+  ]
+}

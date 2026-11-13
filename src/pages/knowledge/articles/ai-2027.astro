@@ -1,0 +1,605 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import SourceQuote from '../../../components/podcast/SourceQuote.astro';
+import report from '../../../data/ai-2027.json';
+
+// The deck follows the existing podcast article pattern; its content lives in JSON.
+type Source = (typeof report.sources)[number];
+interface Scene {
+  id: string; group: string; nav: string; kicker: string; title: string;
+  lead?: string; quoteId?: keyof typeof report.quotes; chain?: string[];
+  prediction?: { period: string; body: string; sourceId: string };
+  facts?: { value: string; label: string; note: string; sourceId: string; tone: string }[];
+  events?: { date: string; title: string; body: string; sourceId: string; type: string }[];
+  verdict?: { label: string; tone: string; body: string };
+  details?: { title: string; body: string[]; sourceIds: string[] }[];
+  reviews?: { date: string; value: string; title: string; body: string; caveat: string; sourceId: string }[];
+  timelineId?: keyof typeof report.future;
+  showVideos?: boolean; showBranches?: boolean; showDiscussion?: boolean; showSources?: boolean;
+  question?: string; hostNote?: string;
+}
+const scenes = report.sections as Scene[];
+const groups = [...new Set(scenes.map(scene => scene.group))];
+const sourceById = Object.fromEntries(report.sources.map(source => [source.id, source])) as Record<string, Source>;
+const source = (id: string) => {
+  if (!sourceById[id]) throw new Error(`Missing AI 2027 source: ${id}`);
+  return sourceById[id];
+};
+const heroQuote = report.quotes.hero;
+---
+
+<Layout title={report.meta.title} description={report.meta.description} locale="ko" hideLanguageSwitcher>
+  <article class="a27" data-ai-2027>
+    <div class="dossier-shell">
+      <nav class="breadcrumb" aria-label="현재 위치"><a href="/knowledge/">Knowledge</a><span aria-hidden="true">/</span><span>팟캐스트 자료</span></nav>
+
+      <header class="dossier-hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-light" aria-hidden="true"></span>{report.meta.eyebrow}</p>
+          <p class="report-wordmark" aria-hidden="true">AI <span>2027</span><span class="wordmark-dot">.</span></p>
+          <h1 aria-label={report.meta.title}>{report.meta.heroTitle}</h1>
+          <p class="hero-intro">{report.meta.intro}</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#overview">함께 살펴보기 <span aria-hidden="true">↓</span></a>
+            <a class="button" href={report.reportLinks[0].url} target="_blank" rel="noopener noreferrer">보고서 원문 <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <aside class="hero-desk" aria-label="이번 검토의 범위">
+          <div class="desk-top"><span>FORECAST / REALITY</span><span>REVIEW 01</span></div>
+          <figure class="opening-quote">
+            <span class="small-label">원문 인용 · 한국어 번역</span>
+            <blockquote cite={source('original').url}>“{heroQuote.ko}”</blockquote>
+            <p lang="en">{heroQuote.en}</p>
+            <figcaption><a href={source('original').url} target="_blank" rel="noopener noreferrer">AI 2027 · 2025.04.03 <span aria-hidden="true">↗</span></a></figcaption>
+          </figure>
+          <div class="hero-findings">
+            {report.meta.heroFindings.map((finding, i) => (
+              <div class="hero-finding" data-tone={finding.tone}><span class="finding-num">0{i + 1}</span><div><span class="small-label">{finding.label}</span><p>{finding.body}</p></div></div>
+            ))}
+          </div>
+          <p class="desk-note">{report.meta.scope}</p>
+        </aside>
+      </header>
+
+      <dl class="edition-strip">
+        <div><dt>보고서 발행</dt><dd>{report.meta.published}</dd></div>
+        <div><dt>사후 검토 기준</dt><dd>{report.meta.reviewed}</dd></div>
+        <div><dt>함께 볼 자료</dt><dd>{report.sources.length}<span>개 출처</span> / {report.videos.length}<span>개 영상</span></dd></div>
+        <div><dt>방송 진행</dt><dd class="edition-small">{scenes.length}개 장면 <span>· {report.meta.duration}</span></dd></div>
+      </dl>
+
+      <div class="deck" id="reading-desk">
+        <aside class="scene-rail" aria-label="장면 탐색">
+          <div class="rail-heading"><span>ON THE TABLE</span><span>{String(scenes.length).padStart(2, '0')} SCENES</span></div>
+          <nav class="scene-nav" aria-label="방송 장면">
+            {groups.map((group, groupIndex) => (
+              <div class="nav-group">
+                <p class="group-label"><span>0{groupIndex + 1}</span>{group}</p>
+                {scenes.filter(scene => scene.group === group).map(scene => (
+                  <a href={`#${scene.id}`} id={`tab-${scene.id}`} data-scene-link={scene.id} aria-controls={scene.id}>
+                    <span class="scene-number">{String(scenes.indexOf(scene) + 1).padStart(2, '0')}</span><span>{scene.nav}</span><span class="rail-arrow" aria-hidden="true">↗</span>
+                  </a>
+                ))}
+              </div>
+            ))}
+          </nav>
+          <p class="rail-tip" data-controls><kbd>←</kbd><kbd>→</kbd> 장면 이동</p>
+          <a class="rail-source" href="#sources">출처와 평가 기준 <span aria-hidden="true">↗</span></a>
+        </aside>
+
+        <div class="scene-stage">
+          <div class="deck-toolbar" data-controls>
+            <div class="scene-counter"><span data-current>01</span><span class="counter-divider">/ {String(scenes.length).padStart(2, '0')}</span><span class="current-nav" data-current-label>{scenes[0].nav}</span></div>
+            <div class="view-actions"><button type="button" class="text-button" data-read-all aria-pressed="false">전체 읽기</button><button type="button" class="text-button" data-print>인쇄</button></div>
+          </div>
+
+          <div class="scenes">
+            {scenes.map(scene => {
+              const quote = scene.quoteId ? report.quotes[scene.quoteId] : undefined;
+              const timeline = scene.timelineId ? report.future[scene.timelineId] : undefined;
+              return (
+                <section class="scene" id={scene.id} data-scene aria-labelledby={`heading-${scene.id}`} tabindex="0">
+                  <header class="scene-heading"><p class="eyebrow">{scene.kicker}</p><h2 id={`heading-${scene.id}`}>{scene.title}</h2>{scene.lead && <p class="scene-lead">{scene.lead}</p>}</header>
+
+                  {scene.showVideos && (
+                    <>
+                      <div class="report-links">{report.reportLinks.map(link => <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}<span aria-hidden="true">↗</span></a>)}</div>
+                      <p class="report-authors"><span class="small-label">공동 저자</span>{report.meta.authors.join(' · ')}</p>
+                      <details class="report-embed">
+                        <summary>{report.reportEmbed.title}<span aria-hidden="true">＋</span></summary>
+                        <p>{report.reportEmbed.note} <a href={report.reportLinks[1].url} target="_blank" rel="noopener noreferrer">{report.reportEmbed.linkLabel} ↗</a></p>
+                        <iframe src={report.reportEmbed.url} title="AI 2027 원본 영문 보고서 PDF" width="1000" height="680" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                      </details>
+                      <div class="video-grid">
+                        {report.videos.map((video, i) => (
+                          <article class="video-card">
+                            <p class="video-kind"><span>0{i + 1}</span>{video.kind}</p>
+                            <div class="video-frame"><iframe src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0`} title={`${video.channel} — ${video.title}`} width="560" height="315" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                            <div class="video-copy">
+                              <p class="video-meta">{video.channel} <span>· {video.date} · {video.duration}</span></p>
+                              <h3>{video.titleKo}</h3><p class="video-title" lang="en">{video.title}</p><p>{video.summary}</p>
+                              {video.chapters && <div class="video-chapters">{video.chapters.map(chapter => <a href={`https://www.youtube.com/watch?v=${video.id}&t=${chapter.seconds}s`} target="_blank" rel="noopener noreferrer"><time>{chapter.time}</time>{chapter.label} <span aria-hidden="true">↗</span></a>)}</div>}
+                              <p class="fine-print">{video.note}</p>
+                              <div class="video-links"><a href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noopener noreferrer">YouTube에서 보기 ↗</a><a href={source(video.sourceId).url} target="_blank" rel="noopener noreferrer">제작자 소개 ↗</a></div>
+                            </div>
+                          </article>
+                        ))}
+                      </div>
+                    </>
+                  )}
+
+                  {scene.chain && (
+                    <div class="claim-chain" aria-label="보고서의 인과 가설">
+                      {scene.chain.map((item, index) => <div class="chain-step"><span class="chain-index">0{index + 1}</span><strong>{item}</strong>{index < scene.chain!.length - 1 && <span class="chain-arrow" aria-hidden="true">→</span>}</div>)}
+                    </div>
+                  )}
+
+                  {scene.id === 'overview' && <div class="reading-key"><div><span class="evidence-tag">관측</span><p>출시·측정·공개된 연구</p></div><div><span class="evidence-tag">자기평가</span><p>예측한 사람들이 내린 리뷰</p></div><div><span class="evidence-tag future-tag">미래</span><p>아직 확인하지 못한 시나리오</p></div><p class="method-note">{report.meta.method}</p></div>}
+
+                  {scene.facts && <div class="fact-grid">{scene.facts.map(fact => <div class="fact" data-tone={fact.tone}><span class="small-label">{fact.label}</span><strong>{fact.value}</strong><p>{fact.note} <a class="source-cite" href={source(fact.sourceId).url} target="_blank" rel="noopener noreferrer" aria-label={`출처 ${source(fact.sourceId).label}: ${source(fact.sourceId).title}`}>[{source(fact.sourceId).label}] ↗</a></p></div>)}</div>}
+
+                  {quote && <SourceQuote quote={quote} source={source(quote.sourceId)} />}
+
+                  {scene.prediction && <div class="prediction"><div><span class="comparison-label">그때의 예측</span><span class="prediction-period">{scene.prediction.period}</span></div><p>{scene.prediction.body} <a class="source-cite" href={source(scene.prediction.sourceId).url} target="_blank" rel="noopener noreferrer" aria-label={`예측 원문 ${source(scene.prediction.sourceId).title}`}>[{source(scene.prediction.sourceId).label}] ↗</a></p></div>}
+
+                  {scene.events && (
+                    <div class="events"><p class="comparison-label">이후 확인한 일</p>{scene.events.map(event => <article class="event"><div class="event-date"><time>{event.date}</time><span class="evidence-tag">{event.type}</span></div><div class="event-copy"><h3>{event.title}</h3><p>{event.body}</p><a class="event-source" href={source(event.sourceId).url} target="_blank" rel="noopener noreferrer">{source(event.sourceId).label} · {source(event.sourceId).publisher} <span aria-hidden="true">↗</span></a></div></article>)}</div>
+                  )}
+
+                  {scene.reviews && <div class="review-grid">{scene.reviews.map(review => <article class="review-card"><time>{review.date}</time><h3>{review.title}</h3><p class="review-value">{review.value}</p><p>{review.body}</p><p class="review-caveat">{review.caveat}</p><a class="event-source" href={source(review.sourceId).url} target="_blank" rel="noopener noreferrer">{source(review.sourceId).label} · 리뷰 원문 ↗</a></article>)}</div>}
+
+                  {scene.verdict && <aside class="verdict" data-tone={scene.verdict.tone}><span class="verdict-label">이 페이지의 판단 <span aria-hidden="true">/</span> {scene.verdict.label}</span><p>{scene.verdict.body}</p></aside>}
+
+                  {timeline && <div class="future-timeline"><p class="future-notice"><span class="evidence-tag future-tag">미래 · 미검증</span>원래 시나리오의 순서 <span>관찰할 항목은 편집 제안</span></p>{timeline.map(item => <article class="future-event"><time>{item.date}</time><div><h3>{item.title}</h3><p>{item.body} <a class="source-cite" href={source(item.sourceId).url} target="_blank" rel="noopener noreferrer" aria-label={`${item.date} 시나리오 원문`}>[{source(item.sourceId).label}] ↗</a></p><p class="watch-for"><span>다음에 확인할 것</span>{item.watch}</p></div></article>)}</div>}
+
+                  {scene.showBranches && <div class="branch-grid">{report.branches.map(branch => <article class="branch" data-tone={branch.tone}><div class="branch-top"><span>{branch.name}</span><span>{branch.en}</span></div><h3>{branch.title}</h3><p>{branch.body}</p><a class="event-source" href={source(branch.sourceId).url} target="_blank" rel="noopener noreferrer">{source(branch.sourceId).label} · 결말 원문 ↗</a><p class="branch-question">{branch.question}</p></article>)}</div>}
+
+                  {scene.showDiscussion && <div class="discussion-list">{report.discussion.map(item => <article class="discussion"><span>{item.number}</span><div><h3>{item.title}</h3><p>{item.body}</p><details><summary>한 번 더 묻기</summary><p>{item.followUp}</p></details></div></article>)}</div>}
+
+                  {scene.details?.map(detail => <details class="context-panel"><summary>{detail.title}<span aria-hidden="true">＋</span></summary><div>{detail.body.map(paragraph => <p>{paragraph}</p>)}<div class="context-sources">{detail.sourceIds.map(id => <a href={source(id).url} target="_blank" rel="noopener noreferrer">{source(id).label} · {source(id).publisher} ↗</a>)}</div></div></details>)}
+
+                  {scene.showSources && <><div class="source-method">{report.sourceNotes.map((note, index) => <p><span>0{index + 1}</span>{note}</p>)}</div><ol class="source-list">{report.sources.map(item => <li id={`source-${item.id}`}><span class="source-label">{item.label}</span><div><div class="source-meta"><span>{item.kind}</span><time>{item.date}</time></div><h3><a href={item.url} target="_blank" rel="noopener noreferrer">{item.title} <span aria-hidden="true">↗</span></a></h3><p class="source-publisher">{item.publisher}</p><p>{item.note}</p></div></li>)}</ol><p class="source-cutoff">검토 기준일 {report.meta.reviewed} · 출처의 이후 수정 내용은 이 페이지에 자동 반영되지 않습니다.</p></>}
+
+                  {scene.question && <aside class="conversation"><span class="small-label">같이 이야기할 질문</span><p>{scene.question}</p></aside>}
+                  {scene.hostNote && <details class="host-note"><summary>진행 메모 펼치기</summary><p>{scene.hostNote}</p></details>}
+                </section>
+              );
+            })}
+          </div>
+
+          <nav class="deck-pagination" aria-label="이전 다음 장면" data-controls><button type="button" data-prev><span aria-hidden="true">←</span> 이전 장면</button><p data-next-label>다음 · {scenes[1].nav}</p><button type="button" data-next>다음 장면 <span aria-hidden="true">→</span></button></nav>
+          <div class="stage-footer"><a href="/knowledge/">← Knowledge로 돌아가기</a><span>AI 2027 / {report.meta.reviewed}</span></div>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<script>
+  const article = document.querySelector<HTMLElement>('[data-ai-2027]');
+  if (article) {
+    const panels = Array.from(article.querySelectorAll<HTMLElement>('[data-scene]'));
+    const links = Array.from(article.querySelectorAll<HTMLAnchorElement>('[data-scene-link]'));
+    const nav = article.querySelector<HTMLElement>('.scene-nav')!;
+    const deck = article.querySelector<HTMLElement>('.deck')!;
+    const prev = article.querySelector<HTMLButtonElement>('[data-prev]')!;
+    const next = article.querySelector<HTMLButtonElement>('[data-next]')!;
+    const all = article.querySelector<HTMLButtonElement>('[data-read-all]')!;
+    let active = 0;
+    let readAll = false;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    const indexFromHash = () => {
+      let id = '';
+      try { id = decodeURIComponent(location.hash.slice(1)); } catch { return -1; }
+      return panels.findIndex(panel => panel.id === id || panel.querySelector(`[id="${CSS.escape(id)}"]`));
+    };
+    const render = () => {
+      article.dataset.view = readAll ? 'all' : 'scenes';
+      nav.setAttribute('role', readAll ? 'navigation' : 'tablist');
+      if (readAll) nav.removeAttribute('aria-orientation');
+      else nav.setAttribute('aria-orientation', matchMedia('(max-width: 980px)').matches ? 'horizontal' : 'vertical');
+      panels.forEach((panel, i) => {
+        const wasHidden = panel.hidden;
+        panel.hidden = !readAll && i !== active;
+        panel.setAttribute('role', readAll ? 'region' : 'tabpanel');
+        panel.setAttribute('aria-labelledby', readAll ? `heading-${panel.id}` : `tab-${panel.id}`);
+        // Reload only a newly hidden player, so audio cannot continue in another scene.
+        if (!wasHidden && panel.hidden) panel.querySelectorAll<HTMLIFrameElement>('iframe').forEach(frame => { frame.src = frame.src; });
+      });
+      links.forEach((link, i) => {
+        link.classList.toggle('is-active', i === active);
+        if (readAll) {
+          link.removeAttribute('role'); link.removeAttribute('aria-selected'); link.removeAttribute('tabindex');
+          if (i === active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current');
+        } else {
+          link.setAttribute('role', 'tab'); link.setAttribute('aria-selected', String(i === active));
+          link.setAttribute('tabindex', i === active ? '0' : '-1'); link.removeAttribute('aria-current');
+        }
+      });
+      article.querySelector('[data-current]')!.textContent = String(active + 1).padStart(2, '0');
+      article.querySelector('[data-current-label]')!.textContent = links[active].querySelectorAll('span')[1].textContent;
+      prev.disabled = active === 0; next.disabled = active === panels.length - 1;
+      article.querySelector('[data-next-label]')!.textContent = active < panels.length - 1 ? `다음 · ${links[active + 1].querySelectorAll('span')[1].textContent}` : '모든 장면을 살펴봤습니다.';
+      all.textContent = readAll ? '장면별 보기' : '전체 읽기';
+      all.setAttribute('aria-pressed', String(readAll));
+    };
+    const select = (index: number, options: { history?: boolean; focus?: boolean; scroll?: boolean } = {}) => {
+      if (index < 0 || index >= panels.length) return;
+      active = index; render();
+      if (options.history && location.hash !== `#${panels[active].id}`) history.pushState(null, '', `#${panels[active].id}`);
+      if (options.focus) links[active].focus({ preventScroll: true });
+      if (options.scroll) (readAll ? panels[active] : deck).scrollIntoView({ block: 'start', behavior: reduceMotion.matches ? 'instant' : 'smooth' });
+      // Keep the selected mobile tab in view without scrolling the page vertically.
+      const selected = links[active];
+      if (matchMedia('(max-width: 980px)').matches) nav.scrollTo({ left: selected.offsetLeft - nav.offsetLeft - 12, behavior: reduceMotion.matches ? 'instant' : 'smooth' });
+    };
+    const onHash = () => { const index = indexFromHash(); if (index >= 0) select(index); };
+    article.dataset.enhanced = 'true';
+    active = Math.max(0, indexFromHash()); render();
+    links.forEach((link, i) => link.addEventListener('click', event => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault(); select(i, { history: true, scroll: true });
+    }));
+    // Ordinary in-page links (hero and source desk) also open the correct panel.
+    article.querySelectorAll<HTMLAnchorElement>('a[href^="#"]:not([data-scene-link])').forEach(link => link.addEventListener('click', event => {
+      const index = panels.findIndex(panel => `#${panel.id}` === link.hash);
+      if (index < 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault(); select(index, { history: true, scroll: true });
+    }));
+    prev.addEventListener('click', () => select(active - 1, { history: true, scroll: true }));
+    next.addEventListener('click', () => select(active + 1, { history: true, scroll: true }));
+    all.addEventListener('click', () => { readAll = !readAll; render(); if (!readAll) deck.scrollIntoView({ block: 'start' }); });
+    article.querySelector('[data-print]')!.addEventListener('click', () => window.print());
+    document.addEventListener('keydown', event => {
+      if (readAll || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      const target = event.target as HTMLElement;
+      const onTab = target.matches('[data-scene-link]');
+      const onPager = target.matches('[data-prev], [data-next]');
+      if (!onTab && !onPager && target.closest('a, button, input, textarea, select, summary, details, [contenteditable="true"]')) return;
+      let index = active;
+      if (event.key === 'ArrowRight' || (onTab && event.key === 'ArrowDown')) index++;
+      else if (event.key === 'ArrowLeft' || (onTab && event.key === 'ArrowUp')) index--;
+      else if (onTab && event.key === 'Home') index = 0;
+      else if (onTab && event.key === 'End') index = panels.length - 1;
+      else return;
+      event.preventDefault(); select(Math.max(0, Math.min(panels.length - 1, index)), { history: true, focus: true, scroll: true });
+    });
+    window.addEventListener('hashchange', onHash);
+    window.addEventListener('popstate', () => select(Math.max(0, indexFromHash())));
+    window.addEventListener('resize', () => { if (!readAll) nav.setAttribute('aria-orientation', matchMedia('(max-width: 980px)').matches ? 'horizontal' : 'vertical'); });
+    // Include every scene and expanded source context in printed copies.
+    let openedForPrint: HTMLDetailsElement[] = [];
+    window.addEventListener('beforeprint', () => { openedForPrint = Array.from(article.querySelectorAll<HTMLDetailsElement>('details:not([open]):not(.report-embed)')); openedForPrint.forEach(detail => { detail.open = true; }); });
+    window.addEventListener('afterprint', () => { openedForPrint.forEach(detail => { detail.open = false; }); openedForPrint = []; });
+    if (location.hash) requestAnimationFrame(() => panels[active].scrollIntoView({ block: 'start' }));
+  }
+</script>
+
+<style>
+  .a27 { --ink: #f5f0eb; --muted: #aaa3a9; --line: #ffffff20; --paper: #160f18; --accent: #fd9a63; --green: #8ed5bd; --blue: #a9c7f3; color: var(--ink); background: radial-gradient(ellipse at 80% 10%, #2d152330, transparent 50%); }
+  .dossier-shell { max-width: 1480px; margin: 0 auto; padding: 2.2rem 4.2rem 4rem; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--accent); }
+  :is(a, button, summary, [tabindex]):focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+  button { font: inherit; cursor: pointer; }
+  .breadcrumb { display: flex; gap: .8rem; color: var(--muted); font-size: .78rem; }
+  .breadcrumb span:last-child { color: #e1d5dc; }
+  .dossier-hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 5.5rem; align-items: center; padding: 3.5rem 0 3.7rem; }
+  .eyebrow, .small-label, .desk-top, .rail-heading, .group-label, .comparison-label, .source-label, .stage-footer { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .eyebrow { display: flex; align-items: center; gap: .65rem; color: var(--accent); font-size: .68rem; letter-spacing: .09em; line-height: 1.6; }
+  .status-light { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .report-wordmark { margin: 1.5rem 0 1rem; font-size: clamp(3.6rem, 7.7vw, 7rem); font-weight: 760; line-height: 1; letter-spacing: -.08em; white-space: nowrap; }
+  .report-wordmark > span:first-child { color: var(--accent); }
+  .wordmark-dot { color: var(--green); }
+  h1 { font-size: clamp(2rem, 3.6vw, 3.3rem); line-height: 1.23; letter-spacing: -.055em; font-weight: 650; white-space: pre-line; word-break: keep-all; }
+  .hero-intro { max-width: 34ch; margin-top: 1.4rem; font-size: 1.04rem; line-height: 1.85; color: #c6bbc4; word-break: keep-all; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 2rem; }
+  .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 1.6rem; padding: .85rem 1.05rem; border: 1px solid #ffffff30; border-radius: 4px; font-size: .82rem; font-weight: 550; transition: background .18s; }
+  .button.primary { background: var(--accent); color: #24120d; border-color: var(--accent); }
+  .button.primary:hover { background: #ffb183; }
+  .button:not(.primary):hover { background: #ffffff0a; }
+  .hero-desk { border: 1px solid #ffffff26; padding: 1.5rem 1.8rem 1.2rem; background: linear-gradient(130deg, #271a2270, #160f1880); }
+  .desk-top { display: flex; justify-content: space-between; gap: 1rem; color: var(--muted); font-size: .61rem; letter-spacing: .1em; }
+  .opening-quote { padding: 2rem 0 1.7rem; margin: 0; }
+  .small-label { display: block; font-size: .66rem; color: var(--muted); line-height: 1.6; letter-spacing: .02em; }
+  .opening-quote blockquote { margin: .7rem 0 .85rem; font-size: clamp(1.3rem, 2.1vw, 1.9rem); font-weight: 580; line-height: 1.5; letter-spacing: -.045em; word-break: keep-all; }
+  .opening-quote > p { color: #baa5a2; font-size: .81rem; line-height: 1.5; }
+  .opening-quote figcaption { font-size: .68rem; color: var(--accent); margin-top: .8rem; }
+  .hero-finding { display: flex; gap: 1rem; align-items: baseline; padding: 1rem 0; border-top: 1px solid var(--line); }
+  .finding-num { color: var(--tone); font-family: 'JetBrains Mono', monospace; font-size: .68rem; }
+  .hero-finding .small-label { color: var(--tone); }
+  .hero-finding p { font-size: .84rem; margin-top: .25rem; color: #e1d8df; line-height: 1.6; word-break: keep-all; }
+  [data-tone="orange"] { --tone: var(--accent); }
+  [data-tone="green"] { --tone: var(--green); }
+  [data-tone="blue"] { --tone: var(--blue); }
+  [data-tone="muted"] { --tone: #c5bacb; }
+  .desk-note { padding-top: .65rem; color: var(--muted); font-size: .67rem; line-height: 1.7; }
+  .edition-strip { border-top: 1px solid #ffffff42; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr 1fr 1.4fr; }
+  .edition-strip > div { padding: 1.2rem 1.5rem; border-left: 1px solid var(--line); }
+  .edition-strip > div:first-child { padding-left: 0; border-left: 0; }
+  .edition-strip dt { font-size: .65rem; color: var(--muted); margin-bottom: .45rem; }
+  .edition-strip dd { font-size: 1.02rem; font-weight: 550; font-variant-numeric: tabular-nums; }
+  .edition-strip dd span { font-size: .7rem; color: var(--muted); font-weight: 400; }
+  .edition-strip .edition-small { font-size: .87rem; }
+  .deck { display: grid; grid-template-columns: 216px minmax(0, 1fr); gap: 3.4rem; padding-top: 3rem; scroll-margin-top: 90px; align-items: start; }
+  .scene-rail { position: sticky; top: 94px; max-height: calc(100dvh - 115px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: #5c4854 transparent; padding-right: .6rem; }
+  .rail-heading { display: flex; justify-content: space-between; gap: .5rem; margin-bottom: 1.3rem; font-size: .55rem; color: #a59aa7; letter-spacing: .03em; }
+  .group-label { display: flex; gap: .55rem; color: #a399a6; font-size: .62rem; margin: 1.1rem 0 .4rem; }
+  .group-label span { color: #665a6b; }
+  .scene-nav a { display: flex; gap: .7rem; align-items: center; padding: .5rem .55rem; font-size: .77rem; line-height: 1.4; color: #c5b9c6; border-left: 2px solid transparent; }
+  .scene-number { color: #9c8e9f; font-family: 'JetBrains Mono', monospace; font-size: .6rem; }
+  .rail-arrow { margin-left: auto; opacity: 0; font-size: .75rem; }
+  .scene-nav a:hover { color: var(--ink); background: #ffffff05; }
+  .scene-nav a.is-active { border-color: var(--accent); background: #fd9a630b; color: #ffc9a8; }
+  .scene-nav a.is-active .rail-arrow { opacity: 1; }
+  .scene-nav a.is-active .scene-number { color: var(--accent); }
+  .rail-tip { margin: 1.6rem 0 1rem; display: flex; align-items: center; gap: .3rem; color: #a89baa; font-size: .65rem; }
+  kbd { font: inherit; border: 1px solid #ffffff30; padding: 0 .3rem; border-radius: 3px; }
+  .rail-source { display: flex; justify-content: space-between; font-size: .66rem; color: #ae9ead; padding: .9rem .2rem; border-top: 1px solid var(--line); }
+  [data-controls] { display: none; }
+  [data-enhanced="true"] .deck-toolbar, [data-enhanced="true"] .deck-pagination { display: flex; }
+  [data-enhanced="true"] .rail-tip { display: flex; }
+  .deck-toolbar { align-items: center; justify-content: space-between; gap: 1rem; border-top: 1px solid #ffffff42; border-bottom: 1px solid var(--line); padding: .8rem 0; }
+  .scene-counter { display: flex; align-items: baseline; gap: .65rem; font-family: 'JetBrains Mono', monospace; font-size: .76rem; color: var(--accent); }
+  .counter-divider { color: #827488; font-size: .65rem; }
+  .current-nav { margin-left: .5rem; font-family: Inter, sans-serif; color: #c8bdcb; font-size: .72rem; }
+  .view-actions { display: flex; gap: 1rem; }
+  .text-button { padding: .3rem .1rem; font-size: .68rem; background: transparent; border: 0; color: #c5b9c6; }
+  .text-button:hover, .text-button[aria-pressed="true"] { color: var(--accent); }
+  .scene { padding-top: 2.5rem; scroll-margin-top: 100px; }
+  .scene[hidden] { display: none; }
+  .scene:focus { outline: none; }
+  .scene:focus-visible { outline: 2px solid var(--accent); outline-offset: 8px; }
+  .scene h2 { font-size: clamp(1.9rem, 3.05vw, 2.85rem); line-height: 1.3; letter-spacing: -.05em; font-weight: 630; white-space: pre-line; word-break: keep-all; margin: .9rem 0 0; }
+  .scene-lead { font-size: .98rem; line-height: 1.9; color: #c6bbc8; margin-top: 1.25rem; max-width: 68ch; word-break: keep-all; }
+  .claim-chain { margin: 2rem 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-block: 1px solid var(--line); }
+  .chain-step { position: relative; padding: 1.4rem 1rem 1.4rem .65rem; border-right: 1px solid var(--line); }
+  .chain-step:first-child { padding-left: 0; }
+  .chain-step:last-child { border-right: 0; }
+  .chain-index { display: block; font-family: 'JetBrains Mono', monospace; color: var(--accent); font-size: .64rem; margin-bottom: .8rem; }
+  .chain-step strong { font-size: .85rem; font-weight: 550; line-height: 1.7; word-break: keep-all; }
+  .chain-arrow { position: absolute; right: .5rem; top: 1.35rem; color: #736375; font-size: .75rem; }
+  .reading-key { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0; }
+  .reading-key > div p { font-size: .78rem; color: #c4b8c7; margin-top: .5rem; line-height: 1.7; }
+  .evidence-tag { display: inline-block; width: fit-content; border: 1px solid #ffffff25; border-radius: 3px; padding: .15rem .4rem; color: #b8adbf; font-size: .6rem; line-height: 1.5; font-weight: 450; }
+  .future-tag { color: var(--blue); border-color: #a9c7f33a; }
+  .method-note { grid-column: 1 / -1; font-size: .75rem; color: var(--muted); line-height: 1.85; padding-top: .5rem; word-break: keep-all; }
+  .report-links { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.7rem 0 1rem; }
+  .report-links a { display: flex; gap: 1.8rem; border: 1px solid #ffffff30; border-radius: 3px; padding: .7rem .9rem; color: #efc9b4; font-size: .78rem; }
+  .report-links a:hover { border-color: var(--accent); }
+  .report-authors { color: var(--muted); font-size: .72rem; line-height: 1.8; margin-bottom: 2rem; }
+  .report-authors .small-label { display: inline-block; margin-right: .6rem; color: #e2d6e5; }
+  .report-embed { margin: 1.5rem 0 2rem; border: 1px solid var(--line); }
+  .report-embed summary { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem; font-size: .77rem; color: #e1cabd; cursor: pointer; list-style: none; }
+  .report-embed summary > span { color: var(--accent); }
+  .report-embed[open] summary > span { transform: rotate(45deg); }
+  .report-embed > p { padding: 0 1rem 1rem; color: var(--muted); font-size: .73rem; line-height: 1.8; }
+  .report-embed a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+  .report-embed iframe { display: block; border: 0; width: 100%; height: min(76vh, 800px); min-height: 400px; background: #211b22; }
+  .video-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; align-items: start; }
+  .video-card { min-width: 0; border: 1px solid var(--line); }
+  .video-kind { display: flex; gap: .75rem; padding: .8rem 1rem; font-size: .65rem; color: #bbaebd; }
+  .video-kind span { color: var(--accent); font-family: 'JetBrains Mono', monospace; }
+  .video-frame { aspect-ratio: 16 / 9; background: #080509; }
+  .video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+  .video-copy { padding: 1.05rem 1rem 1.2rem; }
+  .video-copy h3 { font-size: 1.03rem; font-weight: 570; line-height: 1.6; margin: .8rem 0 .4rem; letter-spacing: -.025em; }
+  .video-copy p { font-size: .78rem; line-height: 1.8; color: #c9bdcd; word-break: keep-all; overflow-wrap: anywhere; }
+  .video-copy .video-meta { font-size: .65rem; color: #e1cabd; }
+  .video-meta span { color: var(--muted); }
+  .video-copy .video-title { font-size: .7rem; color: #a99aae; margin-bottom: .9rem; word-break: normal; }
+  .video-copy .fine-print { font-size: .67rem; color: #ab9db1; margin-top: 1rem; }
+  .video-chapters { display: grid; gap: .55rem; margin-top: 1rem; }
+  .video-chapters a { display: flex; gap: .65rem; font-size: .68rem; color: #dbc0ac; }
+  .video-chapters time { font-family: 'JetBrains Mono', monospace; min-width: 4.2rem; color: var(--accent); }
+  .video-chapters a span { margin-left: auto; }
+  .video-links { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1rem; font-size: .68rem; color: var(--accent); }
+  .fact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); margin: 2rem 0; border-block: 1px solid var(--line); }
+  .fact { padding: 1.35rem 1.2rem; border-left: 1px solid var(--line); }
+  .fact:first-child { border-left: 0; padding-left: 0; }
+  .fact strong { display: block; color: var(--tone); font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: clamp(2rem, 3vw, 2.8rem); letter-spacing: -.07em; line-height: 1.3; margin: .7rem 0; }
+  .fact p { color: var(--muted); font-size: .68rem; line-height: 1.8; word-break: keep-all; }
+  .source-cite { color: #bcabbe; font-family: 'JetBrains Mono', monospace; font-size: .65rem; white-space: nowrap; }
+  .source-cite:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+  .prediction { padding: 1.3rem 1.4rem; margin: 1.8rem 0; border: 1px solid #a9c7f329; background: #a9c7f304; }
+  .prediction > div { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1.2rem; }
+  .comparison-label { display: block; color: #aaa0b3; font-size: .67rem; letter-spacing: .01em; }
+  .prediction .comparison-label { color: var(--blue); }
+  .prediction-period { font-size: .65rem; color: #a39aaf; }
+  .prediction > p { color: #d9d2e5; font-size: .9rem; line-height: 1.85; margin-top: .7rem; word-break: keep-all; }
+  .events { margin: 1.8rem 0; }
+  .events > .comparison-label { margin-bottom: .5rem; }
+  .event { display: grid; grid-template-columns: 148px minmax(0, 1fr); gap: 1.2rem; padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+  .event-date time { display: block; color: #d2c2d1; font-family: 'JetBrains Mono', monospace; font-size: .65rem; line-height: 1.8; margin-bottom: .55rem; }
+  .event-date .evidence-tag { font-size: .56rem; }
+  .event-copy h3 { font-size: .98rem; font-weight: 550; line-height: 1.6; letter-spacing: -.02em; }
+  .event-copy p { color: #bfb3c4; line-height: 1.85; font-size: .84rem; margin: .45rem 0 .65rem; word-break: keep-all; }
+  .event-source { display: inline-block; color: #d0ab93; font-size: .65rem; line-height: 1.7; }
+  .verdict { padding: 1.2rem 1.3rem; margin: 1.7rem 0; border-left: 2px solid var(--tone); background: #ffffff04; }
+  .verdict-label { color: var(--tone); font-size: .69rem; font-weight: 550; line-height: 1.8; }
+  .verdict-label > span { padding: 0 .5rem; opacity: .4; }
+  .verdict p { font-size: .88rem; line-height: 1.85; color: #d5cad8; margin-top: .6rem; word-break: keep-all; }
+  .context-panel { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 1.5rem 0; }
+  .context-panel + .context-panel { border-top: 0; margin-top: -1.5rem; }
+  .context-panel summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem .1rem; cursor: pointer; font-size: .77rem; color: #c9bdcf; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  .context-panel summary > span { font-size: 1rem; color: #a58daa; transition: transform .15s; }
+  .context-panel[open] summary > span { transform: rotate(45deg); }
+  .context-panel > div { padding: 0 1.1rem 1.2rem; border-left: 1px solid #ffffff15; margin: 0 .1rem 1rem; }
+  .context-panel p, .host-note p { font-size: .8rem; color: #b9acbf; line-height: 1.95; margin-bottom: .7rem; word-break: keep-all; }
+  .context-sources { display: flex; flex-wrap: wrap; gap: .6rem 1rem; margin-top: 1rem; }
+  .context-sources a { color: #d4aa8c; font-size: .67rem; }
+  .conversation { padding: 1.4rem 0 .3rem; margin-top: 1.8rem; border-top: 1px solid #ffffff36; }
+  .conversation .small-label { color: var(--green); }
+  .conversation p { font-size: clamp(1.12rem, 1.65vw, 1.5rem); color: #e8e1e9; line-height: 1.7; letter-spacing: -.025em; margin-top: .65rem; word-break: keep-all; }
+  .host-note { margin-top: 1.2rem; padding: .8rem 0; }
+  .host-note summary { color: #a99baf; font-size: .7rem; cursor: pointer; }
+  .host-note p { margin: .8rem 0 0; }
+  .review-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; margin: 2rem 0; }
+  .review-card { border: 1px solid var(--line); padding: 1.4rem; }
+  .review-card > time { color: #c1afc1; font-size: .7rem; font-family: 'JetBrains Mono', monospace; }
+  .review-card h3 { font-size: .9rem; font-weight: 500; margin-top: .65rem; }
+  .review-card p { font-size: .82rem; line-height: 1.9; color: #c5b7cb; word-break: keep-all; }
+  .review-card .review-value { font-size: 1.8rem; color: var(--accent); font-weight: 550; letter-spacing: -.05em; margin: .7rem 0; }
+  .review-card .review-caveat { font-size: .7rem; color: #aa9ab0; padding-top: 1rem; margin: 1rem 0 .8rem; border-top: 1px solid var(--line); }
+  .future-timeline { margin-top: 2rem; }
+  .future-notice { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; color: #c4b6d0; font-size: .66rem; padding: 0 0 1.3rem; }
+  .future-notice > span:last-child { margin-left: auto; color: #9f8eac; font-size: .6rem; }
+  .future-event { display: grid; grid-template-columns: 118px minmax(0, 1fr); gap: 1.1rem; border-top: 1px solid var(--line); padding: 1.5rem 0; }
+  .future-event > time { color: var(--blue); font-family: 'JetBrains Mono', monospace; font-size: .85rem; letter-spacing: -.02em; line-height: 1.8; }
+  .future-event h3 { font-size: 1.1rem; line-height: 1.6; font-weight: 550; letter-spacing: -.03em; }
+  .future-event p { color: #c2b4ca; font-size: .84rem; line-height: 1.9; margin-top: .45rem; word-break: keep-all; }
+  .future-event .watch-for { font-size: .73rem; color: #a899b1; margin-top: .7rem; }
+  .watch-for > span { color: #d4c6dd; margin-right: .65rem; }
+  .branch-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+  .branch { border-top: 2px solid var(--tone); background: #ffffff03; padding: 1.4rem 1.25rem; }
+  .branch-top { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: space-between; color: var(--tone); font-size: .67rem; }
+  .branch-top > span:last-child { font-family: 'JetBrains Mono', monospace; letter-spacing: .06em; }
+  .branch h3 { color: #f3e9f2; font-size: 1.3rem; font-weight: 580; line-height: 1.55; letter-spacing: -.03em; margin: 1.5rem 0 1rem; word-break: keep-all; }
+  .branch p { color: #c8bacd; line-height: 1.9; font-size: .85rem; word-break: keep-all; margin-bottom: 1rem; }
+  .branch .branch-question { margin: 1.6rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--tone); font-size: .9rem; }
+  .discussion { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 1.5rem; padding: 2rem 0; border-bottom: 1px solid var(--line); }
+  .discussion-list { margin-top: 1.5rem; }
+  .discussion > span { font-family: 'JetBrains Mono', monospace; font-size: .9rem; color: var(--green); padding-top: .4rem; }
+  .discussion h3 { font-size: clamp(1.3rem, 2vw, 1.7rem); font-weight: 560; letter-spacing: -.035em; line-height: 1.5; white-space: pre-line; word-break: keep-all; }
+  .discussion p { font-size: .87rem; line-height: 1.9; color: #c2b5c9; margin-top: .8rem; word-break: keep-all; }
+  .discussion details { margin-top: 1rem; }
+  .discussion summary { color: #a397ab; font-size: .7rem; cursor: pointer; }
+  .source-method { padding: 1.3rem; margin: 2rem 0; background: #ffffff04; border: 1px solid var(--line); }
+  .source-method p { display: flex; gap: 1rem; color: #c8bbcf; font-size: .79rem; line-height: 1.95; margin-bottom: .75rem; word-break: keep-all; }
+  .source-method p:last-child { margin-bottom: 0; }
+  .source-method span { color: var(--accent); font: .65rem/2.3 'JetBrains Mono', monospace; }
+  .source-list { list-style: none; padding: 0; margin: 0; }
+  .source-list li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 1.2rem; padding: 1.4rem 0; border-bottom: 1px solid var(--line); scroll-margin-top: 100px; }
+  .source-label { color: var(--accent); font-size: .7rem; padding-top: .15rem; }
+  .source-meta { display: flex; flex-wrap: wrap; gap: .5rem 1rem; color: #a99ab2; font-size: .63rem; line-height: 1.8; }
+  .source-meta span { color: var(--blue); }
+  .source-list h3 { font-weight: 540; font-size: .92rem; line-height: 1.65; margin: .5rem 0; overflow-wrap: anywhere; }
+  .source-list p { color: #b9a9c1; font-size: .74rem; line-height: 1.8; word-break: keep-all; }
+  .source-list .source-publisher { color: #dfc8b9; font-size: .69rem; margin-bottom: .4rem; }
+  .source-cutoff { font-size: .7rem; color: #a899b1; line-height: 1.8; margin-top: 1.5rem; }
+  .deck-pagination { margin-top: 3rem; border-top: 1px solid #ffffff36; border-bottom: 1px solid var(--line); padding: 1rem 0; justify-content: space-between; align-items: center; gap: .8rem; }
+  .deck-pagination button { display: flex; gap: .8rem; align-items: center; color: #e5d8e9; background: none; border: 1px solid #ffffff25; border-radius: 3px; padding: .7rem .9rem; font-size: .72rem; white-space: nowrap; }
+  .deck-pagination button:hover:not(:disabled) { color: var(--accent); border-color: var(--accent); }
+  .deck-pagination button:disabled { opacity: .35; cursor: default; }
+  .deck-pagination > p { color: #a191ad; font-size: .65rem; text-align: center; line-height: 1.7; }
+  .stage-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-top: 1.3rem; font-size: .59rem; color: #a191ad; }
+  [data-view="all"] .scene { padding-block: 3rem; border-bottom: 1px solid #ffffff38; }
+  [data-view="all"] .deck-pagination { display: none; }
+
+  @media (min-width: 1600px) { .dossier-shell { padding-inline: 3rem; } }
+  @media (max-width: 1200px) { .dossier-shell { padding-inline: 2rem; } .dossier-hero { gap: 3rem; } .deck { gap: 2.2rem; grid-template-columns: 200px minmax(0, 1fr); } .hero-desk { padding-inline: 1.4rem; } .edition-strip > div { padding-inline: 1rem; } }
+  @media (max-width: 980px) {
+    .dossier-shell { padding: 1.7rem 1.5rem 3rem; }
+    .dossier-hero { gap: 2rem; padding-top: 2.5rem; }
+    .hero-desk { padding: 1.2rem; }
+    .opening-quote { padding: 1.5rem 0; }
+    .hero-finding { gap: .75rem; padding: .8rem 0; }
+    .hero-finding p { font-size: .77rem; }
+    .edition-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .edition-strip > div:nth-child(3) { padding-left: 0; border-left: 0; }
+    .edition-strip > div:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .deck { display: block; padding-top: 1.7rem; }
+    .scene-rail { position: relative; top: auto; overflow: visible; max-height: none; padding: 0; }
+    .rail-heading { margin-bottom: .7rem; }
+    .scene-nav { display: flex; overflow-x: auto; gap: .25rem; scrollbar-width: thin; padding: .25rem 0 .8rem; }
+    .nav-group { display: contents; }
+    .group-label, .rail-arrow, .rail-source, [data-enhanced="true"] .rail-tip { display: none; }
+    .scene-nav a { flex: 0 0 auto; border-left: 0; border-bottom: 2px solid transparent; padding: .65rem .8rem; gap: .5rem; }
+    .deck-toolbar { margin-top: .3rem; }
+    .scene { padding-top: 2rem; }
+    .scene h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); }
+  }
+  @media (max-width: 680px) {
+    .dossier-shell { padding: 1.35rem 1.15rem 2.5rem; }
+    .breadcrumb { font-size: .7rem; }
+    .dossier-hero { grid-template-columns: 1fr; gap: 2rem; padding: 2.2rem 0; }
+    .eyebrow { font-size: .6rem; letter-spacing: .055em; }
+    .report-wordmark { font-size: clamp(4rem, 17vw, 6rem); margin-top: 1.4rem; }
+    h1 { font-size: 2.1rem; }
+    .hero-intro { font-size: .95rem; max-width: none; }
+    .hero-actions { margin-top: 1.4rem; }
+    .button { font-size: .76rem; gap: 1.2rem; }
+    .hero-desk { padding: 1.2rem 1.3rem; }
+    .opening-quote blockquote { font-size: 1.55rem; }
+    .hero-finding p { font-size: .82rem; }
+    .edition-strip > div { padding-block: 1rem; }
+    .edition-strip dd { font-size: .9rem; }
+    .edition-strip dd span { font-size: .61rem; }
+    .edition-strip .edition-small { font-size: .78rem; }
+    .edition-small span { display: block; margin-top: .2rem; }
+    .current-nav { display: none; }
+    .scene h2 { font-size: 1.9rem; }
+    .scene-lead { font-size: .9rem; }
+    .claim-chain { grid-template-columns: 1fr; }
+    .chain-step, .chain-step:first-child { display: flex; align-items: center; gap: 1rem; padding: .85rem .2rem; border-right: 0; border-bottom: 1px solid var(--line); }
+    .chain-step:last-child { border-bottom: 0; }
+    .chain-index { margin: 0; }
+    .chain-step strong { font-size: .88rem; }
+    .chain-arrow { position: static; margin-left: auto; transform: rotate(90deg); }
+    .reading-key { grid-template-columns: 1fr; gap: .9rem; }
+    .reading-key > div { display: flex; align-items: center; gap: .7rem; }
+    .reading-key > div p { margin: 0; }
+    .video-grid, .review-grid, .branch-grid { grid-template-columns: 1fr; }
+    .video-copy { padding: 1.1rem; }
+    .fact-grid { grid-template-columns: 1fr; margin: 1.5rem 0; }
+    .fact, .fact:first-child { padding: 1.1rem 0; border-left: 0; border-bottom: 1px solid var(--line); }
+    .fact:last-child { border-bottom: 0; }
+    .fact { display: grid; grid-template-columns: 1fr auto; gap: .3rem 1rem; align-items: center; }
+    .fact strong { font-size: 2.1rem; margin: 0; grid-column: 2; grid-row: 1 / 3; }
+    .fact p { grid-column: 1; }
+    .prediction { padding: 1.1rem; }
+    .prediction > p { font-size: .85rem; }
+    .event { grid-template-columns: 1fr; gap: .6rem; }
+    .event-date { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem; }
+    .event-date time { margin: 0; }
+    .event-copy p { font-size: .84rem; }
+    .verdict { padding: 1rem; }
+    .verdict-label { font-size: .65rem; }
+    .verdict p { font-size: .84rem; }
+    .context-panel summary { font-size: .73rem; }
+    .context-panel > div { padding-inline: .7rem; }
+    .conversation p { font-size: 1.15rem; }
+    .future-event { grid-template-columns: 1fr; gap: .5rem; padding-block: 1.25rem; }
+    .future-notice > span:last-child { margin-left: 0; width: 100%; }
+    .future-event h3 { font-size: 1.05rem; }
+    .discussion { grid-template-columns: 24px minmax(0, 1fr); gap: .8rem; padding-block: 1.5rem; }
+    .discussion h3 { font-size: 1.35rem; }
+    .discussion p { font-size: .84rem; }
+    .source-method { padding: 1rem; }
+    .source-method p { font-size: .75rem; gap: .65rem; }
+    .source-list li { grid-template-columns: 30px minmax(0, 1fr); gap: .7rem; }
+    .deck-pagination button { padding: .65rem; font-size: .67rem; gap: .4rem; }
+    .deck-pagination > p { max-width: 10rem; font-size: .6rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+  /* Tailwind's important [hidden] reset is in the base layer. Important layered
+     rules outrank unlayered rules, so the print override belongs there too. */
+  @layer base {
+    @media print { .scene[hidden] { display: block !important; } }
+  }
+  @media print {
+    :global(body) { background: white !important; color: #111 !important; }
+    :global(body > header), :global(body > footer) { display: none !important; }
+    .a27 { background: white; color: #111; --ink: #111; --muted: #444; --accent: #7b3514; --green: #235f45; --blue: #254e7c; --line: #ccc; }
+    .dossier-shell { max-width: none; padding: 0; }
+    .dossier-hero { gap: 1cm; padding-block: 1cm; }
+    .hero-desk, .verdict, .prediction, .source-method, .branch { background: none; }
+    .hero-intro, .hero-finding p, .desk-top, .opening-quote > p, .scene-lead, .method-note, .reading-key > div p, .event-copy p, .event-copy h3, .prediction p, .verdict p, .future-event p, .context-panel p, .host-note p, .review-card p, .branch p, .branch h3, .discussion p, .conversation p, .source-list p, .source-list h3, .source-method p, .fact p, .video-copy p { color: #222; }
+    .report-wordmark { font-size: 50pt; } h1 { font-size: 26pt; }
+    .dossier-hero, .edition-strip { break-inside: avoid; }
+    .hero-actions, .breadcrumb, .scene-rail, .deck-toolbar, .deck-pagination, .stage-footer, .video-frame, .video-chapters, .report-embed { display: none !important; }
+    .deck { display: block; padding-top: 0; }
+    .scene, .scene[hidden] { display: block !important; padding-top: 1cm; break-before: page; }
+    .scene h2 { font-size: 26pt; }
+    .scene-lead { font-size: 11pt; }
+    .event, .future-event, .verdict, .fact-grid, .review-card, .branch, .discussion, .source-list li { break-inside: avoid; }
+    details > div, details > p { display: block !important; }
+    .context-panel summary, .host-note summary, .discussion summary { display: block; color: #111; }
+    .context-panel summary > span { display: none; }
+    a { color: #333; text-decoration: underline; text-underline-offset: 2px; }
+    .source-cite, .source-meta, .evidence-tag, .small-label, .source-label, .future-event > time { color: #333; }
+    .source-meta { font-size: 8pt; }
+  }
+</style>
