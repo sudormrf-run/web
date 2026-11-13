@@ -1,0 +1,28 @@
+---
+interface Item { value: string; label: string; body: string; sourceId: string }
+export interface Comparison { label: string; forecast: Item; actual: Item; note: string }
+interface Props { comparison: Comparison; sources: Record<string, { url: string; label: string }>; stacked?: boolean }
+const { comparison, sources, stacked = false } = Astro.props;
+---
+<div class:list={['comparison-pair', { stacked }]}>
+  <p class="pair-label">{comparison.label}</p>
+  <div class="pair-values">
+    {[comparison.forecast, comparison.actual].map((item, i) => <div class="pair-item" data-kind={i === 0 ? 'forecast' : 'actual'}><span>{i === 0 ? '그때의 예측' : '공개 자료'} / {item.label}</span><strong>{item.value}</strong><p>{item.body} <a href={sources[item.sourceId].url} target="_blank" rel="noopener noreferrer" aria-label={`${item.label} 출처`}>[{sources[item.sourceId].label}] ↗</a></p></div>)}
+  </div>
+  <p class="pair-note">{comparison.note}</p>
+</div>
+<style>
+  .comparison-pair { margin: 1.7rem 0; border-top: 1px solid #ffffff35; border-bottom: 1px solid #ffffff25; }
+  .pair-label { color: #b9acbf; font-size: .7rem; padding-top: 1rem; }
+  .pair-values { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 1rem 0; }
+  .pair-item + .pair-item { border-left: 1px solid #ffffff25; padding-left: 2rem; }
+  .pair-item > span { display: block; font-size: .68rem; color: #b5a6c0; line-height: 1.7; }
+  .pair-item > strong { display: block; margin: .5rem 0; font: 500 clamp(2.5rem, 4vw, 3.7rem) 'JetBrains Mono', monospace; letter-spacing: -.065em; color: #a9c7f3; }
+  .pair-item[data-kind="actual"] > strong { color: #8ed5bd; }
+  .pair-item p { font-size: .81rem; line-height: 1.8; color: #c9bbd2; word-break: keep-all; }
+  a { color: #b9a8c2; font-size: .6rem; white-space: nowrap; text-decoration: none; }
+  .pair-note { font-size: .71rem; line-height: 1.85; color: #bea5a1; padding: .9rem 0 1rem; border-top: 1px solid #ffffff13; word-break: keep-all; }
+  @media (min-width: 1100px) { .stacked .pair-values { grid-template-columns: 1fr; gap: 1.2rem; }.stacked .pair-item + .pair-item { border-left: 0; border-top: 1px solid #ffffff25; padding: 1.2rem 0 0; } }
+  @media (max-width: 640px) { .pair-values { gap: 1rem; }.pair-item + .pair-item { padding-left: 1rem; }.pair-item > span { font-size: .58rem; }.pair-item > strong { font-size: 2.2rem; }.pair-item p { font-size: .69rem; } }
+  @media print { .comparison-pair { border-color: #bbb; break-inside: avoid; }.pair-item > span, .pair-item > strong, .pair-item[data-kind="actual"] > strong, .pair-item p, .pair-note { color: #222; } }
+</style>
