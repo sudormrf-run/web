@@ -1,0 +1,95 @@
+---
+export interface ChartRow {
+  label: string;
+  detail: string;
+  value: number;
+  display: string;
+  kind: string;
+  sourceId: string;
+  range?: number[];
+}
+export interface Chart {
+  title: string;
+  unit: string;
+  max: number;
+  ticks: string[];
+  rows: ChartRow[];
+  note: string;
+  takeaway: string;
+}
+interface Props {
+  chart: Chart;
+  sources: Record<string, { url: string; label: string }>;
+}
+const { chart, sources } = Astro.props;
+---
+
+<figure class="evidence-chart">
+  <div class="chart-heading"><h3>{chart.title}</h3><span>{chart.unit}</span></div>
+  <div class="chart-legend">{chart.rows.some(row => row.kind === 'forecast' || row.kind === 'future') && <span><i class="forecast-swatch"></i>시나리오의 예측</span>}<span><i class="observed-swatch"></i>공개 자료 · 측정/추정</span></div>
+  <div class="chart-axis" aria-hidden="true"><div></div><div>{chart.ticks.map(tick => <span>{tick}</span>)}</div><div></div></div>
+  <div class="chart-rows">
+    {chart.rows.map(row => (
+      <div class="chart-row" data-kind={row.kind}>
+        <div class="row-name"><strong>{row.label}</strong><span>{row.detail}</span></div>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar" style={`width:${row.value / chart.max * 100}%`}></div>
+          {row.range && <div class="range" style={`left:${row.range[0] / chart.max * 100}%;width:${(row.range[1] - row.range[0]) / chart.max * 100}%`}></div>}
+        </div>
+        <div class="row-value"><strong>{row.display}</strong><a href={sources[row.sourceId].url} target="_blank" rel="noopener noreferrer" aria-label={`${row.label} 수치 출처`}>[{sources[row.sourceId].label}] ↗</a></div>
+      </div>
+    ))}
+  </div>
+  <figcaption><p class="chart-takeaway">{chart.takeaway}</p><p>{chart.note}</p></figcaption>
+</figure>
+
+<style>
+  .evidence-chart { margin: 1.7rem 0; padding: 1.4rem 1.5rem 1.2rem; background: #1d1720; border: 1px solid #ffffff24; border-radius: 5px; }
+  .chart-heading { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem 1rem; align-items: baseline; }
+  h3 { color: #f5f0eb; font-size: .97rem; line-height: 1.6; letter-spacing: -.025em; font-weight: 550; }
+  .chart-heading > span { color: #b4a9b9; font-size: .7rem; }
+  .chart-legend { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; margin-top: .8rem; font-size: .67rem; color: #c2b6c8; }
+  .chart-legend > span { display: flex; align-items: center; gap: .4rem; }
+  i { width: 15px; height: 6px; display: inline-block; }
+  .forecast-swatch { border: 1px dashed #a9c7f3; }
+  .observed-swatch { background: #8ed5bd; }
+  .chart-axis, .chart-row { display: grid; grid-template-columns: 155px minmax(0, 1fr) 100px; gap: 1.1rem; }
+  .chart-axis { margin-top: 1.7rem; }
+  .chart-axis > div:nth-child(2) { display: flex; justify-content: space-between; color: #9b8eaa; font: .6rem 'JetBrains Mono', monospace; }
+  .chart-row { align-items: center; padding: .95rem 0; border-bottom: 1px solid #ffffff0c; }
+  .chart-row:last-child { border-bottom: 0; }
+  .row-name strong { display: block; color: #eee5f0; font-size: .84rem; font-weight: 500; line-height: 1.6; }
+  .row-name > span { display: block; font-size: .67rem; color: #aa9db2; margin-top: .15rem; line-height: 1.7; }
+  .bar-track { position: relative; height: 25px; background: repeating-linear-gradient(to right, #ffffff10 0, #ffffff10 1px, transparent 1px, transparent 25%); border-right: 1px solid #ffffff10; }
+  .bar { position: absolute; height: 100%; top: 0; left: 0; background: #8ed5bd; border: 1px solid #8ed5bd; border-radius: 0 2px 2px 0; }
+  [data-kind="forecast"] .bar, [data-kind="future"] .bar { border: 1px dashed #a9c7f3; background: repeating-linear-gradient(135deg, #a9c7f31a, #a9c7f31a 5px, #a9c7f305 5px, #a9c7f305 10px); }
+  .range { position: absolute; height: 2px; top: calc(50% - 1px); background: #e4f7ee; border-left: 2px solid #e4f7ee; border-right: 2px solid #e4f7ee; z-index: 1; }
+  .range::before, .range::after { content: ''; position: absolute; top: -6px; width: 2px; height: 14px; background: #e4f7ee; }
+  .range::before { left: -2px; }.range::after { right: -2px; }
+  .row-value { text-align: right; }
+  .row-value strong { font: 500 1.3rem 'JetBrains Mono', monospace; color: #8ed5bd; letter-spacing: -.06em; white-space: nowrap; }
+  [data-kind="forecast"] .row-value strong, [data-kind="future"] .row-value strong { color: #a9c7f3; }
+  .row-value a { display: block; font-size: .57rem; color: #b3a5be; margin-top: .2rem; text-decoration: none; }
+  .row-value a:hover { color: #fd9a63; }
+  figcaption { margin-top: 1rem; padding-top: .9rem; border-top: 1px solid #ffffff20; }
+  figcaption p { font-size: .73rem; color: #ad9fb9; line-height: 1.85; word-break: keep-all; }
+  figcaption .chart-takeaway { font-size: .89rem; color: #e2d7e8; margin-bottom: .45rem; }
+  @media (max-width: 640px) {
+    .evidence-chart { padding: 1.1rem; margin-block: 1.3rem; }
+    .chart-axis { grid-template-columns: minmax(0, 1fr) 80px; gap: .8rem; margin-top: 1.2rem; }
+    .chart-axis > div:first-child { display: none; }
+    .chart-row { grid-template-columns: minmax(0, 1fr) 80px; gap: .5rem .8rem; padding-block: .85rem; }
+    .row-name { grid-column: 1; grid-row: 1; }.row-value { grid-column: 2; grid-row: 1 / 3; }
+    .row-value strong { font-size: 1.1rem; }
+    .bar-track { grid-column: 1; grid-row: auto; height: 17px; }
+    .row-name strong { font-size: .8rem; }.row-name > span { font-size: .65rem; }
+    .chart-legend { font-size: .64rem; }
+  }
+  @media print {
+    .evidence-chart { background: white; border-color: #ccc; break-inside: avoid; }
+    h3, .row-name strong, .row-value strong, [data-kind] .row-value strong, figcaption .chart-takeaway { color: #111; }
+    .chart-heading > span, .chart-legend, .chart-axis > div:nth-child(2), .row-name > span, .row-value a, figcaption p { color: #444; }
+    .bar { background: #777; border-color: #555; print-color-adjust: exact; }
+    [data-kind="forecast"] .bar, [data-kind="future"] .bar { border-color: #333; }
+  }
+</style>

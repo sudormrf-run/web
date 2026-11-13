@@ -1,6 +1,12 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import SourceQuote from '../../../components/podcast/SourceQuote.astro';
+import EvidenceChart, { type Chart } from '../../../components/podcast/EvidenceChart.astro';
+import PublishedFigure from '../../../components/podcast/PublishedFigure.astro';
+import ComparisonPair, { type Comparison } from '../../../components/podcast/ComparisonPair.astro';
+import ReviewLedger from '../../../components/podcast/ReviewLedger.astro';
+import IncidentDesk from '../../../components/podcast/IncidentDesk.astro';
+import PowerCalculator from '../../../components/podcast/PowerCalculator.astro';
 import report from '../../../data/ai-2027.json';
 
 // The deck follows the existing podcast article pattern; its content lives in JSON.
@@ -17,6 +23,11 @@ interface Scene {
   timelineId?: keyof typeof report.future;
   showVideos?: boolean; showBranches?: boolean; showDiscussion?: boolean; showSources?: boolean;
   question?: string; hostNote?: string;
+  showLedger?: boolean; showIncident?: boolean; showPower?: boolean;
+  chart?: Chart; comparison?: Comparison;
+  evidenceLayout?: 'spread';
+  figureIds?: (keyof typeof report.figures)[];
+  secondaryFigureIds?: (keyof typeof report.figures)[];
 }
 const scenes = report.sections as Scene[];
 const groups = [...new Set(scenes.map(scene => scene.group))];
@@ -46,17 +57,16 @@ const heroQuote = report.quotes.hero;
         </div>
         <aside class="hero-desk" aria-label="이번 검토의 범위">
           <div class="desk-top"><span>FORECAST / REALITY</span><span>REVIEW 01</span></div>
-          <figure class="opening-quote">
-            <span class="small-label">원문 인용 · 한국어 번역</span>
-            <blockquote cite={source('original').url}>“{heroQuote.ko}”</blockquote>
-            <p lang="en">{heroQuote.en}</p>
-            <figcaption><a href={source('original').url} target="_blank" rel="noopener noreferrer">AI 2027 · 2025.04.03 <span aria-hidden="true">↗</span></a></figcaption>
-          </figure>
           <div class="hero-findings">
-            {report.meta.heroFindings.map((finding, i) => (
-              <div class="hero-finding" data-tone={finding.tone}><span class="finding-num">0{i + 1}</span><div><span class="small-label">{finding.label}</span><p>{finding.body}</p></div></div>
+            {report.meta.heroFindings.map(finding => (
+              <a href={`#${finding.target}`} class="hero-finding" data-tone={finding.tone}><strong class="finding-value">{finding.value}</strong><div><span class="small-label">{finding.label}</span><p>{finding.body}</p></div><span class="finding-arrow" aria-hidden="true">↗</span></a>
             ))}
           </div>
+          <figure class="opening-quote">
+            <blockquote cite={source('original').url}>“{heroQuote.ko}”</blockquote>
+            <p lang="en">{heroQuote.en}</p>
+            <figcaption><a href={source('original').url} target="_blank" rel="noopener noreferrer">AI 2027 · 원문 인용과 번역 ↗</a></figcaption>
+          </figure>
           <p class="desk-note">{report.meta.scope}</p>
         </aside>
       </header>
@@ -100,6 +110,16 @@ const heroQuote = report.quotes.hero;
               return (
                 <section class="scene" id={scene.id} data-scene aria-labelledby={`heading-${scene.id}`} tabindex="0">
                   <header class="scene-heading"><p class="eyebrow">{scene.kicker}</p><h2 id={`heading-${scene.id}`}>{scene.title}</h2>{scene.lead && <p class="scene-lead">{scene.lead}</p>}</header>
+
+                  {scene.showLedger && <ReviewLedger />}
+                  {(scene.comparison || scene.chart || scene.figureIds?.length) && <div class:list={['evidence-set', { 'evidence-spread': scene.evidenceLayout === 'spread' }]}>
+                    {scene.comparison && !scene.chart && <ComparisonPair comparison={scene.comparison} sources={sourceById} stacked={scene.evidenceLayout === 'spread'} />}
+                    {scene.chart && <EvidenceChart chart={scene.chart} sources={sourceById} />}
+                    {scene.figureIds?.map(id => <PublishedFigure figure={report.figures[id]} source={source(report.figures[id].sourceId)} />)}
+                    {scene.comparison && scene.chart && <ComparisonPair comparison={scene.comparison} sources={sourceById} />}
+                  </div>}
+                  {scene.showIncident && <IncidentDesk />}
+                  {scene.showPower && <PowerCalculator />}
 
                   {scene.showVideos && (
                     <>
@@ -158,6 +178,8 @@ const heroQuote = report.quotes.hero;
 
                   {scene.details?.map(detail => <details class="context-panel"><summary>{detail.title}<span aria-hidden="true">＋</span></summary><div>{detail.body.map(paragraph => <p>{paragraph}</p>)}<div class="context-sources">{detail.sourceIds.map(id => <a href={source(id).url} target="_blank" rel="noopener noreferrer">{source(id).label} · {source(id).publisher} ↗</a>)}</div></div></details>)}
 
+                  {scene.secondaryFigureIds?.map(id => <details class="context-panel"><summary>{report.figures[id].title}<span aria-hidden="true">＋</span></summary><PublishedFigure figure={report.figures[id]} source={source(report.figures[id].sourceId)} /></details>)}
+
                   {scene.showSources && <><div class="source-method">{report.sourceNotes.map((note, index) => <p><span>0{index + 1}</span>{note}</p>)}</div><ol class="source-list">{report.sources.map(item => <li id={`source-${item.id}`}><span class="source-label">{item.label}</span><div><div class="source-meta"><span>{item.kind}</span><time>{item.date}</time></div><h3><a href={item.url} target="_blank" rel="noopener noreferrer">{item.title} <span aria-hidden="true">↗</span></a></h3><p class="source-publisher">{item.publisher}</p><p>{item.note}</p></div></li>)}</ol><p class="source-cutoff">검토 기준일 {report.meta.reviewed} · 출처의 이후 수정 내용은 이 페이지에 자동 반영되지 않습니다.</p></>}
 
                   {scene.question && <aside class="conversation"><span class="small-label">같이 이야기할 질문</span><p>{scene.question}</p></aside>}
@@ -172,6 +194,11 @@ const heroQuote = report.quotes.hero;
         </div>
       </div>
     </div>
+    <dialog class="figure-dialog" aria-labelledby="figure-dialog-title" data-figure-dialog>
+      <div class="dialog-toolbar"><h2 id="figure-dialog-title"></h2><button type="button" data-close-figure aria-label="그래프 크게 보기 닫기">닫기 <span aria-hidden="true">×</span></button></div>
+      <div class="dialog-image"><img data-dialog-image alt="" /></div>
+      <div class="dialog-caption"><p data-dialog-caption></p><div><a data-dialog-original target="_blank" rel="noopener noreferrer">원본 파일 ↗</a><a data-dialog-source target="_blank" rel="noopener noreferrer">출처 기사 ↗</a></div></div>
+    </dialog>
   </article>
 </Layout>
 
@@ -185,6 +212,30 @@ const heroQuote = report.quotes.hero;
     const prev = article.querySelector<HTMLButtonElement>('[data-prev]')!;
     const next = article.querySelector<HTMLButtonElement>('[data-next]')!;
     const all = article.querySelector<HTMLButtonElement>('[data-read-all]')!;
+    const dialog = article.querySelector<HTMLDialogElement>('[data-figure-dialog]')!;
+    let figureTrigger: HTMLAnchorElement | null = null;
+    article.querySelectorAll<HTMLAnchorElement>('[data-expand-figure]').forEach(link => link.addEventListener('click', event => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      figureTrigger = link;
+      const original = link.querySelector<HTMLImageElement>('img')!;
+      const preview = dialog.querySelector<HTMLImageElement>('[data-dialog-image]')!;
+      preview.src = original.src; preview.alt = original.alt;
+      dialog.querySelector('#figure-dialog-title')!.textContent = link.dataset.figureTitle!;
+      dialog.querySelector('[data-dialog-caption]')!.textContent = link.dataset.figureCaption!;
+      dialog.querySelector<HTMLAnchorElement>('[data-dialog-original]')!.href = link.href;
+      dialog.querySelector<HTMLAnchorElement>('[data-dialog-source]')!.href = link.dataset.figureSource!;
+      dialog.showModal();
+    }));
+    dialog.querySelector('[data-close-figure]')!.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', () => { figureTrigger?.focus({ preventScroll: true }); });
+    article.querySelectorAll<HTMLDetailsElement>('.incident-replay').forEach(details => details.addEventListener('toggle', () => {
+      const frame = details.querySelector<HTMLIFrameElement>('iframe[data-lazy-src]');
+      if (!frame) return;
+      if (details.open && !frame.getAttribute('src')) frame.src = frame.dataset.lazySrc!;
+      else if (!details.open) frame.removeAttribute('src');
+    }));
     let active = 0;
     let readAll = false;
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -205,7 +256,7 @@ const heroQuote = report.quotes.hero;
         panel.setAttribute('role', readAll ? 'region' : 'tabpanel');
         panel.setAttribute('aria-labelledby', readAll ? `heading-${panel.id}` : `tab-${panel.id}`);
         // Reload only a newly hidden player, so audio cannot continue in another scene.
-        if (!wasHidden && panel.hidden) panel.querySelectorAll<HTMLIFrameElement>('iframe').forEach(frame => { frame.src = frame.src; });
+        if (!wasHidden && panel.hidden) panel.querySelectorAll<HTMLIFrameElement>('iframe[src]').forEach(frame => { frame.src = frame.src; });
       });
       links.forEach((link, i) => {
         link.classList.toggle('is-active', i === active);
@@ -252,7 +303,7 @@ const heroQuote = report.quotes.hero;
     all.addEventListener('click', () => { readAll = !readAll; render(); if (!readAll) deck.scrollIntoView({ block: 'start' }); });
     article.querySelector('[data-print]')!.addEventListener('click', () => window.print());
     document.addEventListener('keydown', event => {
-      if (readAll || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      if (dialog.open || readAll || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
       const target = event.target as HTMLElement;
       const onTab = target.matches('[data-scene-link]');
       const onPager = target.matches('[data-prev], [data-next]');
@@ -270,7 +321,7 @@ const heroQuote = report.quotes.hero;
     window.addEventListener('resize', () => { if (!readAll) nav.setAttribute('aria-orientation', matchMedia('(max-width: 980px)').matches ? 'horizontal' : 'vertical'); });
     // Include every scene and expanded source context in printed copies.
     let openedForPrint: HTMLDetailsElement[] = [];
-    window.addEventListener('beforeprint', () => { openedForPrint = Array.from(article.querySelectorAll<HTMLDetailsElement>('details:not([open]):not(.report-embed)')); openedForPrint.forEach(detail => { detail.open = true; }); });
+    window.addEventListener('beforeprint', () => { openedForPrint = Array.from(article.querySelectorAll<HTMLDetailsElement>('details:not([open]):not(.report-embed):not(.incident-replay)')); openedForPrint.forEach(detail => { detail.open = true; }); });
     window.addEventListener('afterprint', () => { openedForPrint.forEach(detail => { detail.open = false; }); openedForPrint = []; });
     if (location.hash) requestAnimationFrame(() => panels[active].scrollIntoView({ block: 'start' }));
   }
@@ -285,7 +336,7 @@ const heroQuote = report.quotes.hero;
   button { font: inherit; cursor: pointer; }
   .breadcrumb { display: flex; gap: .8rem; color: var(--muted); font-size: .78rem; }
   .breadcrumb span:last-child { color: #e1d5dc; }
-  .dossier-hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 5.5rem; align-items: center; padding: 3.5rem 0 3.7rem; }
+  .dossier-hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 4.5rem; align-items: center; padding: 2.8rem 0 3rem; }
   .eyebrow, .small-label, .desk-top, .rail-heading, .group-label, .comparison-label, .source-label, .stage-footer { font-family: 'JetBrains Mono', ui-monospace, monospace; }
   .eyebrow { display: flex; align-items: center; gap: .65rem; color: var(--accent); font-size: .68rem; letter-spacing: .09em; line-height: 1.6; }
   .status-light { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
@@ -301,15 +352,19 @@ const heroQuote = report.quotes.hero;
   .button:not(.primary):hover { background: #ffffff0a; }
   .hero-desk { border: 1px solid #ffffff26; padding: 1.5rem 1.8rem 1.2rem; background: linear-gradient(130deg, #271a2270, #160f1880); }
   .desk-top { display: flex; justify-content: space-between; gap: 1rem; color: var(--muted); font-size: .61rem; letter-spacing: .1em; }
-  .opening-quote { padding: 2rem 0 1.7rem; margin: 0; }
+  .opening-quote { padding: 1.1rem 0 .2rem; margin: 0; border-top: 1px solid var(--line); }
   .small-label { display: block; font-size: .66rem; color: var(--muted); line-height: 1.6; letter-spacing: .02em; }
-  .opening-quote blockquote { margin: .7rem 0 .85rem; font-size: clamp(1.3rem, 2.1vw, 1.9rem); font-weight: 580; line-height: 1.5; letter-spacing: -.045em; word-break: keep-all; }
-  .opening-quote > p { color: #baa5a2; font-size: .81rem; line-height: 1.5; }
-  .opening-quote figcaption { font-size: .68rem; color: var(--accent); margin-top: .8rem; }
-  .hero-finding { display: flex; gap: 1rem; align-items: baseline; padding: 1rem 0; border-top: 1px solid var(--line); }
+  .opening-quote blockquote { margin: 0 0 .4rem; font-size: 1.05rem; font-weight: 580; line-height: 1.5; letter-spacing: -.03em; word-break: keep-all; }
+  .opening-quote > p { color: #baa5a2; font-size: .67rem; line-height: 1.5; }
+  .opening-quote figcaption { font-size: .59rem; color: var(--accent); margin-top: .5rem; }
+  .hero-findings { margin-top: 1rem; }
+  .hero-finding { display: grid; grid-template-columns: 115px 1fr 12px; gap: 1rem; align-items: center; padding: 1rem 0; border-top: 1px solid var(--line); }
+  .hero-finding:hover { background: #ffffff03; }
+  .finding-value { color: var(--tone); font: 500 1.8rem 'JetBrains Mono', monospace; letter-spacing: -.07em; white-space: nowrap; }
+  .finding-arrow { color: var(--tone); font-size: .7rem; }
   .finding-num { color: var(--tone); font-family: 'JetBrains Mono', monospace; font-size: .68rem; }
   .hero-finding .small-label { color: var(--tone); }
-  .hero-finding p { font-size: .84rem; margin-top: .25rem; color: #e1d8df; line-height: 1.6; word-break: keep-all; }
+  .hero-finding p { font-size: .68rem; margin-top: .25rem; color: #c0b3c4; line-height: 1.7; word-break: keep-all; }
   [data-tone="orange"] { --tone: var(--accent); }
   [data-tone="green"] { --tone: var(--green); }
   [data-tone="blue"] { --tone: var(--blue); }
@@ -353,6 +408,10 @@ const heroQuote = report.quotes.hero;
   .scene:focus-visible { outline: 2px solid var(--accent); outline-offset: 8px; }
   .scene h2 { font-size: clamp(1.9rem, 3.05vw, 2.85rem); line-height: 1.3; letter-spacing: -.05em; font-weight: 630; white-space: pre-line; word-break: keep-all; margin: .9rem 0 0; }
   .scene-lead { font-size: .98rem; line-height: 1.9; color: #c6bbc8; margin-top: 1.25rem; max-width: 68ch; word-break: keep-all; }
+  @media (min-width: 1100px) {
+    .evidence-spread { display: grid; grid-template-columns: minmax(220px, .65fr) minmax(0, 1.35fr); gap: 1.5rem; align-items: start; margin: 1.8rem 0; }
+    .evidence-spread > :global(*) { margin-block: 0; }
+  }
   .claim-chain { margin: 2rem 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-block: 1px solid var(--line); }
   .chain-step { position: relative; padding: 1.4rem 1rem 1.4rem .65rem; border-right: 1px solid var(--line); }
   .chain-step:first-child { padding-left: 0; }
@@ -402,6 +461,15 @@ const heroQuote = report.quotes.hero;
   .fact p { color: var(--muted); font-size: .68rem; line-height: 1.8; word-break: keep-all; }
   .source-cite { color: #bcabbe; font-family: 'JetBrains Mono', monospace; font-size: .65rem; white-space: nowrap; }
   .source-cite:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+  .figure-dialog { position: fixed; inset: 0; margin: auto; width: min(1400px, 94vw); max-width: 94vw; max-height: 94dvh; padding: 0; border: 1px solid #695373; border-radius: 6px; background: #1c1520; color: var(--ink); overflow: auto; }
+  .figure-dialog::backdrop { background: #08050bea; backdrop-filter: blur(5px); }
+  .dialog-toolbar { display: flex; justify-content: space-between; gap: 1rem; align-items: center; padding: .85rem 1rem; position: sticky; top: 0; background: #1c1520; z-index: 2; border-bottom: 1px solid #ffffff20; }
+  .dialog-toolbar h2 { font-size: .85rem; font-weight: 500; line-height: 1.6; }
+  .dialog-toolbar button { border: 1px solid #ffffff35; padding: .5rem .75rem; font-size: .7rem; color: #e8deed; white-space: nowrap; border-radius: 3px; }
+  .dialog-toolbar button span { margin-left: .5rem; font-size: 1rem; }
+  .dialog-image { background: #fff; text-align: center; }.dialog-image img { display: block; width: 100%; height: auto; max-height: 73dvh; object-fit: contain; margin-inline: auto; }
+  .dialog-caption { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .7rem 1.5rem; padding: .8rem 1rem; }
+  .dialog-caption p { color: #bfb0cb; font-size: .7rem; line-height: 1.8; max-width: 90ch; }.dialog-caption > div { display: flex; gap: 1rem; }.dialog-caption a { color: var(--accent); font-size: .65rem; white-space: nowrap; }
   .prediction { padding: 1.3rem 1.4rem; margin: 1.8rem 0; border: 1px solid #a9c7f329; background: #a9c7f304; }
   .prediction > div { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1.2rem; }
   .comparison-label { display: block; color: #aaa0b3; font-size: .67rem; letter-spacing: .01em; }
@@ -522,7 +590,7 @@ const heroQuote = report.quotes.hero;
     .hero-actions { margin-top: 1.4rem; }
     .button { font-size: .76rem; gap: 1.2rem; }
     .hero-desk { padding: 1.2rem 1.3rem; }
-    .opening-quote blockquote { font-size: 1.55rem; }
+    .opening-quote blockquote { font-size: 1.05rem; }
     .hero-finding p { font-size: .82rem; }
     .edition-strip > div { padding-block: 1rem; }
     .edition-strip dd { font-size: .9rem; }
@@ -589,7 +657,7 @@ const heroQuote = report.quotes.hero;
     .hero-intro, .hero-finding p, .desk-top, .opening-quote > p, .scene-lead, .method-note, .reading-key > div p, .event-copy p, .event-copy h3, .prediction p, .verdict p, .future-event p, .context-panel p, .host-note p, .review-card p, .branch p, .branch h3, .discussion p, .conversation p, .source-list p, .source-list h3, .source-method p, .fact p, .video-copy p { color: #222; }
     .report-wordmark { font-size: 50pt; } h1 { font-size: 26pt; }
     .dossier-hero, .edition-strip { break-inside: avoid; }
-    .hero-actions, .breadcrumb, .scene-rail, .deck-toolbar, .deck-pagination, .stage-footer, .video-frame, .video-chapters, .report-embed { display: none !important; }
+    .hero-actions, .breadcrumb, .scene-rail, .deck-toolbar, .deck-pagination, .stage-footer, .video-frame, .video-chapters, .report-embed, .figure-dialog { display: none !important; }
     .deck { display: block; padding-top: 0; }
     .scene, .scene[hidden] { display: block !important; padding-top: 1cm; break-before: page; }
     .scene h2 { font-size: 26pt; }

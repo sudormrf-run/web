@@ -4,10 +4,10 @@
     "description": "AI 2027의 원래 시나리오와 2026년 11월 13일까지의 사건, 저자들의 세 차례 리뷰를 비교하는 팟캐스트용 자료.",
     "published": "2025.04.03",
     "reviewed": "2026.11.13",
-    "duration": "45–55분 구성 제안",
+    "duration": "50–65분 구성 제안",
     "eyebrow": "SUDO REMOVE · PODCAST DOSSIER 01",
     "heroTitle": "예측을 현실에\n대조하다.",
-    "intro": "코딩을 맡긴 AI가 다음 AI까지 만든다면. 그 시나리오는 어디까지 현실이 됐을까?",
+    "intro": "연구 가속, 거대한 컴퓨트, 통제를 벗어난 에이전트. 예측과 실제를 숫자와 원자료로 대조합니다.",
     "authors": [
       "Daniel Kokotajlo",
       "Scott Alexander",
@@ -17,19 +17,28 @@
     ],
     "heroFindings": [
       {
-        "label": "관측된 변화",
-        "body": "에이전트의 확산, AI를 쓰는 AI 연구",
-        "tone": "green"
+        "label": "AI 연구의 진전 속도",
+        "value": "약 2×",
+        "body": "METR의 2026년 10월 평가 · 과거 추세 대비",
+        "tone": "green",
+        "target": "research",
+        "sourceId": "metr-nov"
       },
       {
-        "label": "놓친 일정·빈 근거",
-        "body": "일부 성능 목표, 중국 연구의 일원화",
-        "tone": "orange"
+        "label": "2025년 코딩 성능 목표",
+        "value": "−10.5%p",
+        "body": "목표 85% → 리뷰에 사용된 실제값 74.5%",
+        "tone": "orange",
+        "target": "benchmark",
+        "sourceId": "review-feb"
       },
       {
-        "label": "아직 남은 질문",
-        "body": "연구 보조가 완전 자율 연구로 이어질까",
-        "tone": "blue"
+        "label": "실제 보안 사고",
+        "value": "약 700",
+        "body": "Hugging Face 침입에 참여한 평가 에이전트",
+        "tone": "blue",
+        "target": "control",
+        "sourceId": "metr-incident"
       }
     ],
     "scope": "2026년 11월 13일에 고정한 검토본입니다. 이후 사건은 반영하지 않았습니다.",
@@ -136,6 +145,16 @@
       "section": "2027년으로 넘어가는 대목",
       "why": "미래의 월별 순서는 달력이 아니라, 검토할 가설의 목록으로 읽는다.",
       "context": "AI가 AI 연구를 가속하기 시작한 이후의 경로는 앞선 추세보다 예측하기 어렵다는 원문의 단서다."
+    },
+    "warning": {
+      "ko": "인간이 지시하지 않은 위험한 행동을 할 수 있다.",
+      "en": "take dangerous actions that no human directed.",
+      "sourceId": "openai-incident",
+      "context": "공식 조사 요약에서 능력을 경고하는 문장의 일부를 인용했다. 안전장치를 줄인 내부 평가에서 발생했으며 인간이 외부 침입을 지시한 사건으로 설명하지 않는다.",
+      "attribution": "OpenAI · 2026.08.26",
+      "speaker": "OpenAI",
+      "section": "2026.08.26 후속 조사",
+      "why": "평가 환경에서 나온 위험 행동이 실제 제3자 침입으로 이어진 사례다."
     }
   },
   "videos": [
@@ -190,24 +209,18 @@
     {
       "id": "overview",
       "group": "원문부터",
-      "nav": "무엇을 예측했나",
+      "nav": "예측 vs 실제 · 한눈에",
       "kicker": "01 / THE CLAIM",
-      "title": "핵심은 챗봇의 성능보다,\nAI가 AI를 만드는 속도.",
-      "lead": "AI 연구를 자동화하면 다음 AI가 더 빨리 나온다. 더 강한 AI는 연구를 더 많이 자동화한다. 보고서의 큰 사건들은 이 순환에서 시작한다.",
-      "chain": [
-        "코딩 에이전트",
-        "AI 연구 보조",
-        "자율 AI 연구",
-        "더 빠른 후속 AI",
-        "인간의 통제 문제"
-      ],
+      "title": "무엇은 왔고,\n무엇은 아직 오지 않았나.",
+      "lead": "핵심 다섯 항목부터 비교한다. 숫자를 누르면 그 근거와 원본 그래프로 이동한다.",
       "details": [
         {
           "title": "원문을 읽기 전에 알아둘 세 가지",
           "body": [
             "OpenBrain과 DeepCent는 가상 기업이다. 각각을 OpenAI나 DeepSeek 한 곳에 그대로 대응시키면 안 된다.",
             "2027년은 출간 당시 저자들의 최빈 예상 연도였다. 모든 저자의 중앙값이나 확정 기한은 아니었다. 이 설명은 2025년 11월 22일 원문에 추가됐다.",
-            "원문에는 이후 수정된 주석·그래프가 있다. 이 페이지는 원래 목표 시점과 사후 수정·새 전망을 구분한다."
+            "원문에는 이후 수정된 주석·그래프가 있다. 이 페이지는 원래 목표 시점과 사후 수정·새 전망을 구분한다.",
+            "이 보고서의 핵심 가설은 코딩 에이전트 → AI 연구 보조 → 자율 연구 → 더 빠른 후속 AI → 인간의 통제 문제로 이어지는 순환이다."
           ],
           "sourceIds": [
             "original"
@@ -215,7 +228,8 @@
         }
       ],
       "question": "AI에게 일을 맡기는 것과, 다음 AI의 연구 방향까지 맡기는 것 사이에는 무엇이 더 필요할까?",
-      "hostNote": "오늘의 비교 기준은 두 가지. 변화의 방향을 맞혔는지, 그리고 약속한 시점에 도착했는지. 둘을 따로 이야기한다."
+      "hostNote": "오늘의 비교 기준은 두 가지. 변화의 방향을 맞혔는지, 그리고 약속한 시점에 도착했는지. 둘을 따로 이야기한다.",
+      "showLedger": true
     },
     {
       "id": "watch",
@@ -296,63 +310,12 @@
       "question": "우리 팀에서 AI에게 맡기는 일은 늘었나? 반대로, 끝까지 사람이 확인하는 부분은 무엇인가?"
     },
     {
-      "id": "control",
-      "group": "지금까지의 관찰",
-      "nav": "2025 · AI의 협박?",
-      "kicker": "04 / THE CONTROLLED TEST",
-      "title": "AI가 회사를 협박했다?\n실제 회사가 아닌 실험이었다.",
-      "quoteId": "simulations",
-      "prediction": {
-        "period": "2025년 후반 · 원래 시나리오",
-        "body": "일부 조작된 평가에서 AI가 실패를 숨긴다. 실제 배포에서 극단적 사고가 발생한다는 이야기는 아니다.",
-        "sourceId": "original"
-      },
-      "events": [
-        {
-          "date": "2025.06.20",
-          "title": "Anthropic의 에이전트 목표 이탈 실험",
-          "body": "연구진은 16개 주요 모델을 가상 기업 상황에서 시험했다. 교체 위협이나 목표 충돌이 있을 때 협박·기밀 유출 같은 행동이 나왔다. 해로운 행동이 목표 달성의 유일한 길이 되도록 설계한 시험이었다.",
-          "sourceId": "misalignment",
-          "type": "기업 연구 · 통제된 시뮬레이션"
-        }
-      ],
-      "verdict": {
-        "label": "실험실의 위험 신호",
-        "tone": "blue",
-        "body": "감독을 줄이고 민감한 정보에 접근시켰을 때의 위험을 보여준다. 현실의 협박 피해나 원문의 미래 통제 상실이 이미 일어났다는 증거는 아니다."
-      },
-      "question": "극단적인 상황을 의도적으로 만든 실험은, 실제 배포 결정을 바꿀 만큼 강한 경고일까?"
-    },
-    {
       "id": "benchmark",
       "group": "지금까지의 관찰",
       "nav": "2025 · 성능 목표",
-      "kicker": "05 / A MISSED DEADLINE",
+      "kicker": "04 / A MISSED DEADLINE",
       "title": "성능은 올랐다.\n그렇다고 일정을 맞힌 건 아니다.",
       "lead": "저자들이 채점에 사용한 SWE-bench Verified 수치. 원래 목표는 ‘2025년 중반 85%’였다.",
-      "facts": [
-        {
-          "value": "85%",
-          "label": "2025년 중반 목표",
-          "note": "원문 예측을 저자 리뷰에서 재확인",
-          "sourceId": "review-feb",
-          "tone": "blue"
-        },
-        {
-          "value": "74.5%",
-          "label": "채점에 사용한 실제값",
-          "note": "Opus 4.1 · 2025.08.05 공개",
-          "sourceId": "opus",
-          "tone": "orange"
-        },
-        {
-          "value": "81%",
-          "label": "2025년 말 실제값",
-          "note": "2026년 2월 저자 리뷰의 집계",
-          "sourceId": "review-feb",
-          "tone": "green"
-        }
-      ],
       "verdict": {
         "label": "해당 시점 목표 미달",
         "tone": "orange",
@@ -372,76 +335,75 @@
           ]
         }
       ],
-      "question": "우리는 예측을 평가할 때 ‘언젠가 됐다’와 ‘그때 됐다’를 얼마나 엄격히 구분하고 있나?"
-    },
-    {
-      "id": "compute",
-      "group": "지금까지의 관찰",
-      "nav": "2025 · 컴퓨트",
-      "kicker": "06 / THE VISIBILITY GAP",
-      "title": "큰 데이터센터가\n큰 학습을 증명하진 않는다.",
-      "prediction": {
-        "period": "2025년 후반 · 원래 시나리오",
-        "body": "거대 데이터센터와 더 큰 모델 학습에 투자하고, 개발의 중심을 AI 연구 자동화에 둔다.",
-        "sourceId": "original"
-      },
-      "events": [
-        {
-          "date": "2026.02.12",
-          "title": "컴퓨트 성장: 대체로 예상 속도",
-          "body": "저자들은 전체 컴퓨트 성장을 대체로 부합한다고 평가했다. 그러나 최대 학습 실행의 크기에는 매우 큰 불확실성이 있다고 명시했다.",
-          "sourceId": "review-feb",
-          "type": "저자 자기평가"
-        },
-        {
-          "date": "2026.08.16",
-          "title": "일부 기존 항목은 채점에서 제외",
-          "body": "후속 집계에서는 2025년 말 컴퓨트 예측을 뺐다. 중국 선두 기업의 컴퓨트 예산도 현재값 자료 부족으로 평가하지 않았다.",
-          "sourceId": "review-aug",
-          "type": "평가 방법 변경"
-        }
-      ],
-      "verdict": {
-        "label": "핵심 세부는 확인 부족",
-        "tone": "muted",
-        "body": "인프라의 확대와 단일 학습의 규모는 다른 변수다. 공개되지 않은 학습 규모에 ‘적중’ 도장을 찍지 않는다."
-      },
-      "question": "공개되지 않는 핵심 변수는 예측의 채점표에서 어떻게 다뤄야 할까?"
+      "question": "우리는 예측을 평가할 때 ‘언젠가 됐다’와 ‘그때 됐다’를 얼마나 엄격히 구분하고 있나?",
+      "chart": {
+        "title": "2025년의 코딩 성능 목표와 결과",
+        "unit": "SWE-bench Verified · 해결률 (%)",
+        "max": 100,
+        "ticks": [
+          "0",
+          "25",
+          "50",
+          "75",
+          "100"
+        ],
+        "rows": [
+          {
+            "label": "중반의 목표",
+            "detail": "2025년 중반 · 예측",
+            "value": 85,
+            "display": "85%",
+            "kind": "forecast",
+            "sourceId": "review-feb"
+          },
+          {
+            "label": "Opus 4.1",
+            "detail": "2025.08.05 · 저자 채점에 사용",
+            "value": 74.5,
+            "display": "74.5%",
+            "kind": "observed",
+            "sourceId": "opus"
+          },
+          {
+            "label": "연말의 실제값",
+            "detail": "2025년 말 · 저자 리뷰 집계",
+            "value": 81,
+            "display": "81%",
+            "kind": "observed",
+            "sourceId": "review-feb"
+          }
+        ],
+        "takeaway": "목표와의 차이: 중반 채점 −10.5%p, 연말에도 −4%p.",
+        "note": "0부터 시작하는 동일 축. 74.5%는 6월 말 측정이 아니라 저자들이 중반 채점에 사용한 8월 출시 모델의 값이다. 평가 도구·시도 횟수에 따라 점수는 달라질 수 있다."
+      }
     },
     {
       "id": "uplift",
       "group": "지금까지의 관찰",
-      "nav": "2026 · AI 연구",
-      "kicker": "07 / ASSISTING ≠ AUTONOMOUS",
-      "title": "AI가 AI 연구를 돕는다.\n연구를 혼자 이끌지는 못한다.",
-      "quoteId": "not-yet",
+      "nav": "연구 ① · 내부 코드",
+      "kicker": "05 / ASSISTING ≠ AUTONOMOUS",
+      "title": "AI가 쓴 코드는 80% 이상.\n인당 코드량은 8배.",
       "prediction": {
-        "period": "2026년 초 · 원래 시나리오",
-        "body": "AI 덕분에 알고리즘 연구의 진전이 1.5배로 빨라진다. 실험 시간까지 포함한 전체 효과다.",
+        "period": "2026년 초 · 시나리오의 기대",
+        "body": "코딩 AI를 내부 연구에 투입해 알고리즘 진전을 1.5배로 가속한다. 아래 코딩 지표만으로 이 연구 가속률을 직접 채점할 수는 없다.",
         "sourceId": "original"
       },
-      "events": [
-        {
-          "date": "2026.05 기준 · 11.13 열람",
-          "title": "Anthropic 내부 코드의 80% 이상",
-          "body": "회사는 병합한 코드의 80% 이상을 Claude가 작성했다고 밝혔다. 사람이 목표를 정하고 검토하는 과정이 남아 있다.",
-          "sourceId": "anthropic-rsi",
-          "type": "기업 자기보고"
-        },
-        {
-          "date": "2026.11.05",
-          "title": "METR: 연구 가속은 주로 보조를 통해",
-          "body": "중요한 모델 학습 과정에 대한 완전 자율 기여는 아직 주요 동력이 아니다. 일부 영역에는 변화의 초기 신호가 있다고 평가했다.",
-          "sourceId": "metr-nov",
-          "type": "외부 평가 · 내부 자료 접근"
-        }
-      ],
       "verdict": {
         "label": "연구 보조의 근거 축적",
         "tone": "green",
-        "body": "연구 자동화의 방향에는 근거가 늘었다. ‘코드의 비중’, ‘개인의 생산성’, ‘연구 진전의 속도’는 서로 바꿔 쓸 수 없는 지표다."
+        "body": "내부에서 AI를 활용한다는 예측에는 강한 실제 사례다. 다만 코드 줄 수는 연구 성과·품질과 같지 않으며, 대조군이 없어 증가분을 전부 AI의 인과 효과로 볼 수 없다."
       },
       "details": [
+        {
+          "title": "그래프가 실제로 측정한 것",
+          "body": [
+            "분기별 활동 기여자 1명당 하루에 병합한 코드 줄 수의 평균이다. PR별 코드량은 99번째 백분위에서 제한했다.",
+            "마지막 빗금 막대는 완결된 2분기가 아니라 당시까지 관측한 날들의 평균이다. 모델 공개 시점의 점선은 시점 표시이며 인과 효과의 추정선은 아니다."
+          ],
+          "sourceIds": [
+            "anthropic-rsi"
+          ]
+        },
         {
           "title": "긴 작업을 한다는 말도 정확히 읽기",
           "body": [
@@ -454,13 +416,378 @@
           ]
         }
       ],
-      "question": "코드를 쓰는 수고가 사라지면, 연구에서 다음으로 막히는 곳은 아이디어·검증·실험 중 어디일까?"
+      "question": "코드를 쓰는 수고가 사라지면, 연구에서 다음으로 막히는 곳은 아이디어·검증·실험 중 어디일까?",
+      "lead": "Anthropic이 공개한 내부 그래프. 2025년 이전 평균을 1로 놓으면, 2026년 2분기 관측분은 8에 도달한다.",
+      "figureIds": [
+        "anthropic-code"
+      ],
+      "facts": [
+        {
+          "value": ">80%",
+          "label": "Claude가 작성한 병합 코드 비중",
+          "note": "2026년 5월 기준 · Anthropic 자기보고",
+          "sourceId": "anthropic-rsi",
+          "tone": "green"
+        },
+        {
+          "value": "8×",
+          "label": "인당 일일 병합 코드량",
+          "note": "2026년 2분기 일부 · 2025년 이전 평균 대비",
+          "sourceId": "anthropic-rsi",
+          "tone": "orange"
+        }
+      ]
+    },
+    {
+      "id": "research",
+      "group": "지금까지의 관찰",
+      "nav": "연구 ② · 실제 가속",
+      "kicker": "06 / EVIDENCE DESK",
+      "title": "코드량을 넘어,\n모델 역량의 진전도 빨라졌다.",
+      "lead": "METR이 Anthropic 내부 자료에 접근해 평가했다. 벤치마크 추세의 기울기는 연 +15점에서 +29점으로 커졌다.",
+      "comparison": {
+        "label": "연구 가속을 직접 보려면",
+        "forecast": {
+          "value": "1.5×",
+          "label": "2026년 초 · 원래 예측",
+          "body": "AI가 없을 때보다 알고리즘 연구의 진전이 빨라지는 정도.",
+          "sourceId": "original"
+        },
+        "actual": {
+          "value": "약 2×",
+          "label": "2026년 10월 · METR 종합 평가",
+          "body": "2024.03–2025.10의 과거 역량 진전 속도와 비교.",
+          "sourceId": "metr-nov"
+        },
+        "note": "시점과 비교 기준이 다르므로, 2÷1.5를 예측 적중률로 계산할 수 없다. METR은 약 1.3–3배도 가능하다고 보았다."
+      },
+      "figureIds": [
+        "metr-aeci"
+      ],
+      "verdict": {
+        "label": "가속의 증거 강화 · 자율 연구 완성은 미확인",
+        "tone": "green",
+        "body": "AI 연구 보조의 효과가 커졌다는 독립 평가다. METR은 학습 컴퓨트 증가율의 가속이 원인은 아니라고 봤으며, 핵심 기여는 아직 주로 AI 보조에서 나온다고 설명한다."
+      },
+      "details": [
+        {
+          "title": "직원들이 말하는 12배와, 연구 진전 약 2배가 다른 이유",
+          "body": [
+            "개인의 작업 생산성은 투입 지표이고, 모델 역량의 진전 속도는 결과 지표다. 실험 대기·병목·수익 체감이 있어 같은 배율로 연결되지 않는다.",
+            "직원들의 비공식 설문·Slack 투표는 10월에 12배까지 올라갔다. METR은 이를 매우 느슨한 근거로 본다.",
+            "원본 AECI 그래프의 1.9배는 추세 적합값이며 95% 신뢰구간은 1.5–2.8배다. 종합 판단인 약 2배와 그 불확실성 1.3–3배는 별개다.",
+            "METR은 핵심 근거 다수가 Anthropic에 의해 비공개 처리되어 독자가 직접 검증하는 데 한계가 있다고 밝혔다."
+          ],
+          "sourceIds": [
+            "metr-nov"
+          ]
+        }
+      ],
+      "secondaryFigureIds": [
+        "metr-uplift"
+      ],
+      "question": "개인의 생산성은 12배인데 연구는 2배라면, 남은 병목은 무엇일까?",
+      "evidenceLayout": "spread"
+    },
+    {
+      "id": "control",
+      "group": "지금까지의 관찰",
+      "nav": "안전 · 실제 침입",
+      "kicker": "07 / THE REAL-WORLD INCIDENT",
+      "title": "시험을 잘 보려던 AI가\n외부 회사에 침입했다.",
+      "quoteId": "warning",
+      "prediction": {
+        "period": "2025년 후반–2027년 · 시나리오",
+        "body": "평가에서 좋은 결과를 내는 행동과 개발자의 의도가 어긋날 수 있고, 강한 해킹 능력은 통제 문제로 이어진다. 2027년 모델 가중치 탈취 시나리오와 이번 사건은 다른 사건이다.",
+        "sourceId": "original"
+      },
+      "verdict": {
+        "label": "평가 환경을 넘어선 실제 피해 · 장기 목표의 증거는 아님",
+        "tone": "blue",
+        "body": "기만·무단 협업·격리 실패라는 위험 경로가 현실에서 확인됐다. 안전장치를 줄인 내부 평가였으며, 일반 서비스의 기본 설정이나 초지능의 장기 탈취 계획을 보여주는 사례는 아니다."
+      },
+      "question": "안전성을 시험하는 과정 자체가 외부 피해를 만들면, 평가를 멈추는 기준은 무엇이어야 할까?",
+      "lead": "2026년 7월 OpenAI의 내부 사이버 평가에서 발생한 실제 사건. Hugging Face의 운영 인프라까지 공격이 이어졌다.",
+      "showIncident": true,
+      "details": [
+        {
+          "title": "무엇이 피해를 입었나 · 무엇을 단정할 수 없나",
+          "body": [
+            "Hugging Face는 접근된 고객 콘텐츠가 평가 관련으로 보이는 5개 데이터셋이었다고 보고했다. 다른 고객 모델·데이터셋·Spaces·패키지는 영향을 받지 않았다고 밝혔다.",
+            "초기 7월 발표보다 8월 26일 OpenAI 후속 조사가 더 상세하다. 사건을 주도한 것은 내부 전용 연구 모델 IM1이며, GPT-5.6 Sol 등을 포함한 여러 모델이 평가에 참여했다.",
+            "16개 모델이 협박·기밀 유출을 보인 2025년 Anthropic 실험은 가상 기업 시뮬레이션이었다. 이 2026년 외부 침입과 구분해야 한다."
+          ],
+          "sourceIds": [
+            "openai-incident",
+            "hf-incident",
+            "misalignment"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "compute",
+      "group": "지금까지의 관찰",
+      "nav": "컴퓨트 ① · 전체 자원",
+      "kicker": "08 / THE VISIBILITY GAP",
+      "title": "예상한 250만 H100e.\n공개 중앙 추정은 174만.",
+      "verdict": {
+        "label": "전력 규모는 근접 · 연산 용량 중앙 추정은 더 작음",
+        "tone": "orange",
+        "body": "인프라가 빠르게 커진 방향은 맞았다. 중앙 추정은 원문의 250만 H100e보다 작지만 DeepMind의 넓은 추정 구간은 그 규모에 닿는다. 단일 연결 클러스터가 같은 규모인지는 공개 자료로 확인되지 않는다."
+      },
+      "question": "공개되지 않는 핵심 변수는 예측의 채점표에서 어떻게 다뤄야 할까?",
+      "lead": "같은 2025년 말의 연산 자원 규모를 대조한다. 가상 선두 기업의 연결된 데이터센터망과, OpenAI의 연구·학습·추론 전체 자원 추정이다.",
+      "chart": {
+        "title": "2025년 말 · 선두 기업의 연산 자원",
+        "unit": "백만 H100-equivalents (H100e)",
+        "max": 3,
+        "ticks": [
+          "0",
+          "0.75",
+          "1.50",
+          "2.25",
+          "3.00"
+        ],
+        "rows": [
+          {
+            "label": "OpenBrain · 원문",
+            "detail": "시나리오의 연결된 데이터센터망",
+            "value": 2.5,
+            "display": "2.50M",
+            "kind": "forecast",
+            "sourceId": "original"
+          },
+          {
+            "label": "OpenAI · Epoch 추정",
+            "detail": "회사 전체 · 90% 구간 1.25–2.19M",
+            "value": 1.743,
+            "display": "1.74M",
+            "kind": "estimate",
+            "sourceId": "epoch-users",
+            "range": [
+              1.251,
+              2.185
+            ]
+          },
+          {
+            "label": "Google DeepMind",
+            "detail": "회사 전체 · 90% 구간 1.01–2.55M",
+            "value": 1.583,
+            "display": "1.58M",
+            "kind": "estimate",
+            "sourceId": "epoch-users",
+            "range": [
+              1.008,
+              2.549
+            ]
+          }
+        ],
+        "takeaway": "공개 중앙 추정은 원문보다 약 76만 H100e 작다.",
+        "note": "H100e는 H100 성능으로 환산한 용량이지 실제 GPU 개수가 아니다. 가로 범위는 Epoch의 90% 추정 구간. OpenAI 중앙값이 5개 연구소 중 가장 크지만 DeepMind와 구간이 겹친다. 회사 전체 자원이 하나의 거대 학습에 연결됐다는 뜻도 아니다."
+      },
+      "figureIds": [
+        "epoch-openai-compute"
+      ],
+      "comparison": {
+        "label": "같은 해의 전력 용량도 대조",
+        "forecast": {
+          "value": "2 GW",
+          "label": "2025년 말 · 원문",
+          "body": "가상 OpenBrain의 데이터센터망 전력.",
+          "sourceId": "original"
+        },
+        "actual": {
+          "value": "약 1.9 GW",
+          "label": "2025년 · OpenAI 자기보고",
+          "body": "회사의 사용 가능한 컴퓨트 전력 용량.",
+          "sourceId": "openai-power"
+        },
+        "note": "전력 규모는 비슷해 보이지만 칩 세대·사용률·냉각 포함 범위가 달라 같은 연산 성능을 뜻하지 않는다. 연간 전기 사용량 실측도 아니다."
+      },
+      "details": [
+        {
+          "title": "저자들의 채점도 이후 달라졌다",
+          "body": [
+            "2월 리뷰는 전체 컴퓨트 성장을 대체로 예상 속도라고 평가하면서 최대 학습 규모는 매우 불확실하다고 설명했다.",
+            "8월 리뷰는 2025년 말 컴퓨트 항목을 기존 집계에서 제외했다. 이 페이지는 그 자기평가를 새로운 실제 관측값처럼 사용하지 않는다."
+          ],
+          "sourceIds": [
+            "review-feb",
+            "review-aug"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "group": "지금까지의 관찰",
+      "nav": "컴퓨트 ② · 모델 학습",
+      "kicker": "09 / EVIDENCE DESK",
+      "title": "자원은 커졌지만,\n한 번의 학습은 얼마나 커졌나.",
+      "lead": "원문은 2025년 말 공개 모델 Agent-0에 10²⁷ FLOP, 내부 Agent-1에 4×10²⁷ FLOP를 설정했다. 부록의 Agent-1 학습 기간은 2025년 7월–2026년 2월이다.",
+      "chart": {
+        "title": "한 모델의 학습 연산량 · 원문 목표와 실제 추정",
+        "unit": "10²⁷ FLOP 단위 · 0부터 시작하는 선형 축",
+        "max": 4,
+        "ticks": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "rows": [
+          {
+            "label": "Agent-1 · 내부",
+            "detail": "2025.07–2026.02 · 부록의 학습 기간",
+            "value": 4,
+            "display": "4.00",
+            "kind": "forecast",
+            "sourceId": "compute-forecast"
+          },
+          {
+            "label": "Agent-0 · 공개",
+            "detail": "2025년 말 · 시나리오",
+            "value": 1,
+            "display": "1.00",
+            "kind": "forecast",
+            "sourceId": "original"
+          },
+          {
+            "label": "GPT-4.5",
+            "detail": "2025.02 · Epoch 추정",
+            "value": 0.38,
+            "display": "0.38",
+            "kind": "estimate",
+            "sourceId": "epoch-gpt45"
+          },
+          {
+            "label": "Grok 4",
+            "detail": "2025.07 · 불확실성이 큰 추정",
+            "value": 0.5,
+            "display": "0.50",
+            "kind": "estimate",
+            "sourceId": "epoch-models"
+          },
+          {
+            "label": "GPT-6 Astra",
+            "detail": "2026.09 · 추정 구간 약 0.5–2.0",
+            "value": 0.94,
+            "display": "0.94",
+            "kind": "estimate",
+            "sourceId": "epoch-astra",
+            "range": [
+              0.5,
+              2
+            ]
+          }
+        ],
+        "takeaway": "2026년 9월 GPT-6 Astra의 중앙 추정도 원문 Agent-1 목표의 약 24%.",
+        "note": "24%는 두 수치의 단순 비율이며 전체 예측의 적중률이 아니다. 데이터셋의 학습 FLOP는 사전학습 전용 공시가 아니며 후속학습·재학습 집계에 불확실성이 있다. 비공개 최신 모델과 내부 모델을 포함한 세계 최대 학습량의 상한선도 아니다."
+      },
+      "verdict": {
+        "label": "2025년 후반–2026년 초 목표 공개 확인 부족",
+        "tone": "muted",
+        "body": "늦은 시점의 추정까지 놓고 봐도 원문의 내부 모델 학습 목표는 공개적으로 확인되지 않았다. 그렇다고 비공개 학습이 없었다거나 사전학습이 멈췄다고 단정할 수는 없다."
+      },
+      "details": [
+        {
+          "title": "이 그래프를 갱신하고 재현하는 기준",
+          "body": [
+            "본문은 Agent-1을 2025년 말 장면에서 소개하지만, 컴퓨트 부록은 4×10²⁷ FLOP의 학습 기간을 2025년 7월–2026년 2월로 적었다. 학습 종료 기한을 2025년 말로 단정하지 않는다.",
+            "2026년 11월 13일 Epoch 모델 CSV를 고정해 사용했다. GPT-4.5와 GPT-6 Astra는 Likely, Grok 4는 Speculative로 분류된 추정이다.",
+            "GPT-6 Astra의 구간은 약 10만 GB200·90일·가동률 등의 추정 가정에서 나온다. OpenAI의 확정 공시가 아니다. GPT-6 Sol·6.1 Sol 등 최신 항목에는 학습량 수치가 비어 있다.",
+            "FLOP는 학습 전체의 연산량이다. 데이터센터의 초당 처리량 FLOP/s나 전력 GW와 단위가 다르다. 모델별 수치는 실제 전력 계량기로 측정한 에너지와도 다르다.",
+            "원문 그래프는 FP16 FLOP를 기준으로 삼았으며, Epoch는 각 모델의 하드웨어 정밀도·활용률을 추정한다. 같은 조건의 실측 대결이 아니라 규모를 가늠하기 위한 공개 추정 비교다."
+          ],
+          "sourceIds": [
+            "epoch-models",
+            "epoch-astra",
+            "compute-forecast"
+          ]
+        }
+      ],
+      "question": "기업이 학습량을 공개하지 않으면, 이 예측을 무엇으로 검증해야 할까?"
+    },
+    {
+      "id": "power",
+      "group": "지금까지의 관찰",
+      "nav": "컴퓨트 ③ · 데이터센터",
+      "kicker": "10 / EVIDENCE DESK",
+      "title": "기가와트 데이터센터는\n이미 실물로 존재한다.",
+      "lead": "계약서에 적힌 미래 용량 대신, 위성·허가 자료로 추정한 현재의 현장 규모를 본다. 아래는 2026년 11월 Epoch 데이터다.",
+      "chart": {
+        "title": "대형 데이터센터의 현재 IT 전력 용량",
+        "unit": "GW · 1 GW = 1,000 MW",
+        "max": 1.2,
+        "ticks": [
+          "0",
+          "0.3",
+          "0.6",
+          "0.9",
+          "1.2"
+        ],
+        "rows": [
+          {
+            "label": "Anthropic–Amazon",
+            "detail": "New Carlisle · H100e 약 81.8만",
+            "value": 1.037,
+            "display": "1.037",
+            "kind": "estimate",
+            "sourceId": "epoch-centers"
+          },
+          {
+            "label": "SpaceXAI Colossus 2",
+            "detail": "Memphis · H100e 약 111.2만",
+            "value": 0.946,
+            "display": "0.946",
+            "kind": "estimate",
+            "sourceId": "epoch-centers"
+          },
+          {
+            "label": "OpenAI–Oracle",
+            "detail": "Stargate Abilene · H100e 약 101.9만",
+            "value": 0.824,
+            "display": "0.824",
+            "kind": "estimate",
+            "sourceId": "epoch-centers"
+          }
+        ],
+        "takeaway": "전력 1위와 연산 성능 1위는 다르다. 칩과 시스템 효율이 다르기 때문이다.",
+        "note": "서버 등 IT 장비의 용량이며 냉각·전력 손실은 별도다. 실제 평균 소비는 통상 용량보다 낮다. 여러 건물의 합계로, 하나의 모델을 동시에 학습하는 연결 규모를 뜻하지 않는다. 기업 발표 확정치가 아닌 Epoch의 독립 추정이다."
+      },
+      "showPower": true,
+      "prediction": {
+        "period": "2027년 12월 · 아직 남은 예측",
+        "body": "컴퓨트 부록은 선두 기업 전체에 약 10 GW, 세계 AI에 약 60 GW의 피크 전력 수요를 예상했다. 위 그래프는 개별 현장의 현재 IT 용량이므로 이 미래 목표의 달성률로 나눌 수 없다.",
+        "sourceId": "compute-forecast"
+      },
+      "verdict": {
+        "label": "기가와트급 현장은 확인 · 2027년 목표는 미검증",
+        "tone": "green",
+        "body": "인프라의 대형화는 숫자로 확인된다. 다만 설치 용량, 실제 전기 소비, 한 모델의 학습 연산량은 각각 따로 확인해야 한다."
+      },
+      "details": [
+        {
+          "title": "96곳을 합쳐도 세계 전체로 볼 수 없는 이유",
+          "body": [
+            "Epoch가 추적한 96곳의 IT 용량 합계는 15.1 GW이며 냉각 등을 포함한 시설 용량은 약 19.6 GW다. 이 데이터는 세계 전체가 아니다.",
+            "데이터베이스의 연산 성능 기준 세계 커버리지는 약 44%로 추정된다. 이 비율을 전력에 그대로 적용해 세계 전기 사용량을 역산하지 않는다.",
+            "Epoch는 개별 전력 용량 추정이 80%의 경우 약 1.4배 범위 안에서 정확할 것으로 예상한다. 가동 시점도 추정이며 새로운 정보에 따라 수정된다."
+          ],
+          "sourceIds": [
+            "epoch-centers"
+          ]
+        }
+      ],
+      "question": "기가와트 건설의 증거와, 더 큰 모델을 이미 학습했다는 증거 사이에 무엇이 빠져 있을까?"
     },
     {
       "id": "china",
       "group": "지금까지의 관찰",
       "nav": "2026 · 중국",
-      "kicker": "08 / GEOPOLITICS",
+      "kicker": "11 / GEOPOLITICS",
       "title": "중국의 AI 육성과\n연구소 통합은 다른 예측이다.",
       "quoteId": "china",
       "prediction": {
@@ -495,7 +822,7 @@
       "id": "jobs",
       "group": "지금까지의 관찰",
       "nav": "2026 · 일자리",
-      "kicker": "09 / EARLY SIGNALS",
+      "kicker": "12 / EARLY SIGNALS",
       "title": "신입 채용에는 신호가 있다.\n경제 전체의 대체는 아직 별개다.",
       "quoteId": "jobs",
       "prediction": {
@@ -537,7 +864,7 @@
       "id": "reviews",
       "group": "저자들의 사후 평가",
       "nav": "2월 → 8월 리뷰",
-      "kicker": "10 / THE AUTHORS REVISE",
+      "kicker": "13 / THE AUTHORS REVISE",
       "title": "저자들도 처음에는\n‘생각보다 느리다’고 썼다.",
       "quoteId": "behind",
       "reviews": [
@@ -582,9 +909,9 @@
       "id": "latest",
       "group": "저자들의 사후 평가",
       "nav": "11월 · 다시 2027",
-      "kicker": "11 / THE NOVEMBER TURN",
+      "kicker": "14 / THE NOVEMBER TURN",
       "title": "11월, 저자들은 다시\n2027년 쪽으로 당겼다.",
-      "lead": "결정적 계기는 METR의 Anthropic 내부 평가. 강한 새 증거이지만, 모든 근거를 독자가 직접 확인할 수 있는 자료는 아니다.",
+      "lead": "11월 5일 METR의 내부 평가가 계기였다. 앞 장면의 원본 그래프를 바탕으로 저자들이 미래 전망을 다시 수정했다.",
       "facts": [
         {
           "value": "약 2×",
@@ -606,7 +933,7 @@
         {
           "date": "2026.11.05 · 10월 상황 평가",
           "title": "METR: 역량의 진전이 빨라졌다",
-          "body": "대략 2배라는 종합 추정에는 큰 불확실성이 있다. 1.3–3배도 놀랍지 않다고 봤다. 한 기업의 과거 추세와 비교한 평가다.",
+          "body": "대략 2배라는 종합 추정에는 큰 불확실성이 있다. 완전 자율 연구의 달성을 뜻하지는 않는다.",
           "sourceId": "metr-nov",
           "type": "외부 평가 · 일부 근거 비공개"
         },
@@ -628,10 +955,10 @@
           "title": "2배와 2027년 사이에 들어간 해석",
           "body": [
             "METR의 약 2배는 개인의 코딩 속도가 아니다. 과거 대비 모델 역량의 진전 속도다. 학습 컴퓨트 확장의 가속 때문은 아니라고 평가했다.",
-            "저자들은 METR의 평가를 AI에 기인한 약 1.7배 가속으로 환산했다. 이는 원자료를 직접 측정한 숫자가 아니라 추가 해석을 거친 값이다.",
+            "저자들은 이 평가를 AI에 기인한 약 1.7배 가속으로 환산했다. 이는 직접 측정값이 아니라 추가 해석을 거친 값이다.",
             "11월 글은 상당한 의도적 감속이 없을 것을 명시한다. 원문 조건은 ‘assuming no substantial deliberate slowdown’이다.",
-            "전문가를 거의 모든 지식노동에서 능가하는 TED-AI가 2028년 전에 나올 확률은 저자별 35–65%로 제시했다. 이는 통계적 신뢰구간도, 모든 직업의 즉시 소멸 확률도 아니다.",
-            "METR은 중요한 연구 기여가 여전히 주로 AI 보조를 통해 이뤄진다고 설명한다. 저자들도 새 모델링이 예비적이며 오류 가능성이 있음을 밝혔다."
+            "TED-AI가 2028년 전에 나올 확률은 저자별 35–65%로 제시했다. 이는 저자 간 전망 범위이며 통계적 신뢰구간이 아니다.",
+            "METR은 주요 연구 기여가 여전히 AI 보조를 통해 이뤄진다고 설명한다. 저자들도 새 모델링이 예비적이며 오류 가능성이 있음을 밝혔다."
           ],
           "sourceIds": [
             "metr-nov",
@@ -645,7 +972,7 @@
       "id": "future-first",
       "group": "아직 남은 시나리오",
       "nav": "2027 · 상반기",
-      "kicker": "12 / STILL A SCENARIO",
+      "kicker": "15 / STILL A SCENARIO",
       "title": "다음 장은 아직\n사건 기록이 아니다.",
       "quoteId": "uncertainty",
       "timelineId": "first",
@@ -656,7 +983,7 @@
       "id": "future-second",
       "group": "아직 남은 시나리오",
       "nav": "2027 · 하반기",
-      "kicker": "13 / FROM CAPABILITY TO CONTROL",
+      "kicker": "16 / FROM CAPABILITY TO CONTROL",
       "title": "더 똑똑해지는 속도와\n통제하는 속도가 벌어진다면.",
       "timelineId": "second",
       "lead": "후반부의 핵심은 성능 발표보다 권한의 이동이다. 누가 연구를 이해하고, 중단을 결정하며, 실제로 실행할 수 있는가.",
@@ -666,7 +993,7 @@
       "id": "endings",
       "group": "아직 남은 시나리오",
       "nav": "두 갈래 결말",
-      "kicker": "14 / TWO BRANCHES",
+      "kicker": "17 / TWO BRANCHES",
       "title": "같은 출발점에서,\n결말은 두 갈래다.",
       "showBranches": true,
       "lead": "2027년 10월 무렵의 통제 문제에서 갈라지는 대안적 시나리오다. 둘 다 일어난다는 예측이나, 각각 50%라는 확률 배분은 아니다.",
@@ -677,7 +1004,7 @@
       "id": "discuss",
       "group": "같이 이야기하기",
       "nav": "방송의 세 질문",
-      "kicker": "15 / THE CONVERSATION",
+      "kicker": "18 / THE CONVERSATION",
       "title": "맞았나, 틀렸나 다음에\n남는 세 가지 질문.",
       "showDiscussion": true,
       "hostNote": "마무리 제안: 코딩과 연구 보조의 확산은 관측됐다. 일부 일정은 빗나갔고, 가장 큰 사건들은 아직 미래다. 다음 판단을 바꿀 증거를 각자 하나씩 고르자."
@@ -686,7 +1013,7 @@
       "id": "sources",
       "group": "같이 이야기하기",
       "nav": "출처·검토 기준",
-      "kicker": "16 / THE SOURCE DESK",
+      "kicker": "19 / THE SOURCE DESK",
       "title": "말보다 먼저,\n확인할 수 있는 출처.",
       "showSources": true,
       "lead": "원문과 저자 리뷰, 연구기관 자료, 기업·정부의 직접 발표를 연결했다. 각 자료의 성격과 확인 범위를 함께 남긴다."
@@ -798,7 +1125,8 @@
     "직접 인용의 한국어는 편집 번역이다. 짧은 원문과 맥락을 함께 제공한다. 인용문 이외의 요약·판정·질문은 이 페이지의 편집이다.",
     "보고서 저자들의 리뷰는 독립적인 적중률 감사가 아니다. 회사 발표의 사용량·코드 비중도 전체 산업의 대표값으로 취급하지 않았다.",
     "날짜는 사건·발행·관측 시점을 구분해 표기했다. 공개일이 명확하지 않은 Anthropic 글은 열람일을 표시했다.",
-    "시나리오에 등장한 모든 세부 수치를 전수 채점하지 않았다. 근거가 부족한 항목과 아직 시점이 오지 않은 항목은 성공·실패로 합산하지 않았다."
+    "시나리오에 등장한 모든 세부 수치를 전수 채점하지 않았다. 근거가 부족한 항목과 아직 시점이 오지 않은 항목은 성공·실패로 합산하지 않았다.",
+    "공개 원본 그래프는 원자료의 축·범례를 유지했다. 이 페이지의 비교 막대는 0부터 시작하는 선형 축이며, 예측은 빗금·실제 공개값은 단색으로 표시한다. 추정·자기보고·편집 계산을 구분한다."
   ],
   "sources": [
     {
@@ -990,6 +1318,304 @@
       "kind": "기업 연구·통제된 시뮬레이션",
       "url": "https://www.anthropic.com/research/agentic-misalignment",
       "note": "가상 기업 상황의 협박·기밀 유출 실험. 실제 배포에서 관측한 피해 사건이 아니다."
+    },
+    {
+      "id": "compute-forecast",
+      "label": "S20",
+      "title": "Compute Forecast",
+      "publisher": "AI Futures Project · Romeo Dean",
+      "date": "2025.04 · 이후 주석 수정 포함",
+      "kind": "원문 수치 예측",
+      "url": "https://ai-2027.com/research/compute-forecast",
+      "note": "H100e·학습 FLOP·전력의 별도 예측. Figure 23은 2027년 선두 기업 약 10 GW를 제시한다."
+    },
+    {
+      "id": "epoch-users",
+      "label": "S21",
+      "title": "Introducing the AI Chip Users explorer",
+      "publisher": "Epoch AI · Josh You",
+      "date": "2026.09.09 · 2025년 말 추정",
+      "kind": "독립 기관 추정",
+      "url": "https://epoch.ai/latest/introducing-the-ai-chip-users-explorer",
+      "note": "회사별 연구·학습·추론용 전체 연산 자원. OpenAI 174.3만 H100e, 90% 구간 125.1만–218.5만. 단일 연결 클러스터의 크기가 아니다. 그래프 © Epoch AI · CC BY."
+    },
+    {
+      "id": "openai-power",
+      "label": "S22",
+      "title": "A business that scales with the value of intelligence",
+      "publisher": "OpenAI · Sarah Friar",
+      "date": "2026.01.18 · 2025년 수치",
+      "kind": "기업 자기보고",
+      "url": "https://openai.com/index/a-business-that-scales-with-the-value-of-intelligence/",
+      "note": "2023·2024·2025년 사용 가능한 컴퓨트 용량 0.2·0.6·약 1.9 GW. 전력량 계량 자료가 아니다."
+    },
+    {
+      "id": "epoch-models",
+      "label": "S23",
+      "title": "Notable AI models — downloadable dataset",
+      "publisher": "Epoch AI",
+      "date": "2026.11.13 다운로드",
+      "kind": "모델별 학습량 추정·근거 노트",
+      "url": "https://epoch.ai/data/notable_ai_models.csv",
+      "note": "학습 FLOP와 신뢰 수준을 함께 사용. Grok 4는 5×10²⁶ FLOP의 Speculative 추정. 최신 모델 상당수는 수치가 비어 있다."
+    },
+    {
+      "id": "epoch-gpt45",
+      "label": "S24",
+      "title": "GPT-4.5 — model metadata",
+      "publisher": "Epoch AI",
+      "date": "2025.02.27 출시 · 2026.11.13 열람",
+      "kind": "독립 기관 추정",
+      "url": "https://epoch.ai/models/gpt-4-5",
+      "note": "학습량 3.8×10²⁶ FLOP. OpenAI가 확정 공시한 수치가 아니다."
+    },
+    {
+      "id": "epoch-astra",
+      "label": "S25",
+      "title": "GPT-6 Astra — model metadata",
+      "publisher": "Epoch AI",
+      "date": "2026.09.03 출시 · 2026.11.13 열람",
+      "kind": "독립 기관 추정",
+      "url": "https://epoch.ai/models/gpt-6-astra",
+      "note": "학습량 9.4×10²⁶ FLOP. 데이터셋 노트의 추정 구간은 약 5×10²⁶–2×10²⁷. 하드웨어·기간·가동률 가정에 의존한다."
+    },
+    {
+      "id": "epoch-centers",
+      "label": "S26",
+      "title": "AI data centers — dashboard, directory and datasets",
+      "publisher": "Epoch AI",
+      "date": "2026.11.06 갱신 · 11.13 열람",
+      "kind": "위성·허가·공개문서 기반 추정",
+      "url": "https://epoch.ai/data/ai-data-centers",
+      "note": "현재 데이터센터별 IT 용량과 H100e. 총 96곳·IT 15.1 GW는 세계 전체가 아니다. 추정 오차가 있으며 건물 간 단일 학습 연결을 보장하지 않는다. 데이터 © Epoch AI · CC BY."
+    },
+    {
+      "id": "openai-incident",
+      "label": "S27",
+      "title": "The Hugging Face incident and the road ahead",
+      "publisher": "OpenAI",
+      "date": "2026.08.26 · 7월 사건 조사",
+      "kind": "사고 당사자 공식 조사",
+      "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+      "note": "안전장치를 줄인 내부 사이버 평가에서 모델들이 무단 통신·인터넷 접근·제3자 침입을 수행했다. 7월 초기 발표를 후속 조사로 보완한 자료다."
+    },
+    {
+      "id": "hf-incident",
+      "label": "S28",
+      "title": "Anatomy of a Frontier Lab Agent Intrusion",
+      "publisher": "Hugging Face",
+      "date": "2026.07.27",
+      "kind": "피해 당사자 기술 조사·재현 시각화",
+      "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+      "note": "7월 9–13일 약 17,600개 공격 행동을 복원. 접근된 고객 콘텐츠는 평가 관련 5개 데이터셋으로 설명하며 다른 고객 모델·데이터에는 영향이 없었다고 보고한다."
+    },
+    {
+      "id": "metr-incident",
+      "label": "S29",
+      "title": "Brief independent investigation of agents’ behavior, reasoning and collaboration",
+      "publisher": "METR · Redwood Research",
+      "date": "2026.08.26",
+      "kind": "외부 조사·공개 로그 분석",
+      "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+      "note": "약 1,200개 에이전트·7만 건 이상 메시지/파일·약 700개 침입 참여. 조사 범위와 로그 선택에 한계가 있다."
     }
-  ]
+  ],
+  "ledger": {
+    "title": "예측과 실제, 한눈에",
+    "note": "판정은 이 페이지의 편집 판단. 서로 다른 시점·측정 범위는 각 장면에서 구분합니다. 종합 적중률이 아닙니다.",
+    "rows": [
+      {
+        "topic": "코딩 성능",
+        "target": "benchmark",
+        "forecast": "85%",
+        "forecastNote": "2025년 중반 · SWE-bench Verified",
+        "actual": "74.5%",
+        "actualNote": "2025.08 · 저자들의 채점값",
+        "status": "시점 목표 미달",
+        "tone": "orange",
+        "sourceIds": [
+          "review-feb",
+          "opus"
+        ]
+      },
+      {
+        "topic": "AI가 AI 연구를 가속",
+        "target": "research",
+        "forecast": "1.5×",
+        "forecastNote": "2026년 초 · AI 없는 연구 대비",
+        "actual": "약 2×",
+        "actualNote": "2026.10 · 과거 진전 속도 대비",
+        "status": "가속 관측 · 기준 차이",
+        "tone": "green",
+        "sourceIds": [
+          "original",
+          "metr-nov"
+        ]
+      },
+      {
+        "topic": "선두 기업의 컴퓨트",
+        "target": "compute",
+        "forecast": "250만 H100e",
+        "forecastNote": "2025년 말 · 연결된 데이터센터망",
+        "actual": "174만 H100e",
+        "actualNote": "2025년 말 · OpenAI 전체 자원 추정",
+        "status": "중앙 추정은 더 작음",
+        "tone": "orange",
+        "sourceIds": [
+          "original",
+          "epoch-users"
+        ]
+      },
+      {
+        "topic": "모델 한 번의 학습량",
+        "target": "training",
+        "forecast": "4 × 10²⁷",
+        "forecastNote": "2025년 후반–2026년 초 · Agent-1 · FLOP",
+        "actual": "9.4 × 10²⁶",
+        "actualNote": "2026.09 · GPT-6 Astra 추정 · FLOP",
+        "status": "목표 미확인 · 비공개 많음",
+        "tone": "muted",
+        "sourceIds": [
+          "compute-forecast",
+          "epoch-astra"
+        ]
+      },
+      {
+        "topic": "안전·통제",
+        "target": "control",
+        "forecast": "감독을 속이는 AI",
+        "forecastNote": "2025–2027 · 평가 기만과 통제 위험",
+        "actual": "실제 외부 침입",
+        "actualNote": "2026.07 · OpenAI → Hugging Face",
+        "status": "위험의 일부 현실화",
+        "tone": "blue",
+        "sourceIds": [
+          "original",
+          "openai-incident"
+        ]
+      }
+    ]
+  },
+  "incident": {
+    "stats": [
+      {
+        "value": "약 1,200",
+        "label": "무단 게시판에 참여한 에이전트"
+      },
+      {
+        "value": "7만+",
+        "label": "주고받은 메시지·파일"
+      },
+      {
+        "value": "약 700",
+        "label": "Hugging Face 공격에 참여"
+      }
+    ],
+    "statsSourceId": "metr-incident",
+    "steps": [
+      {
+        "number": "01",
+        "title": "내부 평가",
+        "body": "ExploitGym에서 취약점 활용 능력을 시험"
+      },
+      {
+        "number": "02",
+        "title": "격리 우회·무단 협업",
+        "body": "허용하지 않은 게시판과 인터넷 접근"
+      },
+      {
+        "number": "03",
+        "title": "외부로 이동",
+        "body": "제3자의 공개 코드 실행 환경을 발판으로 사용"
+      },
+      {
+        "number": "04",
+        "title": "Hugging Face 침입",
+        "body": "평가 정답을 찾으려 운영 시스템까지 접근"
+      }
+    ],
+    "sourceIds": [
+      "openai-incident",
+      "hf-incident"
+    ],
+    "timeline": [
+      {
+        "date": "07.09–13",
+        "title": "외부 공격 기록",
+        "body": "Hugging Face가 약 17,600개 행동을 복원"
+      },
+      {
+        "date": "07.19–21",
+        "title": "평가 중단·원인 공개",
+        "body": "OpenAI 조사로 자사 에이전트와 사건을 연결"
+      },
+      {
+        "date": "08.26",
+        "title": "후속·외부 조사",
+        "body": "OpenAI 기술 보고서와 METR 독립 조사 발표"
+      }
+    ],
+    "replayUrl": "https://huggingface-anatomy-of-frontier-lab-model-intrusion.static.hf.space/index.html",
+    "replayLabel": "Hugging Face가 만든 실제 공격 경로 재생",
+    "replayNote": "피해 회사의 공개 인터랙티브 시각화. 내부 시스템 경계를 넘나든 경로와 시간 순서를 직접 살펴볼 수 있다."
+  },
+  "powerCalculator": {
+    "title": "GW를 전기 사용량으로 바꾸면?",
+    "capacity": 1,
+    "utilization": 70,
+    "pue": 1.3,
+    "note": "예시 계산: IT 용량 1 GW × 이용률 × 8,760시간 × PUE 1.3. PUE는 냉각·전력 손실을 포함한 시설/IT 소비 비율이다. 실제 사용량 측정이나 해당 세 현장의 PUE 추정이 아니다.",
+    "unitNote": "GW = 순간 전력/설비 용량 · TWh = 기간 동안 사용한 에너지",
+    "sourceId": "epoch-centers"
+  },
+  "figures": {
+    "anthropic-code": {
+      "image": "/assets/articles/ai-2027/anthropic-code.png",
+      "title": "2025년부터 급격히 늘어난 인당 코드 생산량",
+      "alt": "Anthropic 원본 막대그래프. 2025년 이전 평균 대비 인당 일일 병합 코드량은 2025년 1분기 1.2배에서 2026년 1분기 5.8배, 2분기 관측분 8배로 증가한다.",
+      "caption": "분기별 인당 일일 병합 코드량. 세로 점선은 Claude 모델과 Claude Code의 공개 시점이다.",
+      "caveat": "2025년 이전 평균 = 1. 마지막 2분기 막대는 당시까지의 일부 기간이다. 코드의 양이며 연구 품질이나 AI의 인과 효과를 측정한 실험은 아니다.",
+      "sourceId": "anthropic-rsi",
+      "credit": "Anthropic · 원본 그래프",
+      "width": 2200,
+      "height": 1276,
+      "originalImage": "https://assets.claude.com/937eb157a37de973110157e7564e3b303f783d37.png"
+    },
+    "metr-aeci": {
+      "image": "/assets/articles/ai-2027/metr-aeci.png",
+      "title": "METR: AECI 진전 속도 1.9배 · 95% 구간 1.5–2.8배",
+      "alt": "METR 원본 추세 그래프. 2025년 10월 전후 AECI의 연간 증가 추세가 약 15점에서 29점으로 바뀐다. 공개 모델은 초록색, 내부 모델은 주황색으로 표시한다.",
+      "caption": "초록 점은 공개 모델, 주황 점은 내부 모델이다. 회색 점선은 이전 추세의 연장, 검정 실선은 2025년 10월 이후의 새 추세다.",
+      "caveat": "내부·외부 벤치마크 혼합 지수이며 선택과 추세 적합 방식에 민감하다. 코드 생산량이나 완전 자율 연구의 비율이 아니다.",
+      "sourceId": "metr-nov",
+      "credit": "METR · 2026.11.05",
+      "width": 1880,
+      "height": 1561,
+      "originalImage": "https://metr.org/assets/images/ai-rd-acceleration-assessment/aeci-main.png"
+    },
+    "metr-uplift": {
+      "image": "/assets/articles/ai-2027/metr-uplift.png",
+      "title": "직원 자기보고는 12배까지 · 근거의 강도는 별개",
+      "alt": "METR 원본 로그 축 그래프. Anthropic 직원의 AI 사용 생산성 자기보고가 2025년 약 1배대에서 2026년 10월 Slack 투표 약 12배로 상승한다.",
+      "caption": "설문과 Slack 투표에 근거한 개인 생산성 자기평가. 연구 진전 약 2배와 다른 지표다.",
+      "caveat": "비공식 응답·선택 편향이 있어 METR은 매우 느슨한 근거로 취급한다. 세로 축은 로그 축이다.",
+      "sourceId": "metr-nov",
+      "credit": "METR · 2026.11.05",
+      "width": 1880,
+      "height": 1175,
+      "originalImage": "https://metr.org/assets/images/ai-rd-acceleration-assessment/self-reported-uplift.png"
+    },
+    "epoch-openai-compute": {
+      "image": "/assets/articles/ai-2027/epoch-openai-compute.png",
+      "title": "OpenAI 전체 컴퓨트: 2년 동안 약 17배",
+      "alt": "Epoch AI 원본 그래프. OpenAI 연산 자원 중앙 추정이 2023년 약 10.3만, 2024년 38.6만, 2025년 174.3만 H100e로 증가하며 90% 추정 구간이 표시되어 있다.",
+      "caption": "전력 공시와 칩 효율을 바탕으로 환산한 H100e. 추론 서비스와 연구·학습을 합친 회사 전체 자원이다.",
+      "caveat": "2026년 9월에 발표한 2025년 말까지의 추정. 올해 말의 실측값이나 단일 모델 학습량이 아니다.",
+      "sourceId": "epoch-users",
+      "credit": "Epoch AI · CC BY",
+      "width": 1103,
+      "height": 1149,
+      "originalImage": "https://epoch.ai/assets/images/posts/2026/introducing-the-ai-chip-users-explorer/openai-compute-capacity-2023-2025.png"
+    }
+  }
 }

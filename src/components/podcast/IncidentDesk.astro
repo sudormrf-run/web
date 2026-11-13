@@ -1,0 +1,40 @@
+---
+import report from '../../data/ai-2027.json';
+const incident = report.incident;
+const sources = Object.fromEntries(report.sources.map(s => [s.id, s]));
+---
+<div class="incident-desk">
+  <div class="incident-stats">{incident.stats.map(item => <div><strong>{item.value}</strong><p>{item.label}</p></div>)}</div>
+  <p class="stats-source">2026.07.08–13 조사 범위 · <a href={sources[incident.statsSourceId].url} target="_blank" rel="noopener noreferrer">METR · Redwood 독립 조사 [{sources[incident.statsSourceId].label}] ↗</a></p>
+  <div class="incident-flow" aria-label="사건 경로 요약">{incident.steps.map((step, i) => <div><span class="step-index">{step.number}</span><h3>{step.title}</h3><p>{step.body}</p>{i < incident.steps.length - 1 && <span class="flow-arrow" aria-hidden="true">→</span>}</div>)}</div>
+  <div class="flow-sources">{incident.sourceIds.map(id => <a href={sources[id].url} target="_blank" rel="noopener noreferrer">{sources[id].publisher} 조사 [{sources[id].label}] ↗</a>)}</div>
+  <div class="incident-timeline">{incident.timeline.map(event => <div><time>2026.{event.date}</time><h3>{event.title}</h3><p>{event.body}</p></div>)}</div>
+  <details class="incident-replay"><summary>{incident.replayLabel}<span aria-hidden="true">＋</span></summary><p>{incident.replayNote} <a href={incident.replayUrl} target="_blank" rel="noopener noreferrer">전체 화면으로 열기 ↗</a></p><iframe data-lazy-src={incident.replayUrl} title="Hugging Face 공식 공개 자료: 2026년 7월 침입 경로 인터랙티브 재생" width="1100" height="700" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe><noscript><p><a href={incident.replayUrl} target="_blank" rel="noopener noreferrer">Hugging Face 원본 시각화 열기 ↗</a></p></noscript></details>
+</div>
+<style>
+  .incident-desk { margin-top: 1.8rem; }.incident-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-block: 1px solid #ffffff30; }
+  .incident-stats > div { padding: 1.2rem 1rem; border-left: 1px solid #ffffff20; }.incident-stats > div:first-child { padding-left: 0; border: 0; }
+  .incident-stats strong { color: #a9c7f3; font: 500 clamp(1.9rem, 3vw, 2.7rem) 'JetBrains Mono', monospace; letter-spacing: -.06em; }
+  .incident-stats p { font-size: .66rem; color: #bcaec7; margin-top: .5rem; line-height: 1.7; word-break: keep-all; }
+  .stats-source { margin-top: .65rem; color: #9b8da6; font-size: .59rem; line-height: 1.7; }
+  a { color: #d4ae95; text-decoration: none; }a:hover { color: #fd9a63; }
+  .incident-flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid #a9c7f33a; background: #a9c7f305; margin-top: 1.6rem; }
+  .incident-flow > div { position: relative; padding: 1.2rem 1rem; border-right: 1px solid #a9c7f325; }.incident-flow > div:last-child { border: 0; background: #a9c7f30a; }
+  .step-index { color: #a9c7f3; font: .63rem 'JetBrains Mono', monospace; }
+  h3 { color: #eee4f2; font-size: .84rem; font-weight: 550; line-height: 1.6; margin-top: .7rem; word-break: keep-all; }
+  .incident-flow p, .incident-timeline p { font-size: .68rem; line-height: 1.8; color: #b4a4c0; word-break: keep-all; margin-top: .4rem; }
+  .flow-arrow { position: absolute; right: -.6rem; top: 1.1rem; background: #160f18; color: #a9c7f3; padding: .1rem .3rem; font-size: .8rem; z-index: 1; }
+  .flow-sources { display: flex; flex-wrap: wrap; gap: .7rem 1.1rem; margin-top: .7rem; font-size: .6rem; }
+  .incident-timeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 1.6rem 0; }
+  .incident-timeline > div { border-top: 1px solid #ffffff30; position: relative; padding: 1rem 1.2rem 0 0; }.incident-timeline > div::before { content: ''; position: absolute; width: 5px; height: 5px; border-radius: 50%; background: #a9c7f3; top: -3px; }
+  time { color: #c1b3d0; font: .63rem 'JetBrains Mono', monospace; }.incident-timeline h3 { margin-top: .4rem; }
+  .incident-replay { border: 1px solid #ffffff25; }.incident-replay summary { padding: 1rem; display: flex; justify-content: space-between; gap: 1rem; cursor: pointer; color: #d3c4df; font-size: .74rem; list-style: none; }.incident-replay summary::-webkit-details-marker { display: none; }
+  .incident-replay[open] summary > span { transform: rotate(45deg); }.incident-replay > p { font-size: .68rem; color: #ac9bbb; padding: 0 1rem 1rem; line-height: 1.8; }
+  iframe { display: block; border: 0; width: 100%; height: 650px; background: #101015; }
+  @media (max-width: 640px) {
+    .incident-stats { grid-template-columns: 1fr; }.incident-stats > div, .incident-stats > div:first-child { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 0; border-left: 0; border-bottom: 1px solid #ffffff15; }.incident-stats > div:last-child { border: 0; }.incident-stats p { margin: 0; max-width: 15ch; font-size: .62rem; }.incident-stats strong { font-size: 2rem; }
+    .incident-flow { grid-template-columns: 1fr 1fr; }.incident-flow > div { border-bottom: 1px solid #a9c7f325; }.incident-flow > div:nth-child(2) { border-right: 0; }.incident-flow > div:nth-child(3) { border-bottom: 0; }.flow-arrow { display: none; }
+    .incident-timeline { grid-template-columns: 1fr; gap: 1rem; }.incident-timeline > div { padding-top: .8rem; }.incident-timeline p { font-size: .7rem; }iframe { height: 560px; }
+  }
+  @media print { .incident-stats strong, .incident-stats p, .stats-source, h3, .incident-flow p, .incident-timeline p, time, .step-index { color: #222; }.incident-stats, .incident-flow, .incident-timeline { break-inside: avoid; }.incident-replay { display: none; } }
+</style>
