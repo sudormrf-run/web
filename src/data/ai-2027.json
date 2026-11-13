@@ -572,7 +572,7 @@
           },
           {
             "label": "Google DeepMind",
-            "detail": "회사 전체 · 90% 구간 1.01–2.55M",
+            "detail": "연구소 배정분 · 90% 구간 1.01–2.55M",
             "value": 1.583,
             "display": "1.58M",
             "kind": "estimate",
@@ -584,7 +584,7 @@
           }
         ],
         "takeaway": "공개 중앙 추정은 원문보다 약 76만 H100e 작다.",
-        "note": "H100e는 H100 성능으로 환산한 용량이지 실제 GPU 개수가 아니다. 가로 범위는 Epoch의 90% 추정 구간. OpenAI 중앙값이 5개 연구소 중 가장 크지만 DeepMind와 구간이 겹친다. 회사 전체 자원이 하나의 거대 학습에 연결됐다는 뜻도 아니다."
+        "note": "H100e는 H100 성능으로 환산한 용량이지 실제 GPU 개수가 아니다. 가로 범위는 Epoch의 90% 추정 구간. OpenAI 중앙값이 가장 크지만 DeepMind와 구간이 겹친다. DeepMind는 Google 전체가 아닌 해당 연구소 배정분이다. 이 자원이 하나의 거대 학습에 연결됐다는 뜻도 아니다."
       },
       "figureIds": [
         "epoch-openai-compute"
@@ -1612,7 +1612,7 @@
       "caption": "전력 공시와 칩 효율을 바탕으로 환산한 H100e. 추론 서비스와 연구·학습을 합친 회사 전체 자원이다.",
       "caveat": "2026년 9월에 발표한 2025년 말까지의 추정. 올해 말의 실측값이나 단일 모델 학습량이 아니다.",
       "sourceId": "epoch-users",
-      "credit": "Epoch AI · CC BY",
+      "credit": "Epoch AI · Josh You · CC BY",
       "width": 1103,
       "height": 1149,
       "originalImage": "https://epoch.ai/assets/images/posts/2026/introducing-the-ai-chip-users-explorer/openai-compute-capacity-2023-2025.png"
