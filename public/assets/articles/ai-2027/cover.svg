@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI 2027 — 예측을 현실에 대조하다</title>
+  <desc id="desc">2025년 보고서와 2026년 11월까지의 현실을 대조하는 팟캐스트 자료</desc>
+  <rect width="1200" height="675" fill="#110912"/>
+  <path d="M64 80H1136M64 566H1136M800 80V566" stroke="#43303f"/>
+  <g fill="#b7a5b7" font-family="monospace" font-size="16" letter-spacing="2"><text x="64" y="54">SUDO REMOVE / PODCAST DOSSIER</text><text x="830" y="54">REVIEW 2026.11.13</text></g>
+  <g font-family="Arial, sans-serif" font-weight="700" font-size="155" letter-spacing="-10"><text x="57" y="267" fill="#f5f0eb">AI <tspan fill="#fd9a63">2027</tspan><tspan fill="#8ed5bd">.</tspan></text></g>
+  <g fill="#f5f0eb" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="49" font-weight="600" letter-spacing="-2"><text x="64" y="365">예측을 현실에</text><text x="64" y="432">대조하다.</text></g>
+  <g font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="23"><text x="840" y="206" fill="#8ed5bd">관측된 변화</text><text x="840" y="308" fill="#fd9a63">놓친 일정</text><text x="840" y="410" fill="#a9c7f3">남은 시나리오</text></g>
+  <g stroke="#43303f"><path d="M840 234H1100M840 336H1100M840 438H1100"/></g>
+  <g fill="#b7a5b7" font-family="monospace" font-size="18"><text x="64" y="614">FORECAST 2025.04.03</text><text x="643" y="614">→</text><text x="835" y="614">REALITY 2026.11.13</text></g>
+</svg>

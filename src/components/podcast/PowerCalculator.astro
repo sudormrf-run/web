@@ -1,0 +1,34 @@
+---
+import report from '../../data/ai-2027.json';
+const calc = report.powerCalculator;
+const source = report.sources.find(s => s.id === calc.sourceId)!;
+const annual = (calc.capacity * calc.utilization / 100 * 8.76 * calc.pue).toFixed(2);
+---
+<div class="power-calculator" data-power-calculator data-capacity={calc.capacity} data-pue={calc.pue}>
+  <div class="power-heading"><h3>{calc.title}</h3><span>단위 이해용 · 실제 소비 실측 아님</span></div>
+  <div class="power-equation"><div><span>IT 설비 용량</span><strong>{calc.capacity}<small> GW</small></strong></div><span class="equation-symbol" aria-hidden="true">→</span><div><span>가정한 시설 전체의 연간 소비</span><strong><output data-annual>{annual}</output><small> TWh</small></strong></div></div>
+  <label class="utilization-control"><span>가정한 평균 이용률</span><input type="range" min="20" max="100" step="5" value={calc.utilization} aria-label="예시 계산의 평균 이용률" data-utilization disabled /><output data-utilization-value>{calc.utilization}%</output></label>
+  <p class="power-unit-note">{calc.unitNote}</p><p class="power-note">{calc.note} <a href={source.url} target="_blank" rel="noopener noreferrer">용량과 실제 소비의 구분 [{source.label}] ↗</a></p>
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-power-calculator]').forEach(calc => {
+    const input = calc.querySelector<HTMLInputElement>('[data-utilization]')!;
+    const update = () => {
+      calc.querySelector<HTMLOutputElement>('[data-utilization-value]')!.value = `${input.value}%`;
+      calc.querySelector<HTMLOutputElement>('[data-annual]')!.value = (Number(calc.dataset.capacity) * Number(input.value) / 100 * 8.76 * Number(calc.dataset.pue)).toFixed(2);
+    };
+    input.addEventListener('input', update);
+    input.disabled = false;
+    update();
+  });
+</script>
+<style>
+  .power-calculator { margin: 1.7rem 0; border: 1px solid #fd9a6335; padding: 1.3rem 1.5rem; border-radius: 5px; background: #fd9a6305; }
+  .power-heading { display: flex; flex-wrap: wrap; gap: .4rem 1rem; align-items: baseline; justify-content: space-between; }
+  h3 { color: #f0e4e6; font-size: .94rem; line-height: 1.6; font-weight: 550; }.power-heading > span { color: #b89c9a; font-size: .6rem; }
+  .power-equation { display: grid; grid-template-columns: 1fr 40px 1.5fr; align-items: center; gap: 1rem; padding: 1.5rem 0; }.power-equation div > span { font-size: .62rem; line-height: 1.7; color: #b8a5b5; }.power-equation strong { display: block; color: #fd9a63; font: 500 clamp(2.3rem, 4vw, 3.4rem) 'JetBrains Mono', monospace; letter-spacing: -.06em; margin-top: .4rem; white-space: nowrap; }.power-equation small { font-size: .95rem; letter-spacing: -.02em; color: #d3b7a5; }.equation-symbol { color: #ae8c92; }
+  .utilization-control { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-block: 1px solid #ffffff15; }.utilization-control > span { color: #c8b4c4; font-size: .68rem; }.utilization-control input { flex: 1; width: 100%; min-width: 40px; accent-color: #fd9a63; cursor: pointer; }.utilization-control output { min-width: 3rem; color: #fd9a63; font: .85rem 'JetBrains Mono', monospace; }
+  .power-unit-note { font-size: .68rem; color: #dfc2b0; line-height: 1.9; margin-top: 1rem; }.power-note { font-size: .64rem; color: #ae9aaf; line-height: 1.85; margin-top: .5rem; word-break: keep-all; }.power-note a { color: #d4ae95; text-decoration: none; }
+  @media (max-width: 640px) { .power-calculator { padding: 1.1rem; }.power-equation { grid-template-columns: 1fr 18px 1.55fr; gap: .5rem; }.power-equation strong { font-size: 2rem; }.power-equation small { font-size: .66rem; }.power-equation div > span { font-size: .57rem; }.utilization-control { flex-wrap: wrap; gap: .7rem; }.utilization-control > span { width: 100%; } }
+  @media print { .power-calculator { background: none; border-color: #bbb; break-inside: avoid; }h3, .power-heading > span, .power-equation div > span, .power-equation strong, .power-equation small, .power-unit-note, .power-note, .utilization-control > span, .utilization-control output { color: #222; }input { display: none; } }
+</style>

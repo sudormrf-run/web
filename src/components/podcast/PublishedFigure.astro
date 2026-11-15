@@ -1,0 +1,39 @@
+---
+export interface Figure {
+  image: string;
+  title: string;
+  alt: string;
+  caption: string;
+  caveat: string;
+  sourceId: string;
+  credit: string;
+  width: number;
+  height: number;
+}
+interface Props { figure: Figure; source: { url: string; label: string } }
+const { figure, source } = Astro.props;
+---
+<figure class="published-figure">
+  <div class="figure-header"><span>공개된 원본 그래프</span><span>{source.label} / {figure.credit}</span></div>
+  <a class="figure-image" href={figure.image} target="_blank" rel="noopener noreferrer" data-expand-figure data-figure-title={figure.title} data-figure-source={source.url} data-figure-caption={figure.caption} aria-label={`${figure.title} — 크게 보기`}>
+    <img src={figure.image} alt={figure.alt} width={figure.width} height={figure.height} loading="lazy" decoding="async" />
+    <span class="expand-label" aria-hidden="true">⤢ 크게 보기</span>
+  </a>
+  <figcaption><h3>{figure.title}</h3><p>{figure.caption}</p><p class="figure-caveat">{figure.caveat}</p><a href={source.url} target="_blank" rel="noopener noreferrer">{figure.credit} · 출처에서 읽기 ↗</a></figcaption>
+</figure>
+<style>
+  .published-figure { margin: 1.7rem 0; border: 1px solid #ffffff24; border-radius: 5px; overflow: hidden; }
+  .figure-header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .4rem 1rem; padding: .8rem 1.1rem; color: #d8c9df; font-size: .62rem; }
+  .figure-header span:last-child { color: #a99bb3; font-size: .56rem; }
+  .figure-image { position: relative; display: block; background: #fff; cursor: zoom-in; }
+  img { display: block; width: 100%; height: auto; }
+  .expand-label { position: absolute; right: .7rem; bottom: .7rem; background: #211825e8; color: #f5f0eb; border-radius: 3px; padding: .45rem .65rem; font-size: .64rem; }
+  figcaption { padding: 1rem 1.15rem 1.1rem; background: #ffffff03; }
+  h3 { color: #f0e6f3; font-size: .92rem; font-weight: 550; line-height: 1.6; letter-spacing: -.02em; }
+  p { font-size: .76rem; color: #cec1d5; line-height: 1.85; margin-top: .4rem; word-break: keep-all; }
+  .figure-caveat { color: #ae9eb7; font-size: .65rem; }
+  figcaption a { display: inline-block; color: #d9b59b; font-size: .64rem; text-decoration: none; margin-top: .7rem; }
+  a:focus-visible { outline: 2px solid #fd9a63; outline-offset: 4px; }
+  @media (max-width: 640px) { .figure-header, figcaption { padding-inline: 1rem; }.figure-header span:last-child { width: 100%; } }
+  @media print { .published-figure { border-color: #ccc; break-inside: avoid; }.figure-header, h3, p, .figure-caveat, figcaption a { color: #222; }.expand-label { display: none; } }
+</style>

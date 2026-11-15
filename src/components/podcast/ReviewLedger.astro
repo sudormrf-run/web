@@ -1,0 +1,47 @@
+---
+import report from '../../data/ai-2027.json';
+const sources = Object.fromEntries(report.sources.map(s => [s.id, s]));
+---
+<div class="review-ledger">
+  <div class="ledger-heading"><h3>{report.ledger.title}</h3><span>FORECAST → EVIDENCE</span></div>
+  <div class="ledger-columns" aria-hidden="true"><span>검토 항목</span><span>그때의 예측</span><span>이후의 공개 자료</span><span>현재 판단</span></div>
+  {report.ledger.rows.map((row, index) => <article class="ledger-row" data-tone={row.tone}>
+    <a class="ledger-topic" href={`#${row.target}`}><span>0{index + 1}</span><strong>{row.topic}</strong><span aria-hidden="true">↗</span></a>
+    <div class="ledger-cell forecast"><span class="cell-label">예측</span><a href={`#${row.target}`}>{row.forecast}</a><p>{row.forecastNote}</p></div>
+    <div class="ledger-cell actual"><span class="cell-label">공개 자료</span><a href={`#${row.target}`}>{row.actual}</a><p>{row.actualNote}</p></div>
+    <div class="ledger-status"><a href={`#${row.target}`}>{row.status} <span aria-hidden="true">→</span></a><div>{row.sourceIds.map(id => <a class="ledger-source" href={sources[id].url} target="_blank" rel="noopener noreferrer" aria-label={sources[id].title}>[{sources[id].label}] ↗</a>)}</div></div>
+  </article>)}
+  <p class="ledger-note">{report.ledger.note}</p>
+</div>
+<style>
+  .review-ledger { margin: 1.8rem 0; }
+  .ledger-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; align-items: baseline; padding-bottom: 1.2rem; }
+  h3 { font-size: 1rem; font-weight: 550; color: #f5f0eb; }.ledger-heading > span { font: .56rem 'JetBrains Mono', monospace; letter-spacing: .06em; color: #a69aaa; }
+  .ledger-columns, .ledger-row { display: grid; grid-template-columns: .9fr 1.2fr 1.2fr 1fr; gap: 1rem; }
+  .ledger-columns { border-top: 1px solid #ffffff45; padding: .8rem 0; color: #ab9bb4; font-size: .6rem; }
+  .ledger-row { align-items: center; padding: 1.3rem 0; border-top: 1px solid #ffffff20; }
+  .ledger-topic { display: flex; gap: .6rem; align-items: baseline; }
+  .ledger-topic strong { font-size: .85rem; line-height: 1.8; font-weight: 550; word-break: keep-all; }
+  .ledger-topic > span { color: #9c89a5; font: .57rem 'JetBrains Mono', monospace; }.ledger-topic > span:last-child { display: none; }
+  a { color: inherit; text-decoration: none; }a:hover { color: #fd9a63; }
+  .ledger-cell > a { display: block; font: 500 1.28rem 'JetBrains Mono', monospace; letter-spacing: -.055em; line-height: 1.4; }
+  .forecast > a { color: #a9c7f3; }.actual > a { color: #8ed5bd; }
+  .ledger-cell p { color: #afa0b9; font-size: .67rem; line-height: 1.8; margin-top: .45rem; word-break: keep-all; }
+  .cell-label { display: none; }
+  .ledger-status > a { display: block; color: var(--tone, #c5bacb); font-size: .74rem; line-height: 1.7; word-break: keep-all; }
+  .ledger-status > a span { margin-left: .3rem; }.ledger-status > div { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .5rem; }
+  .ledger-source { font-size: .54rem; color: #a394ac; }
+  .ledger-note { padding-top: 1rem; border-top: 1px solid #ffffff25; font-size: .71rem; line-height: 1.9; color: #ab9bb4; word-break: keep-all; }
+  @media (max-width: 1200px) and (min-width: 981px) { .ledger-columns, .ledger-row { gap: .75rem; }.ledger-cell > a { font-size: 1rem; } }
+  @media (max-width: 640px) {
+    .ledger-columns { display: none; }.ledger-heading { padding-bottom: 1rem; }
+    .ledger-row { grid-template-columns: 1fr 1fr; gap: 1rem; padding-block: 1.1rem; }
+    .ledger-topic { grid-column: 1 / -1; }.ledger-topic > span:last-child { display: block; margin-left: auto; }
+    .ledger-topic strong { font-size: .88rem; }
+    .ledger-cell > a { font-size: 1.12rem; }.ledger-cell p { font-size: .65rem; }
+    .cell-label { display: block; font-size: .58rem; color: #9686a1; margin-bottom: .5rem; }
+    .ledger-status { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; justify-content: space-between; }
+    .ledger-status > div { margin: 0; }
+  }
+  @media print { h3, .ledger-topic strong, .forecast > a, .actual > a, .ledger-cell p, .ledger-status > a, .ledger-note { color: #222; }.ledger-row { break-inside: avoid; border-color: #ccc; } }
+</style>
