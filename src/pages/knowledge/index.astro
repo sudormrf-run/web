@@ -94,6 +94,14 @@ const { t } = useTranslations(locale);
           <p class="section-subtitle">직접 읽고 정리한 글, 그리고 팟캐스트에서 화면에 띄우고 진행하는 대본</p>
         </header>
         <div class="cards-grid">
+          <a href="/knowledge/articles/ai-exams/" class="card card-article">
+            <div class="card-thumbnail exam-cover" aria-hidden="true"><b>O / X</b><span class="article-badge">팟캐스트 자료</span></div>
+            <div class="card-body">
+              <h3 class="card-title">AI 시대, 시험을 묻다</h3>
+              <p class="card-description">세무사·LEET·수능에서 확인된 사실을 짚고, 시험과 자격증의 역할을 일곱 가지 질문으로 토론합니다.</p>
+              <div class="card-tags"><span>시험과 AI</span><span>찬반 토론</span></div>
+            </div>
+          </a>
           <a href="/knowledge/articles/ai-2027/" class="card card-article">
             <div class="card-thumbnail">
               <img src="/assets/articles/ai-2027/cover.svg" alt="AI 2027 — 예측을 현실에 대조하다" loading="lazy" />
@@ -304,6 +312,8 @@ const { t } = useTranslations(locale);
 </Layout>
 
 <style>
+  .exam-cover { display: grid; place-items: center; color: #d6ed98; background: #18232c; font: 800 clamp(3rem, 6vw, 5rem)/1 var(--font-mono); }
+
   .knowledge-page {
     padding: 3rem 0 5rem;
   }

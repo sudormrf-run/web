@@ -1,0 +1,90 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import episode from '../../../data/ai-exams.json';
+
+const scenes = ['사례 요약', ...episode.questions.map(question => question.topic)];
+const sceneId = (index: number) => index === 0 ? 'overview' : `question-${index}`;
+---
+<Layout title={episode.title} description="시험과 AI에 관한 사례 네 가지와 방송용 O/X 토론 질문 일곱 개" locale="ko" hideLanguageSwitcher>
+  <article class="exam">
+    <header>
+      <p><a href="/knowledge/">지식 창고</a> / 팟캐스트 자료 · <time datetime="2026-11-23">2026. 11. 23.</time></p>
+      <h1>{episode.title}</h1>
+    </header>
+    <nav aria-label="방송 장면">{scenes.map((label, i) => <a href={`#${sceneId(i)}`}>{label}</a>)}</nav>
+    <section id="overview" data-scene>
+      <h2>시험장에서 무슨 일이 있었나?</h2>
+      <div class="grid">
+        {episode.facts.map(fact => <article>
+          <small>{fact.label}</small><h3>{fact.title}</h3><p>{fact.body}</p>
+          <footer>{fact.sources.map(source => <a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a>)}</footer>
+        </article>)}
+      </div>
+    </section>
+    {episode.questions.map((q, index) => <section id={sceneId(index+1)} data-scene>
+      <small>토론 {index+1} / {episode.questions.length} · {q.topic}</small>
+      <h2>{q.title}</h2>
+      <div class="grid">
+        <article><strong>O · 찬성</strong><p>{q.yes}</p></article>
+        <article><strong>X · 반대</strong><p>{q.no}</p></article>
+      </div>
+      <aside><small>꼬리 질문</small><p>{q.follow}</p></aside>
+    </section>)}
+    <div class="controls" hidden><button id="previous">이전</button><span aria-live="polite"></span><button id="next">다음</button></div>
+  </article>
+</Layout>
+<script>
+  const scenes = Array.from(document.querySelectorAll<HTMLElement>('[data-scene]'));
+  const links = document.querySelectorAll<HTMLAnchorElement>('.exam nav a');
+  const controls = document.querySelector<HTMLElement>('.exam .controls')!;
+  const previous = controls.querySelector<HTMLButtonElement>('#previous')!;
+  const next = controls.querySelector<HTMLButtonElement>('#next')!;
+  let current = 0;
+  function render() {
+    current = Math.max(0, scenes.findIndex(scene => '#' + scene.id === location.hash));
+    scenes.forEach((scene, i) => { scene.hidden = i !== current; });
+    links.forEach((link, i) => link.setAttribute('aria-current', i === current ? 'step' : 'false'));
+    previous.disabled = current === 0;
+    next.disabled = current === scenes.length - 1;
+    controls.querySelector('span')!.textContent = (current + 1) + ' / ' + scenes.length;
+  }
+  function move(delta: number) {
+    const scene = scenes[current + delta];
+    if (scene) location.hash = scene.id;
+  }
+  previous.onclick = () => move(-1);
+  next.onclick = () => move(1);
+  window.addEventListener('hashchange', render);
+  window.addEventListener('keydown', event => {
+    if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+      event.preventDefault();
+      move(event.key === 'ArrowRight' ? 1 : -1);
+    }
+  });
+  controls.hidden = false;
+  render();
+</script>
+<style>
+  .exam { max-width: 68rem; margin: auto; padding: 2rem clamp(1rem,4vw,3rem) 4rem; word-break: keep-all; }
+  header p, footer, nav, small, .controls { font-size: .92rem; }
+  h1, h2 { line-height: 1.2; letter-spacing: -.045em; }
+  h1 { font-size: clamp(2.3rem,6vw,4.4rem); margin: .5rem 0 1.4rem; }
+  h2 { font-size: clamp(1.8rem,4.2vw,3rem); margin: .5rem 0 1.3rem; }
+  nav, footer, .controls { display: flex; gap: .6rem; flex-wrap: wrap; }
+  nav a, button { padding: .45rem .85rem; border-radius: 6px; border: 1px solid #58616d; background: transparent; color: inherit; }
+  nav a[aria-current=step] { background: #dbefa1; color: #18202a; }
+  section { margin-top: 2rem; scroll-margin-top: 6rem; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; }
+  .grid article { padding: clamp(1rem,2.5vw,1.8rem); background: #1e232b; color: #eceff4; border-radius: .6rem; }
+  small, .grid strong { color: #d6ed98; }
+  .grid article:nth-child(2) strong { color: #bfcff6; }
+  .grid p, aside p { margin: .6rem 0; line-height: 1.6; font-size: clamp(1rem,1.8vw,1.3rem); }
+  h3 { margin: .5rem 0; line-height: 1.4; }
+  footer a { text-decoration: underline; color: #c2cee4; }
+  aside { margin: 1.4rem 0; padding: 1rem 0; border-top: 1px solid #58616d; }
+  .controls { justify-content: center; align-items: center; margin-top: 1.2rem; }
+  button { cursor: pointer; } button:disabled { opacity: .45; cursor: default; }
+  [hidden] { display: none; }
+  @media(max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+</style>
