@@ -5,13 +5,13 @@ import episode from '../../../data/ai-exams.json';
 const scenes = ['사례 요약', ...episode.questions.map(question => question.topic)];
 const sceneId = (index: number) => index === 0 ? 'overview' : `question-${index}`;
 ---
-<Layout title={episode.title} description="시험과 AI에 관한 사례 네 가지와 방송용 O/X 토론 질문 일곱 개" locale="ko" hideLanguageSwitcher>
+<Layout title={episode.title} description="시험과 AI에 관한 사례 네 가지와 일곱 가지 찬반 토론, 교육·사회·개인의 변화를 묻는 마무리 질문" locale="ko" hideLanguageSwitcher>
   <article class="exam">
     <header>
       <p><a href="/knowledge/">지식 창고</a> / 팟캐스트 자료 · <time datetime="2026-11-23">2026. 11. 23.</time></p>
       <h1>{episode.title}</h1>
     </header>
-    <nav aria-label="방송 장면">{scenes.map((label, i) => <a href={`#${sceneId(i)}`}>{label}</a>)}</nav>
+    <nav aria-label="방송 장면">{scenes.map((label, i) => <a href={`#${sceneId(i)}`}>{label}</a>)}<a href="#closing">마무리</a></nav>
     <section id="overview" data-scene>
       <h2>시험장에서 무슨 일이 있었나?</h2>
       <div class="grid">
@@ -30,6 +30,18 @@ const sceneId = (index: number) => index === 0 ? 'overview' : `question-${index}
       </div>
       <aside><small>꼬리 질문</small><p>{q.follow}</p></aside>
     </section>)}
+    <section id="closing" data-scene>
+      <small>마무리 · 심화 토론</small>
+      <h2>시험이 바뀌면, 무엇이 더 바뀔까?</h2>
+      <div class="grid closing-grid">
+        {episode.closing.map(prompt => <article>
+          <small>{prompt.topic}</small>
+          <h3>{prompt.title}</h3>
+          <p>{prompt.body}</p>
+        </article>)}
+      </div>
+      <aside><small>마지막으로, 나의 선택</small><h3>{episode.closingQuestion}</h3><p>{episode.closingPrompt}</p></aside>
+    </section>
     <div class="controls" hidden><button id="previous">이전</button><span aria-live="polite"></span><button id="next">다음</button></div>
   </article>
 </Layout>
@@ -86,5 +98,6 @@ const sceneId = (index: number) => index === 0 ? 'overview' : `question-${index}
   .controls { justify-content: center; align-items: center; margin-top: 1.2rem; }
   button { cursor: pointer; } button:disabled { opacity: .45; cursor: default; }
   [hidden] { display: none; }
+  @media(min-width: 850px) { .closing-grid { grid-template-columns: repeat(3, 1fr); } }
   @media(max-width: 640px) { .grid { grid-template-columns: 1fr; } }
 </style>
